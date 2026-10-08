@@ -1,0 +1,241 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "http://127.0.0.1:61940/sc_b_search.html",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Sc B Search page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "E:\\01-10-2026_1030_AM\\tests\\_probe_out\\sidecheck\\b4ok\\shots\\sc_b_search_html\\step01_sc_b_search_page_2026-10-05_00-10-08.png",
+      "url_before": "http://127.0.0.1:61940/sc_b_search.html",
+      "url_after": "http://127.0.0.1:61940/sc_b_search.html",
+      "started_at": "2026-10-05T00:10:08.287",
+      "ended_at": "2026-10-05T00:10:08.739",
+      "duration": 0.453,
+      "timing_ms": {
+        "settle": 0,
+        "navigation_wait": 15,
+        "screenshot": 437,
+        "other": 0
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Search\" field",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:61940/sc_b_search.html",
+      "url_after": "http://127.0.0.1:61940/sc_b_search.html",
+      "started_at": "2026-10-05T00:10:08.740",
+      "ended_at": "2026-10-05T00:10:10.499",
+      "duration": 1.765,
+      "timing_ms": {
+        "locate_action": 922,
+        "log_emit": 0,
+        "screenshot": 15,
+        "settle": 0,
+        "verify": 15,
+        "other": 813
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 1765,
+        "message": "Search found using Element ID. (resolved in 1765ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 3,
+      "action_type": "fill",
+      "name": "Search: \"tamil\"",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "E:\\01-10-2026_1030_AM\\tests\\_probe_out\\sidecheck\\b4ok\\shots\\sc_b_search_html\\step03_search_tamil_2026-10-05_00-10-11.png",
+      "url_before": "http://127.0.0.1:61940/sc_b_search.html",
+      "url_after": "http://127.0.0.1:61940/sc_b_search.html",
+      "started_at": "2026-10-05T00:10:10.506",
+      "ended_at": "2026-10-05T00:10:11.621",
+      "duration": 1.125,
+      "timing_ms": {
+        "locate_action": 984,
+        "log_emit": 0,
+        "screenshot": 140,
+        "other": 1
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 1125,
+        "message": "Search found using Element ID. (resolved in 1125ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 4,
+      "action_type": "click",
+      "name": "\"Go\" button",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:61940/sc_b_search.html",
+      "url_after": "http://127.0.0.1:61940/results?q=tamil",
+      "started_at": "2026-10-05T00:10:11.625",
+      "ended_at": "2026-10-05T00:10:13.170",
+      "duration": 1.547,
+      "timing_ms": {
+        "locate_action": 952,
+        "log_emit": 16,
+        "screenshot": 109,
+        "settle": 0,
+        "verify": 16,
+        "other": 454
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 1547,
+        "message": "Go found using Element ID. (resolved in 1547ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:61940/results?q=tamil",
+  "final_screenshot": null,
+  "final_text": " Go\n\nresults for tamil",
+  "product_validation": null,
+  "total_duration_s": 6.0,
+  "total_steps": 4,
+  "live_log": [
+    {
+      "t": 1791139208.287859,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139208.3009999,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139209.241254,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139210.023239,
+      "message": "\u21b3 Clicking 'Search'",
+      "level": "note"
+    },
+    {
+      "t": 1791139210.5172899,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139211.4919918,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139211.8128731,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139212.61077,
+      "message": "\u21b3 Clicking 'Go'",
+      "level": "note"
+    },
+    {
+      "t": 1791139213.141639,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

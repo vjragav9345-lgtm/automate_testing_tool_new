@@ -1,0 +1,30 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Overlay hover attribution fixture</title>
+<style>
+  html, body { margin: 0; min-height: 100%; font: 16px sans-serif; }
+  #shared-region { position: relative; height: 100vh; }
+  #covered-link { display: inline-block; margin: 30px; }
+  #overlay { display: none; position: fixed; inset: 0; z-index: 10; background: rgba(0, 0, 0, .75); }
+  #panel { position: absolute; inset: 40px; background: white; }
+  #close-control { position: absolute; top: 8px; right: 8px; width: 40px; height: 40px; cursor: pointer; }
+  #close-control svg { width: 30px; height: 30px; }
+  #open-control { position: fixed; top: 5px; left: 5px; z-index: 1; }
+</style>
+<div id="shared-region">
+  <a id="covered-link" href="#behind">Behind the overlay</a>
+  <div id="overlay">
+    <div id="panel">
+      <div id="close-control">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 2 L18 18 M18 2 L2 18"></path></svg>
+      </div>
+      <p>Overlay content</p>
+    </div>
+  </div>
+</div>
+<button id="open-control" onclick="document.getElementById('overlay').style.display='block'">Open overlay</button>
+<script>
+  document.getElementById('close-control').addEventListener('click', function () {
+    document.getElementById('overlay').style.display = 'none';
+  });
+</script>

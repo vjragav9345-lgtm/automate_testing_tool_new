@@ -1,0 +1,122 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "http://127.0.0.1:62318/pop_cookie.html",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Pop Cookie page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:62318/pop_cookie.html",
+      "url_after": "http://127.0.0.1:62318/pop_cookie.html",
+      "started_at": "2026-10-04T23:55:30.236",
+      "ended_at": "2026-10-04T23:55:39.628",
+      "duration": 9.39,
+      "timing_ms": {
+        "settle": 0,
+        "navigation_wait": 9015,
+        "screenshot": 375,
+        "other": 0
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Close\" button",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "identity",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:62318/pop_cookie.html",
+      "url_after": "http://127.0.0.1:62318/pop_cookie.html",
+      "started_at": "2026-10-04T23:55:39.629",
+      "ended_at": "2026-10-04T23:55:41.687",
+      "duration": 2.063,
+      "timing_ms": {
+        "locate_action": 1329,
+        "log_emit": 15,
+        "screenshot": 77,
+        "settle": 0,
+        "verify": 0,
+        "other": 642
+      },
+      "locator_report": {
+        "strategy": "identity",
+        "strategy_label": "identity",
+        "fallback_level": null,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 2063,
+        "message": "Close found using identity."
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:62318/pop_cookie.html",
+  "final_screenshot": null,
+  "final_text": "We use cookies Accept",
+  "product_validation": null,
+  "total_duration_s": 12.671,
+  "total_steps": 2,
+  "live_log": [
+    {
+      "t": 1791138330.23705,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138339.2598896,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138340.0058322,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138340.7649362,
+      "message": "\u21b3 Clicking 'Close'",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

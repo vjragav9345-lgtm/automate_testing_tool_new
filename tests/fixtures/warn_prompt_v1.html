@@ -1,0 +1,9 @@
+<!doctype html><html><body>
+<h1>Create</h1>
+<div id="cards"><button id="sketch" class="card">Sketch</button><button id="photo" class="card">Photo</button></div>
+<textarea id="prompt" aria-label="Image description" placeholder="Describe"></textarea>
+<script>
+document.getElementById('sketch').addEventListener('click', function(){
+  var t=document.getElementById('prompt'); t.value='A pencil sketch of'; t.focus();
+});
+</script></body></html>

@@ -1,0 +1,3 @@
+<!doctype html><html><body><div id="host"></div><div id="dlg" role="dialog" style="position:fixed;left:50px;top:50px;width:600px;height:400px;background:#ccc;z-index:50"><p>Video</p></div>
+<script>var h=document.getElementById('host');var sr=h.attachShadow({mode:'open'});sr.innerHTML='<button id="x" title="Close" style="position:fixed;left:660px;top:50px;z-index:60">&#10005;</button>';
+sr.getElementById('x').addEventListener('click',function(){document.getElementById('dlg').remove();});</script></body></html>

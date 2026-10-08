@@ -1,0 +1,263 @@
+{
+  "status": "FAIL",
+  "message": "one or more steps failed",
+  "qa_url": "http://127.0.0.1:61940/sc_b_ids.html?m=rand",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Sc B Ids page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:61940/sc_b_ids.html?m=rand",
+      "url_after": "http://127.0.0.1:61940/sc_b_ids.html?m=rand",
+      "started_at": "2026-10-05T00:09:37.535",
+      "ended_at": "2026-10-05T00:09:37.891",
+      "duration": 0.359,
+      "timing_ms": {
+        "settle": 0,
+        "navigation_wait": 15,
+        "screenshot": 343,
+        "other": 0
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Open A\" button",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "New generated id in the page address (expected on this site): recorded 'http://127.0.0.1:61940/doc/a7k2m9x4q1', now 'http://127.0.0.1:61940/doc/x98atce6txtmqx'",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:61940/sc_b_ids.html?m=rand",
+      "url_after": "http://127.0.0.1:61940/doc/x98atce6txtmqx",
+      "started_at": "2026-10-05T00:09:37.892",
+      "ended_at": "2026-10-05T00:09:39.729",
+      "duration": 1.828,
+      "timing_ms": {
+        "locate_action": 922,
+        "log_emit": 0,
+        "screenshot": 62,
+        "settle": 0,
+        "navigation_wait": 0,
+        "verify": 30,
+        "other": 813
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 1828,
+        "message": "Open A found using Element ID. (resolved in 1828ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 3,
+      "action_type": "click",
+      "name": "\"Open B\" button",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "New generated id in the page address (expected on this site): recorded 'http://127.0.0.1:61940/doc/b3n8z5w2r6', now 'http://127.0.0.1:61940/doc/x974t7n1qdi2cp'",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:61940/doc/x98atce6txtmqx",
+      "url_after": "http://127.0.0.1:61940/doc/x974t7n1qdi2cp",
+      "started_at": "2026-10-05T00:09:39.729",
+      "ended_at": "2026-10-05T00:09:41.783",
+      "duration": 2.063,
+      "timing_ms": {
+        "locate_action": 921,
+        "log_emit": 0,
+        "screenshot": 79,
+        "settle": 0,
+        "navigation_wait": 0,
+        "verify": 15,
+        "other": 1048
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 2063,
+        "message": "Open B found using Element ID. (resolved in 2063ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 4,
+      "action_type": "click",
+      "name": "\"Open A\" button",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "id",
+      "element_found": true,
+      "success": false,
+      "error": "Failed: Expected to be on the same page as before (/doc/<id>), but the page address now has a different id than it had earlier in this run. The replay stopped.",
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "PAGE_MISMATCH: expected to reach 'http://127.0.0.1:61940/doc/a7k2m9x4q1', but landed on 'http://127.0.0.1:61940/doc/x9e5wgc7yaqi2b' instead",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "E:\\01-10-2026_1030_AM\\tests\\_probe_out\\sidecheck\\b3\\shots\\x9e5wgc7yaqi2b\\step04_open_a_FAILED_00-09-43.png",
+      "url_before": "http://127.0.0.1:61940/doc/x974t7n1qdi2cp",
+      "url_after": "http://127.0.0.1:61940/doc/x9e5wgc7yaqi2b",
+      "started_at": "2026-10-05T00:09:41.783",
+      "ended_at": "2026-10-05T00:09:43.913",
+      "duration": 2.125,
+      "timing_ms": {
+        "locate_action": 922,
+        "log_emit": 0,
+        "screenshot": 218,
+        "settle": 0,
+        "verify": 0,
+        "other": 985
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 2125,
+        "message": "Open A found using Element ID. (resolved in 2125ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:61940/doc/x9e5wgc7yaqi2b",
+  "final_screenshot": "E:\\01-10-2026_1030_AM\\tests\\_probe_out\\sidecheck\\b3\\shots\\sc_b_ids_html\\img2.png",
+  "final_text": "at /doc/x9e5wgc7yaqi2b\nOpen A Open B",
+  "product_validation": null,
+  "total_duration_s": 7.547,
+  "total_steps": 4,
+  "live_log": [
+    {
+      "t": 1791139177.5356708,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139177.5477197,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139178.4081342,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139179.1826887,
+      "message": "\u21b3 Clicking 'Open A'",
+      "level": "note"
+    },
+    {
+      "t": 1791139179.681329,
+      "message": "Page address had a new id (expected on this site)."
+    },
+    {
+      "t": 1791139179.6984653,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139180.4589353,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139181.2333453,
+      "message": "\u21b3 Clicking 'Open B'",
+      "level": "note"
+    },
+    {
+      "t": 1791139181.74118,
+      "message": "Page address had a new id (expected on this site)."
+    },
+    {
+      "t": 1791139181.7502654,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139182.510041,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139183.289138,
+      "message": "\u21b3 Clicking 'Open A'",
+      "level": "note"
+    },
+    {
+      "t": 1791139183.7652586,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 3s)",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

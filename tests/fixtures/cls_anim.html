@@ -1,0 +1,10 @@
+<!doctype html><html><body>
+<button id="anime">Anime</button><button id="other">Other</button>
+<textarea id="prompt" aria-label="Image description" rows="4" cols="60"></textarea>
+<script>
+var TEXT='Create a trending anime art style image from the uploaded subject with bold lines';
+document.getElementById('anime').addEventListener('click',function(){
+  var t=document.getElementById('prompt'); t.value=''; t.focus(); var i=0;
+  var iv=setInterval(function(){ t.value=TEXT.slice(0,++i); if(i>=TEXT.length) clearInterval(iv); },60);
+});
+</script></body></html>

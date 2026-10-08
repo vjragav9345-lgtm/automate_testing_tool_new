@@ -1,0 +1,187 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "http://127.0.0.1:51862/rv_mega_hover.html",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Rv Mega Hover page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:51862/rv_mega_hover.html",
+      "url_after": "http://127.0.0.1:51862/rv_mega_hover.html",
+      "started_at": "2026-10-05T00:01:03.615",
+      "ended_at": "2026-10-05T00:01:03.978",
+      "duration": 0.359,
+      "timing_ms": {
+        "settle": 0,
+        "navigation_wait": 15,
+        "screenshot": 343,
+        "other": 0
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "hover",
+      "name": "\"Features\" (a)",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:51862/rv_mega_hover.html",
+      "url_after": "http://127.0.0.1:51862/rv_mega_hover.html",
+      "started_at": "2026-10-05T00:01:03.980",
+      "ended_at": "2026-10-05T00:01:04.233",
+      "duration": 0.25,
+      "timing_ms": {
+        "locate_action": 233,
+        "log_emit": 0,
+        "other": 17
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 250,
+        "message": "Features found using Element ID. (resolved in 250ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 3,
+      "action_type": "click",
+      "name": "\"Pro Analytics\" link",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:51862/rv_mega_hover.html",
+      "url_after": "http://127.0.0.1:51862/hov_menu_target.html?x=1",
+      "started_at": "2026-10-05T00:01:04.233",
+      "ended_at": "2026-10-05T00:01:06.917",
+      "duration": 2.687,
+      "timing_ms": {
+        "locate_action": 1454,
+        "log_emit": 0,
+        "screenshot": 125,
+        "settle": 15,
+        "verify": 327,
+        "other": 766
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 2687,
+        "message": "Pro Analytics found using Element ID. (resolved in 2687ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:51862/hov_menu_target.html?x=1",
+  "final_screenshot": null,
+  "final_text": "menu target",
+  "product_validation": null,
+  "total_duration_s": 4.39,
+  "total_steps": 3,
+  "live_log": [
+    {
+      "t": 1791138663.6162984,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138663.6283967,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138663.998662,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138664.1577656,
+      "message": "\u21b3 Hovering over 'Features'",
+      "level": "note"
+    },
+    {
+      "t": 1791138664.7297683,
+      "message": "\u21b3 Hovering over 'Features' to reveal the menu",
+      "level": "note"
+    },
+    {
+      "t": 1791138664.8376994,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138665.6383412,
+      "message": "\u21b3 Clicking 'Pro Analytics'",
+      "level": "note"
+    },
+    {
+      "t": 1791138666.8786674,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

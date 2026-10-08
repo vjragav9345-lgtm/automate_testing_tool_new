@@ -1,0 +1,1555 @@
+{
+ "status": "PASS",
+ "steps": [
+  {
+   "index": 1,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 2,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 3,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 4,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 5,
+   "action_type": "drag",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 6,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 7,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 8,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 9,
+   "action_type": "drag",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 10,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 11,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 12,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 13,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 14,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 15,
+   "action_type": "click",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 16,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 17,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 18,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 19,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 20,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 21,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  }
+ ],
+ "drag": [
+  {
+   "step": 5,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "p_36/range-slider_slider-item_lower-bound-slider": {
+      "x": 20.015625,
+      "y": 359.328125,
+      "w": 230.390625,
+      "h": 4
+     },
+     "p_36/range-slider_slider-item_upper-bound-slider": {
+      "x": 20.015625,
+      "y": 359.328125,
+      "w": 230.390625,
+      "h": 4
+     }
+    },
+    "text": null,
+    "scrollY": 379,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 29.415624618530273,
+     "y": 360.453125,
+     "steps": 1
+    },
+    {
+     "x": 33.41562461853027,
+     "y": 360.453125,
+     "steps": 1
+    },
+    {
+     "x": 37.41562461853027,
+     "y": 359.453125,
+     "steps": 1
+    },
+    {
+     "x": 41.41562461853027,
+     "y": 361.453125,
+     "steps": 1
+    },
+    {
+     "x": 45.41562461853027,
+     "y": 360.453125,
+     "steps": 1
+    },
+    {
+     "x": 49.41562461853027,
+     "y": 360.453125,
+     "steps": 1
+    },
+    {
+     "x": 53.41562461853027,
+     "y": 360.453125,
+     "steps": 1
+    },
+    {
+     "x": 57.41562461853027,
+     "y": 361.453125,
+     "steps": 1
+    },
+    {
+     "x": 61.41562461853027,
+     "y": 360.453125,
+     "steps": 1
+    },
+    {
+     "x": 64.41562461853027,
+     "y": 360.453125,
+     "steps": 1
+    },
+    {
+     "x": 68.41562461853027,
+     "y": 360.453125,
+     "steps": 1
+    },
+    {
+     "x": 72.41562461853027,
+     "y": 360.453125,
+     "steps": 1
+    },
+    {
+     "x": 76.41562461853027,
+     "y": 360.453125,
+     "steps": 1
+    },
+    {
+     "x": 80.41562461853027,
+     "y": 360.453125,
+     "steps": 1
+    },
+    {
+     "x": 84.41562461853027,
+     "y": 360.453125,
+     "steps": 1
+    },
+    {
+     "x": 85.5614579518636,
+     "y": 360.453125,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {},
+    "text": null,
+    "scrollY": 0,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 9,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "p_36/range-slider_slider-item_lower-bound-slider": {
+      "x": 20.015625,
+      "y": 188.265625,
+      "w": 230.390625,
+      "h": 4
+     },
+     "p_36/range-slider_slider-item_upper-bound-slider": {
+      "x": 20.015625,
+      "y": 188.265625,
+      "w": 230.390625,
+      "h": 4
+     }
+    },
+    "text": null,
+    "scrollY": 438,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 240.41562461853027,
+     "y": 189.59060668945312,
+     "steps": 1
+    },
+    {
+     "x": 235.41562461853027,
+     "y": 190.59060668945312,
+     "steps": 1
+    },
+    {
+     "x": 230.41562461853027,
+     "y": 188.59060668945312,
+     "steps": 1
+    },
+    {
+     "x": 225.41562461853027,
+     "y": 190.59060668945312,
+     "steps": 1
+    },
+    {
+     "x": 220.41562461853027,
+     "y": 189.59060668945312,
+     "steps": 1
+    },
+    {
+     "x": 215.41562461853027,
+     "y": 189.59060668945312,
+     "steps": 1
+    },
+    {
+     "x": 210.41562461853027,
+     "y": 188.59060668945312,
+     "steps": 1
+    },
+    {
+     "x": 205.41562461853027,
+     "y": 190.59060668945312,
+     "steps": 1
+    },
+    {
+     "x": 200.41562461853027,
+     "y": 189.59060668945312,
+     "steps": 1
+    },
+    {
+     "x": 195.41562461853027,
+     "y": 189.59060668945312,
+     "steps": 1
+    },
+    {
+     "x": 190.41562461853027,
+     "y": 188.59060668945312,
+     "steps": 1
+    },
+    {
+     "x": 185.41562461853027,
+     "y": 189.59060668945312,
+     "steps": 1
+    },
+    {
+     "x": 180.41562461853027,
+     "y": 190.59060668945312,
+     "steps": 1
+    },
+    {
+     "x": 175.41562461853027,
+     "y": 190.59060668945312,
+     "steps": 1
+    },
+    {
+     "x": 170.41562461853027,
+     "y": 190.59060668945312,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {},
+    "text": null,
+    "scrollY": 0,
+    "vw": 1280,
+    "vh": 720
+   }
+  }
+ ],
+ "step_scroll": {
+  "1": {
+   "pos": [
+    0,
+    0,
+    10825,
+    720
+   ],
+   "scroll_events": []
+  },
+  "2": {
+   "pos": [
+    0,
+    500,
+    10765,
+    720
+   ],
+   "scroll_events": []
+  },
+  "3": {
+   "pos": [
+    0,
+    900,
+    10765,
+    720
+   ],
+   "scroll_events": []
+  },
+  "4": {
+   "pos": [
+    0,
+    379,
+    10765,
+    720
+   ],
+   "scroll_events": []
+  },
+  "5": {
+   "pos": [
+    0,
+    0,
+    9653,
+    720
+   ],
+   "scroll_events": []
+  },
+  "6": {
+   "pos": [
+    0,
+    0,
+    9663,
+    720
+   ],
+   "scroll_events": []
+  },
+  "7": {
+   "pos": [
+    0,
+    0,
+    9663,
+    720
+   ],
+   "scroll_events": []
+  },
+  "8": {
+   "pos": [
+    0,
+    438,
+    9603,
+    720
+   ],
+   "scroll_events": []
+  },
+  "9": {
+   "pos": [
+    0,
+    0,
+    9946,
+    720
+   ],
+   "scroll_events": []
+  },
+  "10": {
+   "pos": [
+    0,
+    0,
+    9647,
+    720
+   ],
+   "scroll_events": []
+  },
+  "11": {
+   "pos": [
+    0,
+    0,
+    9647,
+    720
+   ],
+   "scroll_events": []
+  },
+  "12": {
+   "pos": [
+    0,
+    700,
+    9587,
+    720
+   ],
+   "scroll_events": []
+  },
+  "13": {
+   "pos": [
+    0,
+    350,
+    9587,
+    720
+   ],
+   "scroll_events": []
+  },
+  "14": {
+   "pos": [
+    0,
+    0,
+    9647,
+    720
+   ],
+   "scroll_events": []
+  },
+  "15": {
+   "pos": [
+    0,
+    0,
+    10676,
+    720
+   ],
+   "scroll_events": []
+  },
+  "16": {
+   "pos": [
+    0,
+    0,
+    10676,
+    720
+   ],
+   "scroll_events": []
+  },
+  "17": {
+   "pos": [
+    0,
+    600,
+    10616,
+    720
+   ],
+   "scroll_events": []
+  },
+  "18": {
+   "pos": [
+    0,
+    1100,
+    10616,
+    720
+   ],
+   "scroll_events": []
+  },
+  "19": {
+   "pos": [
+    0,
+    300,
+    10616,
+    720
+   ],
+   "scroll_events": []
+  },
+  "20": {
+   "pos": [
+    0,
+    1200,
+    10616,
+    720
+   ],
+   "scroll_events": []
+  },
+  "21": {
+   "pos": null,
+   "scroll_events": []
+  }
+ },
+ "step_pages": {
+  "1": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.in/s?k=laptop",
+    "pos": [
+     0,
+     0,
+     10825,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "2": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.in/s?k=laptop",
+    "pos": [
+     0,
+     500,
+     10765,
+     720
+    ],
+    "events": 4
+   }
+  ],
+  "3": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.in/s?k=laptop",
+    "pos": [
+     0,
+     900,
+     10765,
+     720
+    ],
+    "events": 3
+   }
+  ],
+  "4": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.in/s?k=laptop",
+    "pos": [
+     0,
+     379,
+     10765,
+     720
+    ],
+    "events": 4
+   }
+  ],
+  "5": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.in/s?k=laptop&qid=1790583860&rnid=7252027031&ref=sr_nr_p_36_0_0&low-price=50200&high-price=",
+    "pos": [
+     0,
+     0,
+     9653,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "6": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.in/s?k=laptop&rh=p_36%3A4790000-&qid=1790576766&rnid=7252027031&ref=sr_nr_p_36_0_0",
+    "pos": [
+     0,
+     0,
+     9663,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "7": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.in/s?k=laptop&rh=p_36%3A4790000-&qid=1790576766&rnid=7252027031&ref=sr_nr_p_36_0_0",
+    "pos": [
+     0,
+     0,
+     9663,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "8": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.in/s?k=laptop&rh=p_36%3A4790000-&qid=1790576766&rnid=7252027031&ref=sr_nr_p_36_0_0",
+    "pos": [
+     0,
+     438,
+     9603,
+     720
+    ],
+    "events": 3
+   }
+  ],
+  "9": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.in/s?k=laptop&qid=1790583883&rnid=7252027031&ref=sr_nr_p_36_0_0&low-price=47900&high-price=551800",
+    "pos": [
+     0,
+     0,
+     9946,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "10": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.in/s?k=laptop&rh=p_36%3A4790000-55190000&qid=1790576766&rnid=7252027031&ref=sr_nr_p_36_0_0",
+    "pos": [
+     0,
+     0,
+     9647,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "11": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.in/s?k=laptop&rh=p_36%3A4790000-55190000&qid=1790576766&rnid=7252027031&ref=sr_nr_p_36_0_0",
+    "pos": [
+     0,
+     0,
+     9647,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "12": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.in/s?k=laptop&rh=p_36%3A4790000-55190000&qid=1790576766&rnid=7252027031&ref=sr_nr_p_36_0_0",
+    "pos": [
+     0,
+     700,
+     9587,
+     720
+    ],
+    "events": 5
+   }
+  ],
+  "13": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.in/s?k=laptop&rh=p_36%3A4790000-55190000&qid=1790576766&rnid=7252027031&ref=sr_nr_p_36_0_0",
+    "pos": [
+     0,
+     350,
+     9587,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "14": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.in/s?k=laptop&rh=p_36%3A4790000-55190000&qid=1790576766&rnid=7252027031&ref=sr_nr_p_36_0_0",
+    "pos": [
+     0,
+     0,
+     9647,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "15": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.in/s?k=laptop+under+30000&ref=sr_nr_p_rag_integrated_qb_0",
+    "pos": [
+     0,
+     0,
+     10676,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "16": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.in/s?k=laptop+under+30000&ref=sr_nr_p_rag_integrated_qb_0",
+    "pos": [
+     0,
+     0,
+     10676,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "17": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.in/s?k=laptop+under+30000&ref=sr_nr_p_rag_integrated_qb_0",
+    "pos": [
+     0,
+     600,
+     10616,
+     720
+    ],
+    "events": 5
+   }
+  ],
+  "18": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.in/s?k=laptop+under+30000&ref=sr_nr_p_rag_integrated_qb_0",
+    "pos": [
+     0,
+     1100,
+     10616,
+     720
+    ],
+    "events": 4
+   }
+  ],
+  "19": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.in/s?k=laptop+under+30000&ref=sr_nr_p_rag_integrated_qb_0",
+    "pos": [
+     0,
+     300,
+     10616,
+     720
+    ],
+    "events": 6
+   }
+  ],
+  "20": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.in/s?k=laptop+under+30000&ref=sr_nr_p_rag_integrated_qb_0",
+    "pos": [
+     0,
+     1200,
+     10616,
+     720
+    ],
+    "events": 7
+   }
+  ],
+  "21": []
+ },
+ "events": [
+  {
+   "t": 1790583861.68,
+   "step": 0,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => window.scrollTo({top: 0, left: 0, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583867.302,
+   "step": 2,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790583867.317,
+   "step": 2,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 125.0
+  },
+  {
+   "t": 1790583867.375,
+   "step": 2,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 125.0
+  },
+  {
+   "t": 1790583867.502,
+   "step": 2,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 125.0
+  },
+  {
+   "t": 1790583867.567,
+   "step": 2,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 125.0
+  },
+  {
+   "t": 1790583867.625,
+   "step": 2,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583867.757,
+   "step": 2,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583867.773,
+   "step": 3,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790583867.781,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 133.33333333333334
+  },
+  {
+   "t": 1790583867.838,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 133.33333333333334
+  },
+  {
+   "t": 1790583867.888,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 133.33333333333334
+  },
+  {
+   "t": 1790583867.954,
+   "step": 3,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583868.087,
+   "step": 3,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583868.105,
+   "step": 4,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790583868.112,
+   "step": 4,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.25
+  },
+  {
+   "t": 1790583868.169,
+   "step": 4,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.25
+  },
+  {
+   "t": 1790583868.276,
+   "step": 4,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.25
+  },
+  {
+   "t": 1790583868.326,
+   "step": 4,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.25
+  },
+  {
+   "t": 1790583868.4,
+   "step": 4,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583868.533,
+   "step": 4,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583869.192,
+   "step": 5,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "p_36/range-slider_slider-item_lower-bound-slider": {
+      "x": 20.015625,
+      "y": 359.328125,
+      "w": 230.390625,
+      "h": 4
+     },
+     "p_36/range-slider_slider-item_upper-bound-slider": {
+      "x": 20.015625,
+      "y": 359.328125,
+      "w": 230.390625,
+      "h": 4
+     }
+    },
+    "text": null,
+    "scrollY": 379,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790583872.107,
+   "step": 5,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {},
+    "text": null,
+    "scrollY": 0,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790583885.49,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => window.scrollTo({top: 0, left: 0, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583887.175,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790583887.191,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583887.35,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583887.424,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790583887.453,
+   "step": 8,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 146.0
+  },
+  {
+   "t": 1790583887.531,
+   "step": 8,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 146.0
+  },
+  {
+   "t": 1790583888.049,
+   "step": 8,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 146.0
+  },
+  {
+   "t": 1790583888.257,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583888.417,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583890.019,
+   "step": 9,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "p_36/range-slider_slider-item_lower-bound-slider": {
+      "x": 20.015625,
+      "y": 188.265625,
+      "w": 230.390625,
+      "h": 4
+     },
+     "p_36/range-slider_slider-item_upper-bound-slider": {
+      "x": 20.015625,
+      "y": 188.265625,
+      "w": 230.390625,
+      "h": 4
+     }
+    },
+    "text": null,
+    "scrollY": 438,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790583893.904,
+   "step": 9,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {},
+    "text": null,
+    "scrollY": 0,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790583907.846,
+   "step": 10,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => window.scrollTo({top: 0, left: 0, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583908.966,
+   "step": 11,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790583908.999,
+   "step": 11,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583909.152,
+   "step": 11,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583909.236,
+   "step": 12,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790583909.257,
+   "step": 12,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 140.0
+  },
+  {
+   "t": 1790583909.342,
+   "step": 12,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 140.0
+  },
+  {
+   "t": 1790583909.884,
+   "step": 12,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 140.0
+  },
+  {
+   "t": 1790583909.981,
+   "step": 12,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 140.0
+  },
+  {
+   "t": 1790583910.058,
+   "step": 12,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 140.0
+  },
+  {
+   "t": 1790583910.168,
+   "step": 12,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583910.329,
+   "step": 12,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583910.418,
+   "step": 13,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790583910.441,
+   "step": 13,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -175.0
+  },
+  {
+   "t": 1790583910.518,
+   "step": 13,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -175.0
+  },
+  {
+   "t": 1790583910.927,
+   "step": 13,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583911.08,
+   "step": 13,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583911.161,
+   "step": 14,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790583911.177,
+   "step": 14,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -175.0
+  },
+  {
+   "t": 1790583911.266,
+   "step": 14,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -175.0
+  },
+  {
+   "t": 1790583911.346,
+   "step": 14,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583912.215,
+   "step": 14,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583947.274,
+   "step": 17,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790583947.311,
+   "step": 17,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 120.0
+  },
+  {
+   "t": 1790583947.399,
+   "step": 17,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 120.0
+  },
+  {
+   "t": 1790583947.999,
+   "step": 17,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 120.0
+  },
+  {
+   "t": 1790583948.096,
+   "step": 17,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 120.0
+  },
+  {
+   "t": 1790583948.208,
+   "step": 17,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 120.0
+  },
+  {
+   "t": 1790583948.313,
+   "step": 17,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583948.466,
+   "step": 17,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583948.539,
+   "step": 18,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790583948.574,
+   "step": 18,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 125.0
+  },
+  {
+   "t": 1790583948.651,
+   "step": 18,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 125.0
+  },
+  {
+   "t": 1790583948.73,
+   "step": 18,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 125.0
+  },
+  {
+   "t": 1790583948.812,
+   "step": 18,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 125.0
+  },
+  {
+   "t": 1790583948.9,
+   "step": 18,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583949.053,
+   "step": 18,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583949.132,
+   "step": 19,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790583949.158,
+   "step": 19,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -133.33333333333334
+  },
+  {
+   "t": 1790583949.222,
+   "step": 19,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -133.33333333333334
+  },
+  {
+   "t": 1790583949.665,
+   "step": 19,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -133.33333333333334
+  },
+  {
+   "t": 1790583949.777,
+   "step": 19,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -133.33333333333334
+  },
+  {
+   "t": 1790583949.875,
+   "step": 19,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -133.33333333333334
+  },
+  {
+   "t": 1790583949.971,
+   "step": 19,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -133.33333333333334
+  },
+  {
+   "t": 1790583950.205,
+   "step": 19,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583950.416,
+   "step": 19,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583950.501,
+   "step": 20,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790583950.534,
+   "step": 20,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790583950.608,
+   "step": 20,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790583951.062,
+   "step": 20,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790583951.159,
+   "step": 20,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790583951.255,
+   "step": 20,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790583951.334,
+   "step": 20,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790583951.439,
+   "step": 20,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790583951.523,
+   "step": 20,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583951.674,
+   "step": 20,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583951.74,
+   "step": 21,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790583951.78,
+   "step": 21,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790583951.855,
+   "step": 21,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790583952.299,
+   "step": 21,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790583952.394,
+   "step": 21,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790583952.526,
+   "step": 21,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790583952.629,
+   "step": 21,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790583952.709,
+   "step": 21,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790583952.798,
+   "step": 21,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790583952.878,
+   "step": 21,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790583953.128,
+   "step": 21,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790583953.221,
+   "step": 21,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583954.287,
+   "step": 21,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  }
+ ]
+}

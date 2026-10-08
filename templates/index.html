@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>AutoFlow QA - Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}?v=25"
+    />
+</head>
+
+<body>
+
+<header class="app-header">
+    <h1>AutoFlow QA</h1>
+
+    <p class="tagline">
+        Record-and-Replay Automation Testing Tool
+    </p>
+</header>
+
+
+<main class="dashboard">
+
+    <!-- WEBSITE URL -->
+    <section class="url-input-panel">
+
+        <label for="websiteUrlInput">
+            Website URL
+        </label>
+
+        <input
+            type="text"
+            id="websiteUrlInput"
+            class="url-input"
+            placeholder="https://example.com"
+            value="https://www.google.com"
+        />
+
+    </section>
+
+
+    <!-- BROWSER ACTIONS -->
+    <section class="action-panel">
+
+        <button
+            id="launchBrowserBtn"
+            class="action-btn"
+        >
+            Launch Browser
+        </button>
+
+        <button
+            id="stopRecordingBtn"
+            class="action-btn stop-btn"
+            hidden
+        >
+            Stop Recording
+        </button>
+
+        
+
+    </section>
+
+
+    <!-- BROWSER RESULT -->
+    <section
+        class="browser-result-panel"
+        id="browserResultPanel"
+        hidden
+    >
+
+        <h2>Browser Launch Result</h2>
+
+        <div class="result-row">
+
+            <span class="result-label">
+                Visited URL
+            </span>
+
+            <span
+                id="visitedUrlValue"
+                class="result-value"
+            >
+                -
+            </span>
+
+        </div>
+
+
+        <div class="result-row">
+
+            <span class="result-label">
+                Page Title
+            </span>
+
+            <span
+                id="pageTitleValue"
+                class="result-value"
+            >
+                -
+            </span>
+
+        </div>
+
+
+        <div class="result-row">
+
+            <span class="result-label">
+                Status
+            </span>
+
+            <span
+                id="statusValue"
+                class="result-value"
+            >
+                -
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- RECORDING STATUS -->
+    <section
+        class="recording-status-panel"
+        id="recordingStatusPanel"
+        hidden
+    >
+        <span
+            id="recordingStatusBadge"
+            class="recording-status-badge"
+        >
+            -
+        </span>
+
+        <span
+            id="recordingStatusMessage"
+            class="recording-status-message"
+        >
+        </span>
+    </section>
+
+
+    <!-- RECORDED TESTS -->
+    <section class="recordings-panel">
+
+        <div class="recordings-header">
+
+            <div>
+                <h2>Recorded Tests</h2>
+
+                <p class="section-description">
+                    Existing JSON recordings saved in
+                    storage/recordings.
+                </p>
+            </div>
+
+            <button
+                id="refreshRecordingsBtn"
+                class="secondary-btn"
+            >
+                Refresh
+            </button>
+
+        </div>
+
+
+        <!-- ERROR -->
+        <div
+            id="recordingsError"
+            class="recordings-error"
+            hidden
+        ></div>
+
+
+        <!-- LOADING -->
+        <div
+            id="recordingsLoading"
+            class="recordings-loading"
+            hidden
+        >
+            Loading recordings...
+        </div>
+
+
+        <!-- EMPTY -->
+        <div
+            id="recordingsEmpty"
+            class="recordings-empty"
+            hidden
+        >
+            No JSON recordings found.
+        </div>
+
+
+        <!-- RECORDING LIST -->
+        <div
+            id="recordingsList"
+            class="recordings-list"
+        ></div>
+
+
+        <!-- PAGINATION -->
+        <div
+            id="recordingsPagination"
+            class="recordings-pagination"
+            hidden
+        >
+
+            <button
+                id="recordingsPrevBtn"
+                class="secondary-btn"
+            >
+                Previous
+            </button>
+
+            <span id="recordingsPageLabel">Page 1 of 1</span>
+
+            <button
+                id="recordingsNextBtn"
+                class="secondary-btn"
+            >
+                Next
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- RAW RESULT -->
+    <section class="result-panel">
+
+        <h2>Raw Result</h2>
+
+        <pre
+            id="resultOutput"
+            class="result-output"
+        >No action performed yet.</pre>
+
+    </section>
+
+</main>
+
+
+<footer class="app-footer">
+
+    <p>
+        AutoFlow QA &copy; 2026
+    </p>
+
+</footer>
+
+
+<!-- PHASE 2a: shown once, right after a recording finishes (see
+     renderRecordingStatus's own phase==="completed" handling in
+     script.js) - pre-filled with the auto-generated name, Skip keeps
+     that name exactly as it already is today. -->
+<div id="nameTestModal" class="modal-overlay" hidden>
+    <div class="modal-dialog">
+
+        <h3>Name this test</h3>
+
+        <label for="nameTestInput">Test name</label>
+        <input id="nameTestInput" type="text" class="editor-input">
+
+        <div class="modal-buttons">
+            <button type="button" id="nameTestSkipBtn" class="secondary-btn">Skip</button>
+            <button type="button" id="nameTestSaveBtn" class="action-btn">Save</button>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- FOLLOW-UP FIX 3: replaces the native prompt() the dashboard card's
+     Rename button used to use. -->
+<div id="renameCardModal" class="modal-overlay" hidden>
+    <div class="modal-dialog">
+
+        <h3>Rename this test</h3>
+
+        <label for="renameCardInput">Test name</label>
+        <input id="renameCardInput" type="text" class="editor-input">
+
+        <div id="renameCardError" class="editor-error" hidden></div>
+
+        <div class="modal-buttons">
+            <button type="button" id="renameCardCancelBtn" class="secondary-btn">Cancel</button>
+            <button type="button" id="renameCardSaveBtn" class="action-btn">Save</button>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- FOLLOW-UP FIX 3: replaces the native confirm() the dashboard card's
+     Delete button used to use. -->
+<div id="deleteCardModal" class="modal-overlay" hidden>
+    <div class="modal-dialog">
+
+        <h3>Delete this session?</h3>
+
+        <p id="deleteCardMessage"></p>
+
+        <div class="modal-buttons">
+            <button type="button" id="deleteCardCancelBtn" class="secondary-btn">Cancel</button>
+            <button type="button" id="deleteCardConfirmBtn" class="action-btn stop-btn">Delete</button>
+        </div>
+
+    </div>
+</div>
+
+
+<script
+    src="{{ url_for('static', filename='js/script.js') }}?v=26"
+></script>
+
+</body>
+</html>

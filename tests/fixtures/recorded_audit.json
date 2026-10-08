@@ -1,0 +1,357 @@
+{
+  "name": "empirical_audit_fixture",
+  "session_id": "801aa02f8b9843fba10850b8d94daea2",
+  "start_url": "http://127.0.0.1:8899/page1.html",
+  "recorded_at": "2026-09-21T09:34:45.231486",
+  "stop_reason": "terminal_enter",
+  "total_actions": 13,
+  "page_count": 2,
+  "viewport_width": 1280,
+  "viewport_height": 800,
+  "actions": [
+    {
+      "action_type": "check",
+      "value": null,
+      "locator_profile": {
+        "id": "#agree-checkbox",
+        "name": null,
+        "role": "checkbox",
+        "aria_label": null,
+        "accessible_name": "I agree",
+        "placeholder": null,
+        "title": null,
+        "href": null,
+        "css_path": "input#agree-checkbox",
+        "xpath": "//*[@id='agree-checkbox']",
+        "text": "I agree",
+        "element_text": "on",
+        "tag": "input",
+        "attributes": {
+          "type": "checkbox"
+        },
+        "cross_boundary": false,
+        "icon_class_hint": null
+      },
+      "bounding_box": {
+        "x": 35,
+        "y": 393.875,
+        "width": 13,
+        "height": 13
+      },
+      "click_strategy": "standard",
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "timestamp": "2026-09-21T04:04:42.138Z",
+      "expected_state": true,
+      "page_id": 0,
+      "delay_before_ms": 0
+    },
+    {
+      "action_type": "click",
+      "value": null,
+      "locator_profile": {
+        "id": "#plan-pro",
+        "name": "plan",
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "pro",
+        "placeholder": null,
+        "title": null,
+        "href": null,
+        "css_path": "input#plan-pro",
+        "xpath": "//*[@id='plan-pro']",
+        "text": "pro",
+        "element_text": "pro",
+        "tag": "input",
+        "attributes": {
+          "type": "radio",
+          "name": "plan"
+        },
+        "cross_boundary": false,
+        "icon_class_hint": null
+      },
+      "bounding_box": {
+        "x": 105.03125,
+        "y": 413.875,
+        "width": 13,
+        "height": 13
+      },
+      "click_strategy": "standard",
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "timestamp": "2026-09-21T04:04:42.182Z",
+      "page_id": 0,
+      "delay_before_ms": 44
+    },
+    {
+      "action_type": "fill",
+      "value": "autofill@example.com",
+      "locator_profile": {
+        "id": "#email-field",
+        "name": "email",
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "autofill@example.com",
+        "placeholder": null,
+        "title": null,
+        "href": null,
+        "css_path": "input#email-field",
+        "xpath": "//*[@id='email-field']",
+        "text": "autofill@example.com",
+        "element_text": "autofill@example.com",
+        "tag": "input",
+        "attributes": {
+          "type": "text",
+          "name": "email"
+        },
+        "cross_boundary": false,
+        "icon_class_hint": null
+      },
+      "bounding_box": {
+        "x": 175.046875,
+        "y": 1084.875,
+        "width": 177,
+        "height": 21
+      },
+      "click_strategy": "standard",
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "timestamp": "2026-09-21T04:04:42.233Z",
+      "page_id": 0,
+      "delay_before_ms": 51
+    },
+    {
+      "action_type": "click",
+      "value": null,
+      "locator_profile": {
+        "id": null,
+        "name": null,
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "AutoFlow QA Fixture",
+        "placeholder": null,
+        "title": null,
+        "href": null,
+        "css_path": "body > header > h1",
+        "xpath": "//h1[normalize-space(text())='AutoFlow QA Fixture']",
+        "text": "AutoFlow QA Fixture",
+        "element_text": "AutoFlow QA Fixture",
+        "tag": "h1",
+        "attributes": {},
+        "cross_boundary": false,
+        "icon_class_hint": null
+      },
+      "bounding_box": {
+        "x": 20,
+        "y": 41.4375,
+        "width": 1240,
+        "height": 37
+      },
+      "click_strategy": "standard",
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "timestamp": "2026-09-21T04:04:42.236Z",
+      "page_id": 0,
+      "delay_before_ms": 3
+    },
+    {
+      "action_type": "scroll",
+      "value": null,
+      "delta_x": 0,
+      "delta_y": 192,
+      "scroll_y_before": 0,
+      "scroll_y_after": 192,
+      "viewport_height": 800,
+      "document_height": 2198,
+      "locator_profile": null,
+      "bounding_box": null,
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "timestamp": "2026-09-21T04:04:42.553Z",
+      "page_id": 0,
+      "delay_before_ms": 317
+    },
+    {
+      "action_type": "scroll",
+      "value": null,
+      "delta_x": 0,
+      "delta_y": 300,
+      "scroll_y_before": 0,
+      "scroll_y_after": 300,
+      "viewport_height": 220,
+      "document_height": 630,
+      "locator_profile": {
+        "id": "#scrollbox",
+        "name": null,
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "Item 1\nItem 2\nItem 3\nItem 4\nItem 5\nItem 6\nItem 7\nItem 8\nItem 9\nItem 10",
+        "placeholder": null,
+        "title": null,
+        "href": null,
+        "css_path": "div#scrollbox",
+        "xpath": "//*[@id='scrollbox']",
+        "text": "Item 1\nItem 2\nItem 3\nItem 4\nItem 5\nItem 6\nItem 7\nItem 8\nItem 9\nItem 10",
+        "element_text": "Item 1\nItem 2\nItem 3\nItem 4\nItem 5\nItem 6\nItem 7\nItem 8\nItem 9\nItem 10",
+        "tag": "div",
+        "attributes": {},
+        "cross_boundary": false,
+        "icon_class_hint": null
+      },
+      "bounding_box": null,
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "timestamp": "2026-09-21T04:04:42.588Z",
+      "page_id": 0,
+      "delay_before_ms": 35
+    },
+    {
+      "action_type": "scroll",
+      "value": null,
+      "delta_x": 0,
+      "delta_y": 308,
+      "scroll_y_before": 192,
+      "scroll_y_after": 500,
+      "viewport_height": 800,
+      "document_height": 2198,
+      "locator_profile": null,
+      "bounding_box": null,
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "timestamp": "2026-09-21T04:04:43.068Z",
+      "page_id": 0,
+      "delay_before_ms": 480
+    },
+    {
+      "action_type": "click",
+      "value": null,
+      "locator_profile": {
+        "id": "#route-btn",
+        "name": null,
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "Go to /route2 (pushState)",
+        "placeholder": null,
+        "title": null,
+        "href": null,
+        "css_path": "button#route-btn",
+        "xpath": "//*[@id='route-btn']",
+        "text": "Go to /route2 (pushState)",
+        "element_text": "Go to /route2 (pushState)",
+        "tag": "button",
+        "attributes": {
+          "type": "button"
+        },
+        "cross_boundary": false,
+        "icon_class_hint": null
+      },
+      "bounding_box": {
+        "x": 42,
+        "y": 207.875,
+        "width": 166.421875,
+        "height": 21
+      },
+      "click_strategy": "standard",
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "timestamp": "2026-09-21T04:04:43.231Z",
+      "page_id": 0,
+      "delay_before_ms": 163
+    },
+    {
+      "action_type": "click",
+      "value": null,
+      "locator_profile": {
+        "id": "#newtab-link",
+        "name": null,
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "Open Page 2 in new tab",
+        "placeholder": null,
+        "title": null,
+        "href": "page2.html",
+        "css_path": "a#newtab-link",
+        "xpath": "//*[@id='newtab-link']",
+        "text": "Open Page 2 in new tab",
+        "element_text": "Open Page 2 in new tab",
+        "tag": "a",
+        "attributes": {
+          "href": "page2.html"
+        },
+        "cross_boundary": false,
+        "icon_class_hint": null
+      },
+      "bounding_box": {
+        "x": 0,
+        "y": 657.875,
+        "width": 171.6875,
+        "height": 17
+      },
+      "click_strategy": "standard",
+      "page_url": "http://127.0.0.1:8899/route2",
+      "timestamp": "2026-09-21T04:04:43.415Z",
+      "page_id": 0,
+      "delay_before_ms": 184
+    },
+    {
+      "action_type": "tab_open",
+      "value": null,
+      "locator_profile": null,
+      "bounding_box": null,
+      "page_url": "http://127.0.0.1:8899/page2.html",
+      "timestamp": "2026-09-21T04:04:43.547Z",
+      "new_tab": true,
+      "page_id": 1,
+      "from_page_id": 0,
+      "delay_before_ms": 132
+    },
+    {
+      "action_type": "tab_close",
+      "value": null,
+      "locator_profile": null,
+      "bounding_box": null,
+      "page_id": 1,
+      "page_url": "http://127.0.0.1:8899/page2.html",
+      "remaining_page_id": 0,
+      "timestamp": "2026-09-21T04:04:43.768Z",
+      "delay_before_ms": 221
+    },
+    {
+      "action_type": "click",
+      "value": null,
+      "locator_profile": {
+        "id": "#footer-link",
+        "name": null,
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "Go to Page 2 (footer link)",
+        "placeholder": null,
+        "title": null,
+        "href": "page2.html",
+        "css_path": "a#footer-link",
+        "xpath": "//*[@id='footer-link']",
+        "text": "Go to Page 2 (footer link)",
+        "element_text": "Go to Page 2 (footer link)",
+        "tag": "a",
+        "attributes": {
+          "href": "page2.html"
+        },
+        "cross_boundary": false,
+        "icon_class_hint": null
+      },
+      "bounding_box": {
+        "x": 20,
+        "y": 761.875,
+        "width": 178.765625,
+        "height": 17
+      },
+      "click_strategy": "standard",
+      "page_url": "http://127.0.0.1:8899/route2",
+      "timestamp": "2026-09-21T04:04:44.023Z",
+      "page_id": 0,
+      "delay_before_ms": 255
+    },
+    {
+      "action_type": "navigate",
+      "value": null,
+      "locator_profile": null,
+      "bounding_box": null,
+      "page_url": "http://127.0.0.1:8899/route2",
+      "timestamp": "2026-09-21T04:04:44.713Z",
+      "page_id": 0,
+      "delay_before_ms": 690
+    }
+  ]
+}

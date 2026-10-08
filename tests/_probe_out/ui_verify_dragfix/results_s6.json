@@ -1,0 +1,8 @@
+{
+  "S6a_singleclick": {
+    "xpath": "//div[normalize-space(text())='Item 1']",
+    "validate_text": "Found: 1 of 1 - still open in the picker: double-click the highlighted element there to pick a different one, or close that browser window when you're happy with this pick."
+  },
+  "S6b_oldstyle_replay": "zz_s6b_oldstyle\nReplay finished.\nReplay matched the recording: all 2 steps passed.\nPASS - all steps resolved and validations passed\nTotal steps: 2 \u00a0 Passed: 2 \u00a0 Failed: 0 \u00a0 Skipped: 0 \u00a0 Warnings: 0 \u00a0 Duration: 8.9s\nOpen full HTML report\n[15:47:48]Step 1: Navigate - PASS\n[15:47:50]Step 2: Count all cards (old-style) - PASS",
+  "S6c_clickfill_replay": "zz_s6c_clickfill\nReplay finished.\nReplay matched the recording: all 2 steps passed.\nPASS - all steps resolved and validations passed\nTotal steps: 2 \u00a0 Passed: 2 \u00a0 Failed: 0 \u00a0 Skipped: 0 \u00a0 Warnings: 0 \u00a0 Duration: 8.5s\nOpen full HTML report\n[15:48:01]Step 1: Navigate - PASS\n[15:48:02]Step 2: Click first card - PASS"
+}

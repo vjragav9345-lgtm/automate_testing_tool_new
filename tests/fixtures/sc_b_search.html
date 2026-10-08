@@ -1,0 +1,12 @@
+<!doctype html><html><head><title>search with address</title></head><body>
+<input id="q" type="text" placeholder="Search" aria-label="Search">
+<button type="button" id="go">Go</button>
+<p id="out"></p>
+<script>
+var mode = new URLSearchParams(location.search).get('m') || '';
+document.getElementById('go').addEventListener('click', function () {
+  var term = mode === 'other' ? 'something-else' : document.getElementById('q').value;
+  history.pushState({}, '', '/results?q=' + encodeURIComponent(term));
+  document.getElementById('out').textContent = 'results for ' + term;
+});
+</script></body></html>

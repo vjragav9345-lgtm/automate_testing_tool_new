@@ -1,0 +1,241 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "http://127.0.0.1:57062/g_form.html",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "G Form page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "E:\\01-10-2026_1030_AM\\tests\\_probe_out\\generic\\a_form\\shots\\g_form_html\\step01_g_form_page_2026-10-05_00-03-40.png",
+      "url_before": "http://127.0.0.1:57062/g_form.html",
+      "url_after": "http://127.0.0.1:57062/g_form.html",
+      "started_at": "2026-10-05T00:03:40.211",
+      "ended_at": "2026-10-05T00:03:40.628",
+      "duration": 0.422,
+      "timing_ms": {
+        "settle": 16,
+        "navigation_wait": 0,
+        "screenshot": 406,
+        "other": 0
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Your email\" field",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "name",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:57062/g_form.html",
+      "url_after": "http://127.0.0.1:57062/g_form.html",
+      "started_at": "2026-10-05T00:03:40.629",
+      "ended_at": "2026-10-05T00:03:42.405",
+      "duration": 1.782,
+      "timing_ms": {
+        "locate_action": 922,
+        "log_emit": 0,
+        "screenshot": 0,
+        "settle": 14,
+        "verify": 32,
+        "other": 814
+      },
+      "locator_report": {
+        "strategy": "name",
+        "strategy_label": "Name attribute",
+        "fallback_level": 5,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 1782,
+        "message": "Your email found using Name attribute. (resolved in 1782ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 3,
+      "action_type": "fill",
+      "name": "Your email: \"ann@example.test\"",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "name",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "E:\\01-10-2026_1030_AM\\tests\\_probe_out\\generic\\a_form\\shots\\g_form_html\\step03_your_email_ann_example_test_2026-10-05_00-03-43.png",
+      "url_before": "http://127.0.0.1:57062/g_form.html",
+      "url_after": "http://127.0.0.1:57062/g_form.html",
+      "started_at": "2026-10-05T00:03:42.405",
+      "ended_at": "2026-10-05T00:03:43.474",
+      "duration": 1.062,
+      "timing_ms": {
+        "locate_action": 967,
+        "log_emit": 0,
+        "screenshot": 93,
+        "other": 1
+      },
+      "locator_report": {
+        "strategy": "name",
+        "strategy_label": "Name attribute",
+        "fallback_level": 5,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 1062,
+        "message": "Your email found using Name attribute. (resolved in 1062ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 4,
+      "action_type": "click",
+      "name": "\"Subscribe\" button",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:57062/g_form.html",
+      "url_after": "http://127.0.0.1:57062/g_next.html?email=ann%40example.test",
+      "started_at": "2026-10-05T00:03:43.477",
+      "ended_at": "2026-10-05T00:03:45.761",
+      "duration": 2.297,
+      "timing_ms": {
+        "locate_action": 1342,
+        "log_emit": 0,
+        "screenshot": 126,
+        "settle": 31,
+        "verify": 343,
+        "other": 455
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 2297,
+        "message": "Subscribe found using Element ID. (resolved in 2297ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:57062/g_next.html?email=ann%40example.test",
+  "final_screenshot": null,
+  "final_text": "Next page\n\nYou arrived.\n\nBack",
+  "product_validation": null,
+  "total_duration_s": 6.704,
+  "total_steps": 4,
+  "live_log": [
+    {
+      "t": 1791138820.211715,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138820.224714,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138821.1441293,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138821.939389,
+      "message": "\u21b3 Clicking 'Your email'",
+      "level": "note"
+    },
+    {
+      "t": 1791138822.4277995,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138823.3715138,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138823.6554825,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138824.431683,
+      "message": "\u21b3 Clicking 'Subscribe'",
+      "level": "note"
+    },
+    {
+      "t": 1791138825.724587,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

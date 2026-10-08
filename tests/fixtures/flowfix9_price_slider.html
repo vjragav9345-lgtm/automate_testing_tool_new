@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>FIX3 price slider fixture</title>
+<style>
+  #priceLabel { font-weight: bold; margin-bottom: 12px; }
+  #rootRail { position: relative; width: 300px; height: 6px; background: #ddd; margin: 40px 0; }
+  #handle { position: absolute; top: -7px; left: 90px; width: 20px; height: 20px;
+            border-radius: 50%; background: #ff3f6c; cursor: pointer; }
+</style>
+</head>
+<body>
+<!-- Minimal repro of the real Myntra price-range slider shape (a rail
+     div#rootRail + a draggable handle + a nearby text label showing the
+     current range) that the recorder used to capture as TWO separate
+     clicks (on #rootRail, then on the price label div) instead of the
+     single pointer-drag gesture it actually was - see the real recording,
+     session_20260925_103118.json steps 13/14. -->
+<div id="priceLabel">PRICE&#10;&#8377;300 - &#8377;3,800</div>
+<div id="rootRail">
+  <div id="handle"></div>
+</div>
+<script>
+var rail = document.getElementById('rootRail');
+var handle = document.getElementById('handle');
+var label = document.getElementById('priceLabel');
+var railWidth = 300, minPrice = 300, maxPrice = 5000;
+
+function priceForLeft(left) {
+  var frac = Math.max(0, Math.min(1, left / railWidth));
+  return Math.round(minPrice + frac * (maxPrice - minPrice));
+}
+
+var dragging = false;
+handle.addEventListener('mousedown', function (e) {
+  dragging = true;
+  e.preventDefault();
+});
+document.addEventListener('mousemove', function (e) {
+  if (!dragging) return;
+  var railRect = rail.getBoundingClientRect();
+  var left = e.clientX - railRect.left;
+  left = Math.max(0, Math.min(railWidth, left));
+  handle.style.left = (left - 10) + 'px';
+  var price = priceForLeft(left);
+  label.textContent = 'PRICE\n₹' + price + ' - ₹3,800';
+  var url = new URL(window.location.href);
+  url.searchParams.set('rf', 'Price:' + price + '.0_3800.0');
+  history.pushState({}, '', url.toString());
+});
+document.addEventListener('mouseup', function () { dragging = false; });
+</script>
+</body>
+</html>

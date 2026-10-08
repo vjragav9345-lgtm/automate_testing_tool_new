@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Chip Checkbox Fixture</title>
+<style>
+  body { margin: 0; font-family: sans-serif; padding: 40px; }
+  .filter-chip { position: relative; display: inline-block; padding: 8px 14px; border: 1px solid #ccc; cursor: pointer; }
+  .checkbox-panel { display: none; position: absolute; top: 100%; left: 0; background: #fafafa;
+                     border: 1px solid #ccc; padding: 8px; min-width: 160px; z-index: 10; }
+  .filter-chip:hover .checkbox-panel { display: block; }
+  .checkbox-panel label { display: block; padding: 2px 0; }
+</style>
+</head>
+<body>
+  <div class="filter-chip" id="patterns-chip-container">
+    <div id="patterns-label">Patterns</div>
+    <div class="checkbox-panel" id="patterns-checkbox-panel">
+      <label><input type="checkbox" id="printed-cb"> Printed</label>
+      <label><input type="checkbox" id="solid-cb"> Solid</label>
+    </div>
+  </div>
+  <script>
+    document.getElementById('patterns-label').addEventListener('click', function () {
+      document.title = 'PATTERNS_LABEL_CLICKED';
+    });
+  </script>
+</body>
+</html>

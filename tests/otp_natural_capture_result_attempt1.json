@@ -1,0 +1,915 @@
+{
+  "result_status": "PASS",
+  "send_otp_step_report": {
+    "index": 7,
+    "action_type": "check",
+    "name": "\"Send OTP\" checkbox (unchecked)",
+    "strategy_used": "css_path",
+    "element_found": true,
+    "success": true,
+    "error": null,
+    "warning": null,
+    "effect_verified": null,
+    "large_bbox_flag": false,
+    "screenshot": "C:\\Users\\LENOVO\\AppData\\Local\\Temp\\otp_natural_capture_ph7d6mjx\\screenshots\\register\\step07_send_otp_checkbox_unchecked_2026-09-23_16-26-52.png",
+    "url_before": "https://sportzia-preprod.kovaionplay.com/events/larsen-memorial-run-13th-edition-E1178/register",
+    "url_after": "https://sportzia-preprod.kovaionplay.com/events/larsen-memorial-run-13th-edition-E1178/register",
+    "duration": 9.484,
+    "locator_report": {
+      "strategy": "css_path",
+      "strategy_label": "CSS path",
+      "fallback_level": 13,
+      "resolved": true,
+      "weak": false,
+      "resolution_ms": 9484,
+      "message": "Send OTP found using CSS path. (resolved in 9484ms)"
+    },
+    "expected": null,
+    "actual": null
+  },
+  "pre_click": {
+    "role": {
+      "count": 0,
+      "elapsed_s": 0.0,
+      "error": null,
+      "name_used": "Send OTP"
+    },
+    "text_tag": {
+      "total_tag_matches": 342,
+      "exact_text_matches": 2,
+      "case_insensitive_matches": 2,
+      "elapsed_s": 0.015,
+      "error": null
+    },
+    "css_path": {
+      "count": 5,
+      "elapsed_s": 0.0,
+      "error": null
+    },
+    "xpath": {
+      "count": 1,
+      "elapsed_s": 0.016,
+      "error": null
+    },
+    "actual_resolution": {
+      "strategy": "css_path",
+      "elapsed_s": 0.016,
+      "bounding_box": {
+        "x": 810,
+        "y": 205,
+        "width": 36,
+        "height": 36
+      },
+      "is_visible": true,
+      "is_enabled": true,
+      "tag": "DIV",
+      "inner_text": "\uf24a"
+    },
+    "element_from_point": {
+      "x": 828.0,
+      "y": 223.0,
+      "stack": [
+        {
+          "tag": "div",
+          "cls": "css-146c3p1 r-lrvibr",
+          "testid": null,
+          "zIndex": "auto",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-pgx3k3 r-6ncur5 r-1r8g8re r-1777fci r-u8s1d r-dukzhd r-h7zev3 r-1acpoxo r-mhe3cw",
+          "testid": null,
+          "zIndex": "10",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": true
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx r-1oszu61 r-14lw9ot r-y47klf r-1hsrccj r-3lpwum r-11rk87y r-1wci7jc r-1t6ao1e r-13qz1uu",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx r-1awozwy r-1psseca r-13awgt0 r-1777fci r-zo2zu6 r-u9wvl5",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx r-13awgt0",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx r-13awgt0 r-ipm5af",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx r-1p0dtai r-1d2f490 r-1xcajam r-zchlnj r-ipm5af r-1niwhzg",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "r-1p0dtai r-1d2f490 r-1xcajam r-zchlnj r-ipm5af r-sfbmgh",
+          "testid": null,
+          "zIndex": "9999",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx r-150rngu r-eqz5dr r-16y2uox r-1wbh5a2 r-11yh6sk r-1rnoaur r-agouwx r-2eszeu",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx r-1kihuf0 r-14lw9ot r-6koalj r-13awgt0 r-eqz5dr r-ifefl9 r-13qz1uu",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx r-1awozwy r-1niwhzg r-6koalj r-13awgt0 r-eqz5dr r-zh076v r-1wtj0ep r-13qz1uu",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx r-1habvwh r-14lw9ot r-6koalj r-13awgt0 r-18u37iz r-zh076v r-1h0z5md r-13qz1uu",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx r-wot5s1 r-pillhh r-1cx02gd r-1va21c0 r-1eihkk3",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "css-g5y9jx r-13awgt0",
+          "testid": null,
+          "zIndex": "0",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "div",
+          "cls": "",
+          "testid": null,
+          "zIndex": "auto",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "body",
+          "cls": "",
+          "testid": null,
+          "zIndex": "auto",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        },
+        {
+          "tag": "html",
+          "cls": "",
+          "testid": null,
+          "zIndex": "auto",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        }
+      ]
+    }
+  },
+  "post_click_mutations": [
+    {
+      "type": "attributes",
+      "target": "DIV.css-g5y9jx.r-1i6wzkk.r-lrvibr.r-1loqt21.r-1otgn73.r-1awozwy.r-pgx3k3.r-6ncur5.r-1r8g8re.r-1777fci.r-u8s1d.r-dukzhd.r-h7zev3.r-1acpoxo.r-mhe3cw",
+      "attributeName": "style",
+      "oldValue": "transition-duration: 0s;"
+    },
+    {
+      "type": "attributes",
+      "target": "DIV.css-g5y9jx.r-1awozwy.r-1psseca.r-13awgt0.r-1777fci.r-zo2zu6.r-u9wvl5",
+      "attributeName": "style",
+      "oldValue": "opacity: 1;"
+    },
+    {
+      "type": "attributes",
+      "target": "DIV.css-g5y9jx.r-1awozwy.r-1psseca.r-13awgt0.r-1777fci.r-zo2zu6.r-u9wvl5",
+      "attributeName": "style",
+      "oldValue": "opacity: 0.99609;"
+    },
+    {
+      "type": "attributes",
+      "target": "DIV.css-g5y9jx.r-1awozwy.r-1psseca.r-13awgt0.r-1777fci.r-zo2zu6.r-u9wvl5",
+      "attributeName": "style",
+      "oldValue": "opacity: 0.951379;"
+    },
+    {
+      "type": "attributes",
+      "target": "DIV.css-g5y9jx.r-1awozwy.r-1psseca.r-13awgt0.r-1777fci.r-zo2zu6.r-u9wvl5",
+      "attributeName": "style",
+      "oldValue": "opacity: 0.87111;"
+    },
+    {
+      "type": "attributes",
+      "target": "DIV.css-g5y9jx.r-1awozwy.r-1psseca.r-13awgt0.r-1777fci.r-zo2zu6.r-u9wvl5",
+      "attributeName": "style",
+      "oldValue": "opacity: 0.758214;"
+    },
+    {
+      "type": "attributes",
+      "target": "DIV.css-g5y9jx.r-1awozwy.r-1psseca.r-13awgt0.r-1777fci.r-zo2zu6.r-u9wvl5",
+      "attributeName": "style",
+      "oldValue": "opacity: 0.646246;"
+    },
+    {
+      "type": "attributes",
+      "target": "DIV.css-g5y9jx.r-1awozwy.r-1psseca.r-13awgt0.r-1777fci.r-zo2zu6.r-u9wvl5",
+      "attributeName": "style",
+      "oldValue": "opacity: 0.5;"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2.r-z1mlqz.r-13awgt0.r-1b43r93.r-13hce6t.r-1ny4l3l.r-1udh08x.r-1udbk01.r-3s2u2q",
+      "attributeName": "style",
+      "oldValue": "--placeholderTextColor: #7F808E;"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "style",
+      "oldValue": "width: 44px; text-align: center; font-size: 15px; font-weight: 600; color: rgb(17, 17, 17);"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "style",
+      "oldValue": "width: 44px; text-align: center; font-size: 15px; font-weight: 600; color: rgb(17, 17, 17);"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "style",
+      "oldValue": "width: 44px; text-align: center; font-size: 15px; font-weight: 600; color: rgb(17, 17, 17);"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "style",
+      "oldValue": "width: 44px; text-align: center; font-size: 15px; font-weight: 600; color: rgb(17, 17, 17);"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "style",
+      "oldValue": "width: 44px; text-align: center; font-size: 15px; font-weight: 600; color: rgb(17, 17, 17);"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2.r-1ins33t.r-1w15a45.r-1q9bdsx.r-1rf8fdq.r-18zdu8c.r-ubezar.r-1iud8zs.r-bcqeeo.r-3pj75a.r-fdjqy7.r-13qz1uu.r-18phcnl",
+      "attributeName": "style",
+      "oldValue": "--placeholderTextColor: #9CA3AF;"
+    },
+    {
+      "type": "attributes",
+      "target": "DIV.css-g5y9jx.r-1awozwy.r-1psseca.r-13awgt0.r-1777fci.r-zo2zu6.r-u9wvl5",
+      "attributeName": "style",
+      "oldValue": "opacity: 0.345817;"
+    },
+    {
+      "type": "attributes",
+      "target": "DIV.css-g5y9jx.r-1awozwy.r-1psseca.r-13awgt0.r-1777fci.r-zo2zu6.r-u9wvl5",
+      "attributeName": "style",
+      "oldValue": "opacity: 0.234871;"
+    },
+    {
+      "type": "attributes",
+      "target": "DIV.css-g5y9jx.r-1awozwy.r-1psseca.r-13awgt0.r-1777fci.r-zo2zu6.r-u9wvl5",
+      "attributeName": "style",
+      "oldValue": "opacity: 0.12889;"
+    },
+    {
+      "type": "attributes",
+      "target": "DIV.css-g5y9jx.r-1awozwy.r-1psseca.r-13awgt0.r-1777fci.r-zo2zu6.r-u9wvl5",
+      "attributeName": "style",
+      "oldValue": "opacity: 0.0486213;"
+    },
+    {
+      "type": "childList",
+      "target": "DIV.css-g5y9jx",
+      "attributeName": null,
+      "oldValue": null
+    },
+    {
+      "type": "childList",
+      "target": "DIV.css-g5y9jx",
+      "attributeName": null,
+      "oldValue": null
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "name",
+      "oldValue": null
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "name",
+      "oldValue": null
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "name",
+      "oldValue": null
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "name",
+      "oldValue": null
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "name",
+      "oldValue": null
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "name",
+      "oldValue": null
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "name",
+      "oldValue": null
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "name",
+      "oldValue": null
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "name",
+      "oldValue": null
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "name",
+      "oldValue": null
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2.r-1ins33t.r-1w15a45.r-1q9bdsx.r-1rf8fdq.r-18zdu8c.r-ubezar.r-1iud8zs.r-bcqeeo.r-3pj75a.r-fdjqy7.r-13qz1uu.r-18phcnl",
+      "attributeName": "name",
+      "oldValue": null
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2.r-1ins33t.r-1w15a45.r-1q9bdsx.r-1rf8fdq.r-18zdu8c.r-ubezar.r-1iud8zs.r-bcqeeo.r-3pj75a.r-fdjqy7.r-13qz1uu.r-18phcnl",
+      "attributeName": "type",
+      "oldValue": "text"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2.r-1ins33t.r-1w15a45.r-1q9bdsx.r-1rf8fdq.r-18zdu8c.r-ubezar.r-1iud8zs.r-bcqeeo.r-3pj75a.r-fdjqy7.r-13qz1uu.r-18phcnl",
+      "attributeName": "name",
+      "oldValue": null
+    },
+    {
+      "type": "attributes",
+      "target": "DIV.css-g5y9jx.r-1awozwy.r-1psseca.r-13awgt0.r-1777fci.r-zo2zu6.r-u9wvl5",
+      "attributeName": "style",
+      "oldValue": "opacity: 0.00526304;"
+    },
+    {
+      "type": "attributes",
+      "target": "DIV.r-orgf3d",
+      "attributeName": "class",
+      "oldValue": "r-1p0dtai r-1d2f490 r-1xcajam r-zchlnj r-ipm5af r-sfbmgh"
+    },
+    {
+      "type": "childList",
+      "target": "DIV",
+      "attributeName": null,
+      "oldValue": null
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2.r-z1mlqz.r-13awgt0.r-1b43r93.r-13hce6t.r-1ny4l3l.r-1udh08x.r-1udbk01.r-3s2u2q",
+      "attributeName": "style",
+      "oldValue": "--placeholderTextColor: #7F808E; caret-color: transparent !important;"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "style",
+      "oldValue": "width: 44px; text-align: center; font-size: 15px; font-weight: 600; color: rgb(17, 17, 17); caret-color: transparent !important;"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "style",
+      "oldValue": "width: 44px; text-align: center; font-size: 15px; font-weight: 600; color: rgb(17, 17, 17); caret-color: transparent !important;"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "style",
+      "oldValue": "width: 44px; text-align: center; font-size: 15px; font-weight: 600; color: rgb(17, 17, 17); caret-color: transparent !important;"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "style",
+      "oldValue": "width: 44px; text-align: center; font-size: 15px; font-weight: 600; color: rgb(17, 17, 17); caret-color: transparent !important;"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "style",
+      "oldValue": "width: 44px; text-align: center; font-size: 15px; font-weight: 600; color: rgb(17, 17, 17); caret-color: transparent !important;"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2.r-z1mlqz.r-13awgt0.r-1b43r93.r-13hce6t.r-1ny4l3l.r-1udh08x.r-1udbk01.r-3s2u2q",
+      "attributeName": "style",
+      "oldValue": "--placeholderTextColor: #7F808E;"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "style",
+      "oldValue": "width: 44px; text-align: center; font-size: 15px; font-weight: 600; color: rgb(17, 17, 17);"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "style",
+      "oldValue": "width: 44px; text-align: center; font-size: 15px; font-weight: 600; color: rgb(17, 17, 17);"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "style",
+      "oldValue": "width: 44px; text-align: center; font-size: 15px; font-weight: 600; color: rgb(17, 17, 17);"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "style",
+      "oldValue": "width: 44px; text-align: center; font-size: 15px; font-weight: 600; color: rgb(17, 17, 17);"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "style",
+      "oldValue": "width: 44px; text-align: center; font-size: 15px; font-weight: 600; color: rgb(17, 17, 17);"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2.r-z1mlqz.r-13awgt0.r-1b43r93.r-13hce6t.r-1ny4l3l.r-1udh08x.r-1udbk01.r-3s2u2q",
+      "attributeName": "style",
+      "oldValue": "--placeholderTextColor: #7F808E; caret-color: transparent !important;"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "style",
+      "oldValue": "width: 44px; text-align: center; font-size: 15px; font-weight: 600; color: rgb(17, 17, 17); caret-color: transparent !important;"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "style",
+      "oldValue": "width: 44px; text-align: center; font-size: 15px; font-weight: 600; color: rgb(17, 17, 17); caret-color: transparent !important;"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "style",
+      "oldValue": "width: 44px; text-align: center; font-size: 15px; font-weight: 600; color: rgb(17, 17, 17); caret-color: transparent !important;"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "style",
+      "oldValue": "width: 44px; text-align: center; font-size: 15px; font-weight: 600; color: rgb(17, 17, 17); caret-color: transparent !important;"
+    },
+    {
+      "type": "attributes",
+      "target": "INPUT.css-11aywtz.r-6taxm2",
+      "attributeName": "style",
+      "oldValue": "width: 44px; text-align: center; font-size: 15px; font-weight: 600; color: rgb(17, 17, 17); caret-color: transparent !important;"
+    }
+  ],
+  "post_body_text": "Home\nEvents\nPricing\nNotification\nSign in\n\uf127\nBack\nLARSEN MEMORIAL RUN 13th EDITION\n\uf3c6\nChennai\n\uf1cf\nNovember 22, 2026\n 21.1K Timed Run\n18 to 99 yrs\n\u20b9 500\n\uf1fe\n\uf21a\n\udb80\ude9d\nMale\n\udb80\ude9c\nFemale\n\udb80\ude9f\nOthers\n\uf398\nCut-off Time: 3 Hours\n Kids Fun Run\n2 to 8 yrs\n\u20b9 400\n\uf1fe\n\uf21a\n\udb80\ude9d\nMale\n\udb80\ude9c\nFemale\n\udb80\ude9f\nOthers\n\uf398\nNon-Timed Fun Run\n 5K Timed Run\n12 to 99 yrs\n\u20b9 500\n\uf1fe\n\uf21a\n\udb80\ude9d\nMale\n\udb80\ude9c\nFemale\n\udb80\ude9f\nOthers\n 10K Timed Run\n16 to 99 yrs\n\u20b9 500\n\uf1fe\n\uf21a\n\udb80\ude9d\nMale\n\udb80\ude9c\nFemale\n\udb80\ude9f\nOthers\n 5K Fun Run\n08 to 99 yrs\n\u20b9 400\n\uf1fe\n\uf21a\n\udb80\ude9d\nMale\n\udb80\ude9c\nFemale\n\udb80\ude9f\nOthers\n\uf398\nNon-Timed Run\nYour cart\nLARSEN MEMORIAL RUN 13th EDITION\n 10K Timed Run\n\uf26b\nTotal Participants\nx1\n\u20b9 500.00\nSubtotal\n\u20b9 500.00\nTotal\n\u20b9 500.00\nContinue\nWe use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.\nAccept",
+  "post_screenshot": "D:\\new_test\\tests\\otp_natural_capture_final.png",
+  "trace_path": "D:\\new_test\\tests\\otp_natural_capture_trace.zip",
+  "net_log_full": [
+    {
+      "event": "request",
+      "t": 514908.328,
+      "method": "POST",
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-NY6N5584V8&gtm=45je69l1v9217958158z89217951855za20gzb9217951855zd9217951855xf1&_p=1790160969233&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=1500462951.1790160971&frm=0&ngs=1&pscdl=noapi&rcb=14&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B129.0.6668.29%7CNot%253DA%253FBrand%3B8.0.0.0&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&_s=1&tag_exp=115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153&sid=1790160970&sct=1&seg=0&dl=https%3A%2F%2Fsportzia-preprod.kovaionplay.com%2Fevents%2Flarsen-memorial-run-13th-edition-E1178%2Fregister&dt=&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=1912"
+    },
+    {
+      "event": "response",
+      "t": 514908.625,
+      "status": 204,
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-NY6N5584V8&gtm=45je69l1v9217958158z89217951855za20gzb9217951855zd9217951855xf1&_p=1790160969233&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=1500462951.1790160971&frm=0&ngs=1&pscdl=noapi&rcb=14&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B129.0.6668.29%7CNot%253DA%253FBrand%3B8.0.0.0&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&_s=1&tag_exp=115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153&sid=1790160970&sct=1&seg=0&dl=https%3A%2F%2Fsportzia-preprod.kovaionplay.com%2Fevents%2Flarsen-memorial-run-13th-edition-E1178%2Fregister&dt=&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=1912"
+    },
+    {
+      "event": "request",
+      "t": 514908.812,
+      "method": "POST",
+      "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+    },
+    {
+      "event": "request",
+      "t": 514908.828,
+      "method": "POST",
+      "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+    },
+    {
+      "event": "request",
+      "t": 514908.828,
+      "method": "POST",
+      "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+    },
+    {
+      "event": "request",
+      "t": 514908.828,
+      "method": "POST",
+      "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+    },
+    {
+      "event": "request",
+      "t": 514908.828,
+      "method": "HEAD",
+      "url": "https://sportzia-preprod.kovaionplay.com/"
+    },
+    {
+      "event": "request",
+      "t": 514908.828,
+      "method": "HEAD",
+      "url": "https://sportzia-preprod.kovaionplay.com/"
+    },
+    {
+      "event": "response",
+      "t": 514908.843,
+      "status": 204,
+      "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+    },
+    {
+      "event": "request",
+      "t": 514908.937,
+      "method": "POST",
+      "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+    },
+    {
+      "event": "request",
+      "t": 514908.937,
+      "method": "POST",
+      "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+    },
+    {
+      "event": "response",
+      "t": 514908.953,
+      "status": 200,
+      "url": "https://sportzia-preprod.kovaionplay.com/"
+    },
+    {
+      "event": "response",
+      "t": 514908.984,
+      "status": 204,
+      "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+    },
+    {
+      "event": "request",
+      "t": 514909.0,
+      "method": "POST",
+      "url": "https://r.clarity.ms/collect"
+    },
+    {
+      "event": "request",
+      "t": 514909.078,
+      "method": "POST",
+      "url": "https://od-18c216b54e2045bdbb2d2f70bc4834b0.ecs.us-east-2.on.aws/events?cee=no"
+    },
+    {
+      "event": "request",
+      "t": 514909.156,
+      "method": "POST",
+      "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+    },
+    {
+      "event": "response",
+      "t": 514909.171,
+      "status": 204,
+      "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+    },
+    {
+      "event": "response",
+      "t": 514909.187,
+      "status": 200,
+      "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+    },
+    {
+      "event": "response",
+      "t": 514909.203,
+      "status": 200,
+      "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+    },
+    {
+      "event": "request",
+      "t": 514909.203,
+      "method": "POST",
+      "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+    },
+    {
+      "event": "response",
+      "t": 514909.312,
+      "status": 200,
+      "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+    },
+    {
+      "event": "response",
+      "t": 514909.437,
+      "status": 200,
+      "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+    },
+    {
+      "event": "response",
+      "t": 514909.546,
+      "status": 200,
+      "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+    },
+    {
+      "event": "response",
+      "t": 514909.796,
+      "status": 200,
+      "url": "https://od-18c216b54e2045bdbb2d2f70bc4834b0.ecs.us-east-2.on.aws/events?cee=no"
+    },
+    {
+      "event": "request",
+      "t": 514909.984,
+      "method": "POST",
+      "url": "https://r.clarity.ms/collect"
+    },
+    {
+      "event": "response",
+      "t": 514910.062,
+      "status": 204,
+      "url": "https://r.clarity.ms/collect"
+    },
+    {
+      "event": "response",
+      "t": 514910.328,
+      "status": 204,
+      "url": "https://r.clarity.ms/collect"
+    },
+    {
+      "event": "request",
+      "t": 514912.89,
+      "method": "POST",
+      "url": "https://r.clarity.ms/collect"
+    },
+    {
+      "event": "response",
+      "t": 514913.156,
+      "status": 204,
+      "url": "https://r.clarity.ms/collect"
+    },
+    {
+      "event": "request",
+      "t": 514913.25,
+      "method": "POST",
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-NY6N5584V8&gtm=45je69l1v9217958158za20gzb9217951855zd9217951855xf1&_p=1790160969233&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&are=1&cid=1500462951.1790160971&frm=0&ngs=1&pscdl=noapi&rcb=14&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B129.0.6668.29%7CNot%253DA%253FBrand%3B8.0.0.0&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&_s=2&tag_exp=115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153&sid=1790160970&sct=1&seg=0&dl=https%3A%2F%2Fsportzia-preprod.kovaionplay.com%2Fevents%2Flarsen-memorial-run-13th-edition-E1178%2Fregister&dt=&en=scroll&epn.percent_scrolled=90&_et=21&tfd=6943"
+    },
+    {
+      "event": "response",
+      "t": 514913.359,
+      "status": 204,
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-NY6N5584V8&gtm=45je69l1v9217958158za20gzb9217951855zd9217951855xf1&_p=1790160969233&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&are=1&cid=1500462951.1790160971&frm=0&ngs=1&pscdl=noapi&rcb=14&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B129.0.6668.29%7CNot%253DA%253FBrand%3B8.0.0.0&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&_s=2&tag_exp=115938465~115938469~118897920~118897930~120213116~120385423~120469145~120469153&sid=1790160970&sct=1&seg=0&dl=https%3A%2F%2Fsportzia-preprod.kovaionplay.com%2Fevents%2Flarsen-memorial-run-13th-edition-E1178%2Fregister&dt=&en=scroll&epn.percent_scrolled=90&_et=21&tfd=6943"
+    },
+    {
+      "event": "request",
+      "t": 514916.5,
+      "method": "POST",
+      "url": "https://analytics.kovaion.ai/matomo.php"
+    },
+    {
+      "event": "response",
+      "t": 514916.718,
+      "status": 204,
+      "url": "https://analytics.kovaion.ai/matomo.php"
+    },
+    {
+      "event": "request",
+      "t": 514919.484,
+      "method": "POST",
+      "url": "https://r.clarity.ms/collect"
+    },
+    {
+      "event": "response",
+      "t": 514919.75,
+      "status": 204,
+      "url": "https://r.clarity.ms/collect"
+    },
+    {
+      "event": "request",
+      "t": 514933.859,
+      "method": "POST",
+      "url": "https://r.clarity.ms/collect"
+    },
+    {
+      "event": "response",
+      "t": 514934.64,
+      "status": 204,
+      "url": "https://r.clarity.ms/collect"
+    },
+    {
+      "event": "request",
+      "t": 514945.078,
+      "method": "POST",
+      "url": "https://r.clarity.ms/collect"
+    },
+    {
+      "event": "response",
+      "t": 514945.343,
+      "status": 204,
+      "url": "https://r.clarity.ms/collect"
+    },
+    {
+      "event": "request",
+      "t": 514956.156,
+      "method": "POST",
+      "url": "https://r.clarity.ms/collect"
+    },
+    {
+      "event": "response",
+      "t": 514956.421,
+      "status": 204,
+      "url": "https://r.clarity.ms/collect"
+    }
+  ],
+  "net_log_around_send_otp": [
+    {
+      "event": "request",
+      "t": 514945.078,
+      "method": "POST",
+      "url": "https://r.clarity.ms/collect"
+    },
+    {
+      "event": "response",
+      "t": 514945.343,
+      "status": 204,
+      "url": "https://r.clarity.ms/collect"
+    }
+  ]
+}

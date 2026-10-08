@@ -1,0 +1,36 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Environment / secrets
+.env
+.env.*
+
+# Backups
+*.bak
+*.bak_*
+backups/
+
+# Logs
+*.log
+
+# Generated files
+generated_scripts/
+screenshots/
+out_shots/
+storage/
+test*_result.json
+video_run_*.json
+out.json
+
+# Claude/local files
+.claude/
+
+# Temporary staging
+.github_push_stage/
+
+# OS files
+.DS_Store
+Thumbs.db

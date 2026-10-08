@@ -1,0 +1,11 @@
+<!doctype html><html><head><title>click menu</title><style>
+body{margin:0;font:14px sans-serif} #bar{background:#ddd;padding:10px;position:relative;height:30px}
+#menu{display:none;position:absolute;top:40px;left:10px;width:200px;background:#eef;padding:8px}
+#menu.open{display:block} #menu a{display:block;padding:5px 0}
+</style></head><body><div id="bar">
+<a href="#" id="lang" aria-haspopup="true" aria-expanded="false">Language</a>
+<div id="menu"><a href="hov_menu_target.html?l=es" id="es">Espanol</a><a href="hov_footer.html" id="pt">Portugues</a></div></div>
+<script>
+var l=document.getElementById('lang'),m=document.getElementById('menu');
+l.addEventListener('click',function(e){e.preventDefault();var o=m.classList.toggle('open');l.setAttribute('aria-expanded',o?'true':'false');});
+</script></body></html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>checkbox re-render fixture</title></head>
+<body>
+  <!-- starts as a PLAIN div (structurally not-a-checkbox), then gets a real
+       checkbox nested inside it a moment later (simulating a filter list
+       re-render) - a SINGLE not_a_checkbox reading must not stop the poll -->
+  <div id="target"></div>
+  <script>
+    setTimeout(function () {
+      document.getElementById('target').innerHTML =
+        '<label><input type="checkbox" checked><div class="tick"></div> Filter</label>';
+    }, 350);
+  </script>
+</body></html>

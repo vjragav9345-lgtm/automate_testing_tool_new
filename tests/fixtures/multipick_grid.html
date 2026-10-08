@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { margin: 0; font-family: sans-serif; }
+  #searchBox { display: block; width: 220px; height: 30px; margin: 20px; }
+  #grid { padding: 20px; overflow: hidden; }
+  .product-base { box-sizing: border-box; display: block; float: left; width: 180px; height: 140px;
+                   margin: 8px; border: 1px solid #ccc; padding: 6px; }
+  .product-base .thumb { display: block; width: 100%; height: 80px; background: #eee; }
+  .row-break { clear: both; }
+  .tail-spacer { height: 900px; }
+</style>
+</head>
+<body>
+  <input id="searchBox" type="text" placeholder="search nike shoes">
+  <div id="grid">
+    <!-- 40 repeating product cards, each with a dynamic/generated id and
+         a per-render numeric class alongside the stable "product-base"
+         class, mirroring a real listing page's typical markup -->
+  </div>
+  <div class="row-break"></div>
+  <div class="tail-spacer"></div>
+  <script>
+    var grid = document.getElementById('grid');
+    for (var i = 1; i <= 40; i++) {
+      var card = document.createElement('div');
+      card.className = 'product-base card-render-' + (100000 + i);
+      card.setAttribute('data-product-id', String(9000 + i));
+      card.id = 'auto-generated-id-' + (500000 + i);
+      var thumb = document.createElement('div');
+      thumb.className = 'thumb';
+      card.appendChild(thumb);
+      var label = document.createElement('div');
+      label.textContent = 'Nike Shoe ' + i;
+      card.appendChild(label);
+      grid.appendChild(card);
+    }
+  </script>
+</body>
+</html>

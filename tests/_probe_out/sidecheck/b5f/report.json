@@ -1,0 +1,190 @@
+{
+  "status": "FAIL",
+  "message": "replay stopped early - 1 action(s) never executed",
+  "qa_url": "http://127.0.0.1:61940/sc_b_ids.html?m=login",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Sc B Ids page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:61940/sc_b_ids.html?m=login",
+      "url_after": "http://127.0.0.1:61940/sc_b_ids.html?m=login",
+      "started_at": "2026-10-05T00:10:41.289",
+      "ended_at": "2026-10-05T00:10:41.654",
+      "duration": 0.375,
+      "timing_ms": {
+        "settle": 15,
+        "navigation_wait": 0,
+        "screenshot": 359,
+        "other": 1
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Open A\" button",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": {
+        "expected_url": "http://127.0.0.1:61940/doc/a7k2m9x4q1",
+        "actual_url": "http://127.0.0.1:61940/login",
+        "expected_title": null,
+        "actual_title": "doc a",
+        "locator_strategy_used": "id",
+        "matched_element": {
+          "tag": "button",
+          "text": "Open A",
+          "href": null
+        },
+        "reason": "expected to reach 'http://127.0.0.1:61940/doc/a7k2m9x4q1', but landed on 'http://127.0.0.1:61940/login' instead",
+        "settled": false,
+        "screenshot": "E:\\01-10-2026_1030_AM\\tests\\_probe_out\\sidecheck\\b5f\\shots\\login\\step02_page_mismatch_1791139258.png",
+        "on_page_mismatch": "fail_continue",
+        "recovery": null
+      },
+      "strategy_used": "id",
+      "element_found": true,
+      "success": false,
+      "error": "PAGE_MISMATCH: expected to reach 'http://127.0.0.1:61940/doc/a7k2m9x4q1', but landed on 'http://127.0.0.1:61940/login' instead",
+      "warning": "PAGE MISMATCH: expected to reach 'http://127.0.0.1:61940/doc/a7k2m9x4q1', but landed on 'http://127.0.0.1:61940/login' instead",
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": false,
+      "large_bbox_flag": false,
+      "screenshot": "E:\\01-10-2026_1030_AM\\tests\\_probe_out\\sidecheck\\b5f\\shots\\login\\step02_open_a_FAILED_00-10-59.png",
+      "url_before": "http://127.0.0.1:61940/sc_b_ids.html?m=login",
+      "url_after": "http://127.0.0.1:61940/login",
+      "started_at": "2026-10-05T00:10:41.655",
+      "ended_at": "2026-10-05T00:10:59.328",
+      "duration": 17.671,
+      "timing_ms": {
+        "locate_action": 937,
+        "log_emit": 0,
+        "navigation_wait": 5125,
+        "settle": 6014,
+        "screenshot": 218,
+        "other": 5376
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 17671,
+        "message": "Open A found using Element ID. (resolved in 17671ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 3,
+      "action_type": "navigate",
+      "name": "A7k2m9x4q1 page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": {
+        "expected_url": "http://127.0.0.1:61940/doc/a7k2m9x4q1",
+        "actual_url": "http://127.0.0.1:61940/login",
+        "expected_title": null,
+        "actual_title": "doc a",
+        "locator_strategy_used": "id",
+        "matched_element": {
+          "tag": "button",
+          "text": "Open A",
+          "href": null
+        },
+        "reason": "expected to reach 'http://127.0.0.1:61940/doc/a7k2m9x4q1', but landed on 'http://127.0.0.1:61940/login' instead",
+        "settled": false,
+        "screenshot": "E:\\01-10-2026_1030_AM\\tests\\_probe_out\\sidecheck\\b5f\\shots\\login\\step02_page_mismatch_1791139258.png",
+        "on_page_mismatch": "fail_continue",
+        "recovery": null
+      },
+      "strategy_used": null,
+      "element_found": false,
+      "success": false,
+      "error": "NOT RUN (stopped after step 2 failed): PAGE_MISMATCH: expected to reach 'http://127.0.0.1:61940/doc/a7k2m9x4q1', but landed on 'http://127.0.0.1:61940/login' instead",
+      "warning": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": null,
+      "url_after": null,
+      "duration": 0,
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "candidate_diagnostics": null,
+      "not_run": true,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:61940/login",
+  "final_screenshot": "E:\\01-10-2026_1030_AM\\tests\\_probe_out\\sidecheck\\b5f\\shots\\sc_b_ids_html\\img2.png",
+  "final_text": "at /login\nOpen A Open B",
+  "product_validation": null,
+  "total_duration_s": 19.188,
+  "total_steps": 3,
+  "live_log": [
+    {
+      "t": 1791139241.2902207,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139241.3033366,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139242.1423519,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139242.927184,
+      "message": "\u21b3 Clicking 'Open A'",
+      "level": "note"
+    },
+    {
+      "t": 1791139243.0492048,
+      "message": "\u21b3 Waiting for the page address to change as recorded (up to 5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139259.1799943,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 3s)",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

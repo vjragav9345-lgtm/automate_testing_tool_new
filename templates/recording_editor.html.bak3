@@ -1,0 +1,2588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>JSON Recording Editor - AutoFlow QA</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}?v=25"
+    />
+
+</head>
+
+
+<body>
+
+<header class="app-header">
+
+    <h1>
+        JSON Recording Editor
+    </h1>
+
+    <p class="tagline">
+        View and edit recorded browser actions
+    </p>
+
+</header>
+
+
+<main class="editor-container">
+
+    <!-- RECORDING INFORMATION -->
+    <section class="editor-header">
+
+        <div>
+
+            <h2>
+                Recording Details
+            </h2>
+
+            <p class="editor-path">
+
+                Selected Recording:
+
+                <strong id="selectedRecordingPath">
+                    {{ recording_path }}
+                </strong>
+
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="secondary-btn"
+            onclick="window.location.href='/'"
+        >
+            Close
+        </button>
+
+    </section>
+
+
+    <!-- LOADING -->
+    <section
+        id="editorLoading"
+        class="editor-message"
+    >
+        Loading recording...
+    </section>
+
+
+    <!-- ERROR -->
+    <section
+        id="editorError"
+        class="editor-error"
+        hidden
+    ></section>
+
+
+    <!-- RECORDING DETAILS -->
+    <section
+        id="recordingInfo"
+        class="recording-info"
+        hidden
+    >
+
+        <div class="info-card">
+
+            <span class="info-label">
+                Name
+            </span>
+
+            <span
+                id="recordingName"
+                class="info-value"
+            >
+                -
+            </span>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span class="info-label">
+                Total Actions
+            </span>
+
+            <span
+                id="recordingActionCount"
+                class="info-value"
+            >
+                0
+            </span>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span class="info-label">
+                Start URL
+            </span>
+
+            <span
+                id="recordingStartUrl"
+                class="info-value"
+            >
+                -
+            </span>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span class="info-label">
+                Recorded At
+            </span>
+
+            <span
+                id="recordingRecordedAt"
+                class="info-value"
+            >
+                -
+            </span>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span class="info-label">
+                Saved At
+            </span>
+
+            <span
+                id="recordingSavedAt"
+                class="info-value"
+            >
+                -
+            </span>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span class="info-label">
+                Stop Reason
+            </span>
+
+            <span
+                id="recordingStopReason"
+                class="info-value"
+            >
+                -
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACTIONS: latest edited (left) + original for comparison (right,
+         only present when this recording IS an edited version of one) -->
+    <div class="editor-columns">
+
+        <section
+            id="actionsContainer"
+            class="actions-editor editor-column"
+            hidden
+        >
+
+            <h2>
+                Recorded Actions
+            </h2>
+
+            <div id="actionsList"></div>
+
+            <button
+                type="button"
+                id="addActionBtn"
+                class="secondary-btn"
+            >
+                Add Action
+            </button>
+
+            <button
+                type="button"
+                id="undoDeleteBtn"
+                class="secondary-btn"
+                title="No deleted action to restore"
+                disabled
+            >
+                Undo Delete
+            </button>
+
+
+            <div
+                id="saveStatus"
+                class="editor-message"
+                hidden
+            ></div>
+
+            <button
+                type="button"
+                id="saveEditedBtn"
+                class="action-btn"
+            >
+                Save Edited JSON
+            </button>
+
+        </section>
+
+
+        <!-- ADD ACTION DIALOG - guided, per-type field entry + live
+             locator validation against the real page. Save here only
+             updates the in-memory recordingData.actions array; the
+             page-level "Save Edited JSON" button above (unchanged) is
+             still the only thing that persists to disk. -->
+        <div
+            id="addActionModal"
+            class="modal-overlay"
+            hidden
+        >
+            <div class="modal-dialog">
+
+                <h3 id="modalTitle">Add Action</h3>
+
+                <label>Action Type</label>
+                <select id="modalActionType" class="editor-input"></select>
+
+                <p id="modalActionDescription" class="modal-helper-text"></p>
+
+                <div id="modalFields"></div>
+
+                <div id="modalTestNavigateSection" hidden>
+                    <button type="button" id="modalTestNavigateBtn" class="secondary-btn">
+                        Test Navigate
+                    </button>
+                    <div id="modalTestNavigateResult" class="editor-message" hidden></div>
+                </div>
+
+                <div id="modalLocatorSection" hidden>
+
+                    <label>XPath</label>
+                    <input id="modalXpath" type="text" class="editor-input" placeholder="e.g. //button[text()='Submit']">
+
+                    <button type="button" id="modalValidateBtn" class="secondary-btn">
+                        Validate
+                    </button>
+
+                    <button type="button" id="modalPickElementBtn" class="secondary-btn" title="Click an element in a live browser window to fill this field automatically">
+                        🎯 Pick Element
+                    </button>
+
+                    <div id="modalValidateResult" class="editor-message" hidden></div>
+
+                    <div id="modalXpathCandidates" hidden></div>
+
+                    <div id="modalOrphanWarning" class="modal-orphan-warning" hidden>
+                        <span id="modalOrphanWarningText"></span>
+                        <button type="button" id="modalOrphanWarningDismiss" class="modal-orphan-dismiss" aria-label="Dismiss warning">&times;</button>
+                    </div>
+
+                </div>
+
+                <div class="modal-buttons">
+
+                    <button type="button" id="modalCancelBtn" class="secondary-btn">
+                        Cancel
+                    </button>
+
+                    <button type="button" id="modalSaveBtn" class="action-btn">
+                        Save
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</main>
+
+
+<script>
+
+const recordingPath = {{ recording_path | tojson }};
+
+let recordingData = null;
+
+// ITEM 8: undo stack for deleted actions - {index, action} pushed on
+// every delete (most recent last), popped/restored in reverse (LIFO)
+// order on Undo. Deliberately module-level (not per-row) since "undo"
+// restores whatever was MOST recently deleted regardless of which row's
+// delete button removed it - a single button covers every row. Scope:
+// undo restores deletions made in THIS editing session, back through
+// however many were made in a row (not just the last one) - it does not
+// persist across a page reload, matching how the rest of this editor's
+// unsaved edits already work (recordingData itself is in-memory only
+// until Save Changes is clicked).
+let deletedActionsStack = [];
+
+// per-step locator health from the most recent Replay of this recording,
+// keyed by step index (1-based, matching report.json's own step.index -
+// see script_generator.py's `for i, step in enumerate(STEPS, start=1)`,
+// so action array position N maps to key N+1). Populated best-effort by
+// loadLastReplayHealth() below; stays an empty Map (every badge simply
+// omitted) if this recording has never been replayed yet, or the lookup
+// fails for any reason - this is purely an enhancement over the base
+// editor view, never something its core load path depends on.
+let lastReplayStepsByIndex = new Map();
+
+// recorded page content (element text, attribute values, xpaths, ...)
+// can contain arbitrary characters - anything built as an innerHTML
+// string from it (see the locator-health detail block below) is escaped
+// through this first, rather than trusting it's safe to interpolate raw
+function _escapeHtml(value) {
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
+
+// guards against ever rendering the editor/action list more than once on
+// this page - loadRecording() is only ever called a single time below,
+// but this makes that a hard guarantee rather than an assumption
+let _recordingLoadStarted = false;
+
+
+async function loadRecording() {
+
+    if (_recordingLoadStarted) {
+        return;
+    }
+
+    _recordingLoadStarted = true;
+
+    const loading =
+        document.getElementById("editorLoading");
+
+    const error =
+        document.getElementById("editorError");
+
+    const info =
+        document.getElementById("recordingInfo");
+
+    const actionsContainer =
+        document.getElementById("actionsContainer");
+
+    try {
+
+        loading.hidden = false;
+        error.hidden = true;
+        info.hidden = true;
+        actionsContainer.hidden = true;
+
+
+        const url =
+            "/api/recordings/view?path=" +
+            encodeURIComponent(recordingPath);
+
+
+        const response =
+            await fetch(url, {
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+
+        /*
+         * IMPORTANT:
+         * Do not directly call response.json().
+         * First check whether Flask actually returned JSON.
+         * This prevents the:
+         *
+         * Unexpected token '<'
+         *
+         * error.
+         */
+
+        const contentType =
+            response.headers.get("content-type") || "";
+
+
+        if (!contentType.includes("application/json")) {
+
+            const text =
+                await response.text();
+
+            throw new Error(
+                "Server returned HTML instead of JSON."
+            );
+        }
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok || !data.success) {
+
+            throw new Error(
+                data.message ||
+                "Failed to load recording."
+            );
+        }
+
+
+        recordingData =
+            data.recording;
+
+
+        renderRecording();
+
+
+        loading.hidden = true;
+        info.hidden = false;
+        actionsContainer.hidden = false;
+
+        // fire-and-forget - never blocks or fails the main editor load;
+        // re-renders the (already-visible) action list once it resolves
+        // so badges simply appear a moment later rather than holding up
+        // the page
+        loadLastReplayHealth();
+
+    }
+
+    catch (err) {
+
+        console.error(
+            "Recording load failed:",
+            err
+        );
+
+        loading.hidden = true;
+
+        error.textContent =
+            "Failed to load recording: " +
+            err.message;
+
+        error.hidden = false;
+    }
+}
+
+
+/* =========================================================
+   LOCATOR HEALTH - reuses the last Replay's per-step locator_report
+   (see _describe_locator_resolution in generator/script_generator.py,
+   and the read-only /api/recordings/last_result route already used by
+   the Dashboard's own "View Last Log" button) to show each step's
+   locator health right in the editor, instead of a second locator-
+   analysis pass over the recording. No new storage, no new replay -
+   this is exactly the data a Replay already produced, just surfaced
+   here too.
+========================================================= */
+
+async function loadLastReplayHealth() {
+
+    try {
+
+        const url =
+            "/api/recordings/last_result?path=" +
+            encodeURIComponent(recordingPath);
+
+        const response = await fetch(url, {
+            headers: { "Accept": "application/json" }
+        });
+
+        const contentType = response.headers.get("content-type") || "";
+        if (!contentType.includes("application/json")) {
+            return;
+        }
+
+        const data = await response.json();
+
+        if (!response.ok || !data.success || !data.found || !Array.isArray(data.steps)) {
+            return;
+        }
+
+        lastReplayStepsByIndex = new Map(
+            data.steps.map(step => [step.index, step])
+        );
+
+        renderActions();
+
+    } catch (err) {
+        // best-effort only - the editor's core view already rendered
+        // fine without this; a failed health lookup just means no
+        // badges show up, never an error the user has to deal with
+        console.error("locator health lookup failed:", err);
+    }
+}
+
+// four-tier health classification over a step's locator_report (see
+// _LOCATOR_STRATEGY_INFO in script_generator.py for the full strategy
+// list this reads from) - deliberately the ONLY place that maps a
+// strategy/resolved/weak combination to a color tier, so the badge and
+// the expanded detail panel below can never disagree with each other
+const LOCATOR_HEALTH_TIERS = {
+    unresolved: { icon: "🔴", label: "Locator unresolved" },
+    weak: { icon: "🟠", label: "Weak locator" },
+    fallback: { icon: "🟡", label: "Fallback locator used" },
+    stable: { icon: "🟢", label: "Stable locator" },
+};
+
+function classifyLocatorHealth(locatorReport) {
+
+    if (!locatorReport) {
+        return null;
+    }
+
+    if (!locatorReport.resolved) {
+        return "unresolved";
+    }
+
+    if (locatorReport.weak) {
+        return "weak";
+    }
+
+    // text/content match (text+tag) and pure structural DOM-path matches
+    // (css_path, xpath) are all "a real attribute-based signal wasn't
+    // available" tiers - still deterministic single-element matches,
+    // just not as durable across markup changes as an id/aria-label/
+    // role - so all three read as "fallback used", not "stable"
+    if (["text+tag", "css_path", "xpath"].includes(locatorReport.strategy)) {
+        return "fallback";
+    }
+
+    return "stable";
+}
+
+
+function renderRecording() {
+
+    if (!recordingData) {
+        return;
+    }
+
+
+    document.getElementById(
+        "recordingName"
+    ).textContent =
+        recordingData.name || "-";
+
+
+    document.getElementById(
+        "recordingActionCount"
+    ).textContent =
+        Array.isArray(recordingData.actions)
+            ? recordingData.actions.length
+            : 0;
+
+
+    document.getElementById(
+        "recordingStartUrl"
+    ).textContent =
+        recordingData.start_url || "-";
+
+
+    document.getElementById(
+        "recordingRecordedAt"
+    ).textContent =
+        recordingData.recorded_at || "-";
+
+
+    document.getElementById(
+        "recordingSavedAt"
+    ).textContent =
+        recordingData.saved_at || "-";
+
+
+    document.getElementById(
+        "recordingStopReason"
+    ).textContent =
+        recordingData.stop_reason || "-";
+
+
+    renderActions();
+}
+
+
+/* =========================================================
+   ACTION TYPE LABELS / FIELD DEFINITIONS - drives both the compact
+   list's type label and the Add Action dialog's dropdown + per-type
+   field set. Field keys match exactly what generate_script() in
+   generator/script_generator.py reads off each action dict (see
+   generate_script's own STEPS-building loop) - never invented names.
+========================================================= */
+
+// Labels are deliberately unambiguous about WHETHER an action type
+// interacts with the page (clicks/sets something) or only reads/
+// asserts its current state - this is what this session's actual
+// mistake (check vs check_checked) came down to. Every read-only/
+// assertion type (the same set ACTION_FIELD_DEFS below marks
+// `readOnly: true`) gets a "(Read-Only)" suffix; every action that
+// genuinely mutates the page states what it sets, e.g. "(Set State)".
+const ACTION_TYPE_LABELS = {
+    click: "Click",
+    dblclick: "Double Click",
+    right_click: "Right Click",
+    fill: "Fill",
+    select: "Select",
+    submit: "Submit",
+    press: "Key Press",
+    scroll: "Scroll",
+    navigate: "Navigate",
+    tab_open: "Open Tab",
+    tab_switch: "Switch Tab",
+    tab_close: "Close Tab",
+    validate: "Assert Text Visible (Read-Only)",
+    click_if_exists: "Click If Exists",
+    screenshot: "Screenshot",
+    check: "Click Checkbox (Set State)",
+    check_checked: "Verify Checkbox State (Read-Only)",
+    capture_value: "Capture Value",
+    compare_value: "Compare Value (Read-Only)",
+    validate_element: "Validate Element State (Read-Only)",
+    validate_text: "Validate Text (Read-Only)",
+    validate_attribute: "Validate Attribute (Read-Only)",
+    validate_visible: "Validate Visible (Read-Only)",
+    validate_url: "Validate URL (Read-Only)",
+    validate_value: "Validate Value (Read-Only)",
+    validate_enabled: "Validate Enabled (Read-Only)",
+    count_elements: "Count Elements",
+    compare_counts: "Compare Counts (Read-Only)",
+    count_summary: "Count Summary (Read-Only)",
+    detect_duplicates: "Detect Duplicates (Read-Only)",
+    capture_list: "Capture List",
+    compare_list_overlap: "Compare List Overlap (Read-Only)",
+    validate_value_range: "Validate Value Range (Read-Only)",
+    // ITEM 7 FIX: validate_checked was wired into replay/ACTION_FIELD_DEFS
+    // (readOnly: true there, so it gets the same "(Read-Only)" suffix
+    // convention this map's own top comment describes) but was never
+    // added here, or to the other two ACTION_TYPE_LABELS copies this
+    // codebase keeps (templates/live_log.html, static/js/script.js).
+    validate_checked: "Validate Checkbox State (Read-Only)",
+};
+
+// Best-effort, DATA-ONLY readable name for a step - mirrors
+// generator/script_generator.py's own _derive_action_name() (same
+// fields, same shape of output), kept as a separate JS copy since the
+// editor renders steps client-side with no per-step server round trip.
+// action.name (an explicit, human-typed rename - see the rename button
+// in renderActions() below) always wins; this is only the fallback,
+// computed fresh every render, NEVER written back into recordingData
+// unless the user explicitly renames - an old recording opened here
+// gets readable names "for free" without the file ever being touched.
+function urlPathLabel(url) {
+    try {
+        const path = new URL(url, window.location.href).pathname.replace(/^\/|\/$/g, "");
+        if (!path) return "Home page";
+        const segment = path.split("/").pop().replace(/[-_]/g, " ").replace(/\.html$/, "");
+        const words = segment.split(" ").filter(Boolean);
+        return words.map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ") || "page";
+    } catch (e) {
+        return "page";
+    }
+}
+
+function deriveActionName(action) {
+    if (typeof action.name === "string" && action.name.trim()) {
+        return action.name.trim();
+    }
+    const actionType = action.action_type;
+    const lp = action.locator_profile || {};
+    const value = action.value;
+
+    let label = (
+        (lp.text || "").split("\n")[0].trim() ||
+        (lp.accessible_name || "").trim() ||
+        (lp.aria_label || "").trim() ||
+        (lp.placeholder || "").trim() ||
+        (lp.title || "").trim() ||
+        (lp.name || "").trim() ||
+        ((lp.id || "").replace(/^#/, "").trim())
+    );
+    label = label.slice(0, 40);
+    const tag = (lp.tag || "").toLowerCase();
+    const role = (lp.role || "").toLowerCase();
+
+    function roleWord() {
+        if (role) return role;
+        if (tag === "a") return "link";
+        if (tag === "button") return "button";
+        if (tag === "input" || tag === "textarea") return "field";
+        if (tag === "select") return "dropdown";
+        return "element";
+    }
+
+    if (["click", "dblclick", "right_click", "submit"].includes(actionType)) {
+        const verb = { dblclick: "double-click", right_click: "right-click", submit: "submit" }[actionType];
+        const base = label ? `"${label}" ${roleWord()}` : (tag || "element");
+        return verb ? `${verb} ${base}` : base;
+    }
+    if (actionType === "fill") {
+        return `${label || "field"}: "${value == null ? "" : value}"`;
+    }
+    if (actionType === "select") {
+        return `${label || "dropdown"}: "${value == null ? "" : value}"`;
+    }
+    if (actionType === "press") {
+        return `Press "${value || "key"}"` + (label ? ` in ${label}` : "");
+    }
+    if (actionType === "check") {
+        const expectedState = action.expected_state;
+        const stateWord = (expectedState === false || expectedState === "false" || expectedState === 0) ? "unchecked" : "checked";
+        return `"${label || "checkbox"}" checkbox (${stateWord})`;
+    }
+    if (actionType === "scroll") {
+        const deltaY = action.delta_y || 0;
+        const direction = deltaY >= 0 ? "down" : "up";
+        return `${direction} ${Math.abs(deltaY)}px on ${urlPathLabel(action.page_url)}`;
+    }
+    if (actionType === "navigate") {
+        return `${urlPathLabel(action.page_url)} page`;
+    }
+    if (actionType && actionType.startsWith("validate")) {
+        return label ? `validate "${label}"` : "validate";
+    }
+    return label ? `"${label}" (${tag || actionType})` : (tag || actionType || "step");
+}
+
+function actionTypeLabel(actionType) {
+    if (!actionType) {
+        return "(unknown step)";
+    }
+    if (ACTION_TYPE_LABELS[actionType]) {
+        return ACTION_TYPE_LABELS[actionType];
+    }
+    return actionType
+        .split("_")
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+}
+
+// Every action type the Add Action dialog can create. `locator: true`
+// means the dialog shows the XPath field + Validate button for it.
+// `fields` lists the extra, type-specific inputs to show - each
+// field's `key` is the exact action-dict field name generate_script()
+// already reads (e.g. "check_checked" needs expected_state;
+// "count_elements" needs count_as - see
+// generator/script_generator.py's generate_script()).
+//
+// `readOnly: true` marks an action type that only ever READS/asserts
+// page state and never clicks/sets anything - the same flag drives
+// both the "(Read-Only)" label suffix (see ACTION_TYPE_LABELS above)
+// and the orphaned-assertion warning (see relatedPrecedingAction()
+// below), so there is exactly one place that decides which action
+// types are assertions, not a second hardcoded list.
+//
+// `description` is the one-line helper text shown live under the
+// dropdown the instant this type is selected (see renderModalFields())
+// - added here, on the same object field-rendering already uses,
+// rather than a parallel config object.
+const ACTION_FIELD_DEFS = {
+    click: { locator: true, fields: [],
+        description: "Clicks the element. Use this to actually interact with the page." },
+    dblclick: { locator: true, fields: [],
+        description: "Double-clicks the element. Use this to actually interact with the page." },
+    right_click: { locator: true, fields: [],
+        description: "Right-clicks the element. Use this to actually interact with the page." },
+    submit: { locator: true, hiddenFromAddMenu: true, fields: [],
+        description: "Submits the form the element belongs to. Use this to actually interact with the page." },
+    fill: { locator: true, fields: [
+        { key: "value", label: "Value to fill", type: "text" },
+    ], description: "Types the value into the field. Use this to actually interact with the page." },
+    select: { locator: true, hiddenFromAddMenu: true, fields: [
+        { key: "value", label: "Option value", type: "text" },
+    ], description: "Chooses an option in a dropdown. Use this to actually interact with the page." },
+    press: { locator: true, fields: [
+        { key: "value", label: "Key to press (e.g. Enter)", type: "text" },
+    ], description: "Presses a key on the element. Use this to actually interact with the page." },
+    check: { locator: true, fields: [
+        { key: "expected_state", label: "Set checkbox to", type: "select",
+          options: [["checked", "Checked"], ["unchecked", "Unchecked"]] },
+    ], description: "Clicks the checkbox to set it to the state you choose below. Use this to actually change the page." },
+    navigate: { locator: false, fields: [
+        { key: "page_url", label: "Target URL", type: "text" },
+    ], description: "Loads a specific URL. Use this to actually interact with the page." },
+    scroll: { locator: false, fields: [
+        { key: "delta_x", label: "Horizontal scroll (px)", type: "number" },
+        { key: "delta_y", label: "Vertical scroll (px)", type: "number" },
+    ], description: "Scrolls the page by the given amount. Use this to actually interact with the page." },
+    validate: { locator: false, hiddenFromAddMenu: true, fields: [
+        { key: "value", label: "Expected text", type: "text" },
+    ], readOnly: true,
+       description: "Checks that the given text is visible on the page, without clicking anything. On its own, this changes nothing on the page." },
+    click_if_exists: { locator: false, fields: [
+        { key: "target", label: "Text to click if present", type: "text" },
+    ], description: "Clicks matching text if it's present. Use this to actually interact with the page." },
+    screenshot: { locator: false, fields: [
+        { key: "label", label: "Screenshot label (optional)", type: "text" },
+    ], description: "Takes a screenshot of the current page state. Doesn't interact with the page." },
+    capture_value: { locator: true, fields: [
+        { key: "capture_as", label: "Store captured value as", type: "text" },
+    ], description: "Reads the element's current value for later comparison, without clicking it. On its own, this changes nothing on the page." },
+    compare_value: { locator: false, fields: [
+        { key: "compare_to", label: "Compare against captured label", type: "text" },
+    ], readOnly: true,
+       description: "Checks a previously captured value against the page, without clicking anything. Use this AFTER a Capture Value step. On its own, this changes nothing on the page." },
+    validate_element: { locator: true, fields: [
+        { key: "check", label: "Expect element to be", type: "select",
+          options: [["disabled", "Disabled"], ["enabled", "Enabled"]] },
+    ], readOnly: true,
+       description: "Checks whether the element is enabled or disabled, without clicking it. On its own, this changes nothing on the page." },
+    validate_text: { locator: true, fields: [
+        { key: "value", label: "Expected text", type: "text" },
+        { key: "match_mode", label: "Match mode", type: "select",
+          options: [["contains", "Contains"], ["exact", "Exact match"]] },
+    ], readOnly: true,
+       description: "Checks the element's own text against the value you give, without clicking it. On its own, this changes nothing on the page." },
+    validate_attribute: { locator: true, hiddenFromAddMenu: true, fields: [
+        { key: "attribute_name", label: "Attribute name (e.g. href, data-id)", type: "text" },
+        { key: "value", label: "Expected value", type: "text" },
+    ], readOnly: true,
+       description: "Checks one of the element's HTML attributes against the value you give, without clicking it. On its own, this changes nothing on the page." },
+    validate_visible: { locator: true, fields: [
+        { key: "expected_state", label: "Expect element to be", type: "select",
+          options: [["visible", "Visible"], ["hidden", "Hidden"]] },
+    ], readOnly: true,
+       description: "Checks whether the element is visible or hidden, without clicking it. On its own, this changes nothing on the page." },
+    validate_url: { locator: false, fields: [
+        { key: "value", label: "Expected URL", type: "text" },
+        { key: "match_mode", label: "Match mode", type: "select",
+          options: [["contains", "Contains"], ["exact", "Exact match"]] },
+    ], readOnly: true,
+       description: "Checks the current page URL against the value you give. No element to pick - this checks where the page is, not anything on it." },
+    validate_value: { locator: true, fields: [
+        { key: "value", label: "Expected value", type: "text" },
+        { key: "match_mode", label: "Match mode", type: "select",
+          options: [["exact", "Exact match"], ["contains", "Contains"]] },
+    ], readOnly: true,
+       description: "Checks the element's current value (an input's typed value, or its text) against what you give, without clicking it. On its own, this changes nothing on the page." },
+    validate_enabled: { locator: true, fields: [
+        { key: "expected_state", label: "Expect element to be", type: "select",
+          options: [["enabled", "Enabled"], ["disabled", "Disabled"]] },
+    ], readOnly: true,
+       description: "Checks whether the element is enabled or disabled, without clicking it. On its own, this changes nothing on the page." },
+    validate_checked: { locator: true, fields: [
+        { key: "expected_state", label: "Expect checkbox to be", type: "select",
+          options: [["checked", "Checked"], ["unchecked", "Unchecked"]] },
+    ], readOnly: true,
+       description: "Checks whether the checkbox is checked or unchecked, without clicking it. On its own, this changes nothing on the page." },
+    count_elements: { locator: true, fields: [
+        { key: "count_as", label: "Store count as", type: "text" },
+        { key: "expected_count", label: "Expected count (optional)", type: "number" },
+    ], description: "Counts matching elements for later use, without clicking any of them. On its own, this changes nothing on the page." },
+    compare_counts: { locator: false, fields: [
+        { key: "count_a", label: "First count label", type: "text" },
+        { key: "count_b", label: "Second count label", type: "text" },
+        { key: "operator", label: "Comparison", type: "select",
+          options: [["eq", "Equal to"], ["ne", "Not equal to"], ["lt", "Less than"],
+                    ["lte", "Less than or equal"], ["gt", "Greater than"], ["gte", "Greater than or equal"]] },
+    ], readOnly: true,
+       description: "Compares two previously stored counts. Use this AFTER two Count Elements steps. On its own, this changes nothing on the page." },
+    count_summary: { locator: false, fields: [
+        { key: "labels", label: "Labels to include (comma-separated, blank = all)", type: "text" },
+    ], readOnly: true,
+       description: "Prints a summary of counts stored so far. Use this AFTER one or more Count Elements steps. On its own, this changes nothing on the page." },
+    // hiddenFromAddMenu: superseded by validate_checked (a narrower,
+    // evidence-based custom-checkbox check that fails clearly instead of
+    // guessing - see its own entry above) for NEW steps. This entry, its
+    // backend/replay handling, and everything below in this file that
+    // reads ACTION_FIELD_DEFS[actionType] for an EXISTING step's own
+    // action_type all stay exactly as they were - only
+    // populateActionTypeDropdown() (the "Add Action" type list) checks
+    // this flag, so an old recording that already has a check_checked
+    // step still opens, displays, edits, and replays exactly as before.
+    check_checked: { locator: true, hiddenFromAddMenu: true, fields: [
+        { key: "expected_state", label: "Expect checkbox to be", type: "select",
+          options: [["checked", "Checked"], ["unchecked", "Unchecked"]] },
+    ], readOnly: true,
+       description: "Checks the checkbox's current state without clicking it. Use this AFTER a click/set action to confirm it worked - on its own, this changes nothing on the page." },
+    validate_value_range: { locator: true, fields: [
+        { key: "min_value", label: "Minimum value (optional)", type: "number" },
+        { key: "max_value", label: "Maximum value (optional)", type: "number" },
+    ], readOnly: true,
+       description: "Checks that a numeric value on the page falls within a range, without clicking anything. On its own, this changes nothing on the page." },
+    detect_duplicates: { locator: true, fields: [
+        { key: "detect_by", label: "Detect by (text or attribute name)", type: "text", placeholder: "text" },
+    ], readOnly: true,
+       description: "Checks matching elements for duplicate values, without clicking any of them. On its own, this changes nothing on the page." },
+    capture_list: { locator: true, hiddenFromAddMenu: true, fields: [
+        { key: "capture_as", label: "Store list as", type: "text" },
+        { key: "detect_by", label: "Detect by (text or attribute name)", type: "text", placeholder: "text" },
+    ], description: "Reads a list of values from matching elements for later comparison, without clicking any of them. On its own, this changes nothing on the page." },
+    compare_list_overlap: { locator: true, hiddenFromAddMenu: true, fields: [
+        { key: "compare_to", label: "Compare against list label", type: "text" },
+        { key: "count_as", label: "Store overlap count as", type: "text" },
+        { key: "detect_by", label: "Detect by (text or attribute name)", type: "text", placeholder: "text" },
+    ], readOnly: true,
+       description: "Compares a fresh list against a previously captured list, without clicking anything. Use this AFTER a Capture List step. On its own, this changes nothing on the page." },
+    tab_switch: { locator: false, fields: [
+        { key: "to_page_id", label: "Switch to tab #", type: "number" },
+    ], description: "Switches focus to another open tab. Use this to actually interact with the page." },
+    tab_open: { locator: false, fields: [
+        { key: "page_url", label: "URL (optional - leave blank for about:blank)", type: "text", placeholder: "https://..." },
+    ], description: "Opens a new tab. Use this to actually interact with the page." },
+    tab_close: { locator: false, fields: [],
+        description: "Closes the current tab. Use this to actually interact with the page." },
+};
+
+// fields every action row can show read-only when expanded, in display
+// order - only ones with an actual value on that action get rendered
+const DETAIL_FIELD_ORDER = [
+    ["value", "Value"],
+    ["page_url", "Page URL"],
+    ["expected_state", "Expected State"],
+    ["check", "Check"],
+    ["capture_as", "Capture As"],
+    ["compare_to", "Compare To"],
+    ["count_as", "Count As"],
+    ["count_a", "Count A"],
+    ["count_b", "Count B"],
+    ["operator", "Operator"],
+    ["expected_count", "Expected Count"],
+    ["min_value", "Min Value"],
+    ["max_value", "Max Value"],
+    ["detect_by", "Detect By"],
+    ["attribute_name", "Attribute Name"],
+    ["match_mode", "Match Mode"],
+    ["labels", "Labels"],
+    ["target", "Target"],
+    ["label", "Label"],
+    ["delta_x", "Delta X"],
+    ["delta_y", "Delta Y"],
+];
+
+
+function renderActions() {
+
+    const container =
+        document.getElementById("actionsList");
+
+
+    container.innerHTML = "";
+
+
+    const actions =
+        Array.isArray(recordingData.actions)
+            ? recordingData.actions
+            : [];
+
+
+    if (actions.length === 0) {
+
+        container.innerHTML =
+            '<div class="recordings-empty">' +
+            'No actions found in this recording.' +
+            '</div>';
+
+        return;
+    }
+
+
+    actions.forEach(
+        (action, index) => {
+
+            const row =
+                document.createElement("div");
+
+            row.className =
+                "action-row";
+
+
+            const header =
+                document.createElement("div");
+
+            header.className =
+                "action-row-header";
+
+
+            const title =
+                document.createElement("button");
+
+            title.type = "button";
+
+            title.className =
+                "action-row-title";
+
+            title.textContent =
+                `${index + 1}. ${actionTypeLabel(action.action_type)} - ${deriveActionName(action)}`;
+
+            title.addEventListener(
+                "click",
+                () => {
+                    details.hidden = !details.hidden;
+                }
+            );
+
+            const titleGroup =
+                document.createElement("div");
+
+            titleGroup.className = "action-row-title-group";
+
+            titleGroup.appendChild(title);
+
+            // locator health badge - from the last Replay's own result
+            // for this exact step (see loadLastReplayHealth above), not
+            // a fresh analysis of the recording. Omitted entirely (no
+            // badge at all) for a step with no locator (navigate,
+            // window-level scroll, ...) or one that's never been
+            // replayed yet.
+            const lastStep = lastReplayStepsByIndex.get(index + 1);
+            const healthTierKey = lastStep ? classifyLocatorHealth(lastStep.locator_report) : null;
+            if (healthTierKey) {
+                const tier = LOCATOR_HEALTH_TIERS[healthTierKey];
+                const badge = document.createElement("span");
+                badge.className = "locator-health-badge locator-health-" + healthTierKey;
+                badge.title = tier.label;
+                badge.textContent = tier.icon;
+                titleGroup.appendChild(badge);
+            }
+
+            header.appendChild(titleGroup);
+
+
+            const buttons =
+                document.createElement("div");
+
+            buttons.className =
+                "action-row-buttons";
+
+
+            const beforeBtn =
+                document.createElement("button");
+
+            beforeBtn.type = "button";
+
+            beforeBtn.className = "icon-btn";
+
+            beforeBtn.title = "Add Action Before";
+
+            beforeBtn.textContent = "⬆︎+";
+
+            beforeBtn.addEventListener(
+                "click",
+                () => openAddActionDialog("before", index)
+            );
+
+            buttons.appendChild(beforeBtn);
+
+
+            const renameBtn =
+                document.createElement("button");
+
+            renameBtn.type = "button";
+
+            renameBtn.className = "icon-btn";
+
+            renameBtn.title = "Rename this step";
+
+            renameBtn.textContent = "✎";
+
+            renameBtn.addEventListener(
+                "click",
+                (evt) => {
+                    evt.stopPropagation();
+                    const current = (typeof action.name === "string" && action.name.trim())
+                        ? action.name
+                        : deriveActionName(action);
+                    const next = window.prompt("Step name:", current);
+                    // null = Cancel; empty string clears back to the
+                    // auto-generated name (the SAME deriveActionName()
+                    // fallback every unrenamed step already uses) rather
+                    // than storing an empty name
+                    if (next === null) {
+                        return;
+                    }
+                    const trimmed = next.trim();
+                    action.name = trimmed || null;
+                    renderActions();
+                }
+            );
+
+            buttons.appendChild(renameBtn);
+
+
+            // ITEM 8: lets this EXISTING step's own action type/fields/
+            // locator be re-picked/edited in place (see
+            // openAddActionDialog's own "edit" mode and modalSaveBtn's
+            // matching branch) - previously the only way to change an
+            // already-recorded step's target was to delete it and add a
+            // brand new one from scratch.
+            const editBtn =
+                document.createElement("button");
+
+            editBtn.type = "button";
+
+            editBtn.className = "icon-btn";
+
+            editBtn.title = "Edit this step (re-pick element/fields)";
+
+            editBtn.textContent = "⚙";
+
+            editBtn.addEventListener(
+                "click",
+                (evt) => {
+                    evt.stopPropagation();
+                    openAddActionDialog("edit", index);
+                }
+            );
+
+            buttons.appendChild(editBtn);
+
+
+            const afterBtn =
+                document.createElement("button");
+
+            afterBtn.type = "button";
+
+            afterBtn.className = "icon-btn";
+
+            afterBtn.title = "Add Action After";
+
+            afterBtn.textContent = "⬇︎+";
+
+            afterBtn.addEventListener(
+                "click",
+                () => openAddActionDialog("after", index)
+            );
+
+            buttons.appendChild(afterBtn);
+
+
+            const deleteBtn =
+                document.createElement("button");
+
+            deleteBtn.type = "button";
+
+            deleteBtn.className = "icon-btn icon-btn-danger";
+
+            deleteBtn.title = "Delete";
+
+            deleteBtn.textContent = "✕";
+
+            deleteBtn.addEventListener(
+                "click",
+                () => {
+                    if (!confirm("Delete this action?")) {
+                        return;
+                    }
+
+                    // ITEM 8: capture the action's own data AND its
+                    // position before removing it, so Undo can put it
+                    // back exactly where it was - not append it at the
+                    // end or leave it blank
+                    deletedActionsStack.push({
+                        index,
+                        action: recordingData.actions[index],
+                    });
+                    updateUndoDeleteBtn();
+
+                    recordingData.actions.splice(index, 1);
+
+                    document.getElementById(
+                        "recordingActionCount"
+                    ).textContent =
+                        recordingData.actions.length;
+
+                    renderActions();
+                }
+            );
+
+            buttons.appendChild(deleteBtn);
+
+
+            header.appendChild(buttons);
+
+            row.appendChild(header);
+
+
+            const details =
+                document.createElement("div");
+
+            details.className =
+                "action-row-details";
+
+            details.hidden = true;
+
+            const detailRows = DETAIL_FIELD_ORDER
+                .filter(([key]) => action[key] !== undefined && action[key] !== null && action[key] !== "")
+                .map(([key, label]) => `<div><span class="detail-key">${label}:</span> ${String(action[key])}</div>`)
+                .join("");
+
+            const lp = action.locator_profile;
+
+            // locator health detail block - Locator strategy / Resolution
+            // / Recommendation, built from the SAME last-Replay
+            // locator_report the badge above uses (see
+            // loadLastReplayHealth/classifyLocatorHealth). Raw
+            // css_path/xpath stay behind "Advanced locator details" -
+            // never shown by default (see this feature's own
+            // requirement: "Do not expose raw JSON by default").
+            const lr = lastStep && lastStep.locator_report;
+            let healthBlock = "";
+            if (lr) {
+                const recommendation = !healthTierKey || healthTierKey === "unresolved"
+                    ? "This step's locator could not be resolved last run - consider re-recording it."
+                    : (healthTierKey === "stable" || healthTierKey === "fallback")
+                        ? "No action required."
+                        : "Consider re-recording this step.";
+                const resolutionLabel = (lr.fallback_level !== null && lr.fallback_level !== undefined && lr.fallback_level <= 10)
+                    ? "Primary locator"
+                    : "Fallback locator";
+                healthBlock =
+                    `<div><span class="detail-key">Locator strategy:</span> ${_escapeHtml(lr.strategy_label || "Unresolved")}</div>` +
+                    `<div><span class="detail-key">Resolution:</span> ${_escapeHtml(lr.resolved ? resolutionLabel : "Not resolved")}</div>` +
+                    `<div><span class="detail-key">Recommendation:</span> ${_escapeHtml(recommendation)}</div>`;
+            }
+
+            const advancedRows = [];
+            if (lp && lp.css_path) advancedRows.push(`<div><span class="detail-key">css:</span> ${_escapeHtml(lp.css_path)}</div>`);
+            if (lp && lp.xpath) advancedRows.push(`<div><span class="detail-key">xpath:</span> ${_escapeHtml(lp.xpath)}</div>`);
+            if (lp && lp.id) advancedRows.push(`<div><span class="detail-key">id:</span> ${_escapeHtml(lp.id)}</div>`);
+            if (lr && lr.strategy) advancedRows.push(`<div><span class="detail-key">raw strategy:</span> ${_escapeHtml(lr.strategy)}</div>`);
+            const advancedBlock = advancedRows.length
+                ? `<details class="advanced-locator-details"><summary>Advanced locator details</summary>${advancedRows.join("")}</details>`
+                : "";
+
+            details.innerHTML =
+                detailRows + healthBlock + advancedBlock ||
+                '<div class="detail-key">No additional details for this step.</div>';
+
+            row.appendChild(details);
+
+
+            container.appendChild(row);
+        }
+    );
+}
+
+
+/* =========================================================
+   ADD ACTION DIALOG - guided action-type + field entry, with live
+   locator validation against the real page before Save is allowed for
+   any action type that needs one. Save here only edits the in-memory
+   recordingData.actions array (insert-before/after/append) - the
+   page-level "Save Edited JSON" button (unchanged, above) is still the
+   only thing that calls POST /api/recordings/save.
+========================================================= */
+
+const addActionModal = document.getElementById("addActionModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalActionType = document.getElementById("modalActionType");
+const modalActionDescription = document.getElementById("modalActionDescription");
+const modalFields = document.getElementById("modalFields");
+const modalTestNavigateSection = document.getElementById("modalTestNavigateSection");
+const modalTestNavigateBtn = document.getElementById("modalTestNavigateBtn");
+const modalTestNavigateResult = document.getElementById("modalTestNavigateResult");
+const modalLocatorSection = document.getElementById("modalLocatorSection");
+const modalXpath = document.getElementById("modalXpath");
+const modalValidateBtn = document.getElementById("modalValidateBtn");
+const modalPickElementBtn = document.getElementById("modalPickElementBtn");
+const modalValidateResult = document.getElementById("modalValidateResult");
+const modalXpathCandidates = document.getElementById("modalXpathCandidates");
+const modalOrphanWarning = document.getElementById("modalOrphanWarning");
+const modalOrphanWarningText = document.getElementById("modalOrphanWarningText");
+const modalOrphanWarningDismiss = document.getElementById("modalOrphanWarningDismiss");
+const modalCancelBtn = document.getElementById("modalCancelBtn");
+const modalSaveBtn = document.getElementById("modalSaveBtn");
+
+// dismissing the orphaned-assertion warning only suppresses THIS
+// instance of it - typing a different xpath or picking a different
+// action type re-evaluates and can show it again, so a genuine change
+// in what's being checked is never silently hidden
+let modalOrphanWarningDismissed = false;
+
+// { mode: "before" | "after" | "append", index: number|null, pageUrl, pageId }
+let modalContext = null;
+
+// Minted ONCE per editor page load (not per modal open, not per pick) -
+// names this tab's own warm Pick Element browser server-side (see
+// recorder/pick_element.py's _WarmPickSession). Every prewarm/start call
+// this page ever makes sends the SAME token, so a browser a prewarm
+// call already got moving stays reusable across as many Add Action
+// modal openings as happen before the tab itself is closed/reloaded.
+const pickWarmId = (crypto.randomUUID ? crypto.randomUUID() : (Date.now() + "-" + Math.random()));
+
+// Fire-and-forget: gets a background browser moving toward this exact
+// insertion point the INSTANT the Add Action modal opens, well before
+// the user has clicked Pick Element at all - so that click can often
+// find the browser already there instead of waiting through a replay.
+// Errors are deliberately swallowed here - a failed/slow prewarm just
+// means the eventual Pick Element click falls back to replaying live,
+// exactly like before this existed.
+function prewarmPickElement() {
+    if (!modalContext || !recordingPath) {
+        return;
+    }
+    fetch("/api/recordings/pick_element/prewarm", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            warm_id: pickWarmId,
+            session_path: recordingPath,
+            insert_after_index: modalContext.insertAfterIndex ?? -1,
+        }),
+    }).catch(() => {});
+}
+
+// Closes this tab's own warm picker browser right away instead of
+// leaving it open until it times out on its own - called whenever the
+// Add Action modal is cancelled, saved, or otherwise closed without the
+// user having closed the picker window themselves. Fire-and-forget,
+// same as prewarmPickElement above - a failed/slow call here just means
+// that browser window lingers a bit longer, exactly like before this
+// existed, never something the user needs to see or retry.
+function cancelPickElement() {
+    fetch("/api/recordings/pick_element/cancel", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ warm_id: pickWarmId }),
+    }).catch(() => {});
+}
+
+// Distinct, one-line warning shown alongside whatever else the modal is
+// displaying whenever the picker's live page URL doesn't match what the
+// recording's own preceding steps expect at this exact position (see
+// recorder/pick_element.py's _run_pick_wait_phase safety check) - real
+// site drift (a redirect, an A/B variant, a login wall) since the
+// recording was made, surfaced explicitly rather than silently letting
+// a pick happen against the wrong page.
+function urlMismatchSuffix(data) {
+    const check = data && data.page_url_check;
+    if (!check || !check.mismatch) {
+        return "";
+    }
+    return ` ⚠ Page URL doesn't match the recording here (expected ${check.expected_url}, got ${check.actual_url}) - the site may have changed since this was recorded.`;
+}
+
+// Distinct, stronger warning than urlMismatchSuffix above: set only when
+// the preceding-actions walk didn't just land somewhere unexpected, but
+// actually STOPPED PARTWAY because a step's own recorded target was
+// confirmed to no longer match the live page (see recorder/
+// pick_element.py's _replay_preceding_actions/content_mismatch) - the
+// picker is sitting on an EARLIER page than the recording's own
+// insertion point, not the one whatever is picked here will actually be
+// added after.
+function contentMismatchSuffix(data) {
+    const mismatch = data && data.content_mismatch;
+    if (!mismatch) {
+        return "";
+    }
+    return ` ⚠ Couldn't reach the intended page - step ${mismatch.step_index} (${mismatch.action_type}) no longer matches this site's live content, so replay stopped there instead of guessing further. The browser below is on an EARLIER page than where this action would actually be added - re-record this part of the flow if the site has changed.`;
+}
+
+// Steps of the pre-replay (the recorded steps before the insertion point,
+// replayed so the picker lands on the right page) that didn't run cleanly -
+// listed by step number and reason, so a picker sitting on an unexpected page
+// is never left unexplained (see recorder/pick_element.py's
+// _replay_preceding_actions/replay_failures). Informational: the replay
+// carries on best-effort past these.
+function replayFailuresSuffix(data) {
+    const failures = data && data.replay_failures;
+    if (!failures || failures.length === 0) {
+        return "";
+    }
+    const list = failures
+        .map(f => `step ${f.step_index} (${f.action_type}): ${f.reason}`)
+        .join("; ");
+    return ` ⚠ ${failures.length} earlier step(s) didn't run cleanly while getting here - ${list}. The browser below may not be on the page you expect.`;
+}
+
+// true once Validate has come back with the xpath actually resolving
+// on the real page - reset to false any time the action type or the
+// locator field changes, so a stale "found" result can never be
+// carried into a save after an edit
+let modalLocatorValidated = false;
+
+function updateModalSaveEnabled() {
+    const def = ACTION_FIELD_DEFS[modalActionType.value] || { locator: false };
+    modalSaveBtn.disabled = def.locator && !modalLocatorValidated;
+}
+
+/* =========================================================
+   ORPHANED-ASSERTION WARNING (Layer 3) - purely structural XPath
+   comparison, no element names/site domains/session-specific rules of
+   any kind. Works identically on any site: two xpaths are "related"
+   when they're identical, or when they share a DISTINCTIVE identity
+   signal - a text-content literal (contains(text(), '...') /
+   contains(., '...'), the same predicate shapes this project's own
+   xPath() capture logic already generates for a readable label) or an
+   @id value. Both are generically specific to ONE element or its
+   close container on any site. A bare structural attribute like
+   @role='checkbox' is deliberately NOT used as a signal on its own -
+   dozens of unrelated elements on the same page (every checkbox in a
+   filter list, say) legitimately share it, so matching on it alone
+   would call almost every read-only checkbox action "related" to
+   every click, defeating the whole point of this warning.
+========================================================= */
+
+function extractXPathTokens(xpath) {
+    if (!xpath) {
+        return [];
+    }
+    const tokens = new Set();
+
+    const textLiterals = xpath.match(/contains\(\s*(?:text\(\)|\.)\s*,\s*(?:'[^']*'|"[^"]*")\s*\)/g) || [];
+    textLiterals.forEach(seg => tokens.add(seg.trim().toLowerCase()));
+
+    // FIX 4: the SAME text literal anchored with an EXACT match
+    // (normalize-space(text())='...' / normalize-space(.)='...' - what
+    // xPath()'s own exact-match tiers produce, see action_capture.js) was
+    // never recognized here at all, only the contains() shape above - two
+    // steps that both target the SAME label by its exact visible text (one
+    // via Click Checkbox's own recorded xpath, one via a Pick Element'd
+    // exact-text xpath) shared no token in common, so the "no earlier step
+    // sets up this element's state" warning fired even though one plainly
+    // did. Recognized here, AND the bare literal itself pulled out of BOTH
+    // this and the contains() match above (additive - the existing full-
+    // segment tokens stay exactly as they were) - two steps anchored on the
+    // identical visible text now share that one token regardless of which
+    // of the two XPath functions wrapped it.
+    const exactTextLiterals = xpath.match(/normalize-space\(\s*(?:text\(\)|\.)\s*\)\s*=\s*(?:'[^']*'|"[^"]*")/g) || [];
+    exactTextLiterals.forEach(seg => tokens.add(seg.trim().toLowerCase()));
+    [...textLiterals, ...exactTextLiterals].forEach(seg => {
+        const lit = (seg.match(/'[^']*'|"[^"]*"/) || [])[0];
+        if (lit) tokens.add(lit.trim().toLowerCase());
+    });
+
+    const idLiterals = xpath.match(/@id\s*=\s*(?:'[^']*'|"[^"]*")/g) || [];
+    idLiterals.forEach(seg => tokens.add(seg.trim().toLowerCase()));
+
+    const idPrefixLiterals = xpath.match(/starts-with\(\s*@id\s*,\s*(?:'[^']*'|"[^"]*")\s*\)/g) || [];
+    idPrefixLiterals.forEach(seg => tokens.add(seg.trim().toLowerCase()));
+
+    return Array.from(tokens);
+}
+
+function xpathsAreRelated(xpathA, xpathB) {
+    if (!xpathA || !xpathB) {
+        return false;
+    }
+    const a = xpathA.trim();
+    const b = xpathB.trim();
+    if (a === b) {
+        return true;
+    }
+    const tokensA = extractXPathTokens(a);
+    const tokensB = new Set(extractXPathTokens(b));
+    return tokensA.some(t => tokensB.has(t));
+}
+
+// preceding actions = the real, already-recorded actions this new one
+// is being inserted after - same slice validate_locator's own backend
+// derivation uses (see modalContext.insertAfterIndex)
+function precedingActionsForWarning() {
+    if (!modalContext || !recordingData || !Array.isArray(recordingData.actions)) {
+        return [];
+    }
+    const actions = recordingData.actions;
+    const endIdx = Math.max(0, Math.min((modalContext.insertAfterIndex ?? -1) + 1, actions.length));
+    return actions.slice(0, endIdx);
+}
+
+function relatedPrecedingActionExists(candidateXpath) {
+    const preceding = precedingActionsForWarning();
+    return preceding.some(action => {
+        const priorXpath = (action.locator_profile || {}).xpath;
+        return xpathsAreRelated(candidateXpath, priorXpath);
+    });
+}
+
+function updateOrphanWarning() {
+    const def = ACTION_FIELD_DEFS[modalActionType.value] || {};
+    const xpath = modalXpath.value.trim();
+
+    const shouldWarn = Boolean(def.readOnly) && xpath !== "" && !relatedPrecedingActionExists(xpath);
+
+    if (shouldWarn && !modalOrphanWarningDismissed) {
+        modalOrphanWarningText.textContent =
+            "This step only checks state - it doesn't interact with the page. No earlier step " +
+            "in this session appears to set up this element's state. If you intended to click/set " +
+            "it first, add that action before this one.";
+        modalOrphanWarning.hidden = false;
+    } else {
+        modalOrphanWarning.hidden = true;
+    }
+}
+
+modalOrphanWarningDismiss.addEventListener("click", () => {
+    modalOrphanWarningDismissed = true;
+    modalOrphanWarning.hidden = true;
+});
+
+function renderModalFields() {
+
+    const actionType = modalActionType.value;
+    const def = ACTION_FIELD_DEFS[actionType] || { locator: false, fields: [] };
+
+    modalFields.innerHTML = "";
+
+    def.fields.forEach(field => {
+
+        const label = document.createElement("label");
+        label.textContent = field.label;
+        modalFields.appendChild(label);
+
+        let input;
+        if (field.type === "select") {
+            input = document.createElement("select");
+            input.className = "editor-input";
+            field.options.forEach(([optValue, optLabel]) => {
+                const opt = document.createElement("option");
+                opt.value = optValue;
+                opt.textContent = optLabel;
+                input.appendChild(opt);
+            });
+        } else {
+            input = document.createElement("input");
+            input.type = field.type === "number" ? "number" : "text";
+            input.className = "editor-input";
+            if (field.placeholder) {
+                input.placeholder = field.placeholder;
+            }
+        }
+        input.dataset.fieldKey = field.key;
+        input.id = "modalField_" + field.key;
+        modalFields.appendChild(input);
+    });
+
+    modalActionDescription.textContent = def.description || "";
+
+    modalLocatorSection.hidden = !def.locator;
+    modalXpath.value = "";
+    modalValidateResult.hidden = true;
+    modalLocatorValidated = false;
+    modalOrphanWarningDismissed = false;
+    updateOrphanWarning();
+    updateModalSaveEnabled();
+
+    // ITEM 3: "Test Navigate" is only meaningful for the navigate
+    // action type itself (locator: false, so modalLocatorSection above
+    // is always hidden for it) - shown/reset here, in the one place
+    // this modal already resets per-action-type UI state on every
+    // action-type change.
+    modalTestNavigateSection.hidden = (actionType !== "navigate");
+    modalTestNavigateResult.hidden = true;
+}
+
+function populateActionTypeDropdown(keepActionType) {
+    modalActionType.innerHTML = "";
+    Object.keys(ACTION_FIELD_DEFS).forEach(actionType => {
+        // hiddenFromAddMenu (see check_checked's own entry above): this
+        // action type still fully works for a step that already has it
+        // (every other ACTION_FIELD_DEFS lookup in this file is keyed by
+        // the STEP's own action_type, never by what's offered here) -
+        // only excluded from the choices offered for a NEW step.
+        // keepActionType: editing an EXISTING step of a hidden type still
+        // has to offer that step's own type (see openAddActionDialog's
+        // "edit" branch), otherwise the select goes blank
+        if (ACTION_FIELD_DEFS[actionType].hiddenFromAddMenu && actionType !== keepActionType) {
+            return;
+        }
+        const opt = document.createElement("option");
+        opt.value = actionType;
+        opt.textContent = actionTypeLabel(actionType);
+        modalActionType.appendChild(opt);
+    });
+}
+
+populateActionTypeDropdown();
+
+modalActionType.addEventListener("change", renderModalFields);
+
+modalXpath.addEventListener("input", () => {
+    modalLocatorValidated = false;
+    modalValidateResult.hidden = true;
+    modalOrphanWarningDismissed = false;
+    updateOrphanWarning();
+    updateModalSaveEnabled();
+});
+
+// ITEM 3: actually performs the navigation a "navigate" step's own
+// Target URL field describes, in a real (self-contained, one-shot)
+// browser - see /api/recordings/test_navigate's own docstring for why
+// this can never affect how any OTHER step in this recording resolves:
+// it never touches session_path/preceding_actions/recordingData, and
+// its browser is always closed again before the response comes back,
+// so there's nothing left open or left behind for a later Pick Element
+// click (or a real Replay, which always launches its own fresh browser
+// regardless) to collide with.
+modalTestNavigateBtn.addEventListener("click", async () => {
+    const urlInput = document.getElementById("modalField_page_url");
+    const url = urlInput ? urlInput.value.trim() : "";
+
+    if (!url) {
+        modalTestNavigateResult.className = "locator-status-fail";
+        modalTestNavigateResult.textContent = "Enter a URL first.";
+        modalTestNavigateResult.hidden = false;
+        return;
+    }
+
+    modalTestNavigateBtn.disabled = true;
+    modalTestNavigateResult.className = "editor-message";
+    modalTestNavigateResult.textContent = "Opening a browser window and navigating there for real...";
+    modalTestNavigateResult.hidden = false;
+
+    try {
+        const response = await fetch("/api/recordings/test_navigate", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify({ url }),
+        });
+        const data = await response.json();
+
+        if (!response.ok || !data.success) {
+            throw new Error(data.message || "Couldn't test that URL.");
+        }
+
+        modalTestNavigateResult.className = "locator-status-ok";
+        modalTestNavigateResult.textContent = data.message || "Navigation succeeded.";
+        modalTestNavigateResult.hidden = false;
+    } catch (error) {
+        modalTestNavigateResult.className = "locator-status-fail";
+        modalTestNavigateResult.textContent = "Test Navigate failed: " + error.message;
+        modalTestNavigateResult.hidden = false;
+    } finally {
+        modalTestNavigateBtn.disabled = false;
+    }
+});
+
+modalValidateBtn.addEventListener("click", async () => {
+
+    const xpath = modalXpath.value.trim();
+
+    if (!xpath) {
+        modalValidateResult.className = "editor-error";
+        modalValidateResult.textContent = "Enter an XPath first.";
+        modalValidateResult.hidden = false;
+        return;
+    }
+
+    modalValidateBtn.disabled = true;
+    modalValidateResult.className = "editor-message";
+    modalValidateResult.textContent = "Validating...";
+    modalValidateResult.hidden = false;
+
+    try {
+
+        const response = await fetch("/api/recordings/validate_locator", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify({
+                session_path: recordingPath,
+                insert_after_index: (modalContext && modalContext.insertAfterIndex) ?? -1,
+                xpath: xpath,
+                action_type: modalActionType.value,
+            }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok || !data.success) {
+            throw new Error(data.message || "Validation failed.");
+        }
+
+        modalLocatorValidated = Boolean(data.found);
+
+        const matchCount = data.match_count ?? 0;
+        modalValidateResult.className = modalLocatorValidated ? "locator-status-ok" : "locator-status-fail";
+        modalValidateResult.textContent = modalLocatorValidated
+            ? `✓ Found (${matchCount} match${matchCount === 1 ? "" : "es"})`
+            : `✗ Not found (${matchCount} match${matchCount === 1 ? "" : "es"})`;
+
+        // FIX 3: for a checkbox validation, "found" alone doesn't tell the
+        // user what they actually need to know before saving - the REAL
+        // current state, read the same way a real replay would (see
+        // app.py's own checkbox_state_info, computed via the shared
+        // _resolve_checkbox_state helper).
+        if (modalActionType.value === "validate_checked" && data.checkbox_state_info) {
+            const cbInfo = data.checkbox_state_info;
+            const stateLine = document.createElement("div");
+            if (cbInfo.state === "not_a_checkbox") {
+                stateLine.className = "locator-status-fail";
+                stateLine.textContent = cbInfo.resolvedHow === "ambiguous"
+                    ? `⚠ Ambiguous: ${cbInfo.ambiguousCount} checkboxes found near this element.`
+                    : `⚠ This isn't a checkbox, and no single associated checkbox was found nearby.`;
+            } else {
+                const via = ["label.control", "descendant", "ancestor"].includes(cbInfo.resolvedHow)
+                    ? ` (resolved via ${cbInfo.resolvedHow} from <${cbInfo.resolvedTag}>)` : "";
+                stateLine.className = "editor-message";
+                stateLine.textContent = `Current state: ${cbInfo.state}${via}`;
+            }
+            modalValidateResult.appendChild(document.createElement("br"));
+            modalValidateResult.appendChild(stateLine);
+        }
+
+        modalValidateResult.hidden = false;
+
+    } catch (error) {
+
+        modalLocatorValidated = false;
+        modalValidateResult.className = "locator-status-fail";
+        modalValidateResult.textContent = "Validation failed: " + error.message;
+        modalValidateResult.hidden = false;
+
+    } finally {
+        modalValidateBtn.disabled = false;
+        updateModalSaveEnabled();
+    }
+});
+
+// Pick Element - an ADDITIONAL way to fill modalXpath, alongside typing
+// it by hand; never replaces that path. Reuses the exact same session_
+// path/insert_after_index the Validate button's own call above already
+// sends, so the picker replays through the SAME preceding steps a
+// Validate check (or a real Replay) would.
+let modalPickElementPollTimer = null;
+
+// A generation counter, bumped once per Pick Element click - the single
+// source of truth for "which click's own async chain is still allowed
+// to touch the modal". This is deliberately a CLIENT-side token, minted
+// before the server's pick_id is even known, so it also covers the
+// window BEFORE that: two rapid Pick Element clicks can have their own
+// /start responses arrive out of order (the OLDER click's fetch
+// resolving AFTER the newer one's), and without this, the older click's
+// continuation would win and silently hijack pickId/polling right out
+// from under the session the user actually just started. Clearing the
+// interval alone (stopPickElementPolling) only stops FUTURE polls; it
+// does nothing about a fetch() already in flight - that request still
+// resolves on its own time and, without this check, its continuation
+// would go right on filling in modalXpath/modalValidateResult with a
+// STALE result from a click that's no longer the current one. Confirmed
+// real: a screen recording showed the modal still reading "still open
+// in the picker" well after that picker's own browser had actually
+// closed.
+let modalPickElementGeneration = 0;
+
+function stopPickElementPolling() {
+    if (modalPickElementPollTimer) {
+        clearInterval(modalPickElementPollTimer);
+        modalPickElementPollTimer = null;
+    }
+    modalPickElementBtn.disabled = false;
+}
+
+modalPickElementBtn.addEventListener("click", async () => {
+
+    stopPickElementPolling();
+    // mints THIS click's own generation token - any async continuation
+    // (the /start fetch, or a poll) still holding an OLDER token checks
+    // it against modalPickElementGeneration and discards itself instead
+    // of touching the modal (see modalPickElementGeneration's own
+    // comment above)
+    const myGeneration = ++modalPickElementGeneration;
+
+    // every Pick Element click starts completely fresh - the old xpath/
+    // message/validated-state/candidate list from a PREVIOUS pick (or a
+    // hand-typed value) must not linger while a new session is starting
+    modalXpath.value = "";
+    modalXpath.dispatchEvent(new Event("input"));
+    modalXpathCandidates.innerHTML = "";
+    modalXpathCandidates.hidden = true;
+
+    modalPickElementBtn.disabled = true;
+    modalValidateResult.className = "editor-message";
+    modalValidateResult.textContent = "Opening a browser window - click an element there...";
+    modalValidateResult.hidden = false;
+
+    let pickId;
+    try {
+        const response = await fetch("/api/recordings/pick_element/start", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify({
+                session_path: recordingPath,
+                insert_after_index: (modalContext && modalContext.insertAfterIndex) ?? -1,
+                warm_id: pickWarmId,
+            }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok || !data.success) {
+            throw new Error(data.message || "Couldn't start the picker.");
+        }
+
+        // a NEWER click already happened while this /start call was in
+        // flight - that newer click owns the modal now, this response
+        // is stale and must not touch anything (not even disabling/
+        // re-enabling the button, which belongs to whichever session is
+        // actually still running)
+        if (myGeneration !== modalPickElementGeneration) {
+            return;
+        }
+
+        pickId = data.pick_id;
+
+    } catch (error) {
+        if (myGeneration !== modalPickElementGeneration) {
+            return;
+        }
+        modalValidateResult.className = "locator-status-fail";
+        modalValidateResult.textContent = "Pick Element failed: " + error.message;
+        modalValidateResult.hidden = false;
+        modalPickElementBtn.disabled = false;
+        return;
+    }
+
+    modalValidateResult.textContent = "Waiting for you to click an element in the browser window...";
+
+    // Shared by the "locked" (still open, may still change) and "done"
+    // (browser closed - final) branches below - both fill in the SAME
+    // xpath/match-count feedback from the SAME data shape; the only
+    // difference is whether polling keeps going afterward and the note
+    // shown alongside it, handled by the two call sites, not in here.
+    function applyPickedProfile(data, noteSuffix) {
+        modalXpath.value = data.xpath || "";
+        // re-triggers the EXISTING modalXpath input listener above
+        // (resets modalLocatorValidated/orphan-warning/save-enabled
+        // state) - always auto-fills the field regardless of match_count
+        // below, so a non-unique pick never blocks the user from seeing/
+        // keeping what they clicked
+        modalXpath.dispatchEvent(new Event("input"));
+
+        // up to 3 candidates (see action_capture.js's buildXpathCandidates)
+        // - the FIRST is xPath()'s own recommended pick, already the one
+        // just filled into modalXpath above. Only worth showing a chooser
+        // at all when there's a genuine second option; a single-candidate
+        // pick (the common case) leaves this hidden entirely rather than
+        // showing a radio group of one.
+        const candidates = Array.isArray(data.xpath_candidates) ? data.xpath_candidates : [];
+        // OPTIONAL - action_capture.js's own classifyXpathConfidence(),
+        // one "stable"/"weak" tag per candidate in the same order.
+        // Missing entirely (an older picker version, say) just means no
+        // tag is shown - never blocks rendering the candidates themselves.
+        const confidences = Array.isArray(data.locator_profile && data.locator_profile.xpath_candidates_confidence)
+            ? data.locator_profile.xpath_candidates_confidence : [];
+        modalXpathCandidates.innerHTML = "";
+        if (candidates.length > 1) {
+            const heading = document.createElement("div");
+            heading.className = "editor-path";
+            heading.textContent = "Candidates (recommended selected):";
+            modalXpathCandidates.appendChild(heading);
+
+            candidates.forEach((candidateXpath, idx) => {
+                const row = document.createElement("label");
+                row.style.display = "block";
+                row.style.fontFamily = "monospace";
+                row.style.fontSize = "12px";
+                row.style.margin = "2px 0";
+
+                const radio = document.createElement("input");
+                radio.type = "radio";
+                radio.name = "modalXpathCandidateChoice";
+                radio.checked = (idx === 0);
+                radio.addEventListener("change", () => {
+                    modalXpath.value = candidateXpath;
+                    modalXpath.dispatchEvent(new Event("input"));
+                });
+
+                const confidence = confidences[idx];
+                const confidenceTag = confidence ? `  [${confidence}]` : "";
+
+                row.appendChild(radio);
+                row.appendChild(document.createTextNode(
+                    " " + candidateXpath + (idx === 0 ? "  (recommended)" : "") + confidenceTag
+                ));
+                modalXpathCandidates.appendChild(row);
+            });
+            modalXpathCandidates.hidden = false;
+        } else {
+            modalXpathCandidates.hidden = true;
+        }
+
+        // LARGE-CONTAINER WARNING (optional field - see action_capture.js's
+        // own pick-mode click handler): a picked element taller than the
+        // viewport is almost always a wrapper, not the intended target -
+        // still fills in the xpath/candidates above (the user may really
+        // want it), just makes the steer-toward-something-smaller message
+        // impossible to miss.
+        if (data.locator_profile && data.locator_profile.large_container) {
+            const warn = document.createElement("div");
+            warn.className = "editor-error";
+            warn.textContent = "⚠ " + (data.locator_profile.large_container_message || "You picked a large container, hover a smaller element");
+            modalXpathCandidates.hidden = false;
+            modalXpathCandidates.insertBefore(warn, modalXpathCandidates.firstChild);
+        }
+
+        // match-count feedback (Katalon Object Spy-style "Found: N of
+        // N"), computed once by the picker itself at click time (see
+        // action_capture.js's own pick-mode branch) - shown INSTEAD OF a
+        // plain found/not-found message, not in addition to one, so this
+        // deliberately does NOT also trigger the ordinary Validate
+        // round-trip.
+        const matchCount = data.match_count;
+        // DRAG-SELECT (multi-pick): action_capture.js's own drag-select
+        // handler tags its result { mode: "multi", in_box_count } on the
+        // SAME locator_profile every pick already carries - a single
+        // element pick (click, or drag-select's own no-group fallback)
+        // never sets mode, so this only ever branches for a genuine
+        // multi-pick result.
+        const isMultiPick = !!(data.locator_profile && data.locator_profile.mode === "multi");
+        if (isMultiPick) {
+            const inBoxCount = data.locator_profile.in_box_count;
+            modalLocatorValidated = (typeof matchCount === "number" && matchCount >= 1);
+            modalValidateResult.className = modalLocatorValidated ? "locator-status-ok" : "locator-status-fail";
+            modalValidateResult.textContent =
+                `Found: ${matchCount} matching elements on the page\n(${inBoxCount} inside your selection)${noteSuffix}`;
+        } else if (matchCount === 1) {
+            modalValidateResult.className = "locator-status-ok";
+            modalValidateResult.textContent = `Found: ${matchCount} of ${matchCount}${noteSuffix}`;
+            modalLocatorValidated = true;
+        } else if (typeof matchCount === "number" && matchCount >= 0) {
+            modalValidateResult.className = "locator-status-fail";
+            modalValidateResult.textContent =
+                `Found ${matchCount} matches - this locator isn't unique, try picking a more specific element${noteSuffix}`;
+            modalLocatorValidated = false;
+        } else {
+            modalValidateResult.className = "locator-status-fail";
+            modalValidateResult.textContent = `Picked, but the match count couldn't be determined - Validate manually before saving.${noteSuffix}`;
+            modalLocatorValidated = false;
+        }
+        // DRAG-SELECT fallback note: action_capture.js's own drag-select
+        // handler sets this when the selection contained no repeating
+        // group of >= 2 - it already fell back to an ordinary single-
+        // element pick (the message above is the normal "Found: N of N"
+        // one), this just explains why a drag produced a single-element
+        // result instead of a multi one.
+        if (data.locator_profile && data.locator_profile.multi_pick_note) {
+            const noteLine = document.createElement("div");
+            noteLine.className = "editor-message";
+            noteLine.textContent = "Note: " + data.locator_profile.multi_pick_note;
+            modalValidateResult.appendChild(document.createElement("br"));
+            modalValidateResult.appendChild(noteLine);
+        }
+        // FIX 3 (Validate Checkbox State dialog): only shown for that one
+        // action type - checkbox_state_info (see recorder/pick_element.py's
+        // _on_pick_result, which runs the SAME resolver a real replay uses)
+        // is computed for every pick generically, but has nothing useful to
+        // say for any other action type. Never blocks saving either way -
+        // purely informational, appended after whatever match-count message
+        // is already showing above.
+        if (modalActionType.value === "validate_checked") {
+            const cbInfo = data.checkbox_state_info;
+            let cbNote = "";
+            if (cbInfo && cbInfo.resolvedHow === "ambiguous") {
+                cbNote = `⚠ ${cbInfo.ambiguousCount} checkboxes found near the picked element - pick a more specific one.`;
+            } else if (cbInfo && cbInfo.state === "not_a_checkbox") {
+                cbNote = `⚠ Picked element is a <${cbInfo.resolvedTag}>, not a checkbox, and no single associated checkbox was found nearby.`;
+            } else if (cbInfo && ["label.control", "descendant", "ancestor"].includes(cbInfo.resolvedHow)) {
+                const pickedTag = (data.tag || (data.locator_profile && data.locator_profile.tag) || "element");
+                cbNote = `Note: picked <${pickedTag}>; state will be read from its associated checkbox <${cbInfo.resolvedTag}>.`;
+            }
+            if (cbNote) {
+                const cbLine = document.createElement("div");
+                cbLine.className = cbInfo.state === "not_a_checkbox" ? "locator-status-fail" : "editor-message";
+                cbLine.textContent = cbNote;
+                modalValidateResult.appendChild(document.createElement("br"));
+                modalValidateResult.appendChild(cbLine);
+            }
+        }
+
+        modalValidateResult.hidden = false;
+        updateOrphanWarning();
+        updateModalSaveEnabled();
+    }
+
+    modalPickElementPollTimer = setInterval(async () => {
+        try {
+            const response = await fetch(
+                "/api/recordings/pick_element/status?pick_id=" + encodeURIComponent(pickId)
+            );
+            const data = await response.json();
+
+            // STALE-RESULT GUARD: this specific fetch() was already in
+            // flight (or this whole interval callback was already
+            // scheduled) at the moment a NEWER Pick Element click made a
+            // different session the active one. Discarding here, not
+            // just relying on clearInterval, is what actually stops a
+            // late-arriving response from an ALREADY-ENDED session from
+            // overwriting the modal with stale data - confirmed real: a
+            // screen recording showed the modal still reading "still
+            // open in the picker" after that picker's own browser had
+            // already closed.
+            if (myGeneration !== modalPickElementGeneration) {
+                return;
+            }
+
+            // LATENCY INSTRUMENTATION (always on - see pick_element.py/
+            // app.py's matching [pick-timing] lines): every poll response
+            // this modal receives is timestamped, so the full lock ->
+            // Python -> server poll -> browser round trip can be
+            // reconstructed end to end from the console + server logs
+            // together.
+            console.log('[pick-timing] ui_poll_received t=' + Date.now() + ' status=' + data.status);
+
+            if (data.status === "waiting") {
+                const mismatch = contentMismatchSuffix(data) || urlMismatchSuffix(data);
+                if (mismatch) {
+                    modalValidateResult.className = "editor-message";
+                    modalValidateResult.textContent = "Waiting for you to click an element in the browser window..." + mismatch;
+                    modalValidateResult.hidden = false;
+                }
+                return; // keep polling
+            }
+
+            if (data.status === "locked") {
+                // NOT terminal - the picker browser is still open, and
+                // the user can still double-click the highlighted
+                // element there to release this pick and choose a
+                // different one. Live-updates the SAME fields "done"
+                // fills in, but keeps polling instead of stopping, so a
+                // later release+re-pick (or the browser finally closing)
+                // still gets picked up.
+                applyPickedProfile(
+                    data,
+                    " - still open in the picker: double-click the highlighted element there to pick a different one, or close that browser window when you're happy with this pick." +
+                        contentMismatchSuffix(data) + urlMismatchSuffix(data) + replayFailuresSuffix(data)
+                );
+                return; // keep polling
+            }
+
+            stopPickElementPolling();
+
+            if (data.status === "done") {
+                applyPickedProfile(data, contentMismatchSuffix(data) + urlMismatchSuffix(data) + replayFailuresSuffix(data));
+            } else {
+                // timeout / error / cancelled - reuse the existing
+                // failure styling; typing the XPath manually, or trying
+                // Pick Element again, both still work from here. A
+                // confirmed content mismatch gets its own clearer
+                // message here too - the generic "didn't complete"/
+                // "browser closed" text would otherwise be the ONLY
+                // thing shown when the walk stopped early for a real,
+                // specific reason.
+                modalValidateResult.className = "locator-status-fail";
+                modalValidateResult.textContent =
+                    (data.content_mismatch && contentMismatchSuffix(data).trim())
+                    || ((data.message || "Pick Element didn't complete.") + replayFailuresSuffix(data));
+                modalValidateResult.hidden = false;
+            }
+
+        } catch (error) {
+            stopPickElementPolling();
+            modalValidateResult.className = "locator-status-fail";
+            modalValidateResult.textContent = "Pick Element failed: " + error.message;
+            modalValidateResult.hidden = false;
+        }
+    }, 1000);
+});
+
+function openAddActionDialog(mode, index) {
+
+    const actions = recordingData.actions;
+
+    // "after Step N" where the very next recorded step is the tab_open that
+    // Step N's own click caused: the page Step N actually LEADS to is that
+    // new tab, so that's where the picker must land and where the new
+    // action must run during replay (its page_id comes from the step it
+    // follows). Inserting between the click and its tab_open would put the
+    // action on the OLD tab, before the new one is adopted. Anchoring the
+    // insertion after the tab_open makes the replayed prefix, the page
+    // context and the insertion position all agree.
+    let followsOpenedTab = false;
+    if (
+        mode === "after" &&
+        actions[index] && actions[index].action_type !== "tab_open" &&
+        actions[index + 1] && actions[index + 1].action_type === "tab_open"
+    ) {
+        followsOpenedTab = true;
+        index = index + 1;
+    }
+
+    // page_url/page_id context: inherited from the step immediately
+    // PRECEDING the insertion point (the page this new action will
+    // actually land on during replay) - "after Step N" precedes on
+    // Step N itself; "before Step N" precedes on Step N-1, i.e. the
+    // step before the one being inserted before, not that step itself.
+    // Falls back to the recording's own start_url/page 0 only when
+    // there's truly no preceding step (inserting before Step 1, an
+    // empty recording, or appending with none yet).
+    const neighbor =
+        mode === "before" ? (index > 0 ? actions[index - 1] : null) :
+        mode === "after" ? actions[index] :
+        mode === "edit" ? (index > 0 ? actions[index - 1] : null) :
+        actions[actions.length - 1];
+
+    // 0-based index, into the REAL session's own actions array, of the
+    // step this new action is being inserted immediately after - -1
+    // when there's truly no preceding step (inserting before Step 1, an
+    // empty recording). Sent to validate_locator so it can replay
+    // exactly those real, already-recorded steps before checking the
+    // candidate xpath - same "preceding step" derivation pageUrl above
+    // already uses, just expressed as the array index instead.
+    const insertAfterIndex =
+        mode === "before" ? index - 1 :
+        mode === "after" ? index :
+        mode === "edit" ? index - 1 :
+        actions.length - 1;
+
+    // a tab_close neighbor's OWN page_id names the tab it just closed, not
+    // the one still open afterward - inheriting that directly would leave
+    // a step landing on an already-closed page. Its remaining_page_id
+    // (set for every tab_close, manual or recorded - see the manual-
+    // tab_close branch in modalSaveBtn below and the recorder's own
+    // _on_page_closed) is the tab actually still open once it's done.
+    const neighborPageId =
+        (neighbor && neighbor.action_type === "tab_close" && neighbor.remaining_page_id != null)
+            ? neighbor.remaining_page_id
+            : (neighbor && neighbor.page_id) || 0;
+
+    modalContext = {
+        mode,
+        index: (mode === "before" || mode === "after" || mode === "edit") ? index : null,
+        pageUrl: (neighbor && neighbor.page_url) || recordingData.start_url || "",
+        pageId: neighborPageId,
+        insertAfterIndex,
+    };
+
+    modalTitle.textContent =
+        mode === "before" ? "Add Action Before Step " + (index + 1) :
+        mode === "after" ? "Add Action After Step " + (index + 1) +
+            (followsOpenedTab ? " (the new tab opened by Step " + index + ")" : "") :
+        mode === "edit" ? "Edit Step " + (index + 1) :
+        "Add Action";
+
+    // ITEM 8: lets an ALREADY-RECORDED step's own locator/fields be
+    // re-picked/edited in place, instead of Pick Element only ever
+    // being reachable through "Add Action" (which always creates a
+    // brand new step) - previously there was no way to work with an
+    // existing action here at all short of deleting it and re-adding
+    // it from scratch. mode === "edit" reuses this exact same modal -
+    // same Pick Element button, same preceding-actions replay via
+    // insertAfterIndex above (index - 1, so the picker lands exactly
+    // where this step itself would run, same as "before" this step) -
+    // pre-filled with the step's OWN current data; modalSaveBtn's own
+    // handler (see its "edit" branch) updates that same index in place
+    // rather than inserting a new step.
+    if (mode === "edit") {
+        const existing = actions[index] || {};
+        populateActionTypeDropdown(existing.action_type);
+        modalActionType.value = existing.action_type || "click";
+        renderModalFields();
+        const def = ACTION_FIELD_DEFS[modalActionType.value] || { locator: false, fields: [] };
+        def.fields.forEach(field => {
+            const input = document.getElementById("modalField_" + field.key);
+            if (!input) {
+                return;
+            }
+            let value = existing[field.key];
+            // some recorded fields (the "check" action's own
+            // expected_state, unlike every validate_*'s own
+            // string-valued "checked"/"enabled"/"visible" options)
+            // store a native true/false rather than one of this
+            // field's own option strings - map it onto whichever
+            // option this field actually offers instead of leaving
+            // the <select> on its own default.
+            if (typeof value === "boolean" && field.type === "select" && Array.isArray(field.options)) {
+                const opt = field.options[value ? 0 : 1];
+                value = opt ? opt[0] : value;
+            }
+            input.value = (value === null || value === undefined) ? "" : value;
+        });
+        if (def.locator) {
+            const lp = existing.locator_profile || {};
+            modalXpath.value = lp.xpath || "";
+            // dispatching "input" (so every other reactive bit of state -
+            // orphan warning, candidate list, etc. - updates normally)
+            // also resets modalLocatorValidated to false via that same
+            // listener - immediately overridden right after, since this
+            // xpath is the step's own EXISTING, already-working locator,
+            // not an unverified guess the user just typed. Any further
+            // actual edit to the field (typing, or a fresh Pick Element
+            // pick) still correctly re-requires validation from there,
+            // through that same existing "input" listener.
+            modalXpath.dispatchEvent(new Event("input"));
+            modalLocatorValidated = true;
+            modalValidateResult.className = "locator-status-ok";
+            modalValidateResult.textContent = "Using this step's existing locator - Validate again if you change it.";
+            modalValidateResult.hidden = false;
+            updateModalSaveEnabled();
+        }
+    } else {
+        populateActionTypeDropdown();
+        modalActionType.value = "click";
+        renderModalFields();
+    }
+
+    addActionModal.hidden = false;
+
+    // ITEM 1: the browser for Pick Element must only launch at the
+    // moment the user actually clicks the "Pick Element" button - not
+    // automatically when this modal opens. prewarmPickElement() used to
+    // be called here to get a head start, but that meant a real headed
+    // browser launched as a side effect of just opening Add Action,
+    // before the user had looked at anything. Removed; the Pick Element
+    // button's own click handler (modalPickElementBtn) is now the only
+    // thing that ever starts a pick session/browser.
+}
+
+modalCancelBtn.addEventListener("click", () => {
+    // CONFIRMED REAL BUG (found via a UI-level multi-cycle test that
+    // drives the actual dashboard, not recorder.pick_element directly):
+    // cancelling the modal while a Pick Element session was still
+    // waiting/locked used to leave modalPickElementBtn permanently
+    // disabled (see its own click handler - nothing but stopPickElement
+    // Polling() ever re-enables it) and the poll interval still running
+    // in the background, tied to a session the user just walked away
+    // from. The NEXT Add Action open would then find Pick Element
+    // stuck disabled until that abandoned session eventually timed out
+    // server-side. Bumping the generation token here discards any
+    // still-in-flight fetch/poll from that abandoned session (same
+    // guard a brand new Pick Element click already relies on), and
+    // stopPickElementPolling() clears the interval and re-enables the
+    // button immediately, exactly as if that session had never
+    // started.
+    modalPickElementGeneration++;
+    stopPickElementPolling();
+    // closes that abandoned session's own picker browser right away
+    // (see cancelPickElement's own comment) instead of leaving it open
+    // until it times out on its own
+    cancelPickElement();
+    addActionModal.hidden = true;
+    modalContext = null;
+});
+
+modalSaveBtn.addEventListener("click", () => {
+
+    if (!modalContext) {
+        return;
+    }
+
+    const actionType = modalActionType.value;
+    const def = ACTION_FIELD_DEFS[actionType] || { locator: false, fields: [] };
+
+    const newAction = {
+        action_type: actionType,
+        page_url: modalContext.pageUrl,
+        page_id: modalContext.pageId,
+        locator_profile: null,
+        bounding_box: null,
+        timestamp: new Date().toISOString(),
+    };
+
+    def.fields.forEach(field => {
+        const input = document.getElementById("modalField_" + field.key);
+        if (!input) {
+            return;
+        }
+        let value = input.value;
+        if (field.type === "number") {
+            value = value.trim() === "" ? null : Number(value);
+        } else {
+            value = value.trim() === "" ? null : value;
+        }
+        newAction[field.key] = value;
+    });
+
+    if (def.locator) {
+        const xpath = modalXpath.value.trim();
+        newAction.locator_profile = xpath
+            ? { css_path: null, xpath: xpath }
+            : null;
+    }
+
+    // a manually-added tab_open must never reuse an existing page_id -
+    // see the replay-side page_id==0 guard this pairs with - so it gets
+    // the next one never used anywhere in this recording, tagged
+    // "manual": true (checked by the replay handler to open the tab
+    // itself instead of waiting for a real popup that will never come),
+    // and from_page_id (the tab it was opened alongside), the same shape
+    // record_new_tab() already gives a REAL recorded tab_open. The name
+    // is set explicitly (the same override deriveActionName/
+    // _derive_action_name already respect for any user rename) so the
+    // new tab's number is visible without touching either naming
+    // function. Editing an ALREADY-EXISTING tab_open (real or manual)
+    // reuses this same modal (see ITEM 8's own comment above) - only a
+    // brand new insertion should ever get a freshly assigned page_id;
+    // re-saving an existing one must leave page_id/manual/from_page_id
+    // exactly as they already are, or every later step referencing that
+    // page_id would silently break.
+    if (actionType === "tab_open") {
+        if (modalContext.mode === "edit") {
+            const existingTabOpen = recordingData.actions[modalContext.index] || {};
+            newAction.page_id = existingTabOpen.page_id;
+            newAction.manual = existingTabOpen.manual;
+            newAction.from_page_id = existingTabOpen.from_page_id;
+        } else {
+            const maxPageId = recordingData.actions.reduce(
+                (m, a) => Math.max(m, Number(a.page_id) || 0), 0
+            );
+            newAction.page_id = maxPageId + 1;
+            newAction.manual = true;
+            newAction.from_page_id = modalContext.pageId;
+            newAction.name = `Open Tab (tab ${newAction.page_id})` + (newAction.page_url ? ` - ${newAction.page_url}` : "");
+        }
+    }
+
+    // mirrors the recorder's own _on_page_closed: the tab actually still
+    // open after this close is whichever page the tab being closed was
+    // opened FROM (its own tab_open's from_page_id) - found generically
+    // by page_id, so this works whether that opener was a real recorded
+    // tab_open or one manually added above. Falls back to page 0 (the
+    // original page) when no matching opener is found, the same
+    // "almost always where the user ends up" default the recorder uses.
+    // Same edit-mode guard as tab_open above: re-saving an EXISTING
+    // tab_close must not recompute this from scratch.
+    if (actionType === "tab_close") {
+        if (modalContext.mode === "edit") {
+            newAction.remaining_page_id = (recordingData.actions[modalContext.index] || {}).remaining_page_id;
+        } else {
+            const opener = recordingData.actions.find(
+                a => a.action_type === "tab_open" && a.page_id === newAction.page_id
+            );
+            newAction.remaining_page_id = (opener && opener.from_page_id != null) ? opener.from_page_id : 0;
+        }
+    }
+
+    if (modalContext.mode === "before") {
+        recordingData.actions.splice(modalContext.index, 0, newAction);
+    } else if (modalContext.mode === "after") {
+        recordingData.actions.splice(modalContext.index + 1, 0, newAction);
+    } else if (modalContext.mode === "edit") {
+        // ITEM 8: updates the EXISTING step in place instead of
+        // inserting a new one - preserves a custom rename (see the
+        // rename button in renderActions()) the user may have already
+        // given this step, since editing its locator/fields isn't
+        // meant to also silently discard that.
+        const previous = recordingData.actions[modalContext.index] || {};
+        if (previous.name) {
+            newAction.name = previous.name;
+        }
+        recordingData.actions[modalContext.index] = newAction;
+    } else {
+        recordingData.actions.push(newAction);
+    }
+
+    document.getElementById("recordingActionCount").textContent =
+        recordingData.actions.length;
+
+    // same fix as modalCancelBtn's own handler just above: Save can fire
+    // while a Pick Element session is still only "locked" (its browser
+    // still open, non-terminal) - e.g. the user picked something,
+    // matchCount was 1, and they saved without bothering to close that
+    // browser window first. Without this, the poll interval and the
+    // disabled button would both linger into the NEXT Add Action open.
+    modalPickElementGeneration++;
+    stopPickElementPolling();
+    // closes that still-open picker browser right away (see
+    // cancelPickElement's own comment) instead of leaving it open until
+    // it times out on its own
+    cancelPickElement();
+
+    addActionModal.hidden = true;
+    modalContext = null;
+
+    renderActions();
+});
+
+const addActionBtn =
+    document.getElementById("addActionBtn");
+
+if (addActionBtn) {
+
+    addActionBtn.addEventListener(
+        "click",
+        () => openAddActionDialog("append", null)
+    );
+
+}
+
+
+// ITEM 8: reflects how many deletions can currently be undone, and what
+// the NEXT undo would restore - called after every push/pop of
+// deletedActionsStack so the button's enabled state and tooltip never
+// drift out of sync with what it would actually do if clicked
+function updateUndoDeleteBtn() {
+    const btn = document.getElementById("undoDeleteBtn");
+    if (!btn) return;
+    if (deletedActionsStack.length === 0) {
+        btn.disabled = true;
+        btn.title = "No deleted action to restore";
+        return;
+    }
+    const top = deletedActionsStack[deletedActionsStack.length - 1];
+    const label = (top.action && top.action.action_type) || "action";
+    btn.disabled = false;
+    btn.title = `Restore the last deleted action (${label}, was step ${top.index + 1})`
+        + (deletedActionsStack.length > 1
+            ? ` - ${deletedActionsStack.length} deletions available to undo`
+            : "");
+}
+
+const undoDeleteBtn =
+    document.getElementById("undoDeleteBtn");
+
+if (undoDeleteBtn) {
+
+    undoDeleteBtn.addEventListener(
+        "click",
+        () => {
+            if (deletedActionsStack.length === 0) return;
+
+            // LIFO: the most recently deleted action comes back first -
+            // if the user deleted three actions in a row, three clicks
+            // of Undo restore them in reverse order, each landing back
+            // at its own original index (clamped to the current, now-
+            // shorter array length in case something else shifted it)
+            const { index, action } = deletedActionsStack.pop();
+            const restoreAt = Math.min(
+                index,
+                recordingData.actions.length
+            );
+            recordingData.actions.splice(restoreAt, 0, action);
+
+            document.getElementById(
+                "recordingActionCount"
+            ).textContent =
+                recordingData.actions.length;
+
+            updateUndoDeleteBtn();
+            renderActions();
+        }
+    );
+
+}
+
+
+const saveEditedBtn =
+    document.getElementById("saveEditedBtn");
+
+const saveStatus =
+    document.getElementById("saveStatus");
+
+if (saveEditedBtn) {
+
+    saveEditedBtn.addEventListener(
+        "click",
+        async () => {
+
+            saveStatus.hidden =
+                true;
+
+            saveEditedBtn.disabled =
+                true;
+
+            try {
+
+                const response =
+                    await fetch(
+                        "/api/recordings/save",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json",
+
+                                "Accept":
+                                    "application/json"
+                            },
+
+                            body:
+                                JSON.stringify(
+                                    {
+                                        recording: recordingData
+                                    }
+                                )
+                        }
+                    );
+
+
+                const contentType =
+                    response.headers.get(
+                        "content-type"
+                    ) || "";
+
+
+                if (
+                    !contentType.includes(
+                        "application/json"
+                    )
+                ) {
+
+                    throw new Error(
+                        "Server returned HTML instead of JSON."
+                    );
+                }
+
+
+                const data =
+                    await response.json();
+
+
+                if (
+                    !response.ok ||
+                    !data.success
+                ) {
+
+                    throw new Error(
+                        data.message ||
+                        "Failed to save edited recording."
+                    );
+                }
+
+
+                saveStatus.className =
+                    "editor-message";
+
+                saveStatus.textContent =
+                    "Saved as " +
+                    data.name +
+                    " (" +
+                    data.path +
+                    ")";
+
+                saveStatus.hidden =
+                    false;
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Save failed:",
+                    error
+                );
+
+                saveStatus.className =
+                    "editor-error";
+
+                saveStatus.textContent =
+                    "Save failed: " +
+                    error.message;
+
+                saveStatus.hidden =
+                    false;
+
+            }
+
+            finally {
+
+                saveEditedBtn.disabled =
+                    false;
+            }
+        }
+    );
+
+}
+
+
+loadRecording();
+
+</script>
+
+</body>
+</html>

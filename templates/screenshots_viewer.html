@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>Screenshots - AutoFlow QA</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}?v=25"
+    />
+
+</head>
+
+
+<body>
+
+<header class="app-header">
+
+    <h1>
+        Screenshots
+    </h1>
+
+    <p class="tagline">
+        Browse every past run's captured screenshots
+    </p>
+
+</header>
+
+
+<main class="editor-container">
+
+    <section class="editor-header">
+
+        <div>
+            <h2 id="breadcrumb"></h2>
+        </div>
+
+        <div>
+
+            <button
+                type="button"
+                id="backBtn"
+                class="secondary-btn"
+                hidden
+            >
+                Back
+            </button>
+
+            <button
+                type="button"
+                class="secondary-btn"
+                onclick="window.location.href='/'"
+            >
+                Close
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section
+        id="viewerLoading"
+        class="editor-message"
+    >
+        Loading...
+    </section>
+
+
+    <section
+        id="viewerError"
+        class="editor-error"
+        hidden
+    ></section>
+
+
+    <section
+        id="viewerEmpty"
+        class="editor-message"
+        hidden
+    ></section>
+
+
+    <section
+        id="cardListSection"
+        class="actions-editor"
+        hidden
+    >
+        <div id="cardList"></div>
+    </section>
+
+
+    <section
+        id="gallerySection"
+        class="actions-editor"
+        hidden
+    >
+        <div id="gallery" class="stage-gallery"></div>
+    </section>
+
+</main>
+
+
+<script>
+
+// Pure client-side state machine, no window.location changes after the
+// initial page load - every drill-down click (session -> stage ->
+// images) fetches its own level on demand, exactly the 3-route flow
+// this viewer is built around, and every "Back" step just re-renders
+// from state already held in memory.
+const LEVEL_SESSIONS = "sessions";
+const LEVEL_STAGES = "stages";
+const LEVEL_IMAGES = "images";
+
+let level = LEVEL_SESSIONS;
+let sessionsData = [];
+let currentSession = null;   // { session_id, run_dir, ... }
+let currentStage = null;     // bare stage folder name, or null for root_images
+
+
+const loading = document.getElementById("viewerLoading");
+const error = document.getElementById("viewerError");
+const empty = document.getElementById("viewerEmpty");
+const cardListSection = document.getElementById("cardListSection");
+const cardList = document.getElementById("cardList");
+const gallerySection = document.getElementById("gallerySection");
+const gallery = document.getElementById("gallery");
+const breadcrumb = document.getElementById("breadcrumb");
+const backBtn = document.getElementById("backBtn");
+
+
+function resetPanels() {
+    loading.hidden = true;
+    error.hidden = true;
+    empty.hidden = true;
+    cardListSection.hidden = true;
+    gallerySection.hidden = true;
+}
+
+
+function showLoading() {
+    resetPanels();
+    loading.hidden = false;
+}
+
+
+function showError(message) {
+    resetPanels();
+    error.textContent = message;
+    error.hidden = false;
+}
+
+
+function showEmpty(message) {
+    resetPanels();
+    empty.textContent = message;
+    empty.hidden = false;
+}
+
+
+async function fetchJson(url) {
+    const response = await fetch(url, { headers: { "Accept": "application/json" } });
+    const contentType = response.headers.get("content-type") || "";
+    if (!contentType.includes("application/json")) {
+        throw new Error("Server returned HTML instead of JSON.");
+    }
+    const data = await response.json();
+    if (!response.ok || !data.success) {
+        throw new Error(data.message || "Request failed.");
+    }
+    return data;
+}
+
+
+function updateBreadcrumb() {
+
+    breadcrumb.innerHTML = "";
+
+    const sessionsLink = document.createElement("a");
+    sessionsLink.href = "#";
+    sessionsLink.textContent = "Sessions";
+    sessionsLink.addEventListener("click", (e) => { e.preventDefault(); goToSessions(); });
+    breadcrumb.appendChild(sessionsLink);
+
+    if (level === LEVEL_SESSIONS) {
+        backBtn.hidden = true;
+        return;
+    }
+
+    breadcrumb.appendChild(document.createTextNode(" › "));
+
+    if (level === LEVEL_STAGES) {
+        const span = document.createElement("span");
+        span.textContent = currentSession.session_id;
+        breadcrumb.appendChild(span);
+        backBtn.hidden = false;
+        return;
+    }
+
+    // LEVEL_IMAGES
+    const sessionLink = document.createElement("a");
+    sessionLink.href = "#";
+    sessionLink.textContent = currentSession.session_id;
+    sessionLink.addEventListener("click", (e) => { e.preventDefault(); goToStages(currentSession); });
+    breadcrumb.appendChild(sessionLink);
+
+    breadcrumb.appendChild(document.createTextNode(" › "));
+
+    const stageSpan = document.createElement("span");
+    stageSpan.textContent = currentStage || "(images)";
+    breadcrumb.appendChild(stageSpan);
+
+    backBtn.hidden = false;
+}
+
+
+backBtn.addEventListener("click", () => {
+    if (level === LEVEL_IMAGES) {
+        goToStages(currentSession);
+    } else if (level === LEVEL_STAGES) {
+        goToSessions();
+    }
+});
+
+
+/* =========================================================
+   LEVEL 1 - SESSIONS (step 1/2 of the required flow)
+========================================================= */
+
+async function goToSessions() {
+
+    level = LEVEL_SESSIONS;
+    currentSession = null;
+    currentStage = null;
+    updateBreadcrumb();
+    showLoading();
+
+    try {
+        // ?session=<recording name> (the dashboard's per-session
+        // Screenshots button) narrows the list to that recording's runs
+        const onlySession = new URLSearchParams(window.location.search).get("session");
+        const data = await fetchJson(
+            "/api/screenshots/sessions" + (onlySession ? "?session=" + encodeURIComponent(onlySession) : "")
+        );
+        sessionsData = data.sessions || [];
+
+        if (sessionsData.length === 0) {
+            showEmpty("No screenshot sessions found yet - run a recording to create one.");
+            return;
+        }
+
+        renderSessionCards();
+        resetPanels();
+        cardListSection.hidden = false;
+
+    } catch (err) {
+        console.error("Sessions load failed:", err);
+        showError("Failed to load sessions: " + err.message);
+    }
+}
+
+
+function renderSessionCards() {
+
+    cardList.innerHTML = "";
+
+    // most recently modified session shown first - the backend already
+    // sorts by folder modification time, descending; this just renders
+    // that order as-is
+    sessionsData.forEach((session) => {
+
+        const card = document.createElement("div");
+        card.className = "action-card";
+        card.style.cursor = "pointer";
+
+        const heading = document.createElement("h3");
+        heading.textContent = session.session_id;
+
+        const count = document.createElement("p");
+        count.className = "editor-path";
+        count.textContent = `${session.image_count} screenshot(s)`;
+
+        card.appendChild(heading);
+        card.appendChild(count);
+
+        card.addEventListener("click", () => goToStages(session));
+
+        cardList.appendChild(card);
+    });
+}
+
+
+/* =========================================================
+   LEVEL 2 - STAGE FOLDERS for one session (step 3)
+========================================================= */
+
+async function goToStages(session) {
+
+    level = LEVEL_STAGES;
+    currentSession = session;
+    currentStage = null;
+    updateBreadcrumb();
+    showLoading();
+
+    try {
+
+        const url = "/api/screenshots/stages?run_dir=" + encodeURIComponent(session.run_dir);
+        const data = await fetchJson(url);
+
+        const stages = data.stages || [];
+        const rootImages = data.root_images || [];
+
+        if (stages.length === 0 && rootImages.length === 0) {
+            showEmpty("No screenshots found in this session.");
+            return;
+        }
+
+        if (stages.length === 0 && rootImages.length > 0) {
+            // edge case: screenshots sit directly in the session root,
+            // no stage subfolder at all - show them right here rather
+            // than an empty/erroring stage list
+            renderImagesFromPaths(rootImages);
+            resetPanels();
+            gallerySection.hidden = false;
+            return;
+        }
+
+        renderStageCards(stages, rootImages);
+        resetPanels();
+        cardListSection.hidden = false;
+
+    } catch (err) {
+        console.error("Stages load failed:", err);
+        showError("Failed to load this session's stage folders: " + err.message);
+    }
+}
+
+
+function renderStageCards(stages, rootImages) {
+
+    cardList.innerHTML = "";
+
+    stages.forEach((stageName) => {
+
+        const card = document.createElement("div");
+        card.className = "action-card";
+        card.style.cursor = "pointer";
+
+        const heading = document.createElement("h3");
+        heading.textContent = stageName;
+
+        card.appendChild(heading);
+        card.addEventListener("click", () => goToImages(currentSession, stageName));
+
+        cardList.appendChild(card);
+    });
+
+    // mixed case: a session with BOTH real stage subfolders AND some
+    // screenshots sitting directly in its root - show both rather than
+    // silently dropping the root-level ones
+    if (rootImages.length > 0) {
+
+        const card = document.createElement("div");
+        card.className = "action-card";
+        card.style.cursor = "pointer";
+
+        const heading = document.createElement("h3");
+        heading.textContent = "(ungrouped)";
+
+        const note = document.createElement("p");
+        note.className = "editor-path";
+        note.textContent = `${rootImages.length} screenshot(s) not in a stage folder`;
+
+        card.appendChild(heading);
+        card.appendChild(note);
+        card.addEventListener("click", () => {
+            level = LEVEL_IMAGES;
+            currentStage = null;
+            updateBreadcrumb();
+            renderImagesFromPaths(rootImages);
+            resetPanels();
+            gallerySection.hidden = false;
+        });
+
+        cardList.appendChild(card);
+    }
+}
+
+
+/* =========================================================
+   LEVEL 3 - IMAGES for one session+stage (step 4)
+========================================================= */
+
+async function goToImages(session, stageName) {
+
+    level = LEVEL_IMAGES;
+    currentSession = session;
+    currentStage = stageName;
+    updateBreadcrumb();
+    showLoading();
+
+    try {
+
+        const url =
+            "/api/screenshots/images?run_dir=" + encodeURIComponent(session.run_dir) +
+            "&stage=" + encodeURIComponent(stageName);
+        const data = await fetchJson(url);
+
+        const images = data.images || [];
+
+        if (images.length === 0) {
+            showEmpty("No screenshots found in this stage folder.");
+            return;
+        }
+
+        renderImages(images);
+        resetPanels();
+        gallerySection.hidden = false;
+
+    } catch (err) {
+        console.error("Images load failed:", err);
+        showError("Failed to load this stage's screenshots: " + err.message);
+    }
+}
+
+
+function renderImages(images) {
+    // images: [{ filename, path }], already in correct sequential
+    // (img1, img2, img3, ...) order from the backend
+    gallery.innerHTML = "";
+
+    images.forEach((img) => {
+        gallery.appendChild(buildThumb(img.path, img.filename));
+    });
+}
+
+
+function renderImagesFromPaths(paths) {
+    // used for the root_images edge case, where the backend already
+    // hands back full repo-relative paths directly
+    gallery.innerHTML = "";
+
+    paths.forEach((path) => {
+        const filename = path.split("/").pop();
+        gallery.appendChild(buildThumb(path, filename));
+    });
+}
+
+
+function buildThumb(path, filename) {
+
+    // opens the full-size image in a new tab (step 5) via the existing
+    // read-only raw-screenshot route - the simplest option that fits
+    // this project's existing patterns, no new modal/lightbox needed
+    const link = document.createElement("a");
+    link.href = "/screenshots/raw?path=" + encodeURIComponent(path);
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.title = filename;
+
+    const thumb = document.createElement("img");
+    thumb.className = "stage-thumb";
+    thumb.loading = "lazy";
+    thumb.src = "/screenshots/raw?path=" + encodeURIComponent(path);
+    thumb.alt = filename;
+
+    link.appendChild(thumb);
+    return link;
+}
+
+
+goToSessions();
+
+</script>
+
+</body>
+</html>

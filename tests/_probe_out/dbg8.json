@@ -1,0 +1,946 @@
+{
+ "status": "PASS",
+ "steps": [
+  {
+   "index": 1,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 2,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 3,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 4,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 5,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 6,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 7,
+   "action_type": "drag",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 8,
+   "action_type": "drag",
+   "success": true,
+   "error": null,
+   "not_run": false
+  }
+ ],
+ "drag": [
+  {
+   "step": 4,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11245.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1048,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 226.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 231.0,
+     "y": 339,
+     "steps": 1
+    },
+    {
+     "x": 236.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 242.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 247.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 252.0,
+     "y": 339,
+     "steps": 1
+    },
+    {
+     "x": 257.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 263.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 268.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 273.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 279.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 284.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 289.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 294.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 300.0,
+     "y": 338,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11245.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1048,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 5,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11245.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1048,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 406.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 403.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 400.0,
+     "y": 336,
+     "steps": 1
+    },
+    {
+     "x": 396.0,
+     "y": 339,
+     "steps": 1
+    },
+    {
+     "x": 393.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 390.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 387.0,
+     "y": 336,
+     "steps": 1
+    },
+    {
+     "x": 383.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 380.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 377.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 374.0,
+     "y": 336,
+     "steps": 1
+    },
+    {
+     "x": 371.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 367.0,
+     "y": 336,
+     "steps": 1
+    },
+    {
+     "x": 364.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 361.0,
+     "y": 337,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11245.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1048,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 7,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10945.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1348,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 226.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 220.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 215.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 210.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 204.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 199.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 194.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 188.0,
+     "y": 227,
+     "steps": 1
+    },
+    {
+     "x": 183.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 177.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 172.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 167.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 161.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 156.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 151.0,
+     "y": 227,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10945.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1348,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 8,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10945.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1348,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 361.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 357.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 354.0,
+     "y": 227,
+     "steps": 1
+    },
+    {
+     "x": 351.0,
+     "y": 224,
+     "steps": 1
+    },
+    {
+     "x": 347.0,
+     "y": 227,
+     "steps": 1
+    },
+    {
+     "x": 344.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 340.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 337.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 333.0,
+     "y": 224,
+     "steps": 1
+    },
+    {
+     "x": 330.0,
+     "y": 224,
+     "steps": 1
+    },
+    {
+     "x": 327.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 323.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 320.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 316.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 313.0,
+     "y": 224,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10945.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1348,
+    "vw": 1280,
+    "vh": 720
+   }
+  }
+ ],
+ "step_scroll": {
+  "1": {
+   "pos": [
+    0,
+    0,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "2": {
+   "pos": [
+    0,
+    300,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "3": {
+   "pos": [
+    0,
+    1048,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "4": {
+   "pos": [
+    0,
+    1048,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "5": {
+   "pos": [
+    0,
+    1048,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "6": {
+   "pos": [
+    0,
+    1348,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "7": {
+   "pos": [
+    0,
+    1348,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "8": {
+   "pos": null,
+   "scroll_events": []
+  }
+ },
+ "step_pages": {
+  "1": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     0,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "2": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     300,
+     12740,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "3": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     1048,
+     12740,
+     720
+    ],
+    "events": 6
+   }
+  ],
+  "4": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     1048,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "5": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     1048,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "6": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     1348,
+     12740,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "7": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     1348,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "8": []
+ },
+ "events": [
+  {
+   "t": 1790583250.83,
+   "step": 0,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => window.scrollTo({top: 0, left: 0, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583251.128,
+   "step": 2,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790583251.134,
+   "step": 2,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790583251.192,
+   "step": 2,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790583251.249,
+   "step": 2,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583251.39,
+   "step": 2,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583251.414,
+   "step": 3,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790583251.423,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.66666666666667
+  },
+  {
+   "t": 1790583251.48,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.66666666666667
+  },
+  {
+   "t": 1790583251.529,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.66666666666667
+  },
+  {
+   "t": 1790583251.588,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.66666666666667
+  },
+  {
+   "t": 1790583251.647,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.66666666666667
+  },
+  {
+   "t": 1790583251.707,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.66666666666667
+  },
+  {
+   "t": 1790583251.765,
+   "step": 3,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583251.908,
+   "step": 3,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583252.463,
+   "step": 4,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11245.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1048,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790583254.258,
+   "step": 4,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11245.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1048,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790583254.633,
+   "step": 5,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11245.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1048,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790583256.4,
+   "step": 5,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11245.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1048,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790583256.427,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790583256.439,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790583256.507,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790583256.565,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583256.693,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790583257.24,
+   "step": 7,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10945.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1348,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790583258.992,
+   "step": 7,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10945.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1348,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790583259.545,
+   "step": 8,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10945.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1348,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790583261.379,
+   "step": 8,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10945.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1348,
+    "vw": 1280,
+    "vh": 720
+   }
+  }
+ ]
+}

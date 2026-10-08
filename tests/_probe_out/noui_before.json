@@ -1,0 +1,10849 @@
+{
+ "status": "FAIL",
+ "steps": [
+  {
+   "index": 1,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 2,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 3,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 4,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 5,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 6,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 7,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 8,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 9,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 10,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 11,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 12,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 13,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 14,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 15,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 16,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 17,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 18,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 19,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 20,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 21,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 22,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 23,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 24,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 25,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 26,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 27,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 28,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 29,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 30,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 31,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 32,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 33,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 34,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 35,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 36,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 37,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 38,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 39,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 40,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 41,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 42,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 43,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 44,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 45,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 46,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 47,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 48,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 49,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 50,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 51,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 52,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#5) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 53,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#4) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 54,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 55,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 56,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 57,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 58,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 59,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 60,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 61,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 62,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 63,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 64,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 65,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 66,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 67,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 68,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 69,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 70,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 71,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 72,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 73,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 74,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 75,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 76,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 77,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 78,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 79,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 80,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 81,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 82,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 83,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 84,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 85,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 86,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 87,
+   "action_type": "drag",
+   "success": false,
+   "error": "drag did not reach its recorded final value - expected {'kind': 'aria_value', 'value': '20.0', 'text': '20.00'}, got {'kind': 'aria_value', 'value': '0.0', 'text': '0.00'}",
+   "not_run": false
+  },
+  {
+   "index": 88,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 89,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 90,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 91,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 92,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 93,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 94,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 95,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 96,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 97,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 98,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 99,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 100,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 101,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 102,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 103,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 104,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 105,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 106,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 107,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 108,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 109,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 110,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 111,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 112,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 113,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 114,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 115,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 116,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 117,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 118,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 119,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 120,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 121,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 122,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 123,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 124,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 125,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 126,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 127,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 128,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 129,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 130,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 131,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 132,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 133,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 134,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 135,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 136,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 137,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 138,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 139,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 140,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 141,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 142,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 143,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 144,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 145,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 146,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 147,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 148,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 149,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 150,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 151,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 152,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 153,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 154,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 155,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 156,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 157,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 158,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 159,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 160,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 161,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 162,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 163,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 164,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 165,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 166,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 167,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 168,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 169,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 170,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 171,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 172,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 173,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 174,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 175,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 176,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 177,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 178,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 179,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 180,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 181,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 182,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 183,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 184,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 185,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 186,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 187,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 188,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 189,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 190,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 191,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 192,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 193,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 194,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 195,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 196,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 197,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 198,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 199,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 200,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 201,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  },
+  {
+   "index": 202,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 87 failed)",
+   "not_run": true
+  }
+ ],
+ "drag": [
+  {
+   "step": 4,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 11287.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1047.199951171875,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 226.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 231.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 236.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 242.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 247.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 252.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 257.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 263.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 268.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 273.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 279.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 284.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 289.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 294.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 300.0,
+     "y": 338.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 11287.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1047.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 5,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 11287.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1047.199951171875,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 406.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 403.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 400.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 396.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 393.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 390.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 387.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 384.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 380.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 377.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 374.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 371.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 368.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 364.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 361.0,
+     "y": 337.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 11287.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1047.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 7,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 10987.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1347.199951171875,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 226.0,
+     "y": 225.0,
+     "steps": 1
+    },
+    {
+     "x": 220.0,
+     "y": 224.0,
+     "steps": 1
+    },
+    {
+     "x": 215.0,
+     "y": 225.0,
+     "steps": 1
+    },
+    {
+     "x": 210.0,
+     "y": 226.0,
+     "steps": 1
+    },
+    {
+     "x": 204.0,
+     "y": 226.0,
+     "steps": 1
+    },
+    {
+     "x": 199.0,
+     "y": 226.0,
+     "steps": 1
+    },
+    {
+     "x": 194.0,
+     "y": 224.0,
+     "steps": 1
+    },
+    {
+     "x": 188.0,
+     "y": 226.0,
+     "steps": 1
+    },
+    {
+     "x": 183.0,
+     "y": 224.0,
+     "steps": 1
+    },
+    {
+     "x": 177.0,
+     "y": 226.0,
+     "steps": 1
+    },
+    {
+     "x": 172.0,
+     "y": 225.0,
+     "steps": 1
+    },
+    {
+     "x": 167.0,
+     "y": 224.0,
+     "steps": 1
+    },
+    {
+     "x": 161.0,
+     "y": 226.0,
+     "steps": 1
+    },
+    {
+     "x": 156.0,
+     "y": 225.0,
+     "steps": 1
+    },
+    {
+     "x": 151.0,
+     "y": 227.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 10987.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1347.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 8,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 10987.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1347.199951171875,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 361.0,
+     "y": 225.0,
+     "steps": 1
+    },
+    {
+     "x": 358.0,
+     "y": 225.0,
+     "steps": 1
+    },
+    {
+     "x": 354.0,
+     "y": 226.0,
+     "steps": 1
+    },
+    {
+     "x": 351.0,
+     "y": 224.0,
+     "steps": 1
+    },
+    {
+     "x": 347.0,
+     "y": 227.0,
+     "steps": 1
+    },
+    {
+     "x": 344.0,
+     "y": 225.0,
+     "steps": 1
+    },
+    {
+     "x": 340.0,
+     "y": 225.0,
+     "steps": 1
+    },
+    {
+     "x": 337.0,
+     "y": 225.0,
+     "steps": 1
+    },
+    {
+     "x": 334.0,
+     "y": 224.0,
+     "steps": 1
+    },
+    {
+     "x": 330.0,
+     "y": 224.0,
+     "steps": 1
+    },
+    {
+     "x": 327.0,
+     "y": 225.0,
+     "steps": 1
+    },
+    {
+     "x": 323.0,
+     "y": 225.0,
+     "steps": 1
+    },
+    {
+     "x": 320.0,
+     "y": 226.0,
+     "steps": 1
+    },
+    {
+     "x": 316.0,
+     "y": 224.0,
+     "steps": 1
+    },
+    {
+     "x": 313.0,
+     "y": 224.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 10987.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1347.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 11,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 10160.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2174.39990234375,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 177.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 171.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 165.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 158.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 152.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 146.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 139.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 133.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 127.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 121.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 114.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 108.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 102.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 95.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 89.0,
+     "y": 338.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 10160.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2174.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 12,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 10160.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2174.39990234375,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 285.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 282.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 279.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 275.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 272.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 269.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 265.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 262.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 259.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 255.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 252.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 248.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 245.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 242.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 238.0,
+     "y": 339.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 10160.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2174.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 15,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 9539.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2795.199951171875,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 135.0,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 132.0,
+     "y": 342.0,
+     "steps": 1
+    },
+    {
+     "x": 130.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 128.0,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 125.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 123.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 121.0,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 119.0,
+     "y": 342.0,
+     "steps": 1
+    },
+    {
+     "x": 116.0,
+     "y": 342.0,
+     "steps": 1
+    },
+    {
+     "x": 114.0,
+     "y": 343.0,
+     "steps": 1
+    },
+    {
+     "x": 112.0,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 109.0,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 107.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 105.0,
+     "y": 342.0,
+     "steps": 1
+    },
+    {
+     "x": 103.0,
+     "y": 342.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 9539.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2795.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 17,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 9659.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2675.199951171875,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 177.0,
+     "y": 461.0,
+     "steps": 1
+    },
+    {
+     "x": 175.0,
+     "y": 461.0,
+     "steps": 1
+    },
+    {
+     "x": 172.0,
+     "y": 460.0,
+     "steps": 1
+    },
+    {
+     "x": 170.0,
+     "y": 461.0,
+     "steps": 1
+    },
+    {
+     "x": 167.0,
+     "y": 462.0,
+     "steps": 1
+    },
+    {
+     "x": 165.0,
+     "y": 462.0,
+     "steps": 1
+    },
+    {
+     "x": 162.0,
+     "y": 460.0,
+     "steps": 1
+    },
+    {
+     "x": 160.0,
+     "y": 462.0,
+     "steps": 1
+    },
+    {
+     "x": 157.0,
+     "y": 460.0,
+     "steps": 1
+    },
+    {
+     "x": 155.0,
+     "y": 462.0,
+     "steps": 1
+    },
+    {
+     "x": 152.0,
+     "y": 461.0,
+     "steps": 1
+    },
+    {
+     "x": 150.0,
+     "y": 460.0,
+     "steps": 1
+    },
+    {
+     "x": 147.0,
+     "y": 462.0,
+     "steps": 1
+    },
+    {
+     "x": 145.0,
+     "y": 460.0,
+     "steps": 1
+    },
+    {
+     "x": 142.0,
+     "y": 462.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 9659.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2675.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 20,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 9539.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2795.199951171875,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 220.0,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 222.0,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 225.0,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 228.0,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 230.0,
+     "y": 342.0,
+     "steps": 1
+    },
+    {
+     "x": 233.0,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 235.0,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 238.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 240.0,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 243.0,
+     "y": 342.0,
+     "steps": 1
+    },
+    {
+     "x": 246.0,
+     "y": 342.0,
+     "steps": 1
+    },
+    {
+     "x": 248.0,
+     "y": 342.0,
+     "steps": 1
+    },
+    {
+     "x": 251.0,
+     "y": 343.0,
+     "steps": 1
+    },
+    {
+     "x": 253.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 256.0,
+     "y": 342.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 9539.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2795.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 25,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8596.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3738.39990234375,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 429,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 424,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 420,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 416,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 411,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 407,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 403,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 398,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 394,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 389,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 385,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 381,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 376,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 372,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 368,
+     "y": 337.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8596.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3738.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 26,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8596.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3738.39990234375,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 90.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 84.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 77.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 71.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 64.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 57.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 51.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 44.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 38.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 31.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 25.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 18.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 11.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 5.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": -2.0,
+     "y": 337.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8596.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3738.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 28,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8716.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3618.39990234375,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 413,
+     "y": 535.0,
+     "steps": 1
+    },
+    {
+     "x": 406,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 399,
+     "y": 535.0,
+     "steps": 1
+    },
+    {
+     "x": 393,
+     "y": 535.0,
+     "steps": 1
+    },
+    {
+     "x": 386,
+     "y": 536.0,
+     "steps": 1
+    },
+    {
+     "x": 379,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 373,
+     "y": 535.0,
+     "steps": 1
+    },
+    {
+     "x": 366,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 360,
+     "y": 535.0,
+     "steps": 1
+    },
+    {
+     "x": 353,
+     "y": 536.0,
+     "steps": 1
+    },
+    {
+     "x": 346,
+     "y": 535.0,
+     "steps": 1
+    },
+    {
+     "x": 340,
+     "y": 536.0,
+     "steps": 1
+    },
+    {
+     "x": 333,
+     "y": 535.0,
+     "steps": 1
+    },
+    {
+     "x": 326,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 320,
+     "y": 535.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8716.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3618.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 29,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8716.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3618.39990234375,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 106.0,
+     "y": 535.0,
+     "steps": 1
+    },
+    {
+     "x": 102.0,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 97.0,
+     "y": 536.0,
+     "steps": 1
+    },
+    {
+     "x": 92.0,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 87.0,
+     "y": 535.0,
+     "steps": 1
+    },
+    {
+     "x": 82.0,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 78.0,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 73.0,
+     "y": 536.0,
+     "steps": 1
+    },
+    {
+     "x": 68.0,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 63.0,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 58.0,
+     "y": 536.0,
+     "steps": 1
+    },
+    {
+     "x": 54.0,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 49.0,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 44.0,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 39.0,
+     "y": 535.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8716.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3618.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 32,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8442.900390625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3892,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 277.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 273.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 269.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 265.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 261.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 257.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 253.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 249.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 245.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 241.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 237.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 233.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 229.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 225.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 222.0,
+     "y": 338.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8442.900390625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3892,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 33,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8442.900390625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3892,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 243.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 239.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 235.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 232.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 228.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 224.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 221.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 217.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 213.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 210.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 206.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 202.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 199.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 195.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 192.0,
+     "y": 338.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8442.900390625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3892,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 36,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8364.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3970.39990234375,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 260.0,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 264.0,
+     "y": 332.0,
+     "steps": 1
+    },
+    {
+     "x": 268.0,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 272.0,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 276.0,
+     "y": 332.0,
+     "steps": 1
+    },
+    {
+     "x": 280.0,
+     "y": 332.0,
+     "steps": 1
+    },
+    {
+     "x": 284.0,
+     "y": 332.0,
+     "steps": 1
+    },
+    {
+     "x": 288.0,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 292.0,
+     "y": 332.0,
+     "steps": 1
+    },
+    {
+     "x": 296.0,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 300.0,
+     "y": 334.0,
+     "steps": 1
+    },
+    {
+     "x": 304.0,
+     "y": 332.0,
+     "steps": 1
+    },
+    {
+     "x": 308.0,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 312.0,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 317.0,
+     "y": 334.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8364.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3970.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 39,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8291.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 4043.199951171875,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 260.0,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 253.0,
+     "y": 334.0,
+     "steps": 1
+    },
+    {
+     "x": 247.0,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 241.0,
+     "y": 332.0,
+     "steps": 1
+    },
+    {
+     "x": 234.0,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 228.0,
+     "y": 331.0,
+     "steps": 1
+    },
+    {
+     "x": 222.0,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 216.0,
+     "y": 332.0,
+     "steps": 1
+    },
+    {
+     "x": 209.0,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 203.0,
+     "y": 332.0,
+     "steps": 1
+    },
+    {
+     "x": 197.0,
+     "y": 332.0,
+     "steps": 1
+    },
+    {
+     "x": 190.0,
+     "y": 334.0,
+     "steps": 1
+    },
+    {
+     "x": 184.0,
+     "y": 332.0,
+     "steps": 1
+    },
+    {
+     "x": 178.0,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 172.0,
+     "y": 331.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8291.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 4043.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 42,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 7730.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 4604.7998046875,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 361.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 358.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 355.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 352.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 349.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 346.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 343.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 340.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 336.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 333.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 330.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 327.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 324.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 321.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 318.0,
+     "y": 338.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 7730.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 4604.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 43,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 7730.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 4604.7998046875,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 158.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 152.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 145.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 139.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 133.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 127.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 120.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 114.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 108.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 101.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 95.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 89.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 83.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 76.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 70.0,
+     "y": 338.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 7730.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 4604.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 48,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 7034.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 5300.7998046875,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 372.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 371.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 369.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 367.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 365.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 363.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 361.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 359.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 357.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 355.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 353.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 351.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 349.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 347.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 345.0,
+     "y": 338.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 7034.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 5300.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 49,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 7034.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 5300.7998046875,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 147.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 152.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 158.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 163.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 169.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 174.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 180.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 185.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 191.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 196.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 202.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 207.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 213.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 218.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 224.0,
+     "y": 338.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 7034.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 5300.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 52,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 6508.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 5826.39990234375,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 327.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 331.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 335.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 339.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 343.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 347.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 351.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 355.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 359.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 363.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 367.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 371.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 375.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 379.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 383.0,
+     "y": 337.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 6508.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 5826.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 53,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 6508.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 5826.39990234375,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 260.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 253.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 246.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 239.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 232.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 226.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 219.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 212.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 205.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 198.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 192.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 185.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 178.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 171.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 165.0,
+     "y": 338.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 6508.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 5826.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 56,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 6087.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 6247.2001953125,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 260.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 263.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 267.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 271.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 275.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 279.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 283.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 287.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 290.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 294.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 298.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 302.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 306.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 310.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 314.0,
+     "y": 337.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 6087.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 6247.2001953125,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 57,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 6087.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 6247.2001953125,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 372.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 366.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 359.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 353.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 346.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 339.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 333.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 326.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 320.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 313.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 307.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 300.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 293.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 287.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 280.0,
+     "y": 337.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 6087.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 6247.2001953125,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 60,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 5550.89990234375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 6784,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 260.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 266.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 273.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 280.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 287.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 294.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 301.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 308.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 315.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 322.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 329.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 336.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 343.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 350.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 357.0,
+     "y": 338.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 5550.89990234375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 6784,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 61,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 5550.89990234375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 6784,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 124.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 131.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 138.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 145.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 152.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 159.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 166.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 173.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 180.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 186.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 193.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 200.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 207.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 214.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 221.0,
+     "y": 338.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 5550.89990234375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 6784,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 64,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 5088.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 7246.39990234375,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 158.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 162.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 167.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 171.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 176.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 180.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 185.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 189.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 194.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 198.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 203.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 207.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 212.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 216.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 221.0,
+     "y": 337.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 5088.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 7246.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 66,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 4948.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 7386.39990234375,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 293.0,
+     "y": 259.0,
+     "steps": 1
+    },
+    {
+     "x": 295.0,
+     "y": 259.0,
+     "steps": 1
+    },
+    {
+     "x": 297.0,
+     "y": 260.0,
+     "steps": 1
+    },
+    {
+     "x": 299.0,
+     "y": 260.0,
+     "steps": 1
+    },
+    {
+     "x": 301.0,
+     "y": 260.0,
+     "steps": 1
+    },
+    {
+     "x": 303.0,
+     "y": 259.0,
+     "steps": 1
+    },
+    {
+     "x": 305.0,
+     "y": 259.0,
+     "steps": 1
+    },
+    {
+     "x": 307.0,
+     "y": 258.0,
+     "steps": 1
+    },
+    {
+     "x": 309.0,
+     "y": 259.0,
+     "steps": 1
+    },
+    {
+     "x": 311.0,
+     "y": 259.0,
+     "steps": 1
+    },
+    {
+     "x": 313.0,
+     "y": 259.0,
+     "steps": 1
+    },
+    {
+     "x": 315.0,
+     "y": 259.0,
+     "steps": 1
+    },
+    {
+     "x": 316.0,
+     "y": 261.0,
+     "steps": 1
+    },
+    {
+     "x": 318.0,
+     "y": 260.0,
+     "steps": 1
+    },
+    {
+     "x": 320.0,
+     "y": 258.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 4948.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 7386.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 71,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 4510.89990234375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 7824,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 260.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 256.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 253.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 249.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 246.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 242.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 239.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 235.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 232.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 228.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 225.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 221.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 218.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 214.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 211.0,
+     "y": 339.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 4510.89990234375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 7824,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 74,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 3870.900146484375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 8464,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 158.0,
+     "y": 379.0,
+     "steps": 1
+    },
+    {
+     "x": 161.0,
+     "y": 378.0,
+     "steps": 1
+    },
+    {
+     "x": 164.0,
+     "y": 380.0,
+     "steps": 1
+    },
+    {
+     "x": 166.0,
+     "y": 378.0,
+     "steps": 1
+    },
+    {
+     "x": 169.0,
+     "y": 380.0,
+     "steps": 1
+    },
+    {
+     "x": 172.0,
+     "y": 379.0,
+     "steps": 1
+    },
+    {
+     "x": 175.0,
+     "y": 380.0,
+     "steps": 1
+    },
+    {
+     "x": 177.0,
+     "y": 380.0,
+     "steps": 1
+    },
+    {
+     "x": 180.0,
+     "y": 378.0,
+     "steps": 1
+    },
+    {
+     "x": 183.0,
+     "y": 380.0,
+     "steps": 1
+    },
+    {
+     "x": 186.0,
+     "y": 379.0,
+     "steps": 1
+    },
+    {
+     "x": 189.0,
+     "y": 378.0,
+     "steps": 1
+    },
+    {
+     "x": 191.0,
+     "y": 380.0,
+     "steps": 1
+    },
+    {
+     "x": 194.0,
+     "y": 379.0,
+     "steps": 1
+    },
+    {
+     "x": 197.0,
+     "y": 380.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 3870.900146484375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 8464,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 75,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 3870.900146484375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 8464,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 361.0,
+     "y": 379.0,
+     "steps": 1
+    },
+    {
+     "x": 356.0,
+     "y": 380.0,
+     "steps": 1
+    },
+    {
+     "x": 350.0,
+     "y": 379.0,
+     "steps": 1
+    },
+    {
+     "x": 345.0,
+     "y": 378.0,
+     "steps": 1
+    },
+    {
+     "x": 339.0,
+     "y": 379.0,
+     "steps": 1
+    },
+    {
+     "x": 334.0,
+     "y": 380.0,
+     "steps": 1
+    },
+    {
+     "x": 328.0,
+     "y": 380.0,
+     "steps": 1
+    },
+    {
+     "x": 323.0,
+     "y": 378.0,
+     "steps": 1
+    },
+    {
+     "x": 318.0,
+     "y": 378.0,
+     "steps": 1
+    },
+    {
+     "x": 312.0,
+     "y": 379.0,
+     "steps": 1
+    },
+    {
+     "x": 307.0,
+     "y": 377.0,
+     "steps": 1
+    },
+    {
+     "x": 301.0,
+     "y": 380.0,
+     "steps": 1
+    },
+    {
+     "x": 296.0,
+     "y": 379.0,
+     "steps": 1
+    },
+    {
+     "x": 290.0,
+     "y": 380.0,
+     "steps": 1
+    },
+    {
+     "x": 285.0,
+     "y": 379.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 3870.900146484375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 8464,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 78,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 3439.699951171875,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 8895.2001953125,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 203.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 209.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 215.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 220.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 226.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 232.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 238.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 244.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 249.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 255.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 261.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 267.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 273.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 278.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 284.0,
+     "y": 337.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 3439.699951171875,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 8895.2001953125,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 79,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 3439.699951171875,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 8895.2001953125,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 278.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 273.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 268.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 263.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 257.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 252.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 247.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 242.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 237.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 231.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 226.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 221.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 216.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 211.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 205.0,
+     "y": 339.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 3439.699951171875,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 8895.2001953125,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 82,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 2574.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 9760.7998046875,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 143.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 149.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 155.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 160.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 166.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 172.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 177.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 183.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 189.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 194.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 200.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 206.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 211.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 217.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 222.0,
+     "y": 339.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 2574.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 9760.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 83,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 2574.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 9760.7998046875,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 260.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 265.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 270.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 275.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 280.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 285.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 290.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 295.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 300.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 305.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 310.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 315.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 320.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 325.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 331.0,
+     "y": 337.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 2574.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 9760.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 86,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 1954.0999755859375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 10380.7998046875,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 395.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 400.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 404.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 409.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 414.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 419.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 424.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 428.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 433.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 438.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 443.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 448.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 452.0,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 457.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 462.0,
+     "y": 339.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 1954.0999755859375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 10380.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 87,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 1954.0999755859375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 10380.7998046875,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 158.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 1116.0,
+     "y": 569.0,
+     "steps": 20
+    },
+    {
+     "x": 154.0,
+     "y": 338.0,
+     "steps": 20
+    },
+    {
+     "x": 151.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 147.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 143.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 140.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 136.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 132.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 129.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 125.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 122.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 118.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 114.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 111.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 107.0,
+     "y": 337.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 1954.0999755859375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 10380.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  }
+ ],
+ "step_scroll": {
+  "1": {
+   "pos": [
+    0,
+    0,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "2": {
+   "pos": [
+    0,
+    300,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "3": {
+   "pos": [
+    0,
+    1047.199951171875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "4": {
+   "pos": [
+    0,
+    1047.199951171875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "5": {
+   "pos": [
+    0,
+    1047.199951171875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "6": {
+   "pos": [
+    0,
+    1347.199951171875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "7": {
+   "pos": [
+    0,
+    1347.199951171875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "8": {
+   "pos": [
+    0,
+    1347.199951171875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "9": {
+   "pos": [
+    0,
+    1487.199951171875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "10": {
+   "pos": [
+    0,
+    2174.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "11": {
+   "pos": [
+    0,
+    2174.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "12": {
+   "pos": [
+    0,
+    2174.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "13": {
+   "pos": [
+    0,
+    2474.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "14": {
+   "pos": [
+    0,
+    2795.199951171875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "15": {
+   "pos": [
+    0,
+    2795.199951171875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "16": {
+   "pos": [
+    0,
+    2675.199951171875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "17": {
+   "pos": [
+    0,
+    2675.199951171875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "18": {
+   "pos": [
+    0,
+    2415.199951171875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "19": {
+   "pos": [
+    0,
+    2795.199951171875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "20": {
+   "pos": [
+    0,
+    2795.199951171875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "21": {
+   "pos": [
+    0,
+    2299.199951171875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "22": {
+   "pos": [
+    0,
+    2599.199951171875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "23": {
+   "pos": [
+    0,
+    3499.199951171875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "24": {
+   "pos": [
+    0,
+    3738.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "25": {
+   "pos": [
+    0,
+    3738.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "26": {
+   "pos": [
+    0,
+    3738.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "27": {
+   "pos": [
+    0,
+    3618.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "28": {
+   "pos": [
+    0,
+    3618.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "29": {
+   "pos": [
+    0,
+    3618.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "30": {
+   "pos": [
+    0,
+    3358.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "31": {
+   "pos": [
+    0,
+    3892,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "32": {
+   "pos": [
+    0,
+    3892,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "33": {
+   "pos": [
+    0,
+    3892,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "34": {
+   "pos": [
+    0,
+    3632,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "35": {
+   "pos": [
+    0,
+    3970.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "36": {
+   "pos": [
+    0,
+    3970.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "37": {
+   "pos": [
+    0,
+    3710.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "38": {
+   "pos": [
+    0,
+    4043.199951171875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "39": {
+   "pos": [
+    0,
+    4043.199951171875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "40": {
+   "pos": [
+    0,
+    3923.199951171875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "41": {
+   "pos": [
+    0,
+    4604.7998046875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "42": {
+   "pos": [
+    0,
+    4604.7998046875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "43": {
+   "pos": [
+    0,
+    4604.7998046875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "44": {
+   "pos": [
+    0,
+    3876.800048828125,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "45": {
+   "pos": [
+    0,
+    3616.800048828125,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "46": {
+   "pos": [
+    0,
+    4516.7998046875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "47": {
+   "pos": [
+    0,
+    5300.7998046875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "48": {
+   "pos": [
+    0,
+    5300.7998046875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "49": {
+   "pos": [
+    0,
+    5300.7998046875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "50": {
+   "pos": [
+    0,
+    5440.7998046875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "51": {
+   "pos": [
+    0,
+    5826.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "52": {
+   "pos": [
+    0,
+    5826.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "53": {
+   "pos": [
+    0,
+    5826.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "54": {
+   "pos": [
+    0,
+    5706.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "55": {
+   "pos": [
+    0,
+    6247.2001953125,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "56": {
+   "pos": [
+    0,
+    6247.2001953125,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "57": {
+   "pos": [
+    0,
+    6247.2001953125,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "58": {
+   "pos": [
+    0,
+    6127.2001953125,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "59": {
+   "pos": [
+    0,
+    6784,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "60": {
+   "pos": [
+    0,
+    6784,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "61": {
+   "pos": [
+    0,
+    6784,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "62": {
+   "pos": [
+    0,
+    6524,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "63": {
+   "pos": [
+    0,
+    7246.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "64": {
+   "pos": [
+    0,
+    7246.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "65": {
+   "pos": [
+    0,
+    7386.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "66": {
+   "pos": [
+    0,
+    7386.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "67": {
+   "pos": [
+    0,
+    6502.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "68": {
+   "pos": [
+    0,
+    6382.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "69": {
+   "pos": [
+    0,
+    7282.39990234375,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "70": {
+   "pos": [
+    0,
+    7824,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "71": {
+   "pos": [
+    0,
+    7824,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "72": {
+   "pos": [
+    0,
+    7564,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "73": {
+   "pos": [
+    0,
+    8464,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "74": {
+   "pos": [
+    0,
+    8464,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "75": {
+   "pos": [
+    0,
+    8464,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "76": {
+   "pos": [
+    0,
+    8344,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "77": {
+   "pos": [
+    0,
+    8895.2001953125,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "78": {
+   "pos": [
+    0,
+    8895.2001953125,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "79": {
+   "pos": [
+    0,
+    8895.2001953125,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "80": {
+   "pos": [
+    0,
+    9195.2001953125,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "81": {
+   "pos": [
+    0,
+    9760.7998046875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "82": {
+   "pos": [
+    0,
+    9760.7998046875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "83": {
+   "pos": [
+    0,
+    9760.7998046875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "84": {
+   "pos": [
+    0,
+    9640.7998046875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "85": {
+   "pos": [
+    0,
+    10380.7998046875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "86": {
+   "pos": [
+    0,
+    10380.7998046875,
+    12782,
+    720
+   ],
+   "scroll_events": []
+  },
+  "87": {
+   "pos": null,
+   "scroll_events": []
+  }
+ },
+ "step_pages": {
+  "1": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     0,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "2": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     300,
+     12782,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "3": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     1047.199951171875,
+     12782,
+     720
+    ],
+    "events": 6
+   }
+  ],
+  "4": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     1047.199951171875,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "5": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     1047.199951171875,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "6": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     1347.199951171875,
+     12782,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "7": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     1347.199951171875,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "8": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     1347.199951171875,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "9": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     1487.199951171875,
+     12782,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "10": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2174.39990234375,
+     12782,
+     720
+    ],
+    "events": 5
+   }
+  ],
+  "11": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2174.39990234375,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "12": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2174.39990234375,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "13": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2474.39990234375,
+     12782,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "14": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2795.199951171875,
+     12782,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "15": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2795.199951171875,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "16": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2675.199951171875,
+     12782,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "17": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2675.199951171875,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "18": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2415.199951171875,
+     12782,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "19": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2795.199951171875,
+     12782,
+     720
+    ],
+    "events": 3
+   }
+  ],
+  "20": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2795.199951171875,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "21": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2299.199951171875,
+     12782,
+     720
+    ],
+    "events": 4
+   }
+  ],
+  "22": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2599.199951171875,
+     12782,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "23": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3499.199951171875,
+     12782,
+     720
+    ],
+    "events": 7
+   }
+  ],
+  "24": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3738.39990234375,
+     12782,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "25": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3738.39990234375,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "26": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3738.39990234375,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "27": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3618.39990234375,
+     12782,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "28": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3618.39990234375,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "29": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3618.39990234375,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "30": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3358.39990234375,
+     12782,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "31": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3892,
+     12782,
+     720
+    ],
+    "events": 4
+   }
+  ],
+  "32": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3892,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "33": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3892,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "34": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3632,
+     12782,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "35": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3970.39990234375,
+     12782,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "36": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3970.39990234375,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "37": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3710.39990234375,
+     12782,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "38": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     4043.199951171875,
+     12782,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "39": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     4043.199951171875,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "40": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3923.199951171875,
+     12782,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "41": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     4604.7998046875,
+     12782,
+     720
+    ],
+    "events": 5
+   }
+  ],
+  "42": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     4604.7998046875,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "43": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     4604.7998046875,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "44": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3876.800048828125,
+     12782,
+     720
+    ],
+    "events": 6
+   }
+  ],
+  "45": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3616.800048828125,
+     12782,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "46": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     4516.7998046875,
+     12782,
+     720
+    ],
+    "events": 7
+   }
+  ],
+  "47": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     5300.7998046875,
+     12782,
+     720
+    ],
+    "events": 6
+   }
+  ],
+  "48": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     5300.7998046875,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "49": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     5300.7998046875,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "50": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     5440.7998046875,
+     12782,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "51": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     5826.39990234375,
+     12782,
+     720
+    ],
+    "events": 4
+   }
+  ],
+  "52": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     5826.39990234375,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "53": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     5826.39990234375,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "54": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     5706.39990234375,
+     12782,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "55": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     6247.2001953125,
+     12782,
+     720
+    ],
+    "events": 4
+   }
+  ],
+  "56": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     6247.2001953125,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "57": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     6247.2001953125,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "58": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     6127.2001953125,
+     12782,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "59": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     6784,
+     12782,
+     720
+    ],
+    "events": 5
+   }
+  ],
+  "60": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     6784,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "61": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     6784,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "62": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     6524,
+     12782,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "63": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     7246.39990234375,
+     12782,
+     720
+    ],
+    "events": 6
+   }
+  ],
+  "64": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     7246.39990234375,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "65": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     7386.39990234375,
+     12782,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "66": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     7386.39990234375,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "67": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     6502.39990234375,
+     12782,
+     720
+    ],
+    "events": 7
+   }
+  ],
+  "68": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     6382.39990234375,
+     12782,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "69": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     7282.39990234375,
+     12782,
+     720
+    ],
+    "events": 7
+   }
+  ],
+  "70": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     7824,
+     12782,
+     720
+    ],
+    "events": 4
+   }
+  ],
+  "71": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     7824,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "72": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     7564,
+     12782,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "73": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     8464,
+     12782,
+     720
+    ],
+    "events": 7
+   }
+  ],
+  "74": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     8464,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "75": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     8464,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "76": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     8344,
+     12782,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "77": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     8895.2001953125,
+     12782,
+     720
+    ],
+    "events": 4
+   }
+  ],
+  "78": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     8895.2001953125,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "79": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     8895.2001953125,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "80": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     9195.2001953125,
+     12782,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "81": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     9760.7998046875,
+     12782,
+     720
+    ],
+    "events": 4
+   }
+  ],
+  "82": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     9760.7998046875,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "83": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     9760.7998046875,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "84": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     9640.7998046875,
+     12782,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "85": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     10380.7998046875,
+     12782,
+     720
+    ],
+    "events": 7
+   }
+  ],
+  "86": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     10380.7998046875,
+     12782,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "87": []
+ },
+ "events": [
+  {
+   "t": 1790576818.026,
+   "step": 0,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => window.scrollTo({top: 0, left: 0, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576818.483,
+   "step": 2,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576818.487,
+   "step": 2,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790576818.547,
+   "step": 2,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790576818.608,
+   "step": 2,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576818.736,
+   "step": 2,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576818.771,
+   "step": 3,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576818.777,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.5
+  },
+  {
+   "t": 1790576818.829,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.5
+  },
+  {
+   "t": 1790576818.883,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.5
+  },
+  {
+   "t": 1790576818.935,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.5
+  },
+  {
+   "t": 1790576818.986,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.5
+  },
+  {
+   "t": 1790576819.048,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.5
+  },
+  {
+   "t": 1790576819.096,
+   "step": 3,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576819.226,
+   "step": 3,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576819.65,
+   "step": 4,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 11287.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1047.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576820.789,
+   "step": 4,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 11287.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1047.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576820.993,
+   "step": 5,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 11287.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1047.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576822.102,
+   "step": 5,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 11287.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1047.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576822.15,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576822.154,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790576822.208,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790576822.27,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576822.399,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576822.616,
+   "step": 7,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 10987.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1347.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576823.74,
+   "step": 7,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 10987.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1347.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576824.034,
+   "step": 8,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 10987.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1347.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576825.165,
+   "step": 8,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 10987.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1347.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576825.225,
+   "step": 9,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576825.231,
+   "step": 9,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 140.0
+  },
+  {
+   "t": 1790576825.29,
+   "step": 9,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576825.423,
+   "step": 9,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576825.45,
+   "step": 10,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576825.454,
+   "step": 10,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 137.4
+  },
+  {
+   "t": 1790576825.502,
+   "step": 10,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 137.4
+  },
+  {
+   "t": 1790576825.553,
+   "step": 10,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 137.4
+  },
+  {
+   "t": 1790576825.608,
+   "step": 10,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 137.4
+  },
+  {
+   "t": 1790576825.657,
+   "step": 10,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 137.4
+  },
+  {
+   "t": 1790576825.711,
+   "step": 10,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576825.852,
+   "step": 10,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576826.118,
+   "step": 11,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 10160.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2174.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576827.247,
+   "step": 11,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 10160.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2174.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576827.55,
+   "step": 12,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 10160.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2174.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576828.771,
+   "step": 12,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 10160.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2174.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576828.847,
+   "step": 13,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576828.853,
+   "step": 13,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790576828.912,
+   "step": 13,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790576828.972,
+   "step": 13,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576829.112,
+   "step": 13,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576829.145,
+   "step": 14,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576829.149,
+   "step": 14,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 160.5
+  },
+  {
+   "t": 1790576829.207,
+   "step": 14,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 160.5
+  },
+  {
+   "t": 1790576829.257,
+   "step": 14,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576829.399,
+   "step": 14,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576829.648,
+   "step": 15,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 9539.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2795.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576830.761,
+   "step": 15,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 9539.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2795.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576830.797,
+   "step": 16,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576830.8,
+   "step": 16,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790576830.853,
+   "step": 16,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576830.993,
+   "step": 16,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576831.137,
+   "step": 17,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 9659.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2675.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576832.247,
+   "step": 17,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 9659.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2675.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576832.29,
+   "step": 18,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576832.295,
+   "step": 18,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790576832.352,
+   "step": 18,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790576832.416,
+   "step": 18,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576832.549,
+   "step": 18,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576832.567,
+   "step": 19,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576832.57,
+   "step": 19,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 126.66666666666667
+  },
+  {
+   "t": 1790576832.621,
+   "step": 19,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 126.66666666666667
+  },
+  {
+   "t": 1790576832.666,
+   "step": 19,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 126.66666666666667
+  },
+  {
+   "t": 1790576832.728,
+   "step": 19,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576832.855,
+   "step": 19,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576833.097,
+   "step": 20,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 9539.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2795.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576834.247,
+   "step": 20,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 9539.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2795.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576834.337,
+   "step": 21,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576834.345,
+   "step": 21,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.0
+  },
+  {
+   "t": 1790576834.409,
+   "step": 21,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.0
+  },
+  {
+   "t": 1790576834.469,
+   "step": 21,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.0
+  },
+  {
+   "t": 1790576834.531,
+   "step": 21,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.0
+  },
+  {
+   "t": 1790576834.59,
+   "step": 21,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576834.735,
+   "step": 21,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576834.771,
+   "step": 22,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576834.778,
+   "step": 22,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790576834.835,
+   "step": 22,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790576834.897,
+   "step": 22,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576835.035,
+   "step": 22,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576835.068,
+   "step": 23,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576835.072,
+   "step": 23,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576835.134,
+   "step": 23,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576835.197,
+   "step": 23,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576835.26,
+   "step": 23,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576835.315,
+   "step": 23,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576835.377,
+   "step": 23,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576835.438,
+   "step": 23,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576835.5,
+   "step": 23,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576835.648,
+   "step": 23,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576835.715,
+   "step": 24,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576835.731,
+   "step": 24,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 239.0
+  },
+  {
+   "t": 1790576835.795,
+   "step": 24,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576835.933,
+   "step": 24,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576836.301,
+   "step": 25,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8596.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3738.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576837.465,
+   "step": 25,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8596.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3738.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576837.732,
+   "step": 26,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8596.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3738.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576838.871,
+   "step": 26,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8596.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3738.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576838.919,
+   "step": 27,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576838.922,
+   "step": 27,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790576838.974,
+   "step": 27,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576839.115,
+   "step": 27,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576839.368,
+   "step": 28,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8716.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3618.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576840.532,
+   "step": 28,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8716.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3618.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576840.853,
+   "step": 29,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8716.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3618.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576842.06,
+   "step": 29,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8716.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3618.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576842.156,
+   "step": 30,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576842.164,
+   "step": 30,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790576842.228,
+   "step": 30,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790576842.29,
+   "step": 30,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576842.432,
+   "step": 30,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576842.478,
+   "step": 31,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576842.485,
+   "step": 31,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 133.5
+  },
+  {
+   "t": 1790576842.542,
+   "step": 31,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 133.5
+  },
+  {
+   "t": 1790576842.605,
+   "step": 31,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 133.5
+  },
+  {
+   "t": 1790576842.657,
+   "step": 31,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 133.5
+  },
+  {
+   "t": 1790576842.71,
+   "step": 31,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576842.854,
+   "step": 31,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576843.153,
+   "step": 32,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8442.900390625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3892,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576844.337,
+   "step": 32,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8442.900390625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3892,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576844.742,
+   "step": 33,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8442.900390625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3892,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576845.966,
+   "step": 33,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8442.900390625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3892,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576846.056,
+   "step": 34,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576846.065,
+   "step": 34,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790576846.131,
+   "step": 34,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790576846.193,
+   "step": 34,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576846.336,
+   "step": 34,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576846.382,
+   "step": 35,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576846.389,
+   "step": 35,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 169.0
+  },
+  {
+   "t": 1790576846.442,
+   "step": 35,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 169.0
+  },
+  {
+   "t": 1790576846.497,
+   "step": 35,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576846.636,
+   "step": 35,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576847.866,
+   "step": 36,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8364.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3970.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576849.448,
+   "step": 36,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8364.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3970.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576849.585,
+   "step": 37,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576849.596,
+   "step": 37,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790576849.665,
+   "step": 37,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790576849.738,
+   "step": 37,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576849.878,
+   "step": 37,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576849.952,
+   "step": 38,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576849.966,
+   "step": 38,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 166.5
+  },
+  {
+   "t": 1790576850.025,
+   "step": 38,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 166.5
+  },
+  {
+   "t": 1790576850.092,
+   "step": 38,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576850.242,
+   "step": 38,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576850.591,
+   "step": 39,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8291.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 4043.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576852.122,
+   "step": 39,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 8291.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 4043.199951171875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576852.299,
+   "step": 40,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576852.308,
+   "step": 40,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790576852.374,
+   "step": 40,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576852.518,
+   "step": 40,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576853.211,
+   "step": 41,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576853.233,
+   "step": 41,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 136.4
+  },
+  {
+   "t": 1790576853.372,
+   "step": 41,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 136.4
+  },
+  {
+   "t": 1790576853.542,
+   "step": 41,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 136.4
+  },
+  {
+   "t": 1790576853.644,
+   "step": 41,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 136.4
+  },
+  {
+   "t": 1790576853.749,
+   "step": 41,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 136.4
+  },
+  {
+   "t": 1790576853.903,
+   "step": 41,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576854.066,
+   "step": 41,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576855.045,
+   "step": 42,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 7730.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 4604.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576856.496,
+   "step": 42,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 7730.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 4604.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576856.99,
+   "step": 43,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 7730.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 4604.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576858.512,
+   "step": 43,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 7730.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 4604.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576858.661,
+   "step": 44,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576858.688,
+   "step": 44,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -121.33333333333333
+  },
+  {
+   "t": 1790576858.827,
+   "step": 44,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -121.33333333333333
+  },
+  {
+   "t": 1790576858.965,
+   "step": 44,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -121.33333333333333
+  },
+  {
+   "t": 1790576859.135,
+   "step": 44,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -121.33333333333333
+  },
+  {
+   "t": 1790576859.262,
+   "step": 44,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -121.33333333333333
+  },
+  {
+   "t": 1790576859.403,
+   "step": 44,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -121.33333333333333
+  },
+  {
+   "t": 1790576859.472,
+   "step": 44,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576859.621,
+   "step": 44,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576859.721,
+   "step": 45,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576859.73,
+   "step": 45,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790576859.801,
+   "step": 45,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790576859.876,
+   "step": 45,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576860.058,
+   "step": 45,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576860.137,
+   "step": 46,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576860.153,
+   "step": 46,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576860.233,
+   "step": 46,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576860.306,
+   "step": 46,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576860.37,
+   "step": 46,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576860.44,
+   "step": 46,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576860.507,
+   "step": 46,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576860.573,
+   "step": 46,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576860.644,
+   "step": 46,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576860.791,
+   "step": 46,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576860.889,
+   "step": 47,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576860.891,
+   "step": 47,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 130.66666666666666
+  },
+  {
+   "t": 1790576860.97,
+   "step": 47,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 130.66666666666666
+  },
+  {
+   "t": 1790576861.055,
+   "step": 47,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 130.66666666666666
+  },
+  {
+   "t": 1790576861.125,
+   "step": 47,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 130.66666666666666
+  },
+  {
+   "t": 1790576861.189,
+   "step": 47,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 130.66666666666666
+  },
+  {
+   "t": 1790576861.258,
+   "step": 47,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 130.66666666666666
+  },
+  {
+   "t": 1790576861.322,
+   "step": 47,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576861.474,
+   "step": 47,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576862.318,
+   "step": 48,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 7034.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 5300.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576863.836,
+   "step": 48,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 7034.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 5300.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576864.3,
+   "step": 49,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 7034.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 5300.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576865.8,
+   "step": 49,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 7034.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 5300.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576865.898,
+   "step": 50,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576865.906,
+   "step": 50,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 140.0
+  },
+  {
+   "t": 1790576865.974,
+   "step": 50,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576866.109,
+   "step": 50,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576866.157,
+   "step": 51,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576866.164,
+   "step": 51,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.66666666666666
+  },
+  {
+   "t": 1790576866.219,
+   "step": 51,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.66666666666666
+  },
+  {
+   "t": 1790576866.29,
+   "step": 51,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.66666666666666
+  },
+  {
+   "t": 1790576866.356,
+   "step": 51,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576866.491,
+   "step": 51,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576866.86,
+   "step": 52,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 6508.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 5826.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576868.158,
+   "step": 52,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 6508.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 5826.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576868.595,
+   "step": 53,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 6508.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 5826.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576869.923,
+   "step": 53,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 6508.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 5826.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576870.055,
+   "step": 54,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576870.069,
+   "step": 54,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790576870.14,
+   "step": 54,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576870.274,
+   "step": 54,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576870.307,
+   "step": 55,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576870.323,
+   "step": 55,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 135.25
+  },
+  {
+   "t": 1790576870.406,
+   "step": 55,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 135.25
+  },
+  {
+   "t": 1790576870.461,
+   "step": 55,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 135.25
+  },
+  {
+   "t": 1790576870.54,
+   "step": 55,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 135.25
+  },
+  {
+   "t": 1790576870.624,
+   "step": 55,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576870.773,
+   "step": 55,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576871.166,
+   "step": 56,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 6087.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 6247.2001953125,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576872.675,
+   "step": 56,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 6087.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 6247.2001953125,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576873.126,
+   "step": 57,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 6087.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 6247.2001953125,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576874.74,
+   "step": 57,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 6087.7001953125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 6247.2001953125,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576874.869,
+   "step": 58,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576874.878,
+   "step": 58,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790576874.946,
+   "step": 58,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576875.09,
+   "step": 58,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576875.256,
+   "step": 59,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576875.256,
+   "step": 59,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 131.4
+  },
+  {
+   "t": 1790576875.32,
+   "step": 59,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 131.4
+  },
+  {
+   "t": 1790576875.388,
+   "step": 59,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 131.4
+  },
+  {
+   "t": 1790576875.456,
+   "step": 59,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 131.4
+  },
+  {
+   "t": 1790576875.519,
+   "step": 59,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 131.4
+  },
+  {
+   "t": 1790576875.582,
+   "step": 59,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576875.723,
+   "step": 59,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576876.251,
+   "step": 60,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 5550.89990234375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 6784,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576877.706,
+   "step": 60,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 5550.89990234375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 6784,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576878.297,
+   "step": 61,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 5550.89990234375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 6784,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576880.08,
+   "step": 61,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 5550.89990234375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 6784,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576880.255,
+   "step": 62,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576880.271,
+   "step": 62,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790576880.335,
+   "step": 62,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790576880.394,
+   "step": 62,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576880.55,
+   "step": 62,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576880.611,
+   "step": 63,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576880.62,
+   "step": 63,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 120.33333333333333
+  },
+  {
+   "t": 1790576880.708,
+   "step": 63,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 120.33333333333333
+  },
+  {
+   "t": 1790576880.774,
+   "step": 63,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 120.33333333333333
+  },
+  {
+   "t": 1790576880.839,
+   "step": 63,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 120.33333333333333
+  },
+  {
+   "t": 1790576880.905,
+   "step": 63,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 120.33333333333333
+  },
+  {
+   "t": 1790576880.973,
+   "step": 63,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 120.33333333333333
+  },
+  {
+   "t": 1790576881.041,
+   "step": 63,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576881.19,
+   "step": 63,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576881.559,
+   "step": 64,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 5088.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 7246.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576882.977,
+   "step": 64,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 5088.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 7246.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576883.057,
+   "step": 65,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576883.08,
+   "step": 65,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 140.0
+  },
+  {
+   "t": 1790576883.139,
+   "step": 65,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576883.275,
+   "step": 65,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576883.664,
+   "step": 66,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 4948.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 7386.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576885.127,
+   "step": 66,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 4948.5,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 7386.39990234375,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576885.225,
+   "step": 67,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576885.23,
+   "step": 67,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -126.28571428571429
+  },
+  {
+   "t": 1790576885.303,
+   "step": 67,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -126.28571428571429
+  },
+  {
+   "t": 1790576885.372,
+   "step": 67,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -126.28571428571429
+  },
+  {
+   "t": 1790576885.436,
+   "step": 67,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -126.28571428571429
+  },
+  {
+   "t": 1790576885.504,
+   "step": 67,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -126.28571428571429
+  },
+  {
+   "t": 1790576885.567,
+   "step": 67,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -126.28571428571429
+  },
+  {
+   "t": 1790576885.622,
+   "step": 67,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -126.28571428571429
+  },
+  {
+   "t": 1790576885.686,
+   "step": 67,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576885.824,
+   "step": 67,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576885.856,
+   "step": 68,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576885.872,
+   "step": 68,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790576885.936,
+   "step": 68,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576886.072,
+   "step": 68,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576886.123,
+   "step": 69,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576886.131,
+   "step": 69,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576886.191,
+   "step": 69,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576886.252,
+   "step": 69,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576886.322,
+   "step": 69,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576886.385,
+   "step": 69,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576886.462,
+   "step": 69,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576886.543,
+   "step": 69,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576886.618,
+   "step": 69,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576886.752,
+   "step": 69,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576886.803,
+   "step": 70,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576886.81,
+   "step": 70,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 135.5
+  },
+  {
+   "t": 1790576886.874,
+   "step": 70,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 135.5
+  },
+  {
+   "t": 1790576886.94,
+   "step": 70,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 135.5
+  },
+  {
+   "t": 1790576887.005,
+   "step": 70,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 135.5
+  },
+  {
+   "t": 1790576887.073,
+   "step": 70,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576887.219,
+   "step": 70,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576887.558,
+   "step": 71,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 4510.89990234375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 7824,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576888.849,
+   "step": 71,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 4510.89990234375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 7824,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576888.949,
+   "step": 72,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576888.957,
+   "step": 72,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790576889.024,
+   "step": 72,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790576889.09,
+   "step": 72,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576889.239,
+   "step": 72,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576889.286,
+   "step": 73,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576889.286,
+   "step": 73,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576889.373,
+   "step": 73,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576889.441,
+   "step": 73,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576889.506,
+   "step": 73,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576889.573,
+   "step": 73,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576889.634,
+   "step": 73,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576889.689,
+   "step": 73,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790576889.753,
+   "step": 73,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576889.888,
+   "step": 73,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576890.234,
+   "step": 74,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 3870.900146484375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 8464,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576891.566,
+   "step": 74,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 3870.900146484375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 8464,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576891.989,
+   "step": 75,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 3870.900146484375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 8464,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576893.512,
+   "step": 75,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 3870.900146484375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 8464,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576893.721,
+   "step": 76,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576893.723,
+   "step": 76,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790576893.822,
+   "step": 76,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576893.973,
+   "step": 76,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576894.044,
+   "step": 77,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576894.05,
+   "step": 77,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 137.75
+  },
+  {
+   "t": 1790576894.109,
+   "step": 77,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 137.75
+  },
+  {
+   "t": 1790576894.173,
+   "step": 77,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 137.75
+  },
+  {
+   "t": 1790576894.257,
+   "step": 77,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 137.75
+  },
+  {
+   "t": 1790576894.322,
+   "step": 77,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576894.459,
+   "step": 77,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576894.99,
+   "step": 78,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 3439.699951171875,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 8895.2001953125,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576896.496,
+   "step": 78,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 3439.699951171875,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 8895.2001953125,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576897.116,
+   "step": 79,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 3439.699951171875,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 8895.2001953125,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576898.435,
+   "step": 79,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 3439.699951171875,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 8895.2001953125,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576898.54,
+   "step": 80,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576898.551,
+   "step": 80,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790576898.624,
+   "step": 80,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790576898.69,
+   "step": 80,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576898.824,
+   "step": 80,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576898.875,
+   "step": 81,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576898.882,
+   "step": 81,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 141.5
+  },
+  {
+   "t": 1790576898.94,
+   "step": 81,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 141.5
+  },
+  {
+   "t": 1790576899.008,
+   "step": 81,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 141.5
+  },
+  {
+   "t": 1790576899.071,
+   "step": 81,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 141.5
+  },
+  {
+   "t": 1790576899.127,
+   "step": 81,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576899.275,
+   "step": 81,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576899.655,
+   "step": 82,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 2574.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 9760.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576900.921,
+   "step": 82,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 2574.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 9760.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576901.316,
+   "step": 83,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 2574.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 9760.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576902.559,
+   "step": 83,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 2574.10009765625,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 9760.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576902.673,
+   "step": 84,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576902.691,
+   "step": 84,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790576902.755,
+   "step": 84,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576902.888,
+   "step": 84,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576902.937,
+   "step": 85,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790576902.942,
+   "step": 85,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 123.33333333333333
+  },
+  {
+   "t": 1790576903.006,
+   "step": 85,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 123.33333333333333
+  },
+  {
+   "t": 1790576903.092,
+   "step": 85,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 123.33333333333333
+  },
+  {
+   "t": 1790576903.173,
+   "step": 85,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 123.33333333333333
+  },
+  {
+   "t": 1790576903.238,
+   "step": 85,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 123.33333333333333
+  },
+  {
+   "t": 1790576903.304,
+   "step": 85,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 123.33333333333333
+  },
+  {
+   "t": 1790576903.368,
+   "step": 85,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576903.505,
+   "step": 85,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790576903.876,
+   "step": 86,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 1954.0999755859375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 10380.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576905.12,
+   "step": 86,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 1954.0999755859375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 10380.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576905.463,
+   "step": 87,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 1954.0999755859375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 10380.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790576907.398,
+   "step": 87,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.5199890136719,
+      "y": 1954.0999755859375,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 10380.7998046875,
+    "vw": 1280,
+    "vh": 720
+   }
+  }
+ ]
+}

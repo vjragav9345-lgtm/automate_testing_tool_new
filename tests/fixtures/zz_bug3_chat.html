@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+  body { margin: 0; padding: 20px; font-family: sans-serif; }
+  #answer { margin-top: 20px; padding: 10px; border: 1px solid #ccc; display: none; }
+</style>
+</head>
+<body>
+  <h2>Chat</h2>
+  <input id="msgBox" type="text" placeholder="Type a message">
+  <div id="answer">The answer appeared here.</div>
+  <script>
+    // Simulates a chat site that mints a brand-new conversation id (a
+    // UUID) client-side on every submit and updates the URL via
+    // pushState - a real navigation from the recorder/replay engine's
+    // point of view (page.url changes), but the id itself is different
+    // every single time, including between the recorded session and
+    // any later replay of it. This is the exact shape BUG 3's evidence
+    // describes: "the recording shows this step immediately followed
+    // by a navigate to <origin>/uc/<uuid>, but the page never reached
+    // it" because the LIVE id never matches the RECORDED one under an
+    // exact string comparison.
+    function uuidish() {
+      var s = '';
+      for (var i = 0; i < 32; i++) s += Math.floor(Math.random() * 16).toString(16);
+      return s.slice(0, 8) + '-' + s.slice(8, 12) + '-' + s.slice(12, 16) + '-' + s.slice(16, 20) + '-' + s.slice(20);
+    }
+    document.getElementById('msgBox').addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter') return;
+      var id = uuidish();
+      history.pushState(null, '', '/uc/' + id);
+      document.getElementById('answer').style.display = 'block';
+    });
+  </script>
+</body></html>

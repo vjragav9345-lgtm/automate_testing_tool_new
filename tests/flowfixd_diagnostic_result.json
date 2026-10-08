@@ -1,0 +1,287 @@
+{
+  "step17_plus": {
+    "dump": {
+      "outerHTML": "<div tabindex=\"0\" class=\"css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73\" style=\"width: 36px; height: 36px; border-radius: 18px; background-color: rgb(66, 133, 244); justify-content: center; align-items: center; transition-duration: 0.25s;\"><div dir=\"auto\" class=\"css-146c3p1 r-lrvibr\" style=\"font-size: 16px; color: rgb(255, 255, 255); font-family: anticon; font-weight: normal; font-style: normal;\"></div></div>",
+      "chain": [
+        {
+          "tag": "DIV",
+          "attrs": {
+            "tabindex": "0",
+            "class": "css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73",
+            "style": "width: 36px; height: 36px; border-radius: 18px; background-color: rgb(66, 133, 244); justify-content: center; align-items: center; transition-duration: 0.25s;"
+          },
+          "ownText": "",
+          "innerText": "",
+          "cursor": "pointer",
+          "hasSvg": false,
+          "rect": {
+            "w": 36,
+            "h": 36
+          }
+        },
+        {
+          "tag": "DIV",
+          "attrs": {
+            "class": "css-g5y9jx",
+            "style": "flex-direction: row; align-items: center; opacity: 1;"
+          },
+          "ownText": "",
+          "innerText": "\n",
+          "cursor": "auto",
+          "hasSvg": false,
+          "rect": {
+            "w": 116,
+            "h": 36
+          }
+        },
+        {
+          "tag": "DIV",
+          "attrs": {
+            "class": "css-g5y9jx",
+            "style": "flex-direction: row; justify-content: space-between; align-items: center; margin-bottom: 14px;"
+          },
+          "ownText": "",
+          "innerText": "₹ 899\n\n",
+          "cursor": "auto",
+          "hasSvg": false,
+          "rect": {
+            "w": 442.3999938964844,
+            "h": 36
+          }
+        },
+        {
+          "tag": "DIV",
+          "attrs": {
+            "class": "css-g5y9jx",
+            "style": "box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 6px; background-color: rgb(255, 255, 255); border-radius: 12px; padding: 18px; border-width: 1.5px; border-color: rgb(66, 133, 244); margin-bottom: 12px;"
+          },
+          "ownText": "",
+          "innerText": " 5km\n8 to 90 yrs\n₹ 899\n\n\n󰊝\nMale\n󰊜\nFemale\n󰊟\nOthers",
+          "cursor": "auto",
+          "hasSvg": false,
+          "rect": {
+            "w": 480,
+            "h": 149.1999969482422
+          }
+        },
+        {
+          "tag": "DIV",
+          "attrs": {
+            "class": "css-g5y9jx",
+            "style": "padding-bottom: 32px; padding-top: 14px;"
+          },
+          "ownText": "",
+          "innerText": " 5km\n8 to 90 yrs\n₹ 899\n\n\n󰊝\nMale\n󰊜\nFemale\n󰊟\nOthers",
+          "cursor": "auto",
+          "hasSvg": false,
+          "rect": {
+            "w": 480,
+            "h": 207.1999969482422
+          }
+        },
+        {
+          "tag": "DIV",
+          "attrs": {
+            "class": "css-g5y9jx r-150rngu r-eqz5dr r-16y2uox r-1wbh5a2 r-11yh6sk r-1rnoaur r-agouwx r-2eszeu",
+            "style": "flex: 1 1 0%;"
+          },
+          "ownText": "",
+          "innerText": " 5km\n8 to 90 yrs\n₹ 899\n\n\n󰊝\nMale\n󰊜\nFemale\n󰊟\nOthers",
+          "cursor": "auto",
+          "hasSvg": false,
+          "rect": {
+            "w": 480,
+            "h": 608
+          }
+        },
+        {
+          "tag": "DIV",
+          "attrs": {
+            "class": "css-g5y9jx",
+            "style": "flex: 1 1 0%; flex-direction: row; max-width: 1330px; width: 100%; align-self: center; padding-right: 5px; padding-left: 5px; padding-bottom: 32px; gap: 15px; overflow: hidden;"
+          },
+          "ownText": "",
+          "innerText": "\nBack\nSportzia Marathon\n\nCoimbatore\n\nSeptember 30, 2026\n 5km\n8 to 90 yrs\n₹ 89",
+          "cursor": "auto",
+          "hasSvg": false,
+          "rect": {
+            "w": 1280,
+            "h": 640
+          }
+        }
+      ]
+    },
+    "profile": {
+      "action_type": "click",
+      "value": null,
+      "locator_profile": {
+        "id": null,
+        "name": null,
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "",
+        "placeholder": null,
+        "title": null,
+        "href": null,
+        "css_path": "div#3 > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2)",
+        "xpath": "//div[normalize-space(.)='']/div[2]",
+        "text": "",
+        "element_text": "",
+        "tag": "div",
+        "attributes": {},
+        "cross_boundary": false,
+        "icon_class_hint": null
+      },
+      "bounding_box": {
+        "x": 825.2000122070312,
+        "y": 143.1999969482422,
+        "width": 36,
+        "height": 36
+      },
+      "click_strategy": "standard",
+      "page_url": "https://sportzia-preprod.kovaionplay.com/events/sportzia-marathon-E1403/register",
+      "timestamp": "2026-09-24T07:25:44.100Z"
+    }
+  },
+  "step21_send_otp": {
+    "dump": {
+      "outerHTML": "<div tabindex=\"0\" class=\"css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-pgx3k3 r-6ncur5 r-1r8g8re r-1777fci r-u8s1d r-dukzhd r-h7zev3 r-1acpoxo r-mhe3cw\" style=\"transition-duration: 0s;\"><div dir=\"auto\" class=\"css-146c3p1 r-lrvibr\" style=\"font-size: 20px; color: rgb(107, 114, 128); font-family: ionicons; font-weight: normal; font-style: normal;\"></div></div>",
+      "chain": [
+        {
+          "tag": "DIV",
+          "attrs": {
+            "tabindex": "0",
+            "class": "css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-pgx3k3 r-6ncur5 r-1r8g8re r-1777fci r-u8s1d r-dukzhd r-h7zev3 r-1acpoxo r-mhe3cw",
+            "style": "transition-duration: 0s;"
+          },
+          "ownText": "",
+          "innerText": "",
+          "cursor": "pointer",
+          "hasSvg": false,
+          "rect": {
+            "w": 36,
+            "h": 36
+          }
+        },
+        {
+          "tag": "DIV",
+          "attrs": {
+            "class": "css-g5y9jx r-1oszu61 r-14lw9ot r-y47klf r-1hsrccj r-3lpwum r-11rk87y r-1wci7jc r-1t6ao1e r-13qz1uu"
+          },
+          "ownText": "",
+          "innerText": "\nSign In to Continue\nEnter your email or mobile number to continue with your re",
+          "cursor": "auto",
+          "hasSvg": false,
+          "rect": {
+            "w": 440,
+            "h": 338
+          }
+        },
+        {
+          "tag": "DIV",
+          "attrs": {
+            "class": "css-g5y9jx r-1awozwy r-1psseca r-13awgt0 r-1777fci r-zo2zu6 r-u9wvl5",
+            "style": "opacity: 1;"
+          },
+          "ownText": "",
+          "innerText": "\nSign In to Continue\nEnter your email or mobile number to continue with your re",
+          "cursor": "auto",
+          "hasSvg": false,
+          "rect": {
+            "w": 1280,
+            "h": 720
+          }
+        },
+        {
+          "tag": "DIV",
+          "attrs": {
+            "class": "css-g5y9jx r-13awgt0"
+          },
+          "ownText": "",
+          "innerText": "\nSign In to Continue\nEnter your email or mobile number to continue with your re",
+          "cursor": "auto",
+          "hasSvg": false,
+          "rect": {
+            "w": 1280,
+            "h": 720
+          }
+        },
+        {
+          "tag": "DIV",
+          "attrs": {
+            "class": "css-g5y9jx r-13awgt0 r-ipm5af"
+          },
+          "ownText": "",
+          "innerText": "\nSign In to Continue\nEnter your email or mobile number to continue with your re",
+          "cursor": "auto",
+          "hasSvg": false,
+          "rect": {
+            "w": 1280,
+            "h": 720
+          }
+        },
+        {
+          "tag": "DIV",
+          "attrs": {
+            "aria-modal": "true",
+            "class": "css-g5y9jx r-1p0dtai r-1d2f490 r-1xcajam r-zchlnj r-ipm5af r-1niwhzg",
+            "role": "dialog"
+          },
+          "ownText": "",
+          "innerText": "\nSign In to Continue\nEnter your email or mobile number to continue with your re",
+          "cursor": "auto",
+          "hasSvg": false,
+          "rect": {
+            "w": 1280,
+            "h": 720
+          }
+        },
+        {
+          "tag": "DIV",
+          "attrs": {
+            "class": "css-g5y9jx"
+          },
+          "ownText": "",
+          "innerText": "\nSign In to Continue\nEnter your email or mobile number to continue with your re",
+          "cursor": "auto",
+          "hasSvg": false,
+          "rect": {
+            "w": 1280,
+            "h": 0
+          }
+        }
+      ]
+    },
+    "profile": {
+      "action_type": "click",
+      "value": null,
+      "locator_profile": {
+        "id": null,
+        "name": null,
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "",
+        "placeholder": null,
+        "title": null,
+        "href": null,
+        "css_path": "body > div:nth-of-type(5) > div > div:nth-of-type(2) > div > div > div > div > div > div",
+        "xpath": "/html[1]/body[1]/div[5]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+        "text": "",
+        "element_text": "",
+        "tag": "div",
+        "attributes": {},
+        "cross_boundary": false,
+        "icon_class_hint": null
+      },
+      "bounding_box": {
+        "x": 810,
+        "y": 205,
+        "width": 36,
+        "height": 36
+      },
+      "click_strategy": "standard",
+      "page_url": "https://sportzia-preprod.kovaionplay.com/events/sportzia-marathon-E1403/register",
+      "timestamp": "2026-09-24T07:25:44.147Z"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+<!doctype html><html><head><title>spa</title><style>
+body{font:14px sans-serif} #view{margin-top:20px;padding:10px;background:#efe;min-height:60px}
+</style></head><body><nav><a href="#/home" id="h">Home</a> <a href="#/pricing" id="p">Pricing</a> <a href="#/about" id="a">About</a></nav>
+<div id="view"></div>
+<script>
+function r(){var h=location.hash||'#/home';document.getElementById('view').textContent='View '+h.slice(2);}
+window.addEventListener('hashchange',r);r();
+</script></body></html>

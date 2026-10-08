@@ -1,0 +1,20 @@
+<!doctype html><html><head><title>popup flow</title><style>
+body{margin:0;font:14px sans-serif} #bar{padding:10px;background:#ddd;height:30px;position:relative}
+#fb{position:fixed;left:0;top:0;right:0;bottom:0;z-index:99999;background:rgba(0,0,0,.6)}
+#fb .box{position:absolute;left:150px;top:80px;width:500px;height:300px;background:#fff}
+#fb button{position:absolute;right:6px;top:6px;width:30px;height:30px}
+#dd{display:none;position:absolute;top:44px;right:10px;width:120px;background:#eef;z-index:50}
+#dd.open{display:block} #dd a{display:block;padding:6px}
+</style></head><body>
+<div id="bar"><a href="#" id="watch">Watch video</a> &nbsp; <a href="#" id="lang" aria-haspopup="true">EN</a>
+<div id="dd"><a href="hov_menu_target.html?l=es" id="es">ES</a><a href="hov_footer.html" id="fr">FR</a></div></div>
+<p id="out"></p>
+<script>
+window.__xclicks = 0;
+document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ var f=document.getElementById('fb'); if(f) f.remove(); document.getElementById('dd').classList.remove('open'); } });
+document.getElementById('watch').addEventListener('click', function(e){ e.preventDefault();
+  var d=document.createElement('div'); d.id='fb'; d.innerHTML='<div class="box">Video<button title="Close" id="xbtn"><svg width="10" height="10"><path d="M0 0L10 10M10 0L0 10" stroke="#000"/></svg></button></div>';
+  document.body.appendChild(d);
+  d.querySelector('button').addEventListener('click', function(){ window.__xclicks++; d.remove(); }); });
+document.getElementById('lang').addEventListener('click', function(e){ e.preventDefault(); document.getElementById('dd').classList.toggle('open'); });
+</script></body></html>

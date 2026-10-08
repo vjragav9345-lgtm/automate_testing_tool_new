@@ -1,0 +1,690 @@
+{
+ "status": "FAIL",
+ "steps": [
+  {
+   "index": 1,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 2,
+   "action_type": "click",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 3,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 4,
+   "action_type": "click",
+   "success": false,
+   "error": "[content-mismatch] a different element is actually at the recorded click position - recorded target was 'Casual Shirts', but 'Tops Under \u20b9399' is really there",
+   "not_run": false
+  },
+  {
+   "index": 5,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 6,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 7,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 8,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 9,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 10,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 11,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 12,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 13,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 14,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 15,
+   "action_type": "right_click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 16,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 17,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 18,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 19,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 20,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 21,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 22,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 23,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 24,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 25,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 26,
+   "action_type": "hover",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 27,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 28,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 29,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 30,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 31,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 32,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 33,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 34,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 35,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 36,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 37,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 38,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 39,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 40,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 41,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 42,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 43,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 44,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 45,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 46,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 47,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 48,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 49,
+   "action_type": "tab_open",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 50,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 51,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 52,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 53,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 54,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 55,
+   "action_type": "fill",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 56,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 57,
+   "action_type": "submit",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 58,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 59,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 60,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 61,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 62,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 63,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 64,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 65,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 66,
+   "action_type": "tab_open",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 67,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 68,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 69,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 70,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 71,
+   "action_type": "tab_open",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 72,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 73,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 74,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 75,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 76,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 77,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 78,
+   "action_type": "fill",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 79,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 80,
+   "action_type": "submit",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 81,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 82,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 83,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 84,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 85,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 86,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 87,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 88,
+   "action_type": "tab_close",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 89,
+   "action_type": "tab_close",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 90,
+   "action_type": "tab_close",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  },
+  {
+   "index": 91,
+   "action_type": "tab_close",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  }
+ ],
+ "drag": [],
+ "step_scroll": {
+  "1": {
+   "pos": [
+    0,
+    0,
+    6179,
+    720
+   ],
+   "scroll_events": []
+  },
+  "2": {
+   "pos": [
+    0,
+    0,
+    6011,
+    720
+   ],
+   "scroll_events": []
+  },
+  "3": {
+   "pos": [
+    0,
+    0,
+    6011,
+    720
+   ],
+   "scroll_events": []
+  },
+  "4": {
+   "pos": null,
+   "scroll_events": []
+  }
+ },
+ "events": [
+  {
+   "t": 1790572909.132,
+   "step": 0,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => window.scrollTo({top: 0, left: 0, behavior: 'instant'})"
+  },
+  {
+   "t": 1790573177.319,
+   "step": 4,
+   "kind": "page.evaluate(scroll)",
+   "expr": "([sx, sy]) => window.scrollTo(sx || 0, sy || 0)"
+  }
+ ]
+}

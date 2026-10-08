@@ -1,0 +1,15 @@
+<!doctype html><html><head><title>search (single page app)</title><style>
+body{font:15px sans-serif;margin:20px} #wrap{position:relative;width:320px} #q{width:100%;padding:6px}
+#sug{position:absolute;left:0;top:34px;width:100%;background:#fff;border:1px solid #999;margin:0;padding:0;list-style:none;display:none;z-index:50}
+#sug li{padding:6px}
+</style></head><body><h3 id="title">Home</h3>
+<div id="wrap"><input id="q" placeholder="Search" autocomplete="off"><ul id="sug" role="listbox"></ul></div><div id="view"></div>
+<script>
+var q=document.getElementById('q'),s=document.getElementById('sug');
+function render(){var v=new URLSearchParams(location.search).get('q');
+ if(v){document.getElementById('title').textContent='Results for '+v;document.getElementById('view').innerHTML='<p><a id="r1" href="g_next.html?from=spa">First result for '+v+'</a></p>';}}
+q.addEventListener('input',function(){var v=q.value.trim();s.innerHTML='';if(!v){s.style.display='none';return;}
+ ['',' songs'].forEach(function(x){var li=document.createElement('li');li.setAttribute('role','option');li.textContent=v+x;s.appendChild(li);});s.style.display='block';});
+q.addEventListener('keydown',function(e){if(e.key==='Enter'){history.pushState({},'','g_search_spa.html?q='+encodeURIComponent(q.value.trim()));s.style.display='none';render();}});
+window.addEventListener('popstate',render);
+</script></body></html>

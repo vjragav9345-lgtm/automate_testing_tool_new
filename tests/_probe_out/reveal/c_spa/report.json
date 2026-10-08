@@ -1,0 +1,299 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "http://127.0.0.1:51533/rv_spa.html",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Rv Spa page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:51533/rv_spa.html",
+      "url_after": "http://127.0.0.1:51533/rv_spa.html",
+      "started_at": "2026-10-04T23:53:49.762",
+      "ended_at": "2026-10-04T23:53:50.128",
+      "duration": 0.359,
+      "timing_ms": {
+        "settle": 0,
+        "navigation_wait": 0,
+        "screenshot": 358,
+        "other": 0
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Pricing\" link",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": true,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:51533/rv_spa.html",
+      "url_after": "http://127.0.0.1:51533/rv_spa.html#/pricing",
+      "started_at": "2026-10-04T23:53:50.130",
+      "ended_at": "2026-10-04T23:53:51.970",
+      "duration": 1.844,
+      "timing_ms": {
+        "locate_action": 938,
+        "log_emit": 0,
+        "navigation_wait": 0,
+        "screenshot": 108,
+        "settle": 0,
+        "verify": 16,
+        "other": 781
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 1844,
+        "message": "Pricing found using Element ID. (resolved in 1844ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 3,
+      "action_type": "navigate",
+      "name": "Rv Spa page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:51533/rv_spa.html#/pricing",
+      "url_after": "http://127.0.0.1:51533/rv_spa.html#/pricing",
+      "started_at": "2026-10-04T23:53:51.970",
+      "ended_at": "2026-10-04T23:53:52.002",
+      "duration": 0.031,
+      "timing_ms": {
+        "settle": 0,
+        "verify": 0,
+        "navigation_wait": 0,
+        "screenshot": 31,
+        "other": 0
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 4,
+      "action_type": "click",
+      "name": "\"About\" link",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": true,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:51533/rv_spa.html#/pricing",
+      "url_after": "http://127.0.0.1:51533/rv_spa.html#/about",
+      "started_at": "2026-10-04T23:53:52.002",
+      "ended_at": "2026-10-04T23:53:53.554",
+      "duration": 1.547,
+      "timing_ms": {
+        "locate_action": 968,
+        "log_emit": 0,
+        "navigation_wait": 15,
+        "screenshot": 78,
+        "settle": 0,
+        "verify": 32,
+        "other": 454
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 1547,
+        "message": "About found using Element ID. (resolved in 1547ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 5,
+      "action_type": "navigate",
+      "name": "Rv Spa page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:51533/rv_spa.html#/about",
+      "url_after": "http://127.0.0.1:51533/rv_spa.html#/about",
+      "started_at": "2026-10-04T23:53:53.554",
+      "ended_at": "2026-10-04T23:53:53.570",
+      "duration": 0.016,
+      "timing_ms": {
+        "settle": 0,
+        "verify": 0,
+        "screenshot": 16,
+        "other": 0
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:51533/rv_spa.html#/about",
+  "final_screenshot": null,
+  "final_text": "Home Pricing About\nView about",
+  "product_validation": null,
+  "total_duration_s": 4.969,
+  "total_steps": 5,
+  "live_log": [
+    {
+      "t": 1791138229.7624586,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138229.7749367,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138230.620573,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138231.4252326,
+      "message": "\u21b3 Clicking 'Pricing'",
+      "level": "note"
+    },
+    {
+      "t": 1791138231.5343308,
+      "message": "\u21b3 Waiting for the page address to change as recorded (up to 5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138231.9389377,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138231.9706423,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138231.9706423,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138232.1793997,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138232.9886515,
+      "message": "\u21b3 Clicking 'About'",
+      "level": "note"
+    },
+    {
+      "t": 1791138233.119502,
+      "message": "\u21b3 Waiting for the page address to change as recorded (up to 5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138233.5291827,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138233.5541663,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138233.5541663,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

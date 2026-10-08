@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>AutoFlow QA Report - </title>
+<style>
+    * { box-sizing: border-box; }
+    body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f1f5f9;
+        color: #1e293b;
+        padding: 24px;
+    }
+    .report-wrap { max-width: 1000px; margin: 0 auto; }
+    h1 { color: #1e3a8a; margin-bottom: 4px; }
+    .meta { color: #64748b; font-size: 13px; margin-bottom: 20px; }
+    .banner {
+        border-radius: 8px;
+        padding: 20px 24px;
+        font-size: 22px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
+    .banner.pass { background: #16a34a; }
+    .banner.fail { background: #dc2626; }
+    .banner .msg { display: block; font-size: 14px; font-weight: 400; margin-top: 6px; }
+    section {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 20px 24px;
+        margin-bottom: 20px;
+    }
+    section h2 { margin-top: 0; color: #1e3a8a; font-size: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+    th { color: #64748b; font-size: 12px; text-transform: uppercase; }
+    tr.fragile { background: #fef3c7; }
+    tr.failed { background: #fee2e2; }
+    tr.not-run-row { background: #f8fafc; color: #94a3b8; }
+    .pill {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 10px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .pill.ok { background: #dcfce7; color: #166534; }
+    .pill.bad { background: #fee2e2; color: #991b1b; }
+    .pill.unknown { background: #e2e8f0; color: #475569; }
+    .shots { display: flex; gap: 16px; flex-wrap: wrap; }
+    .shots figure { margin: 0; }
+    .shots img { max-width: 320px; border: 1px solid #e2e8f0; border-radius: 8px; }
+    .shots figcaption { font-size: 12px; color: #64748b; margin-top: 4px; text-align: center; }
+    .result-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #e2e8f0; }
+    .result-row:last-child { border-bottom: none; }
+    .result-label { color: #64748b; font-weight: 600; font-size: 13px; }
+    .validation-stats { color: #475569; font-size: 13px; margin-bottom: 14px; }
+    .validation-cards { display: flex; flex-direction: column; gap: 8px; }
+    .validation-card { border-radius: 8px; padding: 10px 12px; border: 1px solid #e2e8f0; background: #f8fafc; }
+    .validation-card.pass { border-color: #bbf7d0; background: #f0fdf4; }
+    .validation-card.fail { border-color: #fecaca; background: #fef2f2; }
+    .validation-card.not-run { border-color: #e2e8f0; background: #f8fafc; opacity: 0.75; }
+    .validation-card.manual-input { border-color: #bfdbfe; background: #eff6ff; }
+    .validation-card-line { font-weight: 600; font-size: 14px; }
+    .validation-card-field { font-size: 12px; color: #64748b; margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="report-wrap">
+    <!-- PHASE 2d: display_name (or, absent that, test_name) shown as the
+         report's own title when this run's recording has one - falls
+         back to the original fixed heading otherwise, unchanged. -->
+    <h1>AutoFlow QA - Execution Report</h1>
+    <p class="meta">Run  against http://127.0.0.1:63494/phase5_count_test.html - generated 2026-09-29T21:35:52.959253</p>
+
+    <div class="banner pass">
+        PASS
+        <span class="msg">all steps resolved</span>
+    </div>
+
+    <!-- PHASE 4c: one plain sentence on whether replay matched the
+         recording overall - purely a wording layer, computed in
+         validation/report_generator.py's own _plain_summary(); pass/fail
+         itself is unchanged (the banner above still reflects it). -->
+    <p class="meta" style="font-size: 15px; color: #1e293b; font-weight: 600;">Replay matched the recording: all 4 steps passed (1 warning).</p>
+
+    
+    <section>
+        <h2>Step Validations</h2>
+        <p class="validation-stats">
+            4 steps executed ·
+            3/3 actions passed
+            
+            · 1/1 validation passed
+            
+            · 0 failed
+            
+            
+            
+        </p>
+        
+        <div class="validation-cards">
+            
+            <div class="validation-card pass">
+                <div class="validation-card-line">
+                    ✓
+                    
+                        count_summary
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </section>
+    
+
+    <section>
+        <h2>Validations</h2>
+        <div class="result-row">
+            <span class="result-label">Expected Content Found</span>
+            <span>
+                
+                    <span class="pill bad">no</span>
+                
+            </span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Screenshot Diff</span>
+            <span>
+                
+                    <span class="pill unknown">not requested</span>
+                
+            </span>
+        </div>
+    </section>
+
+    
+
+    <section>
+        <h2>Execution</h2>
+        <div class="result-row">
+            <span class="result-label">Total Steps</span>
+            <span>4</span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Passed</span>
+            <span><span class="pill ok">4</span></span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Failed</span>
+            <span>
+                <span class="pill ok">0</span>
+            </span>
+        </div>
+        
+        
+        
+    </section>
+
+    <section>
+        <h2>Steps</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Action</th>
+                    <th>Locator Strategy Used</th>
+                    <th>Result</th>
+                    <th>Effect Verified</th>
+                    <!-- PHASE 4b: recorded URL/element text next to what
+                         replay actually found - "Replayed" text is only
+                         ever populated for a validate_* step today (the
+                         one existing field that already captures it; see
+                         report_generator.py's own comment on replayed_text) -
+                         "-" for every other action type. -->
+                    <th>Recorded vs Replayed</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr class="">
+                    <td>1</td>
+                    <td>navigate
+                        <span class="pill unknown" title="Captured by the recorder">recorded</span>
+                        <br><small>Phase5 Count Test page</small>
+                    </td>
+                    <td>
+                        
+                            -
+                        
+                    </td>
+                    <td>
+                        
+                            <span class="pill ok">passed</span>
+                        
+                        
+                        
+                    </td>
+                    <td>
+                        
+                            <span class="pill unknown">&mdash;</span>
+                        
+                    </td>
+                    <td style="font-size: 12px;">
+                        Recorded: -<br>
+                        Replayed: http://127.0.0.1:63494/phase5_count_test.html
+                    </td>
+                    <td>
+                        
+                            next recorded step's target never appeared on this page within the wait window - destination may not have actually finished loading/rendering
+                        
+                    </td>
+                </tr>
+                
+                <tr class="">
+                    <td>2</td>
+                    <td>count_elements
+                        <span class="pill unknown" title="Captured by the recorder">recorded</span>
+                        <br><small>div</small>
+                    </td>
+                    <td>
+                        
+                            unknown
+                            
+                            <details>
+                                <summary>Advanced</summary>
+                                <div>Raw strategy: -</div>
+                                <div>Resolved in 1469ms</div>
+                            </details>
+                        
+                    </td>
+                    <td>
+                        
+                            <span class="pill ok">passed</span>
+                        
+                        
+                        
+                    </td>
+                    <td>
+                        
+                            <span class="pill unknown">&mdash;</span>
+                        
+                    </td>
+                    <td style="font-size: 12px;">
+                        Recorded: -<br>
+                        Replayed: http://127.0.0.1:63494/phase5_count_test.html
+                    </td>
+                    <td>
+                        
+                            
+                        
+                    </td>
+                </tr>
+                
+                <tr class="">
+                    <td>3</td>
+                    <td>count_elements
+                        <span class="pill unknown" title="Captured by the recorder">recorded</span>
+                        <br><small>div</small>
+                    </td>
+                    <td>
+                        
+                            unknown
+                            
+                            <details>
+                                <summary>Advanced</summary>
+                                <div>Raw strategy: -</div>
+                                <div>Resolved in 1469ms</div>
+                            </details>
+                        
+                    </td>
+                    <td>
+                        
+                            <span class="pill ok">passed</span>
+                        
+                        
+                        
+                    </td>
+                    <td>
+                        
+                            <span class="pill unknown">&mdash;</span>
+                        
+                    </td>
+                    <td style="font-size: 12px;">
+                        Recorded: -<br>
+                        Replayed: http://127.0.0.1:63494/phase5_count_test.html
+                    </td>
+                    <td>
+                        
+                            
+                        
+                    </td>
+                </tr>
+                
+                <tr class="">
+                    <td>4</td>
+                    <td>count_summary
+                        <span class="pill unknown" title="Captured by the recorder">recorded</span>
+                        <br><small>count_summary</small>
+                    </td>
+                    <td>
+                        
+                            -
+                        
+                    </td>
+                    <td>
+                        
+                            <span class="pill ok">passed</span>
+                        
+                        
+                        
+                    </td>
+                    <td>
+                        
+                            <span class="pill unknown">&mdash;</span>
+                        
+                    </td>
+                    <td style="font-size: 12px;">
+                        Recorded: -<br>
+                        Replayed: http://127.0.0.1:63494/phase5_count_test.html
+                    </td>
+                    <td>
+                        
+                            
+                        
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+    </section>
+
+    <!-- PHASE 5b: one table per Count Summary step, using the exact
+         label/count/expected/result data that step already collected
+         (count_summary_rows - see generator/script_generator.py's own
+         count_summary branch) - no re-running or re-counting anything. -->
+    
+    <section>
+        <h2>Count Summary - count_summary</h2>
+        <table>
+            <thead>
+                <tr><th>Label</th><th>Count</th><th>Expected</th><th>Result</th></tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>item_count</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>
+                        <span class="pill ok">✓</span>
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>half_count</td>
+                    <td>2</td>
+                    <td>-</td>
+                    <td>
+                        <span class="pill unknown">&mdash;</span>
+                        
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </section>
+    
+
+    <section>
+        <h2>UI Elements</h2>
+        <div class="result-row">
+            <span class="result-label">Expected Elements</span>
+            <span>0</span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Found</span>
+            <span><span class="pill ok">0</span></span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Missing</span>
+            <span>
+                <span class="pill ok">0</span>
+            </span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Overall</span>
+            <span>
+                <span class="pill unknown">not checked</span>
+            </span>
+        </div>
+        
+        <p>No UI elements to validate for this run.</p>
+        
+    </section>
+
+    <section>
+        <h2>Screenshots</h2>
+        <div class="shots">
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            
+        </div>
+    </section>
+</div>
+</body>
+</html>

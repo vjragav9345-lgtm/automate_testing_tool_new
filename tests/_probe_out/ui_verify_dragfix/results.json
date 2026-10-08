@@ -1,0 +1,35 @@
+{
+  "S1": {
+    "xpath": "//*[@id='grid']/div[contains(@class,'product-card')][position()>=1 and position()<=25]",
+    "validate_text": "Found: 25 items (your selection) - still open in the picker: double-click the highlighted element there to pick a different one, or close that browser window when you're happy with this pick.",
+    "expected_count": "25"
+  },
+  "S3": {
+    "xpath": "//*[@id='grid']/div[contains(@class,'product-card')][position()>=1 and position()<=2]",
+    "validate_text": "Found: 2 items (your selection) - still open in the picker: double-click the highlighted element there to pick a different one, or close that browser window when you're happy with this pick.",
+    "expected_count": "2"
+  },
+  "S4": {
+    "after_pick": {
+      "xpath": "//*[@id='grid']/div[contains(@class,'product-card')][position()>=1 and position()<=10]",
+      "validate_text": "Found: 10 items (your selection) - still open in the picker: double-click the highlighted element there to pick a different one, or close that browser window when you're happy with this pick.",
+      "expected_count": "10"
+    },
+    "after_validate": {
+      "xpath": "//*[@id='grid']/div[contains(@class,'product-card')][position()>=1 and position()<=10]",
+      "validate_text": "Found: 10 items (your selection) - still open in the picker: double-click the highlighted element there to pick a different one, or close that browser window when you're happy with this pick.",
+      "expected_count": "10"
+    }
+  },
+  "S5": "zz_drag_s1_edited\nReplay finished.\nReplay matched the recording: all 2 steps passed.\nPASS - all steps resolved and validations passed\nTotal steps: 2 \u00a0 Passed: 2 \u00a0 Failed: 0 \u00a0 Skipped: 0 \u00a0 Warnings: 0 \u00a0 Duration: 8.9s\nOpen full HTML report\n[13:39:07]Step 1: Navigate - PASS\n[13:39:08]Step 2: Count cards (25) - PASS",
+  "S2": {
+    "xpath": "//*[@id='grid']/div[contains(@class,'product-card')][position()>=3 and position()<=32]",
+    "validate_text": "Found: 30 items (your selection) - still open in the picker: double-click the highlighted element there to pick a different one, or close that browser window when you're happy with this pick.",
+    "expected_count": "30"
+  },
+  "S2b": {
+    "xpath": "//*[@id='list']/div[contains(@class,'product-card')]",
+    "validate_text": "Found: 56 matching elements on the page (23 inside your selection) - still open in the picker: double-click the highlighted element there to pick a different one, or close that browser window when you're happy with this pick. Could not narrow this pick down to exactly your selection - it matches every similar item on the page instead.",
+    "expected_count": "56"
+  }
+}

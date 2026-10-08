@@ -1,0 +1,233 @@
+{
+  "name": "stress_test_final",
+  "session_id": "stress_test_base",
+  "start_url": "http://127.0.0.1:8899/page1.html",
+  "recorded_at": "2026-09-20T00:00:00",
+  "stop_reason": "terminal_enter",
+  "total_actions": 4,
+  "page_count": 1,
+  "actions": [
+    {
+      "action_type": "check",
+      "value": null,
+      "locator_profile": {
+        "id": "#agree-checkbox",
+        "css_path": "input#agree-checkbox",
+        "xpath": "//*[@id='agree-checkbox']",
+        "tag": "input",
+        "text": "I agree",
+        "attributes": {
+          "type": "checkbox"
+        }
+      },
+      "bounding_box": {},
+      "click_strategy": "standard",
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "timestamp": "2026-09-20T00:00:01.000Z",
+      "expected_state": true,
+      "page_id": 0,
+      "delay_before_ms": 0
+    },
+    {
+      "action_type": "check_checked",
+      "locator_profile": {
+        "xpath": "//*[@id='agree-checkbox']",
+        "id": "#agree-checkbox"
+      },
+      "value": null,
+      "match_mode": "contains",
+      "expected_state": "checked",
+      "attribute_name": null,
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "bounding_box": null,
+      "timestamp": "2026-09-20T00:00:00Z",
+      "_cycle_label": "checkbox state"
+    },
+    {
+      "action_type": "validate_visible",
+      "locator_profile": {
+        "xpath": "//*[@id='shadow-btn']",
+        "id": "#shadow-btn"
+      },
+      "value": null,
+      "match_mode": "contains",
+      "expected_state": "visible",
+      "attribute_name": null,
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "bounding_box": null,
+      "timestamp": "2026-09-20T00:00:00Z",
+      "_cycle_label": "shadow button visible"
+    },
+    {
+      "action_type": "validate_value",
+      "locator_profile": {
+        "xpath": "//*[@id='country-select']",
+        "id": "#country-select"
+      },
+      "value": "test-value",
+      "match_mode": "contains",
+      "expected_state": null,
+      "attribute_name": null,
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "bounding_box": null,
+      "timestamp": "2026-09-20T00:00:00Z",
+      "_cycle_label": "select value"
+    },
+    {
+      "action_type": "click",
+      "value": null,
+      "locator_profile": {
+        "id": "#plan-pro",
+        "css_path": "input#plan-pro",
+        "xpath": "//*[@id='plan-pro']",
+        "tag": "input",
+        "text": "pro"
+      },
+      "bounding_box": {},
+      "click_strategy": "standard",
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "timestamp": "2026-09-20T00:00:02.000Z",
+      "page_id": 0,
+      "delay_before_ms": 100
+    },
+    {
+      "action_type": "fill",
+      "value": "test@example.com",
+      "locator_profile": {
+        "id": "#email-field",
+        "css_path": "input#email-field",
+        "xpath": "//*[@id='email-field']",
+        "tag": "input",
+        "text": "test@example.com"
+      },
+      "bounding_box": {},
+      "click_strategy": "standard",
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "timestamp": "2026-09-20T00:00:03.000Z",
+      "page_id": 0,
+      "delay_before_ms": 100
+    },
+    {
+      "action_type": "click",
+      "value": null,
+      "locator_profile": {
+        "id": "#route-btn",
+        "css_path": "button#route-btn",
+        "xpath": "//*[@id='route-btn']",
+        "tag": "button",
+        "text": "Go to /route2 (pushState)"
+      },
+      "bounding_box": {},
+      "click_strategy": "standard",
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "timestamp": "2026-09-20T00:00:04.000Z",
+      "page_id": 0,
+      "delay_before_ms": 100
+    },
+    {
+      "action_type": "validate_visible",
+      "locator_profile": {
+        "xpath": "//*[@id='footer-link']",
+        "id": "#footer-link"
+      },
+      "value": null,
+      "match_mode": "contains",
+      "expected_state": "visible",
+      "attribute_name": null,
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "bounding_box": null,
+      "timestamp": "2026-09-20T00:00:00Z",
+      "_cycle_label": "footer-link visible"
+    },
+    {
+      "action_type": "validate_visible",
+      "locator_profile": {
+        "xpath": "//*[@id='email-field']",
+        "id": "#email-field"
+      },
+      "value": null,
+      "match_mode": "contains",
+      "expected_state": "visible",
+      "attribute_name": null,
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "bounding_box": null,
+      "timestamp": "2026-09-20T00:00:00Z",
+      "_cycle_label": "email field visible"
+    },
+    {
+      "action_type": "validate_visible",
+      "locator_profile": {
+        "xpath": "//*[@id='iframe-target-btn']",
+        "id": "#iframe-target-btn"
+      },
+      "value": null,
+      "match_mode": "contains",
+      "expected_state": "visible",
+      "attribute_name": null,
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "bounding_box": null,
+      "timestamp": "2026-09-20T00:00:00Z",
+      "_cycle_label": "iframe button visible"
+    },
+    {
+      "action_type": "validate_attribute",
+      "locator_profile": {
+        "xpath": "//*[@id='pick-image']",
+        "id": "#pick-image"
+      },
+      "value": "test-value",
+      "match_mode": "contains",
+      "expected_state": null,
+      "attribute_name": "alt",
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "bounding_box": null,
+      "timestamp": "2026-09-20T00:00:00Z",
+      "_cycle_label": "image alt attribute"
+    },
+    {
+      "action_type": "validate_text",
+      "locator_profile": {
+        "xpath": "//h1[contains(text(), 'AutoFlow QA Fixture')]",
+        "id": null
+      },
+      "value": "test-value",
+      "match_mode": "contains",
+      "expected_state": null,
+      "attribute_name": null,
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "bounding_box": null,
+      "timestamp": "2026-09-20T00:00:00Z",
+      "_cycle_label": "h1 text"
+    },
+    {
+      "action_type": "check_checked",
+      "locator_profile": {
+        "xpath": "//*[@id='plan-pro']",
+        "id": "#plan-pro"
+      },
+      "value": null,
+      "match_mode": "contains",
+      "expected_state": "checked",
+      "attribute_name": null,
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "bounding_box": null,
+      "timestamp": "2026-09-20T00:00:00Z",
+      "_cycle_label": "radio checked"
+    },
+    {
+      "action_type": "validate_url",
+      "locator_profile": {
+        "xpath": "//*[@id='footer-link']",
+        "id": "#footer-link"
+      },
+      "value": "test-value",
+      "match_mode": "contains",
+      "expected_state": null,
+      "attribute_name": null,
+      "page_url": "http://127.0.0.1:8899/page1.html",
+      "bounding_box": null,
+      "timestamp": "2026-09-20T00:00:00Z",
+      "_cycle_label": "url after route click"
+    }
+  ]
+}

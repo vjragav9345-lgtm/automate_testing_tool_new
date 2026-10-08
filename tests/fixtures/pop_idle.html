@@ -1,0 +1,11 @@
+<!doctype html><html><head><title>idle toolbar</title><style>
+body{margin:0} #pop{position:fixed;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:9999}
+#tb{position:absolute;right:10px;top:10px;transition:opacity .2s} #tb.idle{opacity:0;visibility:hidden}
+</style></head><body><div id="pop"><div id="tb"><button id="x" title="Close" onclick="document.getElementById('pop').remove()">&#10005;</button></div></div>
+<script>
+var tb=document.getElementById('tb'), pop=document.getElementById('pop'), timer;
+function idle(){tb.classList.add('idle');}
+setTimeout(idle,800);
+pop.addEventListener('mousemove',function(){tb.classList.remove('idle');clearTimeout(timer);timer=setTimeout(idle,3000);});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.getElementById('pop'))document.getElementById('pop').remove();});
+</script></body></html>

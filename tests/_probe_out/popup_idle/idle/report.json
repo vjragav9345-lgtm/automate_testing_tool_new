@@ -1,0 +1,122 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "http://127.0.0.1:51361/pop_idle.html",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Pop Idle page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "E:\\01-10-2026_1030_AM\\tests\\_probe_out\\popup_idle\\idle\\shots\\pop_idle_html\\step01_pop_idle_page_2026-10-04_23-59-38.png",
+      "url_before": "http://127.0.0.1:51361/pop_idle.html",
+      "url_after": "http://127.0.0.1:51361/pop_idle.html",
+      "started_at": "2026-10-04T23:59:37.943",
+      "ended_at": "2026-10-04T23:59:38.585",
+      "duration": 0.64,
+      "timing_ms": {
+        "settle": 0,
+        "navigation_wait": 14,
+        "screenshot": 625,
+        "other": 0
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Close\" button",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "close_search",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:51361/pop_idle.html",
+      "url_after": "http://127.0.0.1:51361/pop_idle.html",
+      "started_at": "2026-10-04T23:59:38.585",
+      "ended_at": "2026-10-04T23:59:39.526",
+      "duration": 0.938,
+      "timing_ms": {
+        "locate_action": 233,
+        "log_emit": 0,
+        "screenshot": 61,
+        "settle": 16,
+        "verify": 0,
+        "other": 628
+      },
+      "locator_report": {
+        "strategy": "close_search",
+        "strategy_label": "close_search",
+        "fallback_level": null,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 938,
+        "message": "Close found using close_search."
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:51361/pop_idle.html",
+  "final_screenshot": null,
+  "final_text": "",
+  "product_validation": null,
+  "total_duration_s": 2.735,
+  "total_steps": 2,
+  "live_log": [
+    {
+      "t": 1791138577.9449406,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138577.9608166,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138579.002869,
+      "message": "\u21b3 Moved the mouse over the popup to show the 'Close' button.",
+      "level": "note"
+    },
+    {
+      "t": 1791138579.2099934,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

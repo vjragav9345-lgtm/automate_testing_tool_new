@@ -1,0 +1,90 @@
+RESULT: 202 steps -> 202 pass / 0 FAILED / 0 NOT RUN
+
+DRAGS (manual vs replay)
+  step   4: recorded@release=                   9.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '9.0', 'text': '12'} | manual settled=                  None | step PASS
+  step   5: recorded@release=                  12.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '12.0', 'text': '20'} | manual settled=                  None | step PASS
+  step   7: recorded@release=                   1.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '1.0', 'text': '256MB'} | manual settled=                  None | step PASS
+  step   8: recorded@release=                   3.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '3.0', 'text': '8GB'} | manual settled=                  None | step PASS
+  step  11: recorded@release=                   0.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '0.0', 'text': '0'} | manual settled=                  None | step PASS
+  step  12: recorded@release=                  43.8 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '43.8', 'text': '44'} | manual settled=                  None | step PASS
+  step  15: recorded@release=                 127.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '127.0', 'text': '127'} | manual settled=                  None | step PASS
+  step  17: recorded@release=                 128.3 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '128.3', 'text': '128'} | manual settled=                  None | step PASS
+  step  20: recorded@release=                 127.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '127.0', 'text': '127'} | manual settled=                  None | step PASS
+  step  25: recorded@release=                  82.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '82.0', 'text': '81.95'} | manual settled=                  None | step PASS
+  step  26: recorded@release=                   0.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '0.0', 'text': '0.00'} | manual settled=                  None | step PASS
+  step  28: recorded@release=                  69.6 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '69.6', 'text': '69.61'} | manual settled=                  None | step PASS
+  step  29: recorded@release=                   0.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '0.0', 'text': '0.00'} | manual settled=                  None | step PASS
+  step  32: recorded@release=                  50.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '50.0', 'text': '50.00'} | manual settled=                  None | step PASS
+  step  33: recorded@release=                  34.9 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '34.9', 'text': '34.91'} | manual settled=                  None | step PASS
+  step  36: recorded@release=                  66.9 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '66.9', 'text': '66.86'} | manual settled=                  None | step PASS
+  step  39: recorded@release=                  24.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '24.0', 'text': '23.96'} | manual settled=                  None | step PASS
+  step  42: recorded@release=                  60.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '60.0', 'text': '60.00'} | manual settled=                  None | step PASS
+  step  43: recorded@release=                   0.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '0.0', 'text': '0.00'} | manual settled=                  None | step PASS
+  step  48: recorded@release=       1405036800000.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '1405036800000.0', 'text': ' | manual settled=                  None | step PASS
+  step  49: recorded@release=       1336694400000.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '1336694400000.0', 'text': ' | manual settled=                  None | step PASS
+  step  52: recorded@release=                  80.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '80.0', 'text': '80.00'} | manual settled=                  None | step PASS
+  step  53: recorded@release=                  32.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '32.0', 'text': '32.00'} | manual settled=                  None | step PASS
+  step  56: recorded@release=                  19.6 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '19.6', 'text': '19.59'} | manual settled=                  None | step PASS
+  step  57: recorded@release=                  19.6 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '19.6', 'text': '19.59'} | manual settled=                  None | step PASS
+  step  60: recorded@release=                7000.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '7000.0', 'text': '7000.00'} | manual settled=                  None | step PASS
+  step  61: recorded@release=                3000.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '3000.0', 'text': '3000.00'} | manual settled=                  None | step PASS
+  step  64: recorded@release=                  69.3 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '69.3', 'text': '69.32'} | manual settled=                  None | step PASS
+  step  66: recorded@release=                  84.0 | replay@release=MATCH nudges=1 | replay settled={'kind': 'aria_value', 'value': '84.0', 'text': '83.99'} | manual settled=                  None | step PASS
+  step  71: recorded@release=                  35.5 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '35.5', 'text': '35.50'} | manual settled=                  None | step PASS
+  step  74: recorded@release=                  31.5 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '31.5', 'text': '31.54'} | manual settled=                  None | step PASS
+  step  75: recorded@release=                  57.5 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '57.5', 'text': '57.51'} | manual settled=                  None | step PASS
+  step  78: recorded@release=               12000.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '12000.0', 'text': '12000.00 | manual settled=                  None | step PASS
+  step  79: recorded@release=                8112.4 | replay@release=MATCH nudges=2 | replay settled={'kind': 'aria_value', 'value': '8112.4', 'text': '8112.43'} | manual settled=                  None | step PASS
+  step  82: recorded@release=                  60.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '60.0', 'text': '60.00'} | manual settled=                  None | step PASS
+  step  83: recorded@release=                 130.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '130.0', 'text': '130.00'} | manual settled=                  None | step PASS
+  step  86: recorded@release=                 100.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '100.0', 'text': '100.00'} | manual settled=                  None | step PASS
+  step  87: recorded@release=                   0.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '0.0', 'text': '0.00'} | manual settled=                  None | step PASS
+  step  90: recorded@release=                   0.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '0.0', 'text': '0'} | manual settled=                  None | step PASS
+  step  94: recorded@release=                  27.5 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '27.5', 'text': '27.51'} | manual settled=                  None | step PASS
+  step  97: recorded@release=                 100.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '100.0', 'text': '100.00'} | manual settled=                  None | step PASS
+  step 111: recorded@release=                  11.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '11.0', 'text': '16'} | manual settled=                  None | step PASS
+  step 112: recorded@release=                   7.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '7.0', 'text': '8'} | manual settled=                  None | step PASS
+  step 115: recorded@release=                   4.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '4.0', 'text': '16GB'} | manual settled=                  None | step PASS
+  step 116: recorded@release=                   0.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '0.0', 'text': '128MB'} | manual settled=                  None | step PASS
+  step 120: recorded@release=                  31.9 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '31.9', 'text': '32'} | manual settled=                  None | step PASS
+  step 121: recorded@release=                  13.6 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '13.6', 'text': '14'} | manual settled=                  None | step PASS
+  step 124: recorded@release=                 125.7 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '125.7', 'text': '126'} | manual settled=                  None | step PASS
+  step 128: recorded@release=                 127.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '127.0', 'text': '127'} | manual settled=                  None | step PASS
+  step 131: recorded@release=                 125.7 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '125.7', 'text': '126'} | manual settled=                  None | step PASS
+  step 134: recorded@release=                   0.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '0.0', 'text': '0.00'} | manual settled=                  None | step PASS
+  step 135: recorded@release=                 100.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '100.0', 'text': '100.00'} | manual settled=                  None | step PASS
+  step 137: recorded@release=                  27.8 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '27.8', 'text': '27.78'} | manual settled=                  None | step PASS
+  step 138: recorded@release=                  45.8 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '45.8', 'text': '45.75'} | manual settled=                  None | step PASS
+  step 140: recorded@release=                  50.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '50.0', 'text': '50.00'} | manual settled=                  None | step PASS
+  step 141: recorded@release=                  50.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '50.0', 'text': '50.00'} | manual settled=                  None | step PASS
+  step 144: recorded@release=                  87.6 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '87.6', 'text': '87.57'} | manual settled=                  None | step PASS
+  step 148: recorded@release=                  39.6 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '39.6', 'text': '39.64'} | manual settled=                  None | step PASS
+  step 151: recorded@release=                  40.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '40.0', 'text': '40.00'} | manual settled=                  None | step PASS
+  step 152: recorded@release=                   0.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '0.0', 'text': '0.00'} | manual settled=                  None | step PASS
+  step 155: recorded@release=       1441929600000.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '1441929600000.0', 'text': ' | manual settled=                  None | step PASS
+  step 156: recorded@release=       1279843200000.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '1279843200000.0', 'text': ' | manual settled=                  None | step PASS
+  step 159: recorded@release=                  80.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '80.0', 'text': '80.00'} | manual settled=                  None | step PASS
+  step 160: recorded@release=                  28.6 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '28.6', 'text': '28.58'} | manual settled=                  None | step PASS
+  step 163: recorded@release=                  19.6 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '19.6', 'text': '19.59'} | manual settled=                  None | step PASS
+  step 164: recorded@release=                  19.6 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '19.6', 'text': '19.59'} | manual settled=                  None | step PASS
+  step 167: recorded@release=                3500.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '3500.0', 'text': '3500.00'} | manual settled=                  None | step PASS
+  step 168: recorded@release=                1500.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '1500.0', 'text': '1500.00'} | manual settled=                  None | step PASS
+  step 172: recorded@release=                  77.8 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '77.8', 'text': '77.75'} | manual settled=                  None | step PASS
+  step 175: recorded@release=                  90.9 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '90.9', 'text': '90.95'} | manual settled=                  None | step PASS
+  step 178: recorded@release=                  62.1 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '62.1', 'text': '62.13'} | manual settled=                  None | step PASS
+  step 181: recorded@release=                  35.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '35.0', 'text': '35.03'} | manual settled=                  None | step PASS
+  step 182: recorded@release=                  31.5 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '31.5', 'text': '31.54'} | manual settled=                  None | step PASS
+  step 185: recorded@release=                9869.8 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '9869.8', 'text': '9869.82'} | manual settled=                  None | step PASS
+  step 186: recorded@release=               14396.4 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '14396.4', 'text': '14396.45 | manual settled=                  None | step PASS
+  step 189: recorded@release=                  80.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '80.0', 'text': '80.00'} | manual settled=                  None | step PASS
+  step 190: recorded@release=                 188.5 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '188.5', 'text': '188.48'} | manual settled=                  None | step PASS
+  step 195: recorded@release=                  30.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '30.0', 'text': '30.00'} | manual settled=                  None | step PASS
+  step 196: recorded@release=                  70.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '70.0', 'text': '70.00'} | manual settled=                  None | step PASS
+  step 199: recorded@release=                   0.0 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '0.0', 'text': '0'} | manual settled=                  None | step PASS
+  step 202: recorded@release=                  18.3 | replay@release=MATCH nudges=0 | replay settled={'kind': 'aria_value', 'value': '20.0', 'text': '20.00'} | manual settled=                  None | step PASS
+  drags failing: 0
+
+SCROLLS (manual scroll_y_after vs replay position at end of step)
+  scroll steps compared: 120   mismatches (>5.0px): 0
+
+mouse.wheel events fired during NON-scroll steps (unwanted scrolling): 0

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+  body { margin: 0; padding: 10px; }
+  .grid { display: flex; flex-wrap: wrap; gap: 8px; width: 700px; }
+  .product-card { width: 180px; height: 110px; border: 1px solid #999; box-sizing: border-box; padding: 6px; font-family: sans-serif; font-size: 12px; }
+  .price { display: block; font-weight: bold; }
+</style>
+</head>
+<body>
+  <h2>Products</h2>
+  <div class="grid" id="grid"></div>
+  <div id="boundary1000" class="product-card">Rs. 1000</div>
+  <div id="boundary10000" class="product-card">Rs. 10000</div>
+  <div id="below" class="product-card">999.99</div>
+  <div id="above" class="product-card">10000.01</div>
+  <div id="indian" class="product-card">₹1,00,000</div>
+  <div id="rsvariant" class="product-card">Rs. 1,520</div>
+  <div id="percentonly" class="product-card">(49% OFF)</div>
+  <div id="missing-placeholder"></div>
+  <script>
+    var grid = document.getElementById('grid');
+    // matches the task's exact regression shape:
+    // <span>Rs. <!-- -->NNNN</span><span style="text-decoration:line-through">Rs. MMMM</span><span>(P% OFF)</span>
+    var cards = [
+      { rating: '4.1', reviews: '128', price: 1520, mrp: 2999, discount: '49' },
+      { rating: '4.3', reviews: '256', price: 1491, mrp: 2799, discount: '47' },
+      { rating: '3.9', reviews: '80', price: 912, mrp: 1500, discount: '39' },
+      { rating: '4.6', reviews: '412', price: 809, mrp: 1200, discount: '33' },
+    ];
+    cards.forEach(function (c) {
+      var card = document.createElement('div');
+      card.className = 'product-card';
+      card.innerHTML =
+        c.rating + ' stars ' +
+        '(' + c.reviews + ' ratings) ' +
+        'Rs. <!-- -->' + c.price +
+        '<span style="text-decoration:line-through">Rs. ' + c.mrp + '</span>' +
+        '(' + c.discount + '% OFF)';
+      grid.appendChild(card);
+    });
+  </script>
+</body></html>

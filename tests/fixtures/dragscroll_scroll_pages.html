@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>scroll behaviour fixture</title>
+<style>
+  body { margin: 0; font-family: sans-serif; }
+  #tall { height: 3000px; background: linear-gradient(#fff, #ccd); }
+  #buy { position: absolute; top: 200px; left: 40px; padding: 12px 24px; }
+</style>
+</head>
+<body>
+<!-- ?mode=locked  : the page is tall but NOTHING can scroll it (scrollTo is disabled and wheel input is cancelled)
+     ?mode=preset  : clicking #go makes the page scroll itself to 300px (a site-driven scroll)
+     (default)     : an ordinary tall page -->
+<div id="tall"></div>
+<button id="buy">Buy now (15731)</button>
+<button id="go" style="position:fixed; top:10px; left:10px; padding:8px 16px;">Go</button>
+<script>
+  var mode = new URLSearchParams(location.search).get('mode');
+  if (mode === 'locked') {
+    window.scrollTo = function () {};
+    window.addEventListener('wheel', function (e) { e.preventDefault(); }, { passive: false });
+    document.documentElement.style.overflow = 'hidden';
+  }
+  // preset: clicking Go makes the SITE scroll the page itself (like a filter that scrolls to its results)
+  if (mode === 'preset') { document.getElementById('go').addEventListener('click', function () { window.scrollTo(0, 300); }); }
+</script>
+</body>
+</html>

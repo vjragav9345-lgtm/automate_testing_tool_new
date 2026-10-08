@@ -1,0 +1,25 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>checkbox state fixture</title>
+<style>.tick{width:16px;height:16px;display:inline-block;border:1px solid #999;}</style></head>
+<body>
+  <!-- custom checkbox: hidden native input inside a label, visible div as the tick box -->
+  <label id="custom-checked">
+    <input type="checkbox" checked style="position:absolute;opacity:0;">
+    <div class="tick"></div> Tshirts
+  </label>
+  <label id="custom-unchecked">
+    <input type="checkbox" style="position:absolute;opacity:0;">
+    <div class="tick"></div> Shirts
+  </label>
+  <!-- native checkbox, no wrapper -->
+  <input id="native-checked" type="checkbox" checked>
+  <input id="native-unchecked" type="checkbox">
+  <!-- aria role checkbox, no native input at all -->
+  <div id="aria-checked" role="checkbox" aria-checked="true" tabindex="0">Remember me</div>
+  <div id="aria-unchecked" role="checkbox" aria-checked="false" tabindex="0">Remember me</div>
+  <!-- ambiguous: two checkboxes in the same container -->
+  <div id="ambiguous-group">
+    <input type="checkbox"> <input type="checkbox">
+  </div>
+  <!-- plain, no checkbox anywhere nearby -->
+  <button id="plain-button">Just a button</button>
+</body></html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Custom Checkbox Row Fixture</title>
+<style>
+  body { margin: 0; font-family: sans-serif; padding: 40px; }
+  .cb-row { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+  .box { width: 16px; height: 16px; border: 1px solid #999; display: inline-block; }
+</style>
+</head>
+<body>
+  <!-- NOT a <label> - a plain div wrapping its own text, a visual box
+       span, and a hidden native checkbox, all as its own children. No
+       hover-revealed panel, no OTHER checkbox anywhere nearby - exactly
+       ONE checkbox candidate inside this small container. -->
+  <div class="cb-row" id="printed-row">
+    Printed <span class="box"></span><input type="checkbox" id="printed-hidden-cb" hidden>
+  </div>
+
+  <script>
+    document.getElementById('printed-row').addEventListener('click', function () {
+      var cb = document.getElementById('printed-hidden-cb');
+      cb.checked = !cb.checked;
+    });
+  </script>
+</body>
+</html>

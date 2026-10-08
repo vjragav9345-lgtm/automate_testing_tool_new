@@ -1,0 +1,44 @@
+{
+  "name": "hover_probe",
+  "session_id": "badee88188a44a46a75321fb6e8c2b51",
+  "start_url": "http://127.0.0.1:8890/page1.html",
+  "recorded_at": "2026-09-20T16:40:56.124582",
+  "stop_reason": "terminal_enter",
+  "total_actions": 1,
+  "page_count": 1,
+  "actions": [
+    {
+      "action_type": "click",
+      "value": null,
+      "locator_profile": {
+        "id": "#submenu-tshirts",
+        "name": null,
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "T-Shirts",
+        "placeholder": null,
+        "title": null,
+        "href": "page2.html",
+        "css_path": "a#submenu-tshirts",
+        "xpath": "//*[@id='submenu-tshirts']",
+        "text": "T-Shirts",
+        "element_text": "T-Shirts",
+        "tag": "a",
+        "attributes": {
+          "href": "page2.html"
+        }
+      },
+      "bounding_box": {
+        "x": 21,
+        "y": 196.875,
+        "width": 160,
+        "height": 34
+      },
+      "click_strategy": "standard",
+      "page_url": "http://127.0.0.1:8890/page1.html",
+      "timestamp": "2026-09-20T11:10:55.908Z",
+      "page_id": 0,
+      "delay_before_ms": 0
+    }
+  ]
+}

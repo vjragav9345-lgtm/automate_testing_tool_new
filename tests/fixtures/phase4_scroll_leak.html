@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Scroll Leak Fixture</title>
+<style>
+  body { margin: 0; font-family: sans-serif; }
+  .filler-top { height: 6000px; background: linear-gradient(#eee, #ccc); }
+  #target-btn { display: block; margin: 20px; padding: 12px 24px; }
+  .filler-bottom { height: 3000px; background: #ddd; }
+</style>
+</head>
+<body>
+  <div class="filler-top"><p style="padding:20px;">top filler</p></div>
+  <button id="target-btn">Click Me</button>
+  <div class="filler-bottom"><p style="padding:20px;">bottom filler</p></div>
+  <script>
+    document.getElementById('target-btn').addEventListener('click', function () {
+      document.title = 'TARGET_BTN_CLICKED';
+    });
+  </script>
+</body>
+</html>

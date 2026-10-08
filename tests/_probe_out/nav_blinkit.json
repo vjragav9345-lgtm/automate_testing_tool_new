@@ -1,0 +1,276 @@
+{
+ "status": "PASS",
+ "steps": [
+  {
+   "index": 1,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 2,
+   "action_type": "click",
+   "success": true,
+   "error": "recorded click position was stale (or every other locator signal failed) - re-resolved the target live via role/accessible-name/text instead of the recorded coordinate",
+   "not_run": false
+  },
+  {
+   "index": 3,
+   "action_type": "fill",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 4,
+   "action_type": "fill",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 5,
+   "action_type": "click",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 6,
+   "action_type": "validate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 7,
+   "action_type": "tab_close",
+   "success": true,
+   "error": null,
+   "not_run": false
+  }
+ ],
+ "drag": [],
+ "step_scroll": {
+  "1": {
+   "pos": [
+    0,
+    0,
+    1576,
+    720
+   ],
+   "scroll_events": []
+  },
+  "2": {
+   "pos": [
+    0,
+    0,
+    1576,
+    720
+   ],
+   "scroll_events": []
+  },
+  "3": {
+   "pos": [
+    0,
+    0,
+    1576,
+    720
+   ],
+   "scroll_events": []
+  },
+  "4": {
+   "pos": [
+    0,
+    0,
+    1576,
+    720
+   ],
+   "scroll_events": []
+  },
+  "5": {
+   "pos": [
+    0,
+    0,
+    1425,
+    720
+   ],
+   "scroll_events": []
+  },
+  "6": {
+   "pos": [
+    0,
+    872.7999877929688,
+    1576,
+    720
+   ],
+   "scroll_events": []
+  },
+  "7": {
+   "pos": null,
+   "scroll_events": []
+  }
+ },
+ "step_pages": {
+  "1": [
+   {
+    "i": 0,
+    "url": "https://blinkit.com/",
+    "pos": [
+     0,
+     0,
+     1576,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "2": [
+   {
+    "i": 0,
+    "url": "https://blinkit.com/",
+    "pos": [
+     0,
+     0,
+     1576,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "3": [
+   {
+    "i": 0,
+    "url": "https://blinkit.com/",
+    "pos": [
+     0,
+     0,
+     1576,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "4": [
+   {
+    "i": 0,
+    "url": "https://blinkit.com/",
+    "pos": [
+     0,
+     0,
+     1576,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "5": [
+   {
+    "i": 0,
+    "url": "https://blinkit.com/",
+    "pos": [
+     0,
+     0,
+     1425,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "6": [
+   {
+    "i": 0,
+    "url": "https://blinkit.com/",
+    "pos": [
+     0,
+     872.7999877929688,
+     1576,
+     720
+    ],
+    "events": 5
+   }
+  ],
+  "7": []
+ },
+ "events": [
+  {
+   "t": 1790587555.785,
+   "step": 0,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => window.scrollTo({top: 0, left: 0, behavior: 'instant'})"
+  },
+  {
+   "t": 1790587569.385,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790587569.389,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "(px) => window.scrollBy(0, px)"
+  },
+  {
+   "t": 1790587570.11,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790587570.118,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790587570.129,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "(px) => window.scrollBy(0, px)"
+  },
+  {
+   "t": 1790587570.839,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790587570.839,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790587570.858,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "(px) => window.scrollBy(0, px)"
+  },
+  {
+   "t": 1790587571.586,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790587571.598,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790587571.602,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "(px) => window.scrollBy(0, px)"
+  },
+  {
+   "t": 1790587572.339,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  }
+ ]
+}

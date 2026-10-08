@@ -1,0 +1,117 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "http://127.0.0.1:59522/modal_shadow.html",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Modal Shadow page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:59522/modal_shadow.html",
+      "url_after": "http://127.0.0.1:59522/modal_shadow.html",
+      "started_at": "2026-10-04T23:54:55.779",
+      "ended_at": "2026-10-04T23:54:56.124",
+      "duration": 0.343,
+      "timing_ms": {
+        "settle": 0,
+        "navigation_wait": 0,
+        "screenshot": 342,
+        "other": 0
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Close\" button",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "close_search",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:59522/modal_shadow.html",
+      "url_after": "http://127.0.0.1:59522/modal_shadow.html",
+      "started_at": "2026-10-04T23:54:56.126",
+      "ended_at": "2026-10-04T23:54:56.983",
+      "duration": 0.86,
+      "timing_ms": {
+        "locate_action": 110,
+        "log_emit": 14,
+        "screenshot": 79,
+        "settle": 0,
+        "verify": 0,
+        "other": 656
+      },
+      "locator_report": {
+        "strategy": "close_search",
+        "strategy_label": "close_search",
+        "fallback_level": null,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 860,
+        "message": "Close found using close_search."
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:59522/modal_shadow.html",
+  "final_screenshot": null,
+  "final_text": "",
+  "product_validation": null,
+  "total_duration_s": 2.328,
+  "total_steps": 2,
+  "live_log": [
+    {
+      "t": 1791138295.7805908,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138295.7831547,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138296.5058672,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

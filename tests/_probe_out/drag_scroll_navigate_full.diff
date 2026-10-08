@@ -1,0 +1,847 @@
+--- backups/drag_scroll_fix_20260928_111411/generator/script_generator.py	2026-09-28 11:14:11.387141800 +0530
++++ generator/script_generator.py	2026-09-28 15:50:49.437088900 +0530
+@@ -149,6 +149,14 @@
+ SCROLL_VERIFY_TIMEOUT_S = 3.0
+ SCROLL_VERIFY_POLL_INTERVAL_S = 0.2
+ SCROLL_MAX_RETRIES = 4
++# drag replay (see the "drag" branch in resolve_and_act): how long to wait
++# for the recorded value to show up while the button is still held, how
++# many corrective nudges to try, how long to poll after release, and the
++# cap on the recorded inter-move pause that gets replayed
++DRAG_HELD_POLL_BUDGET_S = 0.6
++DRAG_RELEASE_POLL_BUDGET_S = 1.0
++DRAG_NUDGE_MAX_ATTEMPTS = 4
++DRAG_MOVE_DELAY_CAP_MS = 40
+ # centralized locator-resolution timing for the NEW element-level
+ # validation actions (validate_text/validate_visible/count_elements/etc -
+ # see their handlers further down) - a short, bounded poll of the exact
+@@ -1030,6 +1038,19 @@
+     if not role:
+         return None
+     try:
++        if role == "slider":
++            # A slider handle has no stable accessible name: it has none at
++            # all, or its name IS its current value ("7", "60.00"), which
++            # changes as it is dragged and can equal another slider's
++            # value. CONFIRMED on a page with 48 role=slider handles: with
++            # no name, get_by_role("slider").first is simply the first
++            # slider on the page, and replay dragged that one instead of
++            # the recorded handle. For this role the role tier is only an
++            # identity when exactly ONE slider exists; otherwise fall
++            # through to the structural tiers (css_path/xpath) the
++            # recording already carries.
++            only = page.get_by_role("slider")
++            return only.first if only.count() == 1 else None
+         name = lp.get("accessible_name") or lp.get("text") or None
+         c = page.get_by_role(role, name=name)
+         return c.first if c.count() > 0 else None
+@@ -4952,6 +4973,341 @@
+         return None
+ 
+ 
++_DRAG_SLIDER_UNDER_POINT_JS = """
++([x, y]) => {
++    var node = document.elementFromPoint(x, y);
++    for (var i = 0; i < 4 && node; i++) {
++        if (node.tagName === 'INPUT' && (node.type || '').toLowerCase() === 'range') return node;
++        if (node.getAttribute && (node.getAttribute('role') === 'slider' || node.hasAttribute('aria-valuenow'))) return node;
++        node = node.parentElement;
++    }
++    return null;
++}
++"""
++
++
++def _drag_slider_under_pointer(page, x, y):
++    """The slider-like element (native range input / role=slider /
++    aria-valuenow, within 4 ancestors) that is actually under the pointer
++    at (x, y) - i.e. the thing the browser is about to drag - or None.
++    Geometry, not a locator: a recorded thumb profile can be ambiguous or
++    stale on a page with dozens of look-alike sliders (CONFIRMED: it
++    re-resolved to a scale label showing the same number), the element
++    under the pointer cannot be."""
++    try:
++        return page.evaluate_handle(_DRAG_SLIDER_UNDER_POINT_JS, [x, y]).as_element()
++    except Exception:
++        return None
++
++
++class _DragValueSource:
++    """Read-only evaluate() proxy for the drag's value reads: the element
++    proven (by geometry) to be under the pointer while the button is held,
++    falling back to the locator-resolved thumb once that handle is gone
++    (a page that re-renders after release)."""
++
++    def __init__(self, primary, fallback):
++        self.primary = primary
++        self.fallback = fallback
++
++    def evaluate(self, expression, arg=None):
++        if self.primary is not None:
++            try:
++                return self.primary.evaluate(expression, arg)
++            except Exception:
++                self.primary = None
++        return self.fallback.evaluate(expression, arg)
++
++
++def _hosts_equivalent(host_a, host_b):
++    """Same site, ignoring only a leading "www." on either side (and case).
++    CONFIRMED: https://www.<domain>/ answers with a server-side redirect to
++    https://<domain>/ (and the reverse exists on other sites) - the same
++    site, not a wrong page. Any other difference (another domain, a
++    different subdomain, a different port) is still a different host."""
++    if not host_a or not host_b:
++        return False
++
++    def _bare(h):
++        h = h.lower()
++        return h[4:] if h.startswith("www.") else h
++
++    return _bare(host_a) == _bare(host_b)
++
++
++def _redirect_chain_verified(resp, target, final_url):
++    """Was `final_url` reached from `target` by a genuine server-side HTTP
++    redirect chain? Read from the navigation's own network record (the
++    Response's request.redirected_from links), never from hostname rules:
++    the chain must start at `target` (or a www/scheme equivalent of it),
++    every hop before the last must be a real 3xx response, the last
++    response must be a successful (2xx) page load - an error, block or
++    challenge page (403/5xx...) doesn't count - and the page must still be
++    on that last response's host (a script that moved it elsewhere after
++    load is not a redirect). CONFIRMED: a site whose own server answers
++    301 to a different domain/TLD is a real redirect, not a wrong page;
++    no chain (client-side script redirect, unrelated landing, failed load)
++    returns False."""
++    try:
++        if resp is None or not resp.ok:
++            return False
++        hops = []
++        req = resp.request
++        while req is not None:
++            hops.append(req)
++            req = req.redirected_from
++        hops.reverse()
++        if len(hops) < 2:
++            return False
++        for hop in hops[:-1]:
++            hop_resp = hop.response()
++            if hop_resp is None or not (300 <= hop_resp.status < 400):
++                return False
++        if not _hosts_equivalent(urlsplit(hops[0].url).netloc, urlsplit(target).netloc):
++            return False
++        return _hosts_equivalent(urlsplit(resp.url).netloc, urlsplit(final_url).netloc)
++    except Exception:
++        return False
++
++
++def _drag_values_equal(a, b):
++    """Whitespace-normalised equality of two drag value snapshots
++    ({kind, value[, text]}) - a display label re-rendered with different
++    spacing is still the same value."""
++    if a is None or b is None:
++        return False
++    def norm(v):
++        if not isinstance(v, dict):
++            return v
++        return {k: (" ".join(x.split()) if isinstance(x, str) else x) for k, x in v.items()}
++    return norm(a) == norm(b)
++
++
++_DRAG_NUM_RE = re.compile(r"\d[\d,]*\.?\d*")
++
++
++def _drag_numbers(v):
++    """Numeric tokens (thousands separators stripped) of a drag value
++    snapshot, in order - lets a corrective nudge work out "how many units
++    off am I" for ANY text/aria/range display without knowing what the
++    numbers mean (currency, degrees, percent...)."""
++    if not isinstance(v, dict):
++        return []
++    text = v.get("text") or v.get("value") or ""
++    out = []
++    for tok in _DRAG_NUM_RE.findall(str(text)):
++        try:
++            out.append(float(tok.replace(",", "")))
++        except ValueError:
++            pass
++    return out
++
++
++def _drag_changed_indices(before, target):
++    """Positions (in the numeric tokens of a drag value) that the recorded
++    drag CHANGED, i.e. where `before` and `target` differ - None when that
++    can't be told (no numbers, different shapes, nothing changed)."""
++    bn, tn = _drag_numbers(before), _drag_numbers(target)
++    if bn and len(bn) == len(tn):
++        idx = [i for i in range(len(tn)) if bn[i] != tn[i]]
++        if idx:
++            return idx
++    return None
++
++
++def _drag_reached(cur, target, before):
++    """Does `cur` show the recorded value? Exactly equal, or - when the
++    label carries several numbers and the recorded drag changed only some
++    of them - equal in the numbers the drag changed. The others (the
++    other thumb, a domain maximum that follows live inventory data, a
++    running total) are not part of "did THIS drag land" and legitimately
++    differ between record time and replay time: CONFIRMED on a real
++    price-range filter whose label "1,400 - 5,300+" carried a domain
++    maximum that read 4,300+ an hour later, while the dragged number was
++    exact."""
++    if cur is None or target is None:
++        return False
++    if _drag_values_equal(cur, target):
++        return True
++    idx = _drag_changed_indices(before, target)
++    if not idx:
++        return False
++    cn, tn = _drag_numbers(cur), _drag_numbers(target)
++    return len(cn) == len(tn) and all(cn[i] == tn[i] for i in idx)
++
++
++def _drag_start_matches(live, before, target):
++    """Is `live` (read from the slider under the candidate start point) the
++    state the recording started from? Equal to the recorded before-value, or
++    equal to it in the numbers the drag changed."""
++    if live is None or before is None:
++        return False
++    if _drag_values_equal(live, before):
++        return True
++    idx = _drag_changed_indices(before, target)
++    if not idx:
++        return False
++    ln, bn = _drag_numbers(live), _drag_numbers(before)
++    return len(ln) == len(bn) and all(ln[i] == bn[i] for i in idx)
++
++
++def _drag_point_mappers(page, step, live_box, off_x, off_y):
++    """Candidate mappings from a point recorded as an offset (dx, dy) from
++    the source's top-left AT MOUSEDOWN to a live viewport coordinate, most
++    trusted first: [(name, f), ...].
++      "scaled"   - the pointer GRABS the control where it is now (the live
++                   box of the resolved element plus the recorded grab
++                   offset - a 12px thumb must be hit where it currently
++                   sits, and it moves when the site's data changes the
++                   slider's domain), and only the DISPLACEMENT is
++                   resolution-independent: scaled by live-track-extent /
++                   recorded-track-extent along the drag axis, so a rail
++                   that is wider/narrower at replay still moves the same
++                   fraction of its length. Needs a recorded `track`
++                   (action_capture.js's _findDragTrack) measurable live;
++      "relative" - the same grab point with the recorded displacement
++                   unscaled (what replay always did before);
++      "track"    - absolute: both axes taken from the live track (a
++                   fraction of its extent along it, the recorded offset
++                   from its edge across it) - right when the resolved
++                   element is only a stand-in and cannot be trusted for
++                   position;
++      "recorded" - the recorded absolute viewport coordinates.
++    Which one is right depends on things only the page knows, so the caller
++    picks by testing where each lands whenever the control exposes a value
++    (see the drag branch), and otherwise takes the first."""
++    rec_src = step.get("bounding_box") or {}
++    track = step.get("track") or {}
++    out = []
++
++    try:
++        axis = track.get("axis")
++        rt = track.get("rect_at_down") or {}
++        lp = track.get("locator_profile")
++        if axis in ("x", "y") and lp and rt.get("width" if axis == "x" else "height") and rec_src.get("x") is not None:
++            t_el = _resolve_element(page, lp)
++            tb = t_el.bounding_box() if t_el is not None else None
++            if tb and tb.get("width" if axis == "x" else "height"):
++                def mapped(dx, dy):
++                    if axis == "x":
++                        frac = ((rec_src["x"] + dx) - rt["x"]) / rt["width"]
++                        return tb["x"] + frac * tb["width"], tb["y"] + ((rec_src["y"] + dy) - rt["y"])
++                    frac = ((rec_src["y"] + dy) - rt["y"]) / rt["height"]
++                    return tb["x"] + ((rec_src["x"] + dx) - rt["x"]), tb["y"] + frac * tb["height"]
++                sx = (tb["width"] / rt["width"]) if axis == "x" else 1.0
++                sy = (tb["height"] / rt["height"]) if axis == "y" else 1.0
++                out.append(("scaled", lambda dx, dy: (
++                    live_box["x"] + off_x + (dx - off_x) * sx,
++                    live_box["y"] + off_y + (dy - off_y) * sy,
++                )))
++                out.append(("track", mapped))
++    except Exception:
++        pass
++
++    out.insert(1 if out else 0, ("relative", lambda dx, dy: (live_box["x"] + dx, live_box["y"] + dy)))
++
++    if rec_src.get("x") is not None and rec_src.get("y") is not None:
++        out.append(("recorded", lambda dx, dy: (rec_src["x"] + dx, rec_src["y"] + dy)))
++    return out
++
++
++def _drag_verify_held(page, thumb_el, target, recorded_before, live_before, pos, axis, end_delta):
++    """Called while the mouse button is STILL DOWN at the drag's final
++    position. Confirms the control currently shows the RECORDED value
++    (that is what the recorder captured - the value the user saw at the
++    moment they let go; see action_capture.js's _finishDragGesture), and if
++    it doesn't, does what a person does: nudge the pointer by the remaining
++    distance (bounded DRAG_NUDGE_MAX_ATTEMPTS) before releasing. Reading it
++    here, not after release, matters: many widgets re-render their own
++    label once the released value is applied (CONFIRMED on a real
++    price-range filter: label showed the dragged value until ~0.5s after
++    release, then was rewritten from the refreshed results), so a value read
++    after a settle wait can legitimately differ from the value at release
++    while the drag itself landed exactly right.
++
++    Returns (matched, last_value_read, nudges_used). A control whose label
++    does not change while dragging at all (updates only on release) is left
++    alone - nothing is nudged, since there is no live signal to steer by."""
++    def read():
++        return _captureDragValueSnapshot_py(thumb_el)
++
++    cur = read()
++    deadline = time.monotonic() + DRAG_HELD_POLL_BUDGET_S
++    while not _drag_reached(cur, target, recorded_before) and time.monotonic() < deadline:
++        page.wait_for_timeout(60)
++        cur = read()
++    if _drag_reached(cur, target, recorded_before):
++        return True, cur, 0
++    if cur is None or (live_before is not None and _drag_values_equal(cur, live_before)):
++        return False, cur, 0
++
++    print(
++        f"[drag] value while held {cur!r} != recorded {target!r} - "
++        f"nudging the pointer (up to {DRAG_NUDGE_MAX_ATTEMPTS} corrections) before release"
++    )
++    x, y = pos
++    tn = _drag_numbers(target)
++    bn = _drag_numbers(recorded_before)
++    slope = None
++    d_px = (end_delta or {}).get("dx" if axis == "x" else "dy") or 0
++    if bn and len(bn) == len(tn) and d_px:
++        diffs = [i for i in range(len(tn)) if tn[i] != bn[i]]
++        if diffs:
++            slope = (tn[diffs[0]] - bn[diffs[0]]) / d_px
++    nudges = 0
++    stalled = 0
++    for _ in range(DRAG_NUDGE_MAX_ATTEMPTS):
++        cn = _drag_numbers(cur)
++        if not cn or len(cn) != len(tn):
++            break
++        # steer by the number(s) the drag changed, not by whichever number
++        # happens to differ first (see _drag_reached)
++        idxs = [i for i in (_drag_changed_indices(recorded_before, target) or range(len(tn))) if cn[i] != tn[i]]
++        if not idxs:
++            break
++        idx = idxs[0]
++        delta_units = tn[idx] - cn[idx]
++        px = (delta_units / slope) if slope else 3.0
++        # a stepped/snapping control ignores a move that doesn't cross its
++        # next snap point (the value doesn't change, so no slope is
++        # learned): push further each time it stalls, like a person would
++        px *= 2 ** stalled
++        px = max(-80.0, min(80.0, px))
++        if abs(px) < 0.5:
++            px = 0.5 if px >= 0 else -0.5
++        if axis == "x":
++            x += px
++        else:
++            y += px
++        page.mouse.move(x, y, steps=max(1, int(abs(px) / 5)))
++        page.wait_for_timeout(100)
++        nudges += 1
++        new = read()
++        print(f"[drag] nudge {nudges}: moved {px:+.1f}px along {axis} -> value now {new!r}")
++        nn = _drag_numbers(new)
++        if new is not None and len(nn) == len(cn) and nn[idx] != cn[idx]:
++            slope = (nn[idx] - cn[idx]) / px   # px = the distance actually moved
++            stalled = 0
++        else:
++            stalled += 1
++        cur = new
++        if _drag_reached(cur, target, recorded_before):
++            return True, cur, nudges
++    return False, cur, nudges
++
++
++def _drag_poll_for_value(page, thumb_el, target, budget_s, before=None):
++    """Bounded poll (after release) for the recorded value to be on screen at
++    ANY moment - covers widgets that only update their label once the
++    button is released."""
++    deadline = time.monotonic() + budget_s
++    cur = _captureDragValueSnapshot_py(thumb_el)
++    while not _drag_reached(cur, target, before) and time.monotonic() < deadline:
++        page.wait_for_timeout(100)
++        cur = _captureDragValueSnapshot_py(thumb_el)
++    return _drag_reached(cur, target, before), cur
++
++
+ def _verify_recorded_effect(
+     page, step, next_step=None, url_before=None, expected_state=None,
+     is_radio_like=False, timeout_s=3.0, poll_ms=150,
+@@ -7882,6 +8238,20 @@
+         ("xpath", lambda: _find_by_xpath(page, lp)),
+     ]
+ 
++    if action_type == "drag":
++        # A drag source is one specific control (a slider thumb), not a
++        # repeating list item: its literal recorded structural path
++        # identifies it, whereas position_fallback guesses "the Nth of the
++        # similar siblings" from the path's nth-of-type numbers - which is
++        # off by one whenever a non-item sibling precedes the items (a
++        # slider's connects bar precedes its handles) and lands on the
++        # wrong handle. Try css_path/xpath first for drags only; every
++        # other action type keeps the order above exactly.
++        _structural_tiers = [t for t in tiers if t[0] in ("css_path", "xpath")]
++        tiers = [t for t in tiers if t[0] not in ("css_path", "xpath")]
++        _pf_at = next(i for i, t in enumerate(tiers) if t[0] == "position_fallback")
++        tiers[_pf_at:_pf_at] = _structural_tiers
++
+     element_found = False
+     last_err = None
+     position_fallback_info = {}
+@@ -8796,6 +9166,13 @@
+                             "falling back to the general drag-source element"
+                         )
+                     _thumb_el = _thumb_el or el
++                    # value the recording captured when the user let go
++                    # (see _drag_verify_held for why it's checked at that
++                    # same moment, before release, and again after)
++                    _value_after = step.get("value_after")
++                    _drag_held_ok, _drag_held_val, _drag_nudges = False, None, 0
++                    _drag_src = _thumb_el
++                    _drag_live_before = _captureDragValueSnapshot_py(_thumb_el) if _value_after else None
+                     _drop_lp = step.get("drop_target")
+                     if step.get("html5") and _drop_lp:
+                         _drop_loc = _resolve_element(page, _drop_lp)
+@@ -8820,19 +9197,67 @@
+                         if not _box:
+                             raise RuntimeError("drag source has no live bounding box (not visible/laid out)")
+                         _start_off = step.get("start_offset") or {"x": _box["width"] / 2, "y": _box["height"] / 2}
+-                        _start_x = _box["x"] + _start_off.get("x", _box["width"] / 2)
+-                        _start_y = _box["y"] + _start_off.get("y", _box["height"] / 2)
+                         _path = step.get("path") or []
+                         _delta = step.get("end_delta") or {"dx": 0, "dy": 0}
+-                        _end_x = _start_x + _delta.get("dx", 0)
+-                        _end_y = _start_y + _delta.get("dy", 0)
++                        # resolution-independent mapping (see
++                        # _drag_point_mapper): every point is derived from
++                        # the LIVE track/source box, never a stale recorded
++                        # pixel position
++                        _off_x = _start_off.get("x", _box["width"] / 2)
++                        _off_y = _start_off.get("y", _box["height"] / 2)
++                        _mappers = _drag_point_mappers(page, step, _box, _off_x, _off_y)
++                        _map_name, _map_pt = _mappers[0]
++                        _under = None
++                        if _value_after and len(_mappers) > 1:
++                            # pick the mapping whose start point lands on a
++                            # slider that currently shows the RECORDED
++                            # before-value (the handle the user grabbed);
++                            # failing that, on any slider; failing that,
++                            # keep the most trusted mapping
++                            _any_hit = None
++                            for _cand_name, _cand_f in _mappers:
++                                _cx, _cy = _cand_f(_off_x, _off_y)
++                                _cu = _drag_slider_under_pointer(page, _cx, _cy)
++                                if _cu is None:
++                                    continue
++                                if _any_hit is None:
++                                    _any_hit = (_cand_name, _cand_f, _cu)
++                                if _drag_start_matches(
++                                    _captureDragValueSnapshot_py(_cu), step.get("value_before"), _value_after,
++                                ):
++                                    _map_name, _map_pt, _under = _cand_name, _cand_f, _cu
++                                    break
++                            else:
++                                if _any_hit is not None:
++                                    _map_name, _map_pt, _under = _any_hit
++                        _start_x, _start_y = _map_pt(_off_x, _off_y)
++                        _end_x, _end_y = _map_pt(
++                            _off_x + _delta.get("dx", 0), _off_y + _delta.get("dy", 0),
++                        )
++                        print(f"[drag] pointer positions from the '{_map_name}' mapping")
+                         page.mouse.move(_start_x, _start_y)
++                        if _under is None and _value_after:
++                            _under = _drag_slider_under_pointer(page, _start_x, _start_y)
++                        if _under is not None:
++                            _drag_src = _DragValueSource(_under, _thumb_el)
++                            _drag_live_before = _captureDragValueSnapshot_py(_drag_src)
++                            print("[drag] value is read from the slider under the pointer")
+                         page.mouse.down()
+                         try:
+                             _prev_x, _prev_y = _start_x, _start_y
++                            _prev_t = 0
+                             for _pt in _path:
+-                                _tx = _box["x"] + _pt.get("dx", 0)
+-                                _ty = _box["y"] + _pt.get("dy", 0)
++                                _tx, _ty = _map_pt(_pt.get("dx", 0), _pt.get("dy", 0))
++                                # replay the recorded pacing (capped): a
++                                # widget that derives its value from
++                                # incremental pointer deltas or throttles
++                                # its handlers behaves like it did for a
++                                # real user, not for a burst of instant
++                                # moves
++                                _gap = max(0, min(DRAG_MOVE_DELAY_CAP_MS, (_pt.get("t", 0) or 0) - _prev_t))
++                                _prev_t = _pt.get("t", 0) or 0
++                                if _gap:
++                                    page.wait_for_timeout(_gap)
+                                 # steps proportional to distance - a long
+                                 # hop gets a smoother synthetic path than a
+                                 # short one, matching a real drag's own
+@@ -8855,6 +9280,19 @@
+                             if (_prev_x, _prev_y) != (_end_x, _end_y):
+                                 _dist = ((_end_x - _prev_x) ** 2 + (_end_y - _prev_y) ** 2) ** 0.5
+                                 page.mouse.move(_end_x, _end_y, steps=max(1, min(20, int(_dist / 15))))
++                            # still holding the button: confirm the recorded
++                            # value is showing, nudging the pointer the
++                            # remaining distance if it isn't (see
++                            # _drag_verify_held)
++                            if _value_after:
++                                _drag_axis = (
++                                    (step.get("track") or {}).get("axis")
++                                    or ("x" if abs(_delta.get("dx", 0)) >= abs(_delta.get("dy", 0)) else "y")
++                                )
++                                _drag_held_ok, _drag_held_val, _drag_nudges = _drag_verify_held(
++                                    page, _drag_src, _value_after, step.get("value_before"),
++                                    _drag_live_before, (_end_x, _end_y), _drag_axis, _delta,
++                                )
+                         finally:
+                             page.mouse.up()
+ 
+@@ -8867,8 +9305,17 @@
+                     # with no detectable slider/range value (a plain
+                     # reorder/drop gesture) - _verify_recorded_effect's own
+                     # URL/DOM-change signals cover that case instead, below.
+-                    _value_after = step.get("value_after")
+-                    if _value_after:
++                    _drag_release_ok = False
++                    if _value_after and not _drag_held_ok:
++                        # the recorded value never showed while held -
++                        # accept it appearing at any moment right after
++                        # release (a widget that only updates its label on
++                        # release)
++                        _drag_release_ok, _drag_held_val = _drag_poll_for_value(
++                            page, _drag_src, _value_after, DRAG_RELEASE_POLL_BUDGET_S,
++                            before=step.get("value_before"),
++                        )
++                    if _value_after and not _drag_held_ok and not _drag_release_ok:
+                         _adjust_deadline = time.monotonic() + 2.0
+                         while time.monotonic() < _adjust_deadline:
+                             try:
+@@ -8909,16 +9356,29 @@
+                         # exact value can no longer even be read (control
+                         # detached/replaced) - never silently ignored.
+                         try:
+-                            _cur_final = _captureDragValueSnapshot_py(_thumb_el)
++                            _cur_final = _captureDragValueSnapshot_py(_drag_src)
+                         except Exception:
+                             _cur_final = None
+-                        if _cur_final is not None:
+-                            if _cur_final == _value_after:
++                        if _drag_held_ok or _drag_release_ok:
++                            # the recorded value was observed on screen (while
++                            # held, or right after release) - that IS the
++                            # manual behaviour. The label read after the
++                            # settle wait above is the site's own re-render
++                            # of the applied value and is reported, not
++                            # compared.
++                            print(
++                                f"[drag-verify] value at release matches recorded {_value_after!r} "
++                                f"(held={_drag_held_ok}, nudges={_drag_nudges}); "
++                                f"after settle it reads {_cur_final!r}"
++                            )
++                        elif _cur_final is not None:
++                            if _drag_reached(_cur_final, _value_after, step.get("value_before")):
+                                 print(f"[drag-verify] value_target reads {_cur_final!r} (matches recorded)")
+                             else:
+                                 return strategy, element_found, False, (
+                                     f"drag did not reach its recorded final value - expected "
+                                     f"{_value_after!r}, got {_cur_final!r}"
++                                    f" (at release: {_drag_held_val!r}, nudges tried: {_drag_nudges})"
+                                 )
+                         else:
+                             _drag_effect_ok, _drag_effect_detail = _verify_recorded_effect(
+@@ -9193,12 +9653,43 @@
+         _found_but_hidden = any(
+             "not visible" in _r.lower() for _r in target_verify_rejections
+         )
++        # Same principle, second case (CONFIRMED on a real recording: 9 of
++        # 91 steps each scrolled the page ~13 times, +432px then back, for
++        # nothing): a tier DID find a candidate but _verify_resolved_target
++        # rejected it (text/content drift, e.g. a filter count that changed
++        # from 15730 to 15731), and this replay is ALREADY at the very
++        # scroll position the recording says the user acted from. The
++        # target is not "not rendered yet" - it exists - and the manual
++        # user reached it from exactly this viewport with no extra
++        # scrolling (any scrolling the user did is its own recorded
++        # scroll step, replayed before this one), so scrolling further
++        # cannot reproduce manual behaviour, it only adds scroll events
++        # the manual session never had. Needs a recorded scroll_y to
++        # compare against; without one (older recording) the search runs
++        # exactly as before.
++        _rejected_at_recorded_viewport = False
++        if not _found_but_hidden and target_verify_rejections:
++            try:
++                _rec_scroll_y = step.get("scroll_y")
++                if _rec_scroll_y is not None:
++                    _live_scroll_y = page.evaluate("() => window.scrollY")
++                    _rejected_at_recorded_viewport = (
++                        abs(_live_scroll_y - _rec_scroll_y) <= SCROLL_TARGET_TOLERANCE_PX
++                    )
++            except Exception:
++                _rejected_at_recorded_viewport = False
+         if _found_but_hidden:
+             logger.debug(
+                 "skipping scroll-and-recheck: target was found but stayed "
+                 "hidden after hover-reveal was already attempted - not a "
+                 "not-yet-rendered/infinite-scroll case"
+             )
++        elif _rejected_at_recorded_viewport:
++            print(
++                "[scroll-search] skipped: a candidate was found but rejected, and the page is "
++                "already at the recorded scroll position - scrolling further would not match "
++                "the manual recording"
++            )
+         elif time.monotonic() >= _step_deadline:
+             # FIX 2.f: this step has already spent its whole time budget
+             # on cheaper tiers - starting a whole new scroll-and-recheck
+@@ -9974,6 +10465,37 @@
+     step_dx = dx / steps
+     step_dy = dy / steps
+ 
++    # CONFIRMED on a real recording (steps 9/20/41/61/63 of a 91-step
++    # Myntra session): a recorded scroll is often the SITE's own scroll
++    # (scroll-to-top after a filter applies, a small nudge after a click)
++    # that the recorder captured as a separate step - in replay the site
++    # repeats it by itself during the previous step, so the page is already
++    # at the recorded end position when this step starts. Replaying the
++    # recorded delta on top would move the page AGAIN (a -19px hop, then
++    # the snap below pulling it back): duplicate movement the manual
++    # session never had. When the page is already within tolerance of the
++    # recorded absolute end position (and no horizontal movement is
++    # recorded), skip the incremental hops; the exact snap below still
++    # runs, so the final position is unchanged. A deliberate scroll
++    # (starting away from its end position) is replayed exactly as before.
++    _already_there = False
++    if scroll_y_after is not None and not dx:
++        try:
++            _cur_pos = _read_scroll_position(page, element)
++            _already_there = (
++                _cur_pos is not None
++                and abs(_cur_pos - scroll_y_after) <= SCROLL_TARGET_TOLERANCE_PX
++            )
++        except Exception:
++            _already_there = False
++        if _already_there:
++            print(
++                f"[scroll] page already at the recorded position "
++                f"({_cur_pos:.1f} vs {scroll_y_after:.1f}) - skipping the duplicate movement, snapping exactly"
++            )
++    if _already_there:
++        steps = 0
++
+     if element is not None:
+         for _ in range(steps):
+             try:
+@@ -11754,7 +12276,7 @@
+                                     _step1_cur_host = urlsplit(_step1_cur_url).netloc if _step1_cur_url else None
+                                 except Exception:
+                                     _step1_cur_host = None
+-                                if _step1_cur_host and _step1_target_host and _step1_cur_host == _step1_target_host:
++                                if _hosts_equivalent(_step1_cur_host, _step1_target_host):
+                                     _settle(page)
+                                     strategy, found, ok, err = None, True, True, None
+                                 else:
+@@ -11763,11 +12285,17 @@
+                                     # same forced-goto every other branch
+                                     # here already falls back to
+                                     try:
+-                                        page.goto(target, wait_until="domcontentloaded", timeout=30000)
++                                        _step1_resp = page.goto(target, wait_until="domcontentloaded", timeout=30000)
+                                         _settle(page)
+                                         _step1_cur_url = page.url
+                                         _step1_cur_host = urlsplit(_step1_cur_url).netloc
+-                                        _step1_ok = bool(_step1_target_host) and _step1_cur_host == _step1_target_host
++                                        _step1_ok = _hosts_equivalent(_step1_cur_host, _step1_target_host)
++                                        if not _step1_ok and _redirect_chain_verified(_step1_resp, target, _step1_cur_url):
++                                            _step1_ok = True
++                                            print(
++                                                f"[redirect] {target} -> {_step1_cur_url} via a server-side "
++                                                "HTTP redirect chain (verified from the navigation's network record)"
++                                            )
+                                     except Exception:
+                                         _step1_cur_url, _step1_ok = None, False
+                                     strategy, found, ok, err = None, True, _step1_ok, (
+@@ -15272,6 +15800,10 @@
+             "thumb_index": action.get("thumb_index"),
+             "thumb_total": action.get("thumb_total"),
+             "thumb_locator_profile": action.get("thumb_locator_profile"),
++            # resolution-independent drag: the rail/track the source moves
++            # along (see action_capture.js's _findDragTrack). None on a
++            # non-drag action or a recording made before this existed.
++            "track": action.get("track"),
+             "viewport_height": action.get("viewport_height"),
+             "document_height": action.get("document_height"),
+             "timestamp": action.get("timestamp"),
+--- backups/drag_scroll_fix_20260928_111411/recorder/action_capture.js	2026-09-28 11:14:11.341010800 +0530
++++ recorder/action_capture.js	2026-09-28 12:57:11.698056000 +0530
+@@ -3447,7 +3447,17 @@
+             // this press, is what keeps a slider's own "before" value
+             // honest even if the site starts mutating the control the
+             // instant it receives focus/mousedown (some custom sliders do).
+-            var _dragThumbInfo = _findSliderThumbInfo(semanticEl);
++            // the thing being dragged is the slider-like element (native
++            // range input / role=slider / aria-valuenow) when the press
++            // landed on it or on a decoration inside it (a touch-area or
++            // tooltip child, whose css_path is ambiguous next to its
++            // sibling children) - record THAT as the source, not the
++            // decoration. Any other draggable is its own source.
++            var _dragSrcEl = _closestSliderLikeElement(semanticEl) || semanticEl;
++            var _dragSrcProfile = (_dragSrcEl === semanticEl)
++                ? _preClickSnapshot.locatorProfile
++                : buildLocatorProfile(_dragSrcEl);
++            var _dragThumbInfo = _findSliderThumbInfo(_dragSrcEl);
+             _dragState = {
+                 startX: e.clientX,
+                 startY: e.clientY,
+@@ -3456,9 +3466,20 @@
+                 lastSampleAt: Date.now(),
+                 t0: Date.now(),
+                 gestureId: _currentGestureId,
+-                sourceRect: semanticEl.getBoundingClientRect(),
++                sourceRect: _dragSrcEl.getBoundingClientRect(),
++                sourceEl: _dragSrcEl,
++                sourceProfile: _dragSrcProfile,
+                 thumbInfo: _dragThumbInfo,
+-                valueBefore: _captureDragValueSnapshot(semanticEl, _dragThumbInfo),
++                // built NOW, before the drag: a slider handle's own text is
++                // usually its current value, so a profile built at mouseup
++                // would carry the AFTER text and later match some unrelated
++                // element that happens to show that number (CONFIRMED: a
++                // scale label "12" instead of the handle)
++                thumbProfile: _dragThumbInfo ? buildLocatorProfile(_dragThumbInfo.thumbEl) : null,
++                valueBefore: _captureDragValueSnapshot(_dragSrcEl, _dragThumbInfo),
++                // the source's nearest ancestors and their boxes AS THEY
++                // ARE NOW (before any drag movement) - see _findDragTrack
++                ancestorRects: _snapshotAncestorRects(_dragSrcEl),
+             };
+         } catch (snapErr) {
+             _preClickSnapshot = null;
+@@ -3508,6 +3529,62 @@
+     // container". Returns null for an ordinary single-thumb slider (or
+     // no slider at all) - nothing extra to record in that case, the
+     // existing _closestSliderLikeElement-based path is already unambiguous.
++    // resolution-independent drag support: the "track" a dragged element
++    // travels along (a slider rail, a scrollbar gutter, a sortable list's
++    // container) is whichever of its nearest ancestors is clearly larger
++    // than it along the drag's own axis AND contains both the drag's start
++    // and end along that axis. Recording the drag as fractions of THAT
++    // extent (replay re-applies them to the live track) makes it land on
++    // the same logical position when the track is wider/narrower/moved at
++    // replay time, instead of replaying raw pixels. Generic - no class
++    // names, ids or site knowledge; absent when no such ancestor exists.
++    var DRAG_TRACK_MAX_LEVELS = 4;
++    function _snapshotAncestorRects(el) {
++        var out = [];
++        var node = el && el.parentElement;
++        for (var i = 0; i < DRAG_TRACK_MAX_LEVELS && node; i++) {
++            try {
++                var r = node.getBoundingClientRect();
++                out.push({ el: node, rect: { x: r.x, y: r.y, width: r.width, height: r.height } });
++            } catch (e) {}
++            node = node.parentElement;
++        }
++        return out;
++    }
++
++    function _findDragTrack(state, sourceRect, endX, endY) {
++        var dx = endX - state.startX, dy = endY - state.startY;
++        var axis = Math.abs(dx) >= Math.abs(dy) ? 'x' : 'y';
++        var startC = axis === 'x' ? state.startX : state.startY;
++        var endC = axis === 'x' ? endX : endY;
++        var srcLen = axis === 'x' ? sourceRect.width : sourceRect.height;
++        var cands = state.ancestorRects || [];
++        for (var i = 0; i < cands.length; i++) {
++            var r = cands[i].rect;
++            var lo = axis === 'x' ? r.x : r.y;
++            var len = axis === 'x' ? r.width : r.height;
++            if (!(len > 0) || len < 2 * Math.max(srcLen, 1)) continue;
++            var tol = Math.max(srcLen, 2);
++            if (startC < lo - tol || startC > lo + len + tol) continue;
++            if (endC < lo - tol || endC > lo + len + tol) continue;
++            // a real track stays put while its thumb moves; an ancestor
++            // whose own box moved/resized during the drag (a slider's
++            // "origin" element, translated by the handle's value) is part
++            // of the moving control, not the rail it travels along
++            try {
++                var r2 = cands[i].el.getBoundingClientRect();
++                if (Math.abs(r2.x - r.x) > 1.5 || Math.abs(r2.y - r.y) > 1.5 ||
++                    Math.abs(r2.width - r.width) > 1.5 || Math.abs(r2.height - r.height) > 1.5) continue;
++            } catch (e) {}
++            return {
++                axis: axis,
++                locator_profile: buildLocatorProfile(cands[i].el),
++                rect_at_down: { x: r.x, y: r.y, width: r.width, height: r.height },
++            };
++        }
++        return null;
++    }
++
+     function _findSliderThumbInfo(el) {
+         var thumbEl = null;
+         if (el.tagName === 'INPUT' && (el.type || '').toLowerCase() === 'range') {
+@@ -3611,12 +3688,23 @@
+     }, true);
+ 
+     function _finishDragGesture(state, upEvent) {
+-        var sourceEl = (_preClickSnapshot && _preClickSnapshot.gestureId === state.gestureId)
++        // claimed and timestamped NOW, at mouseup - not when the (possibly
++        // deferred, see the value-settle poll below) payload finally goes
++        // out. The browser's own trailing 'click' fires in this same tick;
++        // if the gesture were only marked as sent later, that click would
++        // be recorded as a separate action ahead of the drag (CONFIRMED on
++        // a native two-thumb range slider whose value didn't change on the
++        // first poll), and the drag would be stamped after whatever the
++        // user did next.
++        _lastSentGestureId = state.gestureId;
++        var dragTimestamp = new Date().toISOString();
++        var dragPageUrl = window.location.href;
++        var sourceEl = state.sourceEl || ((_preClickSnapshot && _preClickSnapshot.gestureId === state.gestureId)
+             ? _preClickSnapshot.semanticEl
+-            : resolveSemanticTarget(upEvent.target);
+-        var sourceProfile = (_preClickSnapshot && _preClickSnapshot.gestureId === state.gestureId)
++            : resolveSemanticTarget(upEvent.target));
++        var sourceProfile = state.sourceProfile || ((_preClickSnapshot && _preClickSnapshot.gestureId === state.gestureId)
+             ? _preClickSnapshot.locatorProfile
+-            : buildLocatorProfile(sourceEl);
++            : buildLocatorProfile(sourceEl));
+         var sourceRect = state.sourceRect || sourceEl.getBoundingClientRect();
+         var containerEl = sourceEl.parentElement || sourceEl;
+         var containerRect = containerEl.getBoundingClientRect();
+@@ -3646,7 +3734,9 @@
+         // post-drag DOM would risk landing on a DIFFERENT thumb if the
+         // drag itself reordered them (a sortable multi-handle range, say).
+         var thumbInfo = state.thumbInfo;
+-        var thumbProfile = thumbInfo ? buildLocatorProfile(thumbInfo.thumbEl) : null;
++        var thumbProfile = state.thumbProfile || null;
++        var dragTrack = null;
++        try { dragTrack = _findDragTrack(state, sourceRect, endX, endY); } catch (trackErr) {}
+ 
+         function sendDragPayload(valueAfter) {
+             var payload = {
+@@ -3668,12 +3758,15 @@
+                 thumb_index: thumbInfo ? thumbInfo.index : null,
+                 thumb_total: thumbInfo ? thumbInfo.total : null,
+                 thumb_locator_profile: thumbProfile,
++                // resolution-independent drag (see _findDragTrack) - null
++                // when the source has no track-like ancestor
++                track: dragTrack,
+                 expect: (valueBefore || valueAfter)
+                     ? { type: 'value_change', before: valueBefore, after: valueAfter }
+                     : { type: 'move', drop_target: !!dropProfile },
+                 bounding_box: { x: sourceRect.x, y: sourceRect.y, width: sourceRect.width, height: sourceRect.height },
+-                page_url: window.location.href,
+-                timestamp: new Date().toISOString(),
++                page_url: dragPageUrl,
++                timestamp: dragTimestamp,
+             };
+             send(payload);
+             _lastSentGestureId = gestureIdForDrag;

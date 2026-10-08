@@ -1,0 +1,100 @@
+[
+ {
+  "n": 2,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 500
+ },
+ {
+  "n": 3,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 900
+ },
+ {
+  "n": 4,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 379.20001220703125
+ },
+ {
+  "n": 6,
+  "kind": "drag",
+  "tag": "amazon-min-thumb",
+  "settled_value": {
+   "kind": "range_value",
+   "value": "48"
+  },
+  "scrollY": 0
+ },
+ {
+  "n": 7,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 438.3999938964844
+ },
+ {
+  "n": 10,
+  "kind": "drag",
+  "tag": "amazon-max-thumb",
+  "settled_value": {
+   "kind": "range_value",
+   "value": "128"
+  },
+  "scrollY": 0
+ },
+ {
+  "n": 11,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 700
+ },
+ {
+  "n": 12,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 350.3999938964844
+ },
+ {
+  "n": 14,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 0
+ },
+ {
+  "n": 15,
+  "kind": "click",
+  "tag": "refinement",
+  "scrollY": 0
+ },
+ {
+  "n": 17,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 600
+ },
+ {
+  "n": 18,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 1100
+ },
+ {
+  "n": 19,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 300
+ },
+ {
+  "n": 20,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 1200
+ },
+ {
+  "n": 21,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 0
+ }
+]

@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "http://127.0.0.1:60688/warn_skeleton.html",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Warn Skeleton page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:60688/warn_skeleton.html",
+      "url_after": "http://127.0.0.1:60688/warn_skeleton.html",
+      "started_at": "2026-10-04T23:51:38.633",
+      "ended_at": "2026-10-04T23:51:38.640",
+      "duration": 0.016,
+      "timing_ms": {
+        "settle": 16,
+        "other": 0
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "screenshot",
+      "name": "screenshot",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "tests\\_probe_out\\screenshot_settle\\skeleton_manual\\shots\\warn_skeleton_html\\skeleton_manual.png",
+      "url_before": "http://127.0.0.1:60688/warn_skeleton.html",
+      "url_after": "http://127.0.0.1:60688/warn_skeleton.html",
+      "started_at": "2026-10-04T23:51:38.642",
+      "ended_at": "2026-10-04T23:51:40.832",
+      "duration": 2.187,
+      "timing_ms": {
+        "screenshot": 2172,
+        "other": 14
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:60688/warn_skeleton.html",
+  "final_screenshot": null,
+  "final_text": "Loaded content\nrow 0\nrow 1\nrow 2\nrow 3\nrow 4\nrow 5\nrow 6\nrow 7\nrow 8\nrow 9\nrow 10\nrow 11\nrow 12\nrow 13\nrow 14\nrow 15\nrow 16\nrow 17\nrow 18\nrow 19\nrow 20\nrow 21\nrow 22\nrow 23\nrow 24\nrow 25\nrow 26\nrow 27\nrow 28\nrow 29\nrow 30\nrow 31\nrow 32\nrow 33\nrow 34\nrow 35\nrow 36\nrow 37\nrow 38\nrow 39",
+  "product_validation": null,
+  "total_duration_s": 3.266,
+  "total_steps": 2,
+  "live_log": [
+    {
+      "t": 1791138098.634368,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138098.6472669,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 6s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138100.4210184,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 6s)",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

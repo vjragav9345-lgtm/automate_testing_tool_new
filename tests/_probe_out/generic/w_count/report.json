@@ -1,0 +1,122 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "http://127.0.0.1:57062/g_tabs.html?after=80",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "G Tabs page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:57062/g_tabs.html?after=80",
+      "url_after": "http://127.0.0.1:57062/g_tabs.html?after=80",
+      "started_at": "2026-10-05T00:07:54.194",
+      "ended_at": "2026-10-05T00:07:54.561",
+      "duration": 0.375,
+      "timing_ms": {
+        "settle": 0,
+        "navigation_wait": 14,
+        "screenshot": 360,
+        "other": 1
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Recent (95)\" tab",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": "Warning: The number next to 'Recent' changed (recording: 95, now: 80). Continuing.",
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:57062/g_tabs.html?after=80",
+      "url_after": "http://127.0.0.1:57062/g_tabs.html?after=80",
+      "started_at": "2026-10-05T00:07:54.563",
+      "ended_at": "2026-10-05T00:07:56.342",
+      "duration": 1.781,
+      "timing_ms": {
+        "locate_action": 936,
+        "log_emit": 0,
+        "screenshot": 63,
+        "settle": 0,
+        "verify": 30,
+        "other": 751
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 1781,
+        "message": "Recent (95) found using Element ID. (resolved in 1781ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:57062/g_tabs.html?after=80",
+  "final_screenshot": null,
+  "final_text": "All Recent (80)\n\nResults: 80\n\nShowing recent only",
+  "product_validation": null,
+  "total_duration_s": 3.266,
+  "total_steps": 2,
+  "live_log": [
+    {
+      "t": 1791139074.1943572,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139074.2076898,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139075.0423121,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139075.8310106,
+      "message": "\u21b3 Clicking 'Recent (95)'",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

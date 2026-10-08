@@ -1,0 +1,6 @@
+<!doctype html><html><head><title>menu</title><style>
+body{font:15px sans-serif;margin:20px} #m{display:none;position:absolute;top:60px;left:20px;background:#eef;padding:6px;z-index:20}
+#m a{display:block;padding:4px}
+</style></head><body><button id="b" aria-haspopup="true" aria-expanded="false">Options</button>
+<div id="m" role="menu"><a role="menuitem" id="i2" href="g_next.html?from=menu2">Second option</a></div>
+<script>var b=document.getElementById('b'),m=document.getElementById('m');b.onclick=function(){var o=m.style.display!=='block';m.style.display=o?'block':'none';b.setAttribute('aria-expanded',o);};</script></body></html>

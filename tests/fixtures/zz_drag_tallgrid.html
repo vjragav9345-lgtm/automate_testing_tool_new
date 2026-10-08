@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+  body { margin: 0; padding: 10px; }
+  .grid { display: flex; flex-wrap: wrap; gap: 4px; width: 250px; }
+  .product-card { width: 110px; height: 60px; border: 1px solid #999; box-sizing: border-box; padding: 4px; font-family: sans-serif; font-size: 12px; }
+</style>
+</head>
+<body>
+  <h2>Products</h2>
+  <div class="grid" id="grid"></div>
+  <script>
+    var grid = document.getElementById('grid');
+    for (var i = 1; i <= 50; i++) {
+      var card = document.createElement('div');
+      card.className = 'product-card';
+      card.textContent = 'Item ' + i;
+      grid.appendChild(card);
+    }
+  </script>
+</body></html>

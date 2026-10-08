@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>FIX3 item4 multi-thumb slider fixture</title>
+<style>
+  #range { position: relative; width: 300px; height: 6px; background: #ddd; margin: 40px 0; }
+  input[type=range].thumb { position: absolute; top: -10px; left: 0; width: 300px;
+    -webkit-appearance: none; background: transparent; pointer-events: none; margin: 0; }
+  input[type=range].thumb::-webkit-slider-thumb { -webkit-appearance: none; pointer-events: auto;
+    width: 20px; height: 20px; border-radius: 50%; background: #ff3f6c; cursor: pointer; }
+</style>
+</head>
+<body>
+<!-- a real two-thumb range slider - min/max, same shape as the fixture the
+     price-slider test already uses but with TWO separate native
+     input[type=range] thumbs sharing one rail, exactly the case item 4
+     targets: dragging one must never read/move the OTHER one. -->
+<div id="priceLabel">MIN 300 - MAX 3800</div>
+<div id="range">
+  <input type="range" class="thumb" id="minThumb" min="0" max="5000" value="300">
+  <input type="range" class="thumb" id="maxThumb" min="0" max="5000" value="3800">
+</div>
+<script>
+function updateLabel() {
+  document.getElementById('priceLabel').textContent =
+    'MIN ' + document.getElementById('minThumb').value + ' - MAX ' + document.getElementById('maxThumb').value;
+}
+document.getElementById('minThumb').addEventListener('input', updateLabel);
+document.getElementById('maxThumb').addEventListener('input', updateLabel);
+</script>
+</body>
+</html>

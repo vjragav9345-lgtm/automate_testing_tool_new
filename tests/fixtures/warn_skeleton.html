@@ -1,0 +1,6 @@
+<!doctype html><html><head><style>
+@keyframes pulse{0%{opacity:.4}100%{opacity:1}} .sk{width:240px;height:60px;background:#ddd;margin:10px;animation:pulse 1s infinite}
+.row{height:100px}</style></head><body>
+<div id="c"><div class="sk"></div><div class="sk"></div><div class="sk"></div></div>
+<script>setTimeout(function(){document.getElementById('c').innerHTML='<h1 id="done">Loaded content</h1>'+Array.from({length:40},function(_,i){return '<div class="row">row '+i+'</div>'}).join('')},1800)</script>
+</body></html>

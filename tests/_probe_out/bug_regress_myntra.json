@@ -1,0 +1,211 @@
+{
+ "status": "PASS",
+ "steps": [
+  {
+   "index": 1,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 2,
+   "action_type": "fill",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 3,
+   "action_type": "press",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 4,
+   "action_type": "click",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 5,
+   "action_type": "validate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 6,
+   "action_type": "tab_close",
+   "success": true,
+   "error": null,
+   "not_run": false
+  }
+ ],
+ "drag": [],
+ "step_scroll": {
+  "1": {
+   "pos": [
+    0,
+    0,
+    6179,
+    720
+   ],
+   "scroll_events": []
+  },
+  "2": {
+   "pos": [
+    0,
+    0,
+    6179,
+    720
+   ],
+   "scroll_events": []
+  },
+  "3": {
+   "pos": [
+    0,
+    0,
+    8495,
+    720
+   ],
+   "scroll_events": []
+  },
+  "4": {
+   "pos": [
+    0,
+    0,
+    8567,
+    720
+   ],
+   "scroll_events": []
+  },
+  "5": {
+   "pos": [
+    0,
+    3600,
+    8567,
+    720
+   ],
+   "scroll_events": []
+  },
+  "6": {
+   "pos": null,
+   "scroll_events": []
+  }
+ },
+ "step_pages": {
+  "1": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/",
+    "pos": [
+     0,
+     0,
+     6179,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "2": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/",
+    "pos": [
+     0,
+     0,
+     6179,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "3": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shoes?rawQuery=shoes",
+    "pos": [
+     0,
+     0,
+     8495,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "4": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shoes?f=Categories%3ACasual%20Shoes&rawQuery=shoes",
+    "pos": [
+     0,
+     0,
+     8567,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "5": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shoes?f=Categories%3ACasual%20Shoes&rawQuery=shoes",
+    "pos": [
+     0,
+     3600,
+     8567,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "6": []
+ },
+ "events": [
+  {
+   "t": 1790660049.841,
+   "step": 0,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => window.scrollTo({top: 0, left: 0, behavior: 'instant'})"
+  },
+  {
+   "t": 1790660096.275,
+   "step": 5,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790660096.291,
+   "step": 5,
+   "kind": "page.evaluate(scroll)",
+   "expr": "(px) => window.scrollBy(0, px)"
+  },
+  {
+   "t": 1790660097.003,
+   "step": 5,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790660097.018,
+   "step": 5,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790660097.023,
+   "step": 5,
+   "kind": "page.evaluate(scroll)",
+   "expr": "(px) => window.scrollBy(0, px)"
+  },
+  {
+   "t": 1790660097.743,
+   "step": 5,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  }
+ ]
+}

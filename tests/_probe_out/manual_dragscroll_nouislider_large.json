@@ -1,0 +1,1613 @@
+[
+ {
+  "n": 2,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 300
+ },
+ {
+  "n": 3,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 1048
+ },
+ {
+  "n": 4,
+  "kind": "drag",
+  "tag": "noui-0-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "9.0",
+   "text": "12"
+  },
+  "scrollY": 1048
+ },
+ {
+  "n": 5,
+  "kind": "drag",
+  "tag": "noui-0-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "12.0",
+   "text": "20"
+  },
+  "scrollY": 1048
+ },
+ {
+  "n": 6,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 1348
+ },
+ {
+  "n": 7,
+  "kind": "drag",
+  "tag": "noui-1-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "1.0",
+   "text": "256MB"
+  },
+  "scrollY": 1348
+ },
+ {
+  "n": 8,
+  "kind": "drag",
+  "tag": "noui-1-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "3.0",
+   "text": "8GB"
+  },
+  "scrollY": 1348
+ },
+ {
+  "n": 9,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 1488
+ },
+ {
+  "n": 10,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 2159
+ },
+ {
+  "n": 11,
+  "kind": "drag",
+  "tag": "noui-2-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "0.0",
+   "text": "0"
+  },
+  "scrollY": 2159
+ },
+ {
+  "n": 12,
+  "kind": "drag",
+  "tag": "noui-2-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "43.8",
+   "text": "44"
+  },
+  "scrollY": 2159
+ },
+ {
+  "n": 13,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 2459
+ },
+ {
+  "n": 14,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 2782
+ },
+ {
+  "n": 15,
+  "kind": "drag",
+  "tag": "noui-3-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "127.0",
+   "text": "127"
+  },
+  "scrollY": 2782
+ },
+ {
+  "n": 16,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 2662
+ },
+ {
+  "n": 17,
+  "kind": "drag",
+  "tag": "noui-4-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "128.3",
+   "text": "128"
+  },
+  "scrollY": 2662
+ },
+ {
+  "n": 18,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 2402
+ },
+ {
+  "n": 19,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 2782
+ },
+ {
+  "n": 20,
+  "kind": "drag",
+  "tag": "noui-5-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "127.0",
+   "text": "127"
+  },
+  "scrollY": 2782
+ },
+ {
+  "n": 21,
+  "kind": "scroll",
+  "tag": "review-up",
+  "scrollY": 2286
+ },
+ {
+  "n": 22,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 2586
+ },
+ {
+  "n": 23,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 3486
+ },
+ {
+  "n": 24,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 3725
+ },
+ {
+  "n": 25,
+  "kind": "drag",
+  "tag": "noui-6-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "82.0",
+   "text": "81.95"
+  },
+  "scrollY": 3725
+ },
+ {
+  "n": 26,
+  "kind": "drag",
+  "tag": "noui-6-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "0.0",
+   "text": "0.00"
+  },
+  "scrollY": 3725
+ },
+ {
+  "n": 27,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 3605
+ },
+ {
+  "n": 28,
+  "kind": "drag",
+  "tag": "noui-7-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "69.6",
+   "text": "69.61"
+  },
+  "scrollY": 3605
+ },
+ {
+  "n": 29,
+  "kind": "drag",
+  "tag": "noui-7-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "0.0",
+   "text": "0.00"
+  },
+  "scrollY": 3605
+ },
+ {
+  "n": 30,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 3345
+ },
+ {
+  "n": 31,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 3879
+ },
+ {
+  "n": 32,
+  "kind": "drag",
+  "tag": "noui-8-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "50.0",
+   "text": "50.00"
+  },
+  "scrollY": 3879
+ },
+ {
+  "n": 33,
+  "kind": "drag",
+  "tag": "noui-8-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "34.9",
+   "text": "34.91"
+  },
+  "scrollY": 3879
+ },
+ {
+  "n": 34,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 3619
+ },
+ {
+  "n": 35,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 3957
+ },
+ {
+  "n": 36,
+  "kind": "drag",
+  "tag": "noui-9-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "66.9",
+   "text": "66.86"
+  },
+  "scrollY": 3957
+ },
+ {
+  "n": 37,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 3697
+ },
+ {
+  "n": 38,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 4029
+ },
+ {
+  "n": 39,
+  "kind": "drag",
+  "tag": "noui-10-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "24.0",
+   "text": "23.96"
+  },
+  "scrollY": 4029
+ },
+ {
+  "n": 40,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 3909
+ },
+ {
+  "n": 41,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 4592
+ },
+ {
+  "n": 42,
+  "kind": "drag",
+  "tag": "noui-11-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "60.0",
+   "text": "60.00"
+  },
+  "scrollY": 4592
+ },
+ {
+  "n": 43,
+  "kind": "drag",
+  "tag": "noui-11-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "0.0",
+   "text": "0.00"
+  },
+  "scrollY": 4592
+ },
+ {
+  "n": 44,
+  "kind": "scroll",
+  "tag": "review-up",
+  "scrollY": 3864
+ },
+ {
+  "n": 45,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 3604
+ },
+ {
+  "n": 46,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 4504
+ },
+ {
+  "n": 47,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 5271
+ },
+ {
+  "n": 48,
+  "kind": "drag",
+  "tag": "noui-12-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "1405036800000.0",
+   "text": "1405036800000"
+  },
+  "scrollY": 5271
+ },
+ {
+  "n": 49,
+  "kind": "drag",
+  "tag": "noui-12-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "1336694400000.0",
+   "text": "1336694400000"
+  },
+  "scrollY": 5271
+ },
+ {
+  "n": 50,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 5411
+ },
+ {
+  "n": 51,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 5797
+ },
+ {
+  "n": 52,
+  "kind": "drag",
+  "tag": "noui-13-h3",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "80.0",
+   "text": "80.00"
+  },
+  "scrollY": 5797
+ },
+ {
+  "n": 53,
+  "kind": "drag",
+  "tag": "noui-13-h2",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "32.0",
+   "text": "32.00"
+  },
+  "scrollY": 5797
+ },
+ {
+  "n": 54,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 5677
+ },
+ {
+  "n": 55,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 6218
+ },
+ {
+  "n": 56,
+  "kind": "drag",
+  "tag": "noui-14-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "19.6",
+   "text": "19.59"
+  },
+  "scrollY": 6218
+ },
+ {
+  "n": 57,
+  "kind": "drag",
+  "tag": "noui-14-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "19.6",
+   "text": "19.59"
+  },
+  "scrollY": 6218
+ },
+ {
+  "n": 58,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 6098
+ },
+ {
+  "n": 59,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 6756
+ },
+ {
+  "n": 60,
+  "kind": "drag",
+  "tag": "noui-15-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "7000.0",
+   "text": "7000.00"
+  },
+  "scrollY": 6756
+ },
+ {
+  "n": 61,
+  "kind": "drag",
+  "tag": "noui-15-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "3000.0",
+   "text": "3000.00"
+  },
+  "scrollY": 6756
+ },
+ {
+  "n": 62,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 6496
+ },
+ {
+  "n": 63,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 7219
+ },
+ {
+  "n": 64,
+  "kind": "drag",
+  "tag": "noui-16-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "69.3",
+   "text": "69.32"
+  },
+  "scrollY": 7219
+ },
+ {
+  "n": 65,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 7359
+ },
+ {
+  "n": 66,
+  "kind": "drag",
+  "tag": "noui-17-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "84.0",
+   "text": "83.99"
+  },
+  "scrollY": 7359
+ },
+ {
+  "n": 67,
+  "kind": "scroll",
+  "tag": "review-up",
+  "scrollY": 6475
+ },
+ {
+  "n": 68,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 6355
+ },
+ {
+  "n": 69,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 7255
+ },
+ {
+  "n": 70,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 7798
+ },
+ {
+  "n": 71,
+  "kind": "drag",
+  "tag": "noui-18-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "35.5",
+   "text": "35.50"
+  },
+  "scrollY": 7798
+ },
+ {
+  "n": 72,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 7538
+ },
+ {
+  "n": 73,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 8438
+ },
+ {
+  "n": 74,
+  "kind": "drag",
+  "tag": "noui-19-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "31.5",
+   "text": "31.54"
+  },
+  "scrollY": 8438
+ },
+ {
+  "n": 75,
+  "kind": "drag",
+  "tag": "noui-19-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "57.5",
+   "text": "57.51"
+  },
+  "scrollY": 8438
+ },
+ {
+  "n": 76,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 8318
+ },
+ {
+  "n": 77,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 8869
+ },
+ {
+  "n": 78,
+  "kind": "drag",
+  "tag": "noui-20-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "12000.0",
+   "text": "12000.00"
+  },
+  "scrollY": 8869
+ },
+ {
+  "n": 79,
+  "kind": "drag",
+  "tag": "noui-20-h2",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "12000.0",
+   "text": "12000.00"
+  },
+  "scrollY": 8869
+ },
+ {
+  "n": 80,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 9169
+ },
+ {
+  "n": 81,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 9719
+ },
+ {
+  "n": 82,
+  "kind": "drag",
+  "tag": "noui-21-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "60.0",
+   "text": "60.00"
+  },
+  "scrollY": 9719
+ },
+ {
+  "n": 83,
+  "kind": "drag",
+  "tag": "noui-21-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "130.0",
+   "text": "130.00"
+  },
+  "scrollY": 9719
+ },
+ {
+  "n": 84,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 9599
+ },
+ {
+  "n": 85,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 10337
+ },
+ {
+  "n": 86,
+  "kind": "drag",
+  "tag": "noui-22-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "100.0",
+   "text": "100.00"
+  },
+  "scrollY": 10337
+ },
+ {
+  "n": 87,
+  "kind": "drag",
+  "tag": "noui-22-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "0.0",
+   "text": "0.00"
+  },
+  "scrollY": 10337
+ },
+ {
+  "n": 88,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 10217
+ },
+ {
+  "n": 89,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 10957
+ },
+ {
+  "n": 90,
+  "kind": "drag",
+  "tag": "noui-23-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "0.0",
+   "text": "0"
+  },
+  "scrollY": 10957
+ },
+ {
+  "n": 91,
+  "kind": "scroll",
+  "tag": "review-up",
+  "scrollY": 10335
+ },
+ {
+  "n": 92,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 10475
+ },
+ {
+  "n": 93,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 11375
+ },
+ {
+  "n": 94,
+  "kind": "drag",
+  "tag": "noui-24-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "27.5",
+   "text": "27.51"
+  },
+  "scrollY": 11375
+ },
+ {
+  "n": 95,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 11675
+ },
+ {
+  "n": 96,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 11969
+ },
+ {
+  "n": 97,
+  "kind": "drag",
+  "tag": "noui-25-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "100.0",
+   "text": "100.00"
+  },
+  "scrollY": 11969
+ },
+ {
+  "n": 98,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 12020
+ },
+ {
+  "n": 99,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 11120
+ },
+ {
+  "n": 100,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 10220
+ },
+ {
+  "n": 101,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 9320
+ },
+ {
+  "n": 102,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 8420
+ },
+ {
+  "n": 103,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 7520
+ },
+ {
+  "n": 104,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 6620
+ },
+ {
+  "n": 105,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 5720
+ },
+ {
+  "n": 106,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 4820
+ },
+ {
+  "n": 107,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 3920
+ },
+ {
+  "n": 108,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 3020
+ },
+ {
+  "n": 109,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 2120
+ },
+ {
+  "n": 110,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 1220
+ },
+ {
+  "n": 111,
+  "kind": "drag",
+  "tag": "noui-0-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "11.0",
+   "text": "16"
+  },
+  "scrollY": 1220
+ },
+ {
+  "n": 112,
+  "kind": "drag",
+  "tag": "noui-0-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "7.0",
+   "text": "8"
+  },
+  "scrollY": 1220
+ },
+ {
+  "n": 113,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 1520
+ },
+ {
+  "n": 114,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 1236
+ },
+ {
+  "n": 115,
+  "kind": "drag",
+  "tag": "noui-1-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "4.0",
+   "text": "16GB"
+  },
+  "scrollY": 1236
+ },
+ {
+  "n": 116,
+  "kind": "drag",
+  "tag": "noui-1-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "0.0",
+   "text": "128MB"
+  },
+  "scrollY": 1236
+ },
+ {
+  "n": 117,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 976
+ },
+ {
+  "n": 118,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 1876
+ },
+ {
+  "n": 119,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 2159
+ },
+ {
+  "n": 120,
+  "kind": "drag",
+  "tag": "noui-2-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "31.9",
+   "text": "32"
+  },
+  "scrollY": 2159
+ },
+ {
+  "n": 121,
+  "kind": "drag",
+  "tag": "noui-2-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "13.6",
+   "text": "14"
+  },
+  "scrollY": 2159
+ },
+ {
+  "n": 122,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 1899
+ },
+ {
+  "n": 123,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 2782
+ },
+ {
+  "n": 124,
+  "kind": "drag",
+  "tag": "noui-3-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "125.7",
+   "text": "126"
+  },
+  "scrollY": 2782
+ },
+ {
+  "n": 125,
+  "kind": "scroll",
+  "tag": "review-up",
+  "scrollY": 2027
+ },
+ {
+  "n": 126,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 1767
+ },
+ {
+  "n": 127,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 2667
+ },
+ {
+  "n": 128,
+  "kind": "drag",
+  "tag": "noui-4-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "127.0",
+   "text": "127"
+  },
+  "scrollY": 2667
+ },
+ {
+  "n": 129,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 2407
+ },
+ {
+  "n": 130,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 2782
+ },
+ {
+  "n": 131,
+  "kind": "drag",
+  "tag": "noui-5-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "125.7",
+   "text": "126"
+  },
+  "scrollY": 2782
+ },
+ {
+  "n": 132,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 2662
+ },
+ {
+  "n": 133,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 3562
+ },
+ {
+  "n": 134,
+  "kind": "drag",
+  "tag": "noui-6-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "0.0",
+   "text": "0.00"
+  },
+  "scrollY": 3562
+ },
+ {
+  "n": 135,
+  "kind": "drag",
+  "tag": "noui-6-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "100.0",
+   "text": "100.00"
+  },
+  "scrollY": 3562
+ },
+ {
+  "n": 136,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 3702
+ },
+ {
+  "n": 137,
+  "kind": "drag",
+  "tag": "noui-7-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "27.8",
+   "text": "27.78"
+  },
+  "scrollY": 3702
+ },
+ {
+  "n": 138,
+  "kind": "drag",
+  "tag": "noui-7-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "45.8",
+   "text": "45.75"
+  },
+  "scrollY": 3702
+ },
+ {
+  "n": 139,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 3842
+ },
+ {
+  "n": 140,
+  "kind": "drag",
+  "tag": "noui-8-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "50.0",
+   "text": "50.00"
+  },
+  "scrollY": 3842
+ },
+ {
+  "n": 141,
+  "kind": "drag",
+  "tag": "noui-8-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "50.0",
+   "text": "50.00"
+  },
+  "scrollY": 3842
+ },
+ {
+  "n": 142,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 3582
+ },
+ {
+  "n": 143,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 3957
+ },
+ {
+  "n": 144,
+  "kind": "drag",
+  "tag": "noui-9-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "87.6",
+   "text": "87.57"
+  },
+  "scrollY": 3957
+ },
+ {
+  "n": 145,
+  "kind": "scroll",
+  "tag": "review-up",
+  "scrollY": 3397
+ },
+ {
+  "n": 146,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 3697
+ },
+ {
+  "n": 147,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 4029
+ },
+ {
+  "n": 148,
+  "kind": "drag",
+  "tag": "noui-10-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "39.6",
+   "text": "39.64"
+  },
+  "scrollY": 4029
+ },
+ {
+  "n": 149,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 3909
+ },
+ {
+  "n": 150,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 4592
+ },
+ {
+  "n": 151,
+  "kind": "drag",
+  "tag": "noui-11-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "40.0",
+   "text": "40.00"
+  },
+  "scrollY": 4592
+ },
+ {
+  "n": 152,
+  "kind": "drag",
+  "tag": "noui-11-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "0.0",
+   "text": "0.00"
+  },
+  "scrollY": 4592
+ },
+ {
+  "n": 153,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 4892
+ },
+ {
+  "n": 154,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 5271
+ },
+ {
+  "n": 155,
+  "kind": "drag",
+  "tag": "noui-12-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "1441929600000.0",
+   "text": "1441929600000"
+  },
+  "scrollY": 5271
+ },
+ {
+  "n": 156,
+  "kind": "drag",
+  "tag": "noui-12-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "1279843200000.0",
+   "text": "1279843200000"
+  },
+  "scrollY": 5271
+ },
+ {
+  "n": 157,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 5411
+ },
+ {
+  "n": 158,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 5797
+ },
+ {
+  "n": 159,
+  "kind": "drag",
+  "tag": "noui-13-h5",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "80.0",
+   "text": "80.00"
+  },
+  "scrollY": 5797
+ },
+ {
+  "n": 160,
+  "kind": "drag",
+  "tag": "noui-13-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "28.6",
+   "text": "28.58"
+  },
+  "scrollY": 5797
+ },
+ {
+  "n": 161,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 5937
+ },
+ {
+  "n": 162,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 6218
+ },
+ {
+  "n": 163,
+  "kind": "drag",
+  "tag": "noui-14-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "19.6",
+   "text": "19.59"
+  },
+  "scrollY": 6218
+ },
+ {
+  "n": 164,
+  "kind": "drag",
+  "tag": "noui-14-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "19.6",
+   "text": "19.59"
+  },
+  "scrollY": 6218
+ },
+ {
+  "n": 165,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 6518
+ },
+ {
+  "n": 166,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 6756
+ },
+ {
+  "n": 167,
+  "kind": "drag",
+  "tag": "noui-15-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "3500.0",
+   "text": "3500.00"
+  },
+  "scrollY": 6756
+ },
+ {
+  "n": 168,
+  "kind": "drag",
+  "tag": "noui-15-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "1500.0",
+   "text": "1500.00"
+  },
+  "scrollY": 6756
+ },
+ {
+  "n": 169,
+  "kind": "scroll",
+  "tag": "review-up",
+  "scrollY": 6238
+ },
+ {
+  "n": 170,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 6118
+ },
+ {
+  "n": 171,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 7018
+ },
+ {
+  "n": 172,
+  "kind": "drag",
+  "tag": "noui-16-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "77.8",
+   "text": "77.75"
+  },
+  "scrollY": 7018
+ },
+ {
+  "n": 173,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 6758
+ },
+ {
+  "n": 174,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 7281
+ },
+ {
+  "n": 175,
+  "kind": "drag",
+  "tag": "noui-17-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "90.9",
+   "text": "90.95"
+  },
+  "scrollY": 7281
+ },
+ {
+  "n": 176,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 7161
+ },
+ {
+  "n": 177,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 7798
+ },
+ {
+  "n": 178,
+  "kind": "drag",
+  "tag": "noui-18-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "62.1",
+   "text": "62.13"
+  },
+  "scrollY": 7798
+ },
+ {
+  "n": 179,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 7538
+ },
+ {
+  "n": 180,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 8438
+ },
+ {
+  "n": 181,
+  "kind": "drag",
+  "tag": "noui-19-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "35.0",
+   "text": "35.03"
+  },
+  "scrollY": 8438
+ },
+ {
+  "n": 182,
+  "kind": "drag",
+  "tag": "noui-19-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "31.5",
+   "text": "31.54"
+  },
+  "scrollY": 8438
+ },
+ {
+  "n": 183,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 8578
+ },
+ {
+  "n": 184,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 8869
+ },
+ {
+  "n": 185,
+  "kind": "drag",
+  "tag": "noui-20-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "9869.8",
+   "text": "9869.82"
+  },
+  "scrollY": 8869
+ },
+ {
+  "n": 186,
+  "kind": "drag",
+  "tag": "noui-20-h2",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "14396.4",
+   "text": "14396.45"
+  },
+  "scrollY": 8869
+ },
+ {
+  "n": 187,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 9009
+ },
+ {
+  "n": 188,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 9719
+ },
+ {
+  "n": 189,
+  "kind": "drag",
+  "tag": "noui-21-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "80.0",
+   "text": "80.00"
+  },
+  "scrollY": 9719
+ },
+ {
+  "n": 190,
+  "kind": "drag",
+  "tag": "noui-21-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "188.5",
+   "text": "188.48"
+  },
+  "scrollY": 9719
+ },
+ {
+  "n": 191,
+  "kind": "scroll",
+  "tag": "review-up",
+  "scrollY": 8996
+ },
+ {
+  "n": 192,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 8736
+ },
+ {
+  "n": 193,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 9636
+ },
+ {
+  "n": 194,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 10337
+ },
+ {
+  "n": 195,
+  "kind": "drag",
+  "tag": "noui-22-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "30.0",
+   "text": "30.00"
+  },
+  "scrollY": 10337
+ },
+ {
+  "n": 196,
+  "kind": "drag",
+  "tag": "noui-22-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "70.0",
+   "text": "70.00"
+  },
+  "scrollY": 10337
+ },
+ {
+  "n": 197,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 10077
+ },
+ {
+  "n": 198,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 10957
+ },
+ {
+  "n": 199,
+  "kind": "drag",
+  "tag": "noui-23-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "0.0",
+   "text": "0"
+  },
+  "scrollY": 10957
+ },
+ {
+  "n": 200,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 11097
+ },
+ {
+  "n": 201,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 11516
+ },
+ {
+  "n": 202,
+  "kind": "drag",
+  "tag": "noui-24-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "20.0",
+   "text": "20.00"
+  },
+  "scrollY": 11516
+ }
+]

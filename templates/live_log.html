@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>Live Replay Log - AutoFlow QA</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}?v=25"
+    />
+
+    <style>
+
+        body {
+            background: #10141a;
+            color: #d7e0ea;
+            font-family: "Segoe UI", Consolas, monospace;
+            margin: 0;
+            padding: 0;
+        }
+
+        header.log-header {
+            padding: 10px 14px;
+            background: #171c24;
+            border-bottom: 1px solid #2a323d;
+            position: sticky;
+            top: 0;
+        }
+
+        header.log-header h1 {
+            font-size: 15px;
+            margin: 0 0 4px 0;
+        }
+
+        #currentStep {
+            font-size: 12px;
+            color: #9fb0c3;
+        }
+
+        #logLines {
+            padding: 8px 14px;
+            font-size: 12.5px;
+            line-height: 1.5;
+            overflow-y: auto;
+        }
+
+        .log-line {
+            padding: 3px 0;
+            border-bottom: 1px solid #1c222b;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .log-line .ts {
+            color: #66748a;
+            margin-right: 6px;
+        }
+
+        /* a line logged while a step was running, shown under that step */
+        .log-line.sub-line {
+            padding-left: 22px;
+        }
+
+        .status-pass { color: #4caf50; font-weight: 600; }
+        .status-warning { color: #ffca28; font-weight: 600; }
+        .status-fail { color: #f66; font-weight: 600; }
+        .status-skipped { color: #d9a441; font-weight: 600; }
+        .status-running { color: #6cf; font-weight: 600; }
+
+        .fail-detail {
+            margin: 4px 0 4px 18px;
+            padding: 6px 10px;
+            background: #241417;
+            border-left: 3px solid #a33;
+            font-size: 12px;
+            color: #f2c6c6;
+        }
+
+        .fail-detail div {
+            margin: 1px 0;
+        }
+
+        /* FOLLOW-UP FIX 2: same shape as .fail-detail, amber/yellow instead
+           of red - for a step that PASSED but carries a warning note. */
+        .warning-detail {
+            margin: 4px 0 4px 18px;
+            padding: 6px 10px;
+            background: #2b2410;
+            border-left: 3px solid #b8860b;
+            font-size: 12px;
+            color: #ffe9a8;
+        }
+
+        .warning-detail div {
+            margin: 1px 0;
+        }
+
+        /* FIX 2: PAGE MISMATCH - distinct from both fail/warning styling,
+           amber/red per the task's own "amber/red PAGE MISMATCH badge" */
+        .mismatch-badge {
+            display: inline-block;
+            margin-left: 6px;
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 600;
+            background: #4a2a0e;
+            color: #ffb366;
+            border: 1px solid #b8860b;
+        }
+        .mismatch-detail {
+            margin: 4px 0 4px 18px;
+            padding: 6px 10px;
+            background: #2b1f10;
+            border-left: 3px solid #ff8c00;
+            font-size: 12px;
+            color: #ffd8a8;
+        }
+        .mismatch-detail div {
+            margin: 1px 0;
+        }
+
+        /* FOLLOW-UP FIX 6: count_elements/count_summary numbers, shown
+           regardless of pass/fail/warning status. */
+        .count-detail {
+            margin: 4px 0 4px 18px;
+            padding: 6px 10px;
+            background: #1a222c;
+            border-left: 3px solid #3d5a80;
+            font-size: 12px;
+            color: #c7d6e6;
+        }
+
+        #summaryBanner {
+            margin: 10px 14px;
+            padding: 10px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            display: none;
+        }
+
+        #summaryBanner.pass {
+            background: #16321c;
+            border: 1px solid #2f6b3c;
+            color: #b7e6bf;
+        }
+
+        #summaryBanner.fail {
+            background: #341717;
+            border: 1px solid #7a2f2f;
+            color: #f2c6c6;
+        }
+
+        #summaryBanner a {
+            color: #8fd0ff;
+        }
+
+        #errorBanner {
+            margin: 10px 14px;
+            padding: 10px 12px;
+            border-radius: 4px;
+            background: #341717;
+            border: 1px solid #7a2f2f;
+            color: #f2c6c6;
+            font-size: 13px;
+            display: none;
+        }
+
+        .log-line.otp-line {
+            color: #d9a441;
+        }
+
+        #otpPrompt {
+            margin: 10px 14px;
+            padding: 10px 12px;
+            border-radius: 4px;
+            background: #241f14;
+            border: 1px solid #7a5f2f;
+            color: #f0deb0;
+            font-size: 13px;
+            display: none;
+        }
+
+        #otpPrompt input {
+            font-family: inherit;
+            font-size: 13px;
+            padding: 4px 8px;
+            border-radius: 3px;
+            border: 1px solid #7a5f2f;
+            background: #10141a;
+            color: #d7e0ea;
+            width: 140px;
+            margin: 0 8px;
+        }
+
+        #otpPrompt button {
+            font-family: inherit;
+            font-size: 13px;
+            padding: 4px 12px;
+            border-radius: 3px;
+            border: 1px solid #7a5f2f;
+            background: #3a2f14;
+            color: #f0deb0;
+            cursor: pointer;
+        }
+
+        #otpPrompt button:hover {
+            background: #4a3d1c;
+        }
+
+        #otpStatus {
+            margin-left: 8px;
+            font-size: 12px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header class="log-header">
+    <h1 id="liveLogHeading">Live Replay Log</h1>
+    <div id="currentStep">Connecting...</div>
+</header>
+
+<div id="errorBanner"></div>
+<div id="summaryBanner"></div>
+<div id="otpPrompt">
+    <span id="otpPromptText">Enter OTP to continue:</span>
+    <input type="text" id="otpValueInput" inputmode="numeric" autocomplete="one-time-code" />
+    <button type="button" id="otpSubmitBtn">Submit</button>
+    <span id="otpStatus"></span>
+</div>
+<div id="logLines"></div>
+
+<script>
+
+// self-contained duplicate of static/js/script.js's ACTION_TYPE_LABELS -
+// this page is a standalone popup window with no shared JS module system
+// in this project, so it follows the SAME already-established pattern
+// the codebase uses elsewhere (recording_editor.html/report_generator.py
+// each keep their own copy too) rather than inventing a new shared-config
+// mechanism just for this one page.
+const ACTION_TYPE_LABELS = {
+    click: "Click", dblclick: "Double Click", right_click: "Right Click",
+    fill: "Fill", select: "Select", submit: "Submit", press: "Key Press",
+    scroll: "Scroll", navigate: "Navigate", tab_open: "Open Tab",
+    tab_switch: "Switch Tab", tab_close: "Close Tab", validate: "Validate",
+    click_if_exists: "Click If Exists", screenshot: "Screenshot",
+    check: "Checkbox Toggle", check_checked: "Checkbox Check",
+    capture_value: "Capture Value", compare_value: "Compare Value",
+    validate_element: "Validate Element", validate_text: "Validate Text",
+    validate_attribute: "Validate Attribute", validate_visible: "Validate Visible",
+    validate_value: "Validate Value", validate_enabled: "Validate Enabled",
+    count_elements: "Count Elements", compare_counts: "Compare Counts",
+    count_summary: "Count Summary", detect_duplicates: "Detect Duplicates",
+    capture_list: "Capture List", compare_list_overlap: "Compare List Overlap",
+    validate_value_range: "Validate Value Range",
+    // ITEM 7 FIX: both were missing from this copy (validate_url was
+    // already present in the other two ACTION_TYPE_LABELS copies this
+    // file's own top comment says it mirrors; validate_checked is a
+    // newer action type that was wired into replay/ACTION_FIELD_DEFS
+    // but never added to any of the three label copies) - without an
+    // explicit entry here, a step of either type fell back to the
+    // generic underscore-to-title-case name, which happens to read
+    // right for validate_checked by coincidence but not for validate_url.
+    validate_url: "Validate URL", validate_checked: "Validate Checkbox State",
+};
+
+function actionLabel(actionType, element, nameIsFullSentence) {
+    const base = ACTION_TYPE_LABELS[actionType] ||
+        (actionType || "step").replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+    if (!element) return base;
+    // a scroll/list-container target's own text can be its ENTIRE
+    // multi-line visible content (every item in a list, say) - collapsed
+    // to one line and capped here purely for this one-line log display;
+    // the full, real text is untouched everywhere else (recording JSON,
+    // report, etc.), this is a display-only trim
+    let oneLine = String(element).replace(/\s+/g, " ").trim();
+    if (oneLine.length > 60) oneLine = oneLine.slice(0, 57) + "...";
+    if (!oneLine) return base;
+    // FOLLOW-UP FIX (Part 4d, CONFIRMED REAL BUG): an ADDED step's own
+    // auto name already reads as a full, verb-first sentence ("Select
+    // 'Girls' option") - prefixing the generic type label doubled the
+    // verb ("Click - Select 'Girls' option"). See app.py's own
+    // _step_name_is_full_sentence for exactly which steps this applies to
+    // (added-origin steps with an explicit name only).
+    return nameIsFullSentence ? oneLine : `${base} - ${oneLine}`;
+}
+
+function timestamp() {
+    // HH:MM:SS.mmm, the same shape as the replay engine's own stamps
+    const d = new Date();
+    const p2 = (n) => String(n).padStart(2, "0");
+    return `${p2(d.getHours())}:${p2(d.getMinutes())}:${p2(d.getSeconds())}.${String(d.getMilliseconds()).padStart(3, "0")}`;
+}
+
+function appendLine(html) {
+    const container = document.getElementById("logLines");
+    const line = document.createElement("div");
+    line.className = "log-line";
+    line.innerHTML = html;
+    container.appendChild(line);
+    container.scrollTop = container.scrollHeight;
+    return line;
+}
+
+// LIVE LOG SYNC: "2026-10-01T11:27:12.345" -> "11:27:12.345" (the run's own
+// wall-clock stamps, written by the replay script itself, not the time the
+// browser happened to receive the event)
+function clockOf(iso) {
+    if (!iso) return "";
+    const m = /T(\d{2}:\d{2}:\d{2}(?:\.\d+)?)/.exec(iso);
+    return m ? m[1] : iso;
+}
+
+function escapeHtml(s) {
+    if (s === null || s === undefined) return "";
+    return String(s)
+        .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+}
+
+const params = new URLSearchParams(window.location.search);
+const runId = params.get("run_id");
+const currentStepEl = document.getElementById("currentStep");
+const errorBanner = document.getElementById("errorBanner");
+const summaryBanner = document.getElementById("summaryBanner");
+const otpPrompt = document.getElementById("otpPrompt");
+const otpPromptText = document.getElementById("otpPromptText");
+const otpValueInput = document.getElementById("otpValueInput");
+const otpSubmitBtn = document.getElementById("otpSubmitBtn");
+const otpStatus = document.getElementById("otpStatus");
+
+if (!runId) {
+    currentStepEl.textContent = "No run_id given.";
+} else {
+
+    currentStepEl.textContent = "Connecting to replay " + runId + "...";
+
+    const source = new EventSource("/api/test/run/stream?run_id=" + encodeURIComponent(runId));
+
+    // PHASE 2d: sent once, right at the start of the stream - shows this
+    // run's own name (display_name when the recording has one) instead
+    // of the generic heading; falls back to test_name, then leaves the
+    // heading exactly as it already is today when neither is set.
+    source.addEventListener("meta", (e) => {
+        const data = JSON.parse(e.data);
+        const name = data.display_name || data.test_name;
+        if (name) {
+            document.getElementById("liveLogHeading").textContent = name;
+            document.title = name + " - Live Replay Log - AutoFlow QA";
+        }
+    });
+
+    source.addEventListener("running", (e) => {
+        const data = JSON.parse(e.data);
+        // header: only "RUNNING Step N: <step name> (<elapsed>s elapsed)" -
+        // no sub-phase wording
+        currentStepEl.innerHTML =
+            `<span class="status-running">RUNNING</span> Step ${data.index}: ` +
+            escapeHtml(actionLabel(data.action_type, data.element, data.name_is_full_sentence)) +
+            ` (${data.elapsed_s}s elapsed)`;
+        // the step's own log line appears NOW, as "Running", before the browser acts;
+        // the "step" event below turns this same line into PASS / WARNING / FAILED
+        if (!stepLines[data.index] && !renderedSteps.has(data.index)) {
+            stepLines[data.index] = appendLine(
+                `<span class="ts">[${escapeHtml(clockOf(data.started_at) || timestamp())}]</span>` +
+                `Step ${data.index}: ${escapeHtml(actionLabel(data.action_type, data.element, data.name_is_full_sentence))} &mdash; ` +
+                `<span class="step-status status-running">Running&hellip;</span>`
+            );
+            flushPendingSubs(data.index);
+        }
+    });
+
+    const stepLines = {};
+    const stepSubLast = {};     // step index -> the last line shown under that step
+    const pendingSubs = {};     // step index -> lines that arrived before the step's own line
+
+    function addStepSub(index, html) {
+        try {
+            const anchor = stepSubLast[index] || stepLines[index];
+            const line = document.createElement("div");
+            line.className = "log-line sub-line";
+            line.innerHTML = html;
+            anchor.insertAdjacentElement("afterend", line);
+            stepSubLast[index] = line;
+            const container = document.getElementById("logLines");
+            container.scrollTop = container.scrollHeight;
+        } catch (eSub) {
+            appendLine(html);
+        }
+    }
+
+    function flushPendingSubs(index) {
+        const list = pendingSubs[index];
+        if (!list || !stepLines[index]) return;
+        delete pendingSubs[index];
+        list.forEach((html) => addStepSub(index, html));
+    }
+
+    // the screenshot (and any late warning, e.g. "page was still loading")
+    // arrives after the result line - patch that same line
+    source.addEventListener("step_update", (e) => {
+        const data = JSON.parse(e.data);
+        const line = stepLines[data.index];
+        if (!line) return;
+        const note = line.querySelector(".step-note");
+        if (note) note.remove();
+        const statusText = { pass: "PASS", warning: "WARNING", fail: "FAILED", skipped: "NOT RUN" }[data.status] || String(data.status).toUpperCase();
+        const statusEl = line.querySelector(".step-status");
+        if (statusEl) {
+            statusEl.className = "step-status status-" + data.status;
+            statusEl.textContent = statusText;
+        }
+        if (data.screenshot) {
+            const link = document.createElement("a");
+            link.href = "/screenshots/raw?path=" + encodeURIComponent(data.screenshot);
+            link.target = "_blank";
+            link.textContent = "screenshot";
+            link.style.marginLeft = "8px";
+            line.appendChild(link);
+        }
+        if (data.status === "warning" && data.reason && data.reason.plain && !line.dataset.warnShown) {
+            line.dataset.warnShown = "1";
+            const detail = document.createElement("div");
+            detail.className = "warning-detail";
+            detail.innerHTML = `<div><strong>${escapeHtml(data.reason.plain)}</strong></div>`;
+            line.insertAdjacentElement("afterend", detail);
+        }
+    });
+
+    // OTP-STEP HANDLING / HOVER-REVEAL: plain sub-step lines the
+    // replay subprocess writes for a recognized OTP flow, or for a
+    // hover-reveal it had to perform before a click - see app.py's own
+    // "log" SSE event and generator/script_generator.py's _otp_flow_log/
+    // _hover_reveal_log. Never sent at all for a run with neither.
+    source.addEventListener("log", (e) => {
+        const data = JSON.parse(e.data);
+        // sub-lines never appear in the live log (one line per step); only OTP-style prompts do
+        if (!data.message || String(data.message).indexOf("↳") === 0) return;
+        const html =
+            `<span class="ts">[${escapeHtml(clockOf(data.at) || timestamp())}]</span>` +
+            `<span class="otp-line">${escapeHtml(data.message)}</span>`;
+        // a line written while a step was running goes UNDER that step (after its earlier lines)
+        if (data.step !== null && data.step !== undefined) {
+            if (stepLines[data.step]) { addStepSub(data.step, html); return; }
+            (pendingSubs[data.step] = pendingSubs[data.step] || []).push(html);
+            return;
+        }
+        appendLine(html);
+    });
+
+    let otpSubmitting = false;
+
+    function submitOtp() {
+        const value = otpValueInput.value.trim();
+        if (!value || otpSubmitting) return;
+        otpSubmitting = true;
+        otpStatus.textContent = "Submitting...";
+        fetch("/api/test/run/otp_submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ run_id: runId, value }),
+        })
+            .then((r) => r.json())
+            .then((data) => {
+                otpSubmitting = false;
+                if (data.success) {
+                    otpStatus.textContent = "Submitted - continuing...";
+                    otpSubmitBtn.disabled = true;
+                    otpValueInput.disabled = true;
+                } else {
+                    otpStatus.textContent = data.message || "Couldn't submit OTP.";
+                }
+            })
+            .catch(() => {
+                otpSubmitting = false;
+                otpStatus.textContent = "Couldn't reach the server - try again.";
+            });
+    }
+
+    otpSubmitBtn.addEventListener("click", submitOtp);
+    otpValueInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") submitOtp();
+    });
+
+    // replay is genuinely paused, waiting for a human to type in a live
+    // OTP (the recorded value is never reused - see script_generator.py's
+    // own OTP-step handling) - shows the prompt; "otp_resolved" (sent
+    // the instant replay stops waiting, either because a value arrived
+    // or the wait timed out) hides it again and resets it for any LATER
+    // OTP step in the same recording.
+    source.addEventListener("otp_needed", (e) => {
+        const data = JSON.parse(e.data);
+        otpPromptText.textContent =
+            `Step ${data.step_index}/${data.total_steps}: ${data.message || "Enter OTP to continue"}`;
+        otpStatus.textContent = "";
+        otpValueInput.value = "";
+        otpValueInput.disabled = false;
+        otpSubmitBtn.disabled = false;
+        otpPrompt.style.display = "block";
+        otpValueInput.focus();
+    });
+
+    source.addEventListener("otp_resolved", () => {
+        otpPrompt.style.display = "none";
+    });
+
+    // a long-running replay's SSE connection can drop and reconnect for
+    // reasons that have nothing to do with the replay itself (a dev-
+    // server idle timeout, a network blip) - EventSource always
+    // transparently reconnects on its own, and the server-side stream
+    // (see api_test_run_stream in app.py) has no per-CLIENT resume
+    // cursor, so a fresh connection replays every step already recorded
+    // in report.json from the start. Deduping here, by step index,
+    // means a reconnect is a harmless no-op for what's on screen instead
+    // of every already-shown step appearing a second time - confirmed
+    // real (not hypothetical) against an actual ~90s, 23-step replay.
+    const renderedSteps = new Set();
+
+    source.addEventListener("step", (e) => {
+        const data = JSON.parse(e.data);
+        if (renderedSteps.has(data.index)) return;
+        renderedSteps.add(data.index);
+        const label = escapeHtml(actionLabel(data.action_type, data.element, data.name_is_full_sentence));
+        // FOLLOW-UP FIX 2: "warning" is a real, distinct status now (a
+        // step that PASSED but carries a non-fatal note, e.g. Fix 1's
+        // "Value changed on the site..." note) - shown in yellow/amber,
+        // never merged into a plain "PASS".
+        const statusText = { pass: "PASS", warning: "WARNING", fail: "FAILED", skipped: "NOT RUN" }[data.status] || data.status.toUpperCase();
+        const statusClass = "status-" + data.status;
+
+        // LIVE LOG SYNC: the final line carries the step's own start and end
+        // time (from the replay script) and its duration
+        const timesHtml = (data.started_at || data.ended_at)
+            ? ` <span class="ts">(started ${escapeHtml(clockOf(data.started_at))} &rarr; ended ${escapeHtml(clockOf(data.ended_at))}` +
+              (data.duration !== null && data.duration !== undefined ? `, ${escapeHtml(data.duration)}s` : "") + `)</span>`
+            : "";
+        const finalLineHtml =
+            `<span class="ts">[${stepLines[data.index] ? clockOf(data.started_at) || timestamp() : timestamp()}]</span>` +
+            `Step ${data.index}: ${label} &mdash; <span class="step-status ${statusClass}">${statusText}</span>` +
+            timesHtml +
+            (data.page_mismatch ? `<span class="mismatch-badge">PAGE MISMATCH</span>` : "");
+        if (stepLines[data.index]) {
+            // the line already shown as "Running" becomes the result; lines logged during the step (waits,
+            // retries) sit above it, so the result is shown after them, in true order
+            // the line shown as "Running" becomes the result IN PLACE: the lines logged during the step sit
+            // under it (see the "log" event), so the order on screen is the real order
+            stepLines[data.index].innerHTML = finalLineHtml;
+        } else {
+            stepLines[data.index] = appendLine(finalLineHtml);
+        }
+        flushPendingSubs(data.index);
+        if (data.status === "warning" && data.reason) stepLines[data.index].dataset.warnShown = "1";
+
+        // FIX 2: expected vs actual URL (shortened), full values + the
+        // settled screenshot under Details - shown regardless of whether
+        // on_page_mismatch made this step FAIL or just WARN.
+        if (data.page_mismatch) {
+            const pm = data.page_mismatch;
+            const shorten = (u) => { try { const p = new URL(u); return p.pathname + p.search; } catch (e) { return u; } };
+            const pmParts = [
+                `<div><strong>Expected:</strong> ${escapeHtml(shorten(pm.expected_url || ""))}</div>`,
+                `<div><strong>Actual:</strong> ${escapeHtml(shorten(pm.actual_url || ""))}</div>`,
+            ];
+            const pmDetailParts = [
+                `<div><strong>Expected URL (full):</strong> ${escapeHtml(pm.expected_url || "")}</div>`,
+                `<div><strong>Actual URL (full):</strong> ${escapeHtml(pm.actual_url || "")}</div>`,
+            ];
+            if (pm.expected_title) pmDetailParts.push(`<div><strong>Expected title:</strong> ${escapeHtml(pm.expected_title)}</div>`);
+            if (pm.actual_title) pmDetailParts.push(`<div><strong>Actual title:</strong> ${escapeHtml(pm.actual_title)}</div>`);
+            if (pm.matched_element) {
+                const me = pm.matched_element;
+                pmDetailParts.push(`<div><strong>Matched element:</strong> &lt;${escapeHtml(me.tag || "?")}&gt; ${escapeHtml(me.text || "")} ${me.href ? "(" + escapeHtml(me.href) + ")" : ""}</div>`);
+            }
+            if (pm.recovery) pmDetailParts.push(`<div><strong>Recovery:</strong> ${escapeHtml(pm.recovery)}</div>`);
+            if (pm.screenshot) {
+                pmDetailParts.push(
+                    `<div><strong>Screenshot:</strong> ` +
+                    `<a href="/screenshots/raw?path=${encodeURIComponent(pm.screenshot)}" target="_blank">${escapeHtml(pm.screenshot)}</a></div>`
+                );
+            }
+            pmParts.push(`<details><summary>Details</summary>${pmDetailParts.join("")}</details>`);
+            const pmDetail = document.createElement("div");
+            pmDetail.className = "mismatch-detail";
+            pmDetail.innerHTML = pmParts.join("");
+            document.getElementById("logLines").appendChild(pmDetail);
+        }
+
+        if ((data.status === "fail" || data.status === "warning" || data.status === "skipped") && data.reason) {
+            const r = data.reason;
+            // REQ 5: the headline is ONE plain sentence - what was expected /
+            // what happened / what the replay did. Everything technical
+            // (selectors, full URLs, the engine's own explanation) is only
+            // ever under the collapsible Details.
+            const parts = [];
+            if (r.plain) parts.push(`<div><strong>${escapeHtml(r.plain)}</strong></div>`);
+            const detailParts = [];
+            if (r.technical) detailParts.push(`<div><strong>Technical details:</strong> ${escapeHtml(r.technical)}</div>`);
+            // the raw engine text, only when it says something the headline doesn't
+            if (r.error && r.error !== r.plain) detailParts.push(`<div><strong>Reason:</strong> ${escapeHtml(r.error)}</div>`);
+            if (r.warning && r.warning !== r.plain) detailParts.push(`<div><strong>Warning:</strong> ${escapeHtml(r.warning)}</div>`);
+            if (r.selector) detailParts.push(`<div><strong>Locator strategy:</strong> ${escapeHtml(r.selector)}</div>`);
+            if (r.url) detailParts.push(`<div><strong>URL:</strong> ${escapeHtml(r.url)}</div>`);
+            if (r.screenshot) {
+                detailParts.push(
+                    `<div><strong>Screenshot:</strong> ` +
+                    `<a href="/screenshots/raw?path=${encodeURIComponent(r.screenshot)}" target="_blank">${escapeHtml(r.screenshot)}</a></div>`
+                );
+            }
+            if (detailParts.length) {
+                parts.push(`<details><summary>Details</summary>${detailParts.join("")}</details>`);
+            }
+            const detail = document.createElement("div");
+            detail.className = (data.status === "warning") ? "warning-detail" : "fail-detail";
+            detail.innerHTML = parts.join("");
+            document.getElementById("logLines").appendChild(detail);
+        }
+
+        // FOLLOW-UP FIX 6: count_elements/count_summary numbers, shown on
+        // PASS too (not gated behind fail/warning at all) - same label/
+        // count/expected/result data the dashboard card and HTML report
+        // already show (see generator/script_generator.py's own
+        // count_summary_rows).
+        if (Array.isArray(data.count_summary_rows) && data.count_summary_rows.length) {
+            const lines = data.count_summary_rows.map(row => {
+                const mark = (row.expected === null || row.expected === undefined) ? "" : (row.ok ? " ✓" : " ✗");
+                const expectedPart = (row.expected === null || row.expected === undefined) ? "" : ` (expected ${row.expected})`;
+                return escapeHtml(`${row.label} = ${row.count}${expectedPart}${mark}`);
+            }).join("<br>");
+            const countDetail = document.createElement("div");
+            countDetail.className = "count-detail";
+            countDetail.innerHTML = lines;
+            document.getElementById("logLines").appendChild(countDetail);
+        }
+
+        // BUG 2 fix: one line per element for Validate Value Range, shown
+        // on PASS too - same value_range_rows data the report shows (see
+        // generator/script_generator.py's own validate_value_range branch).
+        if (Array.isArray(data.value_range_rows) && data.value_range_rows.length) {
+            const vrLines = data.value_range_rows.map(row => {
+                const mark = row.ok ? " ✓" : " ✗";
+                const valuePart = (row.value === null || row.value === undefined) ? "" : `: ${row.value}`;
+                const reasonPart = row.reason ? ` - ${row.reason}` : "";
+                return escapeHtml(`${row.label}${valuePart}${reasonPart}${mark}`);
+            }).join("<br>");
+            const vrDetail = document.createElement("div");
+            vrDetail.className = "count-detail";
+            vrDetail.innerHTML = vrLines;
+            document.getElementById("logLines").appendChild(vrDetail);
+        }
+    });
+
+    source.addEventListener("summary", (e) => {
+        const data = JSON.parse(e.data);
+        source.close();
+        currentStepEl.textContent = "Replay finished.";
+
+        summaryBanner.className = (data.status === "PASS") ? "pass" : "fail";
+        summaryBanner.style.display = "block";
+
+        // PHASE 4c: one plain sentence on whether replay matched the
+        // recording overall, shown first - the existing status/message/
+        // counts line stays exactly as it was, right below it.
+        let html = "";
+        if (data.plain_summary) {
+            html += `<div>${escapeHtml(data.plain_summary)}</div>`;
+        }
+        html +=
+            `<strong>${escapeHtml(data.status || "DONE")}</strong> - ${escapeHtml(data.message || "")}<br>` +
+            `Total steps: ${data.total_steps} &nbsp; ` +
+            `Passed: ${data.passed} &nbsp; ` +
+            `Warnings: ${data.warnings || 0} &nbsp; ` +
+            `Failed: ${data.failed} &nbsp; ` +
+            `Not run: ${data.skipped} &nbsp; ` +
+            (data.manual_input ? `Manual-input: ${data.manual_input} &nbsp; ` : "") +
+            (data.page_mismatches ? `Page mismatches: ${data.page_mismatches} &nbsp; ` : "") +
+            `Duration: ${data.duration_s}s`;
+
+        if (data.html_report) {
+            html += `<br><a href="/${data.html_report}" target="_blank">Open full HTML report</a>`;
+        }
+
+        summaryBanner.innerHTML = html;
+    });
+
+    // application-level errors the server sends deliberately (bad/unknown
+    // run_id) - named "stream_error", NOT "error", specifically so this
+    // never collides with EventSource's own native "error" event below
+    // (a real dropped/failed connection), which carries no usable
+    // message of its own at all
+    source.addEventListener("stream_error", (e) => {
+        const data = JSON.parse(e.data);
+        errorBanner.textContent = data.message || "Something went wrong reading this replay's log.";
+        errorBanner.style.display = "block";
+        source.close();
+    });
+
+    // genuine connection failure (server restarted, network dropped) -
+    // EventSource auto-retries on its own by default, so this is purely
+    // informational, not fatal
+    source.addEventListener("error", () => {
+        if (errorBanner.style.display !== "block") {
+            errorBanner.textContent = "Connection to the replay log was interrupted - retrying...";
+            errorBanner.style.display = "block";
+        }
+    });
+
+}
+
+</script>
+
+</body>
+</html>

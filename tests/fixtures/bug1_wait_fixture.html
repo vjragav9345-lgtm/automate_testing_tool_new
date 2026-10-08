@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>bug1 wait fixture</title></head>
+<body>
+  <!-- becomes enabled ~1.2s after page load -->
+  <input id="soon" type="text" disabled>
+  <!-- never becomes enabled -->
+  <input id="never" type="text" disabled>
+  <!-- already enabled -->
+  <input id="ready" type="text">
+  <script>
+    setTimeout(function () { document.getElementById('soon').disabled = false; }, 1200);
+  </script>
+</body></html>

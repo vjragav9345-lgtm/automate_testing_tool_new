@@ -1,0 +1,201 @@
+--- bak_pre_checkbox_fix
++++ current
+@@ -404,4 +404,9 @@
+     # silently landing on the wrong page.
+     content_mismatch = None
++    # every step of this walk that didn't run cleanly (the walk itself keeps
++    # going past these - see the docstring): [{"step_index", "action_type",
++    # "reason"}], surfaced to the user by the modal so a picker that isn't on
++    # the expected page is never left unexplained
++    replay_failures = []
+ 
+     for i, step in enumerate(preceding_actions, start=1 + _step_offset):
+@@ -430,4 +435,8 @@
+             except Exception as e:
+                 logger.debug("pick-element replay: navigate step failed (%s) - continuing", e)
++                replay_failures.append({
++                    "step_index": i, "action_type": action_type,
++                    "reason": f"couldn't load {step.get('page_url') or start_url}",
++                })
+ 
+         elif action_type == "tab_open":
+@@ -439,5 +448,12 @@
+             deadline = time.monotonic() + 5.0
+             while not new_pages_queue and time.monotonic() < deadline:
+-                time.sleep(0.1)
++                # a Playwright call, not a bare time.sleep: in the sync API
++                # the context's "page" event (what fills new_pages_queue) is
++                # only delivered while Playwright's own loop is running, so
++                # sleeping here never lets the new tab reach the queue
++                try:
++                    cur.wait_for_timeout(100)
++                except Exception:
++                    time.sleep(0.1)
+             if new_pages_queue:
+                 new_page = new_pages_queue.pop(0)
+@@ -492,8 +508,16 @@
+                     }
+                     break
++                if not _rr_ok:
++                    replay_failures.append({
++                        "step_index": i, "action_type": action_type,
++                        "reason": str(_rr_err or "its target could not be resolved")[:160],
++                    })
+             except Exception as e:
+                 logger.debug(
+                     "pick-element replay: %s step failed (%s) - continuing", action_type, e
+                 )
++                replay_failures.append({
++                    "step_index": i, "action_type": action_type, "reason": str(e)[:160],
++                })
+         # else: scroll / validation-family / anything else - skipped by
+         # design, see this function's own docstring
+@@ -511,4 +535,5 @@
+         "new_pages_queue": new_pages_queue,
+         "content_mismatch": content_mismatch,
++        "replay_failures": replay_failures,
+     }
+     return final_page, walk_state
+@@ -556,5 +581,5 @@
+ 
+ 
+-def _run_pick_wait_phase(pick_id, browser, context, final_page, start_url, preceding_actions, cancel_event=None, content_mismatch=None):
++def _run_pick_wait_phase(pick_id, browser, context, final_page, start_url, preceding_actions, cancel_event=None, content_mismatch=None, replay_failures=None):
+     # content_mismatch (see _replay_preceding_actions' own field of the
+     # same name): set only when the preceding-actions walk stopped EARLY
+@@ -595,4 +620,5 @@
+         merged["page_url_check"] = url_check
+         merged["content_mismatch"] = content_mismatch
++        merged["replay_failures"] = replay_failures or []
+         _store_result(pick_id, merged)
+ 
+@@ -632,4 +658,16 @@
+             logger.warning("pick-element: couldn't parse pick result JSON: %s", e)
+             profile = {}
++
++        # FIX 3's checkbox_state_info is deliberately NOT computed here: this
++        # callback is invoked REENTRANTLY, from inside whatever Playwright
++        # call is currently pumping this session's connection (see the wait
++        # loop's own long comment on exactly this, a few screens down) -
++        # calling another blocking Playwright method (.evaluate(), which
++        # _resolve_checkbox_state needs) from in here deadlocks the
++        # connection instead of raising a catchable exception (CONFIRMED via
++        # a live repro: the pick never completed, the callback's own first
++        # print line ran, nothing after it ever did). Computed instead in
++        # the wait loop itself, a safe, non-reentrant context - see its own
++        # comment for exactly where.
+         with _pick_lock:
+             pick_state["locked"] = True
+@@ -651,4 +689,5 @@
+             "locator_profile": profile,
+             "match_count": profile.get("match_count"),
++            "checkbox_state_info": profile.get("checkbox_state_info"),
+         })
+         t_stored = time.time()
+@@ -821,4 +860,46 @@
+             # once the browser is genuinely gone
+             time.sleep(PICK_POLL_INTERVAL_S)
++        # FIX 3 (Validate Checkbox State dialog): computed HERE, once per
++        # newly-locked pick, not inside _on_pick_result itself - see that
++        # function's own comment for why (a blocking Playwright call from
++        # inside its exposed-function callback deadlocks the connection).
++        # This loop already makes a real Playwright call every tick
++        # (_poll_page.wait_for_timeout above), so it's a safe, non-reentrant
++        # place to make one more. Reuses the SAME resolve_and_act already
++        # cached for this process (generator/script_generator.py's
++        # _resolve_checkbox_state, read off its module namespace) - never a
++        # second copy of that JS. Purely informational: a failure here
++        # leaves checkbox_state_info absent, never blocks the pick itself.
++        with _pick_lock:
++            _cb_locked, _cb_profile = pick_state["locked"], pick_state["profile"]
++        if _cb_locked and _cb_profile and _cb_profile.get("xpath") and "checkbox_state_info" not in _cb_profile:
++            _cb_info = None
++            try:
++                _resolve_fn = _RESOLVE_AND_ACT_CACHE.get("fn")
++                if _resolve_fn is not None:
++                    _resolve_checkbox_state = _resolve_fn.__globals__.get("_resolve_checkbox_state")
++                    if _resolve_checkbox_state is not None:
++                        _cb_info = _resolve_checkbox_state(
++                            browser.contexts[0].pages[0].locator(f"xpath={_cb_profile['xpath']}").first
++                        )
++            except Exception as e:
++                logger.debug("pick-element: checkbox_state_info computation failed (%s)", e)
++            with _pick_lock:
++                # only write back if this is STILL the same locked pick (the
++                # user may have released/re-picked something else while the
++                # evaluate() above was running)
++                if pick_state["locked"] and pick_state["profile"] is _cb_profile:
++                    _cb_profile["checkbox_state_info"] = _cb_info
++                    _store({
++                        "status": "locked",
++                        "xpath": _cb_profile.get("xpath"),
++                        "xpath_candidates": _cb_profile.get("xpath_candidates") or [_cb_profile.get("xpath")],
++                        "css_path": _cb_profile.get("css_path"),
++                        "id": _cb_profile.get("id"),
++                        "locator_profile": _cb_profile,
++                        "match_count": _cb_profile.get("match_count"),
++                        "checkbox_state_info": _cb_info,
++                    })
++
+         if not _TEST_DRIVE_QUEUE.empty():
+             try:
+@@ -852,4 +933,5 @@
+             "locator_profile": profile,
+             "match_count": profile.get("match_count"),
++            "checkbox_state_info": profile.get("checkbox_state_info"),
+         }
+     elif not browser.is_connected():
+@@ -927,4 +1009,5 @@
+             pick_id, browser, context, final_page, start_url, preceding_actions,
+             content_mismatch=_walk_state.get("content_mismatch"),
++            replay_failures=_walk_state.get("replay_failures"),
+         )
+ 
+@@ -1011,4 +1094,7 @@
+         # cleanly" signal otherwise)
+         self.walk_content_mismatch = None
++        # accumulated across every (delta) walk this warm browser has done
++        # since its last reset - see _replay_preceding_actions' replay_failures
++        self.walk_replay_failures = []
+ 
+         # SINGLE-USE PREWARM tracking: a prewarm is only ever a valid
+@@ -1091,4 +1177,15 @@
+         self.walk_current_page_id = 0
+         self.walk_new_pages_queue = []
++        # tab_open steps in a replayed prefix adopt the REAL new tab the
++        # preceding click opened, taken from this queue (see
++        # _replay_preceding_actions). That function only registers its own
++        # listener when it creates the queue itself - a warm session hands
++        # it an already-existing one, so without this nothing ever fills it
++        # and every tab_open times out, leaving the picker on the original
++        # tab. Appends to whichever queue is current (a reset replaces it).
++        def _queue_new_tab(new_page):
++            if self.walk_new_pages_queue is not None:
++                self.walk_new_pages_queue.append(new_page)
++        self.context.on("page", _queue_new_tab)
+ 
+         if self.resolve_and_act is None:
+@@ -1146,4 +1243,5 @@
+         self.walk_new_pages_queue = None
+         self.walk_content_mismatch = None
++        self.walk_replay_failures = []
+         # a torn-down browser invalidates whatever it was warmed to -
+         # never let a later pick think a (now-closed) prewarm is still
+@@ -1197,4 +1295,5 @@
+             self.walk_new_pages_queue = []
+             self.walk_content_mismatch = None
++            self.walk_replay_failures = []
+ 
+         self.session_path = session_path
+@@ -1215,4 +1314,5 @@
+             self.walk_new_pages_queue = walk_state["new_pages_queue"]
+             self.walk_content_mismatch = walk_state["content_mismatch"]
++            self.walk_replay_failures.extend(walk_state.get("replay_failures") or [])
+         else:
+             print(
+@@ -1336,4 +1436,5 @@
+                 pick_id, self.browser, self.context, final_page, start_url, preceding_actions,
+                 cancel_event=cancel_event, content_mismatch=self.walk_content_mismatch,
++                replay_failures=self.walk_replay_failures,
+             )
+         except Exception as e:

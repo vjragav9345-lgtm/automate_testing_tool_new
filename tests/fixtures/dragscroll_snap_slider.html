@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>drag nudge fixture - snapping slider</title>
+<style>
+  body { font-family: sans-serif; }
+  #wrap { position: relative; width: 300px; height: 40px; margin: 80px 40px; }
+  #rail { position: absolute; left: 0; top: 15px; width: 300px; height: 10px; background: #ccc; }
+  #handle { position: absolute; top: 10px; left: 290px; width: 20px; height: 20px; margin-left: -10px;
+            border-radius: 50%; background: #e33; cursor: pointer; }
+</style>
+</head>
+<body>
+<!-- A stepped ("snapping") slider: the handle only ever rests on a snap point, so a move that does not
+     reach the next snap point changes nothing. Snap points sit at uneven distances (like a slider built
+     from an array of values). The aria-valuenow is updated live while dragging. -->
+<div id="wrap">
+  <div id="rail"></div>
+  <div id="handle" role="slider" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div id="readout">Value: 100</div>
+<script>
+var PX =  [0, 30, 60, 90, 150, 300];
+var VAL = [0, 10, 20, 30, 50, 100];
+var wrap = document.getElementById('wrap'), handle = document.getElementById('handle');
+var dragging = false;
+function apply(x) {
+  var rect = wrap.getBoundingClientRect();
+  var px = Math.max(0, Math.min(300, x - rect.left));
+  var best = 0;
+  for (var i = 1; i < PX.length; i++) if (Math.abs(PX[i] - px) < Math.abs(PX[best] - px)) best = i;
+  handle.style.left = PX[best] + 'px';
+  handle.setAttribute('aria-valuenow', String(VAL[best]));
+  document.getElementById('readout').textContent = 'Value: ' + VAL[best];
+}
+handle.addEventListener('mousedown', function (e) { dragging = true; e.preventDefault(); });
+document.addEventListener('mousemove', function (e) { if (dragging) apply(e.clientX); });
+document.addEventListener('mouseup', function () { dragging = false; });
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Chip Single-Checkbox Fixture (Country of Origin)</title>
+<style>
+  body { margin: 0; font-family: sans-serif; padding: 40px; }
+  .filter-chip { position: relative; display: inline-flex; align-items: center; gap: 6px;
+                 padding: 8px 14px; border: 1px solid #ccc; cursor: pointer; }
+  .chip-arrow { width: 10px; height: 10px; display: inline-block; }
+  .checkbox-panel { display: none; position: absolute; top: 100%; left: 0; background: #fafafa;
+                     border: 1px solid #ccc; padding: 8px; min-width: 160px; z-index: 10; }
+  .filter-chip:hover .checkbox-panel { display: block; }
+  .checkbox-panel label { display: block; padding: 2px 0; }
+</style>
+</head>
+<body>
+  <!-- matches the real "Country of Origin" case: exactly ONE option in
+       the hover-revealed panel - the uniqueness rule alone would wrongly
+       accept it as "the" checkbox for ANY click anywhere in the chip. -->
+  <div class="filter-chip" id="origin-chip-container">
+    <span id="origin-label">Country of Origin</span>
+    <span class="chip-arrow" id="origin-arrow">&#9662;</span>
+    <div class="checkbox-panel" id="origin-checkbox-panel">
+      <label><input type="checkbox" id="india-cb"> India</label>
+    </div>
+  </div>
+  <script>
+    document.getElementById('origin-chip-container').addEventListener('click', function (e) {
+      if (e.target.closest('#origin-checkbox-panel')) return;
+      document.title = 'ORIGIN_CHIP_CLICKED';
+    });
+  </script>
+</body>
+</html>

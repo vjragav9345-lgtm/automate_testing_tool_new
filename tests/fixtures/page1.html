@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AutoFlow QA Fixture - Page 1</title>
+<style>
+  body { font-family: sans-serif; margin: 0; padding: 0; }
+  header { padding: 20px; background: #222; color: #fff; }
+  #spacer-top { height: 400px; background: linear-gradient(#eee, #fff); }
+  #route-content { padding: 20px; border: 2px solid #09c; margin: 20px; }
+  #scrollbox {
+    width: 300px;
+    height: 200px;
+    overflow-y: auto;
+    border: 2px solid #333;
+    margin: 20px;
+    padding: 10px;
+  }
+  #scrollbox .item { height: 60px; border-bottom: 1px solid #ccc; }
+  form { margin: 20px; padding: 10px; border: 1px solid #999; }
+  footer { margin-top: 600px; padding: 20px; background: #222; color: #fff; }
+  footer a { color: #6cf; }
+  .nav-menu { margin: 20px; }
+  .has-submenu { position: relative; display: inline-block; padding: 10px; background: #eee; cursor: pointer; }
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #999;
+    min-width: 160px;
+    z-index: 10;
+  }
+  .has-submenu:hover .submenu { display: block; }
+  .submenu a { display: block; padding: 8px 12px; text-decoration: none; color: #222; }
+</style>
+</head>
+<body>
+<header>
+  <h1>AutoFlow QA Fixture</h1>
+  <div id="current-route">route: home</div>
+</header>
+
+<div class="nav-menu">
+  <div class="has-submenu" id="men-menu">
+    Men
+    <div class="submenu">
+      <a id="submenu-tshirts" href="page2.html">T-Shirts</a>
+      <a id="submenu-jeans" href="page2.html">Jeans</a>
+    </div>
+  </div>
+</div>
+
+<div id="spacer-top">Scroll the WINDOW down to reach the form.</div>
+
+<div id="route-content">
+  <p>SPA route area - content below changes via history.pushState, no full page load.</p>
+  <button id="route-btn" type="button">Go to /route2 (pushState)</button>
+</div>
+
+<div id="scrollbox">
+  <div class="item">Item 1</div>
+  <div class="item">Item 2</div>
+  <div class="item">Item 3</div>
+  <div class="item">Item 4</div>
+  <div class="item">Item 5</div>
+  <div class="item">Item 6</div>
+  <div class="item">Item 7</div>
+  <div class="item">Item 8</div>
+  <div class="item">Item 9</div>
+  <div class="item">Item 10</div>
+</div>
+
+<form id="test-form">
+  <div>
+    <label><input type="checkbox" id="agree-checkbox"> I agree</label>
+  </div>
+  <div>
+    <label><input type="radio" name="plan" value="basic" id="plan-basic"> Basic</label>
+    <label><input type="radio" name="plan" value="pro" id="plan-pro"> Pro</label>
+  </div>
+  <div>
+    <label for="country-select">Country</label>
+    <select id="country-select" name="country">
+      <option value="">-- choose --</option>
+      <option value="us">United States</option>
+      <option value="in">India</option>
+      <option value="uk">United Kingdom</option>
+    </select>
+  </div>
+  <div>
+    <label for="email-field">Email (autofill-style)</label>
+    <input type="text" id="email-field" name="email" autocomplete="email">
+  </div>
+  <div>
+    <label for="react-style-input">Promo code (React-style controlled, uppercases as you type)</label>
+    <input type="text" id="react-style-input" name="promo">
+  </div>
+  <div style="position: relative;">
+    <label for="search-input">Search (debounced suggestions dropdown)</label>
+    <input type="text" id="search-input" name="search" autocomplete="off">
+    <ul id="suggestions-list" style="display:none; position:absolute; background:#fff; border:1px solid #999; list-style:none; margin:0; padding:0; width:200px;"></ul>
+  </div>
+</form>
+
+<div>
+  <a id="newtab-link" href="page2.html" target="_blank">Open Page 2 in new tab</a>
+</div>
+
+<div>
+  <!-- simulates a real-world product site where the click handler does
+       tracking/ads work before actually opening the new tab - target for
+       regression testing the tab_open click-verification timeout -->
+  <button id="slow-newtab-btn" onclick="setTimeout(function(){ window.open('page2.html', '_blank'); }, 6500)">Open Page 2 in new tab (slow, 6.5s)</button>
+</div>
+
+<div>
+  <img id="pick-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7" width="60" height="60" alt="pick target image">
+</div>
+
+<div>
+  <p>Same-origin iframe (target for Pick Element testing):</p>
+  <iframe id="pick-iframe" src="page2.html" style="width: 400px; height: 150px; border: 2px solid #333;"></iframe>
+</div>
+
+<div id="shadow-host-container">
+  <p>Shadow DOM host (target for Pick Element testing):</p>
+</div>
+<script>
+  (function () {
+    var host = document.createElement('div');
+    host.id = 'shadow-host';
+    document.getElementById('shadow-host-container').appendChild(host);
+    var root = host.attachShadow({ mode: 'open' });
+    root.innerHTML =
+      '<button id="shadow-btn" type="button">Button inside shadow DOM</button>' +
+      '<span id="shadow-result"></span>';
+    root.getElementById('shadow-btn').addEventListener('click', function () {
+      root.getElementById('shadow-result').textContent = 'SHADOW CLICKED';
+    });
+  })();
+</script>
+
+<footer>
+  <a id="footer-link" href="page2.html">Go to Page 2 (footer link)</a>
+</footer>
+
+<script>
+  // Simple SPA-style client-side route change via history.pushState, no
+  // network request, no full navigation - the fixture's equivalent of a
+  // real single-page app switching routes when a button is clicked.
+  document.getElementById('route-btn').addEventListener('click', function () {
+    history.pushState({}, '', '/route2');
+    document.getElementById('current-route').textContent = 'route: /route2';
+    document.getElementById('route-content').innerHTML =
+      '<p>You are now on /route2 (pushState navigation).</p>';
+  });
+
+  // React-style "controlled input": every real keystroke's native input
+  // event is immediately followed by JS setting el.value again from
+  // "state" (here just the uppercased version) - the same synchronous
+  // value-overwrite-on-every-keystroke pattern a real React controlled
+  // component produces via setState + re-render, without needing React
+  // itself. Tests whether the recorder's committed value reflects the
+  // FINAL, post-transform value rather than the raw typed characters.
+  var reactInput = document.getElementById('react-style-input');
+  reactInput.addEventListener('input', function () {
+    var upper = reactInput.value.toUpperCase();
+    if (reactInput.value !== upper) {
+      reactInput.value = upper;
+    }
+  });
+
+  // Debounced search-suggestions dropdown - a real typed value triggers a
+  // list of matches to appear after a short delay, and clicking one sets
+  // the input's value via JS and closes the list. Tests whether typing
+  // that also causes nearby DOM mutations still gets its final value
+  // captured correctly, and whether selecting a suggestion (a JS-driven
+  // value set, not a native fill) is captured the same way autofill is.
+  var SUGGESTIONS = ['apple', 'apricot', 'avocado', 'banana', 'blueberry'];
+  var searchInput = document.getElementById('search-input');
+  var suggestionsList = document.getElementById('suggestions-list');
+  var searchDebounce = null;
+  searchInput.addEventListener('input', function () {
+    clearTimeout(searchDebounce);
+    var q = searchInput.value.trim().toLowerCase();
+    searchDebounce = setTimeout(function () {
+      suggestionsList.innerHTML = '';
+      if (!q) {
+        suggestionsList.style.display = 'none';
+        return;
+      }
+      var matches = SUGGESTIONS.filter(function (s) { return s.indexOf(q) === 0; });
+      if (!matches.length) {
+        suggestionsList.style.display = 'none';
+        return;
+      }
+      matches.forEach(function (m) {
+        var li = document.createElement('li');
+        li.textContent = m;
+        li.className = 'suggestion-item';
+        li.style.padding = '4px 8px';
+        li.style.cursor = 'pointer';
+        li.addEventListener('click', function () {
+          searchInput.value = m;
+          suggestionsList.style.display = 'none';
+        });
+        suggestionsList.appendChild(li);
+      });
+      suggestionsList.style.display = 'block';
+    }, 150);
+  });
+</script>
+</body>
+</html>

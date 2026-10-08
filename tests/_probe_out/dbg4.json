@@ -1,0 +1,357 @@
+{
+ "status": "FAIL",
+ "steps": [
+  {
+   "index": 1,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 2,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 3,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 4,
+   "action_type": "drag",
+   "success": false,
+   "error": "drag did not reach its recorded final value - expected {'kind': 'aria_value', 'value': '9.0', 'text': '12'}, got {'kind': 'nearby_text', 'value': '12'} (at release: {'kind': 'nearby_text', 'value': '12'}, nudges tried: 0)",
+   "not_run": false
+  }
+ ],
+ "drag": [
+  {
+   "step": 4,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11245.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1048,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 226.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 231.0,
+     "y": 339,
+     "steps": 1
+    },
+    {
+     "x": 236.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 242.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 247.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 252.0,
+     "y": 339,
+     "steps": 1
+    },
+    {
+     "x": 257.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 263.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 268.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 273.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 279.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 284.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 289.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 294.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 300.0,
+     "y": 338,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11245.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1048,
+    "vw": 1280,
+    "vh": 720
+   }
+  }
+ ],
+ "step_scroll": {
+  "1": {
+   "pos": [
+    0,
+    0,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "2": {
+   "pos": [
+    0,
+    300,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "3": {
+   "pos": [
+    0,
+    1048,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "4": {
+   "pos": null,
+   "scroll_events": []
+  }
+ },
+ "step_pages": {
+  "1": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     0,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "2": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     300,
+     12740,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "3": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     1048,
+     12740,
+     720
+    ],
+    "events": 6
+   }
+  ],
+  "4": []
+ },
+ "events": [
+  {
+   "t": 1790578372.421,
+   "step": 0,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => window.scrollTo({top: 0, left: 0, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578372.661,
+   "step": 2,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578372.661,
+   "step": 2,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790578372.723,
+   "step": 2,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790578372.776,
+   "step": 2,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578372.919,
+   "step": 2,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578372.95,
+   "step": 3,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578372.96,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.66666666666667
+  },
+  {
+   "t": 1790578373.011,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.66666666666667
+  },
+  {
+   "t": 1790578373.065,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.66666666666667
+  },
+  {
+   "t": 1790578373.118,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.66666666666667
+  },
+  {
+   "t": 1790578373.18,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.66666666666667
+  },
+  {
+   "t": 1790578373.233,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.66666666666667
+  },
+  {
+   "t": 1790578373.295,
+   "step": 3,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578373.435,
+   "step": 3,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578374.218,
+   "step": 4,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11245.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1048,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578376.983,
+   "step": 4,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11245.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1048,
+    "vw": 1280,
+    "vh": 720
+   }
+  }
+ ]
+}

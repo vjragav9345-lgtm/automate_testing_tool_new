@@ -1,0 +1,27 @@
+<!doctype html><html><head><title>chat like page</title><style>body{font:15px sans-serif;margin:20px} #log p{margin:4px} </style></head><body>
+<div id="log"></div>
+<p id="status">idle</p>
+<textarea id="box" aria-label="Message box" placeholder="Ask anything" rows="2" cols="50"></textarea>
+<script>
+var box = document.getElementById('box'), log = document.getElementById('log'), statusEl = document.getElementById('status');
+var q = new URLSearchParams(location.search), secs = parseFloat(q.get('s') || '4'), streaming = false, n = 0;
+function startAnswer(t) {
+  streaming = true; statusEl.textContent = 'busy';
+  var p = document.createElement('p'); p.className = 'ans'; log.appendChild(p);
+  var words = ('answer to ' + t + ' ' + 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor').split(' '), i = 0;
+  var step = Math.max(40, Math.floor(secs * 1000 / 40));
+  var iv = setInterval(function () {
+    p.textContent += (i ? ' ' : '') + (words[i % words.length] || 'x'); i++;
+    if (i >= 40) { clearInterval(iv); streaming = false; statusEl.textContent = 'idle'; }
+  }, step);
+}
+box.addEventListener('keydown', function (e) {
+  if (e.key !== 'Enter') return;
+  e.preventDefault();
+  if (streaming) return;                       // ignored while the previous answer is still coming
+  var t = box.value.trim(); if (!t) return;
+  n++; var p = document.createElement('p'); p.className = 'you'; p.textContent = 'You: ' + t; log.appendChild(p);
+  box.value = '';
+  startAnswer(t);
+});
+</script></body></html>

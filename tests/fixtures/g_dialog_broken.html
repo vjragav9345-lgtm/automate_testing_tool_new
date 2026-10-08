@@ -1,0 +1,13 @@
+<!doctype html><html><head><title>dialog</title><style>
+body{font:15px sans-serif;margin:20px} #ov{position:fixed;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,.6);display:none;z-index:1000}
+#dlg{position:absolute;left:200px;top:80px;width:520px;height:340px;background:#fff;padding:10px}
+#x{position:absolute;right:6px;top:6px} #video{margin-top:30px;width:480px;height:240px;background:#222;color:#fff;cursor:pointer;text-align:center;line-height:240px}
+</style></head><body><h3>Demo page</h3><button id="open">Watch demo</button><p id="state"></p>
+<div id="ov"><div id="dlg" role="dialog" aria-modal="true" aria-label="Demo"><button id="x" aria-label="Close dialog">&#10005;</button>
+<div id="video" title="Product demo player">Playing - click to pause</div></div></div>
+<script>
+var ov=document.getElementById('ov');
+document.getElementById('open').onclick=function(){};
+document.getElementById('x').onclick=function(){ov.style.display='none';};
+document.getElementById('video').onclick=function(){this.textContent=(this.textContent.indexOf('Playing')===0)?'Paused - click to play':'Playing - click to pause';};
+</script></body></html>

@@ -1,0 +1,228 @@
+{
+  "name": "fill_replay_check",
+  "session_id": "4f173344c6ca442f8d74cbc3c271caad",
+  "start_url": "http://127.0.0.1:8891/page1.html",
+  "recorded_at": "2026-09-20T16:32:22.502451",
+  "stop_reason": "terminal_enter",
+  "total_actions": 7,
+  "page_count": 1,
+  "actions": [
+    {
+      "action_type": "click",
+      "value": null,
+      "locator_profile": {
+        "id": "#react-style-input",
+        "name": "promo",
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "",
+        "placeholder": null,
+        "title": null,
+        "href": null,
+        "css_path": "input#react-style-input",
+        "xpath": "//*[@id='react-style-input']",
+        "text": "",
+        "element_text": "",
+        "tag": "input",
+        "attributes": {
+          "type": "text",
+          "name": "promo"
+        }
+      },
+      "bounding_box": {
+        "x": 468.546875,
+        "y": 389.875,
+        "width": 177,
+        "height": 21
+      },
+      "click_strategy": "standard",
+      "page_url": "http://127.0.0.1:8891/page1.html",
+      "timestamp": "2026-09-20T11:02:21.054Z",
+      "page_id": 0,
+      "delay_before_ms": 0
+    },
+    {
+      "action_type": "fill",
+      "value": "SAVE20",
+      "locator_profile": {
+        "id": "#react-style-input",
+        "name": "promo",
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "SAVE20",
+        "placeholder": null,
+        "title": null,
+        "href": null,
+        "css_path": "input#react-style-input",
+        "xpath": "//*[@id='react-style-input']",
+        "text": "SAVE20",
+        "element_text": "SAVE20",
+        "tag": "input",
+        "attributes": {
+          "type": "text",
+          "name": "promo"
+        }
+      },
+      "bounding_box": {
+        "x": 468.546875,
+        "y": 389.875,
+        "width": 177,
+        "height": 21
+      },
+      "click_strategy": "standard",
+      "page_url": "http://127.0.0.1:8891/page1.html",
+      "timestamp": "2026-09-20T11:02:21.307Z",
+      "page_id": 0,
+      "delay_before_ms": 253
+    },
+    {
+      "action_type": "press",
+      "value": "Tab",
+      "locator_profile": {
+        "id": "#react-style-input",
+        "name": "promo",
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "SAVE20",
+        "placeholder": null,
+        "title": null,
+        "href": null,
+        "css_path": "input#react-style-input",
+        "xpath": "//*[@id='react-style-input']",
+        "text": "SAVE20",
+        "element_text": "SAVE20",
+        "tag": "input",
+        "attributes": {
+          "type": "text",
+          "name": "promo"
+        }
+      },
+      "bounding_box": {
+        "x": 468.546875,
+        "y": 389.875,
+        "width": 177,
+        "height": 21
+      },
+      "click_strategy": "standard",
+      "page_url": "http://127.0.0.1:8891/page1.html",
+      "timestamp": "2026-09-20T11:02:21.308Z",
+      "page_id": 0,
+      "delay_before_ms": 1
+    },
+    {
+      "action_type": "scroll",
+      "value": null,
+      "delta_x": 0,
+      "delta_y": 638,
+      "scroll_y_before": 0,
+      "scroll_y_after": 638,
+      "viewport_height": 800,
+      "document_height": 1777,
+      "locator_profile": null,
+      "bounding_box": null,
+      "page_url": "http://127.0.0.1:8891/page1.html",
+      "timestamp": "2026-09-20T11:02:21.312Z",
+      "page_id": 0,
+      "delay_before_ms": 4
+    },
+    {
+      "action_type": "click",
+      "value": null,
+      "locator_profile": {
+        "id": "#search-input",
+        "name": "search",
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "",
+        "placeholder": null,
+        "title": null,
+        "href": null,
+        "css_path": "input#search-input",
+        "xpath": "//*[@id='search-input']",
+        "text": "",
+        "element_text": "",
+        "tag": "input",
+        "attributes": {
+          "type": "text",
+          "name": "search"
+        }
+      },
+      "bounding_box": {
+        "x": 345,
+        "y": 410.875,
+        "width": 177,
+        "height": 21
+      },
+      "click_strategy": "standard",
+      "page_url": "http://127.0.0.1:8891/page1.html",
+      "timestamp": "2026-09-20T11:02:21.347Z",
+      "page_id": 0,
+      "delay_before_ms": 35
+    },
+    {
+      "action_type": "fill",
+      "value": "ap",
+      "locator_profile": {
+        "id": "#search-input",
+        "name": "search",
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "ap",
+        "placeholder": null,
+        "title": null,
+        "href": null,
+        "css_path": "input#search-input",
+        "xpath": "//*[@id='search-input']",
+        "text": "ap",
+        "element_text": "ap",
+        "tag": "input",
+        "attributes": {
+          "type": "text",
+          "name": "search"
+        }
+      },
+      "bounding_box": {
+        "x": 345,
+        "y": 410.875,
+        "width": 177,
+        "height": 21
+      },
+      "click_strategy": "standard",
+      "page_url": "http://127.0.0.1:8891/page1.html",
+      "timestamp": "2026-09-20T11:02:21.880Z",
+      "page_id": 0,
+      "delay_before_ms": 533
+    },
+    {
+      "action_type": "click",
+      "value": null,
+      "locator_profile": {
+        "id": null,
+        "name": null,
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "apricot",
+        "placeholder": null,
+        "title": null,
+        "href": null,
+        "css_path": "ul#suggestions-list > li:nth-of-type(2)",
+        "xpath": "//li[contains(text(), 'apricot')]",
+        "text": "apricot",
+        "element_text": "apricot",
+        "tag": "li",
+        "attributes": {}
+      },
+      "bounding_box": {
+        "x": 32,
+        "y": 458.875,
+        "width": 200,
+        "height": 26
+      },
+      "click_strategy": "standard",
+      "page_url": "http://127.0.0.1:8891/page1.html",
+      "timestamp": "2026-09-20T11:02:21.883Z",
+      "page_id": 0,
+      "delay_before_ms": 3
+    }
+  ]
+}

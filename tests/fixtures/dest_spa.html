@@ -1,0 +1,2 @@
+<!doctype html><html><body><nav><a id="go" href="/dest_spa.html?view=2">Open page two</a></nav><div id="view">view one</div>
+<script>document.getElementById('go').addEventListener('click',function(e){e.preventDefault();history.pushState({},'','/dest_spa_route/two');document.getElementById('view').textContent='view two';});</script></body></html>

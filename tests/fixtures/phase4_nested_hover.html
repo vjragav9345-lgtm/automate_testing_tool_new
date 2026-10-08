@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Nested Hover Fixture</title>
+<style>
+  body { margin: 0; font-family: sans-serif; padding: 40px; }
+  .filters-row { position: relative; display: inline-block; }
+  .filters-trigger { padding: 10px; border: 1px solid #ccc; cursor: pointer; }
+  .chips-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff;
+                 border: 1px solid #ccc; padding: 10px; min-width: 260px; z-index: 10; }
+  .filters-row:hover .chips-panel { display: block; }
+  .chip { position: relative; display: inline-block; padding: 6px 10px; border: 1px solid #ddd;
+          margin-right: 8px; cursor: pointer; }
+  .chip-panel { display: none; position: absolute; top: 100%; left: 0; background: #fafafa;
+                border: 1px solid #ccc; padding: 8px; min-width: 160px; z-index: 20; }
+  .chip:hover .chip-panel { display: block; }
+  .chip-panel label { display: block; padding: 2px 0; }
+</style>
+</head>
+<body>
+  <div class="filters-row" id="filters-trigger">Filters
+    <div class="chips-panel" id="chips-panel">
+      <span class="chip" id="patterns-chip">Patterns
+        <div class="chip-panel" id="patterns-panel">
+          <label><input type="checkbox" id="printed-checkbox"> Printed</label>
+          <label><input type="checkbox" id="solid-checkbox"> Solid</label>
+        </div>
+      </span>
+      <span class="chip" id="colors-chip">Colors
+        <div class="chip-panel" id="colors-panel">
+          <label><input type="checkbox" id="red-checkbox"> Red</label>
+        </div>
+      </span>
+    </div>
+  </div>
+  <script>
+    document.getElementById('printed-checkbox').addEventListener('click', function () {
+      document.title = 'PRINTED_CHECKBOX_CLICKED';
+    });
+  </script>
+</body>
+</html>

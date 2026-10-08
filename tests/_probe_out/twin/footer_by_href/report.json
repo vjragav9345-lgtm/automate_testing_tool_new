@@ -1,0 +1,127 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "http://127.0.0.1:51842/twin_header_footer.html",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Twin Header Footer page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:51842/twin_header_footer.html",
+      "url_after": "http://127.0.0.1:51842/twin_header_footer.html",
+      "started_at": "2026-10-05T00:00:14.286",
+      "ended_at": "2026-10-05T00:00:14.643",
+      "duration": 0.359,
+      "timing_ms": {
+        "settle": 0,
+        "navigation_wait": 15,
+        "screenshot": 343,
+        "other": 0
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Pricing\" link",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "href",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:51842/twin_header_footer.html",
+      "url_after": "http://127.0.0.1:51842/hov_menu_target.html?src=footer",
+      "started_at": "2026-10-05T00:00:14.645",
+      "ended_at": "2026-10-05T00:00:16.812",
+      "duration": 2.172,
+      "timing_ms": {
+        "locate_action": 1063,
+        "log_emit": 0,
+        "screenshot": 437,
+        "settle": 0,
+        "verify": 0,
+        "other": 672
+      },
+      "locator_report": {
+        "strategy": "href",
+        "strategy_label": "Link URL",
+        "fallback_level": 10,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 2172,
+        "message": "Pricing found using Link URL. (resolved in 2172ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:51842/hov_menu_target.html?src=footer",
+  "final_screenshot": null,
+  "final_text": "menu target",
+  "product_validation": null,
+  "total_duration_s": 3.625,
+  "total_steps": 2,
+  "live_log": [
+    {
+      "t": 1791138614.2865787,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138614.2943602,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138615.000999,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138615.517504,
+      "message": "\u21b3 Clicking 'Pricing'",
+      "level": "note"
+    },
+    {
+      "t": 1791138616.4701483,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}
