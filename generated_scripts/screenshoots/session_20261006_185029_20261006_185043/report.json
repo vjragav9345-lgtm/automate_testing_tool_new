@@ -1,0 +1,247 @@
+{
+  "status": "FAIL",
+  "message": "one or more steps failed",
+  "qa_url": "https://www.amazon.com",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Open \u2013 Home page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "D:\\.claude\\generated_scripts\\screenshoots\\session_20261006_185029_20261006_185043\\amazon_com_spend_less_smile_mo\\step01_open_home_page_2026-10-06_18-50-51.png",
+      "url_before": "https://www.amazon.com/",
+      "url_after": "https://www.amazon.com/",
+      "started_at": "2026-10-06T18:50:47.446",
+      "ended_at": "2026-10-06T18:50:51.167",
+      "duration": 3.437,
+      "timing_ms": {
+        "settle": 1218,
+        "screenshot": 2125,
+        "other": 93
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "scroll",
+      "name": "down 445px on Home page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": true,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://www.amazon.com/",
+      "url_after": "https://www.amazon.com/",
+      "started_at": "2026-10-06T18:50:51.167",
+      "ended_at": "2026-10-06T18:50:51.629",
+      "duration": 0.375,
+      "timing_ms": {
+        "other": 375
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 3,
+      "action_type": "click",
+      "name": "\"Women\" link",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "aria-label",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "New generated id in the page address (expected on this site): recorded 'https://www.amazon.com/s/?_encoding=UTF8&k=Women%20Clothing&rh=p_36%3A-2500&pd_rd_w=G7jTF&content-id=amzn1.sym.44169bd5-8739-4693-852a-85b5c1bba30c&pf_rd_p=44169bd5-8739-4693-852a-85b5c1bba30c&pf_rd_r=S8KAV1EYNET9DDCQX869&pd_rd_wg=T4wCh&pd_rd_r=58a63c09-30fe-41f3-8ff9-59797aa02a5f&ref_=pd_hp_d_r_btf_unk', now 'https://www.amazon.com/s?k=Women+Clothing&rh=p_36%3A-2500&_encoding=UTF8&content-id=amzn1.sym.44169bd5-8739-4693-852a-85b5c1bba30c&pd_rd_r=16e777a0-3604-4f2e-bdfb-24ee541f2291&pd_rd_w=lfMTB&pd_rd_wg=xpIEN&pf_rd_p=44169bd5-8739-4693-852a-85b5c1bba30c&pf_rd_r=FCDJVSAK6T4W58EHA7Z5&ref=pd_hp_d_r_btf_unk'",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "D:\\.claude\\generated_scripts\\screenshoots\\session_20261006_185029_20261006_185043\\s\\step03_women_link_2026-10-06_18-51-05.png",
+      "url_before": "https://www.amazon.com/",
+      "url_after": "https://www.amazon.com/s?k=Women+Clothing&rh=p_36%3A-2500&_encoding=UTF8&content-id=amzn1.sym.44169bd5-8739-4693-852a-85b5c1bba30c&pd_rd_r=16e777a0-3604-4f2e-bdfb-24ee541f2291&pd_rd_w=lfMTB&pd_rd_wg=xpIEN&pf_rd_p=44169bd5-8739-4693-852a-85b5c1bba30c&pf_rd_r=FCDJVSAK6T4W58EHA7Z5&ref=pd_hp_d_r_btf_unk",
+      "started_at": "2026-10-06T18:50:51.636",
+      "ended_at": "2026-10-06T18:51:05.306",
+      "duration": 13.453,
+      "timing_ms": {
+        "locate_action": 7109,
+        "log_emit": 15,
+        "screenshot": 2952,
+        "settle": 1219,
+        "navigation_wait": 140,
+        "verify": 1234,
+        "other": 783
+      },
+      "locator_report": {
+        "strategy": "aria-label",
+        "strategy_label": "Accessible name",
+        "fallback_level": 6,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 13453,
+        "message": "Women found using Accessible name. (resolved in 13453ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 4,
+      "action_type": "click",
+      "name": "\"Sponsored Ad - Ekouaer Women Long Sleeve\" link",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "href",
+      "element_found": true,
+      "success": false,
+      "error": "Failed: Expected to stay on the page (/Ekouaer-Sweaters-Henley-Sweater-Clothes/dp/<id>/ref=sr_1_4_sspa), but the browser went to '/Zeagoo-Womens-Dressy-Quarter-Blouses/dp/<id>/ref=sr_1_1_sspa' instead. The replay stopped.",
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "PAGE_MISMATCH: expected to reach 'https://www.amazon.com/Ekouaer-Sweaters-Henley-Sweater-Clothes/dp/B0HCPBT954/ref=sr_1_4_sspa?_encoding=UTF8&content-id=amzn1.sym.44169bd5-8739-4693-852a-85b5c1bba30c&dib=eyJ2IjoiMSJ9.6oJbQACR70I4ZIiMAOCh4ResywMVibTQsvYSG0m5TpTLcUmYnbwm05ZQ76ulV5ySREhhx4ckSN-FQJsJ_00Tqlms9yHwZmMQ5lSxKA8efM_G4JF9VXcIERoO41ISFcCGgQx20Tx5mLw4XC7qkKlcnbaQ3Eox12WbFC3r9MqkD6rCoNpILFuUqHK_v4O_XbnQHD0bcwIej3ZAzVpMvvEylw1xJPbTvjZalBsPRWeO-GvpbLADj13lC8c7hCLyh_hvUnHLsCAzG9Zo78rjpyeg7SwCfA2pXBcR3TQK-cOv4YA.YgnCvI8Ym04YQHdx2GEkecJYJDUwkl-8j7Vedi5w7Zk&dib_tag=se&keywords=Women+Clothing&pd_rd_r=58a63c09-30fe-41f3-8ff9-59797aa02a5f&pd_rd_w=G7jTF&pd_rd_wg=T4wCh&qid=1791292833&refinements=p_36%3A-2500&sr=8-4-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1', but landed on 'https://www.amazon.com/Zeagoo-Womens-Dressy-Quarter-Blouses/dp/B0FLZSKJ1S/ref=sr_1_1_sspa?_encoding=UTF8&content-id=amzn1.sym.44169bd5-8739-4693-852a-85b5c1bba30c&dib=eyJ2IjoiMSJ9.6oJbQACR70I4ZIiMAOCh4f4td198KTbyOxer_KJwwutyNNN0p_JWmt3nHeVkziaFHW6gT8DMvqUWDqO5azsu_yS8dSW-PZuvCmlH4HNTg4IJrYCf1CIF237t3uPgtDZTa9bDKWJYcAgLe7VazYX4oTc9Khx4xGRHTCR3Gz6MTbohewAhTt1XS5OJnG-8Rl7uSqDqxWt_cUEOP3NbHKsJborvZFQRWmDtm-9jJC6XBfjxhLzPF0iX4EerHfJjv-c3PE-w5cs9np_u67Mb7_8tVWcHP6P_eF1uRpf2cYemLK0.vpUfWORMtOjPARpt_hFB2FPMAC_6J8Ku2cz-cP0Wsog&dib_tag=se&keywords=Women%2BClothing&pd_rd_r=16e777a0-3604-4f2e-bdfb-24ee541f2291&pd_rd_w=lfMTB&pd_rd_wg=xpIEN&qid=1791292861&refinements=p_36%3A-2500&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1&psc=1' instead",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "D:\\.claude\\generated_scripts\\screenshoots\\session_20261006_185029_20261006_185043\\ref_sr_1_1_sspa\\step04_sponsored_ad_ekouaer_women_long_sleeve_henley_tops_rib_FAILED_18-51-17.png",
+      "url_before": "https://www.amazon.com/s?k=Women+Clothing&rh=p_36%3A-2500&_encoding=UTF8&content-id=amzn1.sym.44169bd5-8739-4693-852a-85b5c1bba30c&pd_rd_r=16e777a0-3604-4f2e-bdfb-24ee541f2291&pd_rd_w=lfMTB&pd_rd_wg=xpIEN&pf_rd_p=44169bd5-8739-4693-852a-85b5c1bba30c&pf_rd_r=FCDJVSAK6T4W58EHA7Z5&ref=pd_hp_d_r_btf_unk",
+      "url_after": "https://www.amazon.com/Zeagoo-Womens-Dressy-Quarter-Blouses/dp/B0FLZSKJ1S/ref=sr_1_1_sspa?_encoding=UTF8&content-id=amzn1.sym.44169bd5-8739-4693-852a-85b5c1bba30c&dib=eyJ2IjoiMSJ9.6oJbQACR70I4ZIiMAOCh4f4td198KTbyOxer_KJwwutyNNN0p_JWmt3nHeVkziaFHW6gT8DMvqUWDqO5azsu_yS8dSW-PZuvCmlH4HNTg4IJrYCf1CIF237t3uPgtDZTa9bDKWJYcAgLe7VazYX4oTc9Khx4xGRHTCR3Gz6MTbohewAhTt1XS5OJnG-8Rl7uSqDqxWt_cUEOP3NbHKsJborvZFQRWmDtm-9jJC6XBfjxhLzPF0iX4EerHfJjv-c3PE-w5cs9np_u67Mb7_8tVWcHP6P_eF1uRpf2cYemLK0.vpUfWORMtOjPARpt_hFB2FPMAC_6J8Ku2cz-cP0Wsog&dib_tag=se&keywords=Women%2BClothing&pd_rd_r=16e777a0-3604-4f2e-bdfb-24ee541f2291&pd_rd_w=lfMTB&pd_rd_wg=xpIEN&qid=1791292861&refinements=p_36%3A-2500&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1&psc=1",
+      "started_at": "2026-10-06T18:51:05.306",
+      "ended_at": "2026-10-06T18:51:18.549",
+      "duration": 13.156,
+      "timing_ms": {
+        "locate_action": 5811,
+        "log_emit": 0,
+        "screenshot": 5593,
+        "settle": 1219,
+        "verify": 0,
+        "other": 533
+      },
+      "locator_report": {
+        "strategy": "href",
+        "strategy_label": "Link URL",
+        "fallback_level": 10,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 13156,
+        "message": "Sponsored Ad - Ekouaer Women Long Sleeve Henley Tops Rib ... found using Link URL. (resolved in 13156ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "https://www.amazon.com/Zeagoo-Womens-Dressy-Quarter-Blouses/dp/B0FLZSKJ1S/ref=sr_1_1_sspa?_encoding=UTF8&content-id=amzn1.sym.44169bd5-8739-4693-852a-85b5c1bba30c&dib=eyJ2IjoiMSJ9.6oJbQACR70I4ZIiMAOCh4f4td198KTbyOxer_KJwwutyNNN0p_JWmt3nHeVkziaFHW6gT8DMvqUWDqO5azsu_yS8dSW-PZuvCmlH4HNTg4IJrYCf1CIF237t3uPgtDZTa9bDKWJYcAgLe7VazYX4oTc9Khx4xGRHTCR3Gz6MTbohewAhTt1XS5OJnG-8Rl7uSqDqxWt_cUEOP3NbHKsJborvZFQRWmDtm-9jJC6XBfjxhLzPF0iX4EerHfJjv-c3PE-w5cs9np_u67Mb7_8tVWcHP6P_eF1uRpf2cYemLK0.vpUfWORMtOjPARpt_hFB2FPMAC_6J8Ku2cz-cP0Wsog&dib_tag=se&keywords=Women%2BClothing&pd_rd_r=16e777a0-3604-4f2e-bdfb-24ee541f2291&pd_rd_w=lfMTB&pd_rd_wg=xpIEN&qid=1791292861&refinements=p_36%3A-2500&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1&psc=1",
+  "final_screenshot": "D:\\.claude\\generated_scripts\\screenshoots\\session_20261006_185029_20261006_185043\\amazon_com_spend_less_smile_mo\\img2.png",
+  "final_text": "Skip to\nMain content\nAbout this item\nBuying options\nVideos\nReviews\nKeyboard shortcuts\nSearch\nalt\n+\n/\nCart\nshift\n+\nalt\n+\nC\nHome\nshift\n+\nalt\n+\nH\nOrders\nshift\n+\nalt\n+\nO\nProduct summary\nshift\n+\nalt\n+\nD\nShow/Hide shortcuts\nshift\n+\nalt\n+\nZ\nTo move between items, use your keyboard's up or down arrows.\nDeliver to\nIndia\nAll\nAll Departments\nArts & Crafts\nAutomotive\nBaby\nBeauty & Personal Care\nBooks\nBoys' Fashion\nComputers\nDeals\nDigital Music\nElectronics\nGirls' Fashion\nHealth & Household\nHome & Kitchen\nIndustrial & Scientific\nKindle Store\nLuggage\nMen's Fashion\nMovies & TV\nMusic, CDs & Vinyl\nPet Supplies\nPrime Video\nSoftware\nSports & Outdoors\nTools & Home Improvement\nToys & Games\nVideo Games\nWomen's Fashion\nEN\nHello, sign in\nAccount & Lists\nReturns\n& Orders\n0\nCart\nWe're showing you items that ship to India. To see items that ship to a different country, change your delivery address.\nDismiss\n \nChange Address\nAll\nPrime Video\nCoupons\nCustomer Service\nToday's Deals\nRegistry\nGift Cards\nSell\nDisability Customer Support\nProduct summary presents key product information \nKeyboard shortcut\u00a0 shift + alt + D\nClothing, Shoes & Jewelry\n\u203a\nWomen\n\u203a\nClothing\n\u203a\nTops, Tees & Blouses\n\u203a\nTunics\nVisit the Zeagoo Store\nZeagoo Women's Casual 3/4 Sleeve T-Shirts Round Neck Tunic Tops Work Blouse\nBasic tees, 3/4 length sleeve shirts, Business casual outfits, Boho tops, 2026 fall fashion clothes, Ladies blouses\n4.3 \n4.3 out of 5 stars\n   (7,605)\n 3 sustainability features \nColor: Leopard Print-an136\n1 option from INR\u00a0962.03\n1 option from INR\u00a01,636.12\n1 option from INR\u00a0962.03\n1 option from INR\u00a01,250.92\n1 option from INR\u00a01,636.12\n1 option from INR\u00a01,636.12\n1 option from INR\u00a01,636.12\n1 option from INR\u00a01,636.12\n1 option from INR\u00a01,250.92\n1 option from INR\u00a01,636.12\n1 option from INR\u00a01,636.12\n1 option from INR\u00a01,250.92\n1 option from INR\u00a01,250.92\n1 option from INR\u00a0962.03\n1 option from INR\u00a01,636.12\n1 option from INR\u00a01,636.12\n1 option from INR\u00a0962.03\n1 option from INR\u00a01,636.12\n1 option from INR\u00a01,636.12\n1 option from INR\u00a0962.03\n1 option from INR\u00a0962.03\n1 option from INR\u00a01,636.12\n1 option from INR\u00a01,636.12\n1 option from INR\u00a01,636.12\n1 option from INR\u00a0962.03\n1 option from INR\u00a0962.03\n1 option from INR\u00a0865.73\n1 option from INR\u00a01,636.12\n1\n2\n3\nSize: Small\nSmall\nMedium\nLarge\nX-Large\nXX-Large\n3X-Large\nThis item cannot be shipped to your selected delivery location. Please choose a different delivery location.\n\nSize Chart \nProduct details\nTop highlights\nFabric type\n95% Polyester, 5% Spandex\nCare instructions\nMachine Wash\nOrigin\nImported\nClosure type\nPull On\nAbout this item\nSoft comfy material: 3/4 length sleeve womens tops is made of 95%Polyester 5%Spandex, which is stretchy, breathable and comfortable\nBasic Blouses: 3/4 sleeve summer top, cute crew neck shirts, scoop neck tops, sexy fit tunics blouses, casual 3/4 sleeve shirt, casual business top, basic tunic tops, 2025 fashion spring clothes for women, going out top, dressy shirt, plain tshirts for women, print tshirts for women, business casual outfits\nHow to Style: 3/4 sleeve tunic tops can be worn by itself, and it's also a basic top for layering and easy to tuck in. Pair perfectly with skinny jeans, leggings and boots. You can also layer it under your jackets, blazers and flannels\nOccasions: Womens 3/4 sleeve tops are suitable for home, street wear, work, office, party, dates vacation, shopping, daily life and outgoing. Short sleeve tops perfect gift for mom,wife,daughter,girlfriend,or to your own\nGarment Care: Hand wash recommended,machine wash cold, gentle cyclegentler cycle, do not bleach. Due to manual measurement, please allow 0.5-1 inch differs\nSee more\nAbout this item\nStyle\nItem details\nSee all product specifications\nReport an issue with this product or seller\nSponsored \nThis item cannot be shipped to your selected delivery location. Please choose a different delivery location.\n\nDeliver to\u00a0India\nAdd to List\nCustomers who viewed this item also viewed\nZeagoo 3/4 Length Sleeve Women Tops Dressy Casual Blouses Work Clothes | Loose Fit Tunic Tops, Crew Neck Summer Shirts, Business Casual Work Blouses, Spring Fall Outfits for Daliy Wear\n4.3 out of 5 stars\n\u20097,037\nAmazon's Choice\n1 offer from \nINR96203\nINR962\n03\n3 sustainability features\nZeagoo 3/4 Length Sleeve Womens Tops Casual V Neck Shirts Soft Basic Tees\n4.2 out of 5 stars\n\u20096,023\n1 offer from \nINR1,92502\nINR1,925\n02\n3 sustainability features\nOFEEFAN 3/4 Length Sleeve Womens Tops Dressy Casual Blouses Crew Neck T Shirt Fashion Clothing Loose Fit\n4.4 out of 5 stars\n\u20091,579\n1 offer from \nINR96203\nINR962\n03\n1 sustainability feature\nZeagoo Womens Tops 3/4 Sleeve Blouses Dressy Casual Shirt Pleated Tunic | Crew Neck, Fashion Casual Dressy, Summer Blouse, Fall Outfits, Ladies Tunic Top\uff0cLoose Fit Boho Clothes\n4.4 out of 5 stars\n\u20091,876\n1 offer from \nINR1,44352\nINR1,443\n52\nZeagoo Womens 3/4 Sleeve V Neck T Shirts Dressy Casual Tops | Business Work Tops, Going Out Blouse, Early Fall Fashion Outfits, Soft Basic Tee\n4.4 out of 5 stars\n\u20091,029\nINR962.03\nINR962.03-\nINR1,443.52\nINR1,443.52\n3 sustainability features\nLOMON 3/4 Length Sleeve Womens Tops Crewneck Tunic Shirts\n4.3 out of 5 stars\n\u20092,100\nINR1,153.66\nINR1,153.66-\nINR1,442.56\nINR1,442.56\n \nSustainability features\n\nThis product has sustainability features recognized by trusted certifications.\n\nRecycled materials\n\nContains at least 50% recycled material.\n\nAs certified by\nGlobal Recycled Standard\nSafer chemicals\n\nMade with chemicals safer for human health and the environment.\n\nAs certified by\nGlobal Recycled Standard\nWorker well-being\n\nManufactured on farms or in facilities that protect the rights and/or health of workers.\n\nAs certified by\nGlobal Recycled Standard\nDiscover more products with sustainability features.\u00a0Learn more\nProduct description\nZeagoo 3/4 Sleeve Shirts for Women Soft Crewneck Basic Tee Tops Outfit Clothes\n\n3/4 length sleeve womens tops is made of 95%Polyester 5%Spandex. Soft and elastic, skin-friendly and breathable, light weight, thin, super skin-friendly, more comfortable to wear, suitable for spring and summer seasons.\n\nNew Flower Printed Collection\n\nWomens Tops 3/4 Length Sleeve Shirts For Summer\n\n3/4 length sleeve womens tops is made of 95%Polyester 5%Spandex, It is recommended to refer to your body measurements to choose the right size. Go up one size if you want a loose fit.\n\n \n \n \n \n1 tops for women\n \n2 women 3/4 sleeve top\n \n3 women shirts\n \n4 tee shirts for women\n \n5 3/4 sleeve tops\nZeagoo Women's Casual 3/4 Sleeve T-Shirts Boat Neck Cute Tunic Tops\n\nThis is a modal window.\n\nNo compatible source was found for this media.\n\nWomen's Casual 3/4 Sleeve T-Shirts Round Neck Cute Tunic Tops Basic Tees Blouses Pullover\n\nStyles All-Match & Suitable for Any Occasions! Season: Spring/Summer/Fall\n\nWomens Tops 3/4 Sleeve Shirt Round Neck Casual Blouses Floral Print shirt\n\n \n \n \n \nFlower Print Tee Tops Tropical Print Shirts Ladies Tee Shirts Flower Print Tee Tops Women Tunic Tops\n3/4 Sleeve Tops for Women Round Neck Dressy Basics Tees Casual Trendy T Shirts\n\nTips: Due to differences in mobile phone displays, there may be slight color differences. Some of the full-print patterns are random and may not be the same as the pictures. Light-colored clothes are recommended to wear light-colored underwear\n\nIs the 3/4 sleeve button down shirts see-through\uff1f\n\nWhat fabric is this shirt made of?\n\nIs the color of the product images consistent with the actual item?\n\nTop\nFrom the Brand\nReviews\nSimilar\nZeagoo Women's Casual 3/4 Sleeve T-Shirts Round Neck Tunic Tops Work Blouse\nProduct details\nPackage Dimensions \u200f : \u200e 11.81 x 9.45 x 0.55 inches; 5.29 ounces\nDepartment \u200f : \u200e womens\nDate First Available \u200f : \u200e February 10, 2025\nASIN \u200f : \u200e B0DHSF6684\nBest Sellers Rank: #1,584 in Clothing, Shoes & Jewelry (See Top 100 in Clothing, Shoes & Jewelry)\n#32 in Women's Tunics\nCustomer Reviews: 4.3 \n4.3 out of 5 stars\n   (7,605)\nFrom the brand\nWomen's 3/4 Sleeve T-Shirts\n\nZeagoo Women's Round Neck Cute Tunic Tops Basic Tees Blouses Loose Fit Business Work Tee Top\n\n \nladies top and blouses\n \nwomen short sleeve shirt\n \nsleeveless tops for women\n \ntank tops for women\n \nBusiness Casual Outfit\n \n3/4 Sleeve Button Down Shirt\n \nWomen Tunic Tops\n \n3/4 Sleeve Tunic Tops\n \nWomen Summer Blouse\n \nWomen V Neck Shirts\n \n$29.99 Shirts For Women\n \nsummer tops for women\n \nWomen Tunic Tops\n \nWomen Tee Shirts\n \nWomen Fashion Flower Tees\n \nLoose Fit Work Tee Top\n \nTunic Tops Basic Tees\nProduct Videos\n-0:00\nLinda Campbell\nEarns commissions\nMACHINE WASHABLE, very soft, beautiful top!\nVideos for this product\n\n0:59\n\nNow playing\n\nMACHINE WASHABLE, very soft, beautiful top!\nLinda Campbell\n\n0:35\n\nFeatures and sizing of this blouse\nJust Being Christie\n\n1:09\n\nSoft and flattering casual top #ad\nThe Trio Trove | @thetriotrove\n\n0:34\n\nWATCH BEFORE YOU BUY - Zeagoo Women's Casual 3/4 Sleeve T-Shirts Round Neck Cute Tunic Tops Basic Te\nCayla Lane\n\n1:05\n\nCute quarter sleeve top\nA Breezy Creation- Breanna\n\n1:00\n\nHonest Review - Women's Dress Shirt\nEmily Curtis\n\n0:33\n\nZeagoo Women&#39;s Cute Tunic Top\nMaria Yolanda Amazon Store\n\n0:36\n\nArtistic & Unique Tunic Top Review\nShannon Aquino\n\n1:34\n\nZeagoo Color Block Crew Neck 3/4 Sleeve Top #ad\nMichael & Fate\n\n0:36\n\nHOW does it FIT??\nTony & Claws\nProducts related to this item \nSponsored \nZeagoo 3/4 Length Sleeve Womens Tops Casual Dressy Summer Fall Shirts | Buisness\u2026\n 2,719\n\u00a0Climate Pledge Friendly\nWomen's Basic Half Sleeve Crew Neck T-Shirt Casual Slim Cotton Top | Women's Elbow ...\n 2,131\nBCBG Women's Long Sleeve Pleated Stripe Blouse\n 19\n-39%\nINR\u00a03,114.00\nINR3,114\n.\n00\n\nTypical: INR\u00a05,129.18\nTypical:\nnull\nINR5,129.18\nINR\u00a01,265.34 delivery Tue, Oct 27\nGKBK Womens Tank Tops High Neck Loose Fit Casual Summer Sleeveless Shirts 2026\u2026\n 350\n\u00a0Climate Pledge Friendly\nWomen's White Long Sleeve Top Slim Fit Crewneck T Shirt Lined Crop Basic Fitted Shi...\n 3\nSimilar brands on Amazon\nPage 1 of 3\nSponsored\nPrevious page\nIN'VOLAND Plus Size Dressy Tops for Women Double Layers Mesh Blouses Shirt | lightweight, breathable, soft, stretchy\n4.4\n4.4 out of 5 stars\n106\nsiliteelon Blouses for Women Dressy Casual 3/4 Sleeve Ruffle Bell Top Ladies Business Work Shirt Fashion Clothing Trendy\n4.3\n4.3 out of 5 stars\n198\nNext page\nCustomer reviews\n4.3 out of 5 stars\n4.3 out of 5\n7,605 global ratings\n5 star\n66%\n4 star\n15%\n3 star\n10%\n2 star\n4%\n1 star\n5%\nHow customer reviews and ratings work\nReview this product\nShare your thoughts with other customers\nWrite a customer review\nCustomers say\nCustomers find the t-shirt fits beautifully and is comfortable, particularly noting its suitability for tropical climates. The shirt receives positive feedback for its colors, soft fabric, and value for money. Regarding sizing and length, opinions are mixed - while some find it runs big, others say it runs small, and while some appreciate the coverage of the sleeves, others find them too long. The fabric quality also receives mixed reviews, with some praising it while others find it poor.\nAI Generated from the text of customer reviews\nGenerated from the text of customer reviews\nSelect to learn more\nFit(970)\nComfort(453)\nColor(425)\nSoftness(415)\nValue for money(332)\nSizing(541)\nFabric(370)\nLength(219)\nReviews with images\nSee all photos\nTop reviews from the United States\nCathie\n5 out of 5 stars\nComfy shirt\nReviewed in the United States on September 23, 2026\nColor: Polka Dots-jh592Size: Large\nVerified Purchase\n\nLove the shirt. Fits perfectly. True to size. Very soft and comfortable. Great price.\n\nOne person found this helpful\nHelpful\nReport\nJean Wright\n5 out of 5 stars\nBeautiful and comfortable. Washes well!\nReviewed in the United States on September 17, 2026\nColor: Xh363Size: Medium\nVerified Purchase\n\nI gave this as a gift for a friend of mine. She absolutely loves it, fits perfectly, and it\u2019s very comfortable. She has lost most of her eyesight so she really loves the colors of this shirt and sit makes her feel good about herself.\n\nOne person found this helpful\nHelpful\nReport\ncentral coaster\n4 out of 5 stars\nComfortable top for those in-between seasons\nReviewed in the United States on September 22, 2026\nColor: Stripes Blue-tz273Size: Medium\nVerified Purchase\n\nI like the color. I got the blue/white stripe, and it has a subtle color shading with the blue that I think makes it interesting and fun. The fit seems true to size, but it is longer than I expected. The material is soft and comfortable.\n\n3 people found this helpful\nHelpful\nReport\nRoni\n5 out of 5 stars\nREALLY NICE TOP\nReviewed in the United States on September 6, 2026\nColor: Xh363Size: Medium\nVerified Purchase\n\nWhat a nice top for this price. It\u2019s extremely soft, almost soft like flannel without the warmth. It would be a great summer top. Could also wear it in late spring or early fall. They advertise it as a tunic but on me it comes to the hip and I\u2019m 5\u2019 7\u201d. It\u2019s true to size and not baggy. It comes in a little at the waist to give you a shape. I liked it so much I got another one in pink.\n\n7 people found this helpful\nHelpful\nReport\nTarHeelLady\n5 out of 5 stars\nTop Quality at very reasonable price\nReviewed in the United States on September 3, 2026\nColor: Rainbow-jb218Size: Small\nVerified Purchase\n\nLove these Zeagoo tops! The colors are vibrant and so lovely. The fit is true to size. The tops launder well. Don\u2019t be fooled by the low, very reasonable price \u2014 these tops are high quality! Zeagoo has become my favor brand for tops.\n\n4 people found this helpful\nHelpful\nReport\nwaterway\n5 out of 5 stars\nSo soft\nReviewed in the United States on September 24, 2026\nColor: Navy Stripes-tz290Size: X-Large\nVerified Purchase\n\nSuper soft. Long tunic length and bigger than I thought it would be. I sized up and wished I would have stayed with the recommended size. Great color and realy so soft. Tucked in for the picture\n\n2 people found this helpful\nHelpful\nReport\nm.sepulveda\n5 out of 5 stars\nWould definitely purchase again\nReviewed in the United States on September 25, 2026\nColor: Black Red-mz838Size: Medium\nVerified Purchase\n\nFits well, soft material, seems well made.\n\nHelpful\nReport\nJana LS\n4 out of 5 stars\nSo cute and soft, but really long and has to be air dried!\nReviewed in the United States on September 28, 2026\nColor: Grey StripeSize: Medium\nVerified Purchase\n\nI love how soft this shirt is!! The fabric makes it look more elevated than a cotton shirt. It is really long though, so has to be tucked in or use a clip to tighten. I also didn't realize it couldn't be dried in the dryer, so minor inconvenience. I bought three of these and and they are so cute, fall wardrobe staple and great price!\n\nOne person found this helpful\nHelpful\nReport\nSee more reviews\nTop reviews from other countries\nTranslate all reviews to English\nCheryl Bailey\n3 out of 5 stars\nPrice and fabric\nReviewed in Canada on March 29, 2025\nVerified Purchase\n\nWas ok for the price. More a pool side or beach wear fabric which is hard to tell from a picture.\n\nReport\nAmazon Customer\n5 out of 5 stars\nWow!\nReviewed in Canada on January 17, 2025\nVerified Purchase\n\nJe suis agr\u00e9ablement surprise par la beaut\u00e9 de ce chandail ! Le tissu n'est pas tr\u00e8s \u00e9pais mais n'est pas transparent et c'est parfait pour moi. J'en ai command\u00e9 en 2 autres couleurs.\n\nReport\nTranslate review to English\nKathryn M Wilking\n5 out of 5 stars\nGenerous fit. Gorgeous material!\nReviewed in Canada on September 9, 2026\nColor: Xh363Size: Large\nVerified Purchase\n\nBeautiful comfort and colour. This is a beautiful garment, I love the colours, Yet, the sizing is a bit large. I'm usually in-between sizes medium and large. It depend on how tight or loose i wish. I ordered a large and it is big on me; yet I'm a tall with a slim build, so, I'm going to stitch the waist in a bit.\n\nReport\nDJS\n5 out of 5 stars\nStylish shirt. Easy care.\nReviewed in Canada on May 31, 2025\nVerified Purchase\n\nAs described, fits true to the size chart offered.\n\nSoft, easy care and easy to dress up for travel dinners.\n\nReport\nCA\n4 out of 5 stars\nLe bleu est plus p\u00e2le que sur la photo et le blanc est plut\u00f4t cr\u00e8me\nReviewed in Canada on January 12, 2025\nVerified Purchase\n\nTr\u00e8s doux et tr\u00e8s confortable.\n\nCependant le bleu est plus p\u00e2le que sur la photo et le blanc est plut\u00f4t cr\u00e8me.\n\nReport\nTranslate review to English\nSee more reviews\nBack to top\nGet to Know Us\nCareers\nBlog\nAbout Amazon\nInvestor Relations\nAmazon Devices\nAmazon Science\n\t\t\nMake Money with Us\nSell products on Amazon\nSell on Amazon Business\nSell apps on Amazon\nBecome an Affiliate\nAdvertise Your Products\nSelf-Publish with Us\nHost an Amazon Hub\n\u203aSee More Make Money with Us\n\t\t\nAmazon Payment Products\nAmazon Business Card\nShop with Points\nReload Your Balance\nAmazon Currency Converter\n\t\t\nLet Us Help You\nYour Account\nYour Orders\nShipping Rates & Policies\nReturns & Replacements\nManage Your Content and Devices\nHelp\n \nEnglish  \u20b9INR - Indian Rupee United States\nAmazon Music\nStream millions\nof songs\nAmazon Ads\nReach customers\nwherever they\nspend their time\n6pm\nScore deals\non fashion brands\nAbeBooks\nBooks, art\n& collectibles\nACX\nAudiobook Publishing\nMade Easy\nSell on Amazon\nStart a Selling Account\nVeeqo\nShipping Software\nInventory Management\nAmazon Business\nEverything For\nYour Business\nAmazonGlobal\nShip Orders\nInternationally\nAmazon Web Services\nScalable Cloud\nComputing Services\nAudible\nListen to Books & Original\nAudio Performances\nBox Office Mojo\nFind Movie\nBox Office Data\nGoodreads\nBook reviews\n& recommendations\nIMDb\nMovies, TV\n& Celebrities\nIMDbPro\nGet Info Entertainment\nProfessionals Need\nKindle Direct Publishing\nIndie Digital & Print Publishing\nMade Easy\nPrime Video Direct\nVideo Distribution\nMade Easy\nShopbop\nDesigner\nFashion Brands\nWoot!\nDeals and\nShenanigans\nZappos\nShoes &\nClothing\nRing\nSmart Home\nSecurity Systems\n\u00a0\neero WiFi\nStream 4K Video\nin Every Room\nBlink\nSmart Security\nfor Every Home\nNeighbors App\nReal-Time Crime\n& Safety Alerts\nPillPack\nPharmacy Simplified\n\u00a0\n\u00a0\nConditions of Use\nPrivacy Notice\nConsumer Health Data Privacy Disclosure\nYour Ads Privacy Choices\n\u00a9 1996-2026, Amazon.com, Inc. or its affiliates\n\u00ad\n\u00ad\nTest: amzn-nv-flyout-healthy-choice\nTest: nav-rufus-disc-txt\nTest: a-truncate-cut\nTest: sp-cc-wrapper\nTest: .mo-wp\nTest: .a-image-container\nTest: sp-cc\nTest: .amzn-box-inner\nTest: .js-order-card\nTest: pldn-deep-link\nTest: add-to-cart-btn\nTest: amzn-nav-app-banner-container\nTest: .sparkle-container",
+  "product_validation": null,
+  "total_duration_s": 41.672,
+  "recorded_steps": 4,
+  "recorded_action_types": [
+    "navigate",
+    "scroll",
+    "click",
+    "click"
+  ],
+  "recorded_names": [
+    "Open \u2013 Home page",
+    "down 445px on Home page",
+    "\"Women\" link",
+    "\"Sponsored Ad - Ekouaer Women Long Sleeve\" link"
+  ],
+  "total_steps": 4,
+  "live_log": [
+    {
+      "t": 1791292847.8084064,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791292849.046697,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791292852.3927054,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 4s)",
+      "level": "note"
+    },
+    {
+      "t": 1791292858.0650537,
+      "message": "\u21b3 Clicking 'Women'",
+      "level": "note"
+    },
+    {
+      "t": 1791292861.8870914,
+      "message": "Page address had a new id (expected on this site)."
+    },
+    {
+      "t": 1791292863.1289923,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791292865.779489,
+      "message": "\u21b3 Hovering over 'link to '/sspa/click'' to reveal the menu",
+      "level": "note"
+    },
+    {
+      "t": 1791292866.3961825,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791292869.5274405,
+      "message": "\u21b3 Clicking 'Sponsored Ad - Ekouaer Women Long Sleeve Henley Tops Rib ...'",
+      "level": "note"
+    },
+    {
+      "t": 1791292874.0474374,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 3s)",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

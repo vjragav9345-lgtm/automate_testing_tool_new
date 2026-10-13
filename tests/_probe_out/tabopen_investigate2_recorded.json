@@ -1,0 +1,138 @@
+{
+  "name": "tabopen_investigate2",
+  "session_id": "b84196cdaf6a40dcb514b7376874b5e0",
+  "start_url": "https://the-internet.herokuapp.com/windows",
+  "recorded_at": "2026-09-29T16:00:16.234763",
+  "stop_reason": "terminal_enter",
+  "total_actions": 4,
+  "page_count": 2,
+  "viewport_width": 1280,
+  "viewport_height": 720,
+  "device_scale_factor": 1,
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/129.0.6668.29 Safari/537.36",
+  "locale": "en-GB",
+  "timezone_id": "Asia/Calcutta",
+  "color_scheme": "light",
+  "actions": [
+    {
+      "action_type": "navigate",
+      "value": null,
+      "locator_profile": null,
+      "bounding_box": null,
+      "page_url": "https://the-internet.herokuapp.com/windows",
+      "timestamp": "2026-09-29T10:30:14.969Z",
+      "page_id": 0,
+      "delay_before_ms": 0
+    },
+    {
+      "action_type": "click",
+      "value": null,
+      "locator_profile": {
+        "id": null,
+        "name": null,
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "Click Here",
+        "placeholder": null,
+        "title": null,
+        "href": "/windows/new",
+        "product_id": null,
+        "css_path": "div#content > div > a",
+        "xpath": "//a[@href='/windows/new']",
+        "text": "Click Here",
+        "element_text": "Click Here",
+        "tag": "a",
+        "attributes": {
+          "href": "/windows/new"
+        },
+        "cross_boundary": false,
+        "icon_class_hint": null,
+        "match_count": {
+          "text+tag": 1,
+          "css_path": 1,
+          "xpath": 1
+        }
+      },
+      "act_target": {
+        "id": null,
+        "name": null,
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "Click Here",
+        "placeholder": null,
+        "title": null,
+        "href": "/windows/new",
+        "product_id": null,
+        "css_path": "div#content > div > a",
+        "xpath": "//a[@href='/windows/new']",
+        "text": "Click Here",
+        "element_text": "Click Here",
+        "tag": "a",
+        "attributes": {
+          "href": "/windows/new"
+        },
+        "cross_boundary": false,
+        "icon_class_hint": null,
+        "match_count": {
+          "text+tag": 1,
+          "css_path": 1,
+          "xpath": 1
+        }
+      },
+      "state_target": null,
+      "bounding_box": {
+        "x": 155,
+        "y": 87.6875,
+        "width": 73.796875,
+        "height": 17
+      },
+      "scroll_x": 0,
+      "scroll_y": 0,
+      "click_strategy": "standard",
+      "page_url": "https://the-internet.herokuapp.com/windows",
+      "timestamp": "2026-09-29T10:30:15.077Z",
+      "dom_context": {
+        "act_target_html_chain": [
+          "<a href=\"/windows/new\" ,=\"\" target=\"_blank\">Click Here</a>",
+          "<div class=\"example\">\n  <h3>Opening a new window</h3>\n  <a href=\"/windows/new\" ,=\"\" target=\"_blank\">Click Here</a>\n</div>",
+          "<div id=\"content\" class=\"large-12 columns\">\n        <div class=\"example\">\n  <h3>Opening a new window</h3>\n  <a href=\"/windows/new\" ,=\"\" target=\"_blank\">Click Here</a>\n</div>\n\n      </div>",
+          "<div class=\"row\">\n      <a href=\"https://github.com/tourdedave/the-internet\"><img style=\"position: absolute; top: 0; right: 0; border: 0;\" src=\"/img/forkme_right_green_007200.png\" alt=\"Fork me on GitHub\"></a>\n      <div id=\"content\" class=\"large-12 columns\">\n        <div class=\"example\">\n  <h3>Opening a new window</h3>\n  <a href=\"/windows/new\" ,=\"\" target=\"_blank\">Click Here</a>\n</div>\n\n      </div>\n    </div>",
+          "<body>\n    <div class=\"row\">\n      <div id=\"flash-messages\" class=\"large-12 columns\">\n      \n        \n      \n        \n      \n        \n      \n      </div>\n    </div>\n    <div class=\"row\">\n      <a href=\"https://github.com/tourdedave/the-internet\"><img style=\"position: absolute; top: 0; right: 0; border: 0;\" src=\"/img/forkme_right_green_007200.png\" alt=\"Fork me on GitHub\"></a>\n      <div id=\"content\" class=\"large-12 columns\">\n        <div class=\"example\">\n  <h3>Opening a new window</h3>\n  <a href=\"/windows/new\" ,=\"\" target=\"_blank\">Click Here</a>\n</div>\n\n      </div>\n    </div>\n    <div id=\"page-footer\" class=\"row\">\n      <div class=\"large-4 large-centered columns\">\n        <hr>\n        <div style=\"text-align: center;\">Powered by <a target=\"_blank\" href=\"http://elementalselenium.com/\">Elemental Selenium</a></div>\n      </div>\n    </div>\n  \n\n</body>",
+          "<html class=\"no-js\" lang=\"en\"><!--<![endif]--><head>\n    <script src=\"/js/vendor/298279967.js\"></script>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width\">\n    <title>The Internet</title>\n    <link href=\"/css/app.css\" rel=\"stylesheet\">\n    <link href=\"/css/font-awesome.css\" rel=\"stylesheet\">\n    <script src=\"/js/vendor/jquery-1.11.3.min.js\"></script>\n    <script src=\"/js/vendor/jquery-ui-1.11.4/jquery-ui.js\"></script>\n    <script src=\"/js/foundation/foundation.js\"></script><meta class=\"foundation-mq-small\"><meta class=\"foundation-mq-medium\"><meta class=\"foundation-mq-large\"><style></style>\n    <script src=\"/js/foundation/foundation.alerts.js\"></script>\n    <script>\n      $(document).foundation();\n    </script>\n  </head>\n  <body>\n    <div class=\"row\">\n      <div id=\"flash-messages\" class=\"large-12 columns\">\n      \n        \n      \n        \n      \n        \n      \n      </div>\n    </div>\n    <div class=\"row\">\n      <a href=\"https://github.com/tourdedave/the-internet\"><img style=\"position: absolute; top: 0; right: 0; border: 0;\" src=\"/img/forkme_right_green_007200.png\" alt=\"Fork me on GitHub\"></a>\n      <div id=\"content\" class=\"large-12 columns\">\n        <div class=\"example\">\n  <h3>Opening a new window</h3>\n  <a href=\"/windows/new\" ,=\"\" target=\"_blank\">Click Here</a>\n</div>\n\n      </div>\n    </div>\n    <div id=\"page-...[truncated]"
+        ],
+        "act_target_style": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": "1"
+        },
+        "state_target_html_chain": null,
+        "state_target_style": null
+      },
+      "page_id": 0,
+      "delay_before_ms": 108
+    },
+    {
+      "action_type": "tab_open",
+      "value": null,
+      "locator_profile": null,
+      "bounding_box": null,
+      "page_url": "https://the-internet.herokuapp.com/windows/new",
+      "timestamp": "2026-09-29T10:30:15.402Z",
+      "new_tab": true,
+      "page_id": 1,
+      "from_page_id": 0,
+      "delay_before_ms": 325
+    },
+    {
+      "action_type": "tab_close",
+      "value": null,
+      "locator_profile": null,
+      "bounding_box": null,
+      "page_id": 1,
+      "page_url": "https://the-internet.herokuapp.com/windows/new",
+      "remaining_page_id": 0,
+      "timestamp": "2026-09-29T10:30:15.824Z",
+      "delay_before_ms": 422
+    }
+  ]
+}

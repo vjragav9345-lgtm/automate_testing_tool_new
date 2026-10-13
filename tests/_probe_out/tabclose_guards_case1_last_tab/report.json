@@ -1,0 +1,12 @@
+{
+  "status": "FAIL",
+  "message": "Couldn't reach https://the-internet.herokuapp.com/windows - check the URL is correct and the site is reachable.",
+  "qa_url": "https://the-internet.herokuapp.com/windows",
+  "steps": [],
+  "final_url": null,
+  "final_screenshot": null,
+  "final_text": null,
+  "product_validation": null,
+  "total_duration_s": null,
+  "diagnostic": "could not open QA URL: Page.goto: Timeout 30000ms exceeded.\nCall log:\nnavigating to \"https://the-internet.herokuapp.com/windows\", waiting until \"domcontentloaded\"\n"
+}

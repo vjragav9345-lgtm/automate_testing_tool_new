@@ -1,0 +1,142 @@
+{
+  "name": "t4",
+  "session_id": "4aaf32c670bb45b587b6b7a2fedd77f7",
+  "start_url": "http://127.0.0.1:8990/page1.html",
+  "recorded_at": "2026-09-06T20:31:04.894436",
+  "stop_reason": "test",
+  "total_actions": 6,
+  "page_count": 2,
+  "actions": [
+    {
+      "action_type": "click",
+      "value": null,
+      "locator_profile": {
+        "id": "#product-link",
+        "name": null,
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "",
+        "placeholder": null,
+        "title": null,
+        "href": "page2.html",
+        "css_path": "a#product-link",
+        "xpath": "//*[@id='product-link']",
+        "text": "",
+        "element_text": "",
+        "tag": "a",
+        "attributes": {
+          "href": "page2.html"
+        }
+      },
+      "bounding_box": {
+        "x": 8,
+        "y": 8,
+        "width": 1264,
+        "height": 18
+      },
+      "page_url": "http://127.0.0.1:8990/page1.html",
+      "timestamp": "2026-09-06T15:01:02.083Z",
+      "page_id": 0,
+      "delay_before_ms": 0
+    },
+    {
+      "action_type": "tab_open",
+      "value": null,
+      "locator_profile": null,
+      "bounding_box": null,
+      "page_url": "http://127.0.0.1:8990/page2.html",
+      "timestamp": "2026-09-06T15:01:02.239Z",
+      "new_tab": true,
+      "page_id": 1,
+      "from_page_id": 0,
+      "delay_before_ms": 156
+    },
+    {
+      "action_type": "click",
+      "value": null,
+      "locator_profile": {
+        "id": "#add-cart-btn",
+        "name": null,
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "Add to Cart",
+        "placeholder": null,
+        "title": null,
+        "href": null,
+        "css_path": "button#add-cart-btn",
+        "xpath": "//*[@id='add-cart-btn']",
+        "text": "Add to Cart",
+        "element_text": "Add to Cart",
+        "tag": "button",
+        "attributes": {}
+      },
+      "bounding_box": {
+        "x": 8,
+        "y": 79.875,
+        "width": 83.4375,
+        "height": 21
+      },
+      "page_url": "http://127.0.0.1:8990/page2.html",
+      "timestamp": "2026-09-06T15:01:02.897Z",
+      "page_id": 1,
+      "delay_before_ms": 658
+    },
+    {
+      "action_type": "tab_close",
+      "value": null,
+      "locator_profile": null,
+      "bounding_box": null,
+      "page_id": 1,
+      "page_url": "http://127.0.0.1:8990/page2.html",
+      "remaining_page_id": 0,
+      "timestamp": "2026-09-06T15:01:03.422Z",
+      "delay_before_ms": 525
+    },
+    {
+      "action_type": "click",
+      "value": null,
+      "locator_profile": {
+        "id": "#result",
+        "name": null,
+        "role": null,
+        "aria_label": null,
+        "accessible_name": "bottom marker",
+        "placeholder": null,
+        "title": null,
+        "href": null,
+        "css_path": "div#result",
+        "xpath": "//*[@id='result']",
+        "text": "bottom marker",
+        "element_text": "bottom marker",
+        "tag": "div",
+        "attributes": {}
+      },
+      "bounding_box": {
+        "x": 8,
+        "y": 648,
+        "width": 1264,
+        "height": 18
+      },
+      "page_url": "http://127.0.0.1:8990/page1.html",
+      "timestamp": "2026-09-06T15:01:03.960Z",
+      "page_id": 0,
+      "delay_before_ms": 538
+    },
+    {
+      "action_type": "scroll",
+      "value": null,
+      "delta_x": 0,
+      "delta_y": 100,
+      "scroll_y_before": 0,
+      "scroll_y_after": 0,
+      "viewport_height": 720,
+      "document_height": 720,
+      "locator_profile": null,
+      "bounding_box": null,
+      "page_url": "http://127.0.0.1:8990/page1.html",
+      "timestamp": "2026-09-06T15:01:04.742Z",
+      "page_id": 0,
+      "delay_before_ms": 782
+    }
+  ]
+}

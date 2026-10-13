@@ -1,0 +1,31 @@
+.venv
+venv
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# macOS files
+.DS_Store
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Local backups
+*.bak
+*.bak*
+_backup_before_crossplatform/
+backups/
+
+# Generated output
+out_shots/
+screenshots/
+storage/
+.github_push_stage/

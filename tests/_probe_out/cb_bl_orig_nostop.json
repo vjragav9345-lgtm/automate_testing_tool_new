@@ -1,0 +1,2547 @@
+{
+ "status": "FAIL",
+ "steps": [
+  {
+   "index": 1,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 2,
+   "action_type": "fill",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 3,
+   "action_type": "press",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 4,
+   "action_type": "validate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 5,
+   "action_type": "click",
+   "success": false,
+   "error": "could not uniquely resolve target: 8 candidate(s) considered, none hit-testable/text-consistent (xpath: not hit-testable at its own center - a different element sits there; xpath: not hit-testable at its own center - a different element sits there; xpath: not hit-testable at its own center - a different element sits there; xpath: not hit-testable at its own center - a different element sits there; xpath: not hit-testable at its own center - a different element sits there)",
+   "not_run": false
+  },
+  {
+   "index": 6,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 7,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 8,
+   "action_type": "check",
+   "success": false,
+   "error": "could not uniquely resolve target: 4 candidate(s) considered, none hit-testable/text-consistent (css_path: target is not visible; xpath: target is not visible; css_path: target is not visible; xpath: target is not visible)",
+   "not_run": false
+  },
+  {
+   "index": 9,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 10,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 11,
+   "action_type": "check",
+   "success": false,
+   "error": "could not uniquely resolve target: 2 candidate(s) considered, none hit-testable/text-consistent (xpath: target is not visible; xpath: target is not visible)",
+   "not_run": false
+  },
+  {
+   "index": 12,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 13,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 14,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 15,
+   "action_type": "click",
+   "success": false,
+   "error": "[content-mismatch] a different element is actually at the recorded click position - recorded target was 'HIGHLANDER\\nSizes: 42\\nRs. 431Rs. 1799(76% OFF)', but 'shirts/highlander/highlander-men-slim-fit-casual-shirt/40159313/buy' is really there",
+   "not_run": false
+  },
+  {
+   "index": 16,
+   "action_type": "click",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 17,
+   "action_type": "tab_open",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 18,
+   "action_type": "click",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 19,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 20,
+   "action_type": "click",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 21,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 22,
+   "action_type": "click",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 23,
+   "action_type": "click",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 24,
+   "action_type": "click",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 25,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 26,
+   "action_type": "click",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 27,
+   "action_type": "check",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 28,
+   "action_type": "click",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 29,
+   "action_type": "click",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 30,
+   "action_type": "check",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 31,
+   "action_type": "click",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 32,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 33,
+   "action_type": "check",
+   "success": false,
+   "error": "toggle did not reach its recorded final state - expected checked=True - no recorded effect observed after 3.0s - state_target reads checked=False (expected True), no matching URL change, no DOM change detected",
+   "not_run": false
+  },
+  {
+   "index": 34,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 35,
+   "action_type": "click",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 36,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 37,
+   "action_type": "tab_close",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 38,
+   "action_type": "tab_close",
+   "success": true,
+   "error": null,
+   "not_run": false
+  }
+ ],
+ "drag": [],
+ "step_scroll": {
+  "1": {
+   "pos": [
+    0,
+    0,
+    6179,
+    720
+   ],
+   "scroll_events": []
+  },
+  "2": {
+   "pos": [
+    0,
+    0,
+    6179,
+    720
+   ],
+   "scroll_events": []
+  },
+  "3": {
+   "pos": [
+    0,
+    0,
+    6294,
+    720
+   ],
+   "scroll_events": []
+  },
+  "4": {
+   "pos": [
+    0,
+    3600,
+    6294,
+    720
+   ],
+   "scroll_events": []
+  },
+  "5": {
+   "pos": [
+    0,
+    3600,
+    6294,
+    720
+   ],
+   "scroll_events": []
+  },
+  "6": {
+   "pos": [
+    0,
+    3600,
+    6294,
+    720
+   ],
+   "scroll_events": []
+  },
+  "7": {
+   "pos": [
+    0,
+    638.4000244140625,
+    6294,
+    720
+   ],
+   "scroll_events": []
+  },
+  "8": {
+   "pos": [
+    0,
+    638.4000244140625,
+    6294,
+    720
+   ],
+   "scroll_events": []
+  },
+  "9": {
+   "pos": [
+    0,
+    0,
+    6341,
+    720
+   ],
+   "scroll_events": []
+  },
+  "10": {
+   "pos": [
+    0,
+    0,
+    6341,
+    720
+   ],
+   "scroll_events": []
+  },
+  "11": {
+   "pos": [
+    0,
+    154.39999389648438,
+    6341,
+    720
+   ],
+   "scroll_events": []
+  },
+  "12": {
+   "pos": [
+    0,
+    0,
+    6340,
+    720
+   ],
+   "scroll_events": []
+  },
+  "13": {
+   "pos": [
+    0,
+    863.2000122070312,
+    6340,
+    720
+   ],
+   "scroll_events": []
+  },
+  "14": {
+   "pos": [
+    0,
+    862.4000244140625,
+    6340,
+    720
+   ],
+   "scroll_events": []
+  },
+  "15": {
+   "pos": [
+    0,
+    697.5999755859375,
+    6340,
+    720
+   ],
+   "scroll_events": []
+  },
+  "16": {
+   "pos": [
+    0,
+    0,
+    10902,
+    720
+   ],
+   "scroll_events": []
+  },
+  "17": {
+   "pos": [
+    0,
+    0,
+    10902,
+    720
+   ],
+   "scroll_events": []
+  },
+  "18": {
+   "pos": [
+    0,
+    0,
+    10905,
+    720
+   ],
+   "scroll_events": []
+  },
+  "19": {
+   "pos": [
+    0,
+    300,
+    10905,
+    720
+   ],
+   "scroll_events": []
+  },
+  "20": {
+   "pos": [
+    0,
+    300,
+    10982,
+    720
+   ],
+   "scroll_events": []
+  },
+  "21": {
+   "pos": [
+    0,
+    615.2000122070312,
+    10982,
+    720
+   ],
+   "scroll_events": []
+  },
+  "22": {
+   "pos": [
+    0,
+    615.2000122070312,
+    10979,
+    720
+   ],
+   "scroll_events": []
+  },
+  "23": {
+   "pos": [
+    0,
+    0,
+    8522,
+    720
+   ],
+   "scroll_events": []
+  },
+  "24": {
+   "pos": [
+    0,
+    0,
+    8522,
+    720
+   ],
+   "scroll_events": []
+  },
+  "25": {
+   "pos": [
+    0,
+    0,
+    8522,
+    720
+   ],
+   "scroll_events": []
+  },
+  "26": {
+   "pos": [
+    0,
+    0,
+    8522,
+    720
+   ],
+   "scroll_events": []
+  },
+  "27": {
+   "pos": [
+    0,
+    0,
+    8522,
+    720
+   ],
+   "scroll_events": []
+  },
+  "28": {
+   "pos": [
+    0,
+    0,
+    8522,
+    720
+   ],
+   "scroll_events": []
+  },
+  "29": {
+   "pos": [
+    0,
+    0,
+    8522,
+    720
+   ],
+   "scroll_events": []
+  },
+  "30": {
+   "pos": [
+    0,
+    0,
+    8522,
+    720
+   ],
+   "scroll_events": []
+  },
+  "31": {
+   "pos": [
+    0,
+    0,
+    8522,
+    720
+   ],
+   "scroll_events": []
+  },
+  "32": {
+   "pos": [
+    0,
+    0,
+    8522,
+    720
+   ],
+   "scroll_events": []
+  },
+  "33": {
+   "pos": [
+    0,
+    0,
+    8550,
+    720
+   ],
+   "scroll_events": []
+  },
+  "34": {
+   "pos": [
+    0,
+    164,
+    8550,
+    720
+   ],
+   "scroll_events": []
+  },
+  "35": {
+   "pos": [
+    0,
+    0.800000011920929,
+    780,
+    720
+   ],
+   "scroll_events": []
+  },
+  "36": {
+   "pos": [
+    0,
+    0.800000011920929,
+    780,
+    720
+   ],
+   "scroll_events": []
+  },
+  "37": {
+   "pos": null,
+   "scroll_events": []
+  },
+  "38": {
+   "pos": null,
+   "scroll_events": []
+  }
+ },
+ "step_pages": {
+  "1": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/",
+    "pos": [
+     0,
+     0,
+     6179,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "2": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/",
+    "pos": [
+     0,
+     0,
+     6179,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "3": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?rawQuery=shirt",
+    "pos": [
+     0,
+     0,
+     6294,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "4": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?rawQuery=shirt",
+    "pos": [
+     0,
+     3600,
+     6294,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "5": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?rawQuery=shirt",
+    "pos": [
+     0,
+     3600,
+     6294,
+     720
+    ],
+    "events": 15
+   }
+  ],
+  "6": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?rawQuery=shirt",
+    "pos": [
+     0,
+     3600,
+     6294,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "7": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?rawQuery=shirt",
+    "pos": [
+     0,
+     638.4000244140625,
+     6294,
+     720
+    ],
+    "events": 6
+   }
+  ],
+  "8": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?rawQuery=shirt",
+    "pos": [
+     0,
+     638.4000244140625,
+     6294,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "9": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Color%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     0,
+     6341,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "10": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Color%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     0,
+     6341,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "11": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Color%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     154.39999389648438,
+     6341,
+     720
+    ],
+    "events": 4
+   }
+  ],
+  "12": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     0,
+     6340,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "13": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     863.2000122070312,
+     6340,
+     720
+    ],
+    "events": 7
+   }
+  ],
+  "14": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     862.4000244140625,
+     6340,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "15": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 78
+   }
+  ],
+  "16": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/shirts/highlander/highlander-men-olive-green--black-slim-fit-checked-casual-shirt/11780934/buy",
+    "pos": [
+     0,
+     0,
+     10902,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "17": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/shirts/highlander/highlander-men-olive-green--black-slim-fit-checked-casual-shirt/11780934/buy",
+    "pos": [
+     0,
+     0,
+     10902,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "18": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/shirts/highlander/highlander-men-black-slim-fit-tartan-checks-cotton-checked-casual-shirt/15835946/buy",
+    "pos": [
+     0,
+     0,
+     10905,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "19": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/shirts/highlander/highlander-men-black-slim-fit-tartan-checks-cotton-checked-casual-shirt/15835946/buy",
+    "pos": [
+     0,
+     300,
+     10905,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "20": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/shirts/highlander/highlander-men-black-slim-fit-tartan-checks-cotton-checked-casual-shirt/15835946/buy",
+    "pos": [
+     0,
+     300,
+     10982,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "21": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/shirts/highlander/highlander-men-black-slim-fit-tartan-checks-cotton-checked-casual-shirt/15835946/buy",
+    "pos": [
+     0,
+     615.2000122070312,
+     10982,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "22": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/shirts/highlander/highlander-men-black-slim-fit-tartan-checks-cotton-checked-casual-shirt/15835946/buy",
+    "pos": [
+     0,
+     615.2000122070312,
+     10979,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "23": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/checkout/cart",
+    "pos": [
+     0,
+     0,
+     8522,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "24": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/checkout/cart#modal",
+    "pos": [
+     0,
+     0,
+     8522,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "25": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/checkout/cart#modal",
+    "pos": [
+     0,
+     0,
+     8522,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "26": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/checkout/cart#modal",
+    "pos": [
+     0,
+     0,
+     8522,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "27": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/checkout/cart#modal",
+    "pos": [
+     0,
+     0,
+     8522,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "28": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/checkout/cart",
+    "pos": [
+     0,
+     0,
+     8522,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "29": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/checkout/cart#modal",
+    "pos": [
+     0,
+     0,
+     8522,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "30": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/checkout/cart#modal",
+    "pos": [
+     0,
+     0,
+     8522,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "31": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/checkout/cart",
+    "pos": [
+     0,
+     0,
+     8522,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "32": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/checkout/cart",
+    "pos": [
+     0,
+     0,
+     8522,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "33": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/checkout/cart",
+    "pos": [
+     0,
+     0,
+     8550,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "34": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/checkout/cart",
+    "pos": [
+     0,
+     164,
+     8550,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "35": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/login?referer=/checkout/cart",
+    "pos": [
+     0,
+     0.800000011920929,
+     780,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "36": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   },
+   {
+    "i": 1,
+    "url": "https://www.myntra.com/login?referer=/checkout/cart",
+    "pos": [
+     0,
+     0.800000011920929,
+     780,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "37": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shirt?f=Brand%3AHIGHLANDER%3A%3AColor%3AGrey_808080&rawQuery=shirt",
+    "pos": [
+     0,
+     697.5999755859375,
+     6340,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "38": []
+ },
+ "events": [
+  {
+   "t": 1790609568.524,
+   "step": 0,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => window.scrollTo({top: 0, left: 0, behavior: 'instant'})"
+  },
+  {
+   "t": 1790609573.576,
+   "step": 4,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609573.578,
+   "step": 4,
+   "kind": "page.evaluate(scroll)",
+   "expr": "(px) => window.scrollBy(0, px)"
+  },
+  {
+   "t": 1790609574.296,
+   "step": 4,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609574.3,
+   "step": 4,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609574.304,
+   "step": 4,
+   "kind": "page.evaluate(scroll)",
+   "expr": "(px) => window.scrollBy(0, px)"
+  },
+  {
+   "t": 1790609575.029,
+   "step": 4,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609575.828,
+   "step": 5,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609575.848,
+   "step": 5,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609575.906,
+   "step": 5,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609575.98,
+   "step": 5,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609576.134,
+   "step": 5,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609576.146,
+   "step": 5,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609576.193,
+   "step": 5,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609576.277,
+   "step": 5,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609576.422,
+   "step": 5,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609576.429,
+   "step": 5,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609576.494,
+   "step": 5,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609576.572,
+   "step": 5,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609576.74,
+   "step": 5,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609576.756,
+   "step": 5,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609576.842,
+   "step": 5,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609576.925,
+   "step": 5,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609577.115,
+   "step": 5,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609577.124,
+   "step": 5,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609577.207,
+   "step": 5,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609577.297,
+   "step": 5,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609577.491,
+   "step": 5,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609577.519,
+   "step": 5,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609577.608,
+   "step": 5,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609577.69,
+   "step": 5,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609577.862,
+   "step": 5,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609577.868,
+   "step": 5,
+   "kind": "page.evaluate(scroll)",
+   "expr": "(y) => window.scrollTo(0, y)"
+  },
+  {
+   "t": 1790609578.361,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790609578.361,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 127.6
+  },
+  {
+   "t": 1790609578.441,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 127.6
+  },
+  {
+   "t": 1790609578.522,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 127.6
+  },
+  {
+   "t": 1790609578.612,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 127.6
+  },
+  {
+   "t": 1790609578.691,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 127.6
+  },
+  {
+   "t": 1790609578.775,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790609578.908,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790609709.742,
+   "step": 9,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => window.scrollTo({top: 0, left: 0, behavior: 'instant'})"
+  },
+  {
+   "t": 1790609710.481,
+   "step": 10,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790609710.497,
+   "step": 10,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790609710.64,
+   "step": 10,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790609720.686,
+   "step": 11,
+   "kind": "api-scrolled",
+   "api": "Locator.scroll_into_view_if_needed",
+   "before_y": 0,
+   "after_y": 154.39999389648438
+  },
+  {
+   "t": 1790609734.295,
+   "step": 12,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => window.scrollTo({top: 0, left: 0, behavior: 'instant'})"
+  },
+  {
+   "t": 1790609734.54,
+   "step": 13,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790609734.545,
+   "step": 13,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 123.28571428571429
+  },
+  {
+   "t": 1790609734.612,
+   "step": 13,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 123.28571428571429
+  },
+  {
+   "t": 1790609734.672,
+   "step": 13,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 123.28571428571429
+  },
+  {
+   "t": 1790609734.734,
+   "step": 13,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 123.28571428571429
+  },
+  {
+   "t": 1790609734.812,
+   "step": 13,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 123.28571428571429
+  },
+  {
+   "t": 1790609734.901,
+   "step": 13,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 123.28571428571429
+  },
+  {
+   "t": 1790609734.989,
+   "step": 13,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 123.28571428571429
+  },
+  {
+   "t": 1790609735.072,
+   "step": 13,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790609735.218,
+   "step": 13,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790609735.25,
+   "step": 14,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790609735.257,
+   "step": 14,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790609735.39,
+   "step": 14,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790609739.696,
+   "step": 15,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 862.4000244140625,
+   "after_y": 697.5999755859375
+  },
+  {
+   "t": 1790609740.11,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609740.122,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609740.19,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609740.268,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609740.515,
+   "step": 15,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 1129.5999755859375,
+   "after_y": 516.7999877929688
+  },
+  {
+   "t": 1790609740.661,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609740.676,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609740.748,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609740.832,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609741.048,
+   "step": 15,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 948.7999877929688,
+   "after_y": 697.5999755859375
+  },
+  {
+   "t": 1790609741.192,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609741.204,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609741.282,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609741.353,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609741.628,
+   "step": 15,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 1129.5999755859375,
+   "after_y": 516.7999877929688
+  },
+  {
+   "t": 1790609741.759,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609741.759,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609741.839,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609741.923,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609742.148,
+   "step": 15,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 948.7999877929688,
+   "after_y": 697.5999755859375
+  },
+  {
+   "t": 1790609742.308,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609742.317,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609742.377,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609742.455,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609742.697,
+   "step": 15,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 1129.5999755859375,
+   "after_y": 516.7999877929688
+  },
+  {
+   "t": 1790609742.827,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609742.841,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609742.903,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609742.994,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609743.212,
+   "step": 15,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 948.7999877929688,
+   "after_y": 697.5999755859375
+  },
+  {
+   "t": 1790609743.344,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609743.358,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609743.432,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609743.492,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609743.716,
+   "step": 15,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 1129.5999755859375,
+   "after_y": 516.7999877929688
+  },
+  {
+   "t": 1790609743.856,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609743.867,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609743.921,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609744.003,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609744.262,
+   "step": 15,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 948.7999877929688,
+   "after_y": 697.5999755859375
+  },
+  {
+   "t": 1790609744.476,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609744.495,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609744.578,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609744.653,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609744.909,
+   "step": 15,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 1129.5999755859375,
+   "after_y": 516.7999877929688
+  },
+  {
+   "t": 1790609745.067,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609745.082,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609745.143,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609745.221,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609745.441,
+   "step": 15,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 948.7999877929688,
+   "after_y": 697.5999755859375
+  },
+  {
+   "t": 1790609745.559,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609745.562,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609745.651,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609745.738,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609745.963,
+   "step": 15,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 1129.5999755859375,
+   "after_y": 516.7999877929688
+  },
+  {
+   "t": 1790609746.078,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609746.092,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609746.161,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609746.229,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609746.43,
+   "step": 15,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 948.7999877929688,
+   "after_y": 697.5999755859375
+  },
+  {
+   "t": 1790609746.559,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609746.566,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609746.645,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609746.719,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609746.985,
+   "step": 15,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 1129.5999755859375,
+   "after_y": 516.7999877929688
+  },
+  {
+   "t": 1790609747.159,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609747.175,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609747.238,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609747.314,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609747.528,
+   "step": 15,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 948.7999877929688,
+   "after_y": 697.5999755859375
+  },
+  {
+   "t": 1790609747.684,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609747.71,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609747.788,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609747.875,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609748.093,
+   "step": 15,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 1129.5999755859375,
+   "after_y": 516.7999877929688
+  },
+  {
+   "t": 1790609748.211,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609748.225,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609748.288,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609748.369,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609748.578,
+   "step": 15,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 948.7999877929688,
+   "after_y": 697.5999755859375
+  },
+  {
+   "t": 1790609748.709,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609748.719,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609748.801,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609748.888,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609749.117,
+   "step": 15,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 1129.5999755859375,
+   "after_y": 516.7999877929688
+  },
+  {
+   "t": 1790609749.242,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609749.251,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609749.32,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609749.416,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609749.663,
+   "step": 15,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 948.7999877929688,
+   "after_y": 697.5999755859375
+  },
+  {
+   "t": 1790609749.802,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609749.818,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609749.903,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609749.991,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790609750.213,
+   "step": 15,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 1129.5999755859375,
+   "after_y": 516.7999877929688
+  },
+  {
+   "t": 1790609750.338,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790609750.345,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "(y) => window.scrollTo(0, y)"
+  },
+  {
+   "t": 1790609771.29,
+   "step": 19,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790609771.307,
+   "step": 19,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790609771.371,
+   "step": 19,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790609771.443,
+   "step": 19,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790609771.606,
+   "step": 19,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790609777.491,
+   "step": 21,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790609777.491,
+   "step": 21,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 157.5
+  },
+  {
+   "t": 1790609777.563,
+   "step": 21,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 157.5
+  },
+  {
+   "t": 1790609777.625,
+   "step": 21,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790609777.76,
+   "step": 21,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790609787.238,
+   "step": 23,
+   "kind": "api-scrolled",
+   "api": "Locator.scroll_into_view_if_needed",
+   "before_y": 615.2000122070312,
+   "after_y": 0
+  },
+  {
+   "t": 1790609787.938,
+   "step": 23,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 0,
+   "after_y": 82.4000015258789
+  },
+  {
+   "t": 1790609788.247,
+   "step": 23,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 82.4000015258789,
+   "after_y": 10253.599609375
+  },
+  {
+   "t": 1790609789.991,
+   "step": 23,
+   "kind": "api-scrolled",
+   "api": "Locator.hover",
+   "before_y": 10253.599609375,
+   "after_y": 563.2000122070312
+  },
+  {
+   "t": 1790609824.467,
+   "step": 34,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790609824.471,
+   "step": 34,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 164.0
+  },
+  {
+   "t": 1790609824.545,
+   "step": 34,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790609824.685,
+   "step": 34,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790609829.763,
+   "step": 35,
+   "kind": "api-scrolled",
+   "api": "Locator.click",
+   "before_y": 164,
+   "after_y": 0
+  },
+  {
+   "t": 1790609838.496,
+   "step": 36,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790609838.5,
+   "step": 36,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790609838.624,
+   "step": 36,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  }
+ ]
+}

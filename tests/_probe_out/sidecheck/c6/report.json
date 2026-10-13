@@ -1,0 +1,180 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "http://127.0.0.1:62567/sc_c_popup.html?m=auto",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Sc C Popup page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:62567/sc_c_popup.html?m=auto",
+      "url_after": "http://127.0.0.1:62567/sc_c_popup.html?m=auto",
+      "started_at": "2026-10-05T00:14:03.510",
+      "ended_at": "2026-10-05T00:14:03.874",
+      "duration": 0.359,
+      "timing_ms": {
+        "settle": 0,
+        "navigation_wait": 0,
+        "screenshot": 358,
+        "other": 0
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Close\" button",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": "Warning: The page address has different search options than during recording (same page). Continuing.",
+      "timeline": null,
+      "workarounds": [],
+      "technical": "expected 'http://127.0.0.1:62567/sc_c_popup.html', found 'http://127.0.0.1:62567/sc_c_popup.html?m=auto'",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:62567/sc_c_popup.html?m=auto",
+      "url_after": "http://127.0.0.1:62567/sc_c_popup.html?m=auto",
+      "started_at": "2026-10-05T00:14:03.875",
+      "ended_at": "2026-10-05T00:14:06.518",
+      "duration": 1.969,
+      "timing_ms": {
+        "locate_action": 1030,
+        "log_emit": 0,
+        "screenshot": 94,
+        "settle": 0,
+        "verify": 16,
+        "other": 828
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 1969,
+        "message": "X found using Element ID. (resolved in 1969ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 3,
+      "action_type": "click",
+      "name": "\"Next page\" button",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": "Warning: The page address has different search options than during recording (same page). Continuing.",
+      "timeline": null,
+      "workarounds": [],
+      "technical": "expected 'http://127.0.0.1:62567/sc_c_popup.html', found 'http://127.0.0.1:62567/sc_c_popup.html?m=auto'",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:62567/sc_c_popup.html?m=auto",
+      "url_after": "http://127.0.0.1:62567/sc_c_popup.html?m=auto",
+      "started_at": "2026-10-05T00:14:06.518",
+      "ended_at": "2026-10-05T00:14:08.036",
+      "duration": 1.516,
+      "timing_ms": {
+        "locate_action": 968,
+        "log_emit": 0,
+        "screenshot": 61,
+        "settle": 16,
+        "verify": 16,
+        "other": 455
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 1516,
+        "message": "Next page found using Element ID. (resolved in 1516ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:62567/sc_c_popup.html?m=auto",
+  "final_screenshot": null,
+  "final_text": "Some page\nLog in Next page\n\nwent next",
+  "product_validation": null,
+  "total_duration_s": 5.641,
+  "total_steps": 3,
+  "live_log": [
+    {
+      "t": 1791139443.5116303,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139443.523925,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139445.0924127,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139445.9007847,
+      "message": "\u21b3 Clicking 'Close'",
+      "level": "note"
+    },
+    {
+      "t": 1791139446.7252977,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139447.53119,
+      "message": "\u21b3 Clicking 'Next page'",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

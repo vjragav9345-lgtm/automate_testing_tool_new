@@ -1,0 +1,126 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "http://127.0.0.1:62567/sc_c_popup.html?m=late",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Sc C Popup page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:62567/sc_c_popup.html?m=late",
+      "url_after": "http://127.0.0.1:62567/sc_c_popup.html?m=late",
+      "started_at": "2026-10-05T00:14:18.126",
+      "ended_at": "2026-10-05T00:14:18.500",
+      "duration": 0.375,
+      "timing_ms": {
+        "settle": 0,
+        "navigation_wait": 16,
+        "screenshot": 358,
+        "other": 1
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Next page\" button",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": "Warning: The page address has different search options than during recording (same page). Continuing.",
+      "timeline": null,
+      "workarounds": [],
+      "technical": "expected 'http://127.0.0.1:62567/sc_c_popup.html', found 'http://127.0.0.1:62567/sc_c_popup.html?m=late'; A popup that the recording did not have was blocking the page and was closed before this step.",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:62567/sc_c_popup.html?m=late",
+      "url_after": "http://127.0.0.1:62567/sc_c_popup.html?m=late",
+      "started_at": "2026-10-05T00:14:18.504",
+      "ended_at": "2026-10-05T00:14:20.336",
+      "duration": 1.828,
+      "timing_ms": {
+        "locate_action": 906,
+        "log_emit": 0,
+        "screenshot": 61,
+        "settle": 16,
+        "verify": 14,
+        "other": 830
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 1828,
+        "message": "Next page found using Element ID. (resolved in 1828ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:62567/sc_c_popup.html?m=late",
+  "final_screenshot": null,
+  "final_text": "Some page\nLog in Next page\n\nwent next",
+  "product_validation": null,
+  "total_duration_s": 3.328,
+  "total_steps": 2,
+  "live_log": [
+    {
+      "t": 1791139458.127986,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139458.1405523,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139458.8912144,
+      "message": "Expected on this site: a 'Join our newsletter' popup appeared this time that was not there during recording, so it was closed."
+    },
+    {
+      "t": 1791139459.0457733,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139459.811222,
+      "message": "\u21b3 Clicking 'Next page'",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

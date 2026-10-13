@@ -1,0 +1,3 @@
+[PROOF-TEMP] _hosts_equivalent 'blinkit.com' vs 'www.blinkit.com'
+[PROOF-TEMP] _hosts_equivalent 'www.myntra.com' vs 'www.myntra.com'
+[PROOF-TEMP] _drag_verify_held reached

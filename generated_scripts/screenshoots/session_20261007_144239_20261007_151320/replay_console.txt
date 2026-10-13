@@ -1,0 +1,21 @@
+CORE FIX MISSING: fill/select retry logic not found - results from this run cannot be trusted.
+Starting replay...
+Browser launched.
+Replay failed - could not open https://sportzia-preprod.kovaionplay.com:
+Page.goto: Target page, context or browser has been closed
+Call log:
+navigating to "https://sportzia-preprod.kovaionplay.com/", waiting until "domcontentloaded"
+
+
+
+===== stderr =====
+E:\.claude\generated_scripts\session_20261007_144239_script.py:12996: SyntaxWarning: invalid escape sequence '\s'
+  return el_handle.evaluate("""e => {
+E:\.claude\generated_scripts\session_20261007_144239_script.py:18391: SyntaxWarning: invalid escape sequence '\s'
+  "    const t = lb.split(/\s+/).map(id => {"
+E:\.claude\generated_scripts\session_20261007_144239_script.py:22120: SyntaxWarning: invalid escape sequence '\d'
+  _DRAG_VALUE_SNAPSHOT_JS = """
+E:\.claude\generated_scripts\session_20261007_144239_script.py:31005: SyntaxWarning: invalid escape sequence '\s'
+  _VALIDATE_BLOCK_DETECTION_JS = """
+E:\.claude\generated_scripts\session_20261007_144239_script.py:31169: SyntaxWarning: invalid escape sequence '\s'
+  _CLICK_IF_EXISTS_JS = """

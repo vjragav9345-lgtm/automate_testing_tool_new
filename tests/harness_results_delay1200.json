@@ -1,0 +1,944 @@
+[
+  {
+    "run_label": "delay1200_run1",
+    "delay_ms": 1200,
+    "send_otp_no_effect_fired": true,
+    "send_otp_result": {
+      "strategy": "css_path",
+      "found": true,
+      "ok": true,
+      "err": null
+    },
+    "flow_broken": true,
+    "notes": [
+      "[click-no-effect] effect detected (1 DOM mutation(s) observed) - retry skipped",
+      "OTP entry screen not showing after Send OTP - flow likely skipped ahead or landed somewhere unexpected"
+    ],
+    "otp_gate_result": {
+      "enabled": true,
+      "wait_s": 0.01
+    },
+    "net_log": [
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "GET",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/feed/posts?page=2&limit=10&subdomain=builderpreprod"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-NY6N5584V8&gtm=45je69l1v9217958158za20gzb9217951855zd9217951855xf1&_p=1790159858222&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&are=1&cid=1389964908.1790159859&frm=0&ngs=1&pscdl=noapi&rcb=9&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B129.0.6668.29%7CNot%253DA%253FBrand%3B8.0.0.0&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&_s=2&tag_exp=115616985~115938465~115938468~118897920~118897930~120213116~120385422~120469145~120469153&sid=1790159859&sct=1&seg=0&dl=https%3A%2F%2Fsportzia-preprod.kovaionplay.com%2Ffeed%2F&dt=&en=scroll&epn.percent_scrolled=90&_et=6&tfd=2070"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-NY6N5584V8&gtm=45je69l1v9217958158z89217951855za20gzb9217951855zd9217951855xf1&_p=1790159859974&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&are=1&cid=1389964908.1790159859&frm=0&ngs=1&pscdl=noapi&rcb=13&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B129.0.6668.29%7CNot%253DA%253FBrand%3B8.0.0.0&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&_s=1&tag_exp=115616985~115938465~115938468~118897920~118897930~120213116~120385422~120469145~120469153&sid=1790159859&sct=1&seg=1&dl=https%3A%2F%2Fsportzia-preprod.kovaionplay.com%2Ffeed%2F&dt=&en=page_view&tfd=126"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-NY6N5584V8&gtm=45je69l1v9217958158z89217951855za20gzb9217951855zd9217951855xf1&_p=1790159859974&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&are=1&cid=1389964908.1790159859&frm=0&ngs=1&pscdl=noapi&rcb=13&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B129.0.6668.29%7CNot%253DA%253FBrand%3B8.0.0.0&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&_s=1&tag_exp=115616985~115938465~115938468~118897920~118897930~120213116~120385422~120469145~120469153&sid=1790159859&sct=1&seg=1&dl=https%3A%2F%2Fsportzia-preprod.kovaionplay.com%2Ffeed%2F&dt=&en=page_view&tfd=126"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://od-18c216b54e2045bdbb2d2f70bc4834b0.ecs.us-east-2.on.aws/events?cee=no"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "HEAD",
+        "url": "https://sportzia-preprod.kovaionplay.com/"
+      },
+      {
+        "event": "request",
+        "method": "HEAD",
+        "url": "https://sportzia-preprod.kovaionplay.com/"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "request",
+        "method": "GET",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/feed/posts?page=1&limit=10&subdomain=builderpreprod"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://analytics.kovaion.ai/matomo.php"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://sportzia-preprod.kovaionplay.com/"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/feed/posts?page=1&limit=10&subdomain=builderpreprod"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://analytics.kovaion.ai/matomo.php"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://od-18c216b54e2045bdbb2d2f70bc4834b0.ecs.us-east-2.on.aws/events?cee=no"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "GET",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/feed/posts?page=2&limit=10&subdomain=builderpreprod"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/feed/posts?page=2&limit=10&subdomain=builderpreprod"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://od-18c216b54e2045bdbb2d2f70bc4834b0.ecs.us-east-2.on.aws/events?cee=no"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://analytics.kovaion.ai/matomo.php"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://analytics.kovaion.ai/matomo.php"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://od-18c216b54e2045bdbb2d2f70bc4834b0.ecs.us-east-2.on.aws/events?cee=no"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-NY6N5584V8&gtm=45je69l1v9217958158za20gzb9217951855zd9217951855xf1&_p=1790159859974&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&are=1&cid=1389964908.1790159859&frm=0&ngs=1&pscdl=noapi&rcb=13&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B129.0.6668.29%7CNot%253DA%253FBrand%3B8.0.0.0&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&tag_exp=115616985~115938465~115938468~118897920~118897930~120213116~120385422~120469145~120469153&sid=1790159859&sct=1&seg=1&dl=https%3A%2F%2Fsportzia-preprod.kovaionplay.com%2Ffeed%2F&dt=&_s=2&tfd=3976"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-NY6N5584V8&gtm=45je69l1v9217958158za20gzb9217951855zd9217951855xf1&_p=1790159859974&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&are=1&cid=1389964908.1790159859&frm=0&ngs=1&pscdl=noapi&rcb=13&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B129.0.6668.29%7CNot%253DA%253FBrand%3B8.0.0.0&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&_s=3&tag_exp=115616985~115938465~115938468~118897920~118897930~120213116~120385422~120469145~120469153&sid=1790159859&sct=1&seg=1&dl=https%3A%2F%2Fsportzia-preprod.kovaionplay.com%2Fevents&dr=https%3A%2F%2Fsportzia-preprod.kovaionplay.com%2Ffeed%2F&dt=Top%20Upcoming%20Sports%20Event%2C%20Tournaments%2C%20Matches%20and%20Tickets%20-%202025&en=user_engagement&_et=1226&tfd=3976"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-NY6N5584V8&gtm=45je69l1v9217958158z89217951855za20gzb9217951855zd9217951855xf1&_p=1790159863878&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&are=1&cid=1389964908.1790159859&frm=0&ngs=1&pscdl=noapi&rcb=2&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B129.0.6668.29%7CNot%253DA%253FBrand%3B8.0.0.0&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&_s=1&tag_exp=115616986~115938465~115938469~118897920~118897930~120213116~120385423~120412526~120469145~120469153&sid=1790159859&sct=1&seg=1&dl=https%3A%2F%2Fsportzia-preprod.kovaionplay.com%2Fevents%2F&dt=&en=page_view&tfd=237"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-NY6N5584V8&gtm=45je69l1v9217958158z89217951855za20gzb9217951855zd9217951855xf1&_p=1790159863878&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&are=1&cid=1389964908.1790159859&frm=0&ngs=1&pscdl=noapi&rcb=2&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B129.0.6668.29%7CNot%253DA%253FBrand%3B8.0.0.0&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&_s=1&tag_exp=115616986~115938465~115938469~118897920~118897930~120213116~120385423~120412526~120469145~120469153&sid=1790159859&sct=1&seg=1&dl=https%3A%2F%2Fsportzia-preprod.kovaionplay.com%2Fevents%2F&dt=&en=page_view&tfd=237"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://od-18c216b54e2045bdbb2d2f70bc4834b0.ecs.us-east-2.on.aws/events?cee=no"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "HEAD",
+        "url": "https://sportzia-preprod.kovaionplay.com/"
+      },
+      {
+        "event": "request",
+        "method": "HEAD",
+        "url": "https://sportzia-preprod.kovaionplay.com/"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://analytics.kovaion.ai/matomo.php"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://sportzia-preprod.kovaionplay.com/"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://analytics.kovaion.ai/matomo.php"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://od-18c216b54e2045bdbb2d2f70bc4834b0.ecs.us-east-2.on.aws/events?cee=no"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://od-18c216b54e2045bdbb2d2f70bc4834b0.ecs.us-east-2.on.aws/events?cee=no"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://analytics.kovaion.ai/matomo.php"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://analytics.kovaion.ai/matomo.php"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://od-18c216b54e2045bdbb2d2f70bc4834b0.ecs.us-east-2.on.aws/events?cee=no"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-NY6N5584V8&gtm=45je69l1v9217958158za20gzb9217951855zd9217951855xf1&_p=1790159863878&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&are=1&cid=1389964908.1790159859&frm=0&ngs=1&pscdl=noapi&rcb=2&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B129.0.6668.29%7CNot%253DA%253FBrand%3B8.0.0.0&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&_s=2&tag_exp=115616986~115938465~115938469~118897920~118897930~120213116~120385423~120412526~120469145~120469153&sid=1790159859&sct=1&seg=1&dl=https%3A%2F%2Fsportzia-preprod.kovaionplay.com%2Fevents%2F&dt=&en=scroll&epn.percent_scrolled=90&_et=5&tfd=2890"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-NY6N5584V8&gtm=45je69l1v9217958158za20gzb9217951855zd9217951855xf1&_p=1790159863878&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&are=1&cid=1389964908.1790159859&frm=0&ngs=1&pscdl=noapi&rcb=2&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B129.0.6668.29%7CNot%253DA%253FBrand%3B8.0.0.0&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&_s=3&tag_exp=115616986~115938465~115938469~118897920~118897930~120213116~120385423~120412526~120469145~120469153&sid=1790159859&sct=1&seg=1&dl=https%3A%2F%2Fsportzia-preprod.kovaionplay.com%2Fevents%2Fsportzia-marathon-E1403%3Ffrom%3Deventslist&dt=Sportzia%20%7C%20Powerful%20platform%20for%20every%20athlete%E2%80%99s%20journey.&en=user_engagement&_et=2651&tfd=2891"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-NY6N5584V8&gtm=45je69l1v9217958158za20ozb9217951855zd9217951855xf1&_p=1790159866619&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&are=1&cid=1389964908.1790159859&frm=0&ngs=1&pscdl=noapi&rcb=11&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B129.0.6668.29%7CNot%253DA%253FBrand%3B8.0.0.0&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&_s=1&tag_exp=115938465~115938469~118012008~118897920~118897930~120213116~120385422~120469145~120469153~121280971&sid=1790159859&sct=1&seg=1&dl=https%3A%2F%2Fsportzia-preprod.kovaionplay.com%2Fevents%2Flarsen-memorial-run-13th-edition-E1178%3Ffrom%3Deventslist&dt=&en=page_view&tfd=112"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-NY6N5584V8&gtm=45je69l1v9217958158za20ozb9217951855zd9217951855xf1&_p=1790159866619&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&are=1&cid=1389964908.1790159859&frm=0&ngs=1&pscdl=noapi&rcb=11&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B129.0.6668.29%7CNot%253DA%253FBrand%3B8.0.0.0&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&_s=1&tag_exp=115938465~115938469~118012008~118897920~118897930~120213116~120385422~120469145~120469153~121280971&sid=1790159859&sct=1&seg=1&dl=https%3A%2F%2Fsportzia-preprod.kovaionplay.com%2Fevents%2Flarsen-memorial-run-13th-edition-E1178%3Ffrom%3Deventslist&dt=&en=page_view&tfd=112"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://od-18c216b54e2045bdbb2d2f70bc4834b0.ecs.us-east-2.on.aws/events?cee=no"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "HEAD",
+        "url": "https://sportzia-preprod.kovaionplay.com/"
+      },
+      {
+        "event": "request",
+        "method": "HEAD",
+        "url": "https://sportzia-preprod.kovaionplay.com/"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://analytics.kovaion.ai/matomo.php"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://sportzia-preprod.kovaionplay.com/"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://analytics.kovaion.ai/matomo.php"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://od-18c216b54e2045bdbb2d2f70bc4834b0.ecs.us-east-2.on.aws/events?cee=no"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://od-18c216b54e2045bdbb2d2f70bc4834b0.ecs.us-east-2.on.aws/events?cee=no"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://sportzia-preprod.kovaionplay.com/cdn-cgi/rum?"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://od-18c216b54e2045bdbb2d2f70bc4834b0.ecs.us-east-2.on.aws/events?cee=no"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 200,
+        "url": "https://builderpreprod-api.kovaionplay.com/api/v1/workflow/executorWorkflow"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://analytics.kovaion.ai/matomo.php"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://analytics.kovaion.ai/matomo.php"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-NY6N5584V8&gtm=45je69l1v9217958158za20gzb9217951855zd9217951855xf1&_p=1790159866619&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&are=1&cid=1389964908.1790159859&frm=0&ngs=1&pscdl=noapi&rcb=11&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B129.0.6668.29%7CNot%253DA%253FBrand%3B8.0.0.0&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&tag_exp=115938465~115938469~118012008~118897920~118897930~120213116~120385422~120469145~120469153~121280971&sid=1790159859&sct=1&seg=1&dl=https%3A%2F%2Fsportzia-preprod.kovaionplay.com%2Fevents%2Flarsen-memorial-run-13th-edition-E1178%3Ffrom%3Deventslist&dt=&_s=2&tfd=5122"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-NY6N5584V8&gtm=45je69l1v9217958158za20gzb9217951855zd9217951855xf1&_p=1790159866619&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&are=1&cid=1389964908.1790159859&frm=0&ngs=1&pscdl=noapi&rcb=11&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B129.0.6668.29%7CNot%253DA%253FBrand%3B8.0.0.0&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=en-us&tag_exp=115938465~115938469~118012008~118897920~118897930~120213116~120385422~120469145~120469153~121280971&sid=1790159859&sct=1&seg=1&dl=https%3A%2F%2Fsportzia-preprod.kovaionplay.com%2Fevents%2Flarsen-memorial-run-13th-edition-E1178%3Ffrom%3Deventslist&dt=&_s=2&tfd=5122"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "request",
+        "method": "POST",
+        "url": "https://e.clarity.ms/collect"
+      },
+      {
+        "event": "response",
+        "status": 204,
+        "url": "https://e.clarity.ms/collect"
+      }
+    ],
+    "console_log": [
+      {
+        "type": "warning",
+        "text": "[TrendingNews] API fetch failed (offline?): Failed to fetch"
+      },
+      {
+        "type": "warning",
+        "text": "[fetchApiData] Non-critical fetch failed (offline?): Failed to fetch"
+      },
+      {
+        "type": "error",
+        "text": "Fetch error: TypeError: Failed to fetch\n    at T (https://sportzia-preprod.kovaionplay.com/_expo/static/js/web/entry-6ce5dff6a87f18ce4aaf1c8cbc559a0d.js:1466:4852)"
+      },
+      {
+        "type": "error",
+        "text": "TypeError: Failed to fetch\n    at vt (https://sportzia-preprod.kovaionplay.com/_expo/static/js/web/entry-6ce5dff6a87f18ce4aaf1c8cbc559a0d.js:1283:9717) Error"
+      },
+      {
+        "type": "warning",
+        "text": "[prefetchNextPage] failed for page 2 TypeError: Failed to fetch\n    at u (https://sportzia-preprod.kovaionplay.com/_expo/static/js/web/entry-6ce5dff6a87f18ce4aaf1c8cbc559a0d.js:15307:1175)\n    at https://sportzia-preprod.kovaionplay.com/_expo/static/js/web/entry-6ce5dff6a87f18ce4aaf1c8cbc559a0d.js:15738:11956"
+      },
+      {
+        "type": "warning",
+        "text": "[fetchApiData] Non-critical fetch failed (offline?): Failed to fetch"
+      },
+      {
+        "type": "warning",
+        "text": "[expo-notifications] Listening to push token changes is not yet fully supported on web. Adding a listener will have no effect."
+      },
+      {
+        "type": "warning",
+        "text": "[expo-av]: Expo AV has been deprecated and will be removed in SDK 54. Use the `expo-audio` and `expo-video` packages to replace the required functionality."
+      },
+      {
+        "type": "warning",
+        "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "warning",
+        "text": "URL parsing error: TypeError: fe is not a constructor\n    at Dt (https://sportzia-preprod.kovaionplay.com/_expo/static/js/web/entry-6ce5dff6a87f18ce4aaf1c8cbc559a0d.js:15288:8226)\n    at https://sportzia-preprod.kovaionplay.com/_expo/static/js/web/entry-6ce5dff6a87f18ce4aaf1c8cbc559a0d.js:15288:8644"
+      },
+      {
+        "type": "warning",
+        "text": "[expo-notifications] Listening to push token changes is not yet fully supported on web. Adding a listener will have no effect."
+      },
+      {
+        "type": "warning",
+        "text": "[expo-av]: Expo AV has been deprecated and will be removed in SDK 54. Use the `expo-audio` and `expo-video` packages to replace the required functionality."
+      },
+      {
+        "type": "warning",
+        "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+      },
+      {
+        "type": "warning",
+        "text": "URL parsing error: TypeError: fe is not a constructor\n    at Dt (https://sportzia-preprod.kovaionplay.com/_expo/static/js/web/entry-6ce5dff6a87f18ce4aaf1c8cbc559a0d.js:15288:8226)\n    at https://sportzia-preprod.kovaionplay.com/_expo/static/js/web/entry-6ce5dff6a87f18ce4aaf1c8cbc559a0d.js:15288:8644"
+      },
+      {
+        "type": "warning",
+        "text": "[expo-notifications] Listening to push token changes is not yet fully supported on web. Adding a listener will have no effect."
+      },
+      {
+        "type": "warning",
+        "text": "[expo-av]: Expo AV has been deprecated and will be removed in SDK 54. Use the `expo-audio` and `expo-video` packages to replace the required functionality."
+      },
+      {
+        "type": "warning",
+        "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+      }
+    ],
+    "body_text_snippet": "Home\nEvents\nPricing\nNotification\nSign in\n\uf127\nBack\nLARSEN MEMORIAL RUN 13th EDITION\n\uf3c6\nChennai\n\uf1cf\nNovember 22, 2026\n 21.1K Timed Run\n18 to 99 yrs\n\u20b9 500\n\uf1fe\n\uf21a\n\udb80\ude9d\nMale\n\udb80\ude9c\nFemale\n\udb80\ude9f\nOthers\n\uf398\nCut-off Time: 3 Hours\nCut-off Time: 3 Hours\n Kids Fun Run\n2 to 8 yrs\n\u20b9 400\n\uf1fe\n\uf21a\n\udb80\ude9d\nMale\n\udb80\ude9c\nFemale\n\udb80\ude9f\nOthers\n\uf398\nNon-Timed Fun Ru"
+  }
+]

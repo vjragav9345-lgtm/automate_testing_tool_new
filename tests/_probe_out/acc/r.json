@@ -1,0 +1,730 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "https://www.Document360.com",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Home page page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "tests\\_probe_out\\acc\\s\\build_intelligent_documentatio\\step01_home_page_page_2026-10-04_13-16-58.png",
+      "url_before": "https://document360.com/",
+      "url_after": "https://document360.com/",
+      "started_at": "2026-10-04T13:16:55.552",
+      "ended_at": "2026-10-04T13:16:58.519",
+      "duration": 2.969,
+      "timing_ms": {
+        "settle": 1203,
+        "navigation_wait": 16,
+        "screenshot": 1750,
+        "other": 0
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Features\" link",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "identity",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "workarounds": [],
+      "technical": "Element at the click point: div class=\"ab-body\", 1240x383 at (20,376), part of the page",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://document360.com/",
+      "url_after": "https://document360.com/#",
+      "started_at": "2026-10-04T13:16:58.522",
+      "ended_at": "2026-10-04T13:17:04.632",
+      "duration": 6.109,
+      "timing_ms": {
+        "locate_action": 5422,
+        "log_emit": 0,
+        "screenshot": 313,
+        "settle": 0,
+        "navigation_wait": 15,
+        "verify": 0,
+        "other": 358
+      },
+      "locator_report": {
+        "strategy": "identity",
+        "strategy_label": "identity",
+        "fallback_level": null,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 6109,
+        "message": "Features found using identity."
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 3,
+      "action_type": "click",
+      "name": "\"Pro Analytics\" link",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "identity",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "tests\\_probe_out\\acc\\s\\analytics\\step03_pro_analytics_link_2026-10-04_13-17-19.png",
+      "url_before": "https://document360.com/#",
+      "url_after": "https://document360.com/knowledgebase-portal/analytics/",
+      "started_at": "2026-10-04T13:17:04.634",
+      "ended_at": "2026-10-04T13:17:19.859",
+      "duration": 15.234,
+      "timing_ms": {
+        "locate_action": 9515,
+        "log_emit": 0,
+        "screenshot": 3593,
+        "settle": 1218,
+        "verify": 562,
+        "other": 345
+      },
+      "locator_report": {
+        "strategy": "identity",
+        "strategy_label": "identity",
+        "fallback_level": null,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 15234,
+        "message": "Pro Analytics found using identity."
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 4,
+      "action_type": "scroll",
+      "name": "down 500px on Analytics",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": true,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://document360.com/knowledgebase-portal/analytics/",
+      "url_after": "https://document360.com/knowledgebase-portal/analytics/",
+      "started_at": "2026-10-04T13:17:19.860",
+      "ended_at": "2026-10-04T13:17:20.328",
+      "duration": 0.469,
+      "timing_ms": {
+        "other": 469
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 5,
+      "action_type": "scroll",
+      "name": "up 500px on Analytics",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": true,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://document360.com/knowledgebase-portal/analytics/",
+      "url_after": "https://document360.com/knowledgebase-portal/analytics/",
+      "started_at": "2026-10-04T13:17:20.330",
+      "ended_at": "2026-10-04T13:17:20.813",
+      "duration": 0.484,
+      "timing_ms": {
+        "other": 483
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 6,
+      "action_type": "click",
+      "name": "\"Allow All\" button",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://document360.com/knowledgebase-portal/analytics/",
+      "url_after": "https://document360.com/knowledgebase-portal/analytics/",
+      "started_at": "2026-10-04T13:17:20.815",
+      "ended_at": "2026-10-04T13:17:24.828",
+      "duration": 4.016,
+      "timing_ms": {
+        "locate_action": 3405,
+        "log_emit": 0,
+        "screenshot": 203,
+        "settle": 14,
+        "verify": 31,
+        "other": 363
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 4016,
+        "message": "Allow All found using Element ID. (resolved in 4016ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 7,
+      "action_type": "click",
+      "name": "\"Watch video\" link",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": true,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://document360.com/knowledgebase-portal/analytics/",
+      "url_after": "https://document360.com/knowledgebase-portal/analytics/",
+      "started_at": "2026-10-04T13:17:24.829",
+      "ended_at": "2026-10-04T13:17:28.762",
+      "duration": 3.922,
+      "timing_ms": {
+        "locate_action": 828,
+        "log_emit": 0,
+        "screenshot": 202,
+        "settle": 1187,
+        "verify": 766,
+        "other": 938
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 3922,
+        "message": "Watch video found using Element ID. (resolved in 3922ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 8,
+      "action_type": "click",
+      "name": "\"Close\" button",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "identity",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://document360.com/knowledgebase-portal/analytics/",
+      "url_after": "https://document360.com/knowledgebase-portal/analytics/",
+      "started_at": "2026-10-04T13:17:28.764",
+      "ended_at": "2026-10-04T13:17:37.801",
+      "duration": 9.031,
+      "timing_ms": {
+        "locate_action": 7109,
+        "log_emit": 0,
+        "screenshot": 155,
+        "settle": 1203,
+        "verify": 234,
+        "other": 329
+      },
+      "locator_report": {
+        "strategy": "identity",
+        "strategy_label": "identity",
+        "fallback_level": null,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 9031,
+        "message": "Close found using identity."
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 9,
+      "action_type": "click",
+      "name": "\"EN\" link",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "position_fallback",
+      "element_found": true,
+      "success": true,
+      "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+      "warning": "Warning: The recorded element could not be found by its own details, so AutoFlow used a fallback (its position on the page). The test continued.",
+      "workarounds": [
+        "used a fallback locator"
+      ],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://document360.com/knowledgebase-portal/analytics/",
+      "url_after": "https://document360.com/knowledgebase-portal/analytics/",
+      "started_at": "2026-10-04T13:17:37.803",
+      "ended_at": "2026-10-04T13:17:41.092",
+      "duration": 3.297,
+      "timing_ms": {
+        "locate_action": 2750,
+        "log_emit": 0,
+        "screenshot": 155,
+        "settle": 0,
+        "verify": 16,
+        "other": 376
+      },
+      "locator_report": {
+        "strategy": "position_fallback",
+        "strategy_label": "Position fallback",
+        "fallback_level": 12,
+        "resolved": true,
+        "weak": true,
+        "resolution_ms": 3297,
+        "message": "EN found using Position fallback. Consider re-recording this step. (resolved in 3297ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 10,
+      "action_type": "click",
+      "name": "\"FR\" link",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "xpath",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "workarounds": [],
+      "technical": "Element at the click point: div#section-public class=\"d360-hz-feature_block d-block d-lg-flex align-item\", 1240x565 at (-14,235), part of the page",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "tests\\_probe_out\\acc\\s\\fr\\step10_fr_link_2026-10-04_13-18-12.png",
+      "url_before": "https://document360.com/knowledgebase-portal/analytics/",
+      "url_after": "https://document360.com/fr/",
+      "started_at": "2026-10-04T13:17:41.094",
+      "ended_at": "2026-10-04T13:18:12.339",
+      "duration": 31.234,
+      "timing_ms": {
+        "log_emit": 0,
+        "locate_action": 3718,
+        "screenshot": 1436,
+        "settle": 1219,
+        "navigation_wait": 0,
+        "verify": 328,
+        "other": 24532
+      },
+      "locator_report": {
+        "strategy": "xpath",
+        "strategy_label": "XPath",
+        "fallback_level": 14,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 31234,
+        "message": "FR found using XPath. (resolved in 31234ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 11,
+      "action_type": "click",
+      "name": "\"Blog\" link",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "text+tag-number-normalized",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "tests\\_probe_out\\acc\\s\\blog\\step11_blog_link_2026-10-04_13-18-22.png",
+      "url_before": "https://document360.com/fr/",
+      "url_after": "https://document360.com/fr/blog/",
+      "started_at": "2026-10-04T13:18:12.340",
+      "ended_at": "2026-10-04T13:18:22.156",
+      "duration": 9.812,
+      "timing_ms": {
+        "locate_action": 6453,
+        "log_emit": 0,
+        "screenshot": 969,
+        "settle": 1202,
+        "navigation_wait": 31,
+        "verify": 733,
+        "other": 424
+      },
+      "locator_report": {
+        "strategy": "text+tag-number-normalized",
+        "strategy_label": "Text + Tag (site value changed)",
+        "fallback_level": 11,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 9812,
+        "message": "Blog found using Text + Tag (site value changed). (resolved in 9812ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 12,
+      "action_type": "click",
+      "name": "a",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "href",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "tests\\_probe_out\\acc\\s\\fr\\step12_a_2026-10-04_13-18-29.png",
+      "url_before": "https://document360.com/fr/blog/",
+      "url_after": "https://document360.com/fr/",
+      "started_at": "2026-10-04T13:18:22.157",
+      "ended_at": "2026-10-04T13:18:29.555",
+      "duration": 7.391,
+      "timing_ms": {
+        "locate_action": 3843,
+        "log_emit": 0,
+        "screenshot": 1234,
+        "settle": 1203,
+        "verify": 796,
+        "other": 314
+      },
+      "locator_report": {
+        "strategy": "href",
+        "strategy_label": "Link URL",
+        "fallback_level": 10,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 7391,
+        "message": "a found using Link URL. (resolved in 7391ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "https://document360.com/fr/",
+  "final_screenshot": null,
+  "final_text": "Solutions\nRessources\nTarification\nFR \nSolutions\nRessources\nBlog\nEtudes de cas\nWebinaire\nTarification\nFR \nDemander d\u00e9mo\nEddy AI \u00b7 Intelligence meets information\n\u203a\nIntelligent Knowledge Base Software,\nwhere Humans & AI work together\n\nWhat do you like to build?\nPick one or more\n\nKnowledge Base\nDocumentation\nAI Chatbot\nUser Manuals\nSOPs / Step-by-Step Guide\nAPI Documentation\nBook a demo\nRated 4.7/5\n\u25cf\nG2 Leader in Knowledge Base\n\u25cf\nSOC 2\nISO 27001:2022\nKnowledge Base\n\nAdopt\u00e9e par des milliers d\u2019entreprises dans plus de 150 pays\nMigrez rapidement. Lancer plus rapidement\n\nLa plupart des outils de documentation ont \u00e9t\u00e9 construits pour un monde avant les agents IA, MCP, et flux de travail connect\u00e9s. Migrez maintenant et donnez \u00e0 vos connaissances une maison pr\u00eate pour la suite.\n\nConfluence\nFeu de fleur\nHibou de la connaissance\nSharePoint\nAutres\nFonctionnalit\u00e9s construites pour la documentation et AI \n\nPlus de 100 fonctionnalit\u00e9s pour la cr\u00e9ation, la recherche, la s\u00e9curit\u00e9 et libre-service con\u00e7u pour aider les \u00e9quipes \u00e0 cr\u00e9er des exp\u00e9riences de connaissances plus intelligentes avec l\u2019IA au c\u0153ur.\n\nRecherche avanc\u00e9e\nArbre de d\u00e9cision interactif\nNotifications intelligentes\nConstructeur de flux de travail\nPro Analytics\nD\u00e9vieur de ticket de support\nD\u00e9tection de contenu en double\nGestion des cat\u00e9gories\nRecherche IA\n\nRecherche conversationnelle bas\u00e9e sur vos articles. Cite toutes les sources.\n\nAI Chatbot\n\nTransforme la documentation dispers\u00e9e, les tickets, les fichiers et la FAQ en r\u00e9ponses instantan\u00e9es.\n\nAgent d\u2019\u00e9criture d\u2019IA\n\nG\u00e9n\u00e9rer de la documentation \u00e0 partir de vid\u00e9os et de fichiers, \u00e0 l\u2019int\u00e9rieur de l\u2019\u00e9diteur.\n\nServeur MCP\n\nConnectez votre base de connaissances \u00e0 ChatGPT, Claude et Copilot.\n\nSSO\nConstructeur de page d\u2019accueil\nBarre intelligente\nDomaine personnalis\u00e9\nGestionnaire de commentaires\nJournaux d\u2019audit\nSCIM\nGlossary\nAcc\u00e8s bas\u00e9 sur les r\u00f4les\nWidget de la Base de connaissances\nD\u00e9mo interactive\nPersonnaliser le r\u00e9f\u00e9rencement\nExtraits & Variables\nMod\u00e8les\nCommentaires en ligne\nExport PDF\nChamps personnalis\u00e9s\nWorkspaces\nRestriction IP\nTraduction\nTableau de bord\nAssistance contextuelle \u00e0 l\u2019IA\nFoire aux questions\nPublication programm\u00e9e\nVoir toutes les fonctionnalit\u00e9s\nConstruit pour pour chaque \u00e9quipe.\nPour n\u2019importe quel workflow.\n\nDe l\u2019agent de support r\u00e9pondant \u00e0 2 heures du matin \u00e0 l\u2019ing\u00e9nieur en poussant des changements d\u2019API, Document360 correspond \u00e0 la fa\u00e7on dont chaque \u00e9quipe travaille d\u00e9j\u00e0.\n\nSoutien\n\n\u00c9criture technique\n\nGestion des produits\n\nD\u00e9veloppeurs\n\nPanaya voit environ 4 000 clients utiliser leur documentation tous les mois et certaines\nde leurs Les articles se rapprochant de 10 000 vues.\n\n10,000+\n\npages vues aux articles\n\nYoni Hubermann\n\nDirecteur de l\u2019\u00e9ducation des clients, Panaya\n\nVoir \u00e9tude de cas\n\nAvec les analyses avanc\u00e9es de Document360 SafeBreach a acquis des connaissances pour affiner\nses la strat\u00e9gie de contenu davantage.\n\n30%\n\naugmentation du trafic vers le site de documentation\n\nGideon Behrensmeyer\n\nResponsable de la connaissance du produit et Entra\u00eenement, SafeBreach\n\nVoir \u00e9tude de cas\n\nDocument360 a propuls\u00e9 Fastmag vers le support leurs \u00e9trangers\npublic avec une localisation base de connaissances.\n\n15%\n\nticket de support r\u00e9duit\n\nThibaut De Robien\n\nPDG, Fastmag\n\nUn leader dans l\u2019espace de documentation, par chaque mesure importante\n\nLes \u00e9valuateurs G2 reconnaissent Document360 pour sa facilit\u00e9 d\u2019utilisation, sa s\u00e9curit\u00e9 de niveau entreprise,\net les r\u00e9sultats mesurables de l\u2019entreprise.\n\nG2 \u00b7 SPRING 2026\nDocumentation hautement \u00e9valu\u00e9e\nsolution, plus de 3 ans d\u2019affil\u00e9e.\n4.7/5\n\n1.400+ avis v\u00e9rifi\u00e9s\n\nS\u00c9CURIT\u00c9 DE L\u2019ENTREPRISE\nVos connaissances, verrouill\u00e9es\npar d\u00e9faut.\nInt\u00e9grez votre pile technologique\n\nSlack, Intercom, Zendesk, Salesforce, GitHub, et plus de 60 autres hors-jeu.\n\nCertains des meilleurs au monde\ncentre d\u2019aide fonctionne ici\n\nDe l\u2019informatique aux soins de sant\u00e9 en passant par les banques, les \u00e9quipes fournissent des connaissances publiques\nqui apparaissent, se sentent et se r\u00e9alisent comme sur mesure.\n\nExplorer la galerie\nCommencez \u00e0 \u00e9crire la documentation\nde votre les clients vont en fait lire\n\nLancez une base de connaissances moderne en quelques minutes avec un essai gratuit\nde Document360. Pas de complexit\u00e9, juste une meilleure documentation.\n\nR\u00e9servez une d\u00e9mo\nAsk anything about Document360\nProduct\nDemander une d\u00e9mo\nEnterprise Readiness\nPrivate Hosting\nMigration Request\nSecurity\nCustomers\nPartners\nResources\nCompare\nView Demos\nFeatures\nPortal\nSite\nWidget\nAnalytics\nWorkflow\nSEO\nIntegrations\nBusiness Glossary\nTicket Deflector\nDrive\nPlatform API\nHealth Check Metrics\nCustomer Stories\nAbrigo\nWhatfix\nPanaya\nCTRA\nSupport\nDocumentation\nStatus\nFeedback\nSupport\nContact us\nsupport@document360.com\n \n \n \n \nRating 4.7\n(3000+)\n\nAbout us | Our Culture | Careers\n\nTerms | Privacy policy | Cookie policy|SOC 2",
+  "product_validation": null,
+  "total_duration_s": 100.031,
+  "total_steps": 12,
+  "live_log": [
+    {
+      "t": 1791100015.5529532,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791100016.7687633,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791100019.374153,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791100023.7526224,
+      "message": "\u21b3 Clicking 'Features'",
+      "level": "note"
+    },
+    {
+      "t": 1791100024.5600326,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791100024.650041,
+      "message": "\u21b3 Hovering over 'Features' to reveal the menu",
+      "level": "note"
+    },
+    {
+      "t": 1791100026.9280605,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791100026.9735851,
+      "message": "\u21b3 'Pro Analytics' is hidden, so AutoFlow is hovering over the menu that holds it",
+      "level": "note"
+    },
+    {
+      "t": 1791100033.8632643,
+      "message": "\u21b3 Clicking 'Pro Analytics'",
+      "level": "note"
+    },
+    {
+      "t": 1791100038.0626917,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791100040.8503027,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 4s)",
+      "level": "note"
+    },
+    {
+      "t": 1791100044.0631108,
+      "message": "\u21b3 Clicking 'Allow All'",
+      "level": "note"
+    },
+    {
+      "t": 1791100044.9090798,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791100045.5337255,
+      "message": "\u21b3 Clicking 'Watch video'",
+      "level": "note"
+    },
+    {
+      "t": 1791100048.884803,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791100048.9965057,
+      "message": "\u21b3 'Close' is hidden, so AutoFlow is hovering over the menu that holds it",
+      "level": "note"
+    },
+    {
+      "t": 1791100049.014698,
+      "message": "\u21b3 Hover: element in viewport = False (ancestor depth 1/5, bbox: (no box))"
+    },
+    {
+      "t": 1791100049.3556783,
+      "message": "\u21b3 Hover: element in viewport = True (ancestor depth 2/5, bbox: x=0 y=0 w=1280 h=800)"
+    },
+    {
+      "t": 1791100051.9347825,
+      "message": "\u21b3 Hover: element in viewport = True (ancestor depth 3/5, bbox: x=0 y=0 w=1280 h=800)"
+    },
+    {
+      "t": 1791100054.5282853,
+      "message": "\u21b3 via <div '1\\xa0/\\xa01'> (sibling of ancestor depth 3/5, 5 sibling(s) tried)"
+    },
+    {
+      "t": 1791100055.176238,
+      "message": "\u21b3 Clicking 'Close'",
+      "level": "note"
+    },
+    {
+      "t": 1791100057.877766,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791100060.3922489,
+      "message": "\u21b3 Clicking 'EN'",
+      "level": "note"
+    },
+    {
+      "t": 1791100061.1975226,
+      "message": "\u21b3 'EN' is hidden, so AutoFlow is hovering over the menu that holds it",
+      "level": "note"
+    },
+    {
+      "t": 1791100084.262169,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791100085.9539692,
+      "message": "\u21b3 An element (\"AI Search Analytics Spot gaps where AI c\") is covering 'FR', waiting for it to move.",
+      "level": "note"
+    },
+    {
+      "t": 1791100087.0427408,
+      "message": "\u21b3 Escape was not pressed because a menu or popup opened by an earlier step is still open.",
+      "level": "note"
+    },
+    {
+      "t": 1791100087.6488223,
+      "message": "\u21b3 Clicking 'FR'",
+      "level": "note"
+    },
+    {
+      "t": 1791100092.1069977,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791100092.426396,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791100092.4693255,
+      "message": "\u21b3 'Blog' is hidden, so AutoFlow is hovering over the menu that holds it",
+      "level": "note"
+    },
+    {
+      "t": 1791100098.0014496,
+      "message": "\u21b3 Clicking 'Blog'",
+      "level": "note"
+    },
+    {
+      "t": 1791100101.9429662,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791100102.1709702,
+      "message": "\u21b3 Waiting for the popup content to appear (up to 9 s)",
+      "level": "note"
+    },
+    {
+      "t": 1791100105.2173026,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791100105.789174,
+      "message": "\u21b3 Clicking 'fr'",
+      "level": "note"
+    },
+    {
+      "t": 1791100109.3246105,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

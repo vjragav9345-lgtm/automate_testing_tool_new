@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "http://127.0.0.1:8899/page1.html",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "click",
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:8899/page1.html",
+      "url_after": "http://127.0.0.1:8899/page1.html",
+      "duration": 1.688,
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 1688,
+        "message": "I agree found using Element ID. (resolved in 1688ms)"
+      },
+      "expected": null,
+      "actual": null
+    },
+    {
+      "index": 2,
+      "action_type": "validate_visible",
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "tests\\fixtures\\highlight_test_run\\page1_html\\validation_Validate_Visible_20260920_204550_817177.png",
+      "url_before": "http://127.0.0.1:8899/page1.html",
+      "url_after": "http://127.0.0.1:8899/page1.html",
+      "duration": 1.672,
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 1672,
+        "message": "Go to Page 2 (footer link) found using Element ID. (resolved in 1672ms)"
+      },
+      "expected": "visible",
+      "actual": "visible"
+    }
+  ],
+  "final_url": "http://127.0.0.1:8899/page1.html",
+  "final_screenshot": null,
+  "final_text": "AutoFlow QA Fixture\nroute: home\nMen\nScroll the WINDOW down to reach the form.\n\nSPA route area - content below changes via history.pushState, no full page load.\n\nGo to /route2 (pushState)\nItem 1\nItem 2\nItem 3\nItem 4\nItem 5\nItem 6\nItem 7\nItem 8\nItem 9\nItem 10\n I agree\n Basic  Pro\nCountry \n-- choose --\nUnited States\nIndia\nUnited Kingdom\nEmail (autofill-style) \nPromo code (React-style controlled, uppercases as you type) \nSearch (debounced suggestions dropdown) \nOpen Page 2 in new tab\n\nSame-origin iframe (target for Pick Element testing):\n\nShadow DOM host (target for Pick Element testing):\n\nGo to Page 2 (footer link)",
+  "product_validation": null,
+  "total_duration_s": 4.89,
+  "total_steps": 2
+}

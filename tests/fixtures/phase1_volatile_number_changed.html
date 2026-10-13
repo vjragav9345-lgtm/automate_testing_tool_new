@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"></head>
+<body>
+  <div id="filters">
+    <span class="filter-item" onclick="toggle(this)">Tshirts(419847)</span>
+    <span class="filter-item" onclick="toggle(this)">Jeans(88012)</span>
+    <span class="filter-item" onclick="toggle(this)">Shirts(53210)</span>
+  </div>
+  <div id="result"></div>
+  <script>
+    function toggle(el) {
+      document.getElementById('result').textContent = 'clicked:' + el.textContent;
+    }
+  </script>
+</body>
+</html>

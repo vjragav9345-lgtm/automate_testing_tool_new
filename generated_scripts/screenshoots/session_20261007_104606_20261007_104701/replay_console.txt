@@ -1,0 +1,522 @@
+CORE FIX MISSING: fill/select retry logic not found - results from this run cannot be trusted.
+Starting replay...
+Browser launched.
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+REPLAY SOURCE: session_20261007_104606
+ACTION COUNT: 15
+SOURCE TYPE: ORIGINAL
+
+Executing recorded actions...
+
+==================================================
+[1/15]
+ACTION: navigate
+NAME: Open – Home page
+URL: https://www.document360.com
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+[redirect] launch URL -> https://document360.com/
+[navigate-ready] waiting for next step's target to become findable (up to 9.0s)...
+[navigate-ready] found at t=0.1s - destination page is ready
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (3.67s).
+
+[timing] step 1 (navigate): total 3672ms | settle 1235ms | navigation_wait 109ms | screenshot 2282ms | other 46ms
+==================================================
+[2/15]
+ACTION: click
+NAME: "Allow All" button
+Element: Allow All
+Locator: #cookiescript_accept
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 11262.3ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Allow All' at t=0ms (reference point for this flow)
+[note] -> Hovering over 'PREFERENCES' to reveal the menu
+[spa-settle] waited 0.05s for network-idle/no-skeleton before this step
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Allow All' (strategy=popup-scoped) ===
+[CLICK-DIAG] resolved-to-click : tag='div' class='' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='div' class='' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'div', 'cls': '', 'testid': None, 'role': 'button'} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Allow All'
+[elements-from-point BEFORE CLICK] stack at (1011, 584), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='' testid=None z-index='10' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='img' class='ab-panel__img ab-panel__img--cur is-in' testid=None z-index='2' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='img' class='ab-panel__img ab-panel__img--ghost' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='ab-panel__stage' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='ab-panel__frame' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='ab-panel ab-rise' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='ab-body' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='ab-container pt-lg-5' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='section' class='d360-hero py-80 d360-hero-ab is-ready' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='main' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='wrapper_main' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='body' class='home wp-singular page-template page-template-page-templates page-template-home page-template-page-templateshome-php page page-id-5 wp-theme-document360' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='html' class='js' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (1011, 584), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='img' class='ab-panel__img ab-panel__img--cur is-in' testid=None z-index='2' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [1] tag='img' class='ab-panel__img ab-panel__img--ghost' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='ab-panel__stage' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='ab-panel__frame' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='ab-panel ab-rise' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='ab-body' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='ab-container pt-lg-5' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='section' class='d360-hero py-80 d360-hero-ab is-ready' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='main' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='div' class='wrapper_main' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='body' class='home wp-singular page-template page-template-page-templates page-template-home page-template-page-templateshome-php page page-id-5 wp-theme-document360' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='html' class='js' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 2, action_type='click')
+STATUS: SUCCESS
+Done (12.17s).
+Allow All found using Name inside the popup. (resolved in 12172ms)
+
+[timing] step 2 (click): total 12171ms | locate_action 7702ms | log_emit 0ms | screenshot 719ms | settle 1233ms | verify 1687ms | other 830ms
+==================================================
+[3/15]
+ACTION: click
+NAME: "Features" link
+Element: Features
+Locator: a[href="#"]
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 23654.7ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Features' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Features' (strategy=popup-scoped) ===
+[CLICK-DIAG] resolved-to-click : tag='a' class='' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='a' class='' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'a', 'cls': '', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Features'
+[elements-from-point BEFORE CLICK] stack at (282, 43), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='a' class='' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='li' class='menu-item-has-children' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='nav' class='ms-5' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='menu-container w-100 d-flex align-items-center' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='container d-flex justify-content-center position-relative' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='header' class='d360-header' testid=None z-index='1010' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='section' class='d360-hero py-80 d360-hero-ab is-ready' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='main' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='wrapper_main' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='body' class='home wp-singular page-template page-template-page-templates page-template-home page-template-page-templateshome-php page page-id-5 wp-theme-document360' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='html' class='js' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (282, 43), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='a' class='' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point AFTER CLICK]   [1] tag='li' class='menu-item-has-children' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='nav' class='ms-5' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='menu-container w-100 d-flex align-items-center' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='container d-flex justify-content-center position-relative' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='header' class='d360-header' testid=None z-index='1010' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='section' class='d360-hero py-80 d360-hero-ab is-ready' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='main' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='div' class='wrapper_main' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='body' class='home wp-singular page-template page-template-page-templates page-template-home page-template-page-templateshome-php page page-id-5 wp-theme-document360' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='html' class='js' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 3, action_type='click')
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (21.42s).
+Features found using Name inside the popup. (resolved in 21422ms)
+
+[timing] step 3 (click): total 21421ms | locate_action 13702ms | log_emit 32ms | screenshot 3593ms | settle 1250ms | navigation_wait 94ms | verify 1812ms | other 938ms
+==================================================
+[4/15]
+ACTION: click
+NAME: "Pro Analytics" link
+Element: Pro Analytics
+Locator: a[href="https://document360.com/knowledgebase-portal/analytics/"]
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 47346.5ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Pro Analytics' at t=0ms (reference point for this flow)
+[note] -> Hovering over 'Features' to reveal the menu
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Pro Analytics' (strategy=popup-scoped) ===
+[CLICK-DIAG] resolved-to-click : tag='a' class='' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='div' class='icon-i' data-testid=None
+[CLICK-DIAG] MATCH=False
+[click-target-resolution] container matched: {'tag': 'a', 'cls': '', 'testid': None, 'role': None} - found a more specific interactive descendant: {'tag': 'path', 'cls': '[object SVGAnimatedString]', 'testid': None, 'role': None} - clicking the DESCENDANT instead of the container's own center
+[note] -> Clicking 'Pro Analytics'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+EFFECT VERIFICATION CODE RUNNING (step 4, action_type='click')
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (23.38s).
+Pro Analytics found using Name inside the popup. (resolved in 23375ms)
+
+[timing] step 4 (click): total 23375ms | locate_action 11985ms | log_emit 31ms | screenshot 3796ms | settle 1296ms | navigation_wait 77ms | verify 1343ms | other 4847ms
+==================================================
+[5/15]
+ACTION: click
+NAME: "Watch video" link
+Element: Watch video
+Locator: #d360_intro-play
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 11215.2ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Watch video' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Watch video' (strategy=id) ===
+[CLICK-DIAG] resolved-to-click : tag='a' class='d360_intro-play' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='b' class='' data-testid=None
+[CLICK-DIAG] MATCH=False
+[click-target-resolution] container matched: {'tag': 'a', 'cls': 'd360_intro-play', 'testid': None, 'role': None} - found a more specific interactive descendant: {'tag': 'path', 'cls': '[object SVGAnimatedString]', 'testid': None, 'role': None} - clicking the DESCENDANT instead of the container's own center
+[note] -> Clicking 'Watch video'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+EFFECT VERIFICATION CODE RUNNING (step 5, action_type='click')
+STATUS: SUCCESS
+Done (7.30s).
+Watch video found using Element ID. (resolved in 7297ms)
+
+[timing] step 5 (click): total 7297ms | locate_action 4343ms | log_emit 0ms | screenshot 485ms | settle 1217ms | verify 328ms | other 924ms
+==================================================
+[6/15]
+ACTION: click
+NAME: "Close" button
+Element: (element)
+Locator: div#fancybox-container-1 > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(4)
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 18498.1ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'target' at t=0ms (reference point for this flow)
+[note] -> Moved the mouse over the popup to show the 'Close' button.
+EFFECT VERIFICATION CODE RUNNING (step 6, action_type='click')
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+STATUS: SUCCESS
+Done (3.88s).
+Close found using close_search.
+
+[timing] step 6 (click): total 3875ms | locate_action 1735ms | log_emit 16ms | screenshot 827ms | settle 31ms | verify 485ms | other 781ms
+==================================================
+[7/15]
+ACTION: click
+NAME: "EN" link
+Element: EN
+Locator: a[href="#"]
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 22410.8ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'EN' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'EN' (strategy=popup-scoped) ===
+[CLICK-DIAG] resolved-to-click : tag='a' class='dropdown-toggle' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='a' class='dropdown-toggle' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'a', 'cls': 'dropdown-toggle', 'testid': None, 'role': None} - found a more specific interactive descendant: {'tag': 'i', 'cls': 'arrow down', 'testid': None, 'role': None} - clicking the DESCENDANT instead of the container's own center
+[note] -> Clicking 'EN'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+EFFECT VERIFICATION CODE RUNNING (step 7, action_type='click')
+STATUS: SUCCESS
+Done (5.55s).
+EN found using Name inside the popup. (resolved in 5547ms)
+
+[timing] step 7 (click): total 5546ms | locate_action 3843ms | log_emit 0ms | screenshot 547ms | settle 31ms | verify 467ms | other 658ms
+==================================================
+[8/15]
+ACTION: click
+NAME: "FR" link
+Element: FR
+Locator: a[href="https://document360.com/fr/"]
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 28174.4ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'FR' at t=0ms (reference point for this flow)
+[note] -> Hovering over 'FR' to reveal the menu
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'FR' (strategy=popup-scoped) ===
+[CLICK-DIAG] resolved-to-click : tag='a' class='' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='a' class='' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'a', 'cls': '', 'testid': None, 'role': None} - found a more specific interactive descendant: {'tag': 'img', 'cls': 'no-lazyload me-2', 'testid': None, 'role': None} - clicking the DESCENDANT instead of the container's own center
+[note] -> Clicking 'FR'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+EFFECT VERIFICATION CODE RUNNING (step 8, action_type='click')
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (9.99s).
+FR found using Name inside the popup. (resolved in 9985ms)
+
+[timing] step 8 (click): total 9985ms | locate_action 4250ms | log_emit 15ms | screenshot 3547ms | settle 1233ms | verify 406ms | other 534ms
+==================================================
+[9/15]
+ACTION: navigate
+NAME: Open – Analytics
+URL: https://document360.com/knowledgebase-portal/analytics/
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+[back-navigation] recorded navigate target matches the previous page - used page.go_back()
+[navigate-ready] waiting for next step's target to become findable (up to 9.0s)...
+[navigate-ready] found at t=0.0s - destination page is ready
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (5.48s).
+
+[timing] step 9 (navigate): total 5483ms | settle 2421ms | verify 0ms | navigation_wait 47ms | screenshot 1577ms | other 1438ms
+==================================================
+[10/15]
+ACTION: click
+NAME: "Book a demo" link
+Element: Book a demo
+Locator: a[href="/request-demo/"]
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 5994.8ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Book a demo' at t=0ms (reference point for this flow)
+[spa-settle] waited 0.05s for network-idle/no-skeleton before this step
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Book a demo' (strategy=popup-scoped) ===
+[CLICK-DIAG] resolved-to-click : tag='a' class='btn btn-primary text-nowrap ms-3' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='a' class='btn btn-primary text-nowrap ms-3' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'a', 'cls': 'btn btn-primary text-nowrap ms-3', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Book a demo'
+[elements-from-point BEFORE CLICK] stack at (1194, 42), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='a' class='btn btn-primary text-nowrap ms-3' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='btns-right d-flex align-items-center' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='container d-flex justify-content-center position-relative' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='header' class='d360-header' testid=None z-index='1010' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='img' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='d360-hero pt-80 position-relative overflow-x-hidden' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='main' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='wrapper_main' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='html' class='js' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+EFFECT VERIFICATION CODE RUNNING (step 10, action_type='click')
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (10.72s).
+Book a demo found using Name inside the popup. (resolved in 10719ms)
+
+[timing] step 10 (click): total 10718ms | locate_action 5062ms | log_emit 14ms | screenshot 1438ms | settle 1187ms | navigation_wait 62ms | verify 1000ms | other 1955ms
+==================================================
+[11/15]
+ACTION: click
+NAME: "15" element
+Element: 15
+Locator: div#cal-grid > div:nth-of-type(19)
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 6847.3ms (page clock) before this click
+[modal-timing-detail] click dispatched on '15' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target '15' (strategy=text+tag) ===
+[CLICK-DIAG] resolved-to-click : tag='div' class='cal-day available' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='div' class='cal-day available' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'div', 'cls': 'cal-day available', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking '15'
+[elements-from-point BEFORE CLICK] stack at (558, 443), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='div' class='cal-day available' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='cal-grid' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='cal-left' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='cal-body' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='cal-card' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='form-step active p-0' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='form-stepper' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='form' class='md-form form_block' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='preview-wrap' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='col-lg-12' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class='row justify-content-between' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='center-col1' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='d360-form-wrapper d-flex align-items-center d360-request-demo-page' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='main' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='div' class='wrapper_main' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='html' class='js' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (558, 443), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='div' class='cal-day available selected' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point AFTER CLICK]   [1] tag='div' class='cal-grid' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='cal-left' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='cal-body' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='cal-card' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='form-step active p-0' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='form-stepper' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='form' class='md-form form_block' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='div' class='preview-wrap' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='div' class='col-lg-12' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='div' class='row justify-content-between' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='div' class='center-col1' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='div' class='d360-form-wrapper d-flex align-items-center d360-request-demo-page' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [13] tag='main' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [14] tag='div' class='wrapper_main' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [15] tag='html' class='js' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 11, action_type='click')
+STATUS: SUCCESS
+Done (5.11s).
+15 found using Text + Tag fallback. (resolved in 5109ms)
+
+[timing] step 11 (click): total 5109ms | locate_action 3514ms | log_emit 0ms | screenshot 422ms | settle 14ms | verify 469ms | other 690ms
+==================================================
+[12/15]
+ACTION: click
+NAME: "11:00AM" button
+Element: 11:00AM
+Locator: div#cal-times > button:nth-of-type(3)
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target '11:00AM' (strategy=text+tag) ===
+[CLICK-DIAG] resolved-to-click : tag='button' class='cal-slot-btn' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='button' class='cal-slot-btn' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'button', 'cls': 'cal-slot-btn', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking '11:00AM'
+[elements-from-point BEFORE CLICK] stack at (806, 420), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='button' class='cal-slot-btn' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='cal-times' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='cal-right' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='cal-body' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='cal-card' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='form-step active p-0' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='form-stepper' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='form' class='md-form form_block' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='preview-wrap' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='col-lg-12' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class='row justify-content-between' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='center-col1' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='d360-form-wrapper d-flex align-items-center d360-request-demo-page' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='main' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='div' class='wrapper_main' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='html' class='js' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (806, 420), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='button' class='cal-slot-btn selected' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point AFTER CLICK]   [1] tag='div' class='cal-times' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='cal-right' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='cal-body' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='cal-card' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='form-step active p-0' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='form-stepper' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='form' class='md-form form_block' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='div' class='preview-wrap' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='div' class='col-lg-12' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='div' class='row justify-content-between' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='div' class='center-col1' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='div' class='d360-form-wrapper d-flex align-items-center d360-request-demo-page' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [13] tag='main' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [14] tag='div' class='wrapper_main' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [15] tag='html' class='js' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 12, action_type='click')
+STATUS: SUCCESS
+Done (5.62s).
+11:00AM found using Text + Tag fallback. (resolved in 5625ms)
+
+[timing] step 12 (click): total 5625ms | locate_action 3937ms | log_emit 31ms | screenshot 421ms | settle 250ms | verify 468ms | other 518ms
+==================================================
+[13/15]
+ACTION: navigate
+NAME: Open – Analytics
+URL: https://document360.com/knowledgebase-portal/analytics/
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+[back-navigation] recorded navigate target matches the previous page - used page.go_back()
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (5.09s).
+
+[timing] step 13 (navigate): total 5093ms | settle 2437ms | verify 0ms | screenshot 1500ms | other 1156ms
+==================================================
+[14/15]
+ACTION: navigate
+NAME: Open – Home page
+URL: https://document360.com/#
+
+STATUS: STARTED
+Executing...
+[navigate-fallback] instructed to navigate to: 'https://document360.com/#'
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+[navigate-fallback] browser actually landed on: 'https://document360.com/#'
+[navigate-fallback] WARNING: click did not produce expected navigation, force-navigated as fallback - original click target uncertain
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (9.59s).
+WARNING: Note: The page was opened directly by its address because the click did not open it by itself. [details] forced hard-navigation fallback - preceding action may not have triggered the app's own client-side transition, destination page may be missing state it would normally have
+
+[timing] step 14 (navigate): total 9593ms | settle 1202ms | verify 0ms | screenshot 2266ms | other 6125ms
+==================================================
+[15/15]
+ACTION: navigate
+NAME: Open – Home page
+URL: https://document360.com/
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (0.64s).
+
+[timing] step 15 (navigate): total 639ms | settle 31ms | verify 0ms | screenshot 593ms | other 15ms
+==================================================
+REPLAY COMPLETED
+==================================================
+
+Recorded: 15
+JSON: 15
+Generated: 15
+Executed: 15
+Successful: 15
+Failed: 0
+Total replay time: 140.62s
+Not executed: 0
+
+RESULT: PASS
+
+Final URL:
+https://document360.com/#
+
+Screenshots:
+D:\.claude\generated_scripts\screenshoots\session_20261007_104606_20261007_104701
+
+Generated Script:
+D:\.claude\generated_scripts\session_20261007_104606_script.py
+
+Browser will remain open for 5 seconds...
+Browser closed successfully.
+==================================================
+
+
+===== stderr =====
+D:\.claude\generated_scripts\session_20261007_104606_script.py:6460: SyntaxWarning: invalid escape sequence '\s'
+  return el_handle.evaluate("""e => {
+D:\.claude\generated_scripts\session_20261007_104606_script.py:11702: SyntaxWarning: invalid escape sequence '\s'
+  "    const t = lb.split(/\s+/).map(id => {"
+D:\.claude\generated_scripts\session_20261007_104606_script.py:15050: SyntaxWarning: invalid escape sequence '\d'
+  _DRAG_VALUE_SNAPSHOT_JS = """
+D:\.claude\generated_scripts\session_20261007_104606_script.py:23808: SyntaxWarning: invalid escape sequence '\s'
+  _VALIDATE_BLOCK_DETECTION_JS = """
+D:\.claude\generated_scripts\session_20261007_104606_script.py:23972: SyntaxWarning: invalid escape sequence '\s'
+  _CLICK_IF_EXISTS_JS = """

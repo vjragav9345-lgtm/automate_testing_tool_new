@@ -1,0 +1,12 @@
+<!doctype html><html><head><title>search (full reload)</title><style>
+body{font:15px sans-serif;margin:20px} #wrap{position:relative;width:320px} #q{width:100%;padding:6px}
+#sug{position:absolute;left:0;top:34px;width:100%;background:#fff;border:1px solid #999;margin:0;padding:0;list-style:none;display:none;z-index:50}
+#sug li{padding:6px;cursor:pointer}
+</style></head><body><h3>Home</h3>
+<div id="wrap"><input id="q" placeholder="Search" autocomplete="off"><ul id="sug" role="listbox"></ul></div>
+<script>
+var q=document.getElementById('q'),s=document.getElementById('sug');
+q.addEventListener('input',function(){var v=q.value.trim();s.innerHTML='';if(!v){s.style.display='none';return;}
+ ['',' songs',' live'].forEach(function(x){var li=document.createElement('li');li.setAttribute('role','option');li.textContent=v+x;s.appendChild(li);});s.style.display='block';});
+q.addEventListener('keydown',function(e){if(e.key==='Enter'){}});
+</script></body></html>

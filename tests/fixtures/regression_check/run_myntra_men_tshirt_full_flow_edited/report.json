@@ -1,0 +1,12 @@
+{
+  "status": "FAIL",
+  "message": "Couldn't reach https://www.myntra.com/ - check the URL is correct and the site is reachable.",
+  "qa_url": "https://www.myntra.com/",
+  "steps": [],
+  "final_url": null,
+  "final_screenshot": null,
+  "final_text": null,
+  "product_validation": null,
+  "total_duration_s": null,
+  "diagnostic": "could not open QA URL: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.myntra.com/\nCall log:\nnavigating to \"https://www.myntra.com/\", waiting until \"domcontentloaded\"\n"
+}

@@ -1,0 +1,9 @@
+<!doctype html><html><body>
+<button id="anime">Anime</button>
+<textarea id="prompt" aria-label="Image description" rows="4" cols="60"></textarea>
+<script>
+document.getElementById('anime').addEventListener('click',function(){
+  var t=document.getElementById('prompt'); t.focus(); var n=0;
+  setInterval(function(){ t.value='typing '+(++n); },80);
+});
+</script></body></html>

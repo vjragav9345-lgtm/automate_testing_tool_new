@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Product Card Fixture</title>
+<style>
+  body { margin: 0; font-family: sans-serif; padding: 20px; }
+  .grid { display: flex; gap: 16px; }
+  .card { display: inline-block; width: 260px; height: 340px; border: 1px solid #ddd;
+          padding: 10px; position: relative; text-decoration: none; color: #000; }
+  .badge { display: block; color: red; font-weight: bold; }
+  .overlay-sizes { display: none; background: #fafafa; padding: 4px; }
+  .card:hover .overlay-sizes { display: block; }
+  .price { color: green; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <a href="/tshirts/monk-mode/monk-mode-men-striped-polo-collar-t-shirt/45954123/buy" class="card" id="card-45954123">
+      <span class="badge">NEW</span>
+      <span class="badge">NEW</span>
+      <span class="badge">NEW</span>
+      <div>Monk Mode</div>
+      <div class="overlay-sizes">Sizes: XXL</div>
+      <div class="price">Rs. 744 Rs. 1699(56% OFF)</div>
+    </a>
+    <a href="/other/product/99999/buy" class="card" id="card-99999">
+      <span class="badge">NEW</span>
+      <div>Some Other Shirt</div>
+      <div class="overlay-sizes">Sizes: M</div>
+      <div class="price">Rs. 500</div>
+    </a>
+  </div>
+  <script>
+    document.getElementById('card-45954123').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.title = 'CARD_CLICKED_45954123';
+    });
+    document.getElementById('card-99999').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.title = 'CARD_CLICKED_99999';
+    });
+  </script>
+</body>
+</html>

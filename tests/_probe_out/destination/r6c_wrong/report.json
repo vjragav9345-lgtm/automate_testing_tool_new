@@ -1,0 +1,132 @@
+{
+  "status": "FAIL",
+  "message": "one or more steps failed",
+  "qa_url": "http://127.0.0.1:52205/dest_a_wrong.html",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Dest A page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:52205/dest_a_wrong.html",
+      "url_after": "http://127.0.0.1:52205/dest_a_wrong.html",
+      "started_at": "2026-10-04T23:50:15.517",
+      "ended_at": "2026-10-04T23:50:15.882",
+      "duration": 0.359,
+      "timing_ms": {
+        "settle": 0,
+        "navigation_wait": 16,
+        "screenshot": 342,
+        "other": 0
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Pro Analytics\" link",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "id",
+      "element_found": true,
+      "success": false,
+      "error": "PAGE_MISMATCH: expected to reach 'http://127.0.0.1:52205/dest_b.html', but landed on 'http://127.0.0.1:52205/dest_c.html' instead",
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "tests\\_probe_out\\destination\\r6c_wrong\\shots\\dest_c_html\\step02_pro_analytics_FAILED_23-50-23.png",
+      "url_before": "http://127.0.0.1:52205/dest_a_wrong.html",
+      "url_after": "http://127.0.0.1:52205/dest_c.html",
+      "started_at": "2026-10-04T23:50:15.883",
+      "ended_at": "2026-10-04T23:50:23.111",
+      "duration": 7.235,
+      "timing_ms": {
+        "locate_action": 984,
+        "log_emit": 0,
+        "screenshot": 469,
+        "settle": 0,
+        "verify": 5016,
+        "other": 766
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 7235,
+        "message": "Pro Analytics found using Element ID. (resolved in 7235ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:52205/dest_c.html",
+  "final_screenshot": "tests\\_probe_out\\destination\\r6c_wrong\\shots\\dest_a_wrong_html\\img2.png",
+  "final_text": "C page",
+  "product_validation": null,
+  "total_duration_s": 8.734,
+  "total_steps": 2,
+  "live_log": [
+    {
+      "t": 1791138015.5173929,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138015.5303996,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138016.3704786,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138017.179939,
+      "message": "\u21b3 Clicking 'Pro Analytics'",
+      "level": "note"
+    },
+    {
+      "t": 1791138017.6309836,
+      "message": "\u21b3 Waiting for the page to finish navigating (up to 5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138022.64392,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 3s)",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>Screenshot Stages - AutoFlow QA</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}?v=25"
+    />
+
+</head>
+
+
+<body>
+
+<header class="app-header">
+
+    <h1>
+        Screenshot Stages
+    </h1>
+
+    <p class="tagline">
+        Browse this run's screenshots page-by-page
+    </p>
+
+</header>
+
+
+<main class="editor-container">
+
+    <section class="editor-header">
+
+        <div>
+
+            <h2>
+                Run
+            </h2>
+
+            <p class="editor-path">
+                <strong id="runDirValue">{{ run_dir }}</strong>
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="secondary-btn"
+            onclick="window.location.href='/'"
+        >
+            Close
+        </button>
+
+    </section>
+
+
+    <section
+        id="stagesLoading"
+        class="editor-message"
+    >
+        Loading stages...
+    </section>
+
+
+    <section
+        id="stagesError"
+        class="editor-error"
+        hidden
+    ></section>
+
+
+    <div class="editor-columns">
+
+        <section
+            id="stageListSection"
+            class="actions-editor editor-column"
+            hidden
+        >
+
+            <h2>
+                Stages
+            </h2>
+
+            <div id="stageList"></div>
+
+        </section>
+
+
+        <section
+            id="stageGallerySection"
+            class="actions-editor editor-column"
+            hidden
+        >
+
+            <h2 id="stageGalleryTitle">
+                Screenshots
+            </h2>
+
+            <div id="stageGallery" class="stage-gallery"></div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<script>
+
+const runDir = {{ run_dir | tojson }};
+
+let stagesData = [];
+
+async function loadStages() {
+
+    const loading = document.getElementById("stagesLoading");
+    const error = document.getElementById("stagesError");
+    const listSection = document.getElementById("stageListSection");
+
+    try {
+
+        loading.hidden = false;
+        error.hidden = true;
+
+        const url = "/api/runs/stages?run_dir=" + encodeURIComponent(runDir);
+
+        const response = await fetch(url, {
+            headers: { "Accept": "application/json" }
+        });
+
+        const contentType = response.headers.get("content-type") || "";
+
+        if (!contentType.includes("application/json")) {
+            throw new Error("Server returned HTML instead of JSON.");
+        }
+
+        const data = await response.json();
+
+        if (!response.ok || !data.success) {
+            throw new Error(data.message || "Failed to load stages.");
+        }
+
+        stagesData = data.stages || [];
+
+        renderStageList();
+
+        loading.hidden = true;
+        listSection.hidden = false;
+
+        if (stagesData.length > 0) {
+            showStage(0);
+        }
+
+    } catch (err) {
+
+        console.error("Stages load failed:", err);
+        loading.hidden = true;
+        error.textContent = "Failed to load stages: " + err.message;
+        error.hidden = false;
+    }
+}
+
+
+function renderStageList() {
+
+    const container = document.getElementById("stageList");
+    container.innerHTML = "";
+
+    if (stagesData.length === 0) {
+        container.innerHTML =
+            '<div class="recordings-empty">No screenshots found for this run.</div>';
+        return;
+    }
+
+    stagesData.forEach((stage, index) => {
+
+        const card = document.createElement("div");
+        card.className = "action-card";
+        card.style.cursor = "pointer";
+
+        const heading = document.createElement("h3");
+        heading.textContent = `${index + 1}. ${stage.name}`;
+
+        const count = document.createElement("p");
+        count.className = "editor-path";
+        count.textContent = `${stage.images.length} screenshot(s)`;
+
+        card.appendChild(heading);
+        card.appendChild(count);
+
+        card.addEventListener("click", () => showStage(index));
+
+        container.appendChild(card);
+    });
+}
+
+
+function showStage(index) {
+
+    const stage = stagesData[index];
+    if (!stage) {
+        return;
+    }
+
+    document.getElementById("stageGallerySection").hidden = false;
+    document.getElementById("stageGalleryTitle").textContent =
+        `Screenshots - ${stage.name}`;
+
+    const gallery = document.getElementById("stageGallery");
+    gallery.innerHTML = "";
+
+    stage.images.forEach((imgPath) => {
+
+        const thumb = document.createElement("img");
+        thumb.className = "stage-thumb";
+        thumb.loading = "lazy";
+        thumb.src = "/screenshots/raw?path=" + encodeURIComponent(imgPath);
+        thumb.alt = imgPath;
+
+        gallery.appendChild(thumb);
+    });
+}
+
+
+loadStages();
+
+</script>
+
+</body>
+</html>

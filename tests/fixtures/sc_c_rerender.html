@@ -1,0 +1,26 @@
+<!doctype html><html><head><title>re-rendered input</title></head><body>
+<div id="log"></div>
+<div id="host"></div>
+<script>
+var q = new URLSearchParams(location.search), mode = q.get('m') || '', renders = 0;
+function rid() { return 'f' + Math.random().toString(36).slice(2, 10); }
+function render() {
+  renders++;
+  var host = document.getElementById('host');
+  host.innerHTML = '';
+  var relabel = mode === 'relabel' && renders > 1;
+  var ta = document.createElement('textarea');
+  ta.id = rid();
+  ta.setAttribute('aria-label', relabel ? 'Compose ' + rid() : 'Message box');
+  ta.placeholder = relabel ? 'Say ' + rid() : 'Type here';
+  ta.rows = 2; ta.cols = 40;
+  var b = document.createElement('button'); b.type = 'button'; b.textContent = 'Send';
+  b.addEventListener('click', function () {
+    var t = ta.value.trim(); if (!t) return;
+    var p = document.createElement('p'); p.textContent = 'You: ' + t; document.getElementById('log').appendChild(p);
+    render();
+  });
+  host.appendChild(ta); host.appendChild(b);
+}
+render();
+</script></body></html>

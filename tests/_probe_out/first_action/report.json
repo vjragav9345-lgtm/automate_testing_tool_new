@@ -1,0 +1,49 @@
+{
+  "status": "FAIL",
+  "message": "Invalid recording: the first action must be a Navigate action (was it deleted?).",
+  "qa_url": "http://127.0.0.1:57031/gap_page.html",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "click",
+      "strategy_used": null,
+      "element_found": false,
+      "success": false,
+      "error": "not executed - the recording's first action is not a Navigate action, likely caused by a deleted/missing starting action",
+      "warning": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": null,
+      "url_after": null,
+      "duration": 0,
+      "locator_report": null,
+      "expected": null,
+      "actual": null
+    },
+    {
+      "index": 2,
+      "action_type": "navigate",
+      "strategy_used": null,
+      "element_found": false,
+      "success": false,
+      "error": "not executed - the recording's first action is not a Navigate action, likely caused by a deleted/missing starting action",
+      "warning": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": null,
+      "url_after": null,
+      "duration": 0,
+      "locator_report": null,
+      "expected": null,
+      "actual": null
+    }
+  ],
+  "final_url": null,
+  "final_screenshot": null,
+  "final_text": null,
+  "product_validation": null,
+  "total_duration_s": null,
+  "diagnostic": "actions[0].action_type == 'click', expected 'navigate'"
+}

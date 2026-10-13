@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>AutoFlow QA Report - {{ result.run_id }}</title>
+<style>
+    * { box-sizing: border-box; }
+    body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f1f5f9;
+        color: #1e293b;
+        padding: 24px;
+    }
+    .report-wrap { max-width: 1000px; margin: 0 auto; }
+    h1 { color: #1e3a8a; margin-bottom: 4px; }
+    .meta { color: #64748b; font-size: 13px; margin-bottom: 20px; }
+    .banner {
+        border-radius: 8px;
+        padding: 20px 24px;
+        font-size: 22px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
+    .banner.pass { background: #16a34a; }
+    .banner.fail { background: #dc2626; }
+    .banner .msg { display: block; font-size: 14px; font-weight: 400; margin-top: 6px; }
+    section {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 20px 24px;
+        margin-bottom: 20px;
+    }
+    section h2 { margin-top: 0; color: #1e3a8a; font-size: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+    th { color: #64748b; font-size: 12px; text-transform: uppercase; }
+    tr.fragile { background: #fef3c7; }
+    tr.failed { background: #fee2e2; }
+    .pill {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 10px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .pill.ok { background: #dcfce7; color: #166534; }
+    .pill.bad { background: #fee2e2; color: #991b1b; }
+    .pill.unknown { background: #e2e8f0; color: #475569; }
+    .shots { display: flex; gap: 16px; flex-wrap: wrap; }
+    .shots figure { margin: 0; }
+    .shots img { max-width: 320px; border: 1px solid #e2e8f0; border-radius: 8px; }
+    .shots figcaption { font-size: 12px; color: #64748b; margin-top: 4px; text-align: center; }
+    .result-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #e2e8f0; }
+    .result-row:last-child { border-bottom: none; }
+    .result-label { color: #64748b; font-weight: 600; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="report-wrap">
+    <h1>AutoFlow QA - Execution Report</h1>
+    <p class="meta">Run {{ result.run_id }} against {{ result.qa_url }} - generated {{ generated_at }}</p>
+
+    <div class="banner {{ 'pass' if result.status == 'PASS' else 'fail' }}">
+        {{ result.status }}
+        <span class="msg">{{ result.message }}</span>
+    </div>
+
+    <section>
+        <h2>Validations</h2>
+        <div class="result-row">
+            <span class="result-label">Expected Content Found</span>
+            <span>
+                {% if result.content_check is none %}
+                    <span class="pill unknown">not checked</span>
+                {% elif result.content_check %}
+                    <span class="pill ok">yes</span>
+                {% else %}
+                    <span class="pill bad">no</span>
+                {% endif %}
+            </span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Screenshot Diff</span>
+            <span>
+                {% if not result.screenshot_diff %}
+                    <span class="pill unknown">not requested</span>
+                {% elif result.screenshot_diff.match is none %}
+                    <span class="pill unknown">skipped - {{ result.screenshot_diff.note }}</span>
+                {% elif result.screenshot_diff.match %}
+                    <span class="pill ok">match ({{ result.screenshot_diff.diff_ratio }})</span>
+                {% else %}
+                    <span class="pill bad">mismatch ({{ result.screenshot_diff.diff_ratio }})</span>
+                {% endif %}
+            </span>
+        </div>
+    </section>
+
+    {% if product_validation %}
+    <section>
+        <h2>Product Validation</h2>
+        <div class="banner {{ 'pass' if product_validation.status == 'PASS' else 'fail' }}" style="font-size: 16px; padding: 14px 18px;">
+            {{ product_validation.status }}
+        </div>
+        <div class="result-row">
+            <span class="result-label">Requested Product</span>
+            <span class="result-value">{{ product_validation.product }}</span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Found</span>
+            <span>
+                {% if product_validation.found %}<span class="pill ok">Yes</span>
+                {% else %}<span class="pill bad">No</span>{% endif %}
+            </span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Match Type</span>
+            <span>
+                {% if product_validation.match_type == 'exact' %}<span class="pill ok">EXACT MATCH</span>
+                {% elif product_validation.match_type == 'similar' %}<span class="pill unknown">POSSIBLE/SIMILAR MATCH</span>
+                {% else %}<span class="pill unknown">-</span>{% endif %}
+            </span>
+        </div>
+        {% if product_validation.found %}
+        <div class="result-row">
+            <span class="result-label">Position</span>
+            <span class="result-value">Result #{{ product_validation.position }} (Page {{ product_validation.page }})</span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Product Title</span>
+            <span class="result-value">{{ product_validation.title }}</span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Product URL</span>
+            <span class="result-value">{{ product_validation.url or '-' }}</span>
+        </div>
+        {% else %}
+        <div class="result-row">
+            <span class="result-label">Reason</span>
+            <span class="result-value">{{ product_validation.reason or 'Product not found' }}</span>
+        </div>
+        {% if product_validation.checked_count %}
+        <div class="result-row">
+            <span class="result-label">Results Checked</span>
+            <span class="result-value">{{ product_validation.checked_count }}</span>
+        </div>
+        {% endif %}
+        {% endif %}
+        <div class="result-row">
+            <span class="result-label">Search URL</span>
+            <span class="result-value">{{ product_validation.search_url or '-' }}</span>
+        </div>
+        {% if product_validation.screenshot_data %}
+        <div class="shots">
+            <figure>
+                <img src="{{ product_validation.screenshot_data }}" alt="product validation evidence" />
+                <figcaption>Product validation evidence</figcaption>
+            </figure>
+        </div>
+        {% endif %}
+    </section>
+    {% endif %}
+
+    <section>
+        <h2>Execution</h2>
+        <div class="result-row">
+            <span class="result-label">Total Steps</span>
+            <span>{{ execution_summary.total }}</span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Passed</span>
+            <span><span class="pill ok">{{ execution_summary.passed }}</span></span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Failed</span>
+            <span>
+                {% if execution_summary.failed %}<span class="pill bad">{{ execution_summary.failed }}</span>
+                {% else %}<span class="pill ok">0</span>{% endif %}
+            </span>
+        </div>
+        {% if execution_summary.first_failed %}
+        <div class="result-row">
+            <span class="result-label">First Failed Step</span>
+            <span>#{{ execution_summary.first_failed.index }} ({{ execution_summary.first_failed.action_type }}) - {{ execution_summary.first_failed.error or 'no details' }}</span>
+        </div>
+        {% endif %}
+    </section>
+
+    <section>
+        <h2>Steps</h2>
+        {% if steps %}
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Action</th>
+                    <th>Locator Strategy Used</th>
+                    <th>Result</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for s in steps %}
+                <tr class="{{ 'failed' if not s.success else ('fragile' if s.fragile else '') }}">
+                    <td>{{ s.index }}</td>
+                    <td>{{ s.action_type }}</td>
+                    <td>{{ s.strategy_used or '-' }}</td>
+                    <td>
+                        {% if s.success %}
+                            <span class="pill ok">passed</span>
+                        {% else %}
+                            <span class="pill bad">failed</span>
+                        {% endif %}
+                        {% if s.fragile %}<span class="pill unknown">fragile</span>{% endif %}
+                    </td>
+                    <td>{{ s.error or '' }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No recorded steps were executed - this was a content/screenshot-only check against {{ result.qa_url }}.</p>
+        {% endif %}
+    </section>
+
+    <section>
+        <h2>UI Elements</h2>
+        <div class="result-row">
+            <span class="result-label">Expected Elements</span>
+            <span>{{ ui_summary.total }}</span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Found</span>
+            <span><span class="pill ok">{{ ui_summary.found }}</span></span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Missing</span>
+            <span>
+                {% if ui_summary.missing %}<span class="pill bad">{{ ui_summary.missing }}</span>
+                {% else %}<span class="pill ok">0</span>{% endif %}
+            </span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Overall</span>
+            <span>
+                {% if ui_summary.status == 'PASS' %}<span class="pill ok">PASS</span>
+                {% elif ui_summary.status == 'FAIL' %}<span class="pill bad">FAIL</span>
+                {% else %}<span class="pill unknown">not checked</span>{% endif %}
+            </span>
+        </div>
+        {% if ui_elements %}
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Action</th>
+                    <th>Locator Strategy Used</th>
+                    <th>Status</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for el in ui_elements %}
+                <tr class="{{ 'failed' if el.status == 'FAIL' else '' }}">
+                    <td>{{ el.index }}</td>
+                    <td>{{ el.action_type }}</td>
+                    <td>{{ el.locator_used or '-' }}</td>
+                    <td>
+                        {% if el.status == 'PASS' %}<span class="pill ok">PASS</span>
+                        {% else %}<span class="pill bad">FAIL</span>{% endif %}
+                    </td>
+                    <td>{{ el.message or '' }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No UI elements to validate for this run.</p>
+        {% endif %}
+    </section>
+
+    <section>
+        <h2>Screenshots</h2>
+        <div class="shots">
+            {% for s in steps %}
+                {% if s.screenshot_data %}
+                <figure>
+                    <img src="{{ s.screenshot_data }}" alt="step {{ s.index }}" />
+                    <figcaption>Step {{ s.index }} ({{ s.action_type }})</figcaption>
+                </figure>
+                {% endif %}
+            {% endfor %}
+            {% if final_screenshot_data %}
+            <figure>
+                <img src="{{ final_screenshot_data }}" alt="final page" />
+                <figcaption>Final page</figcaption>
+            </figure>
+            {% endif %}
+        </div>
+    </section>
+</div>
+</body>
+</html>

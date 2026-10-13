@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { margin: 0; font-family: sans-serif; }
+  #grid { padding: 20px; overflow: hidden; }
+  .product-base { box-sizing: border-box; display: block; float: left; width: 180px; height: 140px;
+                   margin: 8px; border: 1px solid #ccc; padding: 6px; }
+</style>
+</head>
+<body>
+  <div id="grid"></div>
+  <script>
+    // simulates a client-side-rendered list that takes a couple of
+    // seconds to actually populate after the page itself has loaded -
+    // count_elements must not count zero just because it ran before this
+    setTimeout(function () {
+      var grid = document.getElementById('grid');
+      for (var i = 1; i <= 40; i++) {
+        var card = document.createElement('div');
+        card.className = 'product-base card-render-' + (100000 + i);
+        grid.appendChild(card);
+      }
+    }, 2500);
+  </script>
+</body>
+</html>

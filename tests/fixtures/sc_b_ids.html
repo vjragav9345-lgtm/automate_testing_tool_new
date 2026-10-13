@@ -1,0 +1,21 @@
+<!doctype html><html><head><title>pages with generated ids</title><style>body{font:15px sans-serif;margin:20px} button{margin:6px;padding:6px 12px}</style></head><body>
+<h3 id="where">start</h3>
+<button type="button" id="oa">Open A</button>
+<button type="button" id="ob">Open B</button>
+<script>
+var q = new URLSearchParams(location.search), mode = q.get('m') || '', salt = Math.random().toString(36).slice(2, 8);
+function rnd() { var s = 'abcdefghijklmnopqrstuvwxyz0123456789', o = ''; for (var i = 0; i < 12; i++) o += s[Math.floor(Math.random() * s.length)]; return 'x9' + o; }
+function idFor(label) {
+  if (mode === 'rand') return rnd();
+  if (mode === 'salt') return salt + label + '7q2z9k';
+  return label === 'a' ? 'a7k2m9x4q1' : 'b3n8z5w2r6';
+}
+function go(label) {
+  var path = mode === 'err' ? '/error' : (mode === 'login' ? '/login' : '/doc/' + idFor(label));
+  history.pushState({}, '', path);
+  document.getElementById('where').textContent = 'at ' + path;
+  document.title = 'doc ' + label;
+}
+document.getElementById('oa').addEventListener('click', function () { go('a'); });
+document.getElementById('ob').addEventListener('click', function () { go('b'); });
+</script></body></html>

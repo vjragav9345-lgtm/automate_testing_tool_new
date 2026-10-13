@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>AutoFlow QA - Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}?v=20"
+    />
+</head>
+
+<body>
+
+<header class="app-header">
+    <h1>AutoFlow QA</h1>
+
+    <p class="tagline">
+        Record-and-Replay Automation Testing Tool
+    </p>
+</header>
+
+
+<main class="dashboard">
+
+    <!-- WEBSITE URL -->
+    <section class="url-input-panel">
+
+        <label for="websiteUrlInput">
+            Website URL
+        </label>
+
+        <input
+            type="text"
+            id="websiteUrlInput"
+            class="url-input"
+            placeholder="https://example.com"
+            value="https://www.google.com"
+        />
+
+    </section>
+
+
+    <!-- BROWSER ACTIONS -->
+    <section class="action-panel">
+
+        <button
+            id="launchBrowserBtn"
+            class="action-btn"
+        >
+            Launch Browser
+        </button>
+
+        <button
+            id="connectDbBtn"
+            class="action-btn"
+        >
+            Connect Database
+        </button>
+
+        <button
+            id="systemStatusBtn"
+            class="action-btn"
+        >
+            System Status
+        </button>
+
+    </section>
+
+
+    <!-- BROWSER RESULT -->
+    <section
+        class="browser-result-panel"
+        id="browserResultPanel"
+        hidden
+    >
+
+        <h2>Browser Launch Result</h2>
+
+        <div class="result-row">
+
+            <span class="result-label">
+                Visited URL
+            </span>
+
+            <span
+                id="visitedUrlValue"
+                class="result-value"
+            >
+                -
+            </span>
+
+        </div>
+
+
+        <div class="result-row">
+
+            <span class="result-label">
+                Page Title
+            </span>
+
+            <span
+                id="pageTitleValue"
+                class="result-value"
+            >
+                -
+            </span>
+
+        </div>
+
+
+        <div class="result-row">
+
+            <span class="result-label">
+                Status
+            </span>
+
+            <span
+                id="statusValue"
+                class="result-value"
+            >
+                -
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- RECORDED TESTS -->
+    <section class="recordings-panel">
+
+        <div class="recordings-header">
+
+            <div>
+                <h2>Recorded Tests</h2>
+
+                <p class="section-description">
+                    Existing JSON recordings saved in
+                    storage/recordings.
+                </p>
+            </div>
+
+            <button
+                id="refreshRecordingsBtn"
+                class="secondary-btn"
+            >
+                Refresh
+            </button>
+
+        </div>
+
+
+        <!-- ERROR -->
+        <div
+            id="recordingsError"
+            class="recordings-error"
+            hidden
+        ></div>
+
+
+        <!-- LOADING -->
+        <div
+            id="recordingsLoading"
+            class="recordings-loading"
+            hidden
+        >
+            Loading recordings...
+        </div>
+
+
+        <!-- EMPTY -->
+        <div
+            id="recordingsEmpty"
+            class="recordings-empty"
+            hidden
+        >
+            No JSON recordings found.
+        </div>
+
+
+        <!-- RECORDING LIST -->
+        <div
+            id="recordingsList"
+            class="recordings-list"
+        ></div>
+
+    </section>
+
+
+    <!-- RAW RESULT -->
+    <section class="result-panel">
+
+        <h2>Raw Result</h2>
+
+        <pre
+            id="resultOutput"
+            class="result-output"
+        >No action performed yet.</pre>
+
+    </section>
+
+</main>
+
+
+<footer class="app-footer">
+
+    <p>
+        AutoFlow QA &copy; 2026
+    </p>
+
+</footer>
+
+
+<script
+    src="{{ url_for('static', filename='js/script.js') }}?v=20"
+></script>
+
+</body>
+</html>

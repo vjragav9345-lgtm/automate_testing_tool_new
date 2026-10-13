@@ -1,0 +1,196 @@
+[
+ {
+  "n": 2,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 300
+ },
+ {
+  "n": 3,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 1048
+ },
+ {
+  "n": 4,
+  "kind": "drag",
+  "tag": "noui-0-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "9.0",
+   "text": "12"
+  },
+  "scrollY": 1048
+ },
+ {
+  "n": 5,
+  "kind": "drag",
+  "tag": "noui-0-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "12.0",
+   "text": "20"
+  },
+  "scrollY": 1048
+ },
+ {
+  "n": 6,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 1348
+ },
+ {
+  "n": 7,
+  "kind": "drag",
+  "tag": "noui-1-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "1.0",
+   "text": "256MB"
+  },
+  "scrollY": 1348
+ },
+ {
+  "n": 8,
+  "kind": "drag",
+  "tag": "noui-1-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "3.0",
+   "text": "8GB"
+  },
+  "scrollY": 1348
+ },
+ {
+  "n": 9,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 1488
+ },
+ {
+  "n": 10,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 2159
+ },
+ {
+  "n": 11,
+  "kind": "drag",
+  "tag": "noui-2-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "0.0",
+   "text": "0"
+  },
+  "scrollY": 2159
+ },
+ {
+  "n": 12,
+  "kind": "drag",
+  "tag": "noui-2-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "43.8",
+   "text": "44"
+  },
+  "scrollY": 2159
+ },
+ {
+  "n": 13,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 2459
+ },
+ {
+  "n": 14,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 2782
+ },
+ {
+  "n": 15,
+  "kind": "drag",
+  "tag": "noui-3-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "127.0",
+   "text": "127"
+  },
+  "scrollY": 2782
+ },
+ {
+  "n": 16,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 2662
+ },
+ {
+  "n": 17,
+  "kind": "drag",
+  "tag": "noui-4-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "128.3",
+   "text": "128"
+  },
+  "scrollY": 2662
+ },
+ {
+  "n": 18,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 2402
+ },
+ {
+  "n": 19,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 2782
+ },
+ {
+  "n": 20,
+  "kind": "drag",
+  "tag": "noui-5-h0",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "127.0",
+   "text": "127"
+  },
+  "scrollY": 2782
+ },
+ {
+  "n": 21,
+  "kind": "scroll",
+  "tag": "review-up",
+  "scrollY": 2286
+ },
+ {
+  "n": 22,
+  "kind": "scroll",
+  "tag": "wander",
+  "scrollY": 2586
+ },
+ {
+  "n": 23,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 3486
+ },
+ {
+  "n": 24,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 3725
+ },
+ {
+  "n": 25,
+  "kind": "drag",
+  "tag": "noui-6-h1",
+  "settled_value": {
+   "kind": "aria_value",
+   "value": "82.0",
+   "text": "81.95"
+  },
+  "scrollY": 3725
+ }
+]

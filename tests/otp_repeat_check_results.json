@@ -1,0 +1,57 @@
+[
+  {
+    "strategy": "text+tag",
+    "tag": "DIV",
+    "text": "Send OTP",
+    "bounding_box": {
+      "x": 448,
+      "y": 445,
+      "width": 384,
+      "height": 52
+    }
+  },
+  {
+    "strategy": "text+tag",
+    "tag": "DIV",
+    "text": "Send OTP",
+    "bounding_box": {
+      "x": 448,
+      "y": 445,
+      "width": 384,
+      "height": 52
+    }
+  },
+  {
+    "strategy": "text+tag",
+    "tag": "DIV",
+    "text": "Send OTP",
+    "bounding_box": {
+      "x": 448,
+      "y": 445,
+      "width": 384,
+      "height": 52
+    }
+  },
+  {
+    "strategy": "text+tag",
+    "tag": "DIV",
+    "text": "Send OTP",
+    "bounding_box": {
+      "x": 448,
+      "y": 445,
+      "width": 384,
+      "height": 52
+    }
+  },
+  {
+    "strategy": "text+tag",
+    "tag": "DIV",
+    "text": "Send OTP",
+    "bounding_box": {
+      "x": 448,
+      "y": 445,
+      "width": 384,
+      "height": 52
+    }
+  }
+]

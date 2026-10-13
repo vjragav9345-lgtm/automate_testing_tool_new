@@ -1,0 +1,191 @@
+CORE FIX MISSING: fill/select retry logic not found - results from this run cannot be trusted.
+Starting replay...
+Browser launched.
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+REPLAY SOURCE: session_20261007_161821
+ACTION COUNT: 69
+SOURCE TYPE: ORIGINAL
+
+Executing recorded actions...
+
+==================================================
+[1/69]
+ACTION: navigate
+NAME: Open – Home page
+URL: https://www.myntra.com
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+[redirect] launch URL -> https://www.myntra.com/
+[navigate-ready] waiting for next step's target to become findable (up to 9.0s)...
+[navigate-ready] found at t=0.1s - destination page is ready
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (2.17s).
+
+[timing] step 1 (navigate): total 2171ms | settle 1235ms | navigation_wait 62ms | screenshot 843ms | other 31ms
+==================================================
+[2/69]
+ACTION: click
+NAME: "Formal shoes Under ₹999" link
+Element: Formal shoes Under ₹999
+Locator: a[href="/myntra?f=Categories%3AFormal%20Shoes%3A%3AGender%3Amen%2Cmen%20women%3A%3AQuick%20Filters%3AHot%20Trends&rf=Price%3A0.0_1000.0_0.0%20TO%201000.0&storeContext=fwd"]
+
+STATUS: STARTED
+Executing...
+[spa-settle] waited 3.06s for network-idle/no-skeleton before this step
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[note] -> 'Formal shoes Under ₹999' is hidden, so AutoFlow is hovering over the menu that holds it
+[hover-reveal] Hover: hovered the menu trigger above the target - it is now visible
+[target-verify] PASSED WITH WARNING: target was hidden and required an un-recorded hover-reveal (see [hover-reveal] log lines) to become visible - consider re-recording this step so the hover itself is captured
+[CLICK-DIAG] === click on recorded target 'Formal shoes Under ₹999' (strategy=href) ===
+[CLICK-DIAG] resolved-to-click : tag='a' class='desktop-categoryLink' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='a' class='desktop-categoryLink' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'a', 'cls': 'desktop-categoryLink', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Formal shoes Under ₹999'
+[elements-from-point BEFORE CLICK] stack at (845, 394), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='a' class='desktop-categoryLink' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='li' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='ul' class='desktop-navBlock' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='li' class='desktop-evenColumnContent desktop-oddColumnContent' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='desktop-categoryContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='desktop-paneContent' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='img' class='image-image undefined image-hand' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='container-container container-aspectContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='container-base myx-stretch    ' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class=' column-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class=' row-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='container-container ' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='div' class='container-base myx-stretch    ' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='div' class='myx-indexContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [16] tag='div' class='myx-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [17] tag='main' class='shop-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [18] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [19] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [20] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [21] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (845, 394), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [1] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+target was hidden and required an un-recorded hover-reveal (see [hover-reveal] log lines) to become visible - consider re-recording this step so the hover itself is captured
+EFFECT VERIFICATION CODE RUNNING (step 2, action_type='click')
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (12.99s).
+Formal shoes Under ₹999 found using Link URL. (resolved in 12985ms)
+
+[timing] step 2 (click): total 12985ms | locate_action 8655ms | log_emit 0ms | screenshot 1547ms | settle 1266ms | verify 391ms | other 1126ms
+==================================================
+[3/69]
+ACTION: scroll
+NAME: down 607px on Myntra
+Delta: (0, 607)
+
+STATUS: STARTED
+Executing...
+[scroll] window-level scroll (no locator_profile recorded)
+STATUS: SUCCESS
+Done (0.72s).
+
+[timing] step 3 (scroll): total 718ms | other 718ms
+==================================================
+[4/69]
+ACTION: scroll
+NAME: down 118px on Myntra
+Delta: (0, 118)
+
+STATUS: STARTED
+Executing...
+[scroll] window-level scroll (no locator_profile recorded)
+STATUS: SUCCESS
+Done (0.38s).
+
+[timing] step 4 (scroll): total 375ms | other 375ms
+==================================================
+[5/69]
+ACTION: check
+NAME: "BTOM(21)" checkbox (checked)
+Element: BTOM(21)
+Locator: div#mountRoot > div > main > div:nth-of-type(3) > div > section > div > div:nth-of-type(4) > ul > li:nth-of-type(7) > label
+Expected State: True
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 4s)
+[note] -> A banner ("MEN") is covering 'BTOM(21)', waiting for it to move.
+[note] -> It was still in the way, so Escape was pressed and the mouse moved away.
+[target-verify] REJECTED strategy=text+tag: not hit-testable at its own center - a different element sits there
+[target-verify] REJECTED strategy=identity: not hit-testable at its own center - a different element sits there
+[target-verify] REJECTED strategy=position_fallback: not hit-testable at its own center - a different element sits there
+[target-verify] REJECTED strategy=css_path: not hit-testable at its own center - a different element sits there
+[target-verify] REJECTED strategy=xpath: not hit-testable at its own center - a different element sits there
+[target-verify] REJECTED strategy=text+tag: not hit-testable at its own center - a different element sits there
+[target-verify] REJECTED strategy=identity: not hit-testable at its own center - a different element sits there
+[target-verify] REJECTED strategy=position_fallback: not hit-testable at its own center - a different element sits there
+[target-verify] REJECTED strategy=css_path: not hit-testable at its own center - a different element sits there
+[target-verify] REJECTED strategy=xpath: not hit-testable at its own center - a different element sits there
+[scroll-search] skipped: a candidate was found but rejected, and the page is already at the recorded scroll position - scrolling further would not match the manual recording
+[note] -> Waiting for the page to stop changing before the screenshot (up to 3s)
+STATUS: FAILED
+Reason: Failed: A banner ("MEN") was covering 'BTOM(21)', so AutoFlow did not click (clicking would have chosen a different item). The replay stopped. [details] text+tag: not hit-testable at its own center - a different element sits there; identity: not hit-testable at its own center - a different element sits there; position_fallback: not hit-testable at its own center - a different element sits there; css_path: not hit-testable at its own center - a different element sits there; xpath: not hit-testable at its own center - a different element sits there
+Current URL: https://www.myntra.com/myntra?f=Categories%3AFormal%20Shoes%3A%3AGender%3Amen%2Cmen%20women%3A%3AQuick%20Filters%3AHot%20Trends&rf=Price%3A0.0_1000.0_0.0%20TO%201000.0&storeContext=fwd
+BTOM(21) could not be resolved using any stored locator.
+Locator attempts:
+  1. role=checkbox
+  2. text=BTOM(21)
+  3. css_path=div#mountRoot > div > main > div:nth-of-type(3) > div > section > div > div:nth-of-type(4) > ul > li:nth-of-type(7) > label
+  4. xpath=//label[normalize-space(text())='BTOM']
+WARNING: Warning: A banner ("MEN") was still covering 'BTOM(21)', so AutoFlow pressed Escape and moved the mouse away. The test continued.
+
+Screenshot: E:\.claude\generated_scripts\screenshoots\session_20261007_161821_20261007_164852\myntra\step05_btom_21_FAILED_16-49-55.png
+[timing] step 5 (check): total 41797ms | locate_action 40906ms | screenshot 718ms | other 173ms
+Step 5 (check) failed - stopping replay (stop_on_failure is on; set AUTOFLOW_STOP_ON_FAILURE=0 to fall back to recover-and-continue). Remaining steps will be marked NOT RUN.
+
+==================================================
+REPLAY COMPLETED
+==================================================
+
+Recorded: 69
+JSON: 69
+Generated: 69
+Executed: 5
+Successful: 4
+Failed: 1
+Total replay time: 64.30s
+Not executed: 6-69 (64 action(s))
+
+RESULT: FAIL
+
+Final URL:
+https://www.myntra.com/myntra?f=Categories%3AFormal%20Shoes%3A%3AGender%3Amen%2Cmen%20women%3A%3AQuick%20Filters%3AHot%20Trends&rf=Price%3A0.0_1000.0_0.0%20TO%201000.0&storeContext=fwd
+
+Screenshots:
+E:\.claude\generated_scripts\screenshoots\session_20261007_161821_20261007_164852
+
+Generated Script:
+E:\.claude\generated_scripts\session_20261007_161821_script.py
+
+Browser will remain open for 5 seconds...
+Browser closed successfully.
+==================================================
+
+
+===== stderr =====
+E:\.claude\generated_scripts\session_20261007_161821_script.py:18045: SyntaxWarning: invalid escape sequence '\s'
+  return el_handle.evaluate("""e => {
+E:\.claude\generated_scripts\session_20261007_161821_script.py:23457: SyntaxWarning: invalid escape sequence '\s'
+  "    const t = lb.split(/\s+/).map(id => {"
+E:\.claude\generated_scripts\session_20261007_161821_script.py:27215: SyntaxWarning: invalid escape sequence '\d'
+  _DRAG_VALUE_SNAPSHOT_JS = """
+E:\.claude\generated_scripts\session_20261007_161821_script.py:36112: SyntaxWarning: invalid escape sequence '\s'
+  _VALIDATE_BLOCK_DETECTION_JS = """
+E:\.claude\generated_scripts\session_20261007_161821_script.py:36276: SyntaxWarning: invalid escape sequence '\s'
+  _CLICK_IF_EXISTS_JS = """

@@ -1,0 +1,72 @@
+CORE FIX MISSING: fill/select retry logic not found - results from this run cannot be trusted.
+Starting replay...
+Browser launched.
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+REPLAY SOURCE: session_20261007_144239
+ACTION COUNT: 34
+SOURCE TYPE: ORIGINAL
+
+Executing recorded actions...
+
+==================================================
+[1/34]
+ACTION: navigate
+NAME: Open – Home page
+URL: https://sportzia-preprod.kovaionplay.com
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+[redirect] launch URL -> https://sportzia-preprod.kovaionplay.com/feed
+[navigate-ready] waiting for next step's target to become findable (up to 9.0s)...
+STATUS: FAILED
+Reason: replay could not continue - Page.wait_for_timeout: Target page, context or browser has been closed
+
+[crash-recovery] browser/page unusable - attempting one relaunch
+(new page/tab appeared during replay - assigned page_id=1, url=about:blank)
+[extra-tab-check] WARNING: page_id=1 just opened, but this recording's own actions never reference a page_id beyond 0 - more tabs are open than the recording expects (url=about:blank)
+[crash-recovery] relaunch FAILED: Page.goto: Target page, context or browser has been closed
+Call log:
+navigating to "https://sportzia-preprod.kovaionplay.com/feed", waiting until "domcontentloaded"
+
+==================================================
+REPLAY COMPLETED
+==================================================
+
+Recorded: 34
+JSON: 34
+Generated: 34
+Executed: 1
+Successful: 0
+Failed: 1
+Total replay time: 8.50s
+Not executed: 2-34 (33 action(s))
+
+RESULT: FAIL
+
+Final URL:
+None
+
+Screenshots:
+E:\.claude\generated_scripts\screenshoots\session_20261007_144239_20261007_151719
+
+Generated Script:
+E:\.claude\generated_scripts\session_20261007_144239_script.py
+
+No open page remained - skipping the close delay.
+Browser closed successfully.
+==================================================
+
+
+===== stderr =====
+E:\.claude\generated_scripts\session_20261007_144239_script.py:12996: SyntaxWarning: invalid escape sequence '\s'
+  return el_handle.evaluate("""e => {
+E:\.claude\generated_scripts\session_20261007_144239_script.py:18391: SyntaxWarning: invalid escape sequence '\s'
+  "    const t = lb.split(/\s+/).map(id => {"
+E:\.claude\generated_scripts\session_20261007_144239_script.py:22120: SyntaxWarning: invalid escape sequence '\d'
+  _DRAG_VALUE_SNAPSHOT_JS = """
+E:\.claude\generated_scripts\session_20261007_144239_script.py:31005: SyntaxWarning: invalid escape sequence '\s'
+  _VALIDATE_BLOCK_DETECTION_JS = """
+E:\.claude\generated_scripts\session_20261007_144239_script.py:31169: SyntaxWarning: invalid escape sequence '\s'
+  _CLICK_IF_EXISTS_JS = """
+2026-10-07 15:17:26,648 ERROR step 1 crashed the replay loop: Page.wait_for_timeout: Target page, context or browser has been closed

@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>JSON Recording Editor - AutoFlow QA</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}?v=20"
+    />
+
+</head>
+
+
+<body>
+
+<header class="app-header">
+
+    <h1>
+        JSON Recording Editor
+    </h1>
+
+    <p class="tagline">
+        View and edit recorded browser actions
+    </p>
+
+</header>
+
+
+<main class="editor-container">
+
+    <!-- RECORDING INFORMATION -->
+    <section class="editor-header">
+
+        <div>
+
+            <h2>
+                Recording Details
+            </h2>
+
+            <p class="editor-path">
+
+                Selected Recording:
+
+                <strong id="selectedRecordingPath">
+                    {{ recording_path }}
+                </strong>
+
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="secondary-btn"
+            onclick="window.location.href='/'"
+        >
+            Close
+        </button>
+
+    </section>
+
+
+    <!-- LOADING -->
+    <section
+        id="editorLoading"
+        class="editor-message"
+    >
+        Loading recording...
+    </section>
+
+
+    <!-- ERROR -->
+    <section
+        id="editorError"
+        class="editor-error"
+        hidden
+    ></section>
+
+
+    <!-- RECORDING DETAILS -->
+    <section
+        id="recordingInfo"
+        class="recording-info"
+        hidden
+    >
+
+        <div class="info-card">
+
+            <span class="info-label">
+                Name
+            </span>
+
+            <span
+                id="recordingName"
+                class="info-value"
+            >
+                -
+            </span>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span class="info-label">
+                Total Actions
+            </span>
+
+            <span
+                id="recordingActionCount"
+                class="info-value"
+            >
+                0
+            </span>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span class="info-label">
+                Start URL
+            </span>
+
+            <span
+                id="recordingStartUrl"
+                class="info-value"
+            >
+                -
+            </span>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span class="info-label">
+                Recorded At
+            </span>
+
+            <span
+                id="recordingRecordedAt"
+                class="info-value"
+            >
+                -
+            </span>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span class="info-label">
+                Saved At
+            </span>
+
+            <span
+                id="recordingSavedAt"
+                class="info-value"
+            >
+                -
+            </span>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span class="info-label">
+                Stop Reason
+            </span>
+
+            <span
+                id="recordingStopReason"
+                class="info-value"
+            >
+                -
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACTIONS: latest edited (left) + original for comparison (right,
+         only present when this recording IS an edited version of one) -->
+    <div class="editor-columns">
+
+        <section
+            id="actionsContainer"
+            class="actions-editor editor-column"
+            hidden
+        >
+
+            <h2>
+                Recorded Actions
+            </h2>
+
+            <div id="actionsList"></div>
+
+            <button
+                type="button"
+                id="addActionBtn"
+                class="secondary-btn"
+            >
+                Add Action
+            </button>
+
+
+            <div
+                id="saveStatus"
+                class="editor-message"
+                hidden
+            ></div>
+
+            <button
+                type="button"
+                id="saveEditedBtn"
+                class="action-btn"
+            >
+                Save Edited JSON
+            </button>
+
+        </section>
+
+
+        <section
+            id="originalContainer"
+            class="actions-editor editor-column"
+            hidden
+        >
+
+            <h2>
+                Original Recording (Read-Only)
+            </h2>
+
+            <p class="editor-path">
+                The unedited recording this test was derived from. Never
+                modified by Save Edited JSON.
+            </p>
+
+            <div id="originalActionsList"></div>
+
+        </section>
+
+    </div>
+
+
+</main>
+
+
+<script>
+
+const recordingPath = {{ recording_path | tojson }};
+
+let recordingData = null;
+
+// guards against ever rendering the editor/action list more than once on
+// this page - loadRecording() is only ever called a single time below,
+// but this makes that a hard guarantee rather than an assumption
+let _recordingLoadStarted = false;
+
+
+async function loadRecording() {
+
+    if (_recordingLoadStarted) {
+        return;
+    }
+
+    _recordingLoadStarted = true;
+
+    const loading =
+        document.getElementById("editorLoading");
+
+    const error =
+        document.getElementById("editorError");
+
+    const info =
+        document.getElementById("recordingInfo");
+
+    const actionsContainer =
+        document.getElementById("actionsContainer");
+
+    try {
+
+        loading.hidden = false;
+        error.hidden = true;
+        info.hidden = true;
+        actionsContainer.hidden = true;
+
+
+        const url =
+            "/api/recordings/view?path=" +
+            encodeURIComponent(recordingPath);
+
+
+        const response =
+            await fetch(url, {
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+
+        /*
+         * IMPORTANT:
+         * Do not directly call response.json().
+         * First check whether Flask actually returned JSON.
+         * This prevents the:
+         *
+         * Unexpected token '<'
+         *
+         * error.
+         */
+
+        const contentType =
+            response.headers.get("content-type") || "";
+
+
+        if (!contentType.includes("application/json")) {
+
+            const text =
+                await response.text();
+
+            throw new Error(
+                "Server returned HTML instead of JSON."
+            );
+        }
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok || !data.success) {
+
+            throw new Error(
+                data.message ||
+                "Failed to load recording."
+            );
+        }
+
+
+        recordingData =
+            data.recording;
+
+
+        renderRecording();
+
+
+        if (data.original) {
+
+            renderOriginalActions(
+                data.original
+            );
+
+            document.getElementById(
+                "originalContainer"
+            ).hidden = false;
+        }
+
+
+        loading.hidden = true;
+        info.hidden = false;
+        actionsContainer.hidden = false;
+
+    }
+
+    catch (err) {
+
+        console.error(
+            "Recording load failed:",
+            err
+        );
+
+        loading.hidden = true;
+
+        error.textContent =
+            "Failed to load recording: " +
+            err.message;
+
+        error.hidden = false;
+    }
+}
+
+
+function renderRecording() {
+
+    if (!recordingData) {
+        return;
+    }
+
+
+    document.getElementById(
+        "recordingName"
+    ).textContent =
+        recordingData.name || "-";
+
+
+    document.getElementById(
+        "recordingActionCount"
+    ).textContent =
+        Array.isArray(recordingData.actions)
+            ? recordingData.actions.length
+            : 0;
+
+
+    document.getElementById(
+        "recordingStartUrl"
+    ).textContent =
+        recordingData.start_url || "-";
+
+
+    document.getElementById(
+        "recordingRecordedAt"
+    ).textContent =
+        recordingData.recorded_at || "-";
+
+
+    document.getElementById(
+        "recordingSavedAt"
+    ).textContent =
+        recordingData.saved_at || "-";
+
+
+    document.getElementById(
+        "recordingStopReason"
+    ).textContent =
+        recordingData.stop_reason || "-";
+
+
+    renderActions();
+}
+
+
+function renderActions() {
+
+    const container =
+        document.getElementById("actionsList");
+
+
+    container.innerHTML = "";
+
+
+    const actions =
+        Array.isArray(recordingData.actions)
+            ? recordingData.actions
+            : [];
+
+
+    if (actions.length === 0) {
+
+        container.innerHTML =
+            '<div class="recordings-empty">' +
+            'No actions found in this recording.' +
+            '</div>';
+
+        return;
+    }
+
+
+    actions.forEach(
+        (action, index) => {
+
+            const card =
+                document.createElement("div");
+
+            card.className =
+                "action-card";
+
+
+            const heading =
+                document.createElement("h3");
+
+            heading.textContent =
+                `${index + 1}. ${action.action_type || "unknown"}`;
+
+
+            const typeLabel =
+                document.createElement("label");
+
+            typeLabel.textContent =
+                "Action Type";
+
+
+            const typeInput =
+                document.createElement("input");
+
+            typeInput.type =
+                "text";
+
+            typeInput.className =
+                "editor-input";
+
+            typeInput.value =
+                action.action_type || "";
+
+            typeInput.addEventListener(
+                "input",
+                () => {
+                    action.action_type =
+                        typeInput.value;
+                }
+            );
+
+
+            const valueLabel =
+                document.createElement("label");
+
+            valueLabel.textContent =
+                "Value";
+
+
+            const valueInput =
+                document.createElement("textarea");
+
+            valueInput.className =
+                "editor-input";
+
+            valueInput.rows =
+                3;
+
+            valueInput.value =
+                action.value ?? "";
+
+            valueInput.addEventListener(
+                "input",
+                () => {
+                    action.value =
+                        valueInput.value;
+                }
+            );
+
+
+            const urlLabel =
+                document.createElement("label");
+
+            urlLabel.textContent =
+                "Page URL";
+
+
+            const urlInput =
+                document.createElement("input");
+
+            urlInput.type =
+                "text";
+
+            urlInput.className =
+                "editor-input";
+
+            urlInput.value =
+                action.page_url || "";
+
+            urlInput.addEventListener(
+                "input",
+                () => {
+                    action.page_url =
+                        urlInput.value;
+                }
+            );
+
+
+            const locatorLabel =
+                document.createElement("label");
+
+            locatorLabel.textContent =
+                "Locator";
+
+
+            const locatorInput =
+                document.createElement("textarea");
+
+            locatorInput.className =
+                "editor-input";
+
+            locatorInput.rows =
+                3;
+
+            locatorInput.disabled =
+                true;
+
+            locatorInput.value =
+                action.locator_profile
+                    ? JSON.stringify(action.locator_profile)
+                    : "-";
+
+
+            const boxLabel =
+                document.createElement("label");
+
+            boxLabel.textContent =
+                "Bounding Box";
+
+
+            const boxInput =
+                document.createElement("input");
+
+            boxInput.type =
+                "text";
+
+            boxInput.className =
+                "editor-input";
+
+            boxInput.disabled =
+                true;
+
+            boxInput.value =
+                action.bounding_box
+                    ? JSON.stringify(action.bounding_box)
+                    : "-";
+
+
+            card.appendChild(
+                heading
+            );
+
+            card.appendChild(
+                typeLabel
+            );
+
+            card.appendChild(
+                typeInput
+            );
+
+            card.appendChild(
+                valueLabel
+            );
+
+            card.appendChild(
+                valueInput
+            );
+
+            card.appendChild(
+                urlLabel
+            );
+
+            card.appendChild(
+                urlInput
+            );
+
+            card.appendChild(
+                locatorLabel
+            );
+
+            card.appendChild(
+                locatorInput
+            );
+
+            card.appendChild(
+                boxLabel
+            );
+
+            card.appendChild(
+                boxInput
+            );
+
+
+            const upButton =
+                document.createElement("button");
+
+            upButton.type =
+                "button";
+
+            upButton.className =
+                "secondary-btn";
+
+            upButton.textContent =
+                "Up";
+
+            upButton.disabled =
+                index === 0;
+
+            upButton.addEventListener(
+                "click",
+                () => {
+                    if (index === 0) {
+                        return;
+                    }
+
+                    const tmp =
+                        actions[index - 1];
+
+                    actions[index - 1] =
+                        actions[index];
+
+                    actions[index] =
+                        tmp;
+
+                    renderActions();
+                }
+            );
+
+            card.appendChild(
+                upButton
+            );
+
+
+            const downButton =
+                document.createElement("button");
+
+            downButton.type =
+                "button";
+
+            downButton.className =
+                "secondary-btn";
+
+            downButton.textContent =
+                "Down";
+
+            downButton.disabled =
+                index === actions.length - 1;
+
+            downButton.addEventListener(
+                "click",
+                () => {
+                    if (index === actions.length - 1) {
+                        return;
+                    }
+
+                    const tmp =
+                        actions[index + 1];
+
+                    actions[index + 1] =
+                        actions[index];
+
+                    actions[index] =
+                        tmp;
+
+                    renderActions();
+                }
+            );
+
+            card.appendChild(
+                downButton
+            );
+
+
+            const deleteButton =
+                document.createElement("button");
+
+            deleteButton.type =
+                "button";
+
+            deleteButton.className =
+                "secondary-btn";
+
+            deleteButton.textContent =
+                "Delete";
+
+            deleteButton.addEventListener(
+                "click",
+                () => {
+                    recordingData.actions.splice(
+                        index,
+                        1
+                    );
+
+                    document.getElementById(
+                        "recordingActionCount"
+                    ).textContent =
+                        recordingData.actions.length;
+
+                    renderActions();
+                }
+            );
+
+            card.appendChild(
+                deleteButton
+            );
+
+
+            container.appendChild(
+                card
+            );
+        }
+    );
+}
+
+
+function renderOriginalActions(originalData) {
+
+    const container =
+        document.getElementById("originalActionsList");
+
+    container.innerHTML = "";
+
+    const actions =
+        Array.isArray(originalData.actions)
+            ? originalData.actions
+            : [];
+
+    if (actions.length === 0) {
+
+        container.innerHTML =
+            '<div class="recordings-empty">' +
+            'No actions in the original recording.' +
+            '</div>';
+
+        return;
+    }
+
+    // read-only: same visual card shape as the editable list above, but
+    // every field is disabled and there are no Up/Down/Delete/listeners -
+    // this is a display of the untouched original, never sent anywhere
+    actions.forEach(
+        (action, index) => {
+
+            const card =
+                document.createElement("div");
+
+            card.className =
+                "action-card original-card";
+
+            const heading =
+                document.createElement("h3");
+
+            heading.textContent =
+                `${index + 1}. ${action.action_type || "unknown"}`;
+
+            card.appendChild(heading);
+
+            const fields = [
+                ["Action Type", action.action_type || "", "input"],
+                ["Value", action.value ?? "", "textarea"],
+                ["Page URL", action.page_url || "", "input"],
+                [
+                    "Locator",
+                    action.locator_profile
+                        ? JSON.stringify(action.locator_profile)
+                        : "-",
+                    "textarea"
+                ],
+                [
+                    "Bounding Box",
+                    action.bounding_box
+                        ? JSON.stringify(action.bounding_box)
+                        : "-",
+                    "input"
+                ]
+            ];
+
+            fields.forEach(
+                ([labelText, fieldValue, tag]) => {
+
+                    const label =
+                        document.createElement("label");
+
+                    label.textContent = labelText;
+
+                    const field =
+                        document.createElement(tag);
+
+                    if (tag === "input") {
+                        field.type = "text";
+                    } else {
+                        field.rows = 3;
+                    }
+
+                    field.className = "editor-input";
+                    field.value = fieldValue;
+                    field.disabled = true;
+
+                    card.appendChild(label);
+                    card.appendChild(field);
+                }
+            );
+
+            container.appendChild(card);
+        }
+    );
+}
+
+
+const addActionBtn =
+    document.getElementById("addActionBtn");
+
+if (addActionBtn) {
+
+    addActionBtn.addEventListener(
+        "click",
+        () => {
+
+            recordingData.actions.push(
+                {
+                    action_type: "",
+                    value: "",
+                    page_url: "",
+                    locator_profile: null,
+                    bounding_box: null,
+                    timestamp: new Date().toISOString()
+                }
+            );
+
+            document.getElementById(
+                "recordingActionCount"
+            ).textContent =
+                recordingData.actions.length;
+
+            renderActions();
+        }
+    );
+
+}
+
+
+const saveEditedBtn =
+    document.getElementById("saveEditedBtn");
+
+const saveStatus =
+    document.getElementById("saveStatus");
+
+if (saveEditedBtn) {
+
+    saveEditedBtn.addEventListener(
+        "click",
+        async () => {
+
+            saveStatus.hidden =
+                true;
+
+            saveEditedBtn.disabled =
+                true;
+
+            try {
+
+                const response =
+                    await fetch(
+                        "/api/recordings/save",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json",
+
+                                "Accept":
+                                    "application/json"
+                            },
+
+                            body:
+                                JSON.stringify(
+                                    {
+                                        recording: recordingData
+                                    }
+                                )
+                        }
+                    );
+
+
+                const contentType =
+                    response.headers.get(
+                        "content-type"
+                    ) || "";
+
+
+                if (
+                    !contentType.includes(
+                        "application/json"
+                    )
+                ) {
+
+                    throw new Error(
+                        "Server returned HTML instead of JSON."
+                    );
+                }
+
+
+                const data =
+                    await response.json();
+
+
+                if (
+                    !response.ok ||
+                    !data.success
+                ) {
+
+                    throw new Error(
+                        data.message ||
+                        "Failed to save edited recording."
+                    );
+                }
+
+
+                saveStatus.className =
+                    "editor-message";
+
+                saveStatus.textContent =
+                    "Saved as " +
+                    data.name +
+                    " (" +
+                    data.path +
+                    ")";
+
+                saveStatus.hidden =
+                    false;
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Save failed:",
+                    error
+                );
+
+                saveStatus.className =
+                    "editor-error";
+
+                saveStatus.textContent =
+                    "Save failed: " +
+                    error.message;
+
+                saveStatus.hidden =
+                    false;
+
+            }
+
+            finally {
+
+                saveEditedBtn.disabled =
+                    false;
+            }
+        }
+    );
+
+}
+
+
+loadRecording();
+
+</script>
+
+</body>
+</html>

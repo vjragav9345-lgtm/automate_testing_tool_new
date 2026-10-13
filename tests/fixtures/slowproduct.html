@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Slow Product Page</title>
+<style>
+  #spinner { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: white;
+             display: flex; align-items: center; justify-content: center; font-size: 24px; }
+  main { display: none; }
+</style>
+</head>
+<body>
+<div id="spinner" role="progressbar">Loading...</div>
+<main><h1>Slow Product</h1><p>Finally loaded.</p></main>
+<script>
+  setTimeout(function () {
+    document.getElementById('spinner').remove();
+    document.querySelector('main').style.display = 'block';
+  }, 1200);
+</script>
+</body></html>

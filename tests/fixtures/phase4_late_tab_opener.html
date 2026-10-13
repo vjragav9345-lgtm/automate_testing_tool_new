@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Late Tab Opener Fixture</title>
+</head>
+<body>
+  <button id="opener-btn" onclick="document.title='OPENER_CLICKED'">Open Product</button>
+  <div id="marker">ready</div>
+  <script>
+    // fires on its own, completely independent of whether the replay's
+    // own click on #opener-btn ever succeeds - simulates a real popup
+    // that was always going to open, just later than a short wait window.
+    setTimeout(function () {
+      window.open('/phase4_late_tab_target.html', '_blank');
+    }, 3000);
+  </script>
+</body>
+</html>

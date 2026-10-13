@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "http://127.0.0.1:8890/page1.html",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "click",
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:8890/page1.html",
+      "url_after": "http://127.0.0.1:8890/page2.html",
+      "duration": 20.0,
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 20000,
+        "message": "T-Shirts found using Element ID. (resolved in 20000ms)"
+      },
+      "expected": null,
+      "actual": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:8890/page2.html",
+  "final_screenshot": null,
+  "final_text": "This is Page 2\n\nReached via a real cross-page link from Page 1.\n\nBack to Page 1",
+  "product_validation": null,
+  "total_duration_s": 21.157,
+  "total_steps": 1
+}

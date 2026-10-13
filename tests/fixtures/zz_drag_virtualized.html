@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+  body { margin: 0; padding: 10px; }
+  .list { position: relative; width: 300px; height: 3240px; } /* 60 items * 54px, fixed total height so removing an item never reflows the others */
+  .product-card { position: absolute; left: 0; width: 300px; height: 50px; border: 1px solid #999; box-sizing: border-box; padding: 4px; font-family: sans-serif; font-size: 12px; }
+</style>
+</head>
+<body>
+  <h2>Products</h2>
+  <div class="list" id="list"></div>
+  <script>
+    // simulate a virtualized/lazy-rendered list the way a real one does
+    // (react-window/react-virtualized style): each item is absolutely
+    // positioned at its own fixed offset inside a container whose total
+    // height never changes, so REMOVING an off-screen item never shifts
+    // the ones still rendered - exactly the "unmounted during the drag"
+    // scenario this task's own fix targets, without the reflow artifact
+    // a plain flex/block list would introduce if items were just deleted
+    // from a flowing layout.
+    var list = document.getElementById('list');
+    var TOTAL = 60;
+    var ITEM_HEIGHT = 54;
+    for (var i = 1; i <= TOTAL; i++) {
+      var card = document.createElement('div');
+      card.className = 'product-card';
+      card.dataset.itemIndex = i;
+      card.style.top = ((i - 1) * ITEM_HEIGHT) + 'px';
+      card.textContent = 'Item ' + i;
+      list.appendChild(card);
+    }
+    function unmountOffscreen() {
+      var cards = list.querySelectorAll('.product-card');
+      for (var i = 0; i < cards.length; i++) {
+        var rect = cards[i].getBoundingClientRect();
+        if (rect.bottom < -400) {
+          cards[i].remove();
+        }
+      }
+    }
+    window.addEventListener('scroll', unmountOffscreen, { passive: true });
+  </script>
+</body></html>

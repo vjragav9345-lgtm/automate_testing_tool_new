@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sort Dropdown Fixture</title>
+<style>
+  body { margin: 0; font-family: sans-serif; padding: 40px; }
+  .sort-trigger { display: inline-block; padding: 10px; border: 1px solid #ccc; cursor: pointer; }
+  .sort-panel { display: none; position: absolute; background: #fff; border: 1px solid #ccc; padding: 8px; }
+  .sort-trigger:hover .sort-panel { display: block; }
+  .sort-panel li { list-style: none; padding: 4px 10px; cursor: pointer; }
+  /* a permanently-hidden duplicate copy of the same options - e.g. a
+     "mobile" variant of the sort menu that never becomes visible at
+     this viewport, matching the real "4 candidates, all not visible"
+     symptom (multiple structurally-identical option lists on one page,
+     only one of which is ever actually reachable). */
+  .mobile-sort-panel { display: none; }
+</style>
+</head>
+<body>
+  <div class="sort-trigger" id="sort-trigger">Sort by
+    <ul class="sort-panel" id="sort-panel">
+      <li id="opt-popularity">Popularity</li>
+      <li id="opt-price-low">Price: Low to High</li>
+      <li id="opt-price-high">Price: High to Low</li>
+    </ul>
+  </div>
+
+  <!-- never revealed by any hover, ever - purely structural noise -->
+  <ul class="mobile-sort-panel" id="mobile-sort-panel">
+    <li id="mobile-opt-popularity">Popularity</li>
+    <li id="mobile-opt-price-low">Price: Low to High</li>
+  </ul>
+
+  <div style="display:none;">
+    <ul>
+      <li>Popularity</li>
+    </ul>
+  </div>
+
+  <script>
+    document.getElementById('opt-popularity').addEventListener('click', function () {
+      document.title = 'POPULARITY_CLICKED';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+CORE FIX MISSING: fill/select retry logic not found - results from this run cannot be trusted.
+Starting replay...
+Browser launched.
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+REPLAY SOURCE: session_20261007_221954
+ACTION COUNT: 8
+SOURCE TYPE: ORIGINAL
+
+Executing recorded actions...
+
+==================================================
+[1/8]
+ACTION: navigate
+NAME: Open – Home page
+URL: https://www.youtube.com
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+[redirect] launch URL -> https://www.youtube.com/
+[navigate-ready] waiting for next step's target to become findable (up to 9.0s)...
+[navigate-ready] found at t=0.0s - destination page is ready
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (0.81s).
+
+[timing] step 1 (navigate): total 812ms | settle 30ms | navigation_wait 32ms | screenshot 718ms | other 32ms
+==================================================
+[2/8]
+ACTION: click
+NAME: "Search" combobox
+Element: Search
+Locator: div#center > yt-searchbox > div > div > div > form > input
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 5205.1ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Search' at t=0ms (reference point for this flow)
+[spa-settle] waited 0.05s for network-idle/no-skeleton before this step
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Search' (strategy=name) ===
+[CLICK-DIAG] resolved-to-click : tag='input' class='ytSearchboxComponentInput yt-searchbox-input title' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='input' class='ytSearchboxComponentInput yt-searchbox-input title' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'input', 'cls': 'ytSearchboxComponentInput yt-searchbox-input title', 'testid': None, 'role': 'combobox'} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Search'
+[elements-from-point BEFORE CLICK] stack at (588, 28), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='input' class='ytSearchboxComponentInput yt-searchbox-input title' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='form' class='ytSearchboxComponentSearchForm' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='ytSearchboxComponentInputBox' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='ytSearchboxComponentInputContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='ytSearchboxComponentInputWrapper' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='yt-searchbox' class='ytSearchboxComponentHost ytSearchboxComponentDesktop ytd-masthead ytSearchboxComponentHostNoSuggestions' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='style-scope ytd-masthead' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='style-scope ytd-masthead' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='ytd-masthead' class='masthead-finish' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='style-scope ytd-masthead' testid=None z-index='-1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class='style-scope ytd-app' testid=None z-index='2020' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='ytd-app' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (588, 28), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='input' class='ytSearchboxComponentInput yt-searchbox-input title' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point AFTER CLICK]   [1] tag='form' class='ytSearchboxComponentSearchForm' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='ytSearchboxComponentInputBox ytSearchboxComponentInputBoxHasFocus' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='ytSearchboxComponentInputContainer ytSearchboxComponentInputContainerIsFocused' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='ytSearchboxComponentInputWrapper' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='yt-searchbox' class='ytSearchboxComponentHost ytSearchboxComponentDesktop ytSearchboxComponentHostIsFocused ytSearchboxComponentHostNoSuggestions' testid=None z-index='2021' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='style-scope ytd-masthead' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='div' class='style-scope ytd-masthead' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='ytd-masthead' class='masthead-finish' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='div' class='style-scope ytd-masthead' testid=None z-index='-1' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='div' class='style-scope ytd-app' testid=None z-index='2020' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='ytd-app' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 2, action_type='click')
+STATUS: SUCCESS
+Done (5.51s).
+Search found using Name attribute. (resolved in 5515ms)
+
+[timing] step 2 (click): total 5514ms | locate_action 4047ms | log_emit 0ms | screenshot 296ms | settle 16ms | verify 468ms | other 687ms
+==================================================
+[3/8]
+ACTION: fill
+NAME: Search box: "tamil songs"
+Element: Search
+Locator: div#center > yt-searchbox > div > div > div > form > input
+Value: tamil songs
+
+STATUS: STARTED
+Executing...
+[fill-retry] attempt 1 for 'Search' at t=0.0s
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (2.53s).
+Search found using Name attribute. (resolved in 2532ms)
+
+[timing] step 3 (fill): total 2531ms | locate_action 1907ms | log_emit 0ms | screenshot 562ms | other 62ms
+==================================================
+[4/8]
+ACTION: click
+NAME: "Search" button
+Element: Search
+Locator: div#center > yt-searchbox > div > div > button
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Search' (strategy=aria-label) ===
+[CLICK-DIAG] resolved-to-click : tag='button' class='ytSearchboxComponentSearchButton' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='div' class='' data-testid=None
+[CLICK-DIAG] MATCH=False
+[click-target-resolution] container matched: {'tag': 'button', 'cls': 'ytSearchboxComponentSearchButton', 'testid': None, 'role': None} - found a more specific interactive descendant: {'tag': 'path', 'cls': '[object SVGAnimatedString]', 'testid': None, 'role': None} - clicking the DESCENDANT instead of the container's own center
+[note] -> Clicking 'Search'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+EFFECT VERIFICATION CODE RUNNING (step 4, action_type='click')
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (6.16s).
+Search found using Accessible name. (resolved in 6156ms)
+
+[timing] step 4 (click): total 6156ms | locate_action 3656ms | log_emit 0ms | screenshot 1687ms | settle 46ms | verify 250ms | other 517ms
+==================================================
+[5/8]
+ACTION: scroll
+NAME: down 71px on Results
+Delta: (0, 71)
+
+STATUS: STARTED
+Executing...
+[scroll] window-level scroll (no locator_profile recorded)
+STATUS: SUCCESS
+Done (0.38s).
+
+[timing] step 5 (scroll): total 375ms | other 375ms
+==================================================
+[6/8]
+ACTION: click
+NAME: "Ooroda Oththa Don - Lyric | Baththa | Vi" link
+Element: Ooroda Oththa Don - Lyric | Baththa | Vijay Sethupathi | @SaiAbhyankkar| Balaji Tharaneetharan 3 minutes, 46 seconds
+Locator: #media-container-link
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 4s)
+[target-verify] REJECTED strategy=id: this copy is hidden and another visible element has the recorded identity
+[CLICK-DIAG] === click on recorded target 'Ooroda Oththa Don - Lyric | Baththa | Vijay Sethupathi | @SaiAbhyankkar| Balaji ' (strategy=aria-label) ===
+[CLICK-DIAG] resolved-to-click : tag='a' class='yt-simple-endpoint style-scope ytd-video-renderer' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='a' class='yt-simple-endpoint style-scope ytd-video-renderer' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'a', 'cls': 'yt-simple-endpoint style-scope ytd-video-renderer', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Ooroda Oththa Don - Lyric | Baththa | Vijay Sethupathi | ...'
+[elements-from-point BEFORE CLICK] stack at (902, 67), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='a' class='yt-simple-endpoint style-scope ytd-video-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='h3' class='title-and-badge style-scope ytd-video-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='style-scope ytd-video-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='style-scope ytd-video-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='text-wrapper style-scope ytd-video-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='style-scope ytd-video-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='ytd-video-renderer' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class=' style-scope ytd-item-section-renderer style-scope ytd-item-section-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='ytd-item-section-renderer' class='style-scope ytd-section-list-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='style-scope ytd-section-list-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='ytd-section-list-renderer' class='style-scope ytd-two-column-search-results-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='style-scope ytd-two-column-search-results-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='ytd-two-column-search-results-renderer' class='style-scope ytd-search' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='div' class='style-scope ytd-search' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='ytd-search' class='style-scope ytd-page-manager' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='ytd-page-manager' class='style-scope ytd-app' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [16] tag='div' class='style-scope ytd-app' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [17] tag='ytd-app' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [18] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] standard click used (strategy=aria-label)
+[elements-from-point AFTER CLICK] stack at (902, 67), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='a' class='yt-simple-endpoint style-scope ytd-video-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point AFTER CLICK]   [1] tag='h3' class='title-and-badge style-scope ytd-video-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='style-scope ytd-video-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='style-scope ytd-video-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='text-wrapper style-scope ytd-video-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='style-scope ytd-video-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='ytd-video-renderer' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='div' class=' style-scope ytd-item-section-renderer style-scope ytd-item-section-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='ytd-item-section-renderer' class='style-scope ytd-section-list-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='div' class='style-scope ytd-section-list-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='ytd-section-list-renderer' class='style-scope ytd-two-column-search-results-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='div' class='style-scope ytd-two-column-search-results-renderer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='ytd-two-column-search-results-renderer' class='style-scope ytd-search' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [13] tag='div' class='style-scope ytd-search' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [14] tag='ytd-search' class='style-scope ytd-page-manager' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [15] tag='ytd-page-manager' class='style-scope ytd-app' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [16] tag='div' class='style-scope ytd-app' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [17] tag='ytd-app' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [18] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+Warning: The link label changed. Recorded content: 'Ooroda Oththa Don - Lyric | Baththa | Vijay Sethupathi | @SaiAbhyankkar| Balaji'. Replay content: 'Ooroda Oththa Don - Lyric | Baththa | Vijay Sethupathi | @SaiAbhyankkar| Balaji Tharaneetharan'. Continuing.
+EFFECT VERIFICATION CODE RUNNING (step 6, action_type='click')
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (13.94s).
+Ooroda Oththa Don - Lyric | Baththa | Vijay Sethupathi | @Sa found using Accessible name. (resolved in 13938ms)
+WARNING: Warning: The link label changed. Recorded content: 'Ooroda Oththa Don - Lyric | Baththa | Vijay Sethupathi | @SaiAbhyankkar| Balaji'. Replay content: 'Ooroda Oththa Don - Lyric | Baththa | Vijay Sethupathi | @SaiAbhyankkar| Balaji Tharaneetharan'. Continuing.; Warning: Target relocated during replay. Recorded page position: (96, 112); replay page position: (612, 112). The same logical target was verified and clicked.
+
+[timing] step 6 (click): total 13937ms | locate_action 9250ms | log_emit 14ms | screenshot 3391ms | settle 391ms | verify 280ms | other 611ms
+==================================================
+[7/8]
+ACTION: scroll
+NAME: up 71px on Watch
+Delta: (0, -71)
+
+STATUS: STARTED
+Executing...
+[scroll] window-level scroll (no locator_profile recorded)
+[scroll] page already at the recorded position (0.0 vs 0.0) - skipping the duplicate movement, snapping exactly
+STATUS: SUCCESS
+Done (0.27s).
+WARNING: Warning: The page layout was different, so the scroll may not show exactly the same content as in the recording. Continuing.
+
+[timing] step 7 (scroll): total 266ms | other 266ms
+[note] Expected on this site: the website did not show the 'Where music meets your desktop' popup this time, so its steps were skipped.
+==================================================
+REPLAY COMPLETED
+==================================================
+
+Recorded: 8
+JSON: 8
+Generated: 8
+Executed: 8
+Successful: 8
+Failed: 0
+Total replay time: 43.80s
+Not executed: 0
+
+RESULT: PASS
+
+Final URL:
+https://www.youtube.com/watch?v=zHqGSU7Ymw0&list=RDzHqGSU7Ymw0&start_radio=1
+
+Screenshots:
+E:\.claude\generated_scripts\screenshoots\session_20261007_221954_20261007_222041
+
+Generated Script:
+E:\.claude\generated_scripts\session_20261007_221954_script.py
+
+Browser will remain open for 5 seconds...
+Browser closed successfully.
+==================================================
+
+
+===== stderr =====
+E:\.claude\generated_scripts\session_20261007_221954_script.py:4478: SyntaxWarning: invalid escape sequence '\s'
+  return el_handle.evaluate("""e => {
+E:\.claude\generated_scripts\session_20261007_221954_script.py:9922: SyntaxWarning: invalid escape sequence '\s'
+  "    const t = lb.split(/\s+/).map(id => {"
+E:\.claude\generated_scripts\session_20261007_221954_script.py:13680: SyntaxWarning: invalid escape sequence '\d'
+  _DRAG_VALUE_SNAPSHOT_JS = """
+E:\.claude\generated_scripts\session_20261007_221954_script.py:22758: SyntaxWarning: invalid escape sequence '\s'
+  _VALIDATE_BLOCK_DETECTION_JS = """
+E:\.claude\generated_scripts\session_20261007_221954_script.py:22922: SyntaxWarning: invalid escape sequence '\s'
+  _CLICK_IF_EXISTS_JS = """

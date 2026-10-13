@@ -1,0 +1,20 @@
+<!doctype html><html><head><title>live search</title></head><body>
+<input id="q" type="text" placeholder="Search" aria-label="Search">
+<div id="res"><p>Popular</p><ul><li><button type="button" class="r">Result one</button></li><li><button type="button" class="r">Result two</button></li></ul></div>
+<p id="picked"></p>
+<script>
+var timer = null, ready = true;
+document.getElementById('q').addEventListener('input', function () {
+  var v = this.value; ready = false;
+  document.getElementById('res').innerHTML = '<p>Loading...</p>';
+  clearTimeout(timer);
+  timer = setTimeout(function () {
+    var html = '<p>Results for ' + v + '</p><ul>';
+    for (var i = 1; i <= 4; i++) html += '<li><button type="button" class="r">Result ' + (i === 1 ? 'one' : (i === 2 ? 'two' : i)) + '</button></li>';
+    document.getElementById('res').innerHTML = html + '</ul>'; ready = true;
+  }, 1800);
+});
+document.getElementById('res').addEventListener('click', function (e) {
+  if (e.target.className === 'r' && ready) document.getElementById('picked').textContent = 'picked ' + e.target.textContent;
+});
+</script></body></html>

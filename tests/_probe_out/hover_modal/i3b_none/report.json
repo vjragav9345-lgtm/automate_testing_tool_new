@@ -1,0 +1,117 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "http://127.0.0.1:59522/modal_none.html",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Modal None page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:59522/modal_none.html",
+      "url_after": "http://127.0.0.1:59522/modal_none.html",
+      "started_at": "2026-10-04T23:55:04.024",
+      "ended_at": "2026-10-04T23:55:04.374",
+      "duration": 0.359,
+      "timing_ms": {
+        "settle": 16,
+        "navigation_wait": 0,
+        "screenshot": 342,
+        "other": 0
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Close\" button",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "close_search",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": "Warning: The popup was already closed before AutoFlow could click 'Close'. The test continued.",
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:59522/modal_none.html",
+      "url_after": "http://127.0.0.1:59522/modal_none.html",
+      "started_at": "2026-10-04T23:55:04.376",
+      "ended_at": "2026-10-04T23:55:05.070",
+      "duration": 0.688,
+      "timing_ms": {
+        "locate_action": 46,
+        "log_emit": 0,
+        "screenshot": 15,
+        "settle": 0,
+        "verify": 0,
+        "other": 627
+      },
+      "locator_report": {
+        "strategy": "close_search",
+        "strategy_label": "close_search",
+        "fallback_level": null,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 688,
+        "message": "Close found using close_search."
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:59522/modal_none.html",
+  "final_screenshot": null,
+  "final_text": "no modal here",
+  "product_validation": null,
+  "total_duration_s": 2.188,
+  "total_steps": 2,
+  "live_log": [
+    {
+      "t": 1791138304.0251086,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138304.029109,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138304.7501404,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

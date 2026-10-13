@@ -1,0 +1,1412 @@
+{
+ "status": "FAIL",
+ "steps": [
+  {
+   "index": 1,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 2,
+   "action_type": "click",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 3,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 4,
+   "action_type": "click",
+   "success": true,
+   "error": "target was hidden and required an un-recorded hover-reveal (see [hover-reveal] log lines) to become visible - consider re-recording this step so the hover itself is captured",
+   "not_run": false
+  },
+  {
+   "index": 5,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 6,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 7,
+   "action_type": "check",
+   "success": true,
+   "error": "act_target could not be resolved live - clicked a visible proxy derived from the recorded state_target (underlying checkbox/radio input) instead; consider re-recording this step",
+   "not_run": false
+  },
+  {
+   "index": 8,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 9,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 10,
+   "action_type": "check",
+   "success": true,
+   "error": "act_target could not be resolved live - clicked a visible proxy derived from the recorded state_target (underlying checkbox/radio input) instead; consider re-recording this step",
+   "not_run": false
+  },
+  {
+   "index": 11,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 12,
+   "action_type": "check",
+   "success": true,
+   "error": "act_target could not be resolved live - clicked a visible proxy derived from the recorded state_target (underlying checkbox/radio input) instead; consider re-recording this step",
+   "not_run": false
+  },
+  {
+   "index": 13,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 14,
+   "action_type": "drag",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 15,
+   "action_type": "right_click",
+   "success": false,
+   "error": "[content-mismatch] a different element is actually at the recorded click position - recorded target was 'PRICE\\n\u20b9100 - \u20b91,600', but '(unlabeled element)' is really there",
+   "not_run": false
+  },
+  {
+   "index": 16,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 17,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 18,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 19,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 20,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 21,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 22,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 23,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 24,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 25,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 26,
+   "action_type": "hover",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 27,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 28,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 29,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 30,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 31,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 32,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 33,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 34,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 35,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 36,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 37,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 38,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 39,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 40,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 41,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 42,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 43,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 44,
+   "action_type": "check",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 45,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 46,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 47,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 48,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 49,
+   "action_type": "tab_open",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 50,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 51,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 52,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 53,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 54,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 55,
+   "action_type": "fill",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 56,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 57,
+   "action_type": "submit",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 58,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 59,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 60,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 61,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 62,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 63,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 64,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 65,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 66,
+   "action_type": "tab_open",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 67,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 68,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 69,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 70,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 71,
+   "action_type": "tab_open",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 72,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 73,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 74,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 75,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 76,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 77,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 78,
+   "action_type": "fill",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 79,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 80,
+   "action_type": "submit",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 81,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 82,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 83,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 84,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 85,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 86,
+   "action_type": "click",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 87,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 88,
+   "action_type": "tab_close",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 89,
+   "action_type": "tab_close",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 90,
+   "action_type": "tab_close",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 91,
+   "action_type": "tab_close",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  }
+ ],
+ "drag": [
+  {
+   "step": 14,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "rootRail": {
+      "x": 25,
+      "y": 545.2000122070312,
+      "w": 200,
+      "h": 12
+     },
+     "rootRailBar": {
+      "x": 25,
+      "y": 550.2000122070312,
+      "w": 200,
+      "h": 2
+     },
+     "rootRailRange": {
+      "x": 25,
+      "y": 550.2000122070312,
+      "w": 196,
+      "h": 2
+     },
+     "rootRailThumbLeft": {
+      "x": 16,
+      "y": 545.2000122070312,
+      "w": 12,
+      "h": 12
+     },
+     "rootRailThumbRight": {
+      "x": 218,
+      "y": 545.2000122070312,
+      "w": 12,
+      "h": 12
+     }
+    },
+    "text": "\u20b9100 - \u20b92,900+",
+    "scrollY": 0,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 224,
+     "y": 555.0,
+     "steps": 1
+    },
+    {
+     "x": 224,
+     "y": 555.0,
+     "steps": 1
+    },
+    {
+     "x": 211,
+     "y": 549.0,
+     "steps": 1
+    },
+    {
+     "x": 207,
+     "y": 549.0,
+     "steps": 1
+    },
+    {
+     "x": 204,
+     "y": 549.0,
+     "steps": 1
+    },
+    {
+     "x": 202,
+     "y": 549.0,
+     "steps": 1
+    },
+    {
+     "x": 197,
+     "y": 549.0,
+     "steps": 1
+    },
+    {
+     "x": 192,
+     "y": 549.0,
+     "steps": 1
+    },
+    {
+     "x": 184,
+     "y": 549.0,
+     "steps": 1
+    },
+    {
+     "x": 176,
+     "y": 547.0,
+     "steps": 1
+    },
+    {
+     "x": 171,
+     "y": 547.0,
+     "steps": 1
+    },
+    {
+     "x": 160,
+     "y": 545.0,
+     "steps": 1
+    },
+    {
+     "x": 152,
+     "y": 545.0,
+     "steps": 1
+    },
+    {
+     "x": 144,
+     "y": 544.0,
+     "steps": 1
+    },
+    {
+     "x": 141,
+     "y": 544.0,
+     "steps": 1
+    },
+    {
+     "x": 138,
+     "y": 544.0,
+     "steps": 1
+    },
+    {
+     "x": 137,
+     "y": 544.0,
+     "steps": 1
+    },
+    {
+     "x": 136,
+     "y": 544.0,
+     "steps": 1
+    },
+    {
+     "x": 134,
+     "y": 544.0,
+     "steps": 1
+    },
+    {
+     "x": 133,
+     "y": 544.0,
+     "steps": 1
+    },
+    {
+     "x": 132,
+     "y": 544.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "rootRail": {
+      "x": 25,
+      "y": 545.2000122070312,
+      "w": 200,
+      "h": 12
+     },
+     "rootRailBar": {
+      "x": 25,
+      "y": 550.2000122070312,
+      "w": 200,
+      "h": 2
+     },
+     "rootRailRange": {
+      "x": 25,
+      "y": 550.2000122070312,
+      "w": 198,
+      "h": 2
+     },
+     "rootRailThumbLeft": {
+      "x": 16,
+      "y": 545.2000122070312,
+      "w": 12,
+      "h": 12
+     },
+     "rootRailThumbRight": {
+      "x": 220,
+      "y": 545.2000122070312,
+      "w": 12,
+      "h": 12
+     }
+    },
+    "text": "\u20b9100 - \u20b91,000+",
+    "scrollY": 0,
+    "vw": 1280,
+    "vh": 720
+   }
+  }
+ ],
+ "step_scroll": {
+  "1": {
+   "pos": [
+    0,
+    0,
+    6179,
+    720
+   ],
+   "scroll_events": []
+  },
+  "2": {
+   "pos": [
+    0,
+    0,
+    6011,
+    720
+   ],
+   "scroll_events": []
+  },
+  "3": {
+   "pos": [
+    0,
+    0,
+    6011,
+    720
+   ],
+   "scroll_events": []
+  },
+  "4": {
+   "pos": [
+    0,
+    0,
+    7833,
+    720
+   ],
+   "scroll_events": []
+  },
+  "5": {
+   "pos": [
+    0,
+    0,
+    7833,
+    720
+   ],
+   "scroll_events": []
+  },
+  "6": {
+   "pos": [
+    0,
+    2111.199951171875,
+    7833,
+    720
+   ],
+   "scroll_events": []
+  },
+  "7": {
+   "pos": [
+    0,
+    162.39999389648438,
+    7879,
+    720
+   ],
+   "scroll_events": [
+    [
+     14300,
+     289.6000061035156
+    ],
+    [
+     14333,
+     162.39999389648438
+    ]
+   ]
+  },
+  "8": {
+   "pos": [
+    0,
+    0,
+    7879,
+    720
+   ],
+   "scroll_events": []
+  },
+  "9": {
+   "pos": [
+    0,
+    0,
+    7879,
+    720
+   ],
+   "scroll_events": []
+  },
+  "10": {
+   "pos": [
+    0,
+    0,
+    7878,
+    720
+   ],
+   "scroll_events": []
+  },
+  "11": {
+   "pos": [
+    0,
+    0,
+    7878,
+    720
+   ],
+   "scroll_events": []
+  },
+  "12": {
+   "pos": [
+    0,
+    0,
+    7878,
+    720
+   ],
+   "scroll_events": []
+  },
+  "13": {
+   "pos": [
+    0,
+    0,
+    7878,
+    720
+   ],
+   "scroll_events": []
+  },
+  "14": {
+   "pos": [
+    0,
+    0,
+    7878,
+    720
+   ],
+   "scroll_events": []
+  },
+  "15": {
+   "pos": null,
+   "scroll_events": []
+  }
+ },
+ "step_pages": {
+  "1": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/",
+    "pos": [
+     0,
+     0,
+     6179,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "2": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shop/men",
+    "pos": [
+     0,
+     0,
+     6011,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "3": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shop/men",
+    "pos": [
+     0,
+     0,
+     6011,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "4": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts",
+    "pos": [
+     0,
+     0,
+     7833,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "5": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts",
+    "pos": [
+     0,
+     0,
+     7833,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "6": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts",
+    "pos": [
+     0,
+     2111.199951171875,
+     7833,
+     720
+    ],
+    "events": 17
+   }
+  ],
+  "7": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts?f=Color%3AGrey_808080",
+    "pos": [
+     0,
+     408.79998779296875,
+     7879,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "8": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts?f=Color%3AGrey_808080",
+    "pos": [
+     0,
+     0,
+     7879,
+     720
+    ],
+    "events": 30
+   }
+  ],
+  "9": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts?f=Color%3AGrey_808080",
+    "pos": [
+     0,
+     0,
+     7879,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "10": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts?f=Brand%3ARoadster%3A%3AColor%3AGrey_808080",
+    "pos": [
+     0,
+     0,
+     7878,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "11": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts?f=Brand%3ARoadster%3A%3AColor%3AGrey_808080",
+    "pos": [
+     0,
+     0,
+     7878,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "12": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts?f=Brand%3AHIGHLANDER%2CRoadster%3A%3AColor%3AGrey_808080",
+    "pos": [
+     0,
+     0,
+     7878,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "13": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts?f=Brand%3AHIGHLANDER%2CRoadster%3A%3AColor%3AGrey_808080",
+    "pos": [
+     0,
+     0,
+     7878,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "14": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts?f=Brand%3AHIGHLANDER%2CRoadster%3A%3AColor%3AGrey_808080&rf=Price%3A100.0_1600.0_100.0%20TO%201600.0",
+    "pos": [
+     0,
+     0,
+     7878,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "15": []
+ },
+ "events": [
+  {
+   "t": 1790581578.379,
+   "step": 0,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => window.scrollTo({top: 0, left: 0, behavior: 'instant'})"
+  },
+  {
+   "t": 1790581612.156,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790581612.173,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790581612.26,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790581612.331,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790581612.41,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790581612.492,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790581612.586,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790581612.679,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790581612.742,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790581612.812,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790581612.891,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790581612.992,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790581613.062,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790581613.128,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790581613.21,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790581613.291,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790581613.372,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790581613.464,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790581613.537,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790581613.678,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790581625.996,
+   "step": 9,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790581626.012,
+   "step": 9,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790581626.144,
+   "step": 9,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790581655.387,
+   "step": 14,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "rootRail": {
+      "x": 25,
+      "y": 545.2000122070312,
+      "w": 200,
+      "h": 12
+     },
+     "rootRailBar": {
+      "x": 25,
+      "y": 550.2000122070312,
+      "w": 200,
+      "h": 2
+     },
+     "rootRailRange": {
+      "x": 25,
+      "y": 550.2000122070312,
+      "w": 196,
+      "h": 2
+     },
+     "rootRailThumbLeft": {
+      "x": 16,
+      "y": 545.2000122070312,
+      "w": 12,
+      "h": 12
+     },
+     "rootRailThumbRight": {
+      "x": 218,
+      "y": 545.2000122070312,
+      "w": 12,
+      "h": 12
+     }
+    },
+    "text": "\u20b9100 - \u20b92,900+",
+    "scrollY": 0,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790581658.088,
+   "step": 14,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "rootRail": {
+      "x": 25,
+      "y": 545.2000122070312,
+      "w": 200,
+      "h": 12
+     },
+     "rootRailBar": {
+      "x": 25,
+      "y": 550.2000122070312,
+      "w": 200,
+      "h": 2
+     },
+     "rootRailRange": {
+      "x": 25,
+      "y": 550.2000122070312,
+      "w": 198,
+      "h": 2
+     },
+     "rootRailThumbLeft": {
+      "x": 16,
+      "y": 545.2000122070312,
+      "w": 12,
+      "h": 12
+     },
+     "rootRailThumbRight": {
+      "x": 220,
+      "y": 545.2000122070312,
+      "w": 12,
+      "h": 12
+     }
+    },
+    "text": "\u20b9100 - \u20b91,000+",
+    "scrollY": 0,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790581660.915,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "([sx, sy]) => window.scrollTo(sx || 0, sy || 0)"
+  }
+ ]
+}

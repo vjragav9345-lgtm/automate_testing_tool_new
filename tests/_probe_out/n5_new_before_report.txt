@@ -1,0 +1,91 @@
+RESULT: 202 steps -> 41 pass / 1 FAILED / 160 NOT RUN
+   FAILED step 42 (drag): drag did not reach its recorded final value - expected {'kind': 'aria_value', 'value': '60.0', 'text': '60.00'}, got {'kind': 'aria_value', 'value': '7.0', 'text': '8'}
+
+DRAGS (manual vs replay)
+  step   4: recorded@release=                   9.0 | replay@release=MATCH nudges=- | replay settled={'kind': 'aria_value', 'value': '9.0', 'text': '12'} | manual settled=                  None | step PASS
+  step   5: recorded@release=                  12.0 | replay@release=MATCH nudges=- | replay settled={'kind': 'aria_value', 'value': '12.0', 'text': '20'} | manual settled=                  None | step PASS
+  step   7: recorded@release=                   1.0 | replay@release=MATCH nudges=- | replay settled={'kind': 'aria_value', 'value': '1.0', 'text': '256MB'} | manual settled=                  None | step PASS
+  step   8: recorded@release=                   3.0 | replay@release=MATCH nudges=- | replay settled={'kind': 'aria_value', 'value': '3.0', 'text': '8GB'} | manual settled=                  None | step PASS
+  step  11: recorded@release=                   0.0 | replay@release=MATCH nudges=- | replay settled={'kind': 'aria_value', 'value': '0.0', 'text': '0'} | manual settled=                  None | step PASS
+  step  12: recorded@release=                  43.8 | replay@release=MATCH nudges=- | replay settled={'kind': 'aria_value', 'value': '43.8', 'text': '44'} | manual settled=                  None | step PASS
+  step  15: recorded@release=                 127.0 | replay@release=MATCH nudges=- | replay settled={'kind': 'aria_value', 'value': '127.0', 'text': '127'} | manual settled=                  None | step PASS
+  step  17: recorded@release=                 128.3 | replay@release=MATCH nudges=- | replay settled={'kind': 'aria_value', 'value': '128.3', 'text': '128'} | manual settled=                  None | step PASS
+  step  20: recorded@release=                 127.0 | replay@release=MATCH nudges=- | replay settled={'kind': 'aria_value', 'value': '127.0', 'text': '127'} | manual settled=                  None | step PASS
+  step  25: recorded@release=                  82.0 | replay@release=MATCH nudges=- | replay settled={'kind': 'aria_value', 'value': '82.0', 'text': '81.95'} | manual settled=                  None | step PASS
+  step  26: recorded@release=                   0.0 | replay@release=MATCH nudges=- | replay settled={'kind': 'aria_value', 'value': '0.0', 'text': '0.00'} | manual settled=                  None | step PASS
+  step  28: recorded@release=                  69.6 | replay@release=MATCH nudges=- | replay settled={'kind': 'aria_value', 'value': '69.6', 'text': '69.61'} | manual settled=                  None | step PASS
+  step  29: recorded@release=                   0.0 | replay@release=MATCH nudges=- | replay settled={'kind': 'aria_value', 'value': '0.0', 'text': '0.00'} | manual settled=                  None | step PASS
+  step  32: recorded@release=                  50.0 | replay@release=MATCH nudges=- | replay settled={'kind': 'aria_value', 'value': '50.0', 'text': '50.00'} | manual settled=                  None | step PASS
+  step  33: recorded@release=                  34.9 | replay@release=MATCH nudges=- | replay settled={'kind': 'aria_value', 'value': '34.9', 'text': '34.91'} | manual settled=                  None | step PASS
+  step  36: recorded@release=                  66.9 | replay@release=MATCH nudges=- | replay settled={'kind': 'aria_value', 'value': '66.9', 'text': '66.86'} | manual settled=                  None | step PASS
+  step  39: recorded@release=                  24.0 | replay@release=MATCH nudges=- | replay settled={'kind': 'aria_value', 'value': '24.0', 'text': '23.96'} | manual settled=                  None | step PASS
+  step  42: recorded@release=                  60.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step FAILED
+  step  43: recorded@release=                   0.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  48: recorded@release=       1405036800000.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  49: recorded@release=       1336694400000.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  52: recorded@release=                  80.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  53: recorded@release=                  32.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  56: recorded@release=                  19.6 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  57: recorded@release=                  19.6 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  60: recorded@release=                7000.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  61: recorded@release=                3000.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  64: recorded@release=                  69.3 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  66: recorded@release=                  84.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  71: recorded@release=                  35.5 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  74: recorded@release=                  31.5 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  75: recorded@release=                  57.5 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  78: recorded@release=               12000.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  79: recorded@release=                8112.4 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  82: recorded@release=                  60.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  83: recorded@release=                 130.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  86: recorded@release=                 100.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  87: recorded@release=                   0.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  90: recorded@release=                   0.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  94: recorded@release=                  27.5 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step  97: recorded@release=                 100.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 111: recorded@release=                  11.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 112: recorded@release=                   7.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 115: recorded@release=                   4.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 116: recorded@release=                   0.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 120: recorded@release=                  31.9 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 121: recorded@release=                  13.6 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 124: recorded@release=                 125.7 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 128: recorded@release=                 127.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 131: recorded@release=                 125.7 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 134: recorded@release=                   0.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 135: recorded@release=                 100.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 137: recorded@release=                  27.8 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 138: recorded@release=                  45.8 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 140: recorded@release=                  50.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 141: recorded@release=                  50.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 144: recorded@release=                  87.6 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 148: recorded@release=                  39.6 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 151: recorded@release=                  40.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 152: recorded@release=                   0.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 155: recorded@release=       1441929600000.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 156: recorded@release=       1279843200000.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 159: recorded@release=                  80.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 160: recorded@release=                  28.6 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 163: recorded@release=                  19.6 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 164: recorded@release=                  19.6 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 167: recorded@release=                3500.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 168: recorded@release=                1500.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 172: recorded@release=                  77.8 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 175: recorded@release=                  90.9 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 178: recorded@release=                  62.1 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 181: recorded@release=                  35.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 182: recorded@release=                  31.5 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 185: recorded@release=                9869.8 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 186: recorded@release=               14396.4 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 189: recorded@release=                  80.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 190: recorded@release=                 188.5 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 195: recorded@release=                  30.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 196: recorded@release=                  70.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 199: recorded@release=                   0.0 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  step 202: recorded@release=                  18.3 | replay@release=(see below) nudges=- | replay settled=None | manual settled=                  None | step NOT RUN
+  drags failing: 64
+
+SCROLLS (manual scroll_y_after vs replay position at end of step)
+  scroll steps compared: 23   mismatches (>5.0px): 0
+
+mouse.wheel events fired during NON-scroll steps (unwanted scrolling): 0

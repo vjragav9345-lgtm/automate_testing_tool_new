@@ -1,0 +1,16 @@
+<!doctype html><html><head><title>form with async validation</title></head><body>
+<form onsubmit="return false">
+<label>Email <input id="em" type="email" name="email"></label>
+<button type="submit" id="go" disabled>Submit order</button>
+</form>
+<p id="out"></p>
+<script>
+var em = document.getElementById('em'), go = document.getElementById('go'), t = null;
+em.addEventListener('input', function () {
+  go.disabled = true; clearTimeout(t);
+  t = setTimeout(function () { go.disabled = false; }, 2200);
+});
+document.querySelector('form').addEventListener('submit', function () {
+  if (!go.disabled) document.getElementById('out').textContent = 'Thanks, order placed';
+});
+</script></body></html>

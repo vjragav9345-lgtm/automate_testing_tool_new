@@ -1,0 +1,541 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved and validations passed",
+  "diagnostic": null,
+  "qa_url": "https://coimbatoremarathon.com/",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Open \u2013 Home page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "What AutoFlow did: Waiting for the page to finish loading (up to 1.2s) > Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "generated_scripts/screenshoots/session_20261012_110046_20261012_110118/coimbatore_marathon_run_for_a_/step01_open_home_page_2026-10-12_11-01-25.png",
+      "url_before": "https://coimbatoremarathon.com/",
+      "url_after": "https://coimbatoremarathon.com/",
+      "started_at": "2026-10-12T11:01:22.307",
+      "ended_at": "2026-10-12T11:01:25.263",
+      "duration": 2.93,
+      "timing_ms": {
+        "settle": 1204,
+        "navigation_wait": 9,
+        "screenshot": 1705,
+        "other": 12
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": false
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Accept All\" button",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "popup-scoped",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "Found 'Accept All' inside the popup \"Cookie preferences We use cookies and similar technologies t\" (div role=\"dialog\") it was recorded in.; What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Clicking 'Accept All'",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://coimbatoremarathon.com/",
+      "url_after": "https://coimbatoremarathon.com/",
+      "started_at": "2026-10-12T11:01:25.264",
+      "ended_at": "2026-10-12T11:01:27.780",
+      "duration": 2.364,
+      "timing_ms": {
+        "locate_action": 1194,
+        "log_emit": 0,
+        "screenshot": 219,
+        "settle": 2,
+        "verify": 434,
+        "other": 515
+      },
+      "locator_report": {
+        "strategy": "popup-scoped",
+        "strategy_label": "Name inside the popup",
+        "fallback_level": 0,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 2364,
+        "message": "Accept All found using Name inside the popup. (resolved in 2364ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": false
+    },
+    {
+      "index": 3,
+      "action_type": "click",
+      "name": "\"Register via Website\" link",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "text+tag",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Clicking 'Register via Website' > Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "generated_scripts/screenshoots/session_20261012_110046_20261012_110118/coimbatore_marathon/step03_register_via_website_link_2026-10-12_11-01-33.png",
+      "url_before": "https://coimbatoremarathon.com/",
+      "url_after": "https://register.coimbatoremarathon.com/",
+      "started_at": "2026-10-12T11:01:27.782",
+      "ended_at": "2026-10-12T11:01:33.311",
+      "duration": 5.429,
+      "timing_ms": {
+        "locate_action": 3156,
+        "log_emit": 0,
+        "screenshot": 338,
+        "settle": 1071,
+        "navigation_wait": 11,
+        "verify": 335,
+        "other": 517
+      },
+      "locator_report": {
+        "strategy": "text+tag",
+        "strategy_label": "Text + Tag fallback",
+        "fallback_level": 11,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 5429,
+        "message": "Register via Website found using Text + Tag fallback. (resolved in 5429ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": true
+    },
+    {
+      "index": 4,
+      "action_type": "fill",
+      "name": "Enter your email or mobile number: \"9345691852\"",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "placeholder",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "generated_scripts/screenshoots/session_20261012_110046_20261012_110118/coimbatore_marathon/step04_enter_your_email_or_mobile_number_934569_2026-10-12_11-01-34.png",
+      "url_before": "https://register.coimbatoremarathon.com/",
+      "url_after": "https://register.coimbatoremarathon.com/",
+      "started_at": "2026-10-12T11:01:33.312",
+      "ended_at": "2026-10-12T11:01:34.720",
+      "duration": 1.308,
+      "timing_ms": {
+        "locate_action": 1090,
+        "log_emit": 0,
+        "screenshot": 203,
+        "other": 14
+      },
+      "locator_report": {
+        "strategy": "placeholder",
+        "strategy_label": "Placeholder",
+        "fallback_level": 7,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 1308,
+        "message": "Enter your email or mobile number found using Placeholder. (resolved in 1308ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": "phone_entry",
+      "fragile": false
+    },
+    {
+      "index": 5,
+      "action_type": "click",
+      "name": "\"Send OTP\" button",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "text+tag",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Clicking 'Send OTP' > Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "generated_scripts/screenshoots/session_20261012_110046_20261012_110118/verify_otp/step05_send_otp_button_2026-10-12_11-01-37.png",
+      "url_before": "https://register.coimbatoremarathon.com/",
+      "url_after": "https://register.coimbatoremarathon.com/verify-otp",
+      "started_at": "2026-10-12T11:01:34.720",
+      "ended_at": "2026-10-12T11:01:37.712",
+      "duration": 2.866,
+      "timing_ms": {
+        "locate_action": 1208,
+        "log_emit": 0,
+        "screenshot": 192,
+        "settle": 941,
+        "navigation_wait": 3,
+        "verify": 10,
+        "other": 511
+      },
+      "locator_report": {
+        "strategy": "text+tag",
+        "strategy_label": "Text + Tag fallback",
+        "fallback_level": 11,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 2866,
+        "message": "Send OTP found using Text + Tag fallback. (resolved in 2866ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": "send_otp",
+      "fragile": true
+    },
+    {
+      "index": 6,
+      "action_type": "fill",
+      "name": "Verify OTP box: \"9475\"",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "otp split boxes",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "The OTP was typed into 4 separate boxes, one character each.; What AutoFlow did: Waiting for the page to stop changing before the screenshot (up to 1.5s) > Waiting for the page to finish loading (up to 1.49691s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "generated_scripts/screenshoots/session_20261012_110046_20261012_110118/verify_otp/step06_verify_otp_box_9475_2026-10-12_11-01-47.png",
+      "url_before": "https://register.coimbatoremarathon.com/verify-otp",
+      "url_after": "https://register.coimbatoremarathon.com/verify-otp",
+      "started_at": "2026-10-12T11:01:37.713",
+      "ended_at": "2026-10-12T11:01:47.394",
+      "duration": 9.505,
+      "timing_ms": {
+        "log_emit": 0,
+        "screenshot": 114,
+        "other": 9390
+      },
+      "locator_report": {
+        "strategy": "otp split boxes",
+        "strategy_label": "otp split boxes",
+        "fallback_level": null,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 9505,
+        "message": "Verify OTP found using otp split boxes."
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": "otp_fill",
+      "fragile": false
+    },
+    {
+      "index": 7,
+      "action_type": "click",
+      "name": "\"Verify OTP\" button",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "text+tag",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Clicking 'Verify OTP' > Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "generated_scripts/screenshoots/session_20261012_110046_20261012_110118/registrations/step07_verify_otp_button_2026-10-12_11-01-50.png",
+      "url_before": "https://register.coimbatoremarathon.com/verify-otp",
+      "url_after": "https://register.coimbatoremarathon.com/registrations",
+      "started_at": "2026-10-12T11:01:47.394",
+      "ended_at": "2026-10-12T11:01:50.264",
+      "duration": 2.706,
+      "timing_ms": {
+        "locate_action": 989,
+        "log_emit": 0,
+        "screenshot": 212,
+        "settle": 1043,
+        "verify": 12,
+        "other": 450
+      },
+      "locator_report": {
+        "strategy": "text+tag",
+        "strategy_label": "Text + Tag fallback",
+        "fallback_level": 11,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 2706,
+        "message": "Verify OTP found using Text + Tag fallback. (resolved in 2706ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": "verify",
+      "fragile": true
+    }
+  ],
+  "step_counts": {
+    "passed": 3,
+    "warnings": 0,
+    "failed": 0,
+    "not_run": 0,
+    "manual_input": 4
+  },
+  "ui_elements": [
+    {
+      "index": 2,
+      "action_type": "click",
+      "element_found": true,
+      "locator_used": "popup-scoped",
+      "status": "PASS",
+      "message": null
+    },
+    {
+      "index": 3,
+      "action_type": "click",
+      "element_found": true,
+      "locator_used": "text+tag",
+      "status": "PASS",
+      "message": null
+    },
+    {
+      "index": 4,
+      "action_type": "fill",
+      "element_found": true,
+      "locator_used": "placeholder",
+      "status": "MANUAL_INPUT",
+      "message": "Manual input step (OTP/CAPTCHA) - not counted as a UI element failure"
+    },
+    {
+      "index": 5,
+      "action_type": "click",
+      "element_found": true,
+      "locator_used": "text+tag",
+      "status": "MANUAL_INPUT",
+      "message": "Manual input step (OTP/CAPTCHA) - not counted as a UI element failure"
+    },
+    {
+      "index": 6,
+      "action_type": "fill",
+      "element_found": true,
+      "locator_used": "otp split boxes",
+      "status": "MANUAL_INPUT",
+      "message": "Manual input step (OTP/CAPTCHA) - not counted as a UI element failure"
+    },
+    {
+      "index": 7,
+      "action_type": "click",
+      "element_found": true,
+      "locator_used": "text+tag",
+      "status": "MANUAL_INPUT",
+      "message": "Manual input step (OTP/CAPTCHA) - not counted as a UI element failure"
+    }
+  ],
+  "ui_elements_status": "PASS",
+  "content_check": null,
+  "screenshot_diff": null,
+  "product_validation": null,
+  "final_screenshot": "generated_scripts/screenshoots/session_20261012_110046_20261012_110118/coimbatore_marathon_run_for_a_/img2.png",
+  "run_id": "session_20261012_110046_20261012_110118",
+  "run_dir": "generated_scripts/screenshoots/session_20261012_110046_20261012_110118",
+  "live_log": [
+    {
+      "t": 1791783082.337261,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note",
+      "step": 1
+    },
+    {
+      "t": 1791783083.558004,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note",
+      "step": 1
+    },
+    {
+      "t": 1791783085.614233,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 2
+    },
+    {
+      "t": 1791783086.425808,
+      "message": "\u21b3 Clicking 'Accept All'",
+      "level": "note",
+      "step": 2
+    },
+    {
+      "t": 1791783089.605821,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 3
+    },
+    {
+      "t": 1791783090.4918668,
+      "message": "\u21b3 Clicking 'Register via Website'",
+      "level": "note",
+      "step": 3
+    },
+    {
+      "t": 1791783093.182444,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note",
+      "step": 3
+    },
+    {
+      "t": 1791783093.4249961,
+      "message": "Step 4/7: entering phone/mobile number",
+      "step": 4
+    },
+    {
+      "t": 1791783093.431894,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 4
+    },
+    {
+      "t": 1791783094.5172029,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note",
+      "step": 4
+    },
+    {
+      "t": 1791783095.0293078,
+      "message": "Step 5/7: Send OTP button enabled = True - clicking",
+      "step": 5
+    },
+    {
+      "t": 1791783095.048903,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 5
+    },
+    {
+      "t": 1791783095.855562,
+      "message": "\u21b3 Clicking 'Send OTP'",
+      "level": "note",
+      "step": 5
+    },
+    {
+      "t": 1791783097.606694,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note",
+      "step": 5
+    },
+    {
+      "t": 1791783097.9151192,
+      "message": "Step 6/7: OTP field visible = True",
+      "step": 6
+    },
+    {
+      "t": 1791783097.915874,
+      "message": "Step 6/7: OTP field is ready - waiting for you to enter the OTP",
+      "step": 6
+    },
+    {
+      "t": 1791783107.077526,
+      "message": "Step 6/7: OTP entered, continuing",
+      "step": 6
+    },
+    {
+      "t": 1791783107.2792919,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note",
+      "step": 6
+    },
+    {
+      "t": 1791783107.282751,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.49691s)",
+      "level": "note",
+      "step": 6
+    },
+    {
+      "t": 1791783107.6972952,
+      "message": "Step 7/7: clicking Verify & Continue",
+      "step": 7
+    },
+    {
+      "t": 1791783107.719831,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 7
+    },
+    {
+      "t": 1791783108.5258691,
+      "message": "\u21b3 Clicking 'Verify OTP'",
+      "level": "note",
+      "step": 7
+    },
+    {
+      "t": 1791783110.139477,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note",
+      "step": 7
+    },
+    {
+      "t": 1791783110.264073,
+      "message": "Step 7/7: navigated to https://register.coimbatoremarathon.com/registrations",
+      "step": 7
+    }
+  ]
+}

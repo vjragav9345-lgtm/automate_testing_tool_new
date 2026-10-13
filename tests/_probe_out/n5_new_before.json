@@ -1,0 +1,5835 @@
+{
+ "status": "FAIL",
+ "steps": [
+  {
+   "index": 1,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 2,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 3,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 4,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 5,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 6,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 7,
+   "action_type": "drag",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 8,
+   "action_type": "drag",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 9,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 10,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 11,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 12,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 13,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 14,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 15,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 16,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 17,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 18,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 19,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 20,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 21,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 22,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 23,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 24,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 25,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 26,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 27,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 28,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 29,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 30,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 31,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 32,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#3) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 33,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 34,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 35,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 36,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 37,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 38,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 39,
+   "action_type": "drag",
+   "success": true,
+   "error": "recorded target not found - used same position (#2) instead, content may differ from recording",
+   "not_run": false
+  },
+  {
+   "index": 40,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 41,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 42,
+   "action_type": "drag",
+   "success": false,
+   "error": "drag did not reach its recorded final value - expected {'kind': 'aria_value', 'value': '60.0', 'text': '60.00'}, got {'kind': 'aria_value', 'value': '7.0', 'text': '8'}",
+   "not_run": false
+  },
+  {
+   "index": 43,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 44,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 45,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 46,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 47,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 48,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 49,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 50,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 51,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 52,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 53,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 54,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 55,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 56,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 57,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 58,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 59,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 60,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 61,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 62,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 63,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 64,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 65,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 66,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 67,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 68,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 69,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 70,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 71,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 72,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 73,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 74,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 75,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 76,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 77,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 78,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 79,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 80,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 81,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 82,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 83,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 84,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 85,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 86,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 87,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 88,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 89,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 90,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 91,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 92,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 93,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 94,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 95,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 96,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 97,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 98,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 99,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 100,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 101,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 102,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 103,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 104,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 105,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 106,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 107,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 108,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 109,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 110,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 111,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 112,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 113,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 114,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 115,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 116,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 117,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 118,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 119,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 120,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 121,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 122,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 123,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 124,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 125,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 126,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 127,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 128,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 129,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 130,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 131,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 132,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 133,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 134,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 135,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 136,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 137,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 138,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 139,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 140,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 141,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 142,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 143,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 144,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 145,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 146,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 147,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 148,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 149,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 150,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 151,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 152,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 153,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 154,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 155,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 156,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 157,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 158,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 159,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 160,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 161,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 162,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 163,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 164,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 165,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 166,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 167,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 168,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 169,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 170,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 171,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 172,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 173,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 174,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 175,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 176,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 177,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 178,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 179,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 180,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 181,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 182,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 183,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 184,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 185,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 186,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 187,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 188,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 189,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 190,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 191,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 192,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 193,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 194,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 195,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 196,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 197,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 198,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 199,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 200,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 201,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  },
+  {
+   "index": 202,
+   "action_type": "drag",
+   "success": false,
+   "error": "NOT RUN (stopped after step 42 failed)",
+   "not_run": true
+  }
+ ],
+ "drag": [
+  {
+   "step": 4,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11245.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1048,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 226.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 231.0,
+     "y": 339,
+     "steps": 1
+    },
+    {
+     "x": 236.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 242.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 247.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 252.0,
+     "y": 339,
+     "steps": 1
+    },
+    {
+     "x": 257.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 263.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 268.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 273.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 279.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 284.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 289.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 294.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 300.0,
+     "y": 338,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11245.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1048,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 5,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11245.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1048,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 406.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 403.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 400.0,
+     "y": 336,
+     "steps": 1
+    },
+    {
+     "x": 396.0,
+     "y": 339,
+     "steps": 1
+    },
+    {
+     "x": 393.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 390.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 387.0,
+     "y": 336,
+     "steps": 1
+    },
+    {
+     "x": 383.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 380.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 377.0,
+     "y": 337,
+     "steps": 1
+    },
+    {
+     "x": 374.0,
+     "y": 336,
+     "steps": 1
+    },
+    {
+     "x": 371.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 367.0,
+     "y": 336,
+     "steps": 1
+    },
+    {
+     "x": 364.0,
+     "y": 338,
+     "steps": 1
+    },
+    {
+     "x": 361.0,
+     "y": 337,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11245.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1048,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 7,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10945.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1348,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 226.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 220.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 215.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 210.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 204.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 199.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 194.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 188.0,
+     "y": 227,
+     "steps": 1
+    },
+    {
+     "x": 183.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 177.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 172.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 167.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 161.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 156.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 151.0,
+     "y": 227,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10945.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1348,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 8,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10945.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1348,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 361.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 357.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 354.0,
+     "y": 227,
+     "steps": 1
+    },
+    {
+     "x": 351.0,
+     "y": 224,
+     "steps": 1
+    },
+    {
+     "x": 347.0,
+     "y": 227,
+     "steps": 1
+    },
+    {
+     "x": 344.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 340.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 337.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 333.0,
+     "y": 224,
+     "steps": 1
+    },
+    {
+     "x": 330.0,
+     "y": 224,
+     "steps": 1
+    },
+    {
+     "x": 327.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 323.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 320.0,
+     "y": 226,
+     "steps": 1
+    },
+    {
+     "x": 316.0,
+     "y": 225,
+     "steps": 1
+    },
+    {
+     "x": 313.0,
+     "y": 224,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10945.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1348,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 11,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10134.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2159,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 177.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 171.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 165.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 158.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 152.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 146.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 140.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 133.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 127.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 121.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 114.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 108.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 102.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 96.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 89.0,
+     "y": 338.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10134.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2159,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 12,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10134.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2159,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 285.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 282.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 279.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 275.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 272.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 269.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 265.0,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 262.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 259.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 255.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 252.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 248.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 245.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 242.0,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 238.0,
+     "y": 339.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10134.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2159,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 15,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 9511.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2782,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 135,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 132,
+     "y": 342.0,
+     "steps": 1
+    },
+    {
+     "x": 130,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 128,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 125,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 123,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 121,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 119,
+     "y": 342.0,
+     "steps": 1
+    },
+    {
+     "x": 116,
+     "y": 342.0,
+     "steps": 1
+    },
+    {
+     "x": 114,
+     "y": 342.0,
+     "steps": 1
+    },
+    {
+     "x": 112,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 109,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 107,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 105,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 103,
+     "y": 341.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 9511.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2782,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 17,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 9631.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2662,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 177.0,
+     "y": 461.0,
+     "steps": 1
+    },
+    {
+     "x": 175.0,
+     "y": 461.0,
+     "steps": 1
+    },
+    {
+     "x": 172.0,
+     "y": 459.0,
+     "steps": 1
+    },
+    {
+     "x": 170.0,
+     "y": 461.0,
+     "steps": 1
+    },
+    {
+     "x": 167.0,
+     "y": 461.0,
+     "steps": 1
+    },
+    {
+     "x": 165.0,
+     "y": 462.0,
+     "steps": 1
+    },
+    {
+     "x": 162.0,
+     "y": 459.0,
+     "steps": 1
+    },
+    {
+     "x": 160.0,
+     "y": 461.0,
+     "steps": 1
+    },
+    {
+     "x": 157.0,
+     "y": 459.0,
+     "steps": 1
+    },
+    {
+     "x": 155.0,
+     "y": 462.0,
+     "steps": 1
+    },
+    {
+     "x": 152.0,
+     "y": 461.0,
+     "steps": 1
+    },
+    {
+     "x": 150.0,
+     "y": 459.0,
+     "steps": 1
+    },
+    {
+     "x": 147.0,
+     "y": 461.0,
+     "steps": 1
+    },
+    {
+     "x": 145.0,
+     "y": 460.0,
+     "steps": 1
+    },
+    {
+     "x": 142.0,
+     "y": 462.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 9631.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2662,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 20,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 9511.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2782,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 220.0,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 222.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 225.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 228.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 230.0,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 233.0,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 235.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 238.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 240.0,
+     "y": 340.0,
+     "steps": 1
+    },
+    {
+     "x": 243.0,
+     "y": 342.0,
+     "steps": 1
+    },
+    {
+     "x": 246.0,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 248.0,
+     "y": 341.0,
+     "steps": 1
+    },
+    {
+     "x": 251.0,
+     "y": 342.0,
+     "steps": 1
+    },
+    {
+     "x": 253.0,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 256.0,
+     "y": 341.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 9511.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2782,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 25,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8568.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3725,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 429,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 424,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 420,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 415,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 411,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 407,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 402,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 398,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 394,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 389,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 385,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 381,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 376,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 372,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 368,
+     "y": 336.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8568.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3725,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 26,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8568.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3725,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 91,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 84,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 77,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 71,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 64,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 58,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 51,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 45,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 38,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 31,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 25,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 18,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 12,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 5,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": -1,
+     "y": 337.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8568.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3725,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 28,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8688.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3605,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 413,
+     "y": 535.0,
+     "steps": 1
+    },
+    {
+     "x": 406,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 399,
+     "y": 535.0,
+     "steps": 1
+    },
+    {
+     "x": 393,
+     "y": 535.0,
+     "steps": 1
+    },
+    {
+     "x": 386,
+     "y": 536.0,
+     "steps": 1
+    },
+    {
+     "x": 379,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 373,
+     "y": 535.0,
+     "steps": 1
+    },
+    {
+     "x": 366,
+     "y": 533.0,
+     "steps": 1
+    },
+    {
+     "x": 359,
+     "y": 535.0,
+     "steps": 1
+    },
+    {
+     "x": 353,
+     "y": 536.0,
+     "steps": 1
+    },
+    {
+     "x": 346,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 339,
+     "y": 536.0,
+     "steps": 1
+    },
+    {
+     "x": 333,
+     "y": 535.0,
+     "steps": 1
+    },
+    {
+     "x": 326,
+     "y": 533.0,
+     "steps": 1
+    },
+    {
+     "x": 320,
+     "y": 535.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8688.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3605,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 29,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8688.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3605,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 107,
+     "y": 535.0,
+     "steps": 1
+    },
+    {
+     "x": 102,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 97,
+     "y": 536.0,
+     "steps": 1
+    },
+    {
+     "x": 92,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 87,
+     "y": 535.0,
+     "steps": 1
+    },
+    {
+     "x": 83,
+     "y": 533.0,
+     "steps": 1
+    },
+    {
+     "x": 78,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 73,
+     "y": 536.0,
+     "steps": 1
+    },
+    {
+     "x": 68,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 63,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 59,
+     "y": 536.0,
+     "steps": 1
+    },
+    {
+     "x": 54,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 49,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 44,
+     "y": 534.0,
+     "steps": 1
+    },
+    {
+     "x": 40,
+     "y": 535.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8688.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3605,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 32,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8414.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3879,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 277,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 273,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 269,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 265,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 261,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 257,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 253,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 249,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 245,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 241,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 237,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 233,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 229,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 225,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 222,
+     "y": 338.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8414.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3879,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 33,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8414.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3879,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 243,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 239,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 235,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 232,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 228,
+     "y": 339.0,
+     "steps": 1
+    },
+    {
+     "x": 224,
+     "y": 336.0,
+     "steps": 1
+    },
+    {
+     "x": 221,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 217,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 213,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 210,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 206,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 202,
+     "y": 338.0,
+     "steps": 1
+    },
+    {
+     "x": 199,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 195,
+     "y": 337.0,
+     "steps": 1
+    },
+    {
+     "x": 192,
+     "y": 338.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8414.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3879,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 36,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8336.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3957,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 260,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 264,
+     "y": 332.0,
+     "steps": 1
+    },
+    {
+     "x": 268,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 272,
+     "y": 332.0,
+     "steps": 1
+    },
+    {
+     "x": 276,
+     "y": 331.0,
+     "steps": 1
+    },
+    {
+     "x": 280,
+     "y": 332.0,
+     "steps": 1
+    },
+    {
+     "x": 284,
+     "y": 332.0,
+     "steps": 1
+    },
+    {
+     "x": 288,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 292,
+     "y": 332.0,
+     "steps": 1
+    },
+    {
+     "x": 296,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 300,
+     "y": 334.0,
+     "steps": 1
+    },
+    {
+     "x": 304,
+     "y": 332.0,
+     "steps": 1
+    },
+    {
+     "x": 308,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 312,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 317,
+     "y": 333.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8336.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3957,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 39,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8264.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 4029,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 260,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 253,
+     "y": 335.0,
+     "steps": 1
+    },
+    {
+     "x": 247,
+     "y": 334.0,
+     "steps": 1
+    },
+    {
+     "x": 241,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 234,
+     "y": 334.0,
+     "steps": 1
+    },
+    {
+     "x": 228,
+     "y": 332.0,
+     "steps": 1
+    },
+    {
+     "x": 222,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 216,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 209,
+     "y": 334.0,
+     "steps": 1
+    },
+    {
+     "x": 203,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 197,
+     "y": 332.0,
+     "steps": 1
+    },
+    {
+     "x": 190,
+     "y": 334.0,
+     "steps": 1
+    },
+    {
+     "x": 184,
+     "y": 333.0,
+     "steps": 1
+    },
+    {
+     "x": 178,
+     "y": 334.0,
+     "steps": 1
+    },
+    {
+     "x": 172,
+     "y": 332.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8264.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 4029,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "step": 42,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11267.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1026,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 293.3999938964844,
+     "y": 359.546875,
+     "steps": 1
+    },
+    {
+     "x": 290.3999938964844,
+     "y": 360.546875,
+     "steps": 1
+    },
+    {
+     "x": 287.3999938964844,
+     "y": 359.546875,
+     "steps": 1
+    },
+    {
+     "x": 284.3999938964844,
+     "y": 359.546875,
+     "steps": 1
+    },
+    {
+     "x": 281.3999938964844,
+     "y": 358.546875,
+     "steps": 1
+    },
+    {
+     "x": 278.3999938964844,
+     "y": 359.546875,
+     "steps": 1
+    },
+    {
+     "x": 274.3999938964844,
+     "y": 360.546875,
+     "steps": 1
+    },
+    {
+     "x": 271.3999938964844,
+     "y": 359.546875,
+     "steps": 1
+    },
+    {
+     "x": 268.3999938964844,
+     "y": 360.546875,
+     "steps": 1
+    },
+    {
+     "x": 265.3999938964844,
+     "y": 359.546875,
+     "steps": 1
+    },
+    {
+     "x": 262.3999938964844,
+     "y": 359.546875,
+     "steps": 1
+    },
+    {
+     "x": 259.3999938964844,
+     "y": 359.546875,
+     "steps": 1
+    },
+    {
+     "x": 256.3999938964844,
+     "y": 359.546875,
+     "steps": 1
+    },
+    {
+     "x": 253.39999389648438,
+     "y": 358.546875,
+     "steps": 1
+    },
+    {
+     "x": 250.39999389648438,
+     "y": 358.546875,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11267.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1026,
+    "vw": 1280,
+    "vh": 720
+   }
+  }
+ ],
+ "step_scroll": {
+  "1": {
+   "pos": [
+    0,
+    0,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "2": {
+   "pos": [
+    0,
+    300,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "3": {
+   "pos": [
+    0,
+    1048,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "4": {
+   "pos": [
+    0,
+    1048,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "5": {
+   "pos": [
+    0,
+    1048,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "6": {
+   "pos": [
+    0,
+    1348,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "7": {
+   "pos": [
+    0,
+    1348,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "8": {
+   "pos": [
+    0,
+    1348,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "9": {
+   "pos": [
+    0,
+    1488,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "10": {
+   "pos": [
+    0,
+    2159,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "11": {
+   "pos": [
+    0,
+    2159,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "12": {
+   "pos": [
+    0,
+    2159,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "13": {
+   "pos": [
+    0,
+    2459,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "14": {
+   "pos": [
+    0,
+    2782,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "15": {
+   "pos": [
+    0,
+    2782,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "16": {
+   "pos": [
+    0,
+    2662,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "17": {
+   "pos": [
+    0,
+    2662,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "18": {
+   "pos": [
+    0,
+    2402,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "19": {
+   "pos": [
+    0,
+    2782,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "20": {
+   "pos": [
+    0,
+    2782,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "21": {
+   "pos": [
+    0,
+    2286,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "22": {
+   "pos": [
+    0,
+    2586,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "23": {
+   "pos": [
+    0,
+    3486,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "24": {
+   "pos": [
+    0,
+    3725,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "25": {
+   "pos": [
+    0,
+    3725,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "26": {
+   "pos": [
+    0,
+    3725,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "27": {
+   "pos": [
+    0,
+    3605,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "28": {
+   "pos": [
+    0,
+    3605,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "29": {
+   "pos": [
+    0,
+    3605,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "30": {
+   "pos": [
+    0,
+    3345,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "31": {
+   "pos": [
+    0,
+    3879,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "32": {
+   "pos": [
+    0,
+    3879,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "33": {
+   "pos": [
+    0,
+    3879,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "34": {
+   "pos": [
+    0,
+    3619,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "35": {
+   "pos": [
+    0,
+    3957,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "36": {
+   "pos": [
+    0,
+    3957,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "37": {
+   "pos": [
+    0,
+    3697,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "38": {
+   "pos": [
+    0,
+    4029,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "39": {
+   "pos": [
+    0,
+    4029,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "40": {
+   "pos": [
+    0,
+    3909,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "41": {
+   "pos": [
+    0,
+    4592,
+    12740,
+    720
+   ],
+   "scroll_events": []
+  },
+  "42": {
+   "pos": null,
+   "scroll_events": []
+  }
+ },
+ "step_pages": {
+  "1": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     0,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "2": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     300,
+     12740,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "3": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     1048,
+     12740,
+     720
+    ],
+    "events": 6
+   }
+  ],
+  "4": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     1048,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "5": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     1048,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "6": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     1348,
+     12740,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "7": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     1348,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "8": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     1348,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "9": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     1488,
+     12740,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "10": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2159,
+     12740,
+     720
+    ],
+    "events": 5
+   }
+  ],
+  "11": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2159,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "12": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2159,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "13": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2459,
+     12740,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "14": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2782,
+     12740,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "15": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2782,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "16": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2662,
+     12740,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "17": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2662,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "18": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2402,
+     12740,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "19": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2782,
+     12740,
+     720
+    ],
+    "events": 3
+   }
+  ],
+  "20": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2782,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "21": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2286,
+     12740,
+     720
+    ],
+    "events": 4
+   }
+  ],
+  "22": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     2586,
+     12740,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "23": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3486,
+     12740,
+     720
+    ],
+    "events": 7
+   }
+  ],
+  "24": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3725,
+     12740,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "25": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3725,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "26": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3725,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "27": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3605,
+     12740,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "28": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3605,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "29": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3605,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "30": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3345,
+     12740,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "31": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3879,
+     12740,
+     720
+    ],
+    "events": 4
+   }
+  ],
+  "32": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3879,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "33": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3879,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "34": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3619,
+     12740,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "35": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3957,
+     12740,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "36": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3957,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "37": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3697,
+     12740,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "38": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     4029,
+     12740,
+     720
+    ],
+    "events": 2
+   }
+  ],
+  "39": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     4029,
+     12740,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "40": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     3909,
+     12740,
+     720
+    ],
+    "events": 1
+   }
+  ],
+  "41": [
+   {
+    "i": 0,
+    "url": "https://refreshless.com/nouislider/examples/",
+    "pos": [
+     0,
+     4592,
+     12740,
+     720
+    ],
+    "events": 5
+   }
+  ],
+  "42": []
+ },
+ "events": [
+  {
+   "t": 1790578876.75,
+   "step": 0,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => window.scrollTo({top: 0, left: 0, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578877.102,
+   "step": 2,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578877.102,
+   "step": 2,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790578877.161,
+   "step": 2,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790578877.223,
+   "step": 2,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578877.365,
+   "step": 2,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578877.405,
+   "step": 3,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578877.412,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.66666666666667
+  },
+  {
+   "t": 1790578877.475,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.66666666666667
+  },
+  {
+   "t": 1790578877.529,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.66666666666667
+  },
+  {
+   "t": 1790578877.592,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.66666666666667
+  },
+  {
+   "t": 1790578877.655,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.66666666666667
+  },
+  {
+   "t": 1790578877.712,
+   "step": 3,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.66666666666667
+  },
+  {
+   "t": 1790578877.775,
+   "step": 3,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578877.917,
+   "step": 3,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578878.583,
+   "step": 4,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11245.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1048,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578879.825,
+   "step": 4,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11245.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1048,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578880.398,
+   "step": 5,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11245.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1048,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578881.686,
+   "step": 5,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11245.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1048,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578881.782,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578881.79,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790578881.861,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790578881.925,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578882.063,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578882.713,
+   "step": 7,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10945.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1348,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578883.817,
+   "step": 7,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10945.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1348,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578884.161,
+   "step": 8,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10945.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1348,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578885.248,
+   "step": 8,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10945.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1348,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578885.278,
+   "step": 9,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578885.28,
+   "step": 9,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 140.0
+  },
+  {
+   "t": 1790578885.328,
+   "step": 9,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578885.453,
+   "step": 9,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578885.467,
+   "step": 10,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578885.469,
+   "step": 10,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 134.2
+  },
+  {
+   "t": 1790578885.514,
+   "step": 10,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 134.2
+  },
+  {
+   "t": 1790578885.568,
+   "step": 10,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 134.2
+  },
+  {
+   "t": 1790578885.614,
+   "step": 10,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 134.2
+  },
+  {
+   "t": 1790578885.676,
+   "step": 10,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 134.2
+  },
+  {
+   "t": 1790578885.726,
+   "step": 10,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578885.868,
+   "step": 10,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578885.994,
+   "step": 11,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10134.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2159,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578887.084,
+   "step": 11,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10134.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2159,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578887.229,
+   "step": 12,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10134.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2159,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578888.314,
+   "step": 12,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 10134.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2159,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578888.34,
+   "step": 13,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578888.342,
+   "step": 13,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790578888.393,
+   "step": 13,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790578888.443,
+   "step": 13,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578888.568,
+   "step": 13,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578888.58,
+   "step": 14,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578888.583,
+   "step": 14,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 161.5
+  },
+  {
+   "t": 1790578888.632,
+   "step": 14,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 161.5
+  },
+  {
+   "t": 1790578888.679,
+   "step": 14,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578888.805,
+   "step": 14,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578888.927,
+   "step": 15,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 9511.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2782,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578890.012,
+   "step": 15,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 9511.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2782,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578890.036,
+   "step": 16,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578890.038,
+   "step": 16,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790578890.089,
+   "step": 16,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578890.217,
+   "step": 16,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578890.365,
+   "step": 17,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 9631.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2662,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578891.452,
+   "step": 17,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 9631.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2662,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578891.499,
+   "step": 18,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578891.501,
+   "step": 18,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790578891.552,
+   "step": 18,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790578891.604,
+   "step": 18,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578891.729,
+   "step": 18,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578891.746,
+   "step": 19,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578891.749,
+   "step": 19,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 126.66666666666667
+  },
+  {
+   "t": 1790578891.806,
+   "step": 19,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 126.66666666666667
+  },
+  {
+   "t": 1790578891.854,
+   "step": 19,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 126.66666666666667
+  },
+  {
+   "t": 1790578891.905,
+   "step": 19,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578892.045,
+   "step": 19,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578892.161,
+   "step": 20,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 9511.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2782,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578893.248,
+   "step": 20,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 9511.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 2782,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578893.282,
+   "step": 21,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578893.282,
+   "step": 21,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.0
+  },
+  {
+   "t": 1790578893.345,
+   "step": 21,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.0
+  },
+  {
+   "t": 1790578893.398,
+   "step": 21,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.0
+  },
+  {
+   "t": 1790578893.447,
+   "step": 21,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.0
+  },
+  {
+   "t": 1790578893.497,
+   "step": 21,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578893.623,
+   "step": 21,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578893.636,
+   "step": 22,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578893.638,
+   "step": 22,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790578893.69,
+   "step": 22,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 150.0
+  },
+  {
+   "t": 1790578893.74,
+   "step": 22,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578893.867,
+   "step": 22,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578893.879,
+   "step": 23,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578893.881,
+   "step": 23,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790578893.933,
+   "step": 23,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790578893.981,
+   "step": 23,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790578894.035,
+   "step": 23,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790578894.082,
+   "step": 23,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790578894.13,
+   "step": 23,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790578894.177,
+   "step": 23,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 128.57142857142858
+  },
+  {
+   "t": 1790578894.23,
+   "step": 23,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578894.357,
+   "step": 23,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578894.381,
+   "step": 24,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578894.385,
+   "step": 24,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 239.0
+  },
+  {
+   "t": 1790578894.437,
+   "step": 24,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578894.562,
+   "step": 24,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578894.732,
+   "step": 25,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8568.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3725,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578895.841,
+   "step": 25,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8568.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3725,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578896.255,
+   "step": 26,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8568.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3725,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578897.647,
+   "step": 26,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8568.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3725,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578897.76,
+   "step": 27,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578897.766,
+   "step": 27,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790578897.829,
+   "step": 27,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578897.963,
+   "step": 27,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578898.296,
+   "step": 28,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8688.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3605,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578899.809,
+   "step": 28,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8688.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3605,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578900.2,
+   "step": 29,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8688.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3605,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578901.518,
+   "step": 29,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8688.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3605,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578901.647,
+   "step": 30,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578901.647,
+   "step": 30,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790578901.716,
+   "step": 30,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790578901.811,
+   "step": 30,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578901.949,
+   "step": 30,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578901.996,
+   "step": 31,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578901.996,
+   "step": 31,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 133.5
+  },
+  {
+   "t": 1790578902.092,
+   "step": 31,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 133.5
+  },
+  {
+   "t": 1790578902.157,
+   "step": 31,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 133.5
+  },
+  {
+   "t": 1790578902.229,
+   "step": 31,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 133.5
+  },
+  {
+   "t": 1790578902.294,
+   "step": 31,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578902.43,
+   "step": 31,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578902.84,
+   "step": 32,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8414.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3879,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578904.095,
+   "step": 32,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8414.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3879,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578904.46,
+   "step": 33,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8414.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3879,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578905.915,
+   "step": 33,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8414.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3879,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578905.991,
+   "step": 34,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578906.001,
+   "step": 34,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790578906.064,
+   "step": 34,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790578906.148,
+   "step": 34,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578906.285,
+   "step": 34,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578906.332,
+   "step": 35,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578906.338,
+   "step": 35,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 169.0
+  },
+  {
+   "t": 1790578906.396,
+   "step": 35,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 169.0
+  },
+  {
+   "t": 1790578906.463,
+   "step": 35,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578906.603,
+   "step": 35,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578907.175,
+   "step": 36,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8336.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3957,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578908.608,
+   "step": 36,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8336.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 3957,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578908.64,
+   "step": 37,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578908.645,
+   "step": 37,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790578908.697,
+   "step": 37,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -130.0
+  },
+  {
+   "t": 1790578908.763,
+   "step": 37,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578908.893,
+   "step": 37,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578908.981,
+   "step": 38,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578908.981,
+   "step": 38,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 166.0
+  },
+  {
+   "t": 1790578909.063,
+   "step": 38,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 166.0
+  },
+  {
+   "t": 1790578909.127,
+   "step": 38,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578909.268,
+   "step": 38,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578909.611,
+   "step": 39,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8264.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 4029,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578911.047,
+   "step": 39,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 8264.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 4029,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578911.167,
+   "step": 40,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578911.169,
+   "step": 40,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -120.0
+  },
+  {
+   "t": 1790578911.23,
+   "step": 40,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578911.364,
+   "step": 40,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578911.412,
+   "step": 41,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790578911.421,
+   "step": 41,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 136.6
+  },
+  {
+   "t": 1790578911.479,
+   "step": 41,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 136.6
+  },
+  {
+   "t": 1790578911.536,
+   "step": 41,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 136.6
+  },
+  {
+   "t": 1790578911.612,
+   "step": 41,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 136.6
+  },
+  {
+   "t": 1790578911.678,
+   "step": 41,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 136.6
+  },
+  {
+   "t": 1790578911.732,
+   "step": 41,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578911.862,
+   "step": 41,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790578912.143,
+   "step": 42,
+   "kind": "api-scrolled",
+   "api": "Locator.scroll_into_view_if_needed",
+   "before_y": 4592,
+   "after_y": 1026
+  },
+  {
+   "t": 1790578912.422,
+   "step": 42,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11267.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1026,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790578913.697,
+   "step": 42,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "slider": {
+      "x": 344.3999938964844,
+      "y": 11267.453125,
+      "w": 34,
+      "h": 28
+     }
+    },
+    "text": null,
+    "scrollY": 1026,
+    "vw": 1280,
+    "vh": 720
+   }
+  }
+ ]
+}

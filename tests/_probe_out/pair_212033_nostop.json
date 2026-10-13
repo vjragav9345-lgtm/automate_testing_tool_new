@@ -1,0 +1,376 @@
+{
+ "status": "FAIL",
+ "steps": [
+  {
+   "index": 1,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 2,
+   "action_type": "click",
+   "success": true,
+   "error": "target was hidden and required an un-recorded hover-reveal (see [hover-reveal] log lines) to become visible - consider re-recording this step so the hover itself is captured",
+   "not_run": false
+  },
+  {
+   "index": 3,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 4,
+   "action_type": "click",
+   "success": true,
+   "error": "recorded click position was stale (or every other locator signal failed) - re-resolved the target live via role/accessible-name/text instead of the recorded coordinate",
+   "not_run": false
+  },
+  {
+   "index": 5,
+   "action_type": "fill",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 6,
+   "action_type": "press",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 7,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 8,
+   "action_type": "validate",
+   "success": false,
+   "error": "Expected text \"collar\" not found among 41 result(s) on this page. -- this step's recorded page (https://www.myntra.com/men-tshirts) differs from the immediately preceding step's recorded page (www.amazon.com) with no navigate action recorded in between - either a prior action was deleted in the editor, or this is an older recording made before every URL change got its own recorded navigate step",
+   "not_run": false
+  },
+  {
+   "index": 9,
+   "action_type": "tab_close",
+   "success": true,
+   "error": null,
+   "not_run": false
+  }
+ ],
+ "drag": [],
+ "step_scroll": {
+  "1": {
+   "pos": [
+    0,
+    0,
+    6179,
+    720
+   ],
+   "scroll_events": []
+  },
+  "2": {
+   "pos": [
+    0,
+    0,
+    9245,
+    720
+   ],
+   "scroll_events": []
+  },
+  "3": {
+   "pos": [
+    0,
+    0,
+    9245,
+    720
+   ],
+   "scroll_events": []
+  },
+  "4": {
+   "pos": [
+    0,
+    0,
+    9245,
+    720
+   ],
+   "scroll_events": []
+  },
+  "5": {
+   "pos": [
+    0,
+    0,
+    9245,
+    720
+   ],
+   "scroll_events": []
+  },
+  "6": {
+   "pos": [
+    0,
+    0,
+    6269,
+    720
+   ],
+   "scroll_events": []
+  },
+  "7": {
+   "pos": [
+    0,
+    0,
+    2662,
+    720
+   ],
+   "scroll_events": []
+  },
+  "8": {
+   "pos": [
+    0,
+    3760.800048828125,
+    4481,
+    720
+   ],
+   "scroll_events": []
+  },
+  "9": {
+   "pos": null,
+   "scroll_events": []
+  }
+ },
+ "step_pages": {
+  "1": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/",
+    "pos": [
+     0,
+     0,
+     6179,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "2": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-tshirts",
+    "pos": [
+     0,
+     0,
+     9245,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "3": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-tshirts",
+    "pos": [
+     0,
+     0,
+     9245,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "4": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-tshirts",
+    "pos": [
+     0,
+     0,
+     9245,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "5": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-tshirts",
+    "pos": [
+     0,
+     0,
+     9245,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "6": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/collar?rawQuery=collar",
+    "pos": [
+     0,
+     0,
+     6269,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "7": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.com/",
+    "pos": [
+     0,
+     0,
+     2662,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "8": [
+   {
+    "i": 0,
+    "url": "https://www.amazon.com/",
+    "pos": [
+     0,
+     3760.800048828125,
+     4481,
+     720
+    ],
+    "events": 6
+   }
+  ],
+  "9": []
+ },
+ "events": [
+  {
+   "t": 1790612367.409,
+   "step": 0,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => window.scrollTo({top: 0, left: 0, behavior: 'instant'})"
+  },
+  {
+   "t": 1790612409.937,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => window.scrollTo({top: 0, left: 0, behavior: 'instant'})"
+  },
+  {
+   "t": 1790612411.685,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790612411.685,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "(px) => window.scrollBy(0, px)"
+  },
+  {
+   "t": 1790612412.425,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790612412.429,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790612412.437,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "(px) => window.scrollBy(0, px)"
+  },
+  {
+   "t": 1790612413.173,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790612413.189,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790612413.196,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "(px) => window.scrollBy(0, px)"
+  },
+  {
+   "t": 1790612413.916,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790612413.929,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790612413.937,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "(px) => window.scrollBy(0, px)"
+  },
+  {
+   "t": 1790612414.662,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790612414.67,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790612414.682,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "(px) => window.scrollBy(0, px)"
+  },
+  {
+   "t": 1790612415.413,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790612415.421,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790612415.421,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "(px) => window.scrollBy(0, px)"
+  },
+  {
+   "t": 1790612416.155,
+   "step": 8,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  }
+ ]
+}

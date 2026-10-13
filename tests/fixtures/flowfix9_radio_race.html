@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>FIX1 radio race fixture</title>
+<style>
+  ul#discountList { list-style: none; margin: 0; padding: 0; }
+  ul#discountList li { display: block; padding: 8px; }
+  ul#discountList label { display: block; cursor: pointer; }
+</style>
+</head>
+<body>
+<!-- Real markup shape lifted from the Myntra recording that surfaced this
+     bug (session_20260925_103118.json step 10, dom_context.state_target_
+     html_chain): a native <input type="radio"> wrapped in a <label>,
+     inside a <ul> that the app fully re-renders (fresh DOM nodes) some
+     time AFTER the click, once its debounced filter-apply "API call"
+     resolves - simulated here with a plain setTimeout instead of a real
+     network round trip, matching the recorded navigate step's own
+     delay_before_ms of 385. -->
+<div class="vertical-filters-filters">
+  <span class="vertical-filters-header">Discount Range</span>
+  <ul class="discount-list" id="discountList">
+    <li><label class="common-customRadio vertical-filters-label"><input type="radio" class="discount-input" name="discount-product" value="10.0 TO 100.0">10% and above<div class="common-radioIndicator"></div></label></li>
+    <li><label class="common-customRadio vertical-filters-label"><input type="radio" class="discount-input" name="discount-product" value="20.0 TO 100.0">20% and above<div class="common-radioIndicator"></div></label></li>
+  </ul>
+</div>
+<script>
+function render(checkedValue) {
+  var ul = document.getElementById('discountList');
+  ul.innerHTML = '';
+  [['10.0 TO 100.0', '10% and above'], ['20.0 TO 100.0', '20% and above']].forEach(function (pair) {
+    var li = document.createElement('li');
+    var label = document.createElement('label');
+    label.className = 'common-customRadio vertical-filters-label';
+    var input = document.createElement('input');
+    input.type = 'radio';
+    input.className = 'discount-input';
+    input.name = 'discount-product';
+    input.value = pair[0];
+    if (pair[0] === checkedValue) input.checked = true;
+    label.appendChild(input);
+    label.appendChild(document.createTextNode(pair[1]));
+    var ind = document.createElement('div');
+    ind.className = 'common-radioIndicator';
+    label.appendChild(ind);
+    li.appendChild(label);
+    ul.appendChild(li);
+    input.addEventListener('click', onPick);
+  });
+}
+function onPick(e) {
+  var picked = e.target.value;
+  // simulate the SPA's debounced filter-apply: the actual DOM commit
+  // (fresh nodes + URL change) lands ~400ms later, same order of
+  // magnitude as the real recording's navigate delay_before_ms=385
+  setTimeout(function () {
+    render(picked);
+    var url = new URL(window.location.href);
+    url.searchParams.set('rf', 'Discount Range:' + picked);
+    history.pushState({}, '', url.toString());
+  }, 400);
+}
+render(null);
+</script>
+</body>
+</html>

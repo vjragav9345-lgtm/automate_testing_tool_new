@@ -1,0 +1,28 @@
+<!doctype html><html><head><title>page with popups</title><style>
+body{font:15px sans-serif;margin:20px} button{margin:6px;padding:6px 12px}
+.ov{position:fixed;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,.35);z-index:100}
+.box{margin:15% auto;width:40%;background:#fff;border:2px solid #333;padding:16px}
+</style></head><body>
+<h3>Some page</h3>
+<button type="button" id="login">Log in</button>
+<button type="button" id="next">Next page</button>
+<p id="out"></p>
+<div id="dlg" class="ov" role="dialog" aria-modal="true" aria-label="Join our newsletter" style="display:none">
+  <div class="box">
+    <h2>Join our newsletter</h2>
+    <button type="button" id="sub">Subscribe now</button>
+    <button type="button" id="closeX" aria-label="Close">X</button>
+  </div>
+</div>
+<script>
+var q = new URLSearchParams(location.search), mode = q.get('m') || '', dlg = document.getElementById('dlg');
+function show() { dlg.style.display = 'block'; }
+function hide() { dlg.style.display = 'none'; }
+document.getElementById('closeX').addEventListener('click', hide);
+document.getElementById('next').addEventListener('click', function () { document.getElementById('out').textContent = 'went next'; });
+// m=auto: the site opens the popup by itself after 1.5s; m=late: only in the replay, after 0.15s; m=none: never
+if (mode === 'auto') setTimeout(show, 1500);
+if (mode === 'late') setTimeout(show, 150);
+// the user's own Log in click opens it, unless m=broken
+document.getElementById('login').addEventListener('click', function () { if (mode !== 'broken') show(); });
+</script></body></html>

@@ -1,0 +1,10 @@
+{
+  "bounds_validation": {
+    "both_empty_disabled": true,
+    "min_gt_max_error": "Minimum value can't be greater than Maximum value.",
+    "min_gt_max_disabled": true,
+    "fixed_error_still_visible": false
+  },
+  "multi_replay": "zz_fix1_multi\nReplay finished.\nReplay stopped at step 2: validate_value_range: Item 3: 912 - below minimum 1000; Item 4: 809 - below minimum 1000\nFAIL - steps failed: [2]; first failure at step 2 (Validate cards is between 1000 and 10000): validate_value_range: Item 3: 912 - below minimum 1000; Item 4: 809 - below minimum 1000\nTotal steps: 2 \u00a0 Passed: 1 \u00a0 Failed: 1 \u00a0 Skipped: 0 \u00a0 Warnings: 0 \u00a0 Duration: 16.5s\nOpen full HTML report\n[15:50:26]Step 1: Navigate - PASS\n[15:50:26]Step 2: Validate cards is between 1000 and 10000 - FAILED\nvalidate_value_range: Item 3: 912 - below minimum 1000; Item 4: 809 - below minimum 1000\nDetails\nItem 1: 1520 \u2713\nItem 2: 1491 \u2713\nItem 3: 912 - below_min \u2717\nItem 4: 809 - below_min \u2717",
+  "mrp_preview": "Found: 2 items (your selection)\n\nValues found: 1520 (price), 809 (price)"
+}

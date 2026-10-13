@@ -1,0 +1,16 @@
+RESULT: 83 steps -> 46 pass / 1 FAILED / 36 NOT RUN
+   FAILED step 47 (drag): drag did not reach its recorded final value - expected {'kind': 'nearby_text', 'value': '₹1,600 - ₹2,900'}, got {'kind': 'nearby_text', 'value': '₹1,400 - ₹2,900'} (at re
+
+DRAGS (manual vs replay)
+  step   5: recorded@release=         ₹200 - ₹5,600 | replay@release=MATCH nudges=0 | replay settled={'kind': 'nearby_text', 'value': '₹200 - ₹5,200+'} | manual settled=        ₹200 - ₹5,200+ | step PASS
+  step  18: recorded@release=      ₹1,400 - ₹5,300+ | replay@release=MATCH nudges=1 | replay settled={'kind': 'nearby_text', 'value': '₹1,400 - ₹4,600+'} | manual settled=      ₹1,400 - ₹4,600+ | step PASS
+  step  37: recorded@release=       ₹1,400 - ₹2,900 | replay@release=MATCH nudges=0 | replay settled={'kind': 'nearby_text', 'value': '₹1,400 - ₹2,900'} | manual settled=       ₹1,400 - ₹2,900 | step PASS
+  step  47: recorded@release=       ₹1,600 - ₹2,900 | replay@release=(see below) nudges=- | replay settled=None | manual settled=       ₹1,600 - ₹2,900 | step FAILED
+  step  64: recorded@release=       ₹1,600 - ₹2,500 | replay@release=(see below) nudges=- | replay settled=None | manual settled=      ₹1,600 - ₹2,500+ | step NOT RUN
+  step  75: recorded@release=      ₹1,700 - ₹2,400+ | replay@release=(see below) nudges=- | replay settled=None | manual settled=      ₹1,700 - ₹2,600+ | step NOT RUN
+  drags failing: 3
+
+SCROLLS (manual scroll_y_after vs replay position at end of step)
+  scroll steps compared: 31   mismatches (>5.0px): 0
+
+mouse.wheel events fired during NON-scroll steps (unwanted scrolling): 0

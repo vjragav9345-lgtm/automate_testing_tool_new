@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+  body { margin: 0; padding: 10px; }
+  .grid { display: flex; flex-wrap: wrap; gap: 8px; width: 700px; }
+  .product-card { width: 160px; height: 110px; border: 1px solid #999; box-sizing: border-box; padding: 6px; font-family: sans-serif; font-size: 12px; }
+  .price { display: block; font-weight: bold; }
+</style>
+</head>
+<body>
+  <h2>Products</h2>
+  <div class="grid" id="grid"></div>
+  <script>
+    var grid = document.getElementById('grid');
+    // realistic multi-number card text, matching the bug report's exact
+    // evidence shape: rating, reviews, price, MRP, discount all in one
+    // element's combined text - plus a dedicated price-only child span
+    // for the "descendant whose text is JUST a number" resolution path.
+    var cards = [
+      { rating: '4.1', reviews: '1.1k', price: 305, mrp: 1163, discount: '74' },
+      { rating: '4.3', reviews: '2.5k', price: 465, mrp: 999, discount: '53' },
+      { rating: '3.9', reviews: '800', price: 320, mrp: 800, discount: '60' },
+      { rating: '4.6', reviews: '12k', price: 412, mrp: 1500, discount: '72' },
+    ];
+    cards.forEach(function (c, i) {
+      var card = document.createElement('div');
+      card.className = 'product-card';
+      card.innerHTML =
+        c.rating + '★ ' + c.reviews + ' Reviews<br>' +
+        '<span class="price">₹' + c.price + '</span> ' +
+        '₹' + c.mrp + ' ' + c.discount + '% off';
+      grid.appendChild(card);
+    });
+
+    // genuinely ambiguous cards: every number lives in the SAME text
+    // node (no wrapping span isolates any one of them), so neither the
+    // "own direct text" nor the "descendant leaf" rule can resolve a
+    // single winner - this is the case that must fail gracefully with a
+    // plain-English reason, never a raw Python exception.
+    var ambiguousGrid = document.createElement('div');
+    ambiguousGrid.className = 'grid';
+    ambiguousGrid.id = 'ambiguous-grid';
+    cards.forEach(function (c) {
+      var card = document.createElement('div');
+      card.className = 'ambiguous-card';
+      card.textContent =
+        c.rating + '★ ' + c.reviews + ' Reviews ₹' + c.price +
+        ' ₹' + c.mrp + ' ' + c.discount + '% off';
+      ambiguousGrid.appendChild(card);
+    });
+    document.body.appendChild(ambiguousGrid);
+  </script>
+</body></html>

@@ -1,0 +1,386 @@
+[
+ {
+  "n": 2,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 600
+ },
+ {
+  "n": 3,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 300
+ },
+ {
+  "n": 4,
+  "kind": "scroll",
+  "tag": "to-top",
+  "scrollY": 0
+ },
+ {
+  "n": 5,
+  "kind": "drag",
+  "tag": "price-right-0",
+  "settled_value": {
+   "kind": "nearby_text",
+   "value": "\u20b9200 - \u20b95,200+"
+  },
+  "scrollY": 0
+ },
+ {
+  "n": 6,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 592.7999877929688
+ },
+ {
+  "n": 9,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 328
+ },
+ {
+  "n": 10,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 606.4000244140625
+ },
+ {
+  "n": 11,
+  "kind": "click",
+  "tag": "filter-0",
+  "scrollY": 606.4000244140625
+ },
+ {
+  "n": 14,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 722.4000244140625
+ },
+ {
+  "n": 16,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 320.79998779296875
+ },
+ {
+  "n": 17,
+  "kind": "scroll",
+  "tag": "to-top",
+  "scrollY": 0
+ },
+ {
+  "n": 18,
+  "kind": "drag",
+  "tag": "price-left-1",
+  "settled_value": {
+   "kind": "nearby_text",
+   "value": "\u20b91,400 - \u20b94,600+"
+  },
+  "scrollY": 0
+ },
+ {
+  "n": 20,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 792.7999877929688
+ },
+ {
+  "n": 21,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 418.3999938964844
+ },
+ {
+  "n": 22,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 732.7999877929688
+ },
+ {
+  "n": 23,
+  "kind": "click",
+  "tag": "filter-1",
+  "scrollY": 732.7999877929688
+ },
+ {
+  "n": 26,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 724
+ },
+ {
+  "n": 27,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 78.4000015258789
+ },
+ {
+  "n": 28,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 1169.5999755859375
+ },
+ {
+  "n": 29,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 815.2000122070312
+ },
+ {
+  "n": 30,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 1154.4000244140625
+ },
+ {
+  "n": 31,
+  "kind": "click",
+  "tag": "filter-2",
+  "scrollY": 1154.4000244140625
+ },
+ {
+  "n": 34,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 684
+ },
+ {
+  "n": 35,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 103.19999694824219
+ },
+ {
+  "n": 36,
+  "kind": "scroll",
+  "tag": "to-top",
+  "scrollY": 0
+ },
+ {
+  "n": 37,
+  "kind": "drag",
+  "tag": "price-right-3",
+  "settled_value": {
+   "kind": "nearby_text",
+   "value": "\u20b91,400 - \u20b92,900"
+  },
+  "scrollY": 0
+ },
+ {
+  "n": 39,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 808
+ },
+ {
+  "n": 40,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 628.7999877929688
+ },
+ {
+  "n": 41,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 892.7999877929688
+ },
+ {
+  "n": 42,
+  "kind": "click",
+  "tag": "filter-3",
+  "scrollY": 892.7999877929688
+ },
+ {
+  "n": 45,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 309.6000061035156
+ },
+ {
+  "n": 46,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 0
+ },
+ {
+  "n": 46,
+  "kind": "scroll",
+  "tag": "to-top",
+  "scrollY": 0
+ },
+ {
+  "n": 47,
+  "kind": "drag",
+  "tag": "price-left-4",
+  "settled_value": {
+   "kind": "nearby_text",
+   "value": "\u20b91,600 - \u20b92,900"
+  },
+  "scrollY": 0
+ },
+ {
+  "n": 48,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 563.2000122070312
+ },
+ {
+  "n": 50,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 166.39999389648438
+ },
+ {
+  "n": 51,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 480.79998779296875
+ },
+ {
+  "n": 52,
+  "kind": "click",
+  "tag": "filter-4",
+  "scrollY": 480.79998779296875
+ },
+ {
+  "n": 55,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 803.2000122070312
+ },
+ {
+  "n": 56,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 269.6000061035156
+ },
+ {
+  "n": 57,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 1199.199951171875
+ },
+ {
+  "n": 58,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 1035.199951171875
+ },
+ {
+  "n": 59,
+  "kind": "click",
+  "tag": "filter-5",
+  "scrollY": 1035.199951171875
+ },
+ {
+  "n": 62,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 506.3999938964844
+ },
+ {
+  "n": 63,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 0
+ },
+ {
+  "n": 63,
+  "kind": "scroll",
+  "tag": "to-top",
+  "scrollY": 0
+ },
+ {
+  "n": 64,
+  "kind": "drag",
+  "tag": "price-right-6",
+  "settled_value": {
+   "kind": "nearby_text",
+   "value": "\u20b91,600 - \u20b92,500+"
+  },
+  "scrollY": 0
+ },
+ {
+  "n": 65,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 598.4000244140625
+ },
+ {
+  "n": 67,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 264.79998779296875
+ },
+ {
+  "n": 68,
+  "kind": "scroll",
+  "tag": "reach-target",
+  "scrollY": 532
+ },
+ {
+  "n": 69,
+  "kind": "click",
+  "tag": "filter-6",
+  "scrollY": 532
+ },
+ {
+  "n": 72,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 715.2000122070312
+ },
+ {
+  "n": 73,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 48
+ },
+ {
+  "n": 74,
+  "kind": "scroll",
+  "tag": "to-top",
+  "scrollY": 0
+ },
+ {
+  "n": 75,
+  "kind": "drag",
+  "tag": "price-left-7",
+  "settled_value": {
+   "kind": "nearby_text",
+   "value": "\u20b91,700 - \u20b92,600+"
+  },
+  "scrollY": 0
+ },
+ {
+  "n": 77,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 971.2000122070312
+ },
+ {
+  "n": 78,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 760.7999877929688
+ },
+ {
+  "n": 79,
+  "kind": "click",
+  "tag": "filter-7",
+  "scrollY": 0
+ },
+ {
+  "n": 82,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 884
+ },
+ {
+  "n": 83,
+  "kind": "scroll",
+  "tag": "scroll",
+  "scrollY": 287.20001220703125
+ }
+]

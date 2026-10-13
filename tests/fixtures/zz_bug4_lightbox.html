@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+  body { margin: 0; padding: 20px; font-family: sans-serif; }
+  #productImg { width: 200px; height: 200px; background: #ccc; cursor: pointer; }
+  #lightbox { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+              background: rgba(0,0,0,0.7); z-index: 500; }
+  #lightbox .content { position: absolute; top: 20%; left: 30%; width: 40%; height: 40%;
+                        background: white; padding: 20px; }
+  #continueBtn { margin-top: 400px; }
+</style>
+</head>
+<body>
+  <div id="productImg">Product Image</div>
+  <button id="continueBtn">Continue Shopping</button>
+  <div id="lightbox" role="dialog" aria-modal="true">
+    <div class="content">
+      <h3>Zoomed Image</h3>
+      <button id="closeLightbox">Close</button>
+    </div>
+  </div>
+  <script>
+    document.getElementById('productImg').addEventListener('click', function () {
+      document.getElementById('lightbox').style.display = 'block';
+    });
+    document.getElementById('closeLightbox').addEventListener('click', function () {
+      document.getElementById('lightbox').style.display = 'none';
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') document.getElementById('lightbox').style.display = 'none';
+    });
+    document.getElementById('continueBtn').addEventListener('click', function () {
+      document.title = 'Continued';
+    });
+  </script>
+</body></html>

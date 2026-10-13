@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>{{ result.display_name or result.test_name or ('AutoFlow QA Report - ' + (result.run_id or '')) }}</title>
+<style>
+    * { box-sizing: border-box; }
+    body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f1f5f9;
+        color: #1e293b;
+        padding: 24px;
+    }
+    .report-wrap { max-width: 1000px; margin: 0 auto; }
+    h1 { color: #1e3a8a; margin-bottom: 4px; }
+    .meta { color: #64748b; font-size: 13px; margin-bottom: 20px; }
+    .banner {
+        border-radius: 8px;
+        padding: 20px 24px;
+        font-size: 22px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
+    .banner.pass { background: #16a34a; }
+    .banner.fail { background: #dc2626; }
+    .banner .msg { display: block; font-size: 14px; font-weight: 400; margin-top: 6px; }
+    section {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 20px 24px;
+        margin-bottom: 20px;
+    }
+    section h2 { margin-top: 0; color: #1e3a8a; font-size: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+    th { color: #64748b; font-size: 12px; text-transform: uppercase; }
+    tr.fragile { background: #fef3c7; }
+    tr.failed { background: #fee2e2; }
+    tr.not-run-row { background: #f8fafc; color: #94a3b8; }
+    /* FOLLOW-UP FIX 2: a step that PASSED but carries a warning note -
+       its own distinct, yellow row, never indistinguishable from an
+       ordinary passed row. */
+    tr.warning-row { background: #fffbeb; }
+    .pill {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 10px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .pill.ok { background: #dcfce7; color: #166534; }
+    .pill.warn { background: #fef3c7; color: #92400e; }
+    .pill.bad { background: #fee2e2; color: #991b1b; }
+    .pill.unknown { background: #e2e8f0; color: #475569; }
+    .shots { display: flex; gap: 16px; flex-wrap: wrap; }
+    .shots figure { margin: 0; }
+    .shots img { max-width: 320px; border: 1px solid #e2e8f0; border-radius: 8px; }
+    .shots figcaption { font-size: 12px; color: #64748b; margin-top: 4px; text-align: center; }
+    .result-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #e2e8f0; }
+    .result-row:last-child { border-bottom: none; }
+    .result-label { color: #64748b; font-weight: 600; font-size: 13px; }
+    .validation-stats { color: #475569; font-size: 13px; margin-bottom: 14px; }
+    .validation-cards { display: flex; flex-direction: column; gap: 8px; }
+    .validation-card { border-radius: 8px; padding: 10px 12px; border: 1px solid #e2e8f0; background: #f8fafc; }
+    .validation-card.pass { border-color: #bbf7d0; background: #f0fdf4; }
+    .validation-card.fail { border-color: #fecaca; background: #fef2f2; }
+    .validation-card.not-run { border-color: #e2e8f0; background: #f8fafc; opacity: 0.75; }
+    .validation-card.manual-input { border-color: #bfdbfe; background: #eff6ff; }
+    .validation-card-line { font-weight: 600; font-size: 14px; }
+    .validation-card-field { font-size: 12px; color: #64748b; margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="report-wrap">
+    <!-- PHASE 2d: display_name (or, absent that, test_name) shown as the
+         report's own title when this run's recording has one - falls
+         back to the original fixed heading otherwise, unchanged. -->
+    <h1>{{ result.display_name or result.test_name or 'AutoFlow QA - Execution Report' }}</h1>
+    <p class="meta">Run {{ result.run_id }} against {{ result.qa_url }} - generated {{ generated_at }}</p>
+    {% if result.console_log %}<p class="meta">Full replay console output (every locator method and wait): {{ result.console_log }}</p>{% endif %}
+
+    <div class="banner {{ 'pass' if result.status == 'PASS' else 'fail' }}">
+        {{ result.status }}
+        <span class="msg">{{ result.message }}</span>
+    </div>
+
+    <!-- PHASE 4c: one plain sentence on whether replay matched the
+         recording overall - purely a wording layer, computed in
+         validation/report_generator.py's own _plain_summary(); pass/fail
+         itself is unchanged (the banner above still reflects it). -->
+    <p class="meta" style="font-size: 15px; color: #1e293b; font-weight: 600;">{{ plain_summary }}</p>
+
+    {% if steps %}
+    <section>
+        <h2>Step Validations</h2>
+        <p class="validation-stats">
+            {{ steps|length }} step{{ '' if steps|length == 1 else 's' }} executed ·
+            {{ validation_summary.actions_passed }}/{{ validation_summary.actions_total }} action{{ '' if validation_summary.actions_total == 1 else 's' }} passed
+            {% if validation_summary.validations_total %}
+            · {{ validation_summary.validations_passed }}/{{ validation_summary.validations_total }} validation{{ '' if validation_summary.validations_total == 1 else 's' }} passed
+            {% endif %}
+            · {{ validation_summary.failed_total }} failed
+            {% if validation_summary.not_run_total %}
+            · {{ validation_summary.not_run_total }} not run
+            {% endif %}
+            {% if validation_summary.manual_input_total %}
+            · {{ validation_summary.manual_input_total }} manual-input
+            {% endif %}
+            {% if validation_summary.locator_warnings %}
+            · {{ validation_summary.locator_warnings }} locator warning{{ '' if validation_summary.locator_warnings == 1 else 's' }}
+            {% endif %}
+        </p>
+        {% if validation_steps %}
+        <div class="validation-cards">
+            {% for s in validation_steps %}
+            <div class="validation-card {{ s.outcome.replace('_', '-') }}">
+                <div class="validation-card-line">
+                    {{ {'pass': '✓', 'fail': '✗', 'not_run': '○', 'manual_input': '🔐'}[s.outcome] }}
+                    {% if s.expected %}
+                        {{ (s.locator_report.strategy_label if s.locator_report else s.action_type) }}
+                        {{ 'equals' if s.outcome == 'pass' else 'mismatch' }}
+                        {{ '"%s"' % s.expected if s.outcome == 'pass' else '' }}
+                    {% else %}
+                        {{ s.action_type }}
+                    {% endif %}
+                </div>
+                {% if s.outcome == 'fail' %}
+                    {% if s.expected %}<div class="validation-card-field">Expected: {{ s.expected }}</div>{% endif %}
+                    {% if s.actual %}<div class="validation-card-field">Actual: {{ s.actual }}</div>{% endif %}
+                    <div class="validation-card-field">Step: {{ s.index }}</div>
+                    {% if s.locator_report and s.locator_report.strategy_label %}<div class="validation-card-field">Element: {{ s.locator_report.strategy_label }}</div>{% endif %}
+                {% elif s.outcome == 'not_run' %}
+                    <div class="validation-card-field">{{ s.error or 'Not run' }}</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </section>
+    {% endif %}
+
+    <section>
+        <h2>Validations</h2>
+        <div class="result-row">
+            <span class="result-label">Expected Content Found</span>
+            <span>
+                {% if result.content_check is none %}
+                    <span class="pill unknown">not checked</span>
+                {% elif result.content_check %}
+                    <span class="pill ok">yes</span>
+                {% else %}
+                    <span class="pill bad">no</span>
+                {% endif %}
+            </span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Screenshot Diff</span>
+            <span>
+                {% if not result.screenshot_diff %}
+                    <span class="pill unknown">not requested</span>
+                {% elif result.screenshot_diff.match is none %}
+                    <span class="pill unknown">skipped - {{ result.screenshot_diff.note }}</span>
+                {% elif result.screenshot_diff.match %}
+                    <span class="pill ok">match ({{ result.screenshot_diff.diff_ratio }})</span>
+                {% else %}
+                    <span class="pill bad">mismatch ({{ result.screenshot_diff.diff_ratio }})</span>
+                {% endif %}
+            </span>
+        </div>
+    </section>
+
+    {% if product_validation %}
+    <section>
+        <h2>Product Validation</h2>
+        <div class="banner {{ 'pass' if product_validation.status == 'PASS' else 'fail' }}" style="font-size: 16px; padding: 14px 18px;">
+            {{ product_validation.status }}
+        </div>
+        <div class="result-row">
+            <span class="result-label">Requested Product</span>
+            <span class="result-value">{{ product_validation.product }}</span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Found</span>
+            <span>
+                {% if product_validation.found %}<span class="pill ok">Yes</span>
+                {% else %}<span class="pill bad">No</span>{% endif %}
+            </span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Match Type</span>
+            <span>
+                {% if product_validation.match_type == 'exact' %}<span class="pill ok">EXACT MATCH</span>
+                {% elif product_validation.match_type == 'similar' %}<span class="pill unknown">POSSIBLE/SIMILAR MATCH</span>
+                {% else %}<span class="pill unknown">-</span>{% endif %}
+            </span>
+        </div>
+        {% if product_validation.found %}
+        <div class="result-row">
+            <span class="result-label">Position</span>
+            <span class="result-value">Result #{{ product_validation.position }} (Page {{ product_validation.page }})</span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Product Title</span>
+            <span class="result-value">{{ product_validation.title }}</span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Product URL</span>
+            <span class="result-value">{{ product_validation.url or '-' }}</span>
+        </div>
+        {% else %}
+        <div class="result-row">
+            <span class="result-label">Reason</span>
+            <span class="result-value">{{ product_validation.reason or 'Product not found' }}</span>
+        </div>
+        {% if product_validation.checked_count %}
+        <div class="result-row">
+            <span class="result-label">Results Checked</span>
+            <span class="result-value">{{ product_validation.checked_count }}</span>
+        </div>
+        {% endif %}
+        {% endif %}
+        <div class="result-row">
+            <span class="result-label">Search URL</span>
+            <span class="result-value">{{ product_validation.search_url or '-' }}</span>
+        </div>
+        {% if product_validation.screenshot_data %}
+        <div class="shots">
+            <figure>
+                <img src="{{ product_validation.screenshot_data }}" alt="product validation evidence" />
+                <figcaption>Product validation evidence</figcaption>
+            </figure>
+        </div>
+        {% endif %}
+    </section>
+    {% endif %}
+
+    <section>
+        <h2>Execution</h2>
+        <div class="result-row">
+            <span class="result-label">Total Steps</span>
+            <span>{{ execution_summary.total }}</span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Passed</span>
+            <span><span class="pill ok">{{ execution_summary.passed }}</span></span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Warnings</span>
+            <span>
+                {% if execution_summary.warnings %}<span class="pill warn">{{ execution_summary.warnings }}</span>
+                {% else %}<span class="pill ok">0</span>{% endif %}
+            </span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Failed</span>
+            <span>
+                {% if execution_summary.failed %}<span class="pill bad">{{ execution_summary.failed }}</span>
+                {% else %}<span class="pill ok">0</span>{% endif %}
+            </span>
+        </div>
+        {% if execution_summary.not_run %}
+        <div class="result-row">
+            <span class="result-label">Not Run</span>
+            <span><span class="pill unknown">{{ execution_summary.not_run }}</span></span>
+        </div>
+        {% endif %}
+        {% if execution_summary.manual_input %}
+        <div class="result-row">
+            <span class="result-label">Manual-Input</span>
+            <span><span class="pill unknown">{{ execution_summary.manual_input }}</span></span>
+        </div>
+        {% endif %}
+        {% if execution_summary.first_failed %}
+        <div class="result-row">
+            <span class="result-label">First Failed Step</span>
+            <span>#{{ execution_summary.first_failed.index }} ({{ execution_summary.first_failed.action_type }}) - {{ execution_summary.first_failed.error or 'no details' }}</span>
+        </div>
+        {% endif %}
+    </section>
+
+    <section>
+        <h2>Steps</h2>
+        {% if steps %}
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Action</th>
+                    <th>Locator Strategy Used</th>
+                    <th>Result</th>
+                    <th>Effect Verified</th>
+                    <!-- PHASE 4b: recorded URL/element text next to what
+                         replay actually found - "Replayed" text is only
+                         ever populated for a validate_* step today (the
+                         one existing field that already captures it; see
+                         report_generator.py's own comment on replayed_text) -
+                         "-" for every other action type. -->
+                    <th>Recorded vs Replayed</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for s in steps %}
+                <tr class="{{ 'failed' if s.outcome == 'fail' else ('warning-row' if s.outcome == 'warning' else ('not-run-row' if s.outcome == 'not_run' else ('fragile' if s.fragile else ''))) }}">
+                    <td>{{ s.index }}</td>
+                    <td>{{ s.action_type }}
+                        {% if s.origin == 'added' %}<span class="pill unknown" title="Added through the Recording Editor">added</span>{% else %}<span class="pill unknown" title="Captured by the recorder">recorded</span>{% endif %}
+                        {% if s.name %}<br><small>{{ s.name }}</small>{% endif %}
+                    </td>
+                    <td>
+                        {% if s.locator_report %}
+                            {{ s.locator_report.strategy_label or '-' }}
+                            {% if s.locator_report.weak %}<span class="pill unknown" title="A weak/fragile fallback was used - consider re-recording this step">weak</span>{% endif %}
+                            <details>
+                                <summary>Advanced</summary>
+                                <div>Raw strategy: {{ s.strategy_used or '-' }}</div>
+                                {% if s.locator_report.resolution_ms is not none %}<div>Resolved in {{ s.locator_report.resolution_ms }}ms</div>{% endif %}
+                            </details>
+                        {% else %}
+                            {{ s.strategy_used or '-' }}
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if s.outcome == 'pass' %}
+                            <span class="pill ok">passed</span>
+                        {% elif s.outcome == 'warning' %}
+                            <span class="pill warn">passed (warning)</span>
+                        {% elif s.outcome == 'not_run' %}
+                            <span class="pill unknown">not run</span>
+                        {% elif s.outcome == 'manual_input' %}
+                            <span class="pill unknown">manual-input</span>
+                        {% else %}
+                            <span class="pill bad">failed</span>
+                        {% endif %}
+                        {% if s.fragile %}<span class="pill unknown">fragile</span>{% endif %}
+                        {% if s.large_bbox_flag %}<span class="pill unknown" title="Recorded click target has an unusually large bounding box - possible recording artifact, may need re-recording more precisely">large target</span>{% endif %}
+                    </td>
+                    <td>
+                        {% if s.effect_verified == True %}
+                            <span class="pill ok">Yes</span>
+                        {% elif s.effect_verified == False %}
+                            <span class="pill bad">No</span>
+                        {% else %}
+                            <span class="pill unknown">&mdash;</span>
+                        {% endif %}
+                    </td>
+                    <td style="font-size: 12px;">
+                        Recorded: {{ s.recorded_url or '-' }}{% if s.recorded_text %} - "{{ s.recorded_text }}"{% endif %}<br>
+                        Replayed: {{ s.replayed_url or '-' }}{% if s.replayed_text %} - "{{ s.replayed_text }}"{% endif %}
+                    </td>
+                    <td>
+                        {# the headline is one plain sentence; everything technical is under Details #}
+                        {% if s.plain_reason %}
+                            <strong>{{ s.plain_reason }}</strong>
+                            {% if s.technical or (s.error and s.error != s.plain_reason and not s.not_run) or (s.warning and s.warning != s.plain_reason) %}
+                            <details>
+                                <summary>Details</summary>
+                                {% if s.technical %}<div>{{ s.technical }}</div>{% endif %}
+                                {% if s.error and s.error != s.plain_reason and not s.not_run %}<div>{{ s.error }}</div>{% endif %}
+                                {% if s.warning and s.warning != s.plain_reason %}<div>{{ s.warning }}</div>{% endif %}
+                            </details>
+                            {% endif %}
+                        {% else %}
+                            {{ s.error or s.warning or '' }}
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No recorded steps were executed - this was a content/screenshot-only check against {{ result.qa_url }}.</p>
+        {% endif %}
+    </section>
+
+    <!-- PHASE 5b: one table per Count Summary step, using the exact
+         label/count/expected/result data that step already collected
+         (count_summary_rows - see generator/script_generator.py's own
+         count_summary branch) - no re-running or re-counting anything. -->
+    {% for s in steps if s.count_summary_rows %}
+    <section>
+        <h2>Count Summary{% if s.name %} - {{ s.name }}{% endif %}</h2>
+        <table>
+            <thead>
+                <tr><th>Label</th><th>Count</th><th>Expected</th><th>Result</th></tr>
+            </thead>
+            <tbody>
+                {% for row in s.count_summary_rows %}
+                <tr>
+                    <td>{{ row.label }}</td>
+                    <td>{{ row.count }}</td>
+                    <td>{{ row.expected if row.expected is not none else '-' }}</td>
+                    <td>
+                        {% if row.expected is none %}<span class="pill unknown">&mdash;</span>
+                        {% elif row.ok %}<span class="pill ok">✓</span>
+                        {% else %}<span class="pill bad">✗</span>{% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+    {% endfor %}
+
+    <!-- BUG 2 fix: one table per Validate Value Range step, using the
+         per-element value_range_rows data that step already collected
+         (see generator/script_generator.py's own validate_value_range
+         branch) - no re-running or re-evaluating anything. -->
+    {% for s in steps if s.value_range_rows %}
+    <section>
+        <h2>Validate Value Range{% if s.name %} - {{ s.name }}{% endif %}</h2>
+        <table>
+            <thead>
+                <tr><th>Item</th><th>Value</th><th>Reason</th><th>Result</th></tr>
+            </thead>
+            <tbody>
+                {% for row in s.value_range_rows %}
+                <tr>
+                    <td>{{ row.label }}</td>
+                    <td>{{ row.value if row.value is not none else '-' }}</td>
+                    <td>{{ row.reason or '-' }}</td>
+                    <td>
+                        {% if row.ok %}<span class="pill ok">✓</span>
+                        {% else %}<span class="pill bad">✗</span>{% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+    {% endfor %}
+
+    <!-- FIX 2: a dedicated section per page mismatch, with the settled
+         evidence screenshot - see generator/script_generator.py's own
+         page_mismatch_info, built once at the moment of detection. -->
+    {% for s in steps if s.page_mismatch_info %}
+    <section>
+        <h2>Page Mismatch{% if s.name %} - {{ s.name }}{% endif %}</h2>
+        <div class="result-row"><span class="result-label">Expected URL</span><span>{{ s.page_mismatch_info.expected_url }}</span></div>
+        <div class="result-row"><span class="result-label">Actual URL</span><span>{{ s.page_mismatch_info.actual_url }}</span></div>
+        {% if s.page_mismatch_info.expected_title %}
+        <div class="result-row"><span class="result-label">Expected title</span><span>{{ s.page_mismatch_info.expected_title }}</span></div>
+        {% endif %}
+        {% if s.page_mismatch_info.actual_title %}
+        <div class="result-row"><span class="result-label">Actual title</span><span>{{ s.page_mismatch_info.actual_title }}</span></div>
+        {% endif %}
+        <div class="result-row"><span class="result-label">Matched element</span><span>&lt;{{ s.page_mismatch_info.matched_element.tag or '?' }}&gt; {{ s.page_mismatch_info.matched_element.text or '' }}{% if s.page_mismatch_info.matched_element.href %} ({{ s.page_mismatch_info.matched_element.href }}){% endif %}</span></div>
+        <div class="result-row"><span class="result-label">Settled</span><span>{{ 'Yes' if s.page_mismatch_info.settled else 'No' }}</span></div>
+        {% if s.page_mismatch_info.recovery %}
+        <div class="result-row"><span class="result-label">Recovery</span><span>{{ s.page_mismatch_info.recovery }}</span></div>
+        {% endif %}
+        {% if s.page_mismatch_info.screenshot %}
+        <div class="result-row">
+            <span class="result-label">Screenshot</span>
+            <span><a href="/screenshots/raw?path={{ s.page_mismatch_info.screenshot }}" target="_blank">Open</a></span>
+        </div>
+        {% if s.page_mismatch_info.screenshot_data %}
+        <img src="{{ s.page_mismatch_info.screenshot_data }}" style="max-width: 600px; border: 1px solid #ccc;">
+        {% endif %}
+        {% endif %}
+    </section>
+    {% endfor %}
+
+    <section>
+        <h2>UI Elements</h2>
+        <div class="result-row">
+            <span class="result-label">Expected Elements</span>
+            <span>{{ ui_summary.total }}</span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Found</span>
+            <span><span class="pill ok">{{ ui_summary.found }}</span></span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Missing</span>
+            <span>
+                {% if ui_summary.missing %}<span class="pill bad">{{ ui_summary.missing }}</span>
+                {% else %}<span class="pill ok">0</span>{% endif %}
+            </span>
+        </div>
+        <div class="result-row">
+            <span class="result-label">Overall</span>
+            <span>
+                {% if ui_summary.status == 'PASS' %}<span class="pill ok">PASS</span>
+                {% elif ui_summary.status == 'FAIL' %}<span class="pill bad">FAIL</span>
+                {% else %}<span class="pill unknown">not checked</span>{% endif %}
+            </span>
+        </div>
+        {% if ui_elements %}
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Action</th>
+                    <th>Locator Strategy Used</th>
+                    <th>Status</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for el in ui_elements %}
+                <tr class="{{ 'failed' if el.status == 'FAIL' else ('not-run-row' if el.status in ('NOT_RUN', 'MANUAL_INPUT') else '') }}">
+                    <td>{{ el.index }}</td>
+                    <td>{{ el.action_type }}</td>
+                    <td>{{ el.locator_used or '-' }}</td>
+                    <td>
+                        {% if el.status == 'PASS' %}<span class="pill ok">PASS</span>
+                        {% elif el.status == 'NOT_RUN' %}<span class="pill unknown">NOT RUN</span>
+                        {% elif el.status == 'MANUAL_INPUT' %}<span class="pill unknown">MANUAL-INPUT</span>
+                        {% else %}<span class="pill bad">FAIL</span>{% endif %}
+                    </td>
+                    <td>{{ el.message or '' }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No UI elements to validate for this run.</p>
+        {% endif %}
+    </section>
+
+    <section>
+        <h2>Screenshots</h2>
+        <div class="shots">
+            {% for s in steps %}
+                {% if s.screenshot_data %}
+                <figure>
+                    <img src="{{ s.screenshot_data }}" alt="step {{ s.index }}" />
+                    <figcaption>Step {{ s.index }} ({{ s.action_type }})</figcaption>
+                </figure>
+                {% endif %}
+            {% endfor %}
+            {% if final_screenshot_data %}
+            <figure>
+                <img src="{{ final_screenshot_data }}" alt="final page" />
+                <figcaption>Final page</figcaption>
+            </figure>
+            {% endif %}
+        </div>
+    </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Hover Menu Fixture</title>
+<style>
+  body { margin: 0; font-family: sans-serif; }
+  .navbar { display: flex; gap: 20px; padding: 16px; background: #222; }
+  .nav-item { position: relative; color: #fff; cursor: pointer; padding: 8px; }
+  .submenu { display: none; position: absolute; top: 100%; left: 0; background: #fff;
+             border: 1px solid #ccc; padding: 10px; min-width: 160px; z-index: 10; }
+  .nav-item:hover .submenu { display: block; }
+  .submenu a { display: block; color: #000; text-decoration: none; padding: 4px 0; }
+  .filler { height: 3000px; background: linear-gradient(#eee, #ddd); }
+  footer { height: 200px; background: #333; color: #fff; text-align: center; line-height: 200px; }
+</style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="nav-item" id="men-trigger">MEN
+      <div class="submenu" id="men-submenu">
+        <a href="/men-casual-shirts" id="casual-shirts-link">Casual Shirts</a>
+        <a href="/men-formal-shirts" id="formal-shirts-link">Formal Shirts</a>
+      </div>
+    </div>
+    <div class="nav-item" id="women-trigger">WOMEN
+      <div class="submenu" id="women-submenu">
+        <a href="/women-dresses" id="dresses-link">Dresses</a>
+      </div>
+    </div>
+    <a href="/about" id="ordinary-link" style="color:#fff;">About (ordinary, always visible)</a>
+  </div>
+  <div class="filler"><p style="padding:20px;">filler content so a scroll-search has somewhere to go if it mistakenly runs</p></div>
+  <footer id="footer">Footer content - never the real target</footer>
+  <script>
+    document.getElementById('casual-shirts-link').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.title = 'CASUAL_SHIRTS_CLICKED';
+    });
+    document.getElementById('ordinary-link').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.title = 'ORDINARY_LINK_CLICKED';
+    });
+  </script>
+</body>
+</html>

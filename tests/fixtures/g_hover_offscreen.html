@@ -1,0 +1,12 @@
+<!doctype html><html><head><title>hover menu parked off screen</title><style>
+body{margin:0;font:15px sans-serif}
+#nav{margin:0;padding:0;list-style:none;display:flex;background:#ddd;height:40px}
+#nav>li{position:relative;padding:10px 20px}
+#nav ul{position:absolute;left:-9999px;top:40px;margin:0;padding:6px;list-style:none;background:#eef;width:200px}
+#nav>li:hover ul{left:0}
+#nav ul a{display:block;padding:4px}
+</style></head><body>
+<ul id="nav"><li><a href="g_next.html" id="top">Products</a>
+<ul><li><a href="g_next.html?from=sub1" id="s1">Analytics tool</a></li><li><a href="g_next.html?from=sub2" id="s2">Export tool</a></li></ul></li>
+<li><a href="g_links.html">Links</a></li></ul>
+<p style="margin-top:300px">content</p></body></html>

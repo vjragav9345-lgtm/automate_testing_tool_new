@@ -1,0 +1,11 @@
+RESULT: 21 steps -> 21 pass / 0 FAILED / 0 NOT RUN
+
+DRAGS (manual vs replay)
+  step   5: recorded@release=                    48 | replay@release=MATCH nudges=1 | replay settled={'kind': 'range_value', 'value': '48'} | manual settled=                    48 | step PASS
+  step   9: recorded@release=                   128 | replay@release=MATCH nudges=1 | replay settled={'kind': 'range_value', 'value': '128'} | manual settled=                   128 | step PASS
+  drags failing: 0
+
+SCROLLS (manual scroll_y_after vs replay position at end of step)
+  scroll steps compared: 13   mismatches (>5.0px): 0
+
+mouse.wheel events fired during NON-scroll steps (unwanted scrolling): 0

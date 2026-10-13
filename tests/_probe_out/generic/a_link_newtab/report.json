@@ -1,0 +1,163 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "http://127.0.0.1:57062/g_links.html",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "G Links page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:57062/g_links.html",
+      "url_after": "http://127.0.0.1:57062/g_links.html",
+      "started_at": "2026-10-05T00:04:14.047",
+      "ended_at": "2026-10-05T00:04:14.407",
+      "duration": 0.36,
+      "timing_ms": {
+        "settle": 0,
+        "navigation_wait": 16,
+        "screenshot": 343,
+        "other": 0
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Open in a new tab\" link",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:57062/g_links.html",
+      "url_after": "http://127.0.0.1:57062/g_links.html",
+      "started_at": "2026-10-05T00:04:14.408",
+      "ended_at": "2026-10-05T00:04:15.933",
+      "duration": 1.531,
+      "timing_ms": {
+        "locate_action": 702,
+        "log_emit": 0,
+        "screenshot": 16,
+        "settle": 0,
+        "verify": 31,
+        "other": 782
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 1531,
+        "message": "Open in a new tab found using Element ID. (resolved in 1531ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 3,
+      "action_type": "tab_open",
+      "name": "Open a new tab (G Next)",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:57062/g_next.html?from=tab",
+      "url_after": "http://127.0.0.1:57062/g_next.html?from=tab",
+      "started_at": "2026-10-05T00:04:15.936",
+      "ended_at": "2026-10-05T00:04:17.154",
+      "duration": 1.219,
+      "timing_ms": {
+        "settle": 202,
+        "other": 1016
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:57062/g_next.html?from=tab",
+  "final_screenshot": "E:\\01-10-2026_1030_AM\\tests\\_probe_out\\generic\\a_link_newtab\\shots\\g_links_html\\img2.png",
+  "final_text": "Next page\n\nYou arrived.\n\nBack",
+  "product_validation": null,
+  "total_duration_s": 4.312,
+  "total_steps": 3,
+  "live_log": [
+    {
+      "t": 1791138854.047301,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138854.0603075,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138854.913769,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138855.4618125,
+      "message": "\u21b3 Clicking 'Open in a new tab'",
+      "level": "note"
+    },
+    {
+      "t": 1791138855.9361832,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

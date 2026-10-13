@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Label Checkbox Fixture</title>
+</head>
+<body>
+  <!-- (1) label WRAPS the checkbox - clicking anywhere in the label text
+       makes the browser dispatch a second, native click directly on the
+       wrapped input -->
+  <label id="wrap-label">
+    <input type="checkbox" id="wrap-checkbox"> Patterns (wrapped)
+  </label>
+
+  <!-- (2) label ASSOCIATED via for= (not a DOM ancestor at all) - same
+       browser auto-forwarding behavior, via the for/id relationship
+       instead of DOM nesting -->
+  <label id="for-label" for="for-checkbox">Patterns (for=)</label>
+  <input type="checkbox" id="for-checkbox">
+
+  <!-- (3) custom styled "checkbox" - a plain div, no native forwarding
+       behavior at all - the negative control: must still record as
+       exactly ONE action -->
+  <div role="checkbox" id="styled-checkbox" tabindex="0" aria-checked="false">Patterns (styled)</div>
+
+  <script>
+    document.getElementById('styled-checkbox').addEventListener('click', function () {
+      var cur = this.getAttribute('aria-checked') === 'true';
+      this.setAttribute('aria-checked', (!cur).toString());
+    });
+  </script>
+</body>
+</html>

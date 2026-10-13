@@ -1,0 +1,664 @@
+CORE FIX MISSING: fill/select retry logic not found - results from this run cannot be trusted.
+Starting replay...
+Browser launched.
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+REPLAY SOURCE: session_20261009_152733
+ACTION COUNT: 51
+SOURCE TYPE: ORIGINAL
+
+Executing recorded actions...
+
+==================================================
+[1/51]
+ACTION: navigate
+NAME: Open – Home page
+URL: https://coimbatoremarathon.com
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+[redirect] launch URL -> https://coimbatoremarathon.com/
+[navigate-ready] waiting for next step's target to become findable (up to 9.0s)...
+[navigate-ready] found at t=0.0s - destination page is ready
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (1.42s).
+
+[timing] step 1 (navigate): total 1420ms | settle 5ms | navigation_wait 6ms | screenshot 1396ms | other 13ms
+==================================================
+[2/51]
+ACTION: click
+NAME: "Accept All" button
+Element: Accept All
+Locator: div#cookie-consent-banner > div > div > div > button:nth-of-type(2)
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 5997.6ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Accept All' at t=0ms (reference point for this flow)
+[note] -> Hovering over 'Privacy Policy' to reveal the menu
+[spa-settle] waited 0.01s for network-idle/no-skeleton before this step
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Accept All' (strategy=popup-scoped) ===
+[CLICK-DIAG] resolved-to-click : tag='button' class='cookie-consent-btn cookie-consent-btn--accept' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='button' class='cookie-consent-btn cookie-consent-btn--accept' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'button', 'cls': 'cookie-consent-btn cookie-consent-btn--accept', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Accept All'
+[elements-from-point BEFORE CLICK] stack at (874, 660), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='button' class='cookie-consent-btn cookie-consent-btn--accept' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='cookie-consent-buttons' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='cookie-consent-actions' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='cookie-consent-dialog' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='cookie-consent-banner' testid=None z-index='10050' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='counter-box' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='countdown' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='hero-countdown-body' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='hero-countdown wow fadeInUp' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='hero-box' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class='col-lg-12 pt-5' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='row' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='container' testid=None z-index='2' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='div' class='hero-slide-overlay' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='video' class='hero-slide-video' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='div' class='hero-slide-media' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [16] tag='div' class='hero dark-section hero-slide hero-slide-1' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [17] tag='div' class='swiper-slide swiper-slide-active' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [18] tag='div' class='swiper-wrapper' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [19] tag='div' class='swiper hero-swiper swiper-initialized swiper-horizontal swiper-autoheight swiper-backface-hidden' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [20] tag='div' class='hero-slider' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [21] tag='main' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [22] tag='body' class='page-home' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [23] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (874, 660), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='div' class='counter-box' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [1] tag='div' class='countdown' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='hero-countdown-body' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='hero-countdown wow fadeInUp' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='hero-box' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='col-lg-12 pt-5' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='row' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='div' class='container' testid=None z-index='2' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='div' class='hero-slide-overlay' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='video' class='hero-slide-video' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='div' class='hero-slide-media' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='div' class='hero dark-section hero-slide hero-slide-1' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='div' class='swiper-slide swiper-slide-active' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [13] tag='div' class='swiper-wrapper' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [14] tag='div' class='swiper hero-swiper swiper-initialized swiper-horizontal swiper-autoheight swiper-backface-hidden' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [15] tag='div' class='hero-slider' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [16] tag='main' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [17] tag='body' class='page-home' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [18] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 2, action_type='click')
+STATUS: SUCCESS
+Done (2.79s).
+Accept All found using Name inside the popup. (resolved in 2793ms)
+
+[timing] step 2 (click): total 2792ms | locate_action 1628ms | log_emit 0ms | screenshot 227ms | settle 4ms | verify 441ms | other 492ms
+==================================================
+[3/51]
+ACTION: click
+NAME: "Register via Website" link
+Element: Register via Website
+Locator: a[href="https://register.coimbatoremarathon.com"]
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 8872.0ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Register via Website' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Register via Website' (strategy=text+tag) ===
+[CLICK-DIAG] resolved-to-click : tag='a' class='btn-default btn-highlighted' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='a' class='btn-default btn-highlighted' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'a', 'cls': 'btn-default btn-highlighted', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Register via Website'
+[elements-from-point BEFORE CLICK] stack at (508, 406), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='a' class='btn-default btn-highlighted' testid=None z-index='0' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='hero-btn' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='hero-content-body wow fadeInUp' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='hero-content' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='hero-box' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='col-lg-12 pt-5' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='row' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='container' testid=None z-index='2' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='hero-slide-overlay' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='video' class='hero-slide-video' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class='hero-slide-media' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='hero dark-section hero-slide hero-slide-1' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='swiper-slide swiper-slide-active' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='div' class='swiper-wrapper' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='div' class='swiper hero-swiper swiper-initialized swiper-horizontal swiper-autoheight swiper-backface-hidden' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='div' class='hero-slider' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [16] tag='main' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [17] tag='body' class='page-home' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [18] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+EFFECT VERIFICATION CODE RUNNING (step 3, action_type='click')
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (5.70s).
+Register via Website found using Text + Tag fallback. (resolved in 5703ms)
+
+[timing] step 3 (click): total 5702ms | locate_action 3520ms | log_emit 0ms | screenshot 392ms | settle 900ms | navigation_wait 13ms | verify 332ms | other 545ms
+==================================================
+[4/51]
+ACTION: click
+NAME: "Enter your email or mobile number" field
+Element: Enter your email or mobile number
+Locator: div#root > div:nth-of-type(2) > div:nth-of-type(2) > form > div > div > input
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 2902.3ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Enter your email or mobile number' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Enter your email or mobile number' (strategy=placeholder) ===
+[CLICK-DIAG] resolved-to-click : tag='input' class='mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-marathon-primary focus:outline-none focus:ring-1 focus:ring-marathon-primary' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='input' class='mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-marathon-primary focus:outline-none focus:ring-1 focus:ring-marathon-primary' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'input', 'cls': 'mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-marathon-primary focus:outline-none focus:ring-1 focus:ring-marathon-primary', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Enter your email or mobile number'
+[elements-from-point BEFORE CLICK] stack at (640, 389), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='input' class='mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-marathon-primary focus:outline-none focus:ring-1 focus:ring-marathon-primary' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='relative' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='form-group relative' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='form' class='mt-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='auth-container animate-fade-in w-full max-w-md md:max-w-2xl' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-blue-50 to-sky-100' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (640, 389), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='input' class='mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-marathon-primary focus:outline-none focus:ring-1 focus:ring-marathon-primary' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point AFTER CLICK]   [1] tag='div' class='relative' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='form-group relative' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='form' class='mt-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='auth-container animate-fade-in w-full max-w-md md:max-w-2xl' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-blue-50 to-sky-100' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 4, action_type='click')
+STATUS: SUCCESS
+Done (2.03s).
+Enter your email or mobile number found using Placeholder. (resolved in 2030ms)
+
+[timing] step 4 (click): total 2029ms | locate_action 1017ms | log_emit 0ms | screenshot 88ms | settle 4ms | verify 447ms | other 473ms
+==================================================
+[5/51]
+ACTION: fill
+NAME: Enter your email or mobile number: "9345691852"
+Element: Enter your email or mobile number
+Locator: div#root > div:nth-of-type(2) > div:nth-of-type(2) > form > div > div > input
+Value: 9345691852
+
+STATUS: STARTED
+Executing...
+[otp] Step 5/51: entering phone/mobile number
+[fill-retry] attempt 1 for 'Enter your email or mobile number' at t=0.0s
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (1.25s).
+Enter your email or mobile number found using Placeholder. (resolved in 1249ms)
+
+[timing] step 5 (fill): total 1249ms | locate_action 1076ms | log_emit 0ms | screenshot 137ms | other 36ms
+==================================================
+[6/51]
+ACTION: click
+NAME: "Send OTP" button
+Element: Send OTP
+Locator: div#root > div:nth-of-type(2) > div:nth-of-type(2) > form > button
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 6589.9ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Send OTP' at t=0ms (reference point for this flow)
+[otp] Step 6/51: Send OTP button enabled = True - clicking
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Send OTP' (strategy=text+tag) ===
+[CLICK-DIAG] resolved-to-click : tag='button' class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2 animated-button w-full mt-6' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='button' class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2 animated-button w-full mt-6' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'button', 'cls': 'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2 animated-button w-full mt-6', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Send OTP'
+[elements-from-point BEFORE CLICK] stack at (640, 468), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='button' class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2 animated-button w-full mt-6' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='form' class='mt-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='auth-container animate-fade-in w-full max-w-md md:max-w-2xl' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-blue-50 to-sky-100' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (640, 468), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='form' class='mt-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [1] tag='div' class='auth-container animate-fade-in w-full max-w-md md:max-w-2xl' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-blue-50 to-sky-100' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 6, action_type='click')
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (3.19s).
+Send OTP found using Text + Tag fallback. (resolved in 3193ms)
+
+[timing] step 6 (click): total 3193ms | locate_action 1169ms | log_emit 0ms | screenshot 221ms | settle 1206ms | navigation_wait 15ms | verify 25ms | other 557ms
+==================================================
+[7/51]
+ACTION: fill
+NAME: Verify OTP box: "5"
+Element: Verify OTP
+Locator: div#root > div:nth-of-type(2) > div:nth-of-type(2) > form > div > input:nth-of-type(4)
+Value: 5
+
+STATUS: STARTED
+Executing...
+[otp] Step 7/51: OTP field visible = True
+[otp] Step 7/51: OTP field is ready - waiting for you to enter the OTP
+[otp] waiting up to 180s for a live OTP value via the dashboard
+[otp] Step 7/51: OTP entered, continuing
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+[note] -> Waiting for the page to finish loading (up to 1.49573s)
+STATUS: SUCCESS
+Done (10.63s).
+Verify OTP found using otp split boxes.
+
+[timing] step 7 (fill): total 10631ms | log_emit 0ms | screenshot 120ms | other 10511ms
+==================================================
+[8/51]
+ACTION: click
+NAME: "Verify OTP" button
+Element: Verify OTP
+Locator: div#root > div:nth-of-type(2) > div:nth-of-type(2) > form > button
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 20537.9ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Verify OTP' at t=0ms (reference point for this flow)
+[otp] Step 8/51: clicking Verify & Continue
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Verify OTP' (strategy=text+tag) ===
+[CLICK-DIAG] resolved-to-click : tag='button' class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2 animated-button w-full mt-4' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='button' class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2 animated-button w-full mt-4' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'button', 'cls': 'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2 animated-button w-full mt-4', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Verify OTP'
+[elements-from-point BEFORE CLICK] stack at (640, 450), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='button' class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2 animated-button w-full mt-4' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='form' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='auth-container animate-fade-in w-full max-w-md md:max-w-2xl' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-blue-50 to-sky-100' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (640, 450), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='button' class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2 animated-button w-full mt-4' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point AFTER CLICK]   [1] tag='form' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='auth-container animate-fade-in w-full max-w-md md:max-w-2xl' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-blue-50 to-sky-100' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 8, action_type='click')
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+[otp] Step 8/51: navigated to https://register.coimbatoremarathon.com/registrations
+STATUS: SUCCESS
+Done (3.09s).
+Verify OTP found using Text + Tag fallback. (resolved in 3095ms)
+
+[timing] step 8 (click): total 3094ms | locate_action 1394ms | log_emit 1ms | screenshot 207ms | settle 951ms | navigation_wait 6ms | verify 16ms | other 519ms
+==================================================
+[9/51]
+ACTION: click
+NAME: "Add Runner" button
+Element: Add Runner
+Locator: div#root > div:nth-of-type(2) > div > main > div > div:nth-of-type(2) > div > div > button
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 23852.8ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Add Runner' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Add Runner' (strategy=text+tag) ===
+[CLICK-DIAG] resolved-to-click : tag='button' class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 py-2 bg-white text-marathon-primary hover:bg-white/90 mt-2 md:mt-0' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='button' class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 py-2 bg-white text-marathon-primary hover:bg-white/90 mt-2 md:mt-0' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'button', 'cls': 'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 py-2 bg-white text-marathon-primary hover:bg-white/90 mt-2 md:mt-0', 'testid': None, 'role': None} - found a more specific interactive descendant: {'tag': 'path', 'cls': '[object SVGAnimatedString]', 'testid': None, 'role': None} - clicking the DESCENDANT instead of the container's own center
+[note] -> Clicking 'Add Runner'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+EFFECT VERIFICATION CODE RUNNING (step 9, action_type='click')
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (2.74s).
+Add Runner found using Text + Tag fallback. (resolved in 2739ms)
+
+[timing] step 9 (click): total 2738ms | locate_action 1088ms | log_emit 1ms | screenshot 180ms | settle 889ms | navigation_wait 14ms | verify 15ms | other 551ms
+==================================================
+[10/51]
+ACTION: click
+NAME: "Individual - Pay and Register" element
+Element: Individual - Pay and Register
+Locator: div#root > div:nth-of-type(2) > div > main > div > div:nth-of-type(3) > div > div > div > div > div
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 26700.8ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Individual - Pay and Register' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Individual - Pay and Register' (strategy=text+tag) ===
+[CLICK-DIAG] resolved-to-click : tag='div' class='rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground cursor-pointer px-6 py-3 text-base w-full md:w-max hover:bg-muted flex items-center justify-between gap-3' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='span' class='flex items-center' data-testid=None
+[CLICK-DIAG] MATCH=False
+[click-target-resolution] container matched: {'tag': 'div', 'cls': 'rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground cursor-pointer px-6 py-3 text-base w-full md:w-max hover:bg-muted flex items-center justify-between gap-3', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Individual - Pay and Register'
+[elements-from-point BEFORE CLICK] stack at (459, 290), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='span' class='flex items-center' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground cursor-pointer px-6 py-3 text-base w-full md:w-max hover:bg-muted flex items-center justify-between gap-3' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='flex flex-wrap gap-3 mb-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='space-y-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='p-6 pt-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='rounded-lg border bg-card text-card-foreground shadow-sm mb-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='max-w-7xl mx-auto' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='main' class='flex-1 w-full p-4 md:p-6 overflow-auto mt-16 md:mt-0' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='flex min-h-screen w-full bg-marathon-background overflow-hidden' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class='group/sidebar-wrapper flex min-h-svh w-full has-[[data-variant=inset]]:bg-sidebar' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (459, 290), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='h3' class='font-semibold tracking-tight text-lg flex justify-between' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [1] tag='div' class='flex flex-col space-y-1.5 p-6 pb-2' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='rounded-lg border bg-card text-card-foreground shadow-sm cursor-pointer transition-all hover:shadow-md' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='space-y-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='p-6 pt-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='div' class='rounded-lg border bg-card text-card-foreground shadow-sm mb-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='div' class='max-w-7xl mx-auto' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='main' class='flex-1 w-full p-4 md:p-6 overflow-auto mt-16 md:mt-0' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='div' class='flex min-h-screen w-full bg-marathon-background overflow-hidden' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='div' class='group/sidebar-wrapper flex min-h-svh w-full has-[[data-variant=inset]]:bg-sidebar' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [13] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [14] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 10, action_type='click')
+STATUS: SUCCESS
+Done (2.22s).
+Individual - Pay and Register found using Text + Tag fallback. (resolved in 2223ms)
+
+[timing] step 10 (click): total 2223ms | locate_action 1157ms | log_emit 1ms | screenshot 81ms | settle 4ms | verify 453ms | other 527ms
+==================================================
+[11/51]
+ACTION: click
+NAME: "5K Walk" element
+Element: 5K Walk
+
+Fee: ₹650.00
+
+Age Limit: Born on or before 20th December 2016
+Locator: div#root > div:nth-of-type(2) > div > main > div > div:nth-of-type(3) > div > div > div > div > div
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 28919.1ms (page clock) before this click
+[modal-timing-detail] click dispatched on '5K Walk\n\nFee: ₹650.00\n\nAge Limit: Born on or before 20th December 2016' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target '5K Walk\n\nFee: ₹650.00\n\nAge Limit: Born on or before 20th December 2016' (strategy=text+tag) ===
+[CLICK-DIAG] resolved-to-click : tag='div' class='rounded-lg border bg-card text-card-foreground shadow-sm cursor-pointer transition-all hover:shadow-md' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='p' class='text-sm text-marathon-muted' data-testid=None
+[CLICK-DIAG] MATCH=False
+[click-target-resolution] container matched: {'tag': 'div', 'cls': 'rounded-lg border bg-card text-card-foreground shadow-sm cursor-pointer transition-all hover:shadow-md', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking '5K Walk Fee: ₹650.00 Age Limit: Born on or before 20th De...'
+[elements-from-point BEFORE CLICK] stack at (415, 336), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='p' class='text-sm text-marathon-muted' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='flex items-center gap-2' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='p-6 pt-0' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='rounded-lg border bg-card text-card-foreground shadow-sm cursor-pointer transition-all hover:shadow-md' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='space-y-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='p-6 pt-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='rounded-lg border bg-card text-card-foreground shadow-sm mb-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='max-w-7xl mx-auto' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='main' class='flex-1 w-full p-4 md:p-6 overflow-auto mt-16 md:mt-0' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='flex min-h-screen w-full bg-marathon-background overflow-hidden' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='group/sidebar-wrapper flex min-h-svh w-full has-[[data-variant=inset]]:bg-sidebar' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (415, 336), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='p' class='text-sm text-marathon-muted' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [1] tag='div' class='flex items-center gap-2' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='p-6 pt-0' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='rounded-lg border bg-card text-card-foreground shadow-sm cursor-pointer transition-all hover:shadow-md ring-2 ring-marathon-primary' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point AFTER CLICK]   [4] tag='div' class='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='space-y-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='div' class='p-6 pt-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='div' class='rounded-lg border bg-card text-card-foreground shadow-sm mb-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='div' class='max-w-7xl mx-auto' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='main' class='flex-1 w-full p-4 md:p-6 overflow-auto mt-16 md:mt-0' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='div' class='flex min-h-screen w-full bg-marathon-background overflow-hidden' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='div' class='group/sidebar-wrapper flex min-h-svh w-full has-[[data-variant=inset]]:bg-sidebar' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [13] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [14] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [15] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 11, action_type='click')
+STATUS: SUCCESS
+Done (2.21s).
+5K Walk
+
+Fee: ₹650.00
+
+Age Limit: Born on or before 20th Dec found using Text + Tag fallback. (resolved in 2212ms)
+
+[timing] step 11 (click): total 2212ms | locate_action 1194ms | log_emit 1ms | screenshot 79ms | settle 3ms | verify 443ms | other 492ms
+==================================================
+[12/51]
+ACTION: check
+NAME: "I have read and agree to the Terms and C" checkbox (checked)
+Element: on
+Locator: #terms
+Expected State: True
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[check-vs-click] non-native checkbox-styled element (tag != INPUT) - always clicking regardless of the is_checked=False/expected_state=True comparison, since that comparison isn't reliable for a single-select/radio-style control recorded as 'check'
+[toggle-verify] state_target now reads checked=True (matches recorded expectation)
+Warning: The checkbox label changed. Recorded content: 'I have read and agree to the Terms and Conditions'. Replay content: ''. Continuing.
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (11.36s).
+on found using Element ID. (resolved in 11363ms)
+WARNING: Warning: The checkbox label changed. Recorded content: 'I have read and agree to the Terms and Conditions'. Replay content: ''. Continuing.
+
+[timing] step 12 (check): total 11362ms | locate_action 11220ms | log_emit 0ms | screenshot 116ms | other 26ms
+==================================================
+[13/51]
+ACTION: click
+NAME: "Next" button
+Element: Next
+Locator: div#root > div:nth-of-type(2) > div > main > div > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(2)
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 42702.6ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Next' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Next' (strategy=text+tag) ===
+[CLICK-DIAG] resolved-to-click : tag='button' class='justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2 flex items-center' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='button' class='justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2 flex items-center' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'button', 'cls': 'justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2 flex items-center', 'testid': None, 'role': None} - found a more specific interactive descendant: {'tag': 'path', 'cls': '[object SVGAnimatedString]', 'testid': None, 'role': None} - clicking the DESCENDANT instead of the container's own center
+[note] -> Clicking 'Next'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+EFFECT VERIFICATION CODE RUNNING (step 13, action_type='click')
+[modal-no-navigate-check] next step's own target sits inside a dialog-like container even though no navigate was recorded between this click and it - verifying the modal genuinely painted before letting that step run
+[modal-timing-detail] click dispatched (verification loop starting) - target='Yes, Import my Profile Data' at +1175ms from click dispatch
+[modal-timing-detail] target DOM node first appears (not yet confirmed visible/painted) - target='Yes, Import my Profile Data' at +1192ms from click dispatch
+[modal-timing-detail] content genuinely PAINTED (_is_modal_content_painted=True) - target='Yes, Import my Profile Data' at +1669ms from click dispatch
+[modal-timing] click armed at 42702.6ms (page clock) - last DOM mutation observed at 43872.0ms
+[modal-timing] click armed at 42702.6ms (page clock) - last DOM mutation observed at 43872.0ms
+[modal-debug] saved screenshot at moment of 'confirmed-ready-to-interact': /Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/screenshoots/session_20261009_152733_20261009_153147/coimbatore_marathon_run_for_a_/debug/modal-confirmed-ready-to-interact-1791540164979.png
+[modal-timing-detail] CONFIRMED stable - ready to interact - target='Yes, Import my Profile Data' at +2036ms from click dispatch
+STATUS: SUCCESS
+Done (3.07s).
+Next found using Text + Tag fallback. (resolved in 3074ms)
+
+[timing] step 13 (click): total 3074ms | locate_action 1151ms | log_emit 3ms | screenshot 84ms | settle 3ms | verify 455ms | other 1378ms
+==================================================
+[14/51]
+ACTION: click
+NAME: "Yes, Import my Profile Data" button
+Element: Yes, Import my Profile Data
+Locator: div#radix-:rl: > div:nth-of-type(3) > button
+
+STATUS: STARTED
+Executing...
+[modal-timing-detail] interaction with 'Yes, Import my Profile Data' dispatched at +3274ms from click dispatch
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Yes, Import my Profile Data' (strategy=popup-scoped) ===
+[CLICK-DIAG] resolved-to-click : tag='button' class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='button' class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'button', 'cls': 'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Yes, Import my Profile Data'
+[elements-from-point BEFORE CLICK] stack at (691, 493), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='button' class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='sm:flex-row sm:justify-end sm:space-x-2 flex flex-col justify-end md:flex-row gap-2' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='fixed left-[50%] top-[50%] z-50 grid w-[96%] rounded-lg max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg' testid=None z-index='50' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0' testid=None z-index='50' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (691, 493), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='div' class='sm:flex-row sm:justify-end sm:space-x-2 flex flex-col justify-end md:flex-row gap-2' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [1] tag='div' class='fixed left-[50%] top-[50%] z-50 grid w-[96%] rounded-lg max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg' testid=None z-index='50' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0' testid=None z-index='50' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 14, action_type='click')
+STATUS: SUCCESS
+Done (2.88s).
+Yes, Import my Profile Data found using Name inside the popup. (resolved in 2883ms)
+WARNING: Warning: This click also filled 9 other fields (Enter your first name, Enter your last name, Select date of birth, …). That didn't happen during recording. [details] recorded changed fields [], replay changed fields [{'parts': ['Enter your first name'], 'tag': 'input', 'type': None}, {'parts': ['Enter your last name'], 'tag': 'input', 'type': None}, {'parts': ['Select date of birth'], 'tag': 'input', 'type': 'text'}, {'parts': ['Enter your email address'], 'tag': 'input', 'type': 'email'}, {'parts': ['Enter your phone number'], 'tag': 'input', 'type': 'tel'}, {'parts': ['Enter your address'], 'tag': 'input', 'type': None}, {'parts': ['Enter pincode'], 'tag': 'input', 'type': 'text'}, {'parts': ['Enter your city'], 'tag': 'input', 'type': None}, {'parts': ['Enter ID proof number'], 'tag': 'input', 'type': None}]
+
+[timing] step 14 (click): total 2883ms | locate_action 1215ms | log_emit 1ms | screenshot 80ms | settle 671ms | verify 443ms | other 473ms
+==================================================
+[15/51]
+ACTION: scroll
+NAME: down 539px on Marathon Registration
+Delta: (0, 539)
+
+STATUS: STARTED
+Executing...
+[scroll] window-level scroll (no locator_profile recorded)
+STATUS: SUCCESS
+Done (0.39s).
+
+[timing] step 15 (scroll): total 391ms | other 391ms
+==================================================
+[16/51]
+ACTION: click
+NAME: "Next" button
+Element: Next
+Locator: div#root > div:nth-of-type(2) > div > main > div > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(2)
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 4s)
+[CLICK-DIAG] === click on recorded target 'Next' (strategy=text+tag) ===
+[CLICK-DIAG] resolved-to-click : tag='button' class='justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2 flex items-center' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='button' class='justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2 flex items-center' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'button', 'cls': 'justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2 flex items-center', 'testid': None, 'role': None} - found a more specific interactive descendant: {'tag': 'path', 'cls': '[object SVGAnimatedString]', 'testid': None, 'role': None} - clicking the DESCENDANT instead of the container's own center
+[note] -> Clicking 'Next'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+EFFECT VERIFICATION CODE RUNNING (step 16, action_type='click')
+STATUS: SUCCESS
+Done (6.88s).
+Next found using Text + Tag fallback. (resolved in 6882ms)
+
+[timing] step 16 (click): total 6881ms | locate_action 5192ms | log_emit 1ms | screenshot 143ms | settle 662ms | verify 100ms | other 783ms
+==================================================
+[17/51]
+ACTION: scroll
+NAME: up 539px on Marathon Registration
+Delta: (0, -539)
+
+STATUS: STARTED
+Executing...
+[scroll] window-level scroll (no locator_profile recorded)
+[note] -> Waiting for the page to stop changing before the screenshot (up to 3s)
+[note] -> Waiting for the page to finish loading (up to 2s)
+STATUS: FAILED
+Reason: Failed: The browser window was closed before this step finished, so the replay could not continue. The replay stopped. [details] Mouse.wheel: Target page, context or browser has been closed
+Current URL: https://register.coimbatoremarathon.com/marathon-registration
+
+[timing] step 17 (scroll): total 50ms | screenshot 31ms | other 19ms
+Step 17 (scroll) failed - stopping replay (stop_on_failure is on; set AUTOFLOW_STOP_ON_FAILURE=0 to fall back to recover-and-continue). Remaining steps will be marked NOT RUN.
+
+==================================================
+REPLAY COMPLETED
+==================================================
+
+Recorded: 51
+JSON: 51
+Generated: 51
+Executed: 17
+Successful: 16
+Failed: 1
+Total replay time: 68.67s
+Not executed: 18-51 (34 action(s))
+
+RESULT: FAIL
+
+Final URL:
+None
+
+Screenshots:
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/screenshoots/session_20261009_152733_20261009_153147
+
+Generated Script:
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261009_152733_script.py
+
+No open page remained - skipping the close delay.
+Browser closed successfully.
+==================================================
+
+
+===== stderr =====
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261009_152733_script.py:18628: SyntaxWarning: invalid escape sequence '\s'
+  desc += '.' + node.className.trim().split(/\s+/).join('.');
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261009_152733_script.py:24324: SyntaxWarning: invalid escape sequence '\s'
+  "    const t = lb.split(/\s+/).map(id => {"
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261009_152733_script.py:28282: SyntaxWarning: invalid escape sequence '\d'
+  if (txt && txt.length < 200 && /\d/.test(txt)) {
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261009_152733_script.py:37406: SyntaxWarning: invalid escape sequence '\s'
+  return t.trim().replace(/\s+/g, ' ');
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261009_152733_script.py:37553: SyntaxWarning: invalid escape sequence '\s'
+  return (s || '').replace(/\s+/g, ' ').trim().toLowerCase();

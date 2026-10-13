@@ -1,0 +1,180 @@
+{
+  "role": {
+    "count": 0,
+    "items": []
+  },
+  "text_tag": {
+    "total": 342,
+    "exact_idx": [
+      339,
+      340
+    ],
+    "items": [
+      {
+        "class": "css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-tg9xy0 r-t23y2h r-1fvmuoy r-102gzdx r-1777fci r-14gqq1x r-13qz1uu",
+        "bounding_box": {
+          "x": 448,
+          "y": 445,
+          "width": 384,
+          "height": 52
+        },
+        "outer_html_head": "<div tabindex=\"0\" class=\"css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-tg9xy0 r-t23y2h r-1fvmuoy r-102gzdx r-1777fci r-14gqq1x r-13qz1",
+        "contains_other": null
+      },
+      {
+        "class": "css-146c3p1 r-jwli3a r-ubezar r-1kfrs79 r-3ucsff",
+        "bounding_box": {
+          "x": 601.2250366210938,
+          "y": 461.3999938964844,
+          "width": 77.54998779296875,
+          "height": 19.20001220703125
+        },
+        "outer_html_head": "<div dir=\"auto\" class=\"css-146c3p1 r-jwli3a r-ubezar r-1kfrs79 r-3ucsff\" style=\"font-family: Inter;\">Send OTP</div>",
+        "contains_other": null
+      }
+    ],
+    "relationship": "a_contains_b"
+  },
+  "css_path": {
+    "count": 5,
+    "items": [
+      {
+        "tag": "DIV",
+        "class": "css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-pgx3k3 r-6ncur5 r-1r8g8re r-1777fci r-u8s1d r-dukzhd r-h7zev3 r-1acpoxo r-mhe3cw",
+        "inner_text": "\uf24a",
+        "bounding_box": {
+          "x": 810,
+          "y": 205,
+          "width": 36,
+          "height": 36
+        },
+        "is_visible": true,
+        "is_top_hit_or_self": true,
+        "top_of_stack": {
+          "tag": "div",
+          "cls": "css-146c3p1 r-lrvibr",
+          "testid": null,
+          "zIndex": "auto",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        }
+      },
+      {
+        "tag": "DIV",
+        "class": "css-146c3p1 r-18zdu8c r-cv4lhi r-b88u0q r-vrz42v r-5oul0u r-kls4rr",
+        "inner_text": "Sign In to Continue",
+        "bounding_box": {
+          "x": 448,
+          "y": 243,
+          "width": 384,
+          "height": 28
+        },
+        "is_visible": true,
+        "is_top_hit_or_self": true,
+        "top_of_stack": {
+          "tag": "div",
+          "cls": "css-146c3p1 r-18zdu8c r-cv4lhi r-b88u0q r-vrz42v r-5oul0u r-kls4rr",
+          "testid": null,
+          "zIndex": "auto",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": true
+        }
+      },
+      {
+        "tag": "DIV",
+        "class": "css-146c3p1 r-1cucpzw r-1b43r93 r-16dba41 r-hbpseb r-1peese0",
+        "inner_text": "Enter your email or mobile number to continue with your regi",
+        "bounding_box": {
+          "x": 448,
+          "y": 279,
+          "width": 384,
+          "height": 44
+        },
+        "is_visible": true,
+        "is_top_hit_or_self": true,
+        "top_of_stack": {
+          "tag": "div",
+          "cls": "css-146c3p1 r-1cucpzw r-1b43r93 r-16dba41 r-hbpseb r-1peese0",
+          "testid": null,
+          "zIndex": "auto",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": true
+        }
+      },
+      {
+        "tag": "DIV",
+        "class": "css-g5y9jx r-1pz39u2 r-117bsoe r-13qz1uu",
+        "inner_text": "Email or Mobile Number",
+        "bounding_box": {
+          "x": 448,
+          "y": 347,
+          "width": 384,
+          "height": 74
+        },
+        "is_visible": true,
+        "is_top_hit_or_self": true,
+        "top_of_stack": {
+          "tag": "input",
+          "cls": "css-11aywtz r-6taxm2 r-1ins33t r-1w15a45 r-1q9bdsx r-1rf8fdq r-18zdu8c r-ubezar r-1iud8zs r-bcqeeo r-3pj75a r-fdjqy7 r-13qz1uu r-18phcnl",
+          "testid": null,
+          "zIndex": "auto",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        }
+      },
+      {
+        "tag": "DIV",
+        "class": "css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-tg9xy0 r-t23y2h r-1fvmuoy r-102gzdx r-1777fci r-14gqq1x r-13qz1uu",
+        "inner_text": "Send OTP",
+        "bounding_box": {
+          "x": 448,
+          "y": 445,
+          "width": 384,
+          "height": 52
+        },
+        "is_visible": true,
+        "is_top_hit_or_self": true,
+        "top_of_stack": {
+          "tag": "div",
+          "cls": "css-146c3p1 r-jwli3a r-ubezar r-1kfrs79 r-3ucsff",
+          "testid": null,
+          "zIndex": "auto",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        }
+      }
+    ]
+  },
+  "xpath": {
+    "count": 1,
+    "items": [
+      {
+        "tag": "DIV",
+        "class": "css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-pgx3k3 r-6ncur5 r-1r8g8re r-1777fci r-u8s1d r-dukzhd r-h7zev3 r-1acpoxo r-mhe3cw",
+        "inner_text": "\uf24a",
+        "bounding_box": {
+          "x": 810,
+          "y": 205,
+          "width": 36,
+          "height": 36
+        },
+        "is_visible": true,
+        "is_top_hit_or_self": true,
+        "top_of_stack": {
+          "tag": "div",
+          "cls": "css-146c3p1 r-lrvibr",
+          "testid": null,
+          "zIndex": "auto",
+          "opacity": "1",
+          "pointerEvents": "auto",
+          "isResolvedElement": false
+        }
+      }
+    ]
+  }
+}

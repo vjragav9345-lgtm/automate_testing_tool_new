@@ -1,0 +1,16 @@
+<!doctype html><html><head><title>side check page</title><style>body{font:15px sans-serif;margin:20px} input,button{margin:6px;padding:6px}</style></head><body>
+<form onsubmit="return false">
+<button type="button" id="msgbox">Message box</button>
+<label>Email <input id="em" type="email" name="email"></label>
+<input type="hidden" id="state" name="appState" value="0">
+<input type="text" id="tick" aria-label="Clock" readonly style="display:none">
+<label>Ticker <input id="tk" type="text" name="ticker"></label>
+</form>
+<script>
+var q = new URLSearchParams(location.search), n = 0;
+document.getElementById('msgbox').addEventListener('click', function () {
+  if (q.get('fill')) document.getElementById('em').value = 'filled@example.test';
+  if (q.get('hidden')) document.getElementById('state').value = 'v' + (++n);
+});
+if (q.get('timer')) setInterval(function () { document.getElementById('tk').value = 't' + (++n); }, 30);
+</script></body></html>

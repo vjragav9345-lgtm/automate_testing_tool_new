@@ -1,0 +1,355 @@
+CORE FIX MISSING: fill/select retry logic not found - results from this run cannot be trusted.
+Starting replay...
+Browser launched.
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+REPLAY SOURCE: session_20261009_113246
+ACTION COUNT: 59
+SOURCE TYPE: ORIGINAL
+
+Executing recorded actions...
+
+==================================================
+[1/59]
+ACTION: navigate
+NAME: Open – Home page
+URL: https://coimbatoremarathon.com/
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+[navigate-ready] waiting for next step's target to become findable (up to 9.0s)...
+[navigate-ready] found at t=0.0s - destination page is ready
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (1.32s).
+
+[timing] step 1 (navigate): total 1315ms | settle 4ms | navigation_wait 5ms | screenshot 1295ms | other 11ms
+==================================================
+[2/59]
+ACTION: click
+NAME: "Accept All" button
+Element: Accept All
+Locator: div#cookie-consent-banner > div > div > div > button:nth-of-type(2)
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 4575.7ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Accept All' at t=0ms (reference point for this flow)
+[spa-settle] waited 0.01s for network-idle/no-skeleton before this step
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Accept All' (strategy=popup-scoped) ===
+[CLICK-DIAG] resolved-to-click : tag='button' class='cookie-consent-btn cookie-consent-btn--accept' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='button' class='cookie-consent-btn cookie-consent-btn--accept' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'button', 'cls': 'cookie-consent-btn cookie-consent-btn--accept', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Accept All'
+[elements-from-point BEFORE CLICK] stack at (874, 660), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='button' class='cookie-consent-btn cookie-consent-btn--accept' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='cookie-consent-buttons' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='cookie-consent-actions' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='cookie-consent-dialog' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='cookie-consent-banner' testid=None z-index='10050' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='counter-box' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='countdown' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='hero-countdown-body' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='hero-countdown wow fadeInUp' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='hero-box' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class='col-lg-12 pt-5' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='row' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='container' testid=None z-index='2' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='div' class='hero-slide-overlay' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='video' class='hero-slide-video' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='div' class='hero-slide-media' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [16] tag='div' class='hero dark-section hero-slide hero-slide-1' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [17] tag='div' class='swiper-slide swiper-slide-active' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [18] tag='div' class='swiper-wrapper' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [19] tag='div' class='swiper hero-swiper swiper-initialized swiper-horizontal swiper-autoheight swiper-backface-hidden' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [20] tag='div' class='hero-slider' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [21] tag='main' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [22] tag='body' class='page-home' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [23] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (874, 660), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='div' class='counter-box' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [1] tag='div' class='countdown' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='hero-countdown-body' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='hero-countdown wow fadeInUp' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='hero-box' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='col-lg-12 pt-5' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='row' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='div' class='container' testid=None z-index='2' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='div' class='hero-slide-overlay' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='video' class='hero-slide-video' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='div' class='hero-slide-media' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='div' class='hero dark-section hero-slide hero-slide-1' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='div' class='swiper-slide swiper-slide-active' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [13] tag='div' class='swiper-wrapper' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [14] tag='div' class='swiper hero-swiper swiper-initialized swiper-horizontal swiper-autoheight swiper-backface-hidden' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [15] tag='div' class='hero-slider' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [16] tag='main' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [17] tag='body' class='page-home' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [18] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 2, action_type='click')
+STATUS: SUCCESS
+Done (2.29s).
+Accept All found using Name inside the popup. (resolved in 2290ms)
+
+[timing] step 2 (click): total 2290ms | locate_action 1118ms | log_emit 0ms | screenshot 222ms | settle 4ms | verify 440ms | other 506ms
+==================================================
+[3/59]
+ACTION: click
+NAME: "Register via Website" link
+Element: Register via Website
+Locator: a[href="https://register.coimbatoremarathon.com"]
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 6996.9ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Register via Website' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Register via Website' (strategy=text+tag) ===
+[CLICK-DIAG] resolved-to-click : tag='a' class='btn-default btn-highlighted' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='a' class='btn-default btn-highlighted' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'a', 'cls': 'btn-default btn-highlighted', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Register via Website'
+[elements-from-point BEFORE CLICK] stack at (508, 406), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='a' class='btn-default btn-highlighted' testid=None z-index='0' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='hero-btn' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='hero-content-body wow fadeInUp' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='hero-content' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='hero-box' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='col-lg-12 pt-5' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='row' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='container' testid=None z-index='2' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='hero-slide-overlay' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='video' class='hero-slide-video' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class='hero-slide-media' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='hero dark-section hero-slide hero-slide-1' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='swiper-slide swiper-slide-active' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='div' class='swiper-wrapper' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='div' class='swiper hero-swiper swiper-initialized swiper-horizontal swiper-autoheight swiper-backface-hidden' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='div' class='hero-slider' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [16] tag='main' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [17] tag='body' class='page-home' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [18] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+EFFECT VERIFICATION CODE RUNNING (step 3, action_type='click')
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (5.88s).
+Register via Website found using Text + Tag fallback. (resolved in 5883ms)
+
+[timing] step 3 (click): total 5882ms | locate_action 3626ms | log_emit 1ms | screenshot 273ms | settle 981ms | navigation_wait 13ms | verify 337ms | other 651ms
+==================================================
+[4/59]
+ACTION: click
+NAME: "Enter your email or mobile number" field
+Element: Enter your email or mobile number
+Locator: div#root > div:nth-of-type(2) > div:nth-of-type(2) > form > div > div > input
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 3108.1ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Enter your email or mobile number' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Enter your email or mobile number' (strategy=placeholder) ===
+[CLICK-DIAG] resolved-to-click : tag='input' class='mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-marathon-primary focus:outline-none focus:ring-1 focus:ring-marathon-primary' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='input' class='mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-marathon-primary focus:outline-none focus:ring-1 focus:ring-marathon-primary' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'input', 'cls': 'mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-marathon-primary focus:outline-none focus:ring-1 focus:ring-marathon-primary', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Enter your email or mobile number'
+[elements-from-point BEFORE CLICK] stack at (640, 389), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='input' class='mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-marathon-primary focus:outline-none focus:ring-1 focus:ring-marathon-primary' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='relative' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='form-group relative' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='form' class='mt-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='auth-container animate-fade-in w-full max-w-md md:max-w-2xl' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-blue-50 to-sky-100' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (640, 389), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='input' class='mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-marathon-primary focus:outline-none focus:ring-1 focus:ring-marathon-primary' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point AFTER CLICK]   [1] tag='div' class='relative' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='form-group relative' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='form' class='mt-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='auth-container animate-fade-in w-full max-w-md md:max-w-2xl' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-blue-50 to-sky-100' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 4, action_type='click')
+STATUS: SUCCESS
+Done (2.03s).
+Enter your email or mobile number found using Placeholder. (resolved in 2027ms)
+
+[timing] step 4 (click): total 2027ms | locate_action 1011ms | log_emit 0ms | screenshot 89ms | settle 4ms | verify 447ms | other 476ms
+==================================================
+[5/59]
+ACTION: fill
+NAME: Enter your email or mobile number: "9345691852"
+Element: Enter your email or mobile number
+Locator: div#root > div:nth-of-type(2) > div:nth-of-type(2) > form > div > div > input
+Value: 9345691852
+
+STATUS: STARTED
+Executing...
+[fill-retry] attempt 1 for 'Enter your email or mobile number' at t=0.0s
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (1.27s).
+Enter your email or mobile number found using Placeholder. (resolved in 1265ms)
+
+[timing] step 5 (fill): total 1265ms | locate_action 1088ms | log_emit 0ms | screenshot 142ms | other 35ms
+==================================================
+[6/59]
+ACTION: click
+NAME: "Send OTP" button
+Element: Send OTP
+Locator: div#root > div:nth-of-type(2) > div:nth-of-type(2) > form > button
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 6824.9ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Send OTP' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Send OTP' (strategy=text+tag) ===
+[CLICK-DIAG] resolved-to-click : tag='button' class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2 animated-button w-full mt-6' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='button' class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2 animated-button w-full mt-6' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'button', 'cls': 'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2 animated-button w-full mt-6', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Send OTP'
+[elements-from-point BEFORE CLICK] stack at (640, 468), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='button' class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary/90 text-primary-foreground hover:bg-primary h-10 px-4 py-2 animated-button w-full mt-6' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='form' class='mt-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='auth-container animate-fade-in w-full max-w-md md:max-w-2xl' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-blue-50 to-sky-100' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (640, 468), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='form' class='mt-6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [1] tag='div' class='auth-container animate-fade-in w-full max-w-md md:max-w-2xl' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-blue-50 to-sky-100' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 6, action_type='click')
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (2.97s).
+Send OTP found using Text + Tag fallback. (resolved in 2970ms)
+
+[timing] step 6 (click): total 2969ms | locate_action 1173ms | log_emit 0ms | screenshot 216ms | settle 1010ms | navigation_wait 14ms | verify 26ms | other 530ms
+==================================================
+[7/59]
+ACTION: fill
+NAME: Verify OTP box: "9"
+Element: Verify OTP
+Locator: div#root > div:nth-of-type(2) > div:nth-of-type(2) > form > div > input:nth-of-type(4)
+Value: 9
+
+STATUS: STARTED
+Executing...
+[fill-retry] attempt 1 for 'the field' at t=0.0s
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+recorded target not found - used same position (#4) instead, content may differ from recording
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (1.27s).
+Verify OTP found using Position fallback. Consider re-recording this step. (resolved in 1269ms)
+
+[timing] step 7 (fill): total 1268ms | locate_action 1104ms | log_emit 1ms | screenshot 143ms | other 20ms
+==================================================
+[8/59]
+ACTION: click
+NAME: "Verify OTP" button
+Element: Verify OTP
+Locator: div#root > div:nth-of-type(2) > div:nth-of-type(2) > form > button
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 11345.1ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Verify OTP' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[note] Waiting for 'Verify OTP' to become clickable… 5s
+[note] Waiting for 'Verify OTP' to become clickable… 10s
+[target-verify] REJECTED strategy=text+tag: element found but stayed disabled for 15s
+[target-verify] REJECTED strategy=text+tag-number-normalized: element found but stayed disabled for 15s
+[target-verify] REJECTED strategy=identity: element found but stayed disabled for 15s
+[target-verify] REJECTED strategy=position_fallback: element found but stayed disabled for 15s
+[target-verify] REJECTED strategy=css_path: element found but stayed disabled for 15s
+[target-verify] REJECTED strategy=xpath: element found but stayed disabled for 15s
+[target-verify] REJECTED strategy=text+tag: element found but stayed disabled for 15s
+[target-verify] REJECTED strategy=text+tag-number-normalized: element found but stayed disabled for 15s
+[target-verify] REJECTED strategy=identity: element found but stayed disabled for 15s
+[target-verify] REJECTED strategy=position_fallback: element found but stayed disabled for 15s
+[target-verify] REJECTED strategy=css_path: element found but stayed disabled for 15s
+[target-verify] REJECTED strategy=xpath: element found but stayed disabled for 15s
+[scroll-search] skipped: a candidate was found but rejected, and the page is already at the recorded scroll position - scrolling further would not match the manual recording
+[note] -> Waiting for the page to stop changing before the screenshot (up to 3s)
+STATUS: FAILED
+Reason: Failed: Could not find the 'Verify OTP' button on the page after waiting 32 seconds. Similar items were on the page ('Verify OTP'), but none had the same name and kind as the recorded one. The replay stopped. [details] no recorded locator found the element; no click was made at the recorded position because it could not be shown to land on the target; tiers tried: popup-scoped: no match; data-testid: no match; data-test: no match; data-cy: no match; id: no match; name: no match; aria-label: no match; placeholder: no match; title: no match; role: no match; href: no match; text+tag: found; text+tag: no match; text+tag-number-normalized: found; image-ancestor: no match; identity: found; icon-identity: no match; field-label: no match; editable-replacement: no match; position_fallback: found; css_path: found; xpath: found; generated-id: no match; visible-same-name: no match; closest visible candidates: <button> 'Verify OTP' (0px from the recorded spot); candidates: text+tag: 'Verify OTP' -> proposed (<button> at (336,430) 608x40, visible (its own box is shown)); text+tag: 'Verify OTP' -> not used (element found but stayed disabled for 15s); text+tag-number-normalized: 'Verify OTP' -> proposed (<button> at (336,430) 608x40, visible (its own box is shown)); text+tag-number-normalized: 'Verify OTP' -> not used (element found but stayed disabled for 15s); identity: 'Verify OTP' -> proposed (<button> at (336,430) 608x40, visible (its own box is shown)); identity: 'Verify OTP' -> not used (element found but stayed disabled for 15s); position_fallback: 'Verify OTP' -> proposed (<button> at (336,430) 608x40, visible (its own box is shown)); position_fallback: 'Verify OTP' -> not used (element found but stayed disabled for 15s); css_path: 'Verify OTP' -> proposed (<button> at (336,430) 608x40, visible (its own box is shown)); css_path: 'Verify OTP' -> not used (element found but stayed disabled for 15s); xpath: 'Verify OTP' -> proposed (<button> at (336,430) 608x40, visible (its own box is shown)); xpath: 'Verify OTP' -> not used (element found but stayed disabled for 15s); text+tag: 'Verify OTP' -> proposed (<button> at (336,430) 608x40, visible (its own box is shown)); text+tag: 'Verify OTP' -> not used (element found but stayed disabled for 15s); text+tag-number-normalized: 'Verify OTP' -> proposed (<button> at (336,430) 608x40, visible (its own box is shown)); text+tag-number-normalized: 'Verify OTP' -> not used (element found but stayed disabled for 15s); identity: 'Verify OTP' -> proposed (<button> at (336,430) 608x40, visible (its own box is shown)); identity: 'Verify OTP' -> not used (element found but stayed disabled for 15s); position_fallback: 'Verify OTP' -> proposed (<button> at (336,430) 608x40, visible (its own box is shown)); position_fallback: 'Verify OTP' -> not used (element found but stayed disabled for 15s)
+Current URL: https://register.coimbatoremarathon.com/verify-otp
+Verify OTP could not be resolved using any stored locator.
+Locator attempts:
+  1. text=Verify OTP
+  2. css_path=div#root > div:nth-of-type(2) > div:nth-of-type(2) > form > button
+  3. xpath=//button[normalize-space(text())='Verify OTP']
+  4. bounding_box=x=336, y=430
+
+Screenshot: /Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/screenshoots/session_20261009_113246_20261009_113553/verify_otp/step08_verify_otp_FAILED_11-36-46.png
+[timing] step 8 (click): total 32088ms | locate_action 31773ms | screenshot 118ms | other 197ms
+Step 8 (click) failed - stopping replay (stop_on_failure is on; set AUTOFLOW_STOP_ON_FAILURE=0 to fall back to recover-and-continue). Remaining steps will be marked NOT RUN.
+
+==================================================
+REPLAY COMPLETED
+==================================================
+
+Recorded: 59
+JSON: 59
+Generated: 59
+Executed: 8
+Successful: 7
+Failed: 1
+Total replay time: 53.76s
+Not executed: 9-59 (51 action(s))
+
+RESULT: FAIL
+
+Final URL:
+https://register.coimbatoremarathon.com/verify-otp
+
+Screenshots:
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/screenshoots/session_20261009_113246_20261009_113553
+
+Generated Script:
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261009_113246_script.py
+
+Browser will remain open for 5 seconds...
+Browser closed successfully.
+==================================================
+
+
+===== stderr =====
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261009_113246_script.py:19872: SyntaxWarning: invalid escape sequence '\s'
+  desc += '.' + node.className.trim().split(/\s+/).join('.');
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261009_113246_script.py:25337: SyntaxWarning: invalid escape sequence '\s'
+  "    const t = lb.split(/\s+/).map(id => {"
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261009_113246_script.py:29118: SyntaxWarning: invalid escape sequence '\d'
+  if (txt && txt.length < 200 && /\d/.test(txt)) {
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261009_113246_script.py:38193: SyntaxWarning: invalid escape sequence '\s'
+  return t.trim().replace(/\s+/g, ' ');
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261009_113246_script.py:38340: SyntaxWarning: invalid escape sequence '\s'
+  return (s || '').replace(/\s+/g, ' ').trim().toLowerCase();

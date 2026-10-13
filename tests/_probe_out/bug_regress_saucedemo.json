@@ -1,0 +1,124 @@
+{
+ "status": "FAIL",
+ "steps": [
+  {
+   "index": 1,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 2,
+   "action_type": "fill",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 3,
+   "action_type": "click",
+   "success": true,
+   "error": "recorded click position was stale (or every other locator signal failed) - re-resolved the target live via role/accessible-name/text instead of the recorded coordinate",
+   "not_run": false
+  },
+  {
+   "index": 4,
+   "action_type": "validate_element",
+   "success": false,
+   "error": "validate_element failed: element is enabled (expected disabled)",
+   "not_run": false
+  },
+  {
+   "index": 5,
+   "action_type": "tab_close",
+   "success": false,
+   "error": "NOT RUN (stopped after step 4 failed)",
+   "not_run": true
+  }
+ ],
+ "drag": [],
+ "step_scroll": {
+  "1": {
+   "pos": [
+    0,
+    0,
+    720,
+    720
+   ],
+   "scroll_events": []
+  },
+  "2": {
+   "pos": [
+    0,
+    0,
+    720,
+    720
+   ],
+   "scroll_events": []
+  },
+  "3": {
+   "pos": [
+    0,
+    0,
+    720,
+    720
+   ],
+   "scroll_events": []
+  },
+  "4": {
+   "pos": null,
+   "scroll_events": []
+  }
+ },
+ "step_pages": {
+  "1": [
+   {
+    "i": 0,
+    "url": "https://www.saucedemo.com/",
+    "pos": [
+     0,
+     0,
+     720,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "2": [
+   {
+    "i": 0,
+    "url": "https://www.saucedemo.com/",
+    "pos": [
+     0,
+     0,
+     720,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "3": [
+   {
+    "i": 0,
+    "url": "https://www.saucedemo.com/",
+    "pos": [
+     0,
+     0,
+     720,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "4": []
+ },
+ "events": [
+  {
+   "t": 1790659995.94,
+   "step": 0,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => window.scrollTo({top: 0, left: 0, behavior: 'instant'})"
+  }
+ ]
+}

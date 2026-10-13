@@ -1,0 +1,6 @@
+<!doctype html><html><head><title>tabs and filter</title></head><body style="font:15px sans-serif;margin:20px">
+<div role="tablist"><button role="tab" id="t1">All</button> <button role="tab" id="t2">Recent</button><script>document.write("")</script></div>
+<p id="count">Results: 120</p><div id="panel">Showing everything</div>
+<script>var after=new URLSearchParams(location.search).get('after')||'95';document.getElementById('t2').textContent='Recent ('+after+')';var after_unused=new URLSearchParams(location.search).get('after')||'95';
+document.getElementById('t2').onclick=function(){document.getElementById('count').textContent='Results: '+after;document.getElementById('panel').textContent='Showing recent only';};
+document.getElementById('t1').onclick=function(){document.getElementById('count').textContent='Results: 120';document.getElementById('panel').textContent='Showing everything';};</script></body></html>

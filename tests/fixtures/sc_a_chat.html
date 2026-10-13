@@ -1,0 +1,18 @@
+<!doctype html><html><head><title>chat like page</title><style>body{font:15px sans-serif;margin:20px} #log p{margin:4px}</style></head><body>
+<div id="log"></div>
+<form onsubmit="return false">
+<input type="hidden" id="state" name="conversationState" value="[]">
+<textarea id="box" aria-label="Message box" rows="2" cols="40"></textarea>
+</form>
+<script>
+var box = document.getElementById('box'), log = document.getElementById('log'), state = document.getElementById('state'), msgs = [];
+box.addEventListener('keydown', function (e) {
+  if (e.key !== 'Enter') return;
+  e.preventDefault();
+  var t = box.value.trim(); if (!t) return;
+  msgs.push(t); state.value = JSON.stringify(msgs);
+  var p = document.createElement('p'); p.textContent = 'You: ' + t; log.appendChild(p);
+  box.value = '';
+  setTimeout(function () { var r = document.createElement('p'); r.textContent = 'Reply ' + msgs.length; log.appendChild(r); state.value = JSON.stringify(msgs.concat(['r'])); }, 150);
+});
+</script></body></html>

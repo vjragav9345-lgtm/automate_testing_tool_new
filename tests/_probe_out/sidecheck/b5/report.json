@@ -1,0 +1,189 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "http://127.0.0.1:61940/sc_b_ids.html?m=salt",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Sc B Ids page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:61940/sc_b_ids.html?m=salt",
+      "url_after": "http://127.0.0.1:61940/sc_b_ids.html?m=salt",
+      "started_at": "2026-10-05T00:10:32.089",
+      "ended_at": "2026-10-05T00:10:32.449",
+      "duration": 0.359,
+      "timing_ms": {
+        "settle": 0,
+        "navigation_wait": 0,
+        "screenshot": 358,
+        "other": 0
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Open A\" button",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "id",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "New generated id in the page address (expected on this site): recorded 'http://127.0.0.1:61940/doc/a7k2m9x4q1', now 'http://127.0.0.1:61940/doc/bjrb0ba7q2z9k'",
+      "effect_verified": true,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:61940/sc_b_ids.html?m=salt",
+      "url_after": "http://127.0.0.1:61940/doc/bjrb0ba7q2z9k",
+      "started_at": "2026-10-05T00:10:32.450",
+      "ended_at": "2026-10-05T00:10:34.261",
+      "duration": 1.813,
+      "timing_ms": {
+        "locate_action": 920,
+        "log_emit": 0,
+        "navigation_wait": 0,
+        "screenshot": 94,
+        "settle": 0,
+        "verify": 16,
+        "other": 783
+      },
+      "locator_report": {
+        "strategy": "id",
+        "strategy_label": "Element ID",
+        "fallback_level": 4,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 1813,
+        "message": "Open A found using Element ID. (resolved in 1813ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 3,
+      "action_type": "navigate",
+      "name": "A7k2m9x4q1 page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "New generated id in the page address (expected on this site): recorded 'http://127.0.0.1:61940/doc/a7k2m9x4q1', now 'http://127.0.0.1:61940/doc/bjrb0ba7q2z9k'",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:61940/doc/bjrb0ba7q2z9k",
+      "url_after": "http://127.0.0.1:61940/doc/bjrb0ba7q2z9k",
+      "started_at": "2026-10-05T00:10:34.261",
+      "ended_at": "2026-10-05T00:10:34.292",
+      "duration": 0.031,
+      "timing_ms": {
+        "settle": 0,
+        "verify": 0,
+        "screenshot": 31,
+        "other": 0
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:61940/doc/bjrb0ba7q2z9k",
+  "final_screenshot": null,
+  "final_text": "at /doc/bjrb0ba7q2z9k\nOpen A Open B",
+  "product_validation": null,
+  "total_duration_s": 3.313,
+  "total_steps": 3,
+  "live_log": [
+    {
+      "t": 1791139232.090643,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139232.1027381,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139232.94106,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139233.7061052,
+      "message": "\u21b3 Clicking 'Open A'",
+      "level": "note"
+    },
+    {
+      "t": 1791139233.8324096,
+      "message": "\u21b3 Waiting for the page address to change as recorded (up to 5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139233.8324096,
+      "message": "Page address had a new id (expected on this site)."
+    },
+    {
+      "t": 1791139234.2305512,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139234.2614925,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791139234.2614925,
+      "message": "Page address had a new id (expected on this site)."
+    },
+    {
+      "t": 1791139234.2614925,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

@@ -1,0 +1,1111 @@
+CORE FIX MISSING: fill/select retry logic not found - results from this run cannot be trusted.
+Starting replay...
+Browser launched.
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+REPLAY SOURCE: session_20261007_171239
+ACTION COUNT: 66
+SOURCE TYPE: ORIGINAL
+
+Executing recorded actions...
+
+==================================================
+[1/66]
+ACTION: navigate
+NAME: Open – Home page
+URL: https://www.myntra.com
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+[redirect] launch URL -> https://www.myntra.com/
+[navigate-ready] waiting for next step's target to become findable (up to 9.0s)...
+[navigate-ready] found at t=0.1s - destination page is ready
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (3.49s).
+
+[timing] step 1 (navigate): total 3485ms | settle 1218ms | navigation_wait 62ms | screenshot 2171ms | other 34ms
+==================================================
+[2/66]
+ACTION: hover
+NAME: "KIDS" (a)
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[target-verify] REJECTED strategy=href: this copy is hidden and another visible element has the recorded identity
+[target-verify] REJECTED strategy=text+tag: this copy is hidden and another visible element has the recorded identity
+[note] -> Hovering over 'KIDS'
+[hover] next-step target visible: True
+STATUS: SUCCESS
+Done (5.50s).
+KIDS found using identity.
+
+[timing] step 2 (hover): total 5500ms | locate_action 5266ms | log_emit 0ms | other 234ms
+==================================================
+[3/66]
+ACTION: hover
+NAME: "Flats" (a)
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[note] -> Hovering over 'Flats'
+[hover] next-step target visible: True
+STATUS: SUCCESS
+Done (1.92s).
+Flats found using Link URL. (resolved in 1922ms)
+
+[timing] step 3 (hover): total 1922ms | locate_action 1750ms | log_emit 16ms | other 156ms
+==================================================
+[4/66]
+ACTION: click
+NAME: "Flipflops" link
+Element: Flipflops
+Locator: a[href="/kids-footwear?f=Categories%3AFlip%20Flops&plaEnabled=false"]
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 14710.0ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Flipflops' at t=0ms (reference point for this flow)
+[note] -> Hovering over 'KIDS' to reveal the menu
+[note] -> Hovering over 'Flats' to reveal the menu
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Flipflops' (strategy=popup-scoped) ===
+[CLICK-DIAG] resolved-to-click : tag='a' class='desktop-categoryLink' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='a' class='desktop-categoryLink' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'a', 'cls': 'desktop-categoryLink', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Flipflops'
+[elements-from-point BEFORE CLICK] stack at (629, 158), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='a' class='desktop-categoryLink' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='li' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='ul' class='desktop-navBlock' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='li' class='desktop-oddColumnContent' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='desktop-categoryContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='desktop-paneContent' testid=None z-index='1' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='img' class='image-image undefined image-hand' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='container-container container-aspectContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='container-base myx-stretch    ' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class=' column-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class=' row-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='container-container ' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='div' class='container-base myx-stretch    ' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='div' class=' column-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [16] tag='div' class=' row-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [17] tag='div' class='container-container ' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [18] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [19] tag='div' class='container-base myx-stretch    ' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [20] tag='div' class='myx-indexContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [21] tag='div' class='myx-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [22] tag='main' class='shop-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [23] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [24] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [25] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [26] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+EFFECT VERIFICATION CODE RUNNING (step 4, action_type='click')
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (9.64s).
+Flipflops found using Name inside the popup. (resolved in 9641ms)
+
+[timing] step 4 (click): total 9641ms | locate_action 5812ms | log_emit 0ms | screenshot 1062ms | settle 875ms | navigation_wait 125ms | verify 375ms | other 1392ms
+==================================================
+[5/66]
+ACTION: check
+NAME: "Sandals(4397)" checkbox (checked)
+Element: Sandals(4397)
+Locator: div#mountRoot > div > main > div:nth-of-type(3) > div > section > div > div:nth-of-type(3) > ul > li:nth-of-type(4) > label
+Expected State: True
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[check-vs-click] non-native checkbox-styled element (tag != INPUT) - always clicking regardless of the is_checked=True/expected_state=True comparison, since that comparison isn't reliable for a single-select/radio-style control recorded as 'check'
+[reclassified: toggle->click] resolved element has no checkbox/radio/switch semantics at all - this recorded 'check' step is being executed as a plain click
+[toggle-verify] state_target now reads checked=True (matches recorded expectation)
+Warning: The number next to 'Sandals' changed (recording: 4397, now: 4400). Continuing.
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (6.00s).
+Sandals(4397) found using identity.
+WARNING: Warning: The number next to 'Sandals' changed (recording: 4397, now: 4400). Continuing.
+
+[timing] step 5 (check): total 6000ms | locate_action 5250ms | log_emit 16ms | screenshot 561ms | other 173ms
+==================================================
+[6/66]
+ACTION: scroll
+NAME: down 205px on Kids Footwear
+Delta: (0, 205)
+
+STATUS: STARTED
+Executing...
+[scroll] window-level scroll (no locator_profile recorded)
+STATUS: SUCCESS
+Done (0.41s).
+WARNING: Warning: The page layout was different, so the scroll may not show exactly the same content as in the recording. Continuing.
+
+[timing] step 6 (scroll): total 406ms | other 406ms
+==================================================
+[7/66]
+ACTION: scroll
+NAME: down 350px on Kids Footwear
+Delta: (0, 350)
+
+STATUS: STARTED
+Executing...
+[scroll] window-level scroll (no locator_profile recorded)
+STATUS: SUCCESS
+Done (0.47s).
+
+[timing] step 7 (scroll): total 468ms | other 468ms
+==================================================
+[8/66]
+ACTION: click
+NAME: "₹100 - ₹3,300" button
+Element: ₹100 - ₹3,300
+Locator: #rootRailThumbRight
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 12402.8ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'target' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 4s)
+[CLICK-DIAG] === click on recorded target '(unlabeled)' (strategy=id) ===
+[CLICK-DIAG] resolved-to-click : tag='div' class='slider-rootRailThumbRight' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='div' class='slider-thumbDot' data-testid=None
+[CLICK-DIAG] MATCH=False
+[click-target-resolution] container matched: {'tag': 'div', 'cls': 'slider-rootRailThumbRight', 'testid': None, 'role': 'button'} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking '₹100 - ₹3,300'
+[elements-from-point BEFORE CLICK] stack at (228, 361), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='div' class='slider-thumbDot' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='slider-rootRailThumbRight' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='slider-sliderContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='verticalFilters-filters' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='condition-render-verticalFilters condition-render-boundary-top' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='section' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='search-leftContainer column-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class=' row-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='main' class='search-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] standard click used (strategy=id)
+[elements-from-point AFTER CLICK] stack at (228, 361), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='div' class='slider-thumbDot' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [1] tag='div' class='slider-rootRailThumbRight' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point AFTER CLICK]   [2] tag='div' class='slider-sliderContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='verticalFilters-filters' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='condition-render-verticalFilters condition-render-boundary-top' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='section' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='search-leftContainer column-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='div' class=' row-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='main' class='search-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 8, action_type='click')
+[note] Note: The page address had different codes this time - this is normal and was ignored.
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (11.77s).
+₹100 - ₹3,300 found using Element ID. (resolved in 11766ms)
+
+[timing] step 8 (click): total 11766ms | locate_action 8108ms | log_emit 15ms | screenshot 1218ms | settle 1218ms | navigation_wait 14ms | verify 516ms | other 677ms
+==================================================
+[9/66]
+ACTION: drag
+NAME: Drag - "element" -> ₹100 - ₹2,800
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[note] -> Scrolled the page to bring '₹100 - ₹3,300' into view
+[drag] pointer positions from the 'scaled' mapping
+[drag-verify] value at release matches recorded {'kind': 'nearby_text', 'value': '₹100 - ₹2,800'} (held=True, nudges=0); after settle it reads {'kind': 'nearby_text', 'value': '₹100 - ₹2,800'}
+STATUS: SUCCESS
+Done (4.16s).
+₹100 - ₹3,300 found using Element ID. (resolved in 4156ms)
+
+[timing] step 9 (drag): total 4156ms | locate_action 4125ms | log_emit 0ms | other 31ms
+==================================================
+[10/66]
+ACTION: navigate
+NAME: Open – Kids Footwear
+URL: https://www.myntra.com/kids-footwear?f=Categories%3AFlip%20Flops%2CSandals&rf=Price%3A100.0_2800.0_100.0%20TO%202800.0
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (0.64s).
+
+[timing] step 10 (navigate): total 641ms | settle 31ms | verify 0ms | screenshot 593ms | other 17ms
+==================================================
+[11/66]
+ACTION: scroll
+NAME: up 554px on Kids Footwear
+Delta: (0, -554)
+
+STATUS: STARTED
+Executing...
+[scroll] window-level scroll (no locator_profile recorded)
+[scroll] page already at the recorded position (0.0 vs 0.0) - skipping the duplicate movement, snapping exactly
+STATUS: SUCCESS
+Done (0.28s).
+WARNING: Warning: The page layout was different, so the scroll may not show exactly the same content as in the recording. Continuing.
+
+[timing] step 11 (scroll): total 281ms | other 281ms
+==================================================
+[12/66]
+ACTION: scroll
+NAME: down 69px on Kids Footwear
+Delta: (0, 69)
+
+STATUS: STARTED
+Executing...
+[scroll] window-level scroll (no locator_profile recorded)
+STATUS: SUCCESS
+Done (0.38s).
+
+[timing] step 12 (scroll): total 375ms | other 375ms
+==================================================
+[13/66]
+ACTION: scroll
+NAME: down 14px on Kids Footwear
+Delta: (0, 14)
+
+STATUS: STARTED
+Executing...
+[scroll] window-level scroll (no locator_profile recorded)
+[scroll] page already at the recorded position (68.8 vs 82.4) - skipping the duplicate movement, snapping exactly
+STATUS: SUCCESS
+Done (0.31s).
+
+[timing] step 13 (scroll): total 312ms | other 312ms
+==================================================
+[14/66]
+ACTION: click
+NAME: "max Rs. 399" link
+Element: max Rs. 399
+Locator: a[href="flip-flops/max/max-girls-embellished-thong-flip-flops/45076207/buy"]
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 4s)
+[CLICK-DIAG] === click on recorded target 'max Rs. 399' (strategy=href) ===
+[CLICK-DIAG] resolved-to-click : tag='a' class='' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='img' class='img-responsive' data-testid=None
+[CLICK-DIAG] MATCH=False
+[click-target-resolution] container matched: {'tag': 'a', 'cls': '', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'max Rs. 399'
+[elements-from-point BEFORE CLICK] stack at (1131, 378), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='img' class='img-responsive' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [1] tag='picture' class='img-responsive' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='slick-slide slick-active slick-center' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='slick-track' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='slick-list' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='slick-initialized slick-slider' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='product-sliderContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='product-imageSliderContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='a' class='' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [11] tag='li' class='product-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='ul' class='results-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='section' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='div' class='search-searchProductsContainer row-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [16] tag='div' class='search-rightContainer column-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [17] tag='div' class=' row-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [18] tag='main' class='search-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [19] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [20] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [21] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [22] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (1131, 378), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='img' class='img-responsive' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [1] tag='picture' class='img-responsive' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='slick-slide slick-active slick-center' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='slick-track' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='slick-list' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='div' class='slick-initialized slick-slider' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='div' class='product-sliderContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='div' class='product-imageSliderContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='a' class='' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point AFTER CLICK]   [11] tag='li' class='product-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='ul' class='results-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [13] tag='section' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [14] tag='div' class='search-searchProductsContainer row-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [15] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [16] tag='div' class='search-rightContainer column-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [17] tag='div' class=' row-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [18] tag='main' class='search-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [19] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [20] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [21] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [22] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+Warning: The link label changed. Recorded content: 'max Rs. 399'. Replay content: 'max Sizes: 7Y Rs. 399'. Continuing.
+EFFECT VERIFICATION CODE RUNNING (step 14, action_type='click')
+(new page/tab appeared during replay - assigned page_id=1, url=https://www.myntra.com/flip-flops/max/max-girls-embellished-thong-flip-flops/45076207/buy)
+STATUS: SUCCESS
+Done (6.81s).
+max Rs. 399 found using Link URL. (resolved in 6812ms)
+WARNING: Warning: The link label changed. Recorded content: 'max Rs. 399'. Replay content: 'max Sizes: 7Y Rs. 399'. Continuing.
+
+[timing] step 14 (click): total 6812ms | locate_action 5421ms | log_emit 0ms | screenshot 516ms | settle 233ms | verify 62ms | other 580ms
+==================================================
+[15/66]
+ACTION: tab_open
+NAME: Open a new tab (Buy)
+PAGE: 1
+URL: https://www.myntra.com/flip-flops/max/max-girls-embellished-thong-flip-flops/45076207/buy
+(new tab/page opened from page 0 - replay switches to it for subsequent actions)
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+STATUS: SUCCESS
+Done (2.25s).
+
+[timing] step 15 (tab_open): total 2250ms | settle 1219ms | other 1031ms
+==================================================
+[16/66]
+ACTION: click
+NAME: "3-3.5Y" button
+PAGE: 1
+Element: 3-3.5Y
+Locator: div#sizeButtonsContainer > div:nth-of-type(2) > div:nth-of-type(2) > div > button
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target '3-3.5Y' (strategy=text+tag) ===
+[CLICK-DIAG] resolved-to-click : tag='button' class='size-buttons-size-button size-buttons-size-button-default size-buttons-big-size' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='p' class='size-buttons-unified-size' data-testid=None
+[CLICK-DIAG] MATCH=False
+[click-target-resolution] container matched: {'tag': 'button', 'cls': 'size-buttons-size-button size-buttons-size-button-default size-buttons-big-size', 'testid': None, 'role': None} - found a more specific interactive descendant: {'tag': 'p', 'cls': 'size-buttons-unified-size', 'testid': None, 'role': None} - clicking the DESCENDANT instead of the container's own center
+[note] -> Clicking '3-3.5Y'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+EFFECT VERIFICATION CODE RUNNING (step 16, action_type='click')
+STATUS: SUCCESS
+Done (6.08s).
+3-3.5Y found using Text + Tag fallback. (resolved in 6079ms)
+
+[timing] step 16 (click): total 6078ms | locate_action 4219ms | log_emit 15ms | screenshot 422ms | settle 296ms | verify 485ms | other 641ms
+==================================================
+[17/66]
+ACTION: scroll
+NAME: down 227px on Buy
+PAGE: 1
+Delta: (0, 227)
+
+STATUS: STARTED
+Executing...
+[scroll] window-level scroll (no locator_profile recorded)
+STATUS: SUCCESS
+Done (0.39s).
+
+[timing] step 17 (scroll): total 391ms | other 391ms
+==================================================
+[18/66]
+ACTION: scroll
+NAME: down 47px on Buy
+PAGE: 1
+Delta: (0, 47)
+
+STATUS: STARTED
+Executing...
+[scroll] window-level scroll (no locator_profile recorded)
+STATUS: SUCCESS
+Done (0.38s).
+
+[timing] step 18 (scroll): total 375ms | other 375ms
+==================================================
+[19/66]
+ACTION: click
+NAME: "Enter pincode" field
+PAGE: 1
+Element: Enter pincode
+Locator: div#mountRoot > div > div > main > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(4) > div > div > form > input
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 11423.6ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Enter pincode' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 4s)
+[CLICK-DIAG] === click on recorded target 'Enter pincode' (strategy=name) ===
+[CLICK-DIAG] resolved-to-click : tag='input' class='pincode-code' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='input' class='pincode-code' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'input', 'cls': 'pincode-code', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Enter pincode'
+[elements-from-point BEFORE CLICK] stack at (883, 503), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='input' class='pincode-code' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='form' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='pincode-deliveryContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='pincode-checkServiceAbilityhalfCard' testid=None z-index='10' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='pdp-description-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='pdp-details common-clearfix' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='main' class='pdp-pdp-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (883, 503), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='input' class='pincode-code' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point AFTER CLICK]   [1] tag='form' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='pincode-deliveryContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='pincode-checkServiceAbilityhalfCard' testid=None z-index='10' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='pdp-description-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='div' class='pdp-details common-clearfix' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='main' class='pdp-pdp-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [13] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [14] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 19, action_type='click')
+STATUS: SUCCESS
+Done (10.05s).
+Enter pincode found using Name attribute. (resolved in 10047ms)
+
+[timing] step 19 (click): total 10046ms | locate_action 8391ms | log_emit 0ms | screenshot 437ms | settle 31ms | verify 516ms | other 671ms
+==================================================
+[20/66]
+ACTION: fill
+NAME: Enter pincode box: "625707"
+PAGE: 1
+Element: Enter pincode
+Locator: div#mountRoot > div > div > main > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(4) > div > div > form > input
+Value: 625707
+
+STATUS: STARTED
+Executing...
+[fill-retry] attempt 1 for 'Enter pincode' at t=0.0s
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (4.62s).
+Enter pincode found using Name attribute. (resolved in 4625ms)
+
+[timing] step 20 (fill): total 4625ms | locate_action 2297ms | log_emit 0ms | screenshot 2265ms | other 63ms
+==================================================
+[21/66]
+ACTION: click
+NAME: "Check" field
+PAGE: 1
+Element: Check
+Locator: div#mountRoot > div > div > main > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(4) > div > div > form > input:nth-of-type(2)
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 26512.0ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Check' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Check' (strategy=css_path) ===
+[CLICK-DIAG] resolved-to-click : tag='input' class='pincode-check pincode-button' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='input' class='pincode-check pincode-button' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'input', 'cls': 'pincode-check pincode-button', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Check'
+[elements-from-point BEFORE CLICK] stack at (975, 503), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='input' class='pincode-check pincode-button' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='input' class='pincode-code' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='form' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='pincode-deliveryContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='pincode-checkServiceAbilityhalfCard' testid=None z-index='10' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='pdp-description-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='pdp-details common-clearfix' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='main' class='pdp-pdp-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+EFFECT VERIFICATION CODE RUNNING (step 21, action_type='click')
+STATUS: SUCCESS
+Done (7.66s).
+Check found using CSS path. (resolved in 7656ms)
+
+[timing] step 21 (click): total 7655ms | locate_action 5859ms | log_emit 0ms | screenshot 421ms | settle 16ms | verify 500ms | other 859ms
+==================================================
+[22/66]
+ACTION: click
+NAME: "Change" button
+PAGE: 1
+Element: Change
+Locator: div#mountRoot > div > div > main > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(4) > div > div > form > button
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 34342.2ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Change' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Change' (strategy=text+tag) ===
+[CLICK-DIAG] resolved-to-click : tag='button' class='pincode-check-another-pincode pincode-button' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='button' class='pincode-check-another-pincode pincode-button' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'button', 'cls': 'pincode-check-another-pincode pincode-button', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Change'
+[elements-from-point BEFORE CLICK] stack at (979, 401), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='button' class='pincode-check-another-pincode pincode-button' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='input' class='pincode-code' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='form' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='pincode-deliveryContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='pincode-checkServiceAbilityhalfCard' testid=None z-index='10' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='pdp-description-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='pdp-details common-clearfix' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='main' class='pdp-pdp-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (979, 401), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='input' class='pincode-check pincode-button' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [1] tag='input' class='pincode-code' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='form' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='pincode-deliveryContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='pincode-checkServiceAbilityhalfCard' testid=None z-index='10' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='div' class='pdp-description-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='div' class='pdp-details common-clearfix' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='main' class='pdp-pdp-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [13] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [14] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [15] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 22, action_type='click')
+STATUS: SUCCESS
+Done (6.84s).
+Change found using Text + Tag fallback. (resolved in 6843ms)
+
+[timing] step 22 (click): total 6843ms | locate_action 5014ms | log_emit 16ms | screenshot 468ms | settle 125ms | verify 514ms | other 706ms
+==================================================
+[23/66]
+ACTION: click
+NAME: "Enter pincode" field
+PAGE: 1
+Element: Enter pincode
+Locator: div#mountRoot > div > div > main > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(4) > div > div > form > input
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 41302.1ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Enter pincode' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Enter pincode' (strategy=name) ===
+[CLICK-DIAG] resolved-to-click : tag='input' class='pincode-code' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='input' class='pincode-code' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'input', 'cls': 'pincode-code', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Enter pincode'
+[elements-from-point BEFORE CLICK] stack at (883, 401), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='input' class='pincode-code' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='form' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='pincode-deliveryContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='pincode-checkServiceAbilityhalfCard' testid=None z-index='10' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='pdp-description-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='pdp-details common-clearfix' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='main' class='pdp-pdp-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (883, 401), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='input' class='pincode-code' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point AFTER CLICK]   [1] tag='form' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='pincode-deliveryContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='pincode-checkServiceAbilityhalfCard' testid=None z-index='10' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='pdp-description-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='div' class='pdp-details common-clearfix' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='main' class='pdp-pdp-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [13] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [14] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 23, action_type='click')
+STATUS: SUCCESS
+Done (6.52s).
+Enter pincode found using Name attribute. (resolved in 6516ms)
+
+[timing] step 23 (click): total 6516ms | locate_action 4687ms | log_emit 16ms | screenshot 561ms | settle 31ms | verify 500ms | other 721ms
+==================================================
+[24/66]
+ACTION: fill
+NAME: Enter pincode box: "641004"
+PAGE: 1
+Element: Enter pincode
+Locator: div#mountRoot > div > div > main > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(4) > div > div > form > input
+Value: 641004
+
+STATUS: STARTED
+Executing...
+[fill-retry] attempt 1 for 'Enter pincode' at t=0.0s
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (2.74s).
+Enter pincode found using Name attribute. (resolved in 2735ms)
+
+[timing] step 24 (fill): total 2735ms | locate_action 2078ms | log_emit 0ms | screenshot 577ms | other 80ms
+==================================================
+[25/66]
+ACTION: click
+NAME: "Check" field
+PAGE: 1
+Element: Check
+Locator: div#mountRoot > div > div > main > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(4) > div > div > form > input:nth-of-type(2)
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Check' (strategy=css_path) ===
+[CLICK-DIAG] resolved-to-click : tag='input' class='pincode-check pincode-button' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='input' class='pincode-check pincode-button' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'input', 'cls': 'pincode-check pincode-button', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Check'
+[elements-from-point BEFORE CLICK] stack at (975, 401), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='input' class='pincode-check pincode-button' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='input' class='pincode-code' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='form' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='pincode-deliveryContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='pincode-checkServiceAbilityhalfCard' testid=None z-index='10' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='pdp-description-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='pdp-details common-clearfix' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='main' class='pdp-pdp-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+EFFECT VERIFICATION CODE RUNNING (step 25, action_type='click')
+STATUS: SUCCESS
+Done (6.86s).
+Check found using CSS path. (resolved in 6860ms)
+
+[timing] step 25 (click): total 6860ms | locate_action 5358ms | log_emit 16ms | screenshot 389ms | settle 31ms | verify 516ms | other 550ms
+==================================================
+[26/66]
+ACTION: scroll
+NAME: down 1893px on Buy
+PAGE: 1
+Delta: (0, 1893)
+
+STATUS: STARTED
+Executing...
+[scroll] window-level scroll (no locator_profile recorded)
+STATUS: SUCCESS
+Done (1.81s).
+
+[timing] step 26 (scroll): total 1812ms | other 1812ms
+==================================================
+[27/66]
+ACTION: click
+NAME: "4.4 Fame Forever by Lifestyle Girls Thon" link
+PAGE: 1
+Element: 4.4 Fame Forever by Lifestyle Girls Thong Flip-Flops Rs. 399
+Locator: a[href="/flip-flops/fame+forever+by+lifestyle/fame-forever-by-lifestyle-girls-thong-flip-flops/43616369/buy"]
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 4s)
+[CLICK-DIAG] === click on recorded target '4.4 Fame Forever by Lifestyle Girls Thong Flip-Flops Rs. 399' (strategy=href) ===
+[CLICK-DIAG] resolved-to-click : tag='a' class='product-list-link' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='img' class='product-item-image' data-testid=None
+[CLICK-DIAG] MATCH=False
+[click-target-resolution] container matched: {'tag': 'a', 'cls': 'product-list-link', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking '4.4 Fame Forever by Lifestyle Girls Thong Flip-Flops Rs. 399'
+[elements-from-point BEFORE CLICK] stack at (880, 533), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='img' class='product-item-image' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='product-item-imageCtn' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='product-item-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='a' class='product-list-link' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [4] tag='li' class='product-list-gist' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='ul' class='product-list-list' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='similar-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='pdp-details common-clearfix' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='main' class='pdp-pdp-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (880, 533), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='img' class='product-item-image' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [1] tag='div' class='product-item-imageCtn' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='product-item-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='a' class='product-list-link' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point AFTER CLICK]   [4] tag='li' class='product-list-gist' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='ul' class='product-list-list' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='similar-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='div' class='pdp-details common-clearfix' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='main' class='pdp-pdp-container' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [13] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [14] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 27, action_type='click')
+(new page/tab appeared during replay - assigned page_id=2, url=https://www.myntra.com/flip-flops/fame+forever+by+lifestyle/fame-forever-by-lifestyle-girls-thong-flip-flops/43616369/buy)
+STATUS: SUCCESS
+Done (9.00s).
+4.4 Fame Forever by Lifestyle Girls Thong Flip-Flops Rs. 399 found using Link URL. (resolved in 9000ms)
+
+[timing] step 27 (click): total 9000ms | locate_action 7828ms | log_emit 0ms | screenshot 546ms | settle 16ms | verify 46ms | other 564ms
+==================================================
+[28/66]
+ACTION: tab_open
+NAME: Open a new tab (Buy)
+PAGE: 2
+URL: https://www.myntra.com/flip-flops/fame+forever+by+lifestyle/fame-forever-by-lifestyle-girls-thong-flip-flops/43616369/buy
+(new tab/page opened from page 1 - replay switches to it for subsequent actions)
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+STATUS: SUCCESS
+Done (2.28s).
+
+[timing] step 28 (tab_open): total 2282ms | settle 1233ms | other 1049ms
+==================================================
+[29/66]
+ACTION: tab_close
+NAME: Close the tab
+PAGE: 2
+Closing page 2 -> remaining page 1
+
+STATUS: STARTED
+Executing...
+STATUS: SUCCESS
+Done (1.11s).
+
+[timing] step 29 (tab_close): total 1109ms | other 1109ms
+==================================================
+[30/66]
+ACTION: tab_close
+NAME: Close the tab
+PAGE: 1
+Closing page 1 -> remaining page 0
+
+STATUS: STARTED
+Executing...
+STATUS: SUCCESS
+Done (1.14s).
+
+[timing] step 30 (tab_close): total 1140ms | other 1140ms
+==================================================
+[31/66]
+ACTION: scroll
+NAME: down 796px on Kids Footwear
+Delta: (0, 796)
+
+STATUS: STARTED
+Executing...
+[scroll] window-level scroll (no locator_profile recorded)
+STATUS: SUCCESS
+Done (0.91s).
+WARNING: Warning: The page layout was different, so the scroll may not show exactly the same content as in the recording. Continuing.
+
+[timing] step 31 (scroll): total 905ms | other 905ms
+==================================================
+[32/66]
+ACTION: scroll
+NAME: down 286px on Kids Footwear
+Delta: (0, 286)
+
+STATUS: STARTED
+Executing...
+[scroll] window-level scroll (no locator_profile recorded)
+STATUS: SUCCESS
+Done (0.49s).
+
+[timing] step 32 (scroll): total 485ms | other 485ms
+==================================================
+[33/66]
+ACTION: click
+NAME: "Pantaloons Junior Rs. 674Rs. 899(25% OFF" link
+Element: Pantaloons Junior Rs. 674Rs. 899(25% OFF)
+Locator: a[href="sandals/pantaloons+junior/pantaloons-junior-boys-pu-sandals/40737091/buy"]
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 4s)
+[CLICK-DIAG] === click on recorded target 'Pantaloons Junior Rs. 674Rs. 899(25% OFF)' (strategy=href) ===
+[CLICK-DIAG] resolved-to-click : tag='a' class='' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='img' class='img-responsive' data-testid=None
+[CLICK-DIAG] MATCH=False
+[click-target-resolution] container matched: {'tag': 'a', 'cls': '', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Pantaloons Junior Rs. 674Rs. 899(25% OFF)'
+[elements-from-point BEFORE CLICK] stack at (1131, 466), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='img' class='img-responsive' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [1] tag='picture' class='img-responsive' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='slick-slide slick-active slick-center' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='slick-track' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='slick-list' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='slick-initialized slick-slider' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='product-sliderContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='product-imageSliderContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='a' class='' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [10] tag='li' class='product-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='ul' class='results-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='section' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='div' class='search-searchProductsContainer row-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='div' class='search-rightContainer column-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [16] tag='div' class=' row-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [17] tag='main' class='search-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [18] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [19] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [20] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [21] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (1131, 466), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='img' class='img-responsive' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [1] tag='picture' class='img-responsive' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='slick-slide' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='slick-track' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='slick-list' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='slick-initialized slick-slider' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='div' class='product-sliderContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='div' class='product-imageSliderContainer' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='a' class='' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point AFTER CLICK]   [10] tag='li' class='product-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='ul' class='results-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='section' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [13] tag='div' class='search-searchProductsContainer row-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [14] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [15] tag='div' class='search-rightContainer column-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [16] tag='div' class=' row-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [17] tag='main' class='search-base' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [18] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [19] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [20] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [21] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+Warning: The link label changed. Recorded content: 'Pantaloons Junior Rs. 674Rs. 899(25% OFF)'. Replay content: 'Pantaloons Junior Sizes: 9-10Y Rs. 674Rs. 899(25% OFF)'. Continuing.
+EFFECT VERIFICATION CODE RUNNING (step 33, action_type='click')
+(new page/tab appeared during replay - assigned page_id=3, url=https://www.myntra.com/sandals/pantaloons+junior/pantaloons-junior-boys-pu-sandals/40737091/buy)
+STATUS: SUCCESS
+Done (8.47s).
+Pantaloons Junior Rs. 674Rs. 899(25% OFF) found using Link URL. (resolved in 8468ms)
+WARNING: Warning: The link label changed. Recorded content: 'Pantaloons Junior Rs. 674Rs. 899(25% OFF)'. Replay content: 'Pantaloons Junior Sizes: 9-10Y Rs. 674Rs. 899(25% OFF)'. Continuing.
+
+[timing] step 33 (click): total 8468ms | locate_action 6062ms | log_emit 31ms | screenshot 1641ms | settle 30ms | verify 110ms | other 594ms
+==================================================
+[34/66]
+ACTION: tab_open
+NAME: Open a new tab (Buy)
+PAGE: 3
+URL: https://www.myntra.com/sandals/pantaloons+junior/pantaloons-junior-boys-pu-sandals/40737091/buy
+(new tab/page opened from page 0 - replay switches to it for subsequent actions)
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+STATUS: SUCCESS
+Done (2.26s).
+
+[timing] step 34 (tab_open): total 2264ms | settle 1218ms | other 1046ms
+==================================================
+[35/66]
+ACTION: click
+NAME: "10-11Y" button
+PAGE: 3
+Element: 10-11Y
+Locator: div#sizeButtonsContainer > div:nth-of-type(2) > div:nth-of-type(6) > div > button
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target '10-11Y' (strategy=text+tag) ===
+[CLICK-DIAG] resolved-to-click : tag='button' class='size-buttons-size-button size-buttons-size-button-default size-buttons-big-size' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='p' class='size-buttons-unified-size' data-testid=None
+[CLICK-DIAG] MATCH=False
+[click-target-resolution] container matched: {'tag': 'button', 'cls': 'size-buttons-size-button size-buttons-size-button-default size-buttons-big-size', 'testid': None, 'role': None} - found a more specific interactive descendant: {'tag': 'p', 'cls': 'size-buttons-unified-size', 'testid': None, 'role': None} - clicking the DESCENDANT instead of the container's own center
+[note] -> Clicking '10-11Y'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+EFFECT VERIFICATION CODE RUNNING (step 35, action_type='click')
+STATUS: SUCCESS
+Done (6.30s).
+10-11Y found using Text + Tag fallback. (resolved in 6297ms)
+
+[timing] step 35 (click): total 6296ms | locate_action 4422ms | log_emit 16ms | screenshot 421ms | settle 297ms | verify 500ms | other 640ms
+==================================================
+[36/66]
+ACTION: scroll
+NAME: down 2098px on Buy
+PAGE: 3
+Delta: (0, 2098)
+
+STATUS: STARTED
+Executing...
+[scroll] window-level scroll (no locator_profile recorded)
+STATUS: SUCCESS
+Done (2.08s).
+
+[timing] step 36 (scroll): total 2077ms | other 2077ms
+==================================================
+[37/66]
+ACTION: click
+NAME: image
+PAGE: 3
+Element: (element)
+Locator: div#detailedReviewsContainer > div:nth-of-type(2) > div > div:nth-of-type(3) > div > div > div > div
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 14019.5ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'target' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 4s)
+[CLICK-DIAG] === click on recorded target '(unlabeled)' (strategy=position_fallback) ===
+[CLICK-DIAG] resolved-to-click : tag='div' class='image-thumb-wrapper-thumb ' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='img' class='image-thumb-wrapper-image' data-testid=None
+[CLICK-DIAG] MATCH=False
+[click-target-resolution] container matched: {'tag': 'div', 'cls': 'image-thumb-wrapper-thumb ', 'testid': None, 'role': None} - found a more specific interactive descendant: {'tag': 'div', 'cls': 'skeleton-skeletonLoader', 'testid': None, 'role': None} - clicking the DESCENDANT instead of the container's own center
+[note] -> Clicking 'image'
+[note] -> An unexpected popup was in the way, so Escape / its close button was used.
+recorded target not found - used same position (#3) instead, content may differ from recording
+EFFECT VERIFICATION CODE RUNNING (step 37, action_type='click')
+STATUS: SUCCESS
+Done (20.38s).
+image found using Position fallback. Consider re-recording this step. (resolved in 20375ms)
+WARNING: Warning: An unexpected popup was in the way, so AutoFlow used Escape / its close button. The test continued.
+
+[timing] step 37 (click): total 20375ms | locate_action 18608ms | log_emit 0ms | screenshot 483ms | settle 31ms | verify 485ms | other 768ms
+==================================================
+[38/66]
+ACTION: hover
+NAME: "View all 4 reviews" (a)
+PAGE: 3
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[target-verify] REJECTED strategy=href: not hit-testable at its own center - a different element sits there
+[target-verify] REJECTED strategy=text+tag: not hit-testable at its own center - a different element sits there
+[target-verify] REJECTED strategy=text+tag-number-normalized: not hit-testable at its own center - a different element sits there
+[target-verify] REJECTED strategy=identity: not hit-testable at its own center - a different element sits there
+[target-verify] REJECTED strategy=position_fallback: not hit-testable at its own center - a different element sits there
+[target-verify] REJECTED strategy=css_path: not hit-testable at its own center - a different element sits there
+[target-verify] REJECTED strategy=xpath: not hit-testable at its own center - a different element sits there
+[target-verify] REJECTED strategy=visible-same-name: not hit-testable at its own center - a different element sits there
+[note] -> Waiting for the page to stop changing before the screenshot (up to 3s)
+STATUS: FAILED
+Reason: Failed: Could not find the 'View all 4 reviews' link on the page after waiting 30 seconds. Similar items were on the page ('View all 4 reviews'), but none had the same name and kind as the recorded one. The replay stopped. [details] none of the locator strategies (data-testid/data-test/data-cy/id/name/aria-label/placeholder/title/role/href/text+tag/css_path/xpath) matched an element; tiers tried: popup-scoped: no match; data-testid: no match; data-test: no match; data-cy: no match; id: no match; name: no match; aria-label: no match; placeholder: no match; title: no match; role: no match; href: found; text+tag: found; text+tag: no match; text+tag-number-normalized: found; image-ancestor: no match; identity: found; icon-identity: no match; field-label: no match; editable-replacement: no match; position_fallback: found; css_path: found; xpath: found; generated-id: no match; visible-same-name: found; closest visible candidates: <a> 'View all 4 reviews' (2098px from the recorded spot); <div> 'Price Details\nMaximum Retail Price\nRs. 899\n(Incl. of all tax' (255px from the recorded spot); <a> 'View Eligible Products' (515px from the recorded spot); candidates: href: 'View all 4 reviews' -> proposed (<a> at (768,879) 116x17, visible (its own box is shown)); href: 'View all 4 reviews' -> not used (not hit-testable at its own center - a different element sits there); text+tag: 'View all 4 reviews' -> proposed (<a> at (768,704) 116x17, visible (its own box is shown)); text+tag: 'View all 4 reviews' -> not used (not hit-testable at its own center - a different element sits there); text+tag-number-normalized: 'View all 4 reviews' -> proposed (<a> at (768,352) 116x17, visible (its own box is shown)); text+tag-number-normalized: 'View all 4 reviews' -> not used (not hit-testable at its own center - a different element sits there); identity: 'View all 4 reviews' -> proposed (<a> at (768,352) 116x17, visible (its own box is shown)); identity: 'View all 4 reviews' -> not used (not hit-testable at its own center - a different element sits there); position_fallback: 'View all 4 reviews' -> proposed (<a> at (768,704) 116x17, visible (its own box is shown)); position_fallback: 'View all 4 reviews' -> not used (not hit-testable at its own center - a different element sits there); css_path: 'View all 4 reviews' -> proposed (<a> at (768,704) 116x17, visible (its own box is shown)); css_path: 'View all 4 reviews' -> not used (not hit-testable at its own center - a different element sits there); xpath: 'View all 4 reviews' -> proposed (<a> at (768,704) 116x17, visible (its own box is shown)); xpath: 'View all 4 reviews' -> not used (not hit-testable at its own center - a different element sits there); visible-same-name: 'View all 4 reviews' -> proposed (<a> at (768,704) 116x17, visible (its own box is shown)); visible-same-name: 'View all 4 reviews' -> not used (not hit-testable at its own center - a different element sits there)
+Current URL: https://www.myntra.com/sandals/pantaloons+junior/pantaloons-junior-boys-pu-sandals/40737091/buy
+View all 4 reviews could not be resolved using any stored locator.
+Locator attempts:
+  1. href=/reviews/40737091
+  2. text=View all 4 reviews
+  3. css_path=div#mountRoot > div > div > main > div:nth-of-type(2) > div:nth-of-type(2) > main > div > div > a
+  4. xpath=//a[@href='/reviews/40737091']
+
+Screenshot: E:\.claude\generated_scripts\screenshoots\session_20261007_171239_20261007_182230\buy\step38_view_all_4_reviews_FAILED_18-25-57.png
+[timing] step 38 (hover): total 34046ms | locate_action 30280ms | screenshot 3703ms | other 63ms
+Step 38 (hover) failed - stopping replay (stop_on_failure is on; set AUTOFLOW_STOP_ON_FAILURE=0 to fall back to recover-and-continue). Remaining steps will be marked NOT RUN.
+
+==================================================
+REPLAY COMPLETED
+==================================================
+
+Recorded: 66
+JSON: 66
+Generated: 66
+Executed: 38
+Successful: 37
+Failed: 1
+Total replay time: 208.55s
+Not executed: 39-66 (28 action(s))
+
+RESULT: FAIL
+
+Final URL:
+https://www.myntra.com/sandals/pantaloons+junior/pantaloons-junior-boys-pu-sandals/40737091/buy
+
+Screenshots:
+E:\.claude\generated_scripts\screenshoots\session_20261007_171239_20261007_182230
+
+Generated Script:
+E:\.claude\generated_scripts\session_20261007_171239_script.py
+
+Browser will remain open for 5 seconds...
+Browser closed successfully.
+==================================================
+
+
+===== stderr =====
+E:\.claude\generated_scripts\session_20261007_171239_script.py:16312: SyntaxWarning: invalid escape sequence '\s'
+  return el_handle.evaluate("""e => {
+E:\.claude\generated_scripts\session_20261007_171239_script.py:21730: SyntaxWarning: invalid escape sequence '\s'
+  "    const t = lb.split(/\s+/).map(id => {"
+E:\.claude\generated_scripts\session_20261007_171239_script.py:25488: SyntaxWarning: invalid escape sequence '\d'
+  _DRAG_VALUE_SNAPSHOT_JS = """
+E:\.claude\generated_scripts\session_20261007_171239_script.py:34435: SyntaxWarning: invalid escape sequence '\s'
+  _VALIDATE_BLOCK_DETECTION_JS = """
+E:\.claude\generated_scripts\session_20261007_171239_script.py:34599: SyntaxWarning: invalid escape sequence '\s'
+  _CLICK_IF_EXISTS_JS = """

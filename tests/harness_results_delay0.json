@@ -1,0 +1,18 @@
+[
+  {
+    "run_label": "delay0_run1",
+    "delay_ms": 0,
+    "send_otp_no_effect_fired": false,
+    "send_otp_result": {
+      "strategy": "css_path",
+      "found": true,
+      "ok": true,
+      "err": null
+    },
+    "flow_broken": true,
+    "notes": [
+      "OTP entry screen not showing after Send OTP - flow likely skipped ahead or landed somewhere unexpected"
+    ],
+    "body_text_snippet": "Home\nEvents\nPricing\nNotification\nSign in\n\uf127\nBack\nLARSEN MEMORIAL RUN 13th EDITION\n\uf3c6\nChennai\n\uf1cf\nNovember 22, 2026\n 21.1K Timed Run\n18 to 99 yrs\n\u20b9 500\n\uf1fe\n\uf21a\n\udb80\ude9d\nMale\n\udb80\ude9c\nFemale\n\udb80\ude9f\nOthers\n\uf398\nCut-off Time: 3 Hours\nCut-off Time: 3 Hours\n Kids Fun Run\n2 to 8 yrs\n\u20b9 400\n\uf1fe\n\uf21a\n\udb80\ude9d\nMale\n\udb80\ude9c\nFemale\n\udb80\ude9f\nOthers\n\uf398\nNon-Timed Fun Ru"
+  }
+]

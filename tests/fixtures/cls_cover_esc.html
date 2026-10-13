@@ -1,0 +1,5 @@
+<!doctype html><html><body>
+<button id="buy" onclick="document.title='bought'" style="position:absolute;left:30px;top:30px;width:150px;height:50px">Buy now</button>
+<div id="pop" style="position:fixed;left:0;top:0;width:400px;height:200px;background:rgba(200,0,0,.5);z-index:99" tabindex="0">Promo popup (Esc closes)</div>
+<script>document.addEventListener('keydown',function(e){if(e.key==='Escape')document.getElementById('pop').remove();});document.getElementById('pop').focus();</script>
+</body></html>

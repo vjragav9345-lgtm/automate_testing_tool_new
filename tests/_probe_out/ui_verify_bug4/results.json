@@ -1,0 +1,3 @@
+{
+  "T4_replay": "zz_bug4_lightbox\nReplay finished.\nReplay matched the recording: all 3 steps passed.\nPASS - all steps resolved and validations passed\nTotal steps: 3 \u00a0 Passed: 3 \u00a0 Failed: 0 \u00a0 Skipped: 0 \u00a0 Warnings: 0 \u00a0 Duration: 10.1s\nOpen full HTML report\n[15:48:14]Step 1: Navigate - PASS\n[15:48:16]Step 2: Click product image - PASS\n[15:48:17]Step 3: Click continue (lightbox left open) - PASS"
+}

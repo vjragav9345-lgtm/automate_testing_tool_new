@@ -1,0 +1,119 @@
+{
+  "status": "FAIL",
+  "message": "one or more steps failed",
+  "qa_url": "http://127.0.0.1:57016/gap_page.html",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Gap Page page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "E:\\01-10-2026_1030_AM\\tests\\_probe_out\\names\\aria-label\\shots\\gap_page_html\\step01_gap_page_page_2026-10-05_00-02-06.png",
+      "url_before": "http://127.0.0.1:57016/gap_page.html",
+      "url_after": "http://127.0.0.1:57016/gap_page.html",
+      "started_at": "2026-10-05T00:01:57.163",
+      "ended_at": "2026-10-05T00:02:06.930",
+      "duration": 9.765,
+      "timing_ms": {
+        "settle": 15,
+        "navigation_wait": 9312,
+        "screenshot": 437,
+        "other": 1
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Save draft\" button",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": false,
+      "success": false,
+      "error": "Failed: Could not find the 'Save draft' button on the page. It may have been removed or hidden. The replay stopped.",
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "none of the locator strategies (data-testid/data-test/data-cy/id/name/aria-label/placeholder/title/role/href/text+tag/css_path/xpath) matched an element",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "E:\\01-10-2026_1030_AM\\tests\\_probe_out\\names\\aria-label\\shots\\gap_page_html\\step02_save_draft_FAILED_00-02-07.png",
+      "url_before": "http://127.0.0.1:57016/gap_page.html",
+      "url_after": "http://127.0.0.1:57016/gap_page.html",
+      "started_at": "2026-10-05T00:02:06.932",
+      "ended_at": "2026-10-05T00:02:07.430",
+      "duration": 0.484,
+      "timing_ms": {
+        "locate_action": 61,
+        "screenshot": 94,
+        "other": 328
+      },
+      "locator_report": {
+        "strategy": null,
+        "strategy_label": null,
+        "fallback_level": null,
+        "resolved": false,
+        "weak": false,
+        "resolution_ms": null,
+        "message": "Save draft could not be resolved using any stored locator."
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:57016/gap_page.html",
+  "final_screenshot": null,
+  "final_text": "One Two Three  Four",
+  "product_validation": null,
+  "total_duration_s": 11.406,
+  "total_steps": 2,
+  "live_log": [
+    {
+      "t": 1791138717.164602,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138726.4850829,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138727.2887976,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138727.3257132,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 3s)",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

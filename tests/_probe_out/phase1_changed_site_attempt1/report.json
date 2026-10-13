@@ -1,0 +1,135 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "http://127.0.0.1:55000/phase1_volatile_number_changed.html",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Open \u2013 Phase1 Volatile Number",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:55000/phase1_volatile_number_changed.html",
+      "url_after": "http://127.0.0.1:55000/phase1_volatile_number_changed.html",
+      "started_at": "2026-10-07T14:59:59.186",
+      "ended_at": "2026-10-07T14:59:59.599",
+      "duration": 0.422,
+      "timing_ms": {
+        "settle": 16,
+        "navigation_wait": 46,
+        "screenshot": 359,
+        "other": 1
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Tshirts(419525)\" element",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "text+tag-number-normalized",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": "Warning: The number next to 'Tshirts' changed (recording: 419525, now: 419847). Continuing.",
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:55000/phase1_volatile_number_changed.html",
+      "url_after": "http://127.0.0.1:55000/phase1_volatile_number_changed.html",
+      "started_at": "2026-10-07T14:59:59.615",
+      "ended_at": "2026-10-07T15:00:02.325",
+      "duration": 2.719,
+      "timing_ms": {
+        "locate_action": 2202,
+        "log_emit": 0,
+        "screenshot": 108,
+        "settle": 0,
+        "verify": 0,
+        "other": 408
+      },
+      "locator_report": {
+        "strategy": "text+tag-number-normalized",
+        "strategy_label": "Text + Tag (site value changed)",
+        "fallback_level": 11,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 2719,
+        "message": "Tshirts(419525) found using Text + Tag (site value changed). (resolved in 2719ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:55000/phase1_volatile_number_changed.html",
+  "final_screenshot": null,
+  "final_text": "Tshirts(419847) Jeans(88012) Shirts(53210)\nclicked:Tshirts(419847)",
+  "product_validation": null,
+  "total_duration_s": 4.625,
+  "recorded_steps": 2,
+  "recorded_action_types": [
+    "navigate",
+    "click"
+  ],
+  "recorded_names": [
+    "Open \u2013 Phase1 Volatile Number",
+    "\"Tshirts(419525)\" element"
+  ],
+  "total_steps": 2,
+  "live_log": [
+    {
+      "t": 1791365399.1923428,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note",
+      "step": 1
+    },
+    {
+      "t": 1791365399.2447584,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note",
+      "step": 1
+    },
+    {
+      "t": 1791365399.778091,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 2
+    },
+    {
+      "t": 1791365401.6273105,
+      "message": "\u21b3 Clicking 'Tshirts(419525)'",
+      "level": "note",
+      "step": 2
+    }
+  ],
+  "recovered_steps": []
+}

@@ -1,0 +1,292 @@
+CORE FIX MISSING: fill/select retry logic not found - results from this run cannot be trusted.
+Starting replay...
+Browser launched.
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+REPLAY SOURCE: session_20261012_123911
+ACTION COUNT: 23
+SOURCE TYPE: ORIGINAL
+
+Executing recorded actions...
+
+==================================================
+[1/23]
+ACTION: navigate
+NAME: Open – Home page
+URL: https://flipkart.com
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+[redirect] launch URL -> https://www.flipkart.com/
+[navigate-ready] waiting for next step's target to become findable (up to 9.0s)...
+[navigate-ready] found at t=0.0s - destination page is ready
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (2.67s).
+
+[timing] step 1 (navigate): total 2665ms | settle 1205ms | navigation_wait 25ms | screenshot 1425ms | other 10ms
+==================================================
+[2/23]
+ACTION: click
+NAME: "✕" button
+Element: ✕
+Locator: body > div:nth-of-type(5) > div > span
+
+STATUS: STARTED
+Executing...
+[spa-settle] waited 0.01s for network-idle/no-skeleton before this step
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target '✕' (strategy=popup-scoped) ===
+[CLICK-DIAG] resolved-to-click : tag='span' class='b3wTlE' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='span' class='b3wTlE' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'span', 'cls': 'b3wTlE', 'testid': None, 'role': 'button'} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking '✕'
+[elements-from-point BEFORE CLICK] stack at (1003, 112), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='span' class='b3wTlE' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='q7ywiQ' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='mcO4kT RFBkxv' testid=None z-index='99999999' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='wszdrO' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='LhEIN3' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='CXZSEo' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='H5bs2Y' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='PGj60j' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='header' class='Csk5Ae _1psv1ze30 _1psv1ze59 _1psv1ze9x _1psv1ze7o' testid=None z-index='99999' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class='' testid=None z-index='1000' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='div' class='css-g5y9jx r-13awgt0 r-eqz5dr' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='div' class='OmE16y' testid=None z-index='10' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [16] tag='div' class='CTTtEa' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [17] tag='div' class='fwYXYA wzclEH' testid=None z-index='1000' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [18] tag='div' class='FO_kXv' testid=None z-index='100' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [19] tag='div' class='BOoM4k' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [20] tag='div' class='css-g5y9jx r-13awgt0 r-1iqfa7g r-60vfwk' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [21] tag='div' class='css-g5y9jx r-13awgt0 r-1iqfa7g r-60vfwk' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [22] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [23] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [24] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [25] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [26] tag='div' class='uBUBH6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [27] tag='div' class='cDeXU9' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [28] tag='div' class='HaReuk' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [29] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [30] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [31] tag='body' class='fk-modal-visible' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [32] tag='html' class='useInterFont en-fonts-loaded' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+EFFECT VERIFICATION CODE RUNNING (step 2, action_type='click')
+STATUS: SUCCESS
+Done (2.68s).
+✕ found using Name inside the popup. (resolved in 2675ms)
+
+[timing] step 2 (click): total 2675ms | locate_action 1622ms | log_emit 1ms | screenshot 160ms | settle 3ms | verify 433ms | other 456ms
+==================================================
+[3/23]
+ACTION: scroll
+NAME: down 1374px on Home page
+Delta: (0, 1374)
+
+STATUS: STARTED
+Executing...
+[scroll] window-level scroll (no locator_profile recorded)
+STATUS: SUCCESS
+Done (0.89s).
+
+[timing] step 3 (scroll): total 892ms | other 892ms
+==================================================
+[4/23]
+ACTION: click
+NAME: "boAt, realme, Mivi & more Min 50% Off" link
+Element: boAt, realme, Mivi & more Min 50% Off
+Locator: a[href="/audio-video/pr?sid=0pm&p%5B%5D=facets.discount_range_v1%255B%255D%3D50%2525%2Bor%2Bmore&hpid=w2BGimYwATZXfn_vEkn1oap7_Hsxr70nj65vMAAFKlc%3D&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJNaW4gNTAlIE9mZiJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX0sImhlcm9QaWQiOnsic2luZ2xlVmFsdWVBdHRyaWJ1dGUiOnsia2V5IjoiaGVyb1BpZCIsImluZmVyZW5jZVR5cGUiOiJQSUQiLCJ2YWx1ZSI6IkFDQ0gyUEdYR1A0QlYySkYiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19LCJ0aXRsZSI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ0aXRsZSIsImluZmVyZW5jZVR5cGUiOiJUSVRMRSIsInZhbHVlcyI6WyJCZXN0IE9mIEhlYWRwaG9uZXMgJiBTcGVha2VycyJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX19fX0%3D"]
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 4s)
+[CLICK-DIAG] === click on recorded target 'boAt, realme, Mivi & more Min 50% Off' (strategy=href) ===
+[CLICK-DIAG] resolved-to-click : tag='a' class='_3n8fna1co _3n8fna10j _3n8fnaod _3n8fna1 _3n8fnac7 _1i2djtb9' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='div' class='_3n8fna1co _3n8fna10j _3n8fnaod _3n8fna1 _3n8fnac7 _1i2djtb9 _1i2djt0 _9nihix56' data-testid=None
+[CLICK-DIAG] MATCH=False
+[click-target-resolution] container matched: {'tag': 'a', 'cls': '_3n8fna1co _3n8fna10j _3n8fnaod _3n8fna1 _3n8fnac7 _1i2djtb9', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'boAt, realme, Mivi & more Min 50% Off'
+[elements-from-point BEFORE CLICK] stack at (498, 238), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='div' class='_3n8fna1co _3n8fna10j _3n8fnaod _3n8fna1 _3n8fnac7 _1i2djtb9 _1i2djt0 _9nihix56' testid=None z-index='0' opacity='0.04' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [1] tag='img' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='_3n8fna1co _3n8fna10j _3n8fnaod _3n8fna1 _3n8fnac7 _1i2djtb9 _1i2djt0 _1i2djtk9 _1i2djti0 _1i2djtdi _1i2djtfr' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='_3n8fna1co _3n8fna10j _3n8fnaod _3n8fna1 _3n8fnac7 _1i2djtb9 _1i2djt0 _9nihix4u' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='_3n8fna1co _3n8fna10j _3n8fnaod _3n8fna1 _3n8fnac7 _1i2djtb9 _1i2djt0 _9nihix1c' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='_3n8fna1co _3n8fna10j _3n8fnaod _3n8fna1 _3n8fnac7 _1i2djtb9 _1i2djt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class='_3n8fna1co _3n8fna10j _3n8fnaod _3n8fna1 _3n8fnac7 _1i2djtb9 _1i2djt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='a' class='_3n8fna1co _3n8fna10j _3n8fnaod _3n8fna1 _3n8fnac7 _1i2djtb9' testid=None z-index='0' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='div' class='grid-formation grid-column-4' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [16] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [17] tag='div' class='_3n8fna1co _3n8fna10j _3n8fnaod _3n8fna1 _3n8fnac7 _1i2djtb9 _1i2djt0 _1i2djt2u _1i2djtfi _1i2djt9l _1i2djt6r _1i2djtl0 _1i2djtir _1i2djtgi _9nihix4u' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [18] tag='div' class='_3n8fna1co _3n8fna10j _3n8fnaod _3n8fna1 _3n8fnac7 _1i2djtb9 _1i2djt0 _1i2djt90 _1i2djt6r _1i2djt29 _1i2djt4i' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [19] tag='div' class='_3n8fna1co _3n8fna10j _3n8fnaod _3n8fna1 _3n8fnac7 _1i2djtb9 _1i2djt0 _1i2djtl6 _1i2djtix _1i2djte9 _1i2djtgi' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [20] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [21] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [22] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [23] tag='div' class='css-g5y9jx r-13awgt0 r-eqz5dr' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [24] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [25] tag='div' class='asbjxx A02XR3 lV7ANv Yd5OMU' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [26] tag='div' class='yiQOTv' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [27] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [28] tag='div' class='fWi7J_' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [29] tag='div' class='SC7gpc' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [30] tag='div' class='FWmYMm GKTCaw' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [31] tag='div' class='BOoM4k' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [32] tag='div' class='css-g5y9jx r-13awgt0 r-1iqfa7g r-60vfwk' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [33] tag='div' class='css-g5y9jx r-13awgt0 r-1iqfa7g r-60vfwk' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [34] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [35] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [36] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [37] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [38] tag='div' class='uBUBH6' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [39] tag='div' class='cDeXU9' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [40] tag='div' class='HaReuk' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [41] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [42] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [43] tag='html' class='useInterFont en-fonts-loaded' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (498, 238), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='path' class='[object SVGAnimatedString]' testid=None z-index='auto' opacity='0.9' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [1] tag='svg' class='[object SVGAnimatedString]' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='JiknFv' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='SJekt1 bEnCjh' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='lWX0_T' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='a' class='GnxRXv' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='div' class='RGLWAk' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='div' class='nZIRY7' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='div' class='lvJbLV col-12-12' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='div' class='QSCKDh dLgFEE' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [13] tag='div' class='QSCKDh eRsYMo' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [14] tag='div' class='LwDgZ8 eq0K9s tBcEQe' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [15] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [16] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [17] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [18] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 4, action_type='click')
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (8.38s).
+boAt, realme, Mivi & more Min 50% Off found using Link URL. (resolved in 8379ms)
+WARNING: Warning: This element had moved on the page, but it was checked to be the right one and clicked. [details] Target relocated during replay. Recorded page position: (360, 1497); replay page position: (360, 823). The same logical target was verified and clicked.
+
+[timing] step 4 (click): total 8378ms | locate_action 5549ms | log_emit 0ms | screenshot 710ms | settle 1205ms | verify 446ms | other 468ms
+==================================================
+[5/23]
+ACTION: scroll
+NAME: down 69px on Pr
+Delta: (0, 69)
+
+STATUS: STARTED
+Executing...
+[scroll] window-level scroll (no locator_profile recorded)
+STATUS: SUCCESS
+Done (0.20s).
+WARNING: Warning: The page layout was different, so the scroll may not show exactly the same content as in the recording. Continuing.
+
+[timing] step 5 (scroll): total 203ms | other 203ms
+==================================================
+[6/23]
+ACTION: scroll
+NAME: down 27px on Pr
+Delta: (0, 27)
+
+STATUS: STARTED
+Executing...
+[scroll] window-level scroll (no locator_profile recorded)
+STATUS: SUCCESS
+Done (0.25s).
+
+[timing] step 6 (scroll): total 253ms | other 253ms
+==================================================
+[7/23]
+ACTION: hover
+NAME: "boAt Airdopes 181 Pro, 100H Battery, ENx" (a)
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[final-decision] REJECTED strategy=position_fallback: its name is 'boat airdopes 212,translucent lid, 50h battery,enx', but 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Displ' was recorded
+[final-decision] REJECTED strategy=position_fallback: its name is 'boat airdopes 212,translucent lid, 50h battery,enx', but 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Displ' was recorded
+[final-decision] REJECTED strategy=position_fallback: its name is 'boat airdopes 212,translucent lid, 50h battery,enx', but 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Displ' was recorded
+[final-decision] REJECTED strategy=position_fallback: its name is 'boat airdopes 212,translucent lid, 50h battery,enx', but 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Displ' was recorded
+[final-decision] REJECTED strategy=position_fallback: its name is 'boat airdopes 212,translucent lid, 50h battery,enx', but 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Displ' was recorded
+[final-decision] REJECTED strategy=position_fallback: its name is 'boat airdopes 212,translucent lid, 50h battery,enx', but 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Displ' was recorded
+[final-decision] REJECTED strategy=position_fallback: its name is 'boat airdopes 212,translucent lid, 50h battery,enx', but 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Displ' was recorded
+[final-decision] REJECTED strategy=position_fallback: its name is 'boat airdopes 212,translucent lid, 50h battery,enx', but 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Displ' was recorded
+[final-decision] REJECTED strategy=position_fallback: its name is 'boat airdopes 212,translucent lid, 50h battery,enx', but 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Displ' was recorded
+[final-decision] REJECTED strategy=position_fallback: its name is 'boat airdopes 212,translucent lid, 50h battery,enx', but 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Displ' was recorded
+[note] -> Waiting for the page to stop changing before the screenshot (up to 3s)
+STATUS: FAILED
+Reason: Failed: 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Display, A...' wasn't on the page. The previous step may not have worked. [details] 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Display, A...' was not on this page this time - the results may have changed since the recording (the whole page was checked after waiting 11 seconds); none of the locator strategies (data-testid/data-test/data-cy/id/name/aria-label/placeholder/title/role/href/text+tag/css_path/xpath) matched an element; tiers tried: popup-scoped: no match; data-testid: no match; data-test: no match; data-cy: no match; id: no match; name: no match; aria-label: no match; placeholder: no match; title: no match; role: no match; href: no match; text+tag: no match; text+tag-number-normalized: no match; image-ancestor: no match; identity: no match; icon-identity: no match; field-label: no match; editable-replacement: no match; position_fallback: found; css_path: no match; xpath: no match; generated-id: no match; visible-same-name: no match; closest visible candidates: <a> 'boAt Airdopes 212,Translucent Lid, 50H Battery,ENx Tech...' (96px from the recorded spot); <a> 'boAt Airdopes 212,Translucent Lid, 50H Battery,ENx Tech...' (581px from the recorded spot); <a> 'boAt Airdopes 71,40 H Battery, ENx Tech, Low Latency, A...' (4459px from the recorded spot); candidates: position_fallback: 'boAt Airdopes 212,Translucent ' -> not used (its name is 'boat airdopes 212,translucent lid, 50h battery,enx', but 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Displ' was recorded); position_fallback: 'boAt Airdopes 212,Translucent ' -> not used (its name is 'boat airdopes 212,translucent lid, 50h battery,enx', but 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Displ' was recorded); position_fallback: 'boAt Airdopes 212,Translucent ' -> not used (its name is 'boat airdopes 212,translucent lid, 50h battery,enx', but 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Displ' was recorded); position_fallback: 'boAt Airdopes 212,Translucent ' -> not used (its name is 'boat airdopes 212,translucent lid, 50h battery,enx', but 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Displ' was recorded); position_fallback: 'boAt Airdopes 212,Translucent ' -> not used (its name is 'boat airdopes 212,translucent lid, 50h battery,enx', but 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Displ' was recorded); position_fallback: 'boAt Airdopes 212,Translucent ' -> not used (its name is 'boat airdopes 212,translucent lid, 50h battery,enx', but 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Displ' was recorded); position_fallback: 'boAt Airdopes 212,Translucent ' -> not used (its name is 'boat airdopes 212,translucent lid, 50h battery,enx', but 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Displ' was recorded); position_fallback: 'boAt Airdopes 212,Translucent ' -> not used (its name is 'boat airdopes 212,translucent lid, 50h battery,enx', but 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Displ' was recorded); position_fallback: 'boAt Airdopes 212,Translucent ' -> not used (its name is 'boat airdopes 212,translucent lid, 50h battery,enx', but 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Displ' was recorded); position_fallback: 'boAt Airdopes 212,Translucent ' -> not used (its name is 'boat airdopes 212,translucent lid, 50h battery,enx', but 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Displ' was recorded)
+Current URL: https://www.flipkart.com/audio-video/pr?sid=0pm&p%5B%5D=facets.discount_range_v1%255B%255D%3D50%2525%2Bor%2Bmore&hpid=w2BGimYwATZXfn_vEkn1oap7_Hsxr70nj65vMAAFKlc%3D&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJNaW4gNTAlIE9mZiJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX0sImhlcm9QaWQiOnsic2luZ2xlVmFsdWVBdHRyaWJ1dGUiOnsia2V5IjoiaGVyb1BpZCIsImluZmVyZW5jZVR5cGUiOiJQSUQiLCJ2YWx1ZSI6IkFDQ0gyUEdYR1A0QlYySkYiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19LCJ0aXRsZSI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ0aXRsZSIsImluZmVyZW5jZVR5cGUiOiJUSVRMRSIsInZhbHVlcyI6WyJCZXN0IE9mIEhlYWRwaG9uZXMgJiBTcGVha2VycyJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX19fX0%3D
+boAt Airdopes 181 Pro, 100H Battery, ENx,LED Display, A... could not be resolved using any stored locator.
+Locator attempts:
+  1. title=boAt Airdopes 181 Pro, 100H Battery, ENx,LED Display, App Support Bluetooth
+  2. href=/boat-airdopes-181-pro-100h-battery-enx-led-display-app-support-bluetooth/p/itm67026d38dc463?pid=ACCHYVEQB7YBTEH6&lid=LSTACCHYVEQB7YBTEH6XC8WRQ&marketplace=FLIPKART&store=0pm&srno=b_1_2&otracker=browse&fm=organic&iid=en_bfRWQ0X5Zeeg-k-kTDC0stZejoVHcLUHYrzMYKx2CdTqx39yNXjRwUxDKqD0qWks-_DmJi9ngtD2U1PawbOQ9wvlI-L-nb1imC3aZ2Kjup34YWdoMvZaWirt5AcLJCK1&ppt=browse&ppn=browse&ssid=b89mih1beo0000001791788961045&ov_redirect=true&ov_redirect=true
+  3. text=boAt Airdopes 181 Pro, 100H Battery, ENx,LED Display, A...
+  4. css_path=div#container > div > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(2) > div > a:nth-of-type(2)
+  5. xpath=((//div[contains(., 'boAt Airdopes 181 Pro, 100H Battery, ENx,LED Display, A...')])[9]//a)[2]
+
+Screenshot: /Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/screenshoots/session_20261012_123911_20261012_151958/pr/step07_boat_airdopes_181_pro_100h_battery_enx_led_display_a_FAILED_15-20-30.png
+[timing] step 7 (hover): total 11428ms | locate_action 11293ms | screenshot 122ms | other 13ms
+Step 7 (hover) failed - stopping replay (stop_on_failure is on; set AUTOFLOW_STOP_ON_FAILURE=0 to fall back to recover-and-continue). Remaining steps will be marked NOT RUN.
+
+==================================================
+REPLAY COMPLETED
+==================================================
+
+Recorded: 23
+JSON: 23
+Generated: 23
+Executed: 7
+Successful: 6
+Failed: 1
+Total replay time: 31.90s
+Not executed: 8-23 (16 action(s))
+
+RESULT: FAIL
+
+Final URL:
+https://www.flipkart.com/audio-video/pr?sid=0pm&p%5B%5D=facets.discount_range_v1%255B%255D%3D50%2525%2Bor%2Bmore&hpid=w2BGimYwATZXfn_vEkn1oap7_Hsxr70nj65vMAAFKlc%3D&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InZhbHVlQ2FsbG91dCI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ2YWx1ZUNhbGxvdXQiLCJpbmZlcmVuY2VUeXBlIjoiVkFMVUVfQ0FMTE9VVCIsInZhbHVlcyI6WyJNaW4gNTAlIE9mZiJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX0sImhlcm9QaWQiOnsic2luZ2xlVmFsdWVBdHRyaWJ1dGUiOnsia2V5IjoiaGVyb1BpZCIsImluZmVyZW5jZVR5cGUiOiJQSUQiLCJ2YWx1ZSI6IkFDQ0gyUEdYR1A0QlYySkYiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19LCJ0aXRsZSI6eyJtdWx0aVZhbHVlZEF0dHJpYnV0ZSI6eyJrZXkiOiJ0aXRsZSIsImluZmVyZW5jZVR5cGUiOiJUSVRMRSIsInZhbHVlcyI6WyJCZXN0IE9mIEhlYWRwaG9uZXMgJiBTcGVha2VycyJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX19fX0%3D
+
+Screenshots:
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/screenshoots/session_20261012_123911_20261012_151958
+
+Generated Script:
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261012_123911_script.py
+
+Browser will remain open for 5 seconds...
+Browser closed successfully.
+==================================================
+
+
+===== stderr =====
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261012_123911_script.py:6345: SyntaxWarning: invalid escape sequence '\s'
+  desc += '.' + node.className.trim().split(/\s+/).join('.');
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261012_123911_script.py:12112: SyntaxWarning: invalid escape sequence '\s'
+  "    const t = lb.split(/\s+/).map(id => {"
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261012_123911_script.py:16088: SyntaxWarning: invalid escape sequence '\d'
+  if (txt && txt.length < 200 && /\d/.test(txt)) {
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261012_123911_script.py:25234: SyntaxWarning: invalid escape sequence '\s'
+  return t.trim().replace(/\s+/g, ' ');
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261012_123911_script.py:25381: SyntaxWarning: invalid escape sequence '\s'
+  return (s || '').replace(/\s+/g, ' ').trim().toLowerCase();

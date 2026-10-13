@@ -1,0 +1,127 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "http://127.0.0.1:59522/hov_menu.html",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Hov Menu page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:59522/hov_menu.html",
+      "url_after": "http://127.0.0.1:59522/hov_menu.html",
+      "started_at": "2026-10-04T23:54:46.146",
+      "ended_at": "2026-10-04T23:54:46.560",
+      "duration": 0.422,
+      "timing_ms": {
+        "settle": 0,
+        "navigation_wait": 77,
+        "screenshot": 344,
+        "other": 1
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "click",
+      "name": "\"Open\" link",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "text+tag",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:59522/hov_menu.html",
+      "url_after": "http://127.0.0.1:59522/hov_menu_target.html",
+      "started_at": "2026-10-04T23:54:46.561",
+      "ended_at": "2026-10-04T23:54:48.760",
+      "duration": 2.187,
+      "timing_ms": {
+        "locate_action": 1125,
+        "log_emit": 0,
+        "screenshot": 420,
+        "settle": 16,
+        "verify": 0,
+        "other": 625
+      },
+      "locator_report": {
+        "strategy": "text+tag",
+        "strategy_label": "Text + Tag fallback",
+        "fallback_level": 11,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 2187,
+        "message": "Open found using Text + Tag fallback. (resolved in 2187ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:59522/hov_menu_target.html",
+  "final_screenshot": null,
+  "final_text": "menu target",
+  "product_validation": null,
+  "total_duration_s": 3.75,
+  "total_steps": 2,
+  "live_log": [
+    {
+      "t": 1791138286.1475537,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138286.2168539,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138286.8985596,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138287.4715188,
+      "message": "\u21b3 Clicking 'Open'",
+      "level": "note"
+    },
+    {
+      "t": 1791138288.4057515,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

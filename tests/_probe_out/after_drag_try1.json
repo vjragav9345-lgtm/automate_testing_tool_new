@@ -1,0 +1,2006 @@
+{
+ "status": "FAIL",
+ "steps": [
+  {
+   "index": 1,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 2,
+   "action_type": "click",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 3,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 4,
+   "action_type": "click",
+   "success": true,
+   "error": "target was hidden and required an un-recorded hover-reveal (see [hover-reveal] log lines) to become visible - consider re-recording this step so the hover itself is captured",
+   "not_run": false
+  },
+  {
+   "index": 5,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 6,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 7,
+   "action_type": "check",
+   "success": true,
+   "error": "act_target could not be resolved live - clicked a visible proxy derived from the recorded state_target (underlying checkbox/radio input) instead; consider re-recording this step",
+   "not_run": false
+  },
+  {
+   "index": 8,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 9,
+   "action_type": "scroll",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 10,
+   "action_type": "check",
+   "success": true,
+   "error": "act_target could not be resolved live - clicked a visible proxy derived from the recorded state_target (underlying checkbox/radio input) instead; consider re-recording this step",
+   "not_run": false
+  },
+  {
+   "index": 11,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 12,
+   "action_type": "check",
+   "success": true,
+   "error": "act_target could not be resolved live - clicked a visible proxy derived from the recorded state_target (underlying checkbox/radio input) instead; consider re-recording this step",
+   "not_run": false
+  },
+  {
+   "index": 13,
+   "action_type": "navigate",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 14,
+   "action_type": "drag",
+   "success": true,
+   "error": null,
+   "not_run": false
+  },
+  {
+   "index": 15,
+   "action_type": "right_click",
+   "success": false,
+   "error": "[content-mismatch] a different element is actually at the recorded click position - recorded target was 'PRICE\\n\u20b9100 - \u20b91,600', but '(unlabeled element)' is really there",
+   "not_run": false
+  },
+  {
+   "index": 16,
+   "action_type": "navigate",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  },
+  {
+   "index": 17,
+   "action_type": "scroll",
+   "success": false,
+   "error": "NOT RUN (stopped after step 15 failed)",
+   "not_run": true
+  }
+ ],
+ "drag": [
+  {
+   "step": 14,
+   "phase": "up",
+   "snap": {
+    "boxes": {
+     "rootRail": {
+      "x": 25,
+      "y": 545.2000122070312,
+      "w": 200,
+      "h": 12
+     },
+     "rootRailBar": {
+      "x": 25,
+      "y": 550.2000122070312,
+      "w": 200,
+      "h": 2
+     },
+     "rootRailRange": {
+      "x": 25,
+      "y": 550.2000122070312,
+      "w": 196,
+      "h": 2
+     },
+     "rootRailThumbLeft": {
+      "x": 16,
+      "y": 545.2000122070312,
+      "w": 12,
+      "h": 12
+     },
+     "rootRailThumbRight": {
+      "x": 218,
+      "y": 545.2000122070312,
+      "w": 12,
+      "h": 12
+     }
+    },
+    "text": "\u20b9100 - \u20b92,900+",
+    "scrollY": 0,
+    "vw": 1280,
+    "vh": 720
+   },
+   "moves": [
+    {
+     "x": 224,
+     "y": 555.0,
+     "steps": 1
+    },
+    {
+     "x": 224,
+     "y": 555.0,
+     "steps": 1
+    },
+    {
+     "x": 211,
+     "y": 549.0,
+     "steps": 1
+    },
+    {
+     "x": 207,
+     "y": 549.0,
+     "steps": 1
+    },
+    {
+     "x": 204,
+     "y": 549.0,
+     "steps": 1
+    },
+    {
+     "x": 202,
+     "y": 549.0,
+     "steps": 1
+    },
+    {
+     "x": 197,
+     "y": 549.0,
+     "steps": 1
+    },
+    {
+     "x": 192,
+     "y": 549.0,
+     "steps": 1
+    },
+    {
+     "x": 184,
+     "y": 549.0,
+     "steps": 1
+    },
+    {
+     "x": 176,
+     "y": 547.0,
+     "steps": 1
+    },
+    {
+     "x": 171,
+     "y": 547.0,
+     "steps": 1
+    },
+    {
+     "x": 160,
+     "y": 545.0,
+     "steps": 1
+    },
+    {
+     "x": 152,
+     "y": 545.0,
+     "steps": 1
+    },
+    {
+     "x": 144,
+     "y": 544.0,
+     "steps": 1
+    },
+    {
+     "x": 141,
+     "y": 544.0,
+     "steps": 1
+    },
+    {
+     "x": 138,
+     "y": 544.0,
+     "steps": 1
+    },
+    {
+     "x": 137,
+     "y": 544.0,
+     "steps": 1
+    },
+    {
+     "x": 136,
+     "y": 544.0,
+     "steps": 1
+    },
+    {
+     "x": 134,
+     "y": 544.0,
+     "steps": 1
+    },
+    {
+     "x": 133,
+     "y": 544.0,
+     "steps": 1
+    },
+    {
+     "x": 132,
+     "y": 544.0,
+     "steps": 1
+    }
+   ],
+   "after_snap": {
+    "boxes": {
+     "rootRail": {
+      "x": 25,
+      "y": 545.2000122070312,
+      "w": 200,
+      "h": 12
+     },
+     "rootRailBar": {
+      "x": 25,
+      "y": 550.2000122070312,
+      "w": 200,
+      "h": 2
+     },
+     "rootRailRange": {
+      "x": 25,
+      "y": 550.2000122070312,
+      "w": 198,
+      "h": 2
+     },
+     "rootRailThumbLeft": {
+      "x": 16,
+      "y": 545.2000122070312,
+      "w": 12,
+      "h": 12
+     },
+     "rootRailThumbRight": {
+      "x": 220,
+      "y": 545.2000122070312,
+      "w": 12,
+      "h": 12
+     }
+    },
+    "text": "\u20b9100 - \u20b91,200+",
+    "scrollY": 0,
+    "vw": 1280,
+    "vh": 720
+   }
+  }
+ ],
+ "step_scroll": {
+  "1": {
+   "pos": [
+    0,
+    0,
+    6179,
+    720
+   ],
+   "scroll_events": []
+  },
+  "2": {
+   "pos": [
+    0,
+    0,
+    6011,
+    720
+   ],
+   "scroll_events": []
+  },
+  "3": {
+   "pos": [
+    0,
+    0,
+    6011,
+    720
+   ],
+   "scroll_events": []
+  },
+  "4": {
+   "pos": [
+    0,
+    0,
+    7833,
+    720
+   ],
+   "scroll_events": []
+  },
+  "5": {
+   "pos": [
+    0,
+    0,
+    7833,
+    720
+   ],
+   "scroll_events": []
+  },
+  "6": {
+   "pos": [
+    0,
+    2111.199951171875,
+    7833,
+    720
+   ],
+   "scroll_events": []
+  },
+  "7": {
+   "pos": [
+    0,
+    150.39999389648438,
+    7879,
+    720
+   ],
+   "scroll_events": [
+    [
+     22634,
+     239.1999969482422
+    ],
+    [
+     22657,
+     150.39999389648438
+    ]
+   ]
+  },
+  "8": {
+   "pos": [
+    0,
+    0,
+    7879,
+    720
+   ],
+   "scroll_events": []
+  },
+  "9": {
+   "pos": [
+    0,
+    0,
+    7879,
+    720
+   ],
+   "scroll_events": []
+  },
+  "10": {
+   "pos": [
+    0,
+    0,
+    7878,
+    720
+   ],
+   "scroll_events": []
+  },
+  "11": {
+   "pos": [
+    0,
+    0,
+    7878,
+    720
+   ],
+   "scroll_events": []
+  },
+  "12": {
+   "pos": [
+    0,
+    0,
+    7878,
+    720
+   ],
+   "scroll_events": []
+  },
+  "13": {
+   "pos": [
+    0,
+    0,
+    7878,
+    720
+   ],
+   "scroll_events": []
+  },
+  "14": {
+   "pos": [
+    0,
+    0,
+    7878,
+    720
+   ],
+   "scroll_events": []
+  },
+  "15": {
+   "pos": null,
+   "scroll_events": []
+  }
+ },
+ "step_pages": {
+  "1": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/",
+    "pos": [
+     0,
+     0,
+     6179,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "2": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shop/men",
+    "pos": [
+     0,
+     0,
+     6011,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "3": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/shop/men",
+    "pos": [
+     0,
+     0,
+     6011,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "4": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts",
+    "pos": [
+     0,
+     0,
+     7833,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "5": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts",
+    "pos": [
+     0,
+     0,
+     7833,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "6": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts",
+    "pos": [
+     0,
+     2111.199951171875,
+     7833,
+     720
+    ],
+    "events": 17
+   }
+  ],
+  "7": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts?f=Color%3AGrey_808080",
+    "pos": [
+     0,
+     379.20001220703125,
+     7879,
+     720
+    ],
+    "events": 38
+   }
+  ],
+  "8": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts?f=Color%3AGrey_808080",
+    "pos": [
+     0,
+     0,
+     7879,
+     720
+    ],
+    "events": 31
+   }
+  ],
+  "9": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts?f=Color%3AGrey_808080",
+    "pos": [
+     0,
+     0,
+     7879,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "10": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts?f=Brand%3ARoadster%3A%3AColor%3AGrey_808080",
+    "pos": [
+     0,
+     0,
+     7878,
+     720
+    ],
+    "events": 7
+   }
+  ],
+  "11": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts?f=Brand%3ARoadster%3A%3AColor%3AGrey_808080",
+    "pos": [
+     0,
+     0,
+     7878,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "12": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts?f=Brand%3AHIGHLANDER%2CRoadster%3A%3AColor%3AGrey_808080",
+    "pos": [
+     0,
+     0,
+     7878,
+     720
+    ],
+    "events": 7
+   }
+  ],
+  "13": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts?f=Brand%3AHIGHLANDER%2CRoadster%3A%3AColor%3AGrey_808080",
+    "pos": [
+     0,
+     0,
+     7878,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "14": [
+   {
+    "i": 0,
+    "url": "https://www.myntra.com/men-casual-shirts?f=Brand%3AHIGHLANDER%2CRoadster%3A%3AColor%3AGrey_808080&rf=Price%3A100.0_1600.0_100.0%20TO%201600.0",
+    "pos": [
+     0,
+     0,
+     7878,
+     720
+    ],
+    "events": 0
+   }
+  ],
+  "15": []
+ },
+ "events": [
+  {
+   "t": 1790574955.644,
+   "step": 0,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => window.scrollTo({top: 0, left: 0, behavior: 'instant'})"
+  },
+  {
+   "t": 1790574989.376,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790574989.376,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790574989.491,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790574989.544,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790574989.625,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790574989.708,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790574989.793,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790574989.894,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790574989.959,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790574990.029,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790574990.093,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790574990.173,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790574990.254,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790574990.333,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790574990.408,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790574990.494,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790574990.558,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790574990.64,
+   "step": 6,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 124.17647058823529
+  },
+  {
+   "t": 1790574990.709,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790574990.843,
+   "step": 6,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790574995.861,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790574995.899,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790574995.97,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790574996.057,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790574996.471,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790574996.491,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790574996.587,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790574996.677,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790574997.088,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790574997.119,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790574997.209,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790574997.284,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790574997.712,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790574997.747,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790574997.824,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790574997.91,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790574998.325,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790574998.368,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790574998.455,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790574998.524,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790574998.923,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790574998.959,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790574999.041,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790574999.122,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790574999.549,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790574999.578,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790574999.656,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790574999.742,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575000.179,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575000.219,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575000.309,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575000.389,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575000.791,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575000.823,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575000.899,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575000.959,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575001.392,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575001.432,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575001.508,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575001.588,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575002.009,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575002.041,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575002.176,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575002.29,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575002.8,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575002.837,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575002.91,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575002.994,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575003.462,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575003.492,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575003.56,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575003.644,
+   "step": 7,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575004.047,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575004.07,
+   "step": 7,
+   "kind": "page.evaluate(scroll)",
+   "expr": "(y) => window.scrollTo(0, y)"
+  },
+  {
+   "t": 1790575011.587,
+   "step": 9,
+   "kind": "page.evaluate(scroll)",
+   "expr": "() => { const se = document.scrollingElement || document.documentElement; return"
+  },
+  {
+   "t": 1790575011.594,
+   "step": 9,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.17647058823529
+  },
+  {
+   "t": 1790575011.659,
+   "step": 9,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.17647058823529
+  },
+  {
+   "t": 1790575011.722,
+   "step": 9,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.17647058823529
+  },
+  {
+   "t": 1790575011.795,
+   "step": 9,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.17647058823529
+  },
+  {
+   "t": 1790575011.859,
+   "step": 9,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.17647058823529
+  },
+  {
+   "t": 1790575011.927,
+   "step": 9,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.17647058823529
+  },
+  {
+   "t": 1790575011.994,
+   "step": 9,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.17647058823529
+  },
+  {
+   "t": 1790575012.06,
+   "step": 9,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.17647058823529
+  },
+  {
+   "t": 1790575012.124,
+   "step": 9,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.17647058823529
+  },
+  {
+   "t": 1790575012.194,
+   "step": 9,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.17647058823529
+  },
+  {
+   "t": 1790575012.261,
+   "step": 9,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.17647058823529
+  },
+  {
+   "t": 1790575012.327,
+   "step": 9,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.17647058823529
+  },
+  {
+   "t": 1790575012.405,
+   "step": 9,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.17647058823529
+  },
+  {
+   "t": 1790575012.485,
+   "step": 9,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.17647058823529
+  },
+  {
+   "t": 1790575012.562,
+   "step": 9,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.17647058823529
+  },
+  {
+   "t": 1790575012.644,
+   "step": 9,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.17647058823529
+  },
+  {
+   "t": 1790575012.71,
+   "step": 9,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": -124.17647058823529
+  },
+  {
+   "t": 1790575012.791,
+   "step": 9,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790575012.939,
+   "step": 9,
+   "kind": "page.evaluate(scroll)",
+   "expr": "y => window.scrollTo({top: y, behavior: 'instant'})"
+  },
+  {
+   "t": 1790575019.881,
+   "step": 10,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575019.92,
+   "step": 10,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575020.01,
+   "step": 10,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575020.109,
+   "step": 10,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575025.586,
+   "step": 10,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575025.619,
+   "step": 10,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575025.708,
+   "step": 10,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575025.78,
+   "step": 10,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575031.291,
+   "step": 10,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575031.307,
+   "step": 10,
+   "kind": "page.evaluate(scroll)",
+   "expr": "(y) => window.scrollTo(0, y)"
+  },
+  {
+   "t": 1790575053.507,
+   "step": 12,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575053.544,
+   "step": 12,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575053.627,
+   "step": 12,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575053.707,
+   "step": 12,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575059.192,
+   "step": 12,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575059.226,
+   "step": 12,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575059.306,
+   "step": 12,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575059.391,
+   "step": 12,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575064.891,
+   "step": 12,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575064.922,
+   "step": 12,
+   "kind": "page.evaluate(scroll)",
+   "expr": "(y) => window.scrollTo(0, y)"
+  },
+  {
+   "t": 1790575076.874,
+   "step": 14,
+   "kind": "mouse.down",
+   "snap": {
+    "boxes": {
+     "rootRail": {
+      "x": 25,
+      "y": 545.2000122070312,
+      "w": 200,
+      "h": 12
+     },
+     "rootRailBar": {
+      "x": 25,
+      "y": 550.2000122070312,
+      "w": 200,
+      "h": 2
+     },
+     "rootRailRange": {
+      "x": 25,
+      "y": 550.2000122070312,
+      "w": 196,
+      "h": 2
+     },
+     "rootRailThumbLeft": {
+      "x": 16,
+      "y": 545.2000122070312,
+      "w": 12,
+      "h": 12
+     },
+     "rootRailThumbRight": {
+      "x": 218,
+      "y": 545.2000122070312,
+      "w": 12,
+      "h": 12
+     }
+    },
+    "text": "\u20b9100 - \u20b92,900+",
+    "scrollY": 0,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790575079.705,
+   "step": 14,
+   "kind": "mouse.up",
+   "after": {
+    "boxes": {
+     "rootRail": {
+      "x": 25,
+      "y": 545.2000122070312,
+      "w": 200,
+      "h": 12
+     },
+     "rootRailBar": {
+      "x": 25,
+      "y": 550.2000122070312,
+      "w": 200,
+      "h": 2
+     },
+     "rootRailRange": {
+      "x": 25,
+      "y": 550.2000122070312,
+      "w": 198,
+      "h": 2
+     },
+     "rootRailThumbLeft": {
+      "x": 16,
+      "y": 545.2000122070312,
+      "w": 12,
+      "h": 12
+     },
+     "rootRailThumbRight": {
+      "x": 220,
+      "y": 545.2000122070312,
+      "w": 12,
+      "h": 12
+     }
+    },
+    "text": "\u20b9100 - \u20b91,200+",
+    "scrollY": 0,
+    "vw": 1280,
+    "vh": 720
+   }
+  },
+  {
+   "t": 1790575081.086,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575081.113,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575081.19,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575081.264,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575081.552,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575081.583,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575081.662,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575081.74,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575082.068,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575082.106,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575082.194,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575082.256,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575082.71,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575082.739,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575082.82,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575082.959,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575083.311,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575083.344,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575083.418,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575083.511,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575083.86,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575083.903,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575083.976,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575084.077,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575084.447,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575084.494,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575084.591,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575084.674,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575085.009,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575085.048,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575085.111,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575085.195,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575085.522,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575085.551,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575085.641,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575085.725,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575086.069,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575086.092,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575086.191,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575086.261,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575086.626,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575086.676,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575086.761,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575086.859,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575087.176,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575087.203,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575087.288,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575087.368,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575087.731,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575087.765,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575087.861,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575087.943,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575088.273,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575088.31,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575088.383,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575088.472,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575088.79,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575088.833,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575088.906,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575088.991,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575089.322,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575089.347,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575089.444,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575089.527,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575089.851,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575089.888,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575089.975,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575090.059,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575090.421,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575090.453,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575090.54,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575090.621,
+   "step": 15,
+   "kind": "mouse.wheel",
+   "dx": 0.0,
+   "dy": 144.0
+  },
+  {
+   "t": 1790575090.925,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "document.body.scrollHeight"
+  },
+  {
+   "t": 1790575090.944,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "(y) => window.scrollTo(0, y)"
+  },
+  {
+   "t": 1790575091.113,
+   "step": 15,
+   "kind": "page.evaluate(scroll)",
+   "expr": "([sx, sy]) => window.scrollTo(sx || 0, sy || 0)"
+  }
+ ]
+}

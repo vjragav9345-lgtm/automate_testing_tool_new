@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved",
+  "qa_url": "http://127.0.0.1:60688/warn_busy.html",
+  "steps": [
+    {
+      "index": 1,
+      "action_type": "navigate",
+      "name": "Warn Busy page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "http://127.0.0.1:60688/warn_busy.html",
+      "url_after": "http://127.0.0.1:60688/warn_busy.html",
+      "started_at": "2026-10-04T23:51:47.791",
+      "ended_at": "2026-10-04T23:51:47.806",
+      "duration": 0.0,
+      "timing_ms": {
+        "settle": 0,
+        "other": 0
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    },
+    {
+      "index": 2,
+      "action_type": "screenshot",
+      "name": "screenshot",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": "Warning: Page was still loading when screenshot was taken.",
+      "timeline": null,
+      "workarounds": [],
+      "technical": null,
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "tests\\_probe_out\\screenshot_settle\\busy_manual\\shots\\warn_busy_html\\busy_manual.png",
+      "url_before": "http://127.0.0.1:60688/warn_busy.html",
+      "url_after": "http://127.0.0.1:60688/warn_busy.html",
+      "started_at": "2026-10-04T23:51:47.806",
+      "ended_at": "2026-10-04T23:52:00.037",
+      "duration": 12.235,
+      "timing_ms": {
+        "screenshot": 12218,
+        "other": 16
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null
+    }
+  ],
+  "final_url": "http://127.0.0.1:60688/warn_busy.html",
+  "final_screenshot": null,
+  "final_text": "Always busy\nspinner",
+  "product_validation": null,
+  "total_duration_s": 13.328,
+  "total_steps": 2,
+  "live_log": [
+    {
+      "t": 1791138107.7999883,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138107.8109777,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 6s)",
+      "level": "note"
+    },
+    {
+      "t": 1791138113.8291986,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 6s)",
+      "level": "note"
+    }
+  ],
+  "recovered_steps": []
+}

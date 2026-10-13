@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>fill flush fixture</title>
+<style>body{font-family:sans-serif;margin:20px} #q{width:260px;padding:6px} #sug{border:1px solid #999;width:272px} #sug div{padding:6px;cursor:pointer}
+#elsewhere{margin-top:40px;padding:30px;background:#eef}</style></head>
+<body>
+<input id="q" type="search" placeholder="Search" autocomplete="off">
+<!-- autocomplete row: mousedown is cancelled so the input KEEPS focus (a very common widget pattern) -->
+<div id="sug"><div id="sug1" onmousedown="event.preventDefault()" onclick="location.href='task0_fill_page2.html'">suggestion one</div></div>
+<a id="lnk" href="task0_fill_page2.html">plain link</a>
+<div id="elsewhere">some neutral area</div>
+<input id="other" type="text" placeholder="Other field">
+</body></html>

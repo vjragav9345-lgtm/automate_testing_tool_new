@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Regression Fixture</title>
+</head>
+<body>
+  <button id="plain-btn">Plain Button</button>
+  <a href="/plain-link" id="plain-link">Plain Link</a>
+  <label><input type="checkbox" id="plain-checkbox"> Subscribe</label>
+  <div role="checkbox" id="styled-checkbox" tabindex="0" aria-checked="false">Styled Checkbox</div>
+  <script>
+    document.getElementById('plain-btn').addEventListener('click', function () {
+      document.title = 'PLAIN_BTN_CLICKED';
+    });
+    document.getElementById('plain-link').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.title = 'PLAIN_LINK_CLICKED';
+    });
+    document.getElementById('styled-checkbox').addEventListener('click', function () {
+      var cur = this.getAttribute('aria-checked') === 'true';
+      this.setAttribute('aria-checked', (!cur).toString());
+    });
+  </script>
+</body>
+</html>
