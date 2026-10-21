@@ -847,8 +847,12 @@ def _run_recording_session(
             snapshotter=_snapshotter,
         )
 
-   except Exception:
-    logger.exception("Recording session crashed")
+    except Exception as e:
+
+        logger.error(
+            "recording session crashed: %s",
+            e,
+        )
 
         if not ready_event.is_set():
 
