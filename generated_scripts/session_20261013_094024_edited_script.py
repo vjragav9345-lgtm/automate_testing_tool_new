@@ -1,6 +1,6 @@
 """
 Auto-generated from recording: session_20261013_094024_edited
-Generated at: 2026-10-13T14:03:53.333051
+Generated at: 2026-10-13T17:19:37.286682
 Original recorded (production) URL: https://techdemo.delveant.cloud
 
 Resolution order per step: data-testid -> data-test -> data-cy -> id -> name
@@ -100,6 +100,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': None,
+        'step_id': '7e483965-19f8-597c-8302-32831c6fd833',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -252,6 +254,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '3247102b-8ce0-5e99-af6c-1fc879832d62',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -661,6 +665,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'feb77a37-ddb3-5a63-b844-fc15323b7b5a',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -1045,6 +1051,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '223e7c4c-3897-5942-a320-5562a737f9aa',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -1429,6 +1437,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '2a86f70f-2a91-5bba-9076-4bd48b647fa0',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -1874,6 +1884,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '7abf0654-198f-5dca-bb79-8313a463d5a7',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -2306,6 +2318,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '0d867370-0707-54af-834a-74a6fb285f12',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -2701,6 +2715,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'bc451d77-ad12-5694-92dc-f5f30eb6d6f5',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -3083,6 +3099,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '09f6c53d-0eb1-5821-9265-b2baf9f16503',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -3479,6 +3497,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '853ec177-ba49-548f-85e1-22b53e8dfc1f',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -3854,6 +3874,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'ed859601-7a6a-5825-a705-7a1523129289',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -4258,6 +4280,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': None,
+        'step_id': '96255e26-acb8-5fbc-9486-b5094364a764',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -4395,6 +4419,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'd29750ed-782c-577a-9e57-0081617363ee',
+        'enabled': True,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -4793,6 +4819,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'f1367930-9423-5a5a-af06-b42ea22699f0',
+        'enabled': True,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -5163,6 +5191,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'de411d86-0eec-5abe-b47e-322fcb214882',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -5541,6 +5571,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': None,
+        'step_id': '17314d62-f1de-552d-aea7-9f7cf480b53a',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -5678,6 +5710,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '1e93db14-9bb8-5502-a391-1ae9e32ea706',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -6076,6 +6110,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'c6e4cbf8-a761-5e43-b065-39e92d11ad0c',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -6446,6 +6482,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'ec25d143-0d78-5076-b32d-19edb275514f',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -6824,6 +6862,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': None,
+        'step_id': 'e307f608-4187-5a0a-8cc9-b579e2b397b6',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -6961,6 +7001,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'b0e68f6a-7135-589f-91f0-ec8fb7d80343',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -7359,6 +7401,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '04789f2d-ee02-5fe5-9bb5-39c0e947cf58',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -7729,6 +7773,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '3f00f563-bc17-5d21-8ce4-56af2ac3166f',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -8107,6 +8153,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': None,
+        'step_id': '2b38e08a-75a5-5b30-ac62-689a9eb31220',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -8240,6 +8288,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '69115ae4-20e7-5abc-9eab-1aec72b88144',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -8591,6 +8641,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': None,
+        'step_id': '856a87e8-a1d1-5382-afce-2ce753433104',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -8726,6 +8778,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'b95247f6-ef68-5b14-a519-0b55a0b24a11',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -9047,11 +9101,11 @@ STEPS = [   {   'action_type': 'navigate',
     {   'action_type': 'fill',
         'value': 'show leads from the it industry',
         'locator_profile': {   'css_path': None,
-                               'xpath': "//textarea[normalize-space(text())='show me the top leads "
-                                        "by score']",
-                               'element_label': None,
                                'element_kind': None,
-                               'element_section': None},
+                               'element_label': None,
+                               'element_section': None,
+                               'xpath': "//textarea[normalize-space(text())='show me the top leads "
+                                        "by score']"},
         'bounding_box': {},
         'click_strategy': None,
         'wait_for_stable_state': None,
@@ -9092,6 +9146,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': None,
+        'step_id': '3a909375-e631-5989-948c-d23462106f35',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -9163,10 +9219,10 @@ STEPS = [   {   'action_type': 'navigate',
     {   'action_type': 'press',
         'value': 'Enter',
         'locator_profile': {   'css_path': None,
-                               'xpath': "//*[@id='root']/div/main/main/div/div/div[2]/div[2]/div/div/div/div[2]",
-                               'element_label': 'show me the top leads by score',
                                'element_kind': 'element',
-                               'element_section': ''},
+                               'element_label': 'show me the top leads by score',
+                               'element_section': '',
+                               'xpath': "//*[@id='root']/div/main/main/div/div/div[2]/div[2]/div/div/div/div[2]"},
         'bounding_box': {},
         'click_strategy': None,
         'wait_for_stable_state': None,
@@ -9207,6 +9263,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': None,
+        'step_id': '06098e42-0c96-510a-941c-047fb79d058d',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -9334,6 +9392,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': None,
+        'step_id': '195e8062-fe17-54c1-8529-4aa605715961',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -9471,6 +9531,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'a6f4d5c4-060c-50bb-9900-6451c8fc119e',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -9911,6 +9973,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '2b2cd602-f34b-5fe9-a6cc-d6baac9ef986',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -10323,6 +10387,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': True,
+        'step_id': '7170f433-4a9c-5d86-9c2e-fc04ec282914',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -10721,6 +10787,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'da6df58f-753b-5e00-86e4-1a7fdcd725e9',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -11152,6 +11220,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '7b3bbcb3-6365-51aa-8dca-7432767f8b38',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -11997,6 +12067,8 @@ def _capture_screenshot(page, shot_dir, img_counter, last_state, last_shot_bytes
     position / element offset (_align_viewport_for_capture), captures, then
     puts the scroll back. If the settle budget ran out, the screenshot is
     still taken and the step gets a WARNING."""
+    if _FAST_FORWARD[0]:
+        return None                  # a fast-forwarded step (see _FAST_FORWARD) takes no screenshots
     if not settle_first:
         return _capture_screenshot_core(
             page, shot_dir, img_counter, last_state, last_shot_bytes, full_page=full_page, step=step,
@@ -16424,6 +16496,29 @@ def _split_tech_multi(text):
         if t:
             techs.append(t)
     return "; ".join(heads), ("; ".join(techs) if techs else None)
+
+
+# RUN FROM A STEP ("Run from here" in the Recording Editor): the dashboard starts this script with
+# AUTOFLOW_START_FROM_STEP_ID set to the step_id of the step to start from. Every step before it is
+# FAST-FORWARDED: executed through the same normal per-step code (so it reaches the same page state), but with
+# no screenshots; disabled steps are skipped as always. From that step on the replay runs exactly as normal.
+# Without the variable (every normal replay) this is never active.
+_FAST_FORWARD = [False]
+
+
+def _start_from_target_index(steps):
+    """1-based number of the step to start from (AUTOFLOW_START_FROM_STEP_ID), else None. Never raises."""
+    try:
+        sid = (os.environ.get("AUTOFLOW_START_FROM_STEP_ID") or "").strip()
+        if not sid:
+            return None
+        for k, st in enumerate(steps, start=1):
+            if (st or {}).get("step_id") == sid:
+                return k
+        print(f"[run-from] step id {sid!r} is not in this recording - running the whole replay normally")
+    except Exception:
+        pass
+    return None
 
 
 def _plain_step_note(message, result=None, output_json_path=None):
@@ -33843,9 +33938,60 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
             if _cbt and _cbt in _timestamp_to_index:
                 _caused_by_index[idx] = _timestamp_to_index[_cbt]
 
+        # RUN FROM A STEP (see _FAST_FORWARD): the steps before the target step are fast-forwarded
+        _ff_target = _start_from_target_index(STEPS)
+        _FAST_FORWARD[0] = bool(_ff_target and _ff_target > 1)
+        _disabled_total = sum(1 for _s in STEPS if (_s or {}).get("enabled") is False)
+        if _disabled_total:
+            _plain_step_note(
+                f"{_disabled_total} step{'s are' if _disabled_total != 1 else ' is'} disabled and will be skipped.",
+                result, output_json_path,
+            )
+        if _FAST_FORWARD[0]:
+            _plain_step_note(
+                f"Fast-forward: steps 1 to {_ff_target - 1} run first (no screenshots), then the replay runs "
+                f"normally from step {_ff_target}.", result, output_json_path,
+            )
+
         for i, step in enumerate(STEPS, start=1):
             action_type = step.get("action_type")
             cur_timestamp = step.get("timestamp")
+            if _FAST_FORWARD[0] and i >= _ff_target:
+                _FAST_FORWARD[0] = False
+                _plain_step_note(f"Fast-forward finished - running normally from step {i}.", result, output_json_path)
+            # ENABLE/DISABLE STEP: a step switched off in the editor is not executed - it is reported as skipped
+            # (counted apart from passed and failed) and the replay goes on with the next step
+            if step.get("enabled") is False:
+                _skip_msg = f"Step {i} skipped (disabled)"
+                print(f"[{i}/{total_steps}] {_skip_msg}")
+                print()
+                _plain_step_note(_skip_msg + ".", result, output_json_path)
+                result["steps"].append({
+                    "index": i,
+                    "step_id": step.get("step_id"),
+                    "action_type": action_type,
+                    "name": _derive_action_name(step),
+                    "origin": step.get("origin"),
+                    "strategy_used": "skipped (disabled)",
+                    "element_found": None,
+                    "success": True,
+                    "skipped": True,
+                    "error": None,
+                    "warning": None,
+                    "effect_verified": None,
+                    "large_bbox_flag": False,
+                    "screenshot": None,
+                    "url_before": None,
+                    "url_after": None,
+                    "duration": 0,
+                    "locator_report": None,
+                    "expected": None,
+                    "actual": None,
+                    "recovered": False,
+                    "fast_forward": bool(_FAST_FORWARD[0]),
+                })
+                _write_result(result, output_json_path)
+                continue
             # RC4 (real DOM evidence for the future): whatever candidate
             # diagnostics _score_candidates_and_pick gathers for THIS
             # step's own resolution attempts - cleared before each step so
@@ -33873,6 +34019,8 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
                 _is_dup = (
                     action_type in ("click", "check")
                     and bool(result["steps"])
+                    # a disabled (skipped) previous step never ran: nothing to merge with
+                    and not result["steps"][-1].get("skipped")
                     and _is_merged_duplicate_of_previous(step, STEPS[i - 2] if i >= 2 else None, result["steps"][-1])
                 )
             except Exception:
@@ -38532,6 +38680,10 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
                     # (Details only - never changes the status)
                 result["steps"].append({
                     "index": i,
+                    # the step's stable id (the editor maps results back to steps by it after a reorder) and
+                    # whether this step was only fast-forwarded (see _FAST_FORWARD)
+                    "step_id": step.get("step_id"),
+                    "fast_forward": bool(_FAST_FORWARD[0]),
                     "action_type": action_type,
                     # optional, additive - a readable name for this step
                     # (see _derive_action_name's own docstring); never
@@ -38636,6 +38788,26 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
                 # additive (checks `not ok` alongside the existing flag),
                 # never changes how any individual action type resolves,
                 # retries, or reports its own success/failure above.
+                # RUN FROM A STEP: a fast-forwarded step that failed means the target step can never be reached
+                # in the right state - stop here and say so; one plain line per fast-forwarded step otherwise
+                if _FAST_FORWARD[0]:
+                    if not ok:
+                        _ff_msg = (f"Fast-forward failed at step {i}, so the target step {_ff_target} could not be "
+                                   f"reached. The replay stopped.")
+                        print(_ff_msg)
+                        print()
+                        try:
+                            _ff_entry = result["steps"][-1]
+                            if _ff_entry.get("index") == i:
+                                _ff_entry["error"] = (f"Failed: {_ff_msg}" + (_TECH_SEP + str(_ff_entry.get("error"))
+                                                                              if _ff_entry.get("error") else ""))
+                        except Exception:
+                            pass
+                        _plain_step_note(_ff_msg, result, output_json_path)
+                        _FAST_FORWARD[0] = False
+                        _stopped_after_step = i
+                        break
+                    _plain_step_note(f"Fast-forward: step {i} ok", result, output_json_path)
                 if stop_replay_after_step:
                     # unchanged - click_if_exists's own halt path never
                     # attempts recovery, exactly as before FIX 5

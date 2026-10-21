@@ -1,0 +1,520 @@
+CORE FIX MISSING: fill/select retry logic not found - results from this run cannot be trusted.
+Starting replay...
+Browser launched.
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+REPLAY SOURCE: session_20261014_151648
+ACTION COUNT: 12
+SOURCE TYPE: ORIGINAL
+
+Executing recorded actions...
+
+==================================================
+[1/12]
+ACTION: navigate
+NAME: Open – Home page
+URL: https://sportzia-preprod.kovaionplay.com
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+[redirect] launch URL -> https://sportzia-preprod.kovaionplay.com/feed
+[navigate-ready] waiting for next step's target to become findable (up to 9.0s)...
+[navigate-ready] found at t=0.1s - destination page is ready
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (1.71s).
+
+[timing] step 1 (navigate): total 1712ms | settle 1080ms | navigation_wait 79ms | screenshot 541ms | other 12ms
+==================================================
+[2/12]
+ACTION: click
+NAME: "Accept" element
+Element: Accept
+Locator: div#3 > div > div:nth-of-type(3) > div > div:nth-of-type(2)
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 4807.8ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Accept' at t=0ms (reference point for this flow)
+[spa-settle] waited 0.01s for network-idle/no-skeleton before this step
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Accept' (strategy=text+tag) ===
+[CLICK-DIAG] resolved-to-click : tag='div' class='css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-s53p2z r-z2wwpe r-1gwld19 r-ytbthy r-u9wvl5' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='div' class='css-146c3p1 r-jwli3a r-vw2c0b r-q4m81j' data-testid=None
+[CLICK-DIAG] MATCH=False
+[click-target-resolution] container matched: {'tag': 'div', 'cls': 'css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-s53p2z r-z2wwpe r-1gwld19 r-ytbthy r-u9wvl5', 'testid': None, 'role': None} - found a more specific interactive descendant: {'tag': 'div', 'cls': 'css-146c3p1 r-jwli3a r-vw2c0b r-q4m81j', 'testid': None, 'role': None} - clicking the DESCENDANT instead of the container's own center
+[note] -> Clicking 'Accept'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+EFFECT VERIFICATION CODE RUNNING (step 2, action_type='click')
+STATUS: SUCCESS
+Done (2.85s).
+Accept found using Text + Tag fallback. (resolved in 2846ms)
+
+[timing] step 2 (click): total 2845ms | locate_action 1422ms | log_emit 1ms | screenshot 188ms | settle 5ms | verify 439ms | other 790ms
+==================================================
+[3/12]
+ACTION: click
+NAME: "Sign in" element
+Element: Sign in
+Locator: div#3 > div > div > div > div:nth-of-type(2) > div > div > div > div:nth-of-type(3) > div > div
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 7629.8ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Sign in' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Sign in' (strategy=text+tag) ===
+[CLICK-DIAG] resolved-to-click : tag='div' class='css-g5y9jx r-1awozwy r-15kgiig' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='img' class='' data-testid=None
+[CLICK-DIAG] MATCH=False
+[click-target-resolution] container matched: {'tag': 'div', 'cls': 'css-g5y9jx r-1awozwy r-15kgiig', 'testid': None, 'role': None} - found a more specific interactive descendant: {'tag': 'div', 'cls': 'css-g5y9jx', 'testid': None, 'role': None} - clicking the DESCENDANT instead of the container's own center
+[note] -> Clicking 'Sign in'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+EFFECT VERIFICATION CODE RUNNING (step 3, action_type='click')
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (2.88s).
+Sign in found using Text + Tag fallback. (resolved in 2885ms)
+
+[timing] step 3 (click): total 2884ms | locate_action 1742ms | log_emit 1ms | screenshot 266ms | settle 5ms | navigation_wait 81ms | verify 19ms | other 770ms
+==================================================
+[4/12]
+ACTION: click
+NAME: "Not Register? Create an Account" element
+Element: Not Register? Create an Account
+Locator: div#3 > div > div > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(6)
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 10634.9ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Not Register? Create an Account' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Not Register? Create an Account' (strategy=text+tag) ===
+[CLICK-DIAG] resolved-to-click : tag='div' class='css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-1mnahxq' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='span' class='css-1jxf684 r-al30tu r-1b43r93' data-testid=None
+[CLICK-DIAG] MATCH=False
+[click-target-resolution] container matched: {'tag': 'div', 'cls': 'css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-1mnahxq', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Not Register? Create an Account'
+[elements-from-point BEFORE CLICK] stack at (640, 540), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='span' class='css-1jxf684 r-al30tu r-1b43r93' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='css-146c3p1 r-1aq4vuf' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-1mnahxq' testid=None z-index='0' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='css-g5y9jx r-1pcd2l5' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='css-g5y9jx r-1kihuf0 r-14lw9ot r-1ylenci r-acq42y r-13awgt0 r-1y6u10y r-dnmrzs r-1udh08x r-lrx3fh' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='css-g5y9jx r-13awgt0 r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='css-g5y9jx r-13awgt0 r-p1pxzi r-1jj8364 r-lchren r-12jhh2u r-t60dpp r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='css-g5y9jx r-150rngu r-eqz5dr r-16y2uox r-1wbh5a2 r-11yh6sk r-1rnoaur r-agouwx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='css-g5y9jx r-cb25cm r-13awgt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='div' class='css-g5y9jx r-13awgt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [16] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (640, 540), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='div' class='css-146c3p1' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [1] tag='div' class='css-g5y9jx r-1awozwy r-13awgt0 r-1777fci r-p1pxzi r-is05cd' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='css-g5y9jx r-1awozwy r-18u37iz' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='css-g5y9jx r-1009s2o' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='css-g5y9jx r-1pcd2l5' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='css-g5y9jx r-1kihuf0 r-14lw9ot r-1ylenci r-acq42y r-13awgt0 r-1y6u10y r-dnmrzs r-1udh08x r-lrx3fh' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='css-g5y9jx r-13awgt0 r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='div' class='css-g5y9jx r-13awgt0 r-p1pxzi r-1jj8364 r-lchren r-12jhh2u r-t60dpp r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='div' class='css-g5y9jx r-150rngu r-eqz5dr r-16y2uox r-1wbh5a2 r-11yh6sk r-1rnoaur r-agouwx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='div' class='css-g5y9jx r-cb25cm r-13awgt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [13] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [14] tag='div' class='css-g5y9jx r-13awgt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [15] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [16] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [17] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 4, action_type='click')
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (2.63s).
+Not Register? Create an Account found using Text + Tag fallback. (resolved in 2633ms)
+
+[timing] step 4 (click): total 2633ms | locate_action 1699ms | log_emit 1ms | screenshot 324ms | settle 5ms | navigation_wait 10ms | verify 20ms | other 574ms
+==================================================
+[5/12]
+ACTION: click
+NAME: "Enter your full name" field
+Element: Enter your full name
+Locator: div#3 > div > div > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(3) > div > input
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 13231.9ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Enter your full name' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Enter your full name' (strategy=placeholder) ===
+[CLICK-DIAG] resolved-to-click : tag='input' class='css-11aywtz r-6taxm2 r-1niwhzg r-1xfd6ze r-1yadl64 r-1shif8y r-13awgt0 r-1u8a0ir r-a023e6 r-1ny4l3l r-xyw6el' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='input' class='css-11aywtz r-6taxm2 r-1niwhzg r-1xfd6ze r-1yadl64 r-1shif8y r-13awgt0 r-1u8a0ir r-a023e6 r-1ny4l3l r-xyw6el' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'input', 'cls': 'css-11aywtz r-6taxm2 r-1niwhzg r-1xfd6ze r-1yadl64 r-1shif8y r-13awgt0 r-1u8a0ir r-a023e6 r-1ny4l3l r-xyw6el', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Enter your full name'
+[elements-from-point BEFORE CLICK] stack at (656, 362), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='input' class='css-11aywtz r-6taxm2 r-1niwhzg r-1xfd6ze r-1yadl64 r-1shif8y r-13awgt0 r-1u8a0ir r-a023e6 r-1ny4l3l r-xyw6el' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='css-g5y9jx r-1awozwy r-14lw9ot r-11u4nky r-1xfd6ze r-rs99b7 r-18u37iz' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='css-g5y9jx r-117bsoe' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='css-g5y9jx r-1pcd2l5' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='css-g5y9jx r-1kihuf0 r-14lw9ot r-1ylenci r-acq42y r-13awgt0 r-1y6u10y r-dnmrzs r-1udh08x r-lrx3fh' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='css-g5y9jx r-13awgt0 r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='css-g5y9jx r-13awgt0 r-p1pxzi r-1jj8364 r-lchren r-12jhh2u r-t60dpp r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='css-g5y9jx r-150rngu r-eqz5dr r-16y2uox r-1wbh5a2 r-11yh6sk r-1rnoaur r-agouwx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='css-g5y9jx r-cb25cm r-13awgt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='div' class='css-g5y9jx r-13awgt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [16] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (656, 362), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='input' class='css-11aywtz r-6taxm2 r-1niwhzg r-1xfd6ze r-1yadl64 r-1shif8y r-13awgt0 r-1u8a0ir r-a023e6 r-1ny4l3l r-xyw6el' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point AFTER CLICK]   [1] tag='div' class='css-g5y9jx r-1awozwy r-14lw9ot r-11u4nky r-1xfd6ze r-rs99b7 r-18u37iz' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='css-g5y9jx r-117bsoe' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='css-g5y9jx r-1pcd2l5' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='css-g5y9jx r-1kihuf0 r-14lw9ot r-1ylenci r-acq42y r-13awgt0 r-1y6u10y r-dnmrzs r-1udh08x r-lrx3fh' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='css-g5y9jx r-13awgt0 r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='css-g5y9jx r-13awgt0 r-p1pxzi r-1jj8364 r-lchren r-12jhh2u r-t60dpp r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='div' class='css-g5y9jx r-150rngu r-eqz5dr r-16y2uox r-1wbh5a2 r-11yh6sk r-1rnoaur r-agouwx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='div' class='css-g5y9jx r-cb25cm r-13awgt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [13] tag='div' class='css-g5y9jx r-13awgt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [14] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [15] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [16] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 5, action_type='click')
+STATUS: SUCCESS
+Done (2.48s).
+Enter your full name found using Placeholder. (resolved in 2483ms)
+
+[timing] step 5 (click): total 2483ms | locate_action 1441ms | log_emit 1ms | screenshot 126ms | settle 5ms | verify 428ms | other 482ms
+==================================================
+[6/12]
+ACTION: fill
+NAME: Enter your full name: "vijay"
+Element: Enter your full name
+Locator: div#3 > div > div > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(3) > div > input
+Value: vijay
+
+STATUS: STARTED
+Executing...
+[fill-retry] attempt 1 for 'Enter your full name' at t=0.0s
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (1.42s).
+Enter your full name found using Placeholder. (resolved in 1419ms)
+
+[timing] step 6 (fill): total 1419ms | locate_action 1221ms | log_emit 0ms | screenshot 173ms | other 25ms
+==================================================
+[7/12]
+ACTION: click
+NAME: "Enter your email or phone number" field
+Element: Enter your email or phone number
+Locator: div#3 > div > div > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(4) > div > input
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 17524.3ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Enter your email or phone number' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Enter your email or phone number' (strategy=placeholder) ===
+[CLICK-DIAG] resolved-to-click : tag='input' class='css-11aywtz r-6taxm2 r-1niwhzg r-1xfd6ze r-1yadl64 r-1shif8y r-13awgt0 r-1u8a0ir r-a023e6 r-1ny4l3l r-xyw6el' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='input' class='css-11aywtz r-6taxm2 r-1niwhzg r-1xfd6ze r-1yadl64 r-1shif8y r-13awgt0 r-1u8a0ir r-a023e6 r-1ny4l3l r-xyw6el' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'input', 'cls': 'css-11aywtz r-6taxm2 r-1niwhzg r-1xfd6ze r-1yadl64 r-1shif8y r-13awgt0 r-1u8a0ir r-a023e6 r-1ny4l3l r-xyw6el', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Enter your email or phone number'
+[elements-from-point BEFORE CLICK] stack at (656, 426), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='input' class='css-11aywtz r-6taxm2 r-1niwhzg r-1xfd6ze r-1yadl64 r-1shif8y r-13awgt0 r-1u8a0ir r-a023e6 r-1ny4l3l r-xyw6el' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='css-g5y9jx r-1awozwy r-14lw9ot r-11u4nky r-1xfd6ze r-rs99b7 r-18u37iz' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='css-g5y9jx r-1pcd2l5' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='css-g5y9jx r-1kihuf0 r-14lw9ot r-1ylenci r-acq42y r-13awgt0 r-1y6u10y r-dnmrzs r-1udh08x r-lrx3fh' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='css-g5y9jx r-13awgt0 r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='css-g5y9jx r-13awgt0 r-p1pxzi r-1jj8364 r-lchren r-12jhh2u r-t60dpp r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='css-g5y9jx r-150rngu r-eqz5dr r-16y2uox r-1wbh5a2 r-11yh6sk r-1rnoaur r-agouwx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='css-g5y9jx r-cb25cm r-13awgt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='div' class='css-g5y9jx r-13awgt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [16] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (656, 426), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='input' class='css-11aywtz r-6taxm2 r-1niwhzg r-1xfd6ze r-1yadl64 r-1shif8y r-13awgt0 r-1u8a0ir r-a023e6 r-1ny4l3l r-xyw6el' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point AFTER CLICK]   [1] tag='div' class='css-g5y9jx r-1awozwy r-14lw9ot r-11u4nky r-1xfd6ze r-rs99b7 r-18u37iz' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='css-g5y9jx r-1pcd2l5' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='css-g5y9jx r-1kihuf0 r-14lw9ot r-1ylenci r-acq42y r-13awgt0 r-1y6u10y r-dnmrzs r-1udh08x r-lrx3fh' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='css-g5y9jx r-13awgt0 r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='css-g5y9jx r-13awgt0 r-p1pxzi r-1jj8364 r-lchren r-12jhh2u r-t60dpp r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='div' class='css-g5y9jx r-150rngu r-eqz5dr r-16y2uox r-1wbh5a2 r-11yh6sk r-1rnoaur r-agouwx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='div' class='css-g5y9jx r-cb25cm r-13awgt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [13] tag='div' class='css-g5y9jx r-13awgt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [14] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [15] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [16] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 7, action_type='click')
+STATUS: SUCCESS
+Done (2.48s).
+Enter your email or phone number found using Placeholder. (resolved in 2482ms)
+
+[timing] step 7 (click): total 2482ms | locate_action 1433ms | log_emit 2ms | screenshot 126ms | settle 5ms | verify 435ms | other 481ms
+==================================================
+[8/12]
+ACTION: fill
+NAME: Enter your email or phone number: "9345691852"
+Element: Enter your email or phone number
+Locator: div#3 > div > div > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(4) > div > input
+Value: 9345691852
+
+STATUS: STARTED
+Executing...
+[fill-retry] attempt 1 for 'Enter your email or phone number' at t=0.0s
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (1.44s).
+Enter your email or phone number found using Placeholder. (resolved in 1442ms)
+
+[timing] step 8 (fill): total 1442ms | locate_action 1245ms | log_emit 1ms | screenshot 168ms | other 28ms
+==================================================
+[9/12]
+ACTION: click
+NAME: "Date of Birth*" field
+Element: Date of Birth*
+Locator: #«rc»
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 21809.4ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'Date of Birth*' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Date of Birth*' (strategy=placeholder) ===
+[CLICK-DIAG] resolved-to-click : tag='input' class='MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedStart MuiInputBase-inputAdornedEnd css-1gnht4k' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='input' class='MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedStart MuiInputBase-inputAdornedEnd css-1gnht4k' data-testid=None
+[CLICK-DIAG] MATCH=True
+[click-target-resolution] container matched: {'tag': 'input', 'cls': 'MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedStart MuiInputBase-inputAdornedEnd css-1gnht4k', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Date of Birth*'
+[elements-from-point BEFORE CLICK] stack at (632, 488), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='input' class='MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedStart MuiInputBase-inputAdornedEnd css-1gnht4k' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedStart MuiInputBase-adornedEnd css-1si533m' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-1s4avjq' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='css-g5y9jx r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='css-g5y9jx r-15zivkp' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='css-g5y9jx r-1pcd2l5' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='css-g5y9jx r-1kihuf0 r-14lw9ot r-1ylenci r-acq42y r-13awgt0 r-1y6u10y r-dnmrzs r-1udh08x r-lrx3fh' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='css-g5y9jx r-13awgt0 r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='css-g5y9jx r-13awgt0 r-p1pxzi r-1jj8364 r-lchren r-12jhh2u r-t60dpp r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class='css-g5y9jx r-150rngu r-eqz5dr r-16y2uox r-1wbh5a2 r-11yh6sk r-1rnoaur r-agouwx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='css-g5y9jx r-cb25cm r-13awgt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='div' class='css-g5y9jx r-13awgt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [16] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [17] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [18] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (632, 488), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='input' class='MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedStart MuiInputBase-inputAdornedEnd css-1gnht4k' testid=None z-index='auto' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point AFTER CLICK]   [1] tag='div' class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedStart MuiInputBase-adornedEnd css-1si533m' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-1s4avjq' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='css-g5y9jx r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='css-g5y9jx r-15zivkp' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='css-g5y9jx r-1pcd2l5' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='css-g5y9jx r-1kihuf0 r-14lw9ot r-1ylenci r-acq42y r-13awgt0 r-1y6u10y r-dnmrzs r-1udh08x r-lrx3fh' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='div' class='css-g5y9jx r-13awgt0 r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='div' class='css-g5y9jx r-13awgt0 r-p1pxzi r-1jj8364 r-lchren r-12jhh2u r-t60dpp r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='div' class='css-g5y9jx r-150rngu r-eqz5dr r-16y2uox r-1wbh5a2 r-11yh6sk r-1rnoaur r-agouwx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='div' class='css-g5y9jx r-cb25cm r-13awgt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [13] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [14] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [15] tag='div' class='css-g5y9jx r-13awgt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [16] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [17] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [18] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 9, action_type='click')
+STATUS: SUCCESS
+Done (2.45s).
+Date of Birth* found using Placeholder. (resolved in 2448ms)
+
+[timing] step 9 (click): total 2447ms | locate_action 1407ms | log_emit 1ms | screenshot 114ms | settle 5ms | verify 431ms | other 489ms
+==================================================
+[10/12]
+ACTION: fill
+NAME: Date of Birth*: "19/05/2003"
+Element: Date of Birth*
+Locator: #«rc»
+Value: 19/05/2003
+
+STATUS: STARTED
+Executing...
+[fill-retry] attempt 1 for 'Date of Birth*' at t=0.0s
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[note] -> Waiting for the page to stop changing before the screenshot (up to 1.5s)
+STATUS: SUCCESS
+Done (1.31s).
+Date of Birth* found using Placeholder. (resolved in 1314ms)
+
+[timing] step 10 (fill): total 1313ms | locate_action 1124ms | log_emit 1ms | screenshot 158ms | other 30ms
+==================================================
+[11/12]
+ACTION: click
+NAME: "By continuing, you agree to our Terms of" element
+Element: By continuing, you agree to our Terms of Service and Privacy Policy.
+Locator: div#3 > div > div > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(6) > div > div
+
+STATUS: STARTED
+Executing...
+[modal-timing] armed modal-open tracker at 25931.3ms (page clock) before this click
+[modal-timing-detail] click dispatched on 'target' at t=0ms (reference point for this flow)
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target '(unlabeled)' (strategy=xpath) ===
+[CLICK-DIAG] resolved-to-click : tag='div' class='css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='div' class='css-g5y9jx r-1awozwy r-ry2h4h r-1jkafct r-rs99b7 r-z80fyv r-1777fci r-9mo606 r-19wmn03' data-testid=None
+[CLICK-DIAG] MATCH=False
+[click-target-resolution] container matched: {'tag': 'div', 'cls': 'css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73', 'testid': None, 'role': None} - found a more specific interactive descendant: {'tag': 'div', 'cls': 'css-g5y9jx r-1awozwy r-ry2h4h r-1jkafct r-rs99b7 r-z80fyv r-1777fci r-9mo606 r-19wmn03', 'testid': None, 'role': None} - clicking the DESCENDANT instead of the container's own center
+[note] -> Clicking 'By continuing, you agree to our Terms of Service and Priv...'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+EFFECT VERIFICATION CODE RUNNING (step 11, action_type='click')
+STATUS: SUCCESS
+Done (2.53s).
+By continuing, you agree to our Terms of Service and Priv... found using XPath. (resolved in 2528ms)
+
+[timing] step 11 (click): total 2528ms | locate_action 1356ms | log_emit 2ms | screenshot 129ms | settle 5ms | verify 437ms | other 599ms
+==================================================
+[12/12]
+ACTION: click
+NAME: "Sign up" element
+Element: Sign up
+Locator: div#3 > div > div > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(7)
+
+STATUS: STARTED
+Executing...
+[note] -> Waiting for the page to finish loading (up to 0.3s)
+[CLICK-DIAG] === click on recorded target 'Sign up' (strategy=text+tag) ===
+[CLICK-DIAG] resolved-to-click : tag='div' class='css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-q3k7ks r-1xfd6ze r-1mnahxq r-1oqcu8e' data-testid=None
+[CLICK-DIAG] at-click-coordinate: tag='div' class='css-146c3p1 r-jwli3a r-ubezar r-majxgm' data-testid=None
+[CLICK-DIAG] MATCH=False
+[click-target-resolution] container matched: {'tag': 'div', 'cls': 'css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-q3k7ks r-1xfd6ze r-1mnahxq r-1oqcu8e', 'testid': None, 'role': None} - no more specific interactive descendant found - clicking the container as before
+[note] -> Clicking 'Sign up'
+[elements-from-point BEFORE CLICK] stack at (640, 604), topmost first:
+[elements-from-point BEFORE CLICK]   [0] tag='div' class='css-146c3p1 r-jwli3a r-ubezar r-majxgm' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [1] tag='div' class='css-g5y9jx r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-q3k7ks r-1xfd6ze r-1mnahxq r-1oqcu8e' testid=None z-index='0' opacity='1' pointer-events='auto' <-- RESOLVED ELEMENT
+[elements-from-point BEFORE CLICK]   [2] tag='div' class='css-g5y9jx r-1pcd2l5' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [3] tag='div' class='css-g5y9jx r-1kihuf0 r-14lw9ot r-1ylenci r-acq42y r-13awgt0 r-1y6u10y r-dnmrzs r-1udh08x r-lrx3fh' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [4] tag='div' class='css-g5y9jx r-13awgt0 r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [5] tag='div' class='css-g5y9jx r-13awgt0 r-p1pxzi r-1jj8364 r-lchren r-12jhh2u r-t60dpp r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [6] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [7] tag='div' class='css-g5y9jx r-150rngu r-eqz5dr r-16y2uox r-1wbh5a2 r-11yh6sk r-1rnoaur r-agouwx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [8] tag='div' class='css-g5y9jx r-cb25cm r-13awgt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [9] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [10] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [11] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [12] tag='div' class='css-g5y9jx r-13awgt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [13] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [14] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK]   [15] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point BEFORE CLICK] TOP ELEMENT pointer-events='auto'
+[click-mechanism] clicked at the recorded spot inside the element (click_offset)
+[elements-from-point AFTER CLICK] stack at (640, 604), topmost first:
+[elements-from-point AFTER CLICK]   [0] tag='svg' class='[object SVGAnimatedString]' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [1] tag='div' class='css-g5y9jx r-z80fyv r-19wmn03 r-17bb2tj r-1muvv40 r-1yef0xd r-1ldzwu0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [2] tag='div' class='css-g5y9jx r-1awozwy r-1777fci' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [3] tag='div' class='css-g5y9jx r-1pcd2l5' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [4] tag='div' class='css-g5y9jx r-1kihuf0 r-14lw9ot r-1ylenci r-acq42y r-13awgt0 r-1y6u10y r-dnmrzs r-1udh08x r-lrx3fh' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [5] tag='div' class='css-g5y9jx r-13awgt0 r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [6] tag='div' class='css-g5y9jx r-13awgt0 r-p1pxzi r-1jj8364 r-lchren r-12jhh2u r-t60dpp r-13qz1uu' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [7] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [8] tag='div' class='css-g5y9jx r-150rngu r-eqz5dr r-16y2uox r-1wbh5a2 r-11yh6sk r-1rnoaur r-agouwx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [9] tag='div' class='css-g5y9jx r-cb25cm r-13awgt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [10] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [11] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [12] tag='div' class='css-g5y9jx' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [13] tag='div' class='css-g5y9jx r-13awgt0' testid=None z-index='0' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [14] tag='div' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [15] tag='body' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK]   [16] tag='html' class='' testid=None z-index='auto' opacity='1' pointer-events='auto'
+[elements-from-point AFTER CLICK] TOP ELEMENT pointer-events='auto'
+EFFECT VERIFICATION CODE RUNNING (step 12, action_type='click')
+[note] 🔔 Captured server response: User already exist
+STATUS: SUCCESS
+Done (2.51s).
+Sign up found using Text + Tag fallback. (resolved in 2513ms)
+
+[timing] step 12 (click): total 2512ms | locate_action 1402ms | log_emit 2ms | screenshot 115ms | settle 5ms | verify 434ms | other 554ms
+[field-error] step 12: server response matched a keyword - asking for new values (attempt 1, 3 field(s))
+[pause] step 12: waiting up to 180s for an answer in the live log (field_error)
+[note] The browser window was closed - the run stopped at step 12.
+==================================================
+REPLAY COMPLETED
+==================================================
+
+Recorded: 12
+JSON: 12
+Generated: 12
+Executed: 12
+Successful: 11
+Failed: 1
+Total replay time: 87.88s
+Not executed: 0
+
+RESULT: FAIL
+
+Final URL:
+None
+
+Screenshots:
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/screenshoots/session_20261014_151648_20261014_161134
+
+Generated Script:
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261014_151648_script.py
+
+No open page remained - skipping the close delay.
+Browser closed successfully.
+==================================================
+
+
+===== stderr =====
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261014_151648_script.py:6316: SyntaxWarning: invalid escape sequence '\s'
+  desc += '.' + node.className.trim().split(/\s+/).join('.');
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261014_151648_script.py:12331: SyntaxWarning: invalid escape sequence '\s'
+  "    const t = lb.split(/\s+/).map(id => {"
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261014_151648_script.py:17100: SyntaxWarning: invalid escape sequence '\d'
+  if (txt && txt.length < 200 && /\d/.test(txt)) {
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261014_151648_script.py:26398: SyntaxWarning: invalid escape sequence '\s'
+  return t.trim().replace(/\s+/g, ' ');
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261014_151648_script.py:26545: SyntaxWarning: invalid escape sequence '\s'
+  return (s || '').replace(/\s+/g, ' ').trim().toLowerCase();

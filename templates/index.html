@@ -11,7 +11,7 @@
 
     <link
         rel="stylesheet"
-        href="{{ url_for('static', filename='css/style.css') }}?v=25"
+        href="{{ url_for('static', filename='css/style.css') }}?v=26"
     />
 </head>
 
@@ -321,7 +321,12 @@
 
 
 <script
-    src="{{ url_for('static', filename='js/script.js') }}?v=26"
+    src="{{ url_for('static', filename='js/script.js') }}?v=27"
+></script>
+
+<!-- run control: disables Replay while any run is active and shows a Stop button -->
+<script
+    src="{{ url_for('static', filename='js/run_control.js') }}?v=2"
 ></script>
 
 </body>

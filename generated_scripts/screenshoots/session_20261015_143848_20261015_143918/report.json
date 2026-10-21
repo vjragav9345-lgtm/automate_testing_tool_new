@@ -1,0 +1,248 @@
+{
+  "status": "PASS",
+  "message": "all steps resolved and validations passed",
+  "diagnostic": null,
+  "qa_url": "https://sportzia-preprod.kovaionplay.com",
+  "steps": [
+    {
+      "index": 1,
+      "fast": true,
+      "captured_messages": null,
+      "action_type": "navigate",
+      "name": "Open \u2013 Home page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "What AutoFlow did: Waiting for the page to finish loading (up to 1.2s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://sportzia-preprod.kovaionplay.com/feed",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/feed",
+      "started_at": "2026-10-15T14:39:22.196",
+      "ended_at": "2026-10-15T14:39:23.528",
+      "duration": 1.285,
+      "timing_ms": {
+        "settle": 1205,
+        "navigation_wait": 73,
+        "screenshot": 0,
+        "other": 6
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": false
+    },
+    {
+      "index": 2,
+      "fast": true,
+      "captured_messages": null,
+      "action_type": "click",
+      "name": "\"Events\" element",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "text+tag",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Clicking 'Events'",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://sportzia-preprod.kovaionplay.com/feed",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/events",
+      "started_at": "2026-10-15T14:39:23.528",
+      "ended_at": "2026-10-15T14:39:26.210",
+      "duration": 2.533,
+      "timing_ms": {
+        "locate_action": 1228,
+        "log_emit": 0,
+        "screenshot": 0,
+        "settle": 2,
+        "navigation_wait": 697,
+        "verify": 10,
+        "other": 596
+      },
+      "locator_report": {
+        "strategy": "text+tag",
+        "strategy_label": "Text + Tag fallback",
+        "fallback_level": 11,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 2533,
+        "message": "Events found using Text + Tag fallback. (resolved in 2533ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": true
+    },
+    {
+      "index": 3,
+      "fast": false,
+      "captured_messages": null,
+      "action_type": "click",
+      "name": "\"Kovai Elites Marathon 2027\" element",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "xpath",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "DIAGNOSTIC - the step ended on the 'xpath' method. Methods tried in order: popup-scoped: nothing (search 0.0s, total 0.0s); data-testid: nothing (search 0.0s, total 0.0s); data-test: nothing (search 0.0s, total 0.0s); data-cy: nothing (search 0.0s, total 0.0s); id: nothing (search 0.0s, total 0.0s); name: nothing (search 0.0s, total 0.0s); aria-label: nothing (search 0.0s, total 0.0s); placeholder: nothing (search 0.0s, total 0.0s); title: nothing (search 0.0s, total 0.0s); role: nothing (search 0.0s, total 0.0s); href: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag-number-normalized: nothing (search 0.0s, total 0.0s); image-ancestor: nothing (search 0.0s, total 0.0s); identity: nothing (search 0.0s, total 0.0s); icon-identity: nothing (search 0.0s, total 0.0s); field-label: nothing (search 0.0s, total 0.0s); editable-replacement: nothing (search 0.0s, total 0.0s); position_fallback: nothing (search 0.0s, total 0.0s); css_path: nothing (search 0.0s, total 0.0s); xpath: proposed a candidate (search 0.0s, total 2.2s). Decisions: xpath: 'div' -> proposed (<div> at (1043,156) 219x120, visible (its own box is shown)); xpath: '' -> used. Waits: none recorded.; What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Clicking 'Kovai Elites Marathon 2027' > Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "generated_scripts/screenshoots/session_20261015_143848_20261015_143918/kovai_elites_marathon_2027_e11/step03_kovai_elites_marathon_2027_element_2026-10-15_14-39-28.png",
+      "url_before": "https://sportzia-preprod.kovaionplay.com/events",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/events/kovai-elites-marathon-2027-E1194?from=eventslist",
+      "started_at": "2026-10-15T14:39:26.211",
+      "ended_at": "2026-10-15T14:39:28.844",
+      "duration": 2.512,
+      "timing_ms": {
+        "locate_action": 1506,
+        "log_emit": 1,
+        "screenshot": 225,
+        "settle": 3,
+        "navigation_wait": 71,
+        "verify": 7,
+        "other": 698
+      },
+      "locator_report": {
+        "strategy": "xpath",
+        "strategy_label": "XPath",
+        "fallback_level": 14,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 2512,
+        "message": "Kovai Elites Marathon 2027 found using XPath. (resolved in 2512ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": false
+    }
+  ],
+  "step_counts": {
+    "passed": 3,
+    "warnings": 0,
+    "failed": 0,
+    "not_run": 0,
+    "manual_input": 0
+  },
+  "ui_elements": [
+    {
+      "index": 2,
+      "action_type": "click",
+      "element_found": true,
+      "locator_used": "text+tag",
+      "status": "PASS",
+      "message": null
+    },
+    {
+      "index": 3,
+      "action_type": "click",
+      "element_found": true,
+      "locator_used": "xpath",
+      "status": "PASS",
+      "message": null
+    }
+  ],
+  "ui_elements_status": "PASS",
+  "content_check": null,
+  "screenshot_diff": null,
+  "product_validation": null,
+  "final_screenshot": null,
+  "run_id": "session_20261015_143848_20261015_143918",
+  "run_dir": "generated_scripts/screenshoots/session_20261015_143848_20261015_143918",
+  "live_log": [
+    {
+      "t": 1792055362.1957319,
+      "message": "Partial run (until step 3): steps 1-2 run quickly (no screenshots), then step 3 runs normally.",
+      "step": null
+    },
+    {
+      "t": 1792055362.246916,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note",
+      "step": 1
+    },
+    {
+      "t": 1792055363.9356081,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 2
+    },
+    {
+      "t": 1792055364.779121,
+      "message": "\u21b3 Clicking 'Events'",
+      "level": "note",
+      "step": 2
+    },
+    {
+      "t": 1792055366.210763,
+      "message": "[INFO] Message check after step 2: page candidates 0 (page text not used: the step moved to another page), server responses 4 (step-caused), keyword match: no, expected result: achieved (navigated to the recorded page), action: none",
+      "step": null
+    },
+    {
+      "t": 1792055366.65444,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 3
+    },
+    {
+      "t": 1792055367.470027,
+      "message": "\u21b3 Clicking 'Kovai Elites Marathon 2027'",
+      "level": "note",
+      "step": 3
+    },
+    {
+      "t": 1792055368.709742,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note",
+      "step": 3
+    },
+    {
+      "t": 1792055368.8456929,
+      "message": "[INFO] Message check after step 3: page candidates 0 (page text not used: the step moved to another page), server responses 4 (step-caused), keyword match: no, expected result: achieved (navigated to the recorded page), action: none",
+      "step": null
+    },
+    {
+      "t": 1792055368.845939,
+      "message": "Stopped after step 3 (partial run).",
+      "step": null
+    }
+  ],
+  "partial_run": {
+    "until_step": 3
+  },
+  "stopped_by_user": null,
+  "browser_closed": null
+}

@@ -119,7 +119,8 @@ def _store_result(pick_id, result):
         _PICK_RESULTS[pick_id] = result
 
 
-def start_pick_session(start_url, preceding_actions, warm_id=None, session_path=None):
+def start_pick_session(start_url, preceding_actions, warm_id=None, session_path=None, snapshot=None,
+                       snapshot_target=None):
     """Spawns (or reuses) a background thread and returns immediately
     with a pick_id the caller polls via get_pick_status(). Never blocks
     on the human actually clicking anything - that's the whole reason
@@ -137,6 +138,31 @@ def start_pick_session(start_url, preceding_actions, warm_id=None, session_path=
     pick_id = uuid.uuid4().hex
     _store_result(pick_id, {"status": "waiting"})
 
+    # a newer pick always ends a snapshot picker of this editor tab that is still open (same rule as below)
+    if warm_id:
+        with _WARM_SESSIONS_LOCK:
+            _prev_snap = _SNAPSHOT_PICK_CANCELS.pop(warm_id, None)
+        if _prev_snap is not None:
+            _prev_snap.set()
+
+    # PAGE SNAPSHOT (no replay): the page saved during recording for this exact point is opened instead of
+    # replaying the recording up to it. Any problem falls back to the existing replay-based picker below.
+    if snapshot:
+        cancel_event = threading.Event()
+        if warm_id:
+            with _WARM_SESSIONS_LOCK:
+                session = _WARM_SESSIONS.get(warm_id)
+                _SNAPSHOT_PICK_CANCELS[warm_id] = cancel_event
+            if session is not None and session._active_pick_cancel is not None:
+                session._active_pick_cancel.set()
+        threading.Thread(
+            target=_run_pick_session_snapshot,
+            args=(pick_id, snapshot, start_url, preceding_actions, warm_id, session_path, snapshot_target,
+                  cancel_event),
+            daemon=True,
+        ).start()
+        return pick_id
+
     if warm_id:
         session = _get_or_create_warm_session(warm_id)
         # CONFIRMED REAL BUG this fixes: a live repro showed a second
@@ -152,11 +178,12 @@ def start_pick_session(start_url, preceding_actions, warm_id=None, session_path=
         pending_cancel = session._active_pick_cancel
         if pending_cancel is not None:
             pending_cancel.set()
-        session.submit("start_pick", pick_id, session_path, start_url, preceding_actions)
+        session.submit("start_pick", pick_id, session_path, start_url, preceding_actions, snapshot_target)
     else:
         thread = threading.Thread(
             target=_run_pick_session_fresh,
             args=(pick_id, start_url, preceding_actions),
+            kwargs={"snapshot_target": snapshot_target},
             daemon=True,
         )
         thread.start()
@@ -194,6 +221,9 @@ def cancel_active_pick(warm_id):
         return
     with _WARM_SESSIONS_LOCK:
         session = _WARM_SESSIONS.get(warm_id)
+        _snap_cancel = _SNAPSHOT_PICK_CANCELS.pop(warm_id, None)
+    if _snap_cancel is not None:
+        _snap_cancel.set()
     if session is None:
         return
     pending_cancel = session._active_pick_cancel
@@ -589,7 +619,11 @@ def _normalize_url_for_compare(url):
     return url.split("#", 1)[0].rstrip("/")
 
 
-def _run_pick_wait_phase(pick_id, browser, context, final_page, start_url, preceding_actions, cancel_event=None, content_mismatch=None, replay_failures=None):
+def _run_pick_wait_phase(pick_id, browser, context, final_page, start_url, preceding_actions, cancel_event=None, content_mismatch=None, replay_failures=None, extra=None, snapshot_mode=False):
+    # extra: fields added to every status this pick reports (where the page came from, a fallback note).
+    # snapshot_mode: the page is a recorded page snapshot - the overlay must initialise on it within a short time
+    # (else _SnapshotOverlayError, and the caller falls back to the replay-based picker), and a unique XPath
+    # picked there is marked "verified on snapshot".
     # content_mismatch (see _replay_preceding_actions' own field of the
     # same name): set only when the preceding-actions walk stopped EARLY
     # because resolve_and_act hard-confirmed the live page no longer
@@ -625,7 +659,8 @@ def _run_pick_wait_phase(pick_id, browser, context, final_page, start_url, prece
         print(f"[pick-url-check] {pick_id} MISMATCH expected={expected_url!r} actual={actual_url!r}", flush=True)
 
     def _store(result):
-        merged = dict(result)
+        merged = dict(extra or {})
+        merged.update(result)
         merged["page_url_check"] = url_check
         merged["content_mismatch"] = content_mismatch
         merged["replay_failures"] = replay_failures or []
@@ -765,6 +800,17 @@ def _run_pick_wait_phase(pick_id, browser, context, final_page, start_url, prece
     for p in context.pages:
         _inject_pick_mode(p)
 
+    if snapshot_mode:
+        # the EXISTING overlay must be live on the snapshot page within a short time - otherwise the caller closes
+        # this window and falls back to the replay-based picker (nothing was reported as picked yet)
+        try:
+            final_page.wait_for_function(
+                "() => !!window.__afqaPickOverlay && !!document.getElementById('__afqaPickOverlay')",
+                timeout=_SNAPSHOT_OVERLAY_INIT_TIMEOUT_MS,
+            )
+        except Exception as e:
+            raise _SnapshotOverlayError(f"the Pick Element overlay did not start on the snapshot ({e})")
+
     # BRING TO FRONT (CONFIRMED GAP - no bring_to_front() call existed
     # anywhere in this codebase before this): the Recording Editor is
     # typically a maximised browser window of its own, and a headed
@@ -869,6 +915,37 @@ def _run_pick_wait_phase(pick_id, browser, context, final_page, start_url, prece
             # browser.is_connected() check above still ends it promptly
             # once the browser is genuinely gone
             time.sleep(PICK_POLL_INTERVAL_S)
+        # 1-OF-1 XPATH: once per newly-locked single-element pick (same non-reentrant place as the checks
+        # below): the EXISTING generator's XPath is counted in the WHOLE document (hidden elements included);
+        # exactly 1 (the picked element) keeps it unchanged, otherwise a unique relative XPath is built for the
+        # picked element (see _XPATH_CHECK_JS). Errors leave the pick exactly as the generator made it.
+        with _pick_lock:
+            _xc_locked, _xc_profile = pick_state["locked"], pick_state["profile"]
+        if (_xc_locked and _xc_profile and _xc_profile.get("xpath") and "xpath_check" not in _xc_profile
+                and _xc_profile.get("mode") not in ("multi", "multi_none")):
+            _xc = None
+            try:
+                for _xc_page in list(context.pages):
+                    _xc = _xc_page.evaluate(_XPATH_CHECK_JS, _xc_profile.get("xpath"))
+                    if _xc:
+                        break
+            except Exception as e:
+                logger.warning("pick-element: the 1-of-1 XPath check failed (%s) - the picked XPath is kept", e)
+                _xc = None
+            with _pick_lock:
+                if pick_state["locked"] and pick_state["profile"] is _xc_profile:
+                    _apply_xpath_check(_xc_profile, _xc, snapshot_mode)
+                    _store({
+                        "status": "locked",
+                        "xpath": _xc_profile.get("xpath"),
+                        "xpath_candidates": _xc_profile.get("xpath_candidates") or [_xc_profile.get("xpath")],
+                        "css_path": _xc_profile.get("css_path"),
+                        "id": _xc_profile.get("id"),
+                        "locator_profile": _xc_profile,
+                        "match_count": _xc_profile.get("match_count"),
+                        "checkbox_state_info": _xc_profile.get("checkbox_state_info"),
+                        "value_range_preview": _xc_profile.get("value_range_preview"),
+                    })
         # FIX 3 (Validate Checkbox State dialog): computed HERE, once per
         # newly-locked pick, not inside _on_pick_result itself - see that
         # function's own comment for why (a blocking Playwright call from
@@ -1022,12 +1099,326 @@ def _run_pick_wait_phase(pick_id, browser, context, final_page, start_url, prece
 
 
 # ============================================================
+# PAGE SNAPSHOT picker (no replay) - see recorder/page_snapshot.py. The snapshot saved during recording for this
+# exact point is opened in its own browser window (recorded viewport and scroll), the website's own scripts
+# off and every request answered from the snapshot or aborted, and the EXISTING overlay is injected by the
+# EXISTING wait phase. Missing / unreadable snapshot, a page that does not open, or an overlay that does not start
+# within a short time: the window is closed and the existing replay-based picker runs instead, with a short note.
+# ============================================================
+
+_SNAPSHOT_OVERLAY_INIT_TIMEOUT_MS = 5000
+_SNAPSHOT_PICK_CANCELS = {}  # warm_id -> cancel Event of that editor tab's snapshot picker still open
+
+
+class _SnapshotOverlayError(Exception):
+    """The existing overlay did not initialise on a snapshot page (the caller falls back to replay)."""
+
+
+def _run_pick_session_snapshot(pick_id, snapshot, start_url, preceding_actions, warm_id, session_path,
+                               snapshot_target, cancel_event):
+    from recorder import page_snapshot
+    pw = None
+    browser = None
+    ready = False
+    in_wait = False
+    reason = None
+    try:
+        archive = page_snapshot.load_archive(snapshot["path"])
+        pw = sync_playwright().start()
+        try:
+            browser = pw.chromium.launch(headless=False)
+        except Exception as e:
+            logger.warning("pick-element (snapshot): headed launch failed (%s), falling back to headless", e)
+            browser = pw.chromium.launch(headless=True)
+        ctx_kwargs = {"bypass_csp": True, "service_workers": "block"}
+        vp = snapshot.get("viewport") if isinstance(snapshot.get("viewport"), dict) else {}
+        try:
+            if int(vp.get("width") or 0) > 0 and int(vp.get("height") or 0) > 0:
+                ctx_kwargs["viewport"] = {"width": int(vp["width"]), "height": int(vp["height"])}
+        except (TypeError, ValueError):
+            pass
+        context = browser.new_context(**ctx_kwargs)
+        page = page_snapshot.open_snapshot_page(context, archive, snapshot.get("scroll"))
+        attach_dialog_handler(page)
+        try:
+            # the checkbox-state / value-range previews of the wait phase use the cached replay helpers
+            _load_resolve_and_act(start_url, pick_id)
+        except Exception as e:
+            logger.debug("pick-element (snapshot): replay helpers not loaded (%s) - previews skipped", e)
+        print(f"[pick] opened the recorded page snapshot for step {snapshot.get('step_ref')!r} - no replay", flush=True)
+        in_wait = True
+        try:
+            _run_pick_wait_phase(
+                pick_id, browser, context, page, start_url, preceding_actions, cancel_event=cancel_event,
+                extra={"pick_source": "snapshot",
+                       "pick_note": "Showing the page saved during recording for this step - nothing was replayed."},
+                snapshot_mode=True,
+            )
+            ready = True
+        except _SnapshotOverlayError as e:
+            reason = str(e)
+            in_wait = False
+    except Exception as e:
+        reason = str(e) or e.__class__.__name__
+        if in_wait:
+            # the picker was already open for the user: an ordinary error, never a second (replay) picker
+            ready = True
+            logger.error("pick-element (snapshot) session %s crashed: %s", pick_id, e)
+            _store_result(pick_id, {"status": "error",
+                                    "message": "Something unexpected happened during picking - please try again."})
+    finally:
+        try:
+            if browser is not None and browser.is_connected():
+                browser.close()
+        except Exception:
+            pass
+        try:
+            if pw is not None:
+                pw.stop()
+        except Exception:
+            pass
+        if warm_id:
+            with _WARM_SESSIONS_LOCK:
+                if _SNAPSHOT_PICK_CANCELS.get(warm_id) is cancel_event:
+                    _SNAPSHOT_PICK_CANCELS.pop(warm_id, None)
+
+    if ready or cancel_event.is_set():
+        return
+    # FALLBACK: the existing replay-based picker (warm session when this editor tab has one), with a short note
+    note = ("The page saved during recording could not be opened for this step"
+            + (f" ({str(reason)[:160]})" if reason else "") + " - replaying the recording up to it instead.")
+    print(f"[pick] snapshot not usable for pick {pick_id}: {reason} - falling back to replay", flush=True)
+    _store_result(pick_id, {"status": "waiting", "pick_source": "replay", "pick_note": note})
+    try:
+        if warm_id:
+            _get_or_create_warm_session(warm_id).submit(
+                "start_pick", pick_id, session_path, start_url, preceding_actions, snapshot_target, note)
+        else:
+            _run_pick_session_fresh(pick_id, start_url, preceding_actions, snapshot_target=snapshot_target, note=note)
+    except Exception as e:
+        logger.error("pick-element: replay fallback for %s failed to start: %s", pick_id, e)
+        _store_result(pick_id, {"status": "error",
+                                "message": "Something unexpected happened during picking - please try again."})
+
+
+def _save_snapshot_after_walk(final_page, content_mismatch, replay_failures, preceding_actions, start_url,
+                              snapshot_target):
+    """The replay-based picker reached the step: the missing snapshot for it is saved (same rules as recording),
+    so the next Pick Element there needs no replay. Only when the walk ran cleanly and landed on the recorded
+    page. Never raises."""
+    try:
+        if not snapshot_target or content_mismatch or replay_failures:
+            return
+        expected_url = (preceding_actions[-1].get("page_url") if preceding_actions else None) or start_url
+        if expected_url and _normalize_url_for_compare(expected_url) != _normalize_url_for_compare(final_page.url):
+            return
+        from recorder import page_snapshot
+        page_snapshot.save_missing_step_snapshot(final_page, snapshot_target.get("recording_name"),
+                                                 snapshot_target.get("ref"), "pick element replay")
+    except Exception as e:
+        logger.warning("pick-element: the missing page snapshot was not saved (%s)", e)
+
+
+# 1-OF-1 XPATH CHECK (page script, read only): counts the picked XPath in the WHOLE document of the picked element
+# (hidden elements included). Exactly 1 and it is the picked element: kept as it is. Otherwise a unique relative
+# XPath is built for the picked element, trying in order: test attributes, a stable id, name, aria-label /
+# placeholder / title, tag / role + exact text, a linked label, href, any of these under the nearest ancestor with a
+# stable unique attribute, and finally an index within that ancestor. Values that look generated (long numbers,
+# hashes, UUIDs, framework ids) are skipped; texts are quoted safely (concat()); never an absolute /html/... path.
+# When the picked element itself is not known any more, every match is numbered on the page (the existing pick
+# highlight style) so the user can click the intended one. Shadow DOM: reported, nothing built (XPath cannot reach
+# it). Inside frames: the frame path is returned.
+_XPATH_CHECK_JS = r"""
+(orig) => {
+    try {
+        if (!window.__afqaPickIsLocked || !window.__afqaPickIsLocked()) return null;
+        document.querySelectorAll('.__afqaSnapNum').forEach(function (n) { n.remove(); });
+        var el = window.__afqaPickLockedElement ? window.__afqaPickLockedElement() : null;
+        var out = { original_xpath: orig, original_count: null, count: null, unique: false, refined: false,
+                    xpath: orig, rule: null, frame_path: null, shadow: false, numbered: 0 };
+        if (el && el.getRootNode && (el.getRootNode() instanceof ShadowRoot)) { out.shadow = true; return out; }
+        var doc = (el && el.isConnected && el.ownerDocument) || document;
+        function lit(v) {
+            v = String(v);
+            if (v.indexOf("'") === -1) return "'" + v + "'";
+            if (v.indexOf('"') === -1) return '"' + v + '"';
+            var parts = v.split("'"), ex = [];
+            for (var i = 0; i < parts.length; i++) { ex.push("'" + parts[i] + "'"); if (i < parts.length - 1) ex.push('"' + "'" + '"'); }
+            return 'concat(' + ex.join(', ') + ')';
+        }
+        function snap(xp) {
+            try {
+                var r = doc.evaluate(xp, doc, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null), a = [];
+                for (var i = 0; i < r.snapshotLength; i++) a.push(r.snapshotItem(i));
+                return a;
+            } catch (e) { return null; }
+        }
+        function nodeTest(n) {
+            return (n.namespaceURI === 'http://www.w3.org/1999/xhtml') ? n.localName : "*[local-name()=" + lit(n.localName) + "]";
+        }
+        function dyn(v) {
+            if (v === null || v === undefined) return true;
+            v = String(v);
+            if (!v.trim() || v.length > 80) return true;
+            if (/\d{4,}/.test(v)) return true;
+            if (/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i.test(v)) return true;
+            if (/(^|[^a-z0-9])(?=[a-z0-9]*[0-9][a-z0-9]*[0-9])(?=[a-z0-9]*[a-z])[a-z0-9]{6,}($|[^a-z0-9])/i.test(v)) return true;
+            if (/^(:r[0-9a-z]*:|ember|react-|radix-|headlessui-|mui-|rc[-_]|jsx-|css-|sc-|svelte-|ng-|yui_|ext-gen|gwt-|uid|__)/i.test(v)) return true;
+            return false;
+        }
+        function norm(t) { return String(t || '').replace(/[ \t\r\n]+/g, ' ').trim(); }
+        if (el && doc !== document) {
+            var chain = [], w = doc.defaultView, guard = 0;
+            while (w && w.frameElement && guard++ < 10) {
+                var f = w.frameElement, fd = f.ownerDocument, fx = null;
+                if (f.id && !dyn(f.id)) fx = "//" + nodeTest(f) + "[@id=" + lit(f.id) + "]";
+                else if (f.getAttribute('name') && !dyn(f.getAttribute('name'))) fx = "//" + nodeTest(f) + "[@name=" + lit(f.getAttribute('name')) + "]";
+                else if (f.getAttribute('title')) fx = "//" + nodeTest(f) + "[@title=" + lit(f.getAttribute('title')) + "]";
+                else {
+                    var all = fd.getElementsByTagName(f.localName), k = Array.prototype.indexOf.call(all, f) + 1;
+                    fx = "(//" + nodeTest(f) + ")[" + k + "]";
+                }
+                chain.unshift(fx);
+                w = fd.defaultView;
+            }
+            out.frame_path = chain;
+        }
+        var om = orig ? snap(orig) : null;
+        out.original_count = om ? om.length : -1;
+        if (om && om.length === 1 && (!el || !el.isConnected || om[0] === el)) { out.count = 1; out.unique = true; return out; }
+        if (!el || !el.isConnected) {
+            // the picked element is not known any more: number every match so the user can click the right one
+            out.count = out.original_count;
+            (om || []).slice(0, 30).forEach(function (m, i) {
+                try {
+                    var r = m.getBoundingClientRect(), b = document.createElement('div');
+                    b.className = '__afqaMultiHighlight __afqaSnapNum';
+                    b.textContent = String(i + 1);
+                    b.style.cssText = 'position:fixed;pointer-events:none;z-index:2147483647;box-sizing:border-box;' +
+                        'border:2px solid #ff4081;background:rgba(255,64,129,0.15);color:#fff;font:bold 11px sans-serif;' +
+                        'left:' + r.left + 'px;top:' + r.top + 'px;width:' + Math.max(r.width, 16) + 'px;height:' + Math.max(r.height, 14) + 'px;';
+                    (document.body || document.documentElement).appendChild(b);
+                    out.numbered++;
+                } catch (e) {}
+            });
+            return out;
+        }
+        var T = nodeTest(el), tag = el.localName, preds = [], cands = [];
+        function attrPred(a) { var v = el.getAttribute(a); return (v && !dyn(v)) ? "@" + a + "=" + lit(v) : null; }
+        ['data-testid', 'data-test', 'data-cy', 'data-qa'].forEach(function (a) { var p = attrPred(a); if (p) preds.push(['test attribute', p]); });
+        if (attrPred('id')) preds.push(['id', attrPred('id')]);
+        if (attrPred('name')) preds.push(['name', attrPred('name')]);
+        ['aria-label', 'placeholder', 'title'].forEach(function (a) { var p = attrPred(a); if (p) preds.push([a, p]); });
+        var text = norm(el.textContent);
+        if (text && text.length <= 100) {
+            preds.push(['text', "normalize-space(.)=" + lit(text)]);
+        }
+        preds.forEach(function (p) { cands.push([p[0], "//" + T + "[" + p[1] + "]"]); });
+        var role = el.getAttribute('role');
+        if (role && text && text.length <= 100) cands.push(['role + text', "//*[@role=" + lit(role) + "][normalize-space(.)=" + lit(text) + "]"]);
+        if (/^(input|select|textarea)$/.test(tag) && el.labels) {
+            Array.prototype.forEach.call(el.labels, function (lb) {
+                var lt = norm(lb.textContent);
+                if (!lt || lt.length > 100) return;
+                if (el.id && lb.htmlFor === el.id) cands.push(['label', "//" + T + "[@id=//label[normalize-space(.)=" + lit(lt) + "]/@for]"]);
+                cands.push(['label', "//label[normalize-space(.)=" + lit(lt) + "]//" + T]);
+                cands.push(['label', "//label[normalize-space(.)=" + lit(lt) + "]/following::" + T + "[1]"]);
+            });
+        }
+        if (tag === 'a' && el.getAttribute('href') && !dyn(el.getAttribute('href'))) cands.push(['href', "//a[@href=" + lit(el.getAttribute('href')) + "]"]);
+        function hit(xp) { var m = snap(xp); return !!(m && m.length === 1 && m[0] === el); }
+        for (var c = 0; c < cands.length; c++) {
+            if (hit(cands[c][1])) { out.xpath = cands[c][1]; out.rule = cands[c][0]; out.count = 1; out.unique = true; out.refined = true; return out; }
+        }
+        // the nearest ancestor with a stable unique attribute
+        var anchor = null, p = el.parentElement, depth = 0;
+        while (p && p !== doc.body && p !== doc.documentElement && depth++ < 15 && !anchor) {
+            var at = ['data-testid', 'data-test', 'data-cy', 'data-qa', 'id', 'name', 'aria-label'];
+            for (var a = 0; a < at.length && !anchor; a++) {
+                var v = p.getAttribute(at[a]);
+                if (v && !dyn(v)) {
+                    var ax = "//" + nodeTest(p) + "[@" + at[a] + "=" + lit(v) + "]";
+                    var am = snap(ax);
+                    if (am && am.length === 1 && am[0] === p) anchor = ax;
+                }
+            }
+            p = p.parentElement;
+        }
+        if (anchor) {
+            for (var q = 0; q < preds.length; q++) {
+                var cx = anchor + "//" + T + "[" + preds[q][1] + "]";
+                if (hit(cx)) { out.xpath = cx; out.rule = 'ancestor + ' + preds[q][0]; out.count = 1; out.unique = true; out.refined = true; return out; }
+            }
+            if (hit(anchor + "//" + T)) { out.xpath = anchor + "//" + T; out.rule = 'ancestor'; out.count = 1; out.unique = true; out.refined = true; return out; }
+        }
+        // last resort: the index within that ancestor (or among the best-matching elements) - always relative
+        var base = anchor ? anchor + "//" + T : null;
+        if (!base) {
+            for (var r2 = 0; r2 < preds.length && !base; r2++) {
+                var pm = snap("//" + T + "[" + preds[r2][1] + "]");
+                if (pm && pm.indexOf(el) !== -1) base = "//" + T + "[" + preds[r2][1] + "]";
+            }
+        }
+        if (!base) base = "//" + T;
+        var bm = snap(base), idx = bm ? bm.indexOf(el) : -1;
+        if (idx !== -1) {
+            var ix = "(" + base + ")[" + (idx + 1) + "]";
+            if (hit(ix)) { out.xpath = ix; out.rule = anchor ? 'index within ancestor' : 'index'; out.count = 1; out.unique = true; out.refined = true; return out; }
+        }
+        out.count = out.original_count;
+        return out;
+    } catch (e) {
+        return { error: String(e) };
+    }
+}
+"""
+
+
+def _apply_xpath_check(profile, check, snapshot_mode):
+    """Applies the 1-of-1 check result to a locked pick's profile (in place). A refined XPath becomes the
+    returned one (the generator's own stays among the candidates); nothing changes on an error."""
+    if not isinstance(check, dict) or check.get("error"):
+        profile["xpath_check"] = {"error": (check or {}).get("error") if isinstance(check, dict) else "not checked"}
+        return
+    summary = {
+        "count": check.get("count"),
+        "unique": bool(check.get("unique")),
+        "refined": bool(check.get("refined")),
+        "original_xpath": check.get("original_xpath"),
+        "original_count": check.get("original_count"),
+        "rule": check.get("rule"),
+        "shadow": bool(check.get("shadow")),
+        "numbered": check.get("numbered") or 0,
+        "verified_on_snapshot": bool(snapshot_mode and check.get("unique")),
+    }
+    if check.get("frame_path"):
+        summary["frame_path"] = check["frame_path"]
+        profile["frame_path"] = check["frame_path"]
+    if check.get("refined") and check.get("xpath"):
+        original = profile.get("xpath")
+        profile["xpath"] = check["xpath"]
+        cands = [c for c in (profile.get("xpath_candidates") or []) if c and c != check["xpath"]]
+        if original and original not in cands:
+            cands.insert(0, original)
+        profile["xpath_candidates"] = [check["xpath"]] + cands
+    if summary["unique"]:
+        profile["match_count"] = 1
+    elif isinstance(check.get("count"), int):
+        profile["match_count"] = check["count"]
+    profile["xpath_check"] = summary
+    print(f"[pick] 1-of-1 XPath check: matches {summary['original_count']} -> "
+          f"{'1 of 1' if summary['unique'] else summary['count']}"
+          f"{' (refined: ' + str(summary['rule']) + ')' if summary['refined'] else ''}"
+          f"{' - verified on snapshot' if summary['verified_on_snapshot'] else ''}", flush=True)
+
+
+# ============================================================
 # plain one-shot fallback path - no warm_id given, or this warm_id's
 # session decided it needed a full replay anyway. Always launches its
 # own fresh browser, exactly like Pick Element always used to.
 # ============================================================
 
-def _run_pick_session_fresh(pick_id, start_url, preceding_actions):
+def _run_pick_session_fresh(pick_id, start_url, preceding_actions, snapshot_target=None, note=None):
     pw = None
     browser = None
 
@@ -1060,11 +1451,14 @@ def _run_pick_session_fresh(pick_id, start_url, preceding_actions):
         final_page, _walk_state = _replay_preceding_actions(
             page, context, start_url, preceding_actions, resolve_and_act
         )
+        _save_snapshot_after_walk(final_page, _walk_state.get("content_mismatch"),
+                                  _walk_state.get("replay_failures"), preceding_actions, start_url, snapshot_target)
 
         _run_pick_wait_phase(
             pick_id, browser, context, final_page, start_url, preceding_actions,
             content_mismatch=_walk_state.get("content_mismatch"),
             replay_failures=_walk_state.get("replay_failures"),
+            extra=({"pick_source": "replay", "pick_note": note} if note else {"pick_source": "replay"}),
         )
 
     except Exception as e:
@@ -1423,7 +1817,7 @@ class _WarmPickSession:
                 "Element click will replay live instead", self.warm_id, e,
             )
 
-    def _do_start_pick(self, pick_id, session_path, start_url, preceding_actions):
+    def _do_start_pick(self, pick_id, session_path, start_url, preceding_actions, snapshot_target=None, note=None):
         t0 = time.monotonic()
 
         # SINGLE-USE PREWARM CONSUMPTION (see _prewarm_consumed's own
@@ -1486,6 +1880,8 @@ class _WarmPickSession:
             f"pick point in {time.monotonic() - t0:.2f}s",
             flush=True,
         )
+        _save_snapshot_after_walk(final_page, self.walk_content_mismatch, self.walk_replay_failures,
+                                  preceding_actions, start_url, snapshot_target)
 
         # published so a NEWER pick request on this SAME warm session (see
         # start_pick_session below) can signal THIS wait phase to end
@@ -1500,6 +1896,7 @@ class _WarmPickSession:
                 pick_id, self.browser, self.context, final_page, start_url, preceding_actions,
                 cancel_event=cancel_event, content_mismatch=self.walk_content_mismatch,
                 replay_failures=self.walk_replay_failures,
+                extra=({"pick_source": "replay", "pick_note": note} if note else {"pick_source": "replay"}),
             )
         except Exception as e:
             logger.error("warm pick session %s: wait phase crashed for pick %s: %s", self.warm_id, pick_id, e)

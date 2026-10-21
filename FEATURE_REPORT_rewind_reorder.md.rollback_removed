@@ -1,0 +1,230 @@
+# AutoFlow QA - Feature Report: Edit & Rewind, Enable/Disable Step, Reorder Steps
+
+Date: 13 October 2026. Nothing was run: no replays, recordings or tests. The only checks done were static:
+`py_compile`, `node --check` on all changed JavaScript, a Jinja parse of the changed templates, and a compile
+of a generated replay script from the template.
+
+---
+
+## 1. Phase 0 findings (how the project works today)
+
+### 1.1 Storage
+
+- **Where recordings live**
+  - A recording is one JSON file: `{name, start_url, display_name?, viewport/env fields, actions: [...]}`.
+  - Originals are in `storage/recordings/`. The recorder writes them; that code was not touched.
+  - Editor saves go to `storage/recordings/edited/<name>_edited.json` (`repository.save_edited_recording`, via `POST /api/recordings/save`).
+  - **The original is never modified by the editor.** Every save of the same original overwrites the same edited file and regenerates its script.
+- **Loading**
+  - `repository.load_recording()` runs `migrate_recording()`, a chain of in-memory, idempotent migrations.
+  - It is used by the editor view (`/api/recordings/view`) and by every replay (`_load_test_case_for_run`).
+  - `generate_script()` runs `migrate_recording()` again.
+- **Steps before this change**
+  - There was **no** step ID and **no** enabled flag. No recording in `storage/` had `id`, `step_id` or `enabled`.
+
+### 1.2 Replay
+
+- **How a run starts**
+  - `POST /api/test/run/start`
+  - → `generate_script(test_case)` writes a standalone Python script from `SCRIPT_TEMPLATE`, with `STEPS` embedded.
+  - → `executor.start_replay()` starts it as a **separate subprocess** (`subprocess.Popen`, the project venv's Python).
+  - → a watcher thread finishes the run.
+- **The script itself**
+  - It uses the Playwright **sync** API inside that subprocess.
+  - It launches its own Chromium, runs `for i, step in enumerate(STEPS, start=1)`, and **closes the browser at the end** ("Browser will remain open for 5 seconds...").
+- **Results, live log and screenshots**
+  - Each step's result is appended to `result["steps"]` with `index = i` and written to `report.json` as it goes (`_write_result`).
+  - The live log (`/logs`, `/api/test/run/stream`) and the HTML report read that file.
+  - Screenshots are named from the step's current position and name (`stepNN_<name>_<time>.png`) inside the run's own folder.
+- **Delays**
+  - Recorded delays are **not** replayed as sleeps (the engine only waits for real page conditions).
+
+### 1.3 Browser lifecycle across Flask requests
+
+- Flask runs `threaded=True`. No Playwright object lives in the Flask process for replays: each replay owns its browser inside its own subprocess.
+- Pick Element / validate locator run their own short-lived Playwright sessions in `app.py` and `recorder/pick_element.py` (unchanged).
+- **No browser stays open after a replay.** So there is no live page to "continue on", and no cross-thread Playwright use to manage.
+
+### 1.4 Step list UI (`templates/recording_editor.html`)
+
+- `renderActions()` renders each step as a row:
+  - the title is `N. Type - name`, where N is the current position;
+  - origin and locator-health badges;
+  - buttons: add-before, rename (✎), **edit (⚙: re-pick / edit fields, an existing step-edit modal)**, add-after, delete;
+  - Undo Delete;
+  - a collapsible details block.
+- Edits are in memory until **Save Edited JSON**.
+- **No reorder code existed.** The only drag code in the project is the recorder's `drag` **action** (not touched).
+
+---
+
+## 2. What was changed
+
+### Phase 1 - Foundation (step identity and flags)
+
+| File : line | Change | Reason |
+|---|---|---|
+| `storage/repository.py:310` `ensure_step_ids()`; `:346` (called last in `migrate_recording`) | Every step gets a `step_id` in memory. An existing one is never changed. A missing one is **derived** (uuid5 of recording name + position + recorded timestamp + action type), so an unsaved old recording gets the same IDs on every load. A duplicate ID gets a fresh derived one. | Stable identity for reorder and "Run from here". Old files are not rewritten; the ID is written only when the recording is next saved. |
+| `generator/script_generator.py:28018` (`generate_script`) | `step_id` and `enabled` are passed into the generated `STEPS`. | The replay needs both. |
+| `generator/script_generator.py` (main per-step result entry) | Each step result now carries `step_id` (and `fast_forward`). | The editor can map last-run results to the right step after a reorder. |
+| `templates/recording_editor.html:447` `ensureStepIds()`; `:3529` (edit modal) | Steps added in the editor get `crypto.randomUUID()`. Editing a step with ⚙ keeps its `step_id` and its disabled state. | The edit modal replaces the step object, which would otherwise drop both. |
+| `templates/recording_editor.html` (`loadLastReplayHealth`, `renderActions`) | Locator-health badges come from the last report **by step_id** when it has IDs, else by position (as before). | A badge stays with its own step after a reorder. |
+
+- `enabled` is **never added automatically**. A missing value means enabled; only an explicit `false` disables.
+- Display numbers are always `index + 1` of the current list.
+- Screenshot and log naming is unchanged: still by run position, readable, and old files are never renamed.
+
+### Phase 2 - Enable/Disable Step
+
+| File : line | Change |
+|---|---|
+| `templates/recording_editor.html` (`renderActions`, `toggleStepEnabled` `:588`) | An "On" checkbox per step. A disabled row is greyed (`.action-row-disabled`) with a **Disabled** badge; it stays visible and fully editable. A change is **saved immediately** (`autoSaveRecording`, `:476`). |
+| `generator/script_generator.py:22500` (top of the step loop) | `enabled is False` means: not executed, `Step N skipped (disabled)` in the console and live log, a result entry `{success: true, skipped: true, strategy_used: "skipped (disabled)"}`, then the next step. |
+| `generator/script_generator.py:22561` | A step right after a skipped one is never "merged" as its duplicate (that merge assumed the previous step ran). |
+| `generator/script_generator.py` (before the loop) | A notice in the live log: "N steps are disabled and will be skipped." |
+| `static/js/script.js` (`runRecording`) | Non-blocking notice in the dashboard's run status before the run starts. |
+| `executor/run_execution.py:171`, `:426` | UI-elements list: status `SKIPPED`. `step_counts.skipped` is counted apart from passed and failed; never a failure. |
+| `app.py:3262`, `:3148`, `:3717`, `:3727` | Live log status `disabled`; `_summarize_steps` excludes skipped steps from passed/warnings and adds `disabled`; the plain summary names the skipped steps; the summary event carries `disabled`. |
+| `templates/live_log.html` | Shows "SKIPPED (disabled)" (grey), and "Skipped (disabled): N" in the final counts. |
+| `validation/report_generator.py:285`, `:333`, `:420`; `templates/report.html:272`, `:342` | HTML report: outcome `skipped`, its own "Skipped (disabled)" count and a "skipped (disabled)" pill per step. "All N steps passed" no longer counts disabled steps. |
+| `static/js/script.js` (`_stepOutcome`, counts) | Dashboard result panel: outcome `skipped`, icon ⊘, its own count. |
+
+Disabled steps are also skipped while fast-forwarding (same code path).
+
+### Phase 3 - Reorder steps
+
+| File : line | Change |
+|---|---|
+| `templates/recording_editor.html` (`renderActions`) | A visible **⋮⋮ handle** per step. Native HTML5 drag and drop (no library, works offline). A drag can only start from the handle (`row.draggable` is switched on by a mousedown on it), so clicking a title, a button or Pick Element never starts one. A drop line shows above or below the target row. |
+| `templates/recording_editor.html` (bottom of the new helper block) | Auto-scroll: dragging within 60 px of the window's top or bottom edge scrolls the page (long lists). |
+| `templates/recording_editor.html` (`renderActions`) | **▲ / ▼** buttons per step. |
+| `templates/recording_editor.html:552` `moveStep()` | Moves the step, re-renders the numbers, then sends the full recording **plus the new ordered list of step_ids** to the save endpoint. |
+| `app.py:2030` (`/api/recordings/save`) | New optional `order` field. It must name exactly the recording's own step_ids, each once (otherwise the save is refused with a plain message). The steps are saved in that order. Saves without `order` are unchanged. |
+| `templates/recording_editor.html:573` `undoReorder()`, `:247` | **Undo Reorder** button: a single level that restores the order before the last move and saves it. |
+| `templates/recording_editor.html:517` `dependencyProblems()` | Non-blocking warning after a move (the move is never prevented). It names only problems **this move introduced**: a step before the first Navigate; Compare Value above its Capture Value (same label); Switch Tab / Close Tab above the Open Tab with that tab number. |
+| `static/css/style.css` (end of file); `recording_editor.html` | Styles for the handle, disabled row, drop line, toggle, warning and hint. The stylesheet version in the editor link was bumped (`?v=26`) so browsers load the new styles. |
+
+### Phase 4 - Edit & Rewind
+
+| File : line | Change |
+|---|---|
+| (existing) ⚙ Edit step modal | **Reused unchanged** for editing a step's fields, selector (re-pick) and options. The only addition is keeping `step_id` and the disabled state. Edits are still saved with **Save Edited JSON**; **Run from here saves first**, so a run always uses what is on screen. |
+| `templates/recording_editor.html:598` `runFromStep()` and the **▶** button | Asks for confirmation, including the note that steps 1 to N-1 are really performed again and may create duplicate data. Then it saves, starts `/api/test/run/start` with `start_from_step_id`, and opens the live log (the window is opened inside the click so popup blockers allow it). |
+| `app.py:3010` | `start_from_step_id` is validated (the step must exist in the recording that will run) and passed on. |
+| `executor/run_execution.py:613` `_replay_env()` | The subprocess environment gets `AUTOFLOW_START_FROM_STEP_ID` **only** for such a run. It is removed otherwise, so normal runs never inherit it. |
+| `generator/script_generator.py:5041` `_FAST_FORWARD`, `:5044` `_start_from_target_index()`, `:22480` | Finds the target step by step_id. Steps before it are **fast-forwarded**: run through the same normal step code (same page state), **no screenshots** (`_capture_screenshot`, `:604`), disabled ones skipped. After each one, a line "Fast-forward: step K ok". From step N on, everything is normal (logs, screenshots, validations). |
+| `generator/script_generator.py:27332` | A fast-forward step that fails stops the run: "Fast-forward failed at step X, so the target step N could not be reached. The replay stopped." The remaining steps are reported "NOT RUN (stopped after step X failed)". |
+
+**"Continue on current page" was NOT added.** No browser stays open after a replay in the current design (Section 1.3). See Section 5.
+
+**A normal full replay is unchanged**, apart from skipping disabled steps:
+
+- without the environment variable, `_FAST_FORWARD` is never switched on;
+- every added code path is gated on `enabled is False` or that variable.
+
+---
+
+## 3. Backup files created
+
+Each was copied before the file was first edited:
+
+- `storage/repository.py.bak_rewind_reorder`
+- `app.py.bak_rewind_reorder`
+- `executor/run_execution.py.bak_rewind_reorder`
+- `generator/script_generator.py.bak_rewind_reorder`
+- `validation/report_generator.py.bak_rewind_reorder`
+- `templates/report.html.bak_rewind_reorder`
+- `templates/live_log.html.bak_rewind_reorder`
+- `templates/recording_editor.html.bak_rewind_reorder`
+- `static/js/script.js.bak_rewind_reorder`
+- `static/css/style.css.bak_rewind_reorder`
+
+A plain `.bak` already existed for most of these files. The suffix `.bak_rewind_reorder` was used so that no existing backup is overwritten.
+
+Rollback: copy each `X.bak_rewind_reorder` back over `X`. Recordings saved in the meantime keep their extra `step_id` / `enabled` fields, which the old code ignores.
+
+## 4. Decisions made on my own
+
+1. **"Saved immediately" means the edited copy.**
+   - The editor's existing rule is that originals are never modified, so toggles and reorders save through the existing `/api/recordings/save`, to `edited/<name>_edited.json`.
+   - The first automatic save while an **original** is open asks once for confirmation, because it replaces an existing edited copy, exactly as "Save Edited JSON" does.
+2. **The reorder endpoint is the existing save endpoint**, with an optional `order` list of step_ids. A second save path would have duplicated the save logic.
+3. **Derived (not random) IDs for steps without one**, so a "Run from here" request still finds its step after the server loads the file again.
+4. **Disabled steps stay in the replay's step list** (skipped in the loop), so step numbers in logs, screenshots and reports match the editor's numbers.
+5. **Skipped steps are `success: true, skipped: true`.** Every existing pass/fail check then treats them as "not a failure" without being changed, and every count lists them separately.
+6. **Edits made with ⚙ still need "Save Edited JSON"** (unchanged behaviour). "Run from here" saves first.
+7. **Native HTML5 drag and drop** instead of a library: no new file, works offline.
+
+## 5. Not done / skipped, and why
+
+- **"Continue on current page"**: every replay is a separate subprocess that closes its browser when it ends, so there is no open page to continue on. Adding one would need a browser kept alive by a dedicated worker; not added, as the brief allows.
+- **True "silent" fast-forward**:
+  - Fast-forwarded steps still produce their normal console lines and live-log step lines, plus one "Fast-forward: step K ok" line each.
+  - They still wait for the live log's per-step acknowledgement and for real page conditions.
+  - Only screenshots are switched off; there were no artificial delays to remove.
+  - Making them silent would mean changing the logging inside the large per-step code.
+
+## 6. Known limitations
+
+- **Fast-forward**
+  - It really repeats steps 1 to N-1 on the website: duplicate records or submissions, OTP prompts, emails and so on.
+  - The website's own state (logins, carts, saved data) can differ from the recording.
+  - Fast-forwarded steps appear in the report as normal steps (marked `fast_forward` in `report.json` only), without screenshots.
+- **Disabled steps**
+  - Look-ahead checks of the step before a disabled step (for example "this click leads to the next recorded navigate") may still consider the disabled step.
+  - Disabling a step another step depends on (a navigate, a capture) can make later steps fail. That is reported normally.
+- **Auto-save works on the edited copy.**
+  - Opening the **original** again shows the original without the toggles or new order.
+  - Replaying the original from the dashboard ignores them. Use the edited copy, which is listed on the dashboard.
+- **Dependency warnings are basic** (the three cases listed above, matched by label or tab number). They do not understand every dependency.
+- **Old reports have no step_ids**, so their health badges still map by position, and may sit on the wrong step after a reorder until the next replay.
+- **Undo Reorder is single-level**, and lasts only for the current editor session.
+
+## 7. Manual test checklist
+
+**Enable / Disable**
+
+- [ ] Open a recording in the editor and untick "On" for one step: the row turns grey with a "Disabled" badge, and a save message appears. The first time on an original, a confirmation is shown.
+- [ ] Reload the edited copy: the step is still disabled. Tick "On" again: it saves and the row is normal.
+- [ ] Edit a disabled step with ⚙ and save: it stays disabled.
+- [ ] Replay the edited copy from the dashboard with 2-3 disabled steps:
+  - the notice "N steps are disabled and will be skipped" appears;
+  - the live log shows "Step N skipped (disabled)" / "SKIPPED (disabled)";
+  - the final counts show "Skipped (disabled): N";
+  - the run is not failed because of them.
+- [ ] HTML report: a "Skipped (disabled)" count and a pill per skipped step. The dashboard result panel shows "N skipped (disabled)".
+
+**Reorder**
+
+- [ ] Drag a step by ⋮⋮ to a new place: the drop line shows, the numbers update, and it saves.
+- [ ] Clicking the title or buttons never starts a drag.
+- [ ] In a long list, drag near the bottom or top edge: the page scrolls.
+- [ ] ▲ / ▼ move one place; ▲ is disabled on the first step, ▼ on the last.
+- [ ] **Undo Reorder** restores the previous order and saves; it is disabled again afterwards.
+- [ ] Move a step above the first Navigate, a Compare Value above its Capture Value, and a Switch Tab / Close Tab above its Open Tab: a yellow warning appears each time and the move still happens.
+- [ ] Replay after a reorder: the steps run in the new order. Screenshots and logs use the new numbers; old screenshot files are unchanged.
+
+**Edit & Rewind**
+
+- [ ] ⚙ edit a step's value or selector, then **Save Edited JSON**: the change is saved.
+- [ ] Click ▶ on step N (N > 1):
+  - the confirmation mentions fast-forwarding and duplicate data;
+  - the live log opens;
+  - it shows "Fast-forward: steps 1 to N-1…", then "Fast-forward: step K ok" for each one (no screenshots for those);
+  - then "Fast-forward finished - running normally from step N";
+  - from step N on, screenshots, validations and logs are normal.
+- [ ] ▶ on step 1: a normal full replay.
+- [ ] ▶ with a disabled step before N: that step is skipped during fast-forward.
+- [ ] Make a step before N fail (for example a wrong selector), then ▶ on N: "Fast-forward failed at step X, so the target step N could not be reached"; the rest are NOT RUN.
+- [ ] Make an unsaved edit, then ▶: the run uses the edited value (it saves first).
+
+**Existing flows still work**
+
+- [ ] Record a new session (start, stop, the rename popup) and replay it from the dashboard: same behaviour as before, and the live log and screenshots are timestamped and named as before.
+- [ ] Old recordings open in the editor and replay normally (no disabled steps, same results).
+- [ ] Pick Element, validate locator and test navigate in the Add / Edit Action dialog.
+- [ ] Validation steps (validate text / element, count elements, compare value) pass and fail as before.
+- [ ] A recording with a drag-and-drop **action** still replays it.
+- [ ] Delete a step and use Undo Delete; add before / after; rename (✎).
+- [ ] The HTML report and the "View Screenshots by Stage" page open.
+- [ ] Repeat the main checks on Windows and on macOS.

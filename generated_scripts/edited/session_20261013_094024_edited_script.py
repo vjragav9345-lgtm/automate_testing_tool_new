@@ -1,6 +1,6 @@
 """
 Auto-generated from recording: session_20261013_094024_edited
-Generated at: 2026-10-13T10:48:55.697932
+Generated at: 2026-10-13T17:21:25.109621
 Original recorded (production) URL: https://techdemo.delveant.cloud
 
 Resolution order per step: data-testid -> data-test -> data-cy -> id -> name
@@ -100,6 +100,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': None,
+        'step_id': '7e483965-19f8-597c-8302-32831c6fd833',
+        'enabled': True,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -252,6 +254,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '3247102b-8ce0-5e99-af6c-1fc879832d62',
+        'enabled': True,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -661,6 +665,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'feb77a37-ddb3-5a63-b844-fc15323b7b5a',
+        'enabled': True,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -982,383 +988,6 @@ STEPS = [   {   'action_type': 'navigate',
         'name': None},
     {   'action_type': 'click',
         'value': None,
-        'locator_profile': {   'accessible_name': 'Continue',
-                               'aria_label': None,
-                               'attributes': {'type': 'submit'},
-                               'content_hint': None,
-                               'cross_boundary': False,
-                               'css_path': 'div#root > div > div:nth-of-type(2) > div > div > '
-                                           'div:nth-of-type(2) > form > button',
-                               'element_text': 'Continue',
-                               'href': None,
-                               'icon_class_hint': None,
-                               'id': None,
-                               'inner_label': None,
-                               'match_count': {'css_path': 1, 'text+tag': 0, 'xpath': 0},
-                               'name': None,
-                               'near_text': None,
-                               'placeholder': None,
-                               'product_id': None,
-                               'role': None,
-                               'tag': 'button',
-                               'text': 'Continue',
-                               'title': None,
-                               'xpath': "//button[normalize-space(.)='Continue']"},
-        'bounding_box': {'height': 44, 'width': 380, 'x': 770, 'y': 457.3046875},
-        'click_strategy': 'standard',
-        'wait_for_stable_state': None,
-        'wait_for_stable_state_timeout_ms': None,
-        'click_selector': None,
-        'confirmation_selector': None,
-        'confirmation_text': None,
-        'next_action_selector': None,
-        'next_action_text': None,
-        'verification_selector': None,
-        'verification_text': None,
-        'max_retries': None,
-        'confirmation_timeout_ms': None,
-        'verification_timeout_ms': None,
-        'page_url': 'https://techdemo.delveant.cloud/signin',
-        'delta_x': None,
-        'delta_y': None,
-        'scroll_y_before': None,
-        'scroll_y_after': None,
-        'scroll_anchors': None,
-        'scroll_x': 0,
-        'scroll_y': 0,
-        'hover_chain': None,
-        'activate_if_needed': None,
-        'popup_container': None,
-        'site_popup': None,
-        'submits_form': True,
-        'form_selector': 'div#root > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > '
-                         'form',
-        'opened_by': None,
-        'opened_by_name': None,
-        'click_offset': {'x_ratio': 0.289, 'y_ratio': 0.698},
-        'reply_text': None,
-        'during_reply': False,
-        'stops_reply': None,
-        'message_echoed': None,
-        'input_kept': None,
-        'reply_observed': None,
-        'reply_started_ms': None,
-        'reply_duration_ms': None,
-        'in_modal': False,
-        'otp_field': None,
-        'otp_focus': None,
-        'result': {   'dialog_open': False,
-                      'navigated': False,
-                      'new_tab': False,
-                      'url_after': 'https://techdemo.delveant.cloud/signin'},
-        'reveal_only_container': None,
-        'expect': None,
-        'caused_by_timestamp': None,
-        'dom_snapshot_path': None,
-        'act_target': {   'accessible_name': 'Continue',
-                          'aria_label': None,
-                          'attributes': {'type': 'submit'},
-                          'content_hint': None,
-                          'cross_boundary': False,
-                          'css_path': 'div#root > div > div:nth-of-type(2) > div > div > '
-                                      'div:nth-of-type(2) > form > button',
-                          'element_text': 'Continue',
-                          'href': None,
-                          'icon_class_hint': None,
-                          'id': None,
-                          'inner_label': None,
-                          'match_count': {'css_path': 1, 'text+tag': 0, 'xpath': 0},
-                          'name': None,
-                          'near_text': None,
-                          'placeholder': None,
-                          'product_id': None,
-                          'role': None,
-                          'tag': 'button',
-                          'text': 'Continue',
-                          'title': None,
-                          'xpath': "//button[normalize-space(.)='Continue']"},
-        'state_target': None,
-        'dom_context': {   'act_target_html_chain': [   '<button type="submit" class="w-full '
-                                                        'relative isolate inline-flex items-center '
-                                                        'justify-center rounded border font-medium '
-                                                        'focus:outline-none text-sm h-11 gap-x-2 '
-                                                        'px-3 py-0 bg-accent hover:bg-hoverCTA '
-                                                        'border-transparent text-white '
-                                                        'disabled:opacity-60 '
-                                                        'disabled:cursor-not-allowed '
-                                                        'transition-all duration-200 '
-                                                        'cursor-pointer"><span>Continue</span><span '
-                                                        'class="absolute left-1/2 top-1/2 '
-                                                        'size-[max(100%,2.75rem)] -translate-x-1/2 '
-                                                        '-translate-y-1/2 '
-                                                        '[@media(pointer:fine)]:hidden" '
-                                                        'aria-hidden="true"></span></button>',
-                                                        '<form novalidate="" class="flex flex-col '
-                                                        'space-y-4"><div class="space-y-3"><div '
-                                                        'class="w-full space-y-1 mb-1"><div><div '
-                                                        'class="flex w-full font-normal"><div '
-                                                        'class="relative block w-full"><div '
-                                                        'class="group relative flex h-full '
-                                                        'appearance-none flex-row items-center '
-                                                        'gap-2  py-3 pl-4 w-full flex-1 border '
-                                                        'border-solid border-gray-300 '
-                                                        'dark:border-border hover:border-accent '
-                                                        'pr-4 focus-within:border-accent   '
-                                                        'transition-all duration-200"><svg '
-                                                        'xmlns="http://www.w3.org/2000/svg" '
-                                                        'width="18" height="18" viewBox="0 0 24 '
-                                                        '24" fill="none" stroke="currentColor" '
-                                                        'stroke-width="1.5" stroke-linecap="round" '
-                                                        'stroke-linejoin="round" class="lucide '
-                                                        'lucide-mail text-gray-400 '
-                                                        'dark:text-[var(--subcolor)] '
-                                                        'group-focus-within:text-accent '
-                                                        'transition-colors duration-200" '
-                                                        'aria-hidden="true"><path d="m22 7-8.991 '
-                                                        '5.727a2 2 0 0 1-2.009 0L2 7"></path><rect '
-                                                        'x="2" y="4" width="20" height="16" '
-                                                        'rx="2"></rect></svg><input '
-                                                        'placeholder="Email address" '
-                                                        'class="text-sm flex bg-transparent '
-                                                        'focus:outline-none w-full text-gray-800 '
-                                                        'dark:text-[var(--globalblack)] '
-                                                        'placeholder-gray-400 border-0 shadow-none '
-                                                        'focus:shadow-none" aria-label="email '
-                                                        'address" autocomplete="username" '
-                                                        'type="email" '
-                                                        'value="mohankumar.ma...[truncated]',
-                                                        '<div class="space-y-6 pt-0 sm:pt-2"><div '
-                                                        'class="space-y-0 sm:space-y-1 pb-1"><h1 '
-                                                        'class="text-[32px]  sm:text-4xl font-bold '
-                                                        'tracking-tight text-gray-900 '
-                                                        'dark:text-[var(--globalblack)]">Welcome '
-                                                        'back!</h1><p class=" text-[13px] '
-                                                        'sm:text-sm font-normal text-[#717989] '
-                                                        'dark:text-[var(--subcolor)]">From concept '
-                                                        'to execution — make growth happen with '
-                                                        'DelveAnt.</p></div><form novalidate="" '
-                                                        'class="flex flex-col space-y-4"><div '
-                                                        'class="space-y-3"><div class="w-full '
-                                                        'space-y-1 mb-1"><div><div class="flex '
-                                                        'w-full font-normal"><div class="relative '
-                                                        'block w-full"><div class="group relative '
-                                                        'flex h-full appearance-none flex-row '
-                                                        'items-center gap-2  py-3 pl-4 w-full '
-                                                        'flex-1 border border-solid '
-                                                        'border-gray-300 dark:border-border '
-                                                        'hover:border-accent pr-4 '
-                                                        'focus-within:border-accent   '
-                                                        'transition-all duration-200"><svg '
-                                                        'xmlns="http://www.w3.org/2000/svg" '
-                                                        'width="18" height="18" viewBox="0 0 24 '
-                                                        '24" fill="none" stroke="currentColor" '
-                                                        'stroke-width="1.5" stroke-linecap="round" '
-                                                        'stroke-linejoin="round" class="lucide '
-                                                        'lucide-mail text-gray-400 '
-                                                        'dark:text-[var(--subcolor)] '
-                                                        'group-focus-within:text-accent '
-                                                        'transition-colors duration-200" '
-                                                        'aria-hidden="true"><path d="m22 7-8.991 '
-                                                        '5.727a2 2 0 0 1-2.00...[truncated]',
-                                                        '<div class="relative flex w-full '
-                                                        'sm:w-[380px] flex-col '
-                                                        'place-content-between"><div class="mb-0 '
-                                                        'sm:mb-8"><svg width="156" height="34" '
-                                                        'viewBox="0 0 156 34" fill="none" '
-                                                        'xmlns="http://www.w3.org/2000/svg" '
-                                                        'class="w-42 h-auto text-[var(--accent)]" '
-                                                        'style="color: var(--accent);"><g '
-                                                        'clip-path="url(#logo_clip)"><path '
-                                                        'd="M146.354 7.62007C146.354 6.33672 '
-                                                        '147.337 5.35533 148.548 5.35533C149.834 '
-                                                        '5.35533 150.855 6.41221 150.855 '
-                                                        '7.62007V12.1118H153.73C154.979 12.1118 '
-                                                        '156 13.1309 156 14.3388C156 15.5467 '
-                                                        '154.979 16.6413 153.73 '
-                                                        '16.6413H150.855V29.5881C150.855 30.7959 '
-                                                        '149.834 31.8528 148.548 31.8528C147.337 '
-                                                        '31.8528 146.354 30.7959 146.354 '
-                                                        '29.5881V16.6413H143.479C142.269 16.6413 '
-                                                        '141.247 15.5467 141.247 14.3388C141.247 '
-                                                        '13.1309 142.269 12.1118 143.479 '
-                                                        '12.1118H146.354V7.62007Z" '
-                                                        'fill="currentColor"></path><path '
-                                                        'd="M121.966 20.9645C121.966 16.0533 '
-                                                        '126.006 11.9797 130.876 11.9797C135.747 '
-                                                        '11.9797 139.787 16.0533 139.787 '
-                                                        '20.9645V29.6066C139.787 30.8249 138.767 '
-                                                        '31.8528 137.559 31.8528C136.313 31.8528 '
-                                                        '135.256 30.8249 135.256 '
-                                                        '29.6066V20.9645C135.256 18.4898 133.255 '
-                                                        '16.4721 130.876 16.4721C128.46 16.4721 '
-                                                        '126.459 18.4898 126.459 '
-                                                        '20.9645V29.6066C126.459 30.8249 125.477 '
-                                                        '31.8528 124.194 3...[truncated]',
-                                                        '<div class="relative flex w-full '
-                                                        'justify-center p-4 py-10 sm:p-10"><div '
-                                                        'class="relative flex w-full sm:w-[380px] '
-                                                        'flex-col place-content-between"><div '
-                                                        'class="mb-0 sm:mb-8"><svg width="156" '
-                                                        'height="34" viewBox="0 0 156 34" '
-                                                        'fill="none" '
-                                                        'xmlns="http://www.w3.org/2000/svg" '
-                                                        'class="w-42 h-auto text-[var(--accent)]" '
-                                                        'style="color: var(--accent);"><g '
-                                                        'clip-path="url(#logo_clip)"><path '
-                                                        'd="M146.354 7.62007C146.354 6.33672 '
-                                                        '147.337 5.35533 148.548 5.35533C149.834 '
-                                                        '5.35533 150.855 6.41221 150.855 '
-                                                        '7.62007V12.1118H153.73C154.979 12.1118 '
-                                                        '156 13.1309 156 14.3388C156 15.5467 '
-                                                        '154.979 16.6413 153.73 '
-                                                        '16.6413H150.855V29.5881C150.855 30.7959 '
-                                                        '149.834 31.8528 148.548 31.8528C147.337 '
-                                                        '31.8528 146.354 30.7959 146.354 '
-                                                        '29.5881V16.6413H143.479C142.269 16.6413 '
-                                                        '141.247 15.5467 141.247 14.3388C141.247 '
-                                                        '13.1309 142.269 12.1118 143.479 '
-                                                        '12.1118H146.354V7.62007Z" '
-                                                        'fill="currentColor"></path><path '
-                                                        'd="M121.966 20.9645C121.966 16.0533 '
-                                                        '126.006 11.9797 130.876 11.9797C135.747 '
-                                                        '11.9797 139.787 16.0533 139.787 '
-                                                        '20.9645V29.6066C139.787 30.8249 138.767 '
-                                                        '31.8528 137.559 31.8528C136.313 31.8528 '
-                                                        '135.256 30.8249 135.256 '
-                                                        '29.6066V20.9645C135.256 18.4898 133.255 '
-                                                        '16.4721 130.876 16.4721C128.46 16.4721 '
-                                                        '126.459 18.489...[truncated]',
-                                                        '<div class="flex flex-grow flex-row '
-                                                        'bg-white dark:bg-card"><div '
-                                                        'class="relative flex w-full '
-                                                        'justify-center p-4 py-10 sm:p-10"><div '
-                                                        'class="relative flex w-full sm:w-[380px] '
-                                                        'flex-col place-content-between"><div '
-                                                        'class="mb-0 sm:mb-8"><svg width="156" '
-                                                        'height="34" viewBox="0 0 156 34" '
-                                                        'fill="none" '
-                                                        'xmlns="http://www.w3.org/2000/svg" '
-                                                        'class="w-42 h-auto text-[var(--accent)]" '
-                                                        'style="color: var(--accent);"><g '
-                                                        'clip-path="url(#logo_clip)"><path '
-                                                        'd="M146.354 7.62007C146.354 6.33672 '
-                                                        '147.337 5.35533 148.548 5.35533C149.834 '
-                                                        '5.35533 150.855 6.41221 150.855 '
-                                                        '7.62007V12.1118H153.73C154.979 12.1118 '
-                                                        '156 13.1309 156 14.3388C156 15.5467 '
-                                                        '154.979 16.6413 153.73 '
-                                                        '16.6413H150.855V29.5881C150.855 30.7959 '
-                                                        '149.834 31.8528 148.548 31.8528C147.337 '
-                                                        '31.8528 146.354 30.7959 146.354 '
-                                                        '29.5881V16.6413H143.479C142.269 16.6413 '
-                                                        '141.247 15.5467 141.247 14.3388C141.247 '
-                                                        '13.1309 142.269 12.1118 143.479 '
-                                                        '12.1118H146.354V7.62007Z" '
-                                                        'fill="currentColor"></path><path '
-                                                        'd="M121.966 20.9645C121.966 16.0533 '
-                                                        '126.006 11.9797 130.876 11.9797C135.747 '
-                                                        '11.9797 139.787 16.0533 139.787 '
-                                                        '20.9645V29.6066C139.787 30.8249 138.767 '
-                                                        '31.8528 137.559 31.8528C136.313 31.8528 '
-                                                        '135.256 30.8249 135.256 '
-                                                        '29.6066V20.9645C135.256 18.4898 '
-                                                        '13...[truncated]',
-                                                        '<div class="flex h-dvh md:min-h-screen '
-                                                        'bg-white dark:bg-background"><div '
-                                                        'class="hidden lg:flex lg:w-1/2 relative '
-                                                        'overflow-hidden '
-                                                        'bg-[linear-gradient(135deg,var(--accent)_0%,var(--hoveraccent)_55%,color-mix(in_srgb,var(--accent)_55%,black)_100%)] '
-                                                        'dark:bg-[linear-gradient(135deg,color-mix(in_srgb,var(--accent)_45%,#1e1e1e)_0%,color-mix(in_srgb,var(--accent)_33%,#111111)_55%,color-mix(in_srgb,var(--accent)_25%,#080808)_100%)]"><div '
-                                                        'class="absolute inset-0"><div '
-                                                        'class="absolute w-96 h-96 rounded-full '
-                                                        'opacity-20 animate-pulse '
-                                                        'bg-[linear-gradient(45deg,color-mix(in_srgb,var(--accent)_65%,white),var(--accent))] '
-                                                        'dark:bg-[linear-gradient(45deg,color-mix(in_srgb,var(--accent)_55%,#1a1a1a),color-mix(in_srgb,var(--accent)_40%,#1a1a1a))]" '
-                                                        'style="top: 10%; right: -10%; '
-                                                        'animation-duration: 3s;"></div><div '
-                                                        'class="absolute w-64 h-64 rounded-full '
-                                                        'opacity-15 animate-pulse '
-                                                        'bg-[linear-gradient(45deg,color-mix(in_srgb,var(--accent)_50%,white),color-mix(in_srgb,var(--accent)_65%,white))] '
-                                                        'dark:bg-[linear-gradient(45deg,color-mix(in_srgb,var(--accent)_50%,#111111),color-mix(in_srgb,var(--accent)_60%,#111111))]" '
-                                                        'style="bottom: 20%; left: -5%; '
-                                                        'animation-duration: 4s; '
-                                                        'animation-d...[truncated]'],
-                           'act_target_style': {   'display': 'flex',
-                                                   'opacity': '1',
-                                                   'visibility': 'visible'},
-                           'state_target_html_chain': None,
-                           'state_target_style': None},
-        'html5': None,
-        'source_target': None,
-        'drop_target': None,
-        'start_offset': None,
-        'end_delta': None,
-        'end_relative_to_container': None,
-        'path': None,
-        'value_before': None,
-        'value_after': None,
-        'thumb_index': None,
-        'thumb_total': None,
-        'thumb_locator_profile': None,
-        'track': None,
-        'viewport_height': None,
-        'document_height': None,
-        'timestamp': '2026-10-13T04:10:28.762Z',
-        'delay_before_ms': 200,
-        'history': None,
-        'new_tab': None,
-        'page_id': 0,
-        'manual': None,
-        'from_page_id': None,
-        'to_page_id': None,
-        'from_url': None,
-        'to_url': None,
-        'remaining_page_id': None,
-        'check_mode': None,
-        'target': None,
-        'label': None,
-        'take_screenshot': None,
-        'screenshot': None,
-        'screenshot_path': None,
-        'capture_screenshot': None,
-        'save_screenshot': None,
-        'file_path': None,
-        'target_path': None,
-        'capture_as': None,
-        'compare_to': None,
-        'count_as': None,
-        'expected_count': None,
-        'count_a': None,
-        'count_b': None,
-        'operator': None,
-        'labels': None,
-        'check': None,
-        'expected_state': None,
-        'checked_before': None,
-        'min_value': None,
-        'max_value': None,
-        'detect_by': None,
-        'attribute_name': None,
-        'match_mode': None,
-        'value_source': None,
-        'post_click': {   'dialog_open': False,
-                          'dialog_open_before': False,
-                          'fields_changed': [],
-                          'focus': None,
-                          'nav_watch': True,
-                          'submit': {   'content_added': True,
-                                        'field_cleared': True,
-                                        'fields_before': 1,
-                                        'fields_removed': 1,
-                                        'submit_like': True},
-                          'url_path_after': 'https://techdemo.delveant.cloud/signin',
-                          'url_path_before': 'https://techdemo.delveant.cloud/signin'},
-        'expected_url': None,
-        'expected_url_chain': None,
-        'induced_by_prev': None,
-        'name': None},
-    {   'action_type': 'click',
-        'value': None,
         'locator_profile': {   'accessible_name': '',
                                'aria_label': None,
                                'attributes': {},
@@ -1429,6 +1058,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '2a86f70f-2a91-5bba-9076-4bd48b647fa0',
+        'enabled': True,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -1874,6 +1505,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '7abf0654-198f-5dca-bb79-8313a463d5a7',
+        'enabled': True,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -2222,6 +1855,385 @@ STEPS = [   {   'action_type': 'navigate',
         'expected_url_chain': None,
         'induced_by_prev': None,
         'name': None},
+    {   'action_type': 'click',
+        'value': None,
+        'locator_profile': {   'accessible_name': 'Continue',
+                               'aria_label': None,
+                               'attributes': {'type': 'submit'},
+                               'content_hint': None,
+                               'cross_boundary': False,
+                               'css_path': 'div#root > div > div:nth-of-type(2) > div > div > '
+                                           'div:nth-of-type(2) > form > button',
+                               'element_text': 'Continue',
+                               'href': None,
+                               'icon_class_hint': None,
+                               'id': None,
+                               'inner_label': None,
+                               'match_count': {'css_path': 1, 'text+tag': 0, 'xpath': 0},
+                               'name': None,
+                               'near_text': None,
+                               'placeholder': None,
+                               'product_id': None,
+                               'role': None,
+                               'tag': 'button',
+                               'text': 'Continue',
+                               'title': None,
+                               'xpath': "//button[normalize-space(.)='Continue']"},
+        'bounding_box': {'height': 44, 'width': 380, 'x': 770, 'y': 457.3046875},
+        'click_strategy': 'standard',
+        'wait_for_stable_state': None,
+        'wait_for_stable_state_timeout_ms': None,
+        'click_selector': None,
+        'confirmation_selector': None,
+        'confirmation_text': None,
+        'next_action_selector': None,
+        'next_action_text': None,
+        'verification_selector': None,
+        'verification_text': None,
+        'max_retries': None,
+        'confirmation_timeout_ms': None,
+        'verification_timeout_ms': None,
+        'page_url': 'https://techdemo.delveant.cloud/signin',
+        'delta_x': None,
+        'delta_y': None,
+        'scroll_y_before': None,
+        'scroll_y_after': None,
+        'scroll_anchors': None,
+        'scroll_x': 0,
+        'scroll_y': 0,
+        'hover_chain': None,
+        'activate_if_needed': None,
+        'popup_container': None,
+        'site_popup': None,
+        'submits_form': True,
+        'form_selector': 'div#root > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > '
+                         'form',
+        'opened_by': None,
+        'opened_by_name': None,
+        'click_offset': {'x_ratio': 0.289, 'y_ratio': 0.698},
+        'reply_text': None,
+        'during_reply': False,
+        'stops_reply': None,
+        'message_echoed': None,
+        'input_kept': None,
+        'reply_observed': None,
+        'reply_started_ms': None,
+        'reply_duration_ms': None,
+        'in_modal': False,
+        'step_id': '223e7c4c-3897-5942-a320-5562a737f9aa',
+        'enabled': True,
+        'otp_field': None,
+        'otp_focus': None,
+        'result': {   'dialog_open': False,
+                      'navigated': False,
+                      'new_tab': False,
+                      'url_after': 'https://techdemo.delveant.cloud/signin'},
+        'reveal_only_container': None,
+        'expect': None,
+        'caused_by_timestamp': None,
+        'dom_snapshot_path': None,
+        'act_target': {   'accessible_name': 'Continue',
+                          'aria_label': None,
+                          'attributes': {'type': 'submit'},
+                          'content_hint': None,
+                          'cross_boundary': False,
+                          'css_path': 'div#root > div > div:nth-of-type(2) > div > div > '
+                                      'div:nth-of-type(2) > form > button',
+                          'element_text': 'Continue',
+                          'href': None,
+                          'icon_class_hint': None,
+                          'id': None,
+                          'inner_label': None,
+                          'match_count': {'css_path': 1, 'text+tag': 0, 'xpath': 0},
+                          'name': None,
+                          'near_text': None,
+                          'placeholder': None,
+                          'product_id': None,
+                          'role': None,
+                          'tag': 'button',
+                          'text': 'Continue',
+                          'title': None,
+                          'xpath': "//button[normalize-space(.)='Continue']"},
+        'state_target': None,
+        'dom_context': {   'act_target_html_chain': [   '<button type="submit" class="w-full '
+                                                        'relative isolate inline-flex items-center '
+                                                        'justify-center rounded border font-medium '
+                                                        'focus:outline-none text-sm h-11 gap-x-2 '
+                                                        'px-3 py-0 bg-accent hover:bg-hoverCTA '
+                                                        'border-transparent text-white '
+                                                        'disabled:opacity-60 '
+                                                        'disabled:cursor-not-allowed '
+                                                        'transition-all duration-200 '
+                                                        'cursor-pointer"><span>Continue</span><span '
+                                                        'class="absolute left-1/2 top-1/2 '
+                                                        'size-[max(100%,2.75rem)] -translate-x-1/2 '
+                                                        '-translate-y-1/2 '
+                                                        '[@media(pointer:fine)]:hidden" '
+                                                        'aria-hidden="true"></span></button>',
+                                                        '<form novalidate="" class="flex flex-col '
+                                                        'space-y-4"><div class="space-y-3"><div '
+                                                        'class="w-full space-y-1 mb-1"><div><div '
+                                                        'class="flex w-full font-normal"><div '
+                                                        'class="relative block w-full"><div '
+                                                        'class="group relative flex h-full '
+                                                        'appearance-none flex-row items-center '
+                                                        'gap-2  py-3 pl-4 w-full flex-1 border '
+                                                        'border-solid border-gray-300 '
+                                                        'dark:border-border hover:border-accent '
+                                                        'pr-4 focus-within:border-accent   '
+                                                        'transition-all duration-200"><svg '
+                                                        'xmlns="http://www.w3.org/2000/svg" '
+                                                        'width="18" height="18" viewBox="0 0 24 '
+                                                        '24" fill="none" stroke="currentColor" '
+                                                        'stroke-width="1.5" stroke-linecap="round" '
+                                                        'stroke-linejoin="round" class="lucide '
+                                                        'lucide-mail text-gray-400 '
+                                                        'dark:text-[var(--subcolor)] '
+                                                        'group-focus-within:text-accent '
+                                                        'transition-colors duration-200" '
+                                                        'aria-hidden="true"><path d="m22 7-8.991 '
+                                                        '5.727a2 2 0 0 1-2.009 0L2 7"></path><rect '
+                                                        'x="2" y="4" width="20" height="16" '
+                                                        'rx="2"></rect></svg><input '
+                                                        'placeholder="Email address" '
+                                                        'class="text-sm flex bg-transparent '
+                                                        'focus:outline-none w-full text-gray-800 '
+                                                        'dark:text-[var(--globalblack)] '
+                                                        'placeholder-gray-400 border-0 shadow-none '
+                                                        'focus:shadow-none" aria-label="email '
+                                                        'address" autocomplete="username" '
+                                                        'type="email" '
+                                                        'value="mohankumar.ma...[truncated]',
+                                                        '<div class="space-y-6 pt-0 sm:pt-2"><div '
+                                                        'class="space-y-0 sm:space-y-1 pb-1"><h1 '
+                                                        'class="text-[32px]  sm:text-4xl font-bold '
+                                                        'tracking-tight text-gray-900 '
+                                                        'dark:text-[var(--globalblack)]">Welcome '
+                                                        'back!</h1><p class=" text-[13px] '
+                                                        'sm:text-sm font-normal text-[#717989] '
+                                                        'dark:text-[var(--subcolor)]">From concept '
+                                                        'to execution — make growth happen with '
+                                                        'DelveAnt.</p></div><form novalidate="" '
+                                                        'class="flex flex-col space-y-4"><div '
+                                                        'class="space-y-3"><div class="w-full '
+                                                        'space-y-1 mb-1"><div><div class="flex '
+                                                        'w-full font-normal"><div class="relative '
+                                                        'block w-full"><div class="group relative '
+                                                        'flex h-full appearance-none flex-row '
+                                                        'items-center gap-2  py-3 pl-4 w-full '
+                                                        'flex-1 border border-solid '
+                                                        'border-gray-300 dark:border-border '
+                                                        'hover:border-accent pr-4 '
+                                                        'focus-within:border-accent   '
+                                                        'transition-all duration-200"><svg '
+                                                        'xmlns="http://www.w3.org/2000/svg" '
+                                                        'width="18" height="18" viewBox="0 0 24 '
+                                                        '24" fill="none" stroke="currentColor" '
+                                                        'stroke-width="1.5" stroke-linecap="round" '
+                                                        'stroke-linejoin="round" class="lucide '
+                                                        'lucide-mail text-gray-400 '
+                                                        'dark:text-[var(--subcolor)] '
+                                                        'group-focus-within:text-accent '
+                                                        'transition-colors duration-200" '
+                                                        'aria-hidden="true"><path d="m22 7-8.991 '
+                                                        '5.727a2 2 0 0 1-2.00...[truncated]',
+                                                        '<div class="relative flex w-full '
+                                                        'sm:w-[380px] flex-col '
+                                                        'place-content-between"><div class="mb-0 '
+                                                        'sm:mb-8"><svg width="156" height="34" '
+                                                        'viewBox="0 0 156 34" fill="none" '
+                                                        'xmlns="http://www.w3.org/2000/svg" '
+                                                        'class="w-42 h-auto text-[var(--accent)]" '
+                                                        'style="color: var(--accent);"><g '
+                                                        'clip-path="url(#logo_clip)"><path '
+                                                        'd="M146.354 7.62007C146.354 6.33672 '
+                                                        '147.337 5.35533 148.548 5.35533C149.834 '
+                                                        '5.35533 150.855 6.41221 150.855 '
+                                                        '7.62007V12.1118H153.73C154.979 12.1118 '
+                                                        '156 13.1309 156 14.3388C156 15.5467 '
+                                                        '154.979 16.6413 153.73 '
+                                                        '16.6413H150.855V29.5881C150.855 30.7959 '
+                                                        '149.834 31.8528 148.548 31.8528C147.337 '
+                                                        '31.8528 146.354 30.7959 146.354 '
+                                                        '29.5881V16.6413H143.479C142.269 16.6413 '
+                                                        '141.247 15.5467 141.247 14.3388C141.247 '
+                                                        '13.1309 142.269 12.1118 143.479 '
+                                                        '12.1118H146.354V7.62007Z" '
+                                                        'fill="currentColor"></path><path '
+                                                        'd="M121.966 20.9645C121.966 16.0533 '
+                                                        '126.006 11.9797 130.876 11.9797C135.747 '
+                                                        '11.9797 139.787 16.0533 139.787 '
+                                                        '20.9645V29.6066C139.787 30.8249 138.767 '
+                                                        '31.8528 137.559 31.8528C136.313 31.8528 '
+                                                        '135.256 30.8249 135.256 '
+                                                        '29.6066V20.9645C135.256 18.4898 133.255 '
+                                                        '16.4721 130.876 16.4721C128.46 16.4721 '
+                                                        '126.459 18.4898 126.459 '
+                                                        '20.9645V29.6066C126.459 30.8249 125.477 '
+                                                        '31.8528 124.194 3...[truncated]',
+                                                        '<div class="relative flex w-full '
+                                                        'justify-center p-4 py-10 sm:p-10"><div '
+                                                        'class="relative flex w-full sm:w-[380px] '
+                                                        'flex-col place-content-between"><div '
+                                                        'class="mb-0 sm:mb-8"><svg width="156" '
+                                                        'height="34" viewBox="0 0 156 34" '
+                                                        'fill="none" '
+                                                        'xmlns="http://www.w3.org/2000/svg" '
+                                                        'class="w-42 h-auto text-[var(--accent)]" '
+                                                        'style="color: var(--accent);"><g '
+                                                        'clip-path="url(#logo_clip)"><path '
+                                                        'd="M146.354 7.62007C146.354 6.33672 '
+                                                        '147.337 5.35533 148.548 5.35533C149.834 '
+                                                        '5.35533 150.855 6.41221 150.855 '
+                                                        '7.62007V12.1118H153.73C154.979 12.1118 '
+                                                        '156 13.1309 156 14.3388C156 15.5467 '
+                                                        '154.979 16.6413 153.73 '
+                                                        '16.6413H150.855V29.5881C150.855 30.7959 '
+                                                        '149.834 31.8528 148.548 31.8528C147.337 '
+                                                        '31.8528 146.354 30.7959 146.354 '
+                                                        '29.5881V16.6413H143.479C142.269 16.6413 '
+                                                        '141.247 15.5467 141.247 14.3388C141.247 '
+                                                        '13.1309 142.269 12.1118 143.479 '
+                                                        '12.1118H146.354V7.62007Z" '
+                                                        'fill="currentColor"></path><path '
+                                                        'd="M121.966 20.9645C121.966 16.0533 '
+                                                        '126.006 11.9797 130.876 11.9797C135.747 '
+                                                        '11.9797 139.787 16.0533 139.787 '
+                                                        '20.9645V29.6066C139.787 30.8249 138.767 '
+                                                        '31.8528 137.559 31.8528C136.313 31.8528 '
+                                                        '135.256 30.8249 135.256 '
+                                                        '29.6066V20.9645C135.256 18.4898 133.255 '
+                                                        '16.4721 130.876 16.4721C128.46 16.4721 '
+                                                        '126.459 18.489...[truncated]',
+                                                        '<div class="flex flex-grow flex-row '
+                                                        'bg-white dark:bg-card"><div '
+                                                        'class="relative flex w-full '
+                                                        'justify-center p-4 py-10 sm:p-10"><div '
+                                                        'class="relative flex w-full sm:w-[380px] '
+                                                        'flex-col place-content-between"><div '
+                                                        'class="mb-0 sm:mb-8"><svg width="156" '
+                                                        'height="34" viewBox="0 0 156 34" '
+                                                        'fill="none" '
+                                                        'xmlns="http://www.w3.org/2000/svg" '
+                                                        'class="w-42 h-auto text-[var(--accent)]" '
+                                                        'style="color: var(--accent);"><g '
+                                                        'clip-path="url(#logo_clip)"><path '
+                                                        'd="M146.354 7.62007C146.354 6.33672 '
+                                                        '147.337 5.35533 148.548 5.35533C149.834 '
+                                                        '5.35533 150.855 6.41221 150.855 '
+                                                        '7.62007V12.1118H153.73C154.979 12.1118 '
+                                                        '156 13.1309 156 14.3388C156 15.5467 '
+                                                        '154.979 16.6413 153.73 '
+                                                        '16.6413H150.855V29.5881C150.855 30.7959 '
+                                                        '149.834 31.8528 148.548 31.8528C147.337 '
+                                                        '31.8528 146.354 30.7959 146.354 '
+                                                        '29.5881V16.6413H143.479C142.269 16.6413 '
+                                                        '141.247 15.5467 141.247 14.3388C141.247 '
+                                                        '13.1309 142.269 12.1118 143.479 '
+                                                        '12.1118H146.354V7.62007Z" '
+                                                        'fill="currentColor"></path><path '
+                                                        'd="M121.966 20.9645C121.966 16.0533 '
+                                                        '126.006 11.9797 130.876 11.9797C135.747 '
+                                                        '11.9797 139.787 16.0533 139.787 '
+                                                        '20.9645V29.6066C139.787 30.8249 138.767 '
+                                                        '31.8528 137.559 31.8528C136.313 31.8528 '
+                                                        '135.256 30.8249 135.256 '
+                                                        '29.6066V20.9645C135.256 18.4898 '
+                                                        '13...[truncated]',
+                                                        '<div class="flex h-dvh md:min-h-screen '
+                                                        'bg-white dark:bg-background"><div '
+                                                        'class="hidden lg:flex lg:w-1/2 relative '
+                                                        'overflow-hidden '
+                                                        'bg-[linear-gradient(135deg,var(--accent)_0%,var(--hoveraccent)_55%,color-mix(in_srgb,var(--accent)_55%,black)_100%)] '
+                                                        'dark:bg-[linear-gradient(135deg,color-mix(in_srgb,var(--accent)_45%,#1e1e1e)_0%,color-mix(in_srgb,var(--accent)_33%,#111111)_55%,color-mix(in_srgb,var(--accent)_25%,#080808)_100%)]"><div '
+                                                        'class="absolute inset-0"><div '
+                                                        'class="absolute w-96 h-96 rounded-full '
+                                                        'opacity-20 animate-pulse '
+                                                        'bg-[linear-gradient(45deg,color-mix(in_srgb,var(--accent)_65%,white),var(--accent))] '
+                                                        'dark:bg-[linear-gradient(45deg,color-mix(in_srgb,var(--accent)_55%,#1a1a1a),color-mix(in_srgb,var(--accent)_40%,#1a1a1a))]" '
+                                                        'style="top: 10%; right: -10%; '
+                                                        'animation-duration: 3s;"></div><div '
+                                                        'class="absolute w-64 h-64 rounded-full '
+                                                        'opacity-15 animate-pulse '
+                                                        'bg-[linear-gradient(45deg,color-mix(in_srgb,var(--accent)_50%,white),color-mix(in_srgb,var(--accent)_65%,white))] '
+                                                        'dark:bg-[linear-gradient(45deg,color-mix(in_srgb,var(--accent)_50%,#111111),color-mix(in_srgb,var(--accent)_60%,#111111))]" '
+                                                        'style="bottom: 20%; left: -5%; '
+                                                        'animation-duration: 4s; '
+                                                        'animation-d...[truncated]'],
+                           'act_target_style': {   'display': 'flex',
+                                                   'opacity': '1',
+                                                   'visibility': 'visible'},
+                           'state_target_html_chain': None,
+                           'state_target_style': None},
+        'html5': None,
+        'source_target': None,
+        'drop_target': None,
+        'start_offset': None,
+        'end_delta': None,
+        'end_relative_to_container': None,
+        'path': None,
+        'value_before': None,
+        'value_after': None,
+        'thumb_index': None,
+        'thumb_total': None,
+        'thumb_locator_profile': None,
+        'track': None,
+        'viewport_height': None,
+        'document_height': None,
+        'timestamp': '2026-10-13T04:10:28.762Z',
+        'delay_before_ms': 200,
+        'history': None,
+        'new_tab': None,
+        'page_id': 0,
+        'manual': None,
+        'from_page_id': None,
+        'to_page_id': None,
+        'from_url': None,
+        'to_url': None,
+        'remaining_page_id': None,
+        'check_mode': None,
+        'target': None,
+        'label': None,
+        'take_screenshot': None,
+        'screenshot': None,
+        'screenshot_path': None,
+        'capture_screenshot': None,
+        'save_screenshot': None,
+        'file_path': None,
+        'target_path': None,
+        'capture_as': None,
+        'compare_to': None,
+        'count_as': None,
+        'expected_count': None,
+        'count_a': None,
+        'count_b': None,
+        'operator': None,
+        'labels': None,
+        'check': None,
+        'expected_state': None,
+        'checked_before': None,
+        'min_value': None,
+        'max_value': None,
+        'detect_by': None,
+        'attribute_name': None,
+        'match_mode': None,
+        'value_source': None,
+        'post_click': {   'dialog_open': False,
+                          'dialog_open_before': False,
+                          'fields_changed': [],
+                          'focus': None,
+                          'nav_watch': True,
+                          'submit': {   'content_added': True,
+                                        'field_cleared': True,
+                                        'fields_before': 1,
+                                        'fields_removed': 1,
+                                        'submit_like': True},
+                          'url_path_after': 'https://techdemo.delveant.cloud/signin',
+                          'url_path_before': 'https://techdemo.delveant.cloud/signin'},
+        'expected_url': None,
+        'expected_url_chain': None,
+        'induced_by_prev': None,
+        'name': None},
     {   'action_type': 'fill',
         'value': 'Kovaion@123',
         'locator_profile': {   'accessible_name': 'password',
@@ -2306,6 +2318,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '0d867370-0707-54af-834a-74a6fb285f12',
+        'enabled': True,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -2701,6 +2715,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'bc451d77-ad12-5694-92dc-f5f30eb6d6f5',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -3083,6 +3099,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '09f6c53d-0eb1-5821-9265-b2baf9f16503',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -3479,6 +3497,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '853ec177-ba49-548f-85e1-22b53e8dfc1f',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -3854,6 +3874,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'ed859601-7a6a-5825-a705-7a1523129289',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -4258,6 +4280,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': None,
+        'step_id': '96255e26-acb8-5fbc-9486-b5094364a764',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -4395,6 +4419,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'd29750ed-782c-577a-9e57-0081617363ee',
+        'enabled': True,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -4793,6 +4819,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'f1367930-9423-5a5a-af06-b42ea22699f0',
+        'enabled': True,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -5163,6 +5191,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'de411d86-0eec-5abe-b47e-322fcb214882',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -5541,6 +5571,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': None,
+        'step_id': '17314d62-f1de-552d-aea7-9f7cf480b53a',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -5678,6 +5710,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '1e93db14-9bb8-5502-a391-1ae9e32ea706',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -6076,6 +6110,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'c6e4cbf8-a761-5e43-b065-39e92d11ad0c',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -6446,6 +6482,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'ec25d143-0d78-5076-b32d-19edb275514f',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -6824,6 +6862,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': None,
+        'step_id': 'e307f608-4187-5a0a-8cc9-b579e2b397b6',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -6961,6 +7001,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'b0e68f6a-7135-589f-91f0-ec8fb7d80343',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -7359,6 +7401,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '04789f2d-ee02-5fe5-9bb5-39c0e947cf58',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -7729,6 +7773,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '3f00f563-bc17-5d21-8ce4-56af2ac3166f',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -8107,6 +8153,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': None,
+        'step_id': '2b38e08a-75a5-5b30-ac62-689a9eb31220',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -8240,6 +8288,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '69115ae4-20e7-5abc-9eab-1aec72b88144',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -8591,6 +8641,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': None,
+        'step_id': '856a87e8-a1d1-5382-afce-2ce753433104',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -8726,6 +8778,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'b95247f6-ef68-5b14-a519-0b55a0b24a11',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -9047,11 +9101,11 @@ STEPS = [   {   'action_type': 'navigate',
     {   'action_type': 'fill',
         'value': 'show leads from the it industry',
         'locator_profile': {   'css_path': None,
-                               'xpath': "//textarea[normalize-space(text())='show me the top leads "
-                                        "by score']",
-                               'element_label': None,
                                'element_kind': None,
-                               'element_section': None},
+                               'element_label': None,
+                               'element_section': None,
+                               'xpath': "//textarea[normalize-space(text())='show me the top leads "
+                                        "by score']"},
         'bounding_box': {},
         'click_strategy': None,
         'wait_for_stable_state': None,
@@ -9092,6 +9146,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': None,
+        'step_id': '3a909375-e631-5989-948c-d23462106f35',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -9163,10 +9219,10 @@ STEPS = [   {   'action_type': 'navigate',
     {   'action_type': 'press',
         'value': 'Enter',
         'locator_profile': {   'css_path': None,
-                               'xpath': "//*[@id='root']/div/main/main/div/div/div[2]/div[2]/div/div/div/div[2]",
-                               'element_label': 'show me the top leads by score',
                                'element_kind': 'element',
-                               'element_section': ''},
+                               'element_label': 'show me the top leads by score',
+                               'element_section': '',
+                               'xpath': "//*[@id='root']/div/main/main/div/div/div[2]/div[2]/div/div/div/div[2]"},
         'bounding_box': {},
         'click_strategy': None,
         'wait_for_stable_state': None,
@@ -9207,6 +9263,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': None,
+        'step_id': '06098e42-0c96-510a-941c-047fb79d058d',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -9334,6 +9392,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': None,
+        'step_id': '195e8062-fe17-54c1-8529-4aa605715961',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': None,
@@ -9471,6 +9531,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'a6f4d5c4-060c-50bb-9900-6451c8fc119e',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -9911,6 +9973,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '2b2cd602-f34b-5fe9-a6cc-d6baac9ef986',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -10323,6 +10387,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': True,
+        'step_id': '7170f433-4a9c-5d86-9c2e-fc04ec282914',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -10721,6 +10787,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': 'da6df58f-753b-5e00-86e4-1a7fdcd725e9',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -11152,6 +11220,8 @@ STEPS = [   {   'action_type': 'navigate',
         'reply_started_ms': None,
         'reply_duration_ms': None,
         'in_modal': False,
+        'step_id': '7b3bbcb3-6365-51aa-8dca-7432767f8b38',
+        'enabled': False,
         'otp_field': None,
         'otp_focus': None,
         'result': {   'dialog_open': False,
@@ -11997,6 +12067,8 @@ def _capture_screenshot(page, shot_dir, img_counter, last_state, last_shot_bytes
     position / element offset (_align_viewport_for_capture), captures, then
     puts the scroll back. If the settle budget ran out, the screenshot is
     still taken and the step gets a WARNING."""
+    if _FAST_FORWARD[0]:
+        return None                  # a fast-forwarded step (see _FAST_FORWARD) takes no screenshots
     if not settle_first:
         return _capture_screenshot_core(
             page, shot_dir, img_counter, last_state, last_shot_bytes, full_page=full_page, step=step,
@@ -16424,6 +16496,29 @@ def _split_tech_multi(text):
         if t:
             techs.append(t)
     return "; ".join(heads), ("; ".join(techs) if techs else None)
+
+
+# RUN FROM A STEP ("Run from here" in the Recording Editor): the dashboard starts this script with
+# AUTOFLOW_START_FROM_STEP_ID set to the step_id of the step to start from. Every step before it is
+# FAST-FORWARDED: executed through the same normal per-step code (so it reaches the same page state), but with
+# no screenshots; disabled steps are skipped as always. From that step on the replay runs exactly as normal.
+# Without the variable (every normal replay) this is never active.
+_FAST_FORWARD = [False]
+
+
+def _start_from_target_index(steps):
+    """1-based number of the step to start from (AUTOFLOW_START_FROM_STEP_ID), else None. Never raises."""
+    try:
+        sid = (os.environ.get("AUTOFLOW_START_FROM_STEP_ID") or "").strip()
+        if not sid:
+            return None
+        for k, st in enumerate(steps, start=1):
+            if (st or {}).get("step_id") == sid:
+                return k
+        print(f"[run-from] step id {sid!r} is not in this recording - running the whole replay normally")
+    except Exception:
+        pass
+    return None
 
 
 def _plain_step_note(message, result=None, output_json_path=None):
@@ -33843,9 +33938,60 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
             if _cbt and _cbt in _timestamp_to_index:
                 _caused_by_index[idx] = _timestamp_to_index[_cbt]
 
+        # RUN FROM A STEP (see _FAST_FORWARD): the steps before the target step are fast-forwarded
+        _ff_target = _start_from_target_index(STEPS)
+        _FAST_FORWARD[0] = bool(_ff_target and _ff_target > 1)
+        _disabled_total = sum(1 for _s in STEPS if (_s or {}).get("enabled") is False)
+        if _disabled_total:
+            _plain_step_note(
+                f"{_disabled_total} step{'s are' if _disabled_total != 1 else ' is'} disabled and will be skipped.",
+                result, output_json_path,
+            )
+        if _FAST_FORWARD[0]:
+            _plain_step_note(
+                f"Fast-forward: steps 1 to {_ff_target - 1} run first (no screenshots), then the replay runs "
+                f"normally from step {_ff_target}.", result, output_json_path,
+            )
+
         for i, step in enumerate(STEPS, start=1):
             action_type = step.get("action_type")
             cur_timestamp = step.get("timestamp")
+            if _FAST_FORWARD[0] and i >= _ff_target:
+                _FAST_FORWARD[0] = False
+                _plain_step_note(f"Fast-forward finished - running normally from step {i}.", result, output_json_path)
+            # ENABLE/DISABLE STEP: a step switched off in the editor is not executed - it is reported as skipped
+            # (counted apart from passed and failed) and the replay goes on with the next step
+            if step.get("enabled") is False:
+                _skip_msg = f"Step {i} skipped (disabled)"
+                print(f"[{i}/{total_steps}] {_skip_msg}")
+                print()
+                _plain_step_note(_skip_msg + ".", result, output_json_path)
+                result["steps"].append({
+                    "index": i,
+                    "step_id": step.get("step_id"),
+                    "action_type": action_type,
+                    "name": _derive_action_name(step),
+                    "origin": step.get("origin"),
+                    "strategy_used": "skipped (disabled)",
+                    "element_found": None,
+                    "success": True,
+                    "skipped": True,
+                    "error": None,
+                    "warning": None,
+                    "effect_verified": None,
+                    "large_bbox_flag": False,
+                    "screenshot": None,
+                    "url_before": None,
+                    "url_after": None,
+                    "duration": 0,
+                    "locator_report": None,
+                    "expected": None,
+                    "actual": None,
+                    "recovered": False,
+                    "fast_forward": bool(_FAST_FORWARD[0]),
+                })
+                _write_result(result, output_json_path)
+                continue
             # RC4 (real DOM evidence for the future): whatever candidate
             # diagnostics _score_candidates_and_pick gathers for THIS
             # step's own resolution attempts - cleared before each step so
@@ -33873,6 +34019,8 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
                 _is_dup = (
                     action_type in ("click", "check")
                     and bool(result["steps"])
+                    # a disabled (skipped) previous step never ran: nothing to merge with
+                    and not result["steps"][-1].get("skipped")
                     and _is_merged_duplicate_of_previous(step, STEPS[i - 2] if i >= 2 else None, result["steps"][-1])
                 )
             except Exception:
@@ -38532,6 +38680,10 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
                     # (Details only - never changes the status)
                 result["steps"].append({
                     "index": i,
+                    # the step's stable id (the editor maps results back to steps by it after a reorder) and
+                    # whether this step was only fast-forwarded (see _FAST_FORWARD)
+                    "step_id": step.get("step_id"),
+                    "fast_forward": bool(_FAST_FORWARD[0]),
                     "action_type": action_type,
                     # optional, additive - a readable name for this step
                     # (see _derive_action_name's own docstring); never
@@ -38636,6 +38788,26 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
                 # additive (checks `not ok` alongside the existing flag),
                 # never changes how any individual action type resolves,
                 # retries, or reports its own success/failure above.
+                # RUN FROM A STEP: a fast-forwarded step that failed means the target step can never be reached
+                # in the right state - stop here and say so; one plain line per fast-forwarded step otherwise
+                if _FAST_FORWARD[0]:
+                    if not ok:
+                        _ff_msg = (f"Fast-forward failed at step {i}, so the target step {_ff_target} could not be "
+                                   f"reached. The replay stopped.")
+                        print(_ff_msg)
+                        print()
+                        try:
+                            _ff_entry = result["steps"][-1]
+                            if _ff_entry.get("index") == i:
+                                _ff_entry["error"] = (f"Failed: {_ff_msg}" + (_TECH_SEP + str(_ff_entry.get("error"))
+                                                                              if _ff_entry.get("error") else ""))
+                        except Exception:
+                            pass
+                        _plain_step_note(_ff_msg, result, output_json_path)
+                        _FAST_FORWARD[0] = False
+                        _stopped_after_step = i
+                        break
+                    _plain_step_note(f"Fast-forward: step {i} ok", result, output_json_path)
                 if stop_replay_after_step:
                     # unchanged - click_if_exists's own halt path never
                     # attempts recovery, exactly as before FIX 5

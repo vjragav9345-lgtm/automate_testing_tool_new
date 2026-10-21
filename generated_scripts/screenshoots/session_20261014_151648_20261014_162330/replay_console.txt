@@ -1,0 +1,31 @@
+CORE FIX MISSING: fill/select retry logic not found - results from this run cannot be trusted.
+Starting replay...
+Browser launched.
+[note] -> Waiting for the page to finish loading (up to 1.2s)
+REPLAY SOURCE: session_20261014_151648
+ACTION COUNT: 12
+SOURCE TYPE: ORIGINAL
+
+Executing recorded actions...
+
+[note] The browser window was closed - the run stopped before step 1.
+
+
+===== stderr =====
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261014_151648_script.py:6316: SyntaxWarning: invalid escape sequence '\s'
+  desc += '.' + node.className.trim().split(/\s+/).join('.');
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261014_151648_script.py:12331: SyntaxWarning: invalid escape sequence '\s'
+  "    const t = lb.split(/\s+/).map(id => {"
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261014_151648_script.py:17300: SyntaxWarning: invalid escape sequence '\d'
+  if (txt && txt.length < 200 && /\d/.test(txt)) {
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261014_151648_script.py:26598: SyntaxWarning: invalid escape sequence '\s'
+  return t.trim().replace(/\s+/g, ' ');
+/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261014_151648_script.py:26745: SyntaxWarning: invalid escape sequence '\s'
+  return (s || '').replace(/\s+/g, ' ').trim().toLowerCase();
+Traceback (most recent call last):
+  File "/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261014_151648_script.py", line 33440, in <module>
+    run(target, out_json, out_shots, headless=(headless_arg == "1"), product_name=product_arg)
+  File "/Users/kovaionconsulting/Desktop/new/claude 6/generated_scripts/session_20261014_151648_script.py", line 33137, in run
+    "count_summary_rows": count_summary_rows,  # PHASE 5b
+                          ^^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'count_summary_rows' where it is not associated with a value

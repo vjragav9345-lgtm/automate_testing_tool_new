@@ -79,6 +79,7 @@
          report's own title when this run's recording has one - falls
          back to the original fixed heading otherwise, unchanged. -->
     <h1>{{ result.display_name or result.test_name or 'AutoFlow QA - Execution Report' }}</h1>
+    {% if result.partial_run and result.partial_run.until_step %}<p class="partial-run-label"><strong>Partial run (until step {{ result.partial_run.until_step }})</strong></p>{% endif %}
     <p class="meta">Run {{ result.run_id }} against {{ result.qa_url }} - generated {{ generated_at }}</p>
     {% if result.console_log %}<p class="meta">Full replay console output (every locator method and wait): {{ result.console_log }}</p>{% endif %}
 
@@ -335,6 +336,7 @@
                         {% else %}
                             <span class="pill bad">failed</span>
                         {% endif %}
+                        {% if s.fast %}<span class="pill unknown">⏩ fast</span>{% endif %}
                         {% if s.fragile %}<span class="pill unknown">fragile</span>{% endif %}
                         {% if s.large_bbox_flag %}<span class="pill unknown" title="Recorded click target has an unusually large bounding box - possible recording artifact, may need re-recording more precisely">large target</span>{% endif %}
                     </td>

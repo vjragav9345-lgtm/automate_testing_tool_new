@@ -1,0 +1,315 @@
+{
+  "status": "FAIL",
+  "message": "Step 4 (\"test virtual 1\" element) failed: Stopped: The browser window was closed. The replay stopped.; Elements missing at step(s) 4; The browser window was closed, so the run stopped",
+  "diagnostic": null,
+  "qa_url": "https://sportzia-preprod.kovaionplay.com",
+  "steps": [
+    {
+      "index": 1,
+      "fast": true,
+      "captured_messages": null,
+      "action_type": "navigate",
+      "name": "Open \u2013 Home page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "What AutoFlow did: Waiting for the page to finish loading (up to 1.2s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://sportzia-preprod.kovaionplay.com/feed",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/feed",
+      "started_at": "2026-10-15T14:37:03.418",
+      "ended_at": "2026-10-15T14:37:04.721",
+      "duration": 1.254,
+      "timing_ms": {
+        "settle": 1203,
+        "navigation_wait": 43,
+        "screenshot": 0,
+        "other": 7
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": false
+    },
+    {
+      "index": 2,
+      "fast": true,
+      "captured_messages": null,
+      "action_type": "click",
+      "name": "\"Accept\" element",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "text+tag",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "What AutoFlow did: 'div' is hidden, so AutoFlow is hovering over the menu that holds it > Waiting for the page to finish loading (up to 0.3s) > Clicking 'Accept'",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://sportzia-preprod.kovaionplay.com/feed",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/feed",
+      "started_at": "2026-10-15T14:37:04.721",
+      "ended_at": "2026-10-15T14:37:09.614",
+      "duration": 4.701,
+      "timing_ms": {
+        "log_emit": 0,
+        "locate_action": 1194,
+        "screenshot": 0,
+        "settle": 2,
+        "verify": 420,
+        "other": 3085
+      },
+      "locator_report": {
+        "strategy": "text+tag",
+        "strategy_label": "Text + Tag fallback",
+        "fallback_level": 11,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 4701,
+        "message": "Accept found using Text + Tag fallback. (resolved in 4701ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": true
+    },
+    {
+      "index": 3,
+      "fast": true,
+      "captured_messages": null,
+      "action_type": "click",
+      "name": "\"Events\" element",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "text+tag",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Clicking 'Events'",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://sportzia-preprod.kovaionplay.com/feed",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/events",
+      "started_at": "2026-10-15T14:37:09.614",
+      "ended_at": "2026-10-15T14:37:12.383",
+      "duration": 2.574,
+      "timing_ms": {
+        "locate_action": 1209,
+        "log_emit": 0,
+        "screenshot": 0,
+        "settle": 3,
+        "navigation_wait": 706,
+        "verify": 8,
+        "other": 648
+      },
+      "locator_report": {
+        "strategy": "text+tag",
+        "strategy_label": "Text + Tag fallback",
+        "fallback_level": 11,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 2574,
+        "message": "Events found using Text + Tag fallback. (resolved in 2574ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": true
+    },
+    {
+      "index": 4,
+      "fast": false,
+      "captured_messages": null,
+      "action_type": "click",
+      "name": "\"test virtual 1\" element",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "bounding_box",
+      "element_found": false,
+      "success": false,
+      "error": "Stopped: The browser window was closed. The replay stopped.",
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "'test virtual 1 Virtual Event October 1, 2026' was not on this page this time - the results may have changed since the recording (the whole page was checked after waiting 3 seconds); [content-mismatch] a different element is actually at the recorded click position - recorded target was 'test virtual 1 Virtual Event October 1, 2026', but 'Banner for LARSEN MEMORIAL RUN 13th EDITION Banner for LA...' is really there; tiers tried: popup-scoped: no match; data-testid: no match; data-test: no match; data-cy: no match; id: no match; name: no match; aria-label: no match; placeholder: no match; title: no match; role: no match; href: no match; text+tag: no match; text+tag-number-normalized: no match; image-ancestor: no match; identity: no match; icon-identity: no match; field-label: no match; editable-replacement: no match; position_fallback: no match; css_path: no match; xpath: found; generated-id: no match; visible-same-name: no match; closest visible candidates: <div> 'test virtual\\n\\uf3c4\\nVirtual Event\\n\\uf1cf\\nOctober 15, 2026\\nRegister Now' (470px from the recorded spot); <div> 'step-a-thon\\n\\uf3c4\\nVirtual Event\\n\\uf1cf\\nOctober 5, 2026' (235px from the recorded spot); <div> 'Kovai Elites Marathon 2027\\n\\uf3c4\\nCoimbatore\\n\\uf3c4\\nVirtual Event\\n\\uf1cf\\nFe' (237px from the recorded spot); candidates: xpath: 'LARSEN MEMORIAL RUN 13th EDITI' -> not used (its name is 'larsen memorial run 13th edition \uf3c4 chennai \uf1cf novem', but 'test virtual 1\n\nVirtual Event\n\nOctober 1, 2026' was recorded); xpath: 'LARSEN MEMORIAL RUN 13th EDITI' -> not used (its name is 'larsen memorial run 13th edition \uf3c4 chennai \uf1cf novem', but 'test virtual 1\n\nVirtual Event\n\nOctober 1, 2026' was recorded); xpath: 'LARSEN MEMORIAL RUN 13th EDITI' -> not used (its name is 'larsen memorial run 13th edition \uf3c4 chennai \uf1cf novem', but 'test virtual 1\n\nVirtual Event\n\nOctober 1, 2026' was recorded); xpath: 'LARSEN MEMORIAL RUN 13th EDITI' -> not used (its name is 'larsen memorial run 13th edition \uf3c4 chennai \uf1cf novem', but 'test virtual 1\n\nVirtual Event\n\nOctober 1, 2026' was recorded); DIAGNOSTIC - the step ended on the 'bounding_box' method. Methods tried in order: popup-scoped: nothing (search 0.0s, total 0.0s); data-testid: nothing (search 0.0s, total 0.0s); data-test: nothing (search 0.0s, total 0.0s); data-cy: nothing (search 0.0s, total 0.0s); id: nothing (search 0.0s, total 0.0s); name: nothing (search 0.0s, total 0.0s); aria-label: nothing (search 0.0s, total 0.0s); placeholder: nothing (search 0.0s, total 0.0s); title: nothing (search 0.0s, total 0.0s); role: nothing (search 0.0s, total 0.0s); href: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag-number-normalized: nothing (search 0.0s, total 0.0s); image-ancestor: nothing (search 0.0s, total 0.0s); identity: nothing (search 0.0s, total 0.0s); icon-identity: nothing (search 0.0s, total 0.0s); field-label: nothing (search 0.0s, total 0.0s); editable-replacement: nothing (search 0.0s, total 0.0s); position_fallback: nothing (search 0.0s, total 0.0s); css_path: nothing (search 0.0s, total 0.0s); xpath: proposed a candidate (search 0.0s, total 0.0s); generated-id: nothing (search 0.0s, total 0.0s); visible-same-name: nothing (search 0.0s, total 0.0s); popup-scoped: nothing (search 0.0s, total 0.0s); data-testid: nothing (search 0.0s, total 0.0s); data-test: nothing (search 0.0s, total 0.0s); data-cy: nothing (search 0.0s, total 0.0s); id: nothing (search 0.0s, total 0.0s); name: nothing (search 0.0s, total 0.0s); aria-label: nothing (search 0.0s, total 0.0s); placeholder: nothing (search 0.0s, total 0.0s); title: nothing (search 0.0s, total 0.0s); role: nothing (search 0.0s, total 0.0s); href: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag-number-normalized: nothing (search 0.0s, total 0.0s); image-ancestor: nothing (search 0.0s, total 0.0s); identity: nothing (search 0.0s, total 0.0s); icon-identity: nothing (search 0.0s, total 0.0s); field-label: nothing (search 0.0s, total 0.0s); editable-replacement: nothing (search 0.0s, total 0.0s); position_fallback: nothing (search 0.0s, total 0.0s); css_path: nothing (search 0.0s, total 0.0s); xpath: proposed a candidate (search 0.0s, total 0.0s); generated-id: nothing (search 0.0s, total 0.0s); visible-same-name: nothing (search 0.0s, total 1.0s); popup-scoped: nothing (search 0.0s, total 0.0s); data-testid: nothing (search 0.0s, total 0.0s); data-test: nothing (search 0.0s, total 0.0s); data-cy: nothing (search 0.0s, total 0.0s); id: nothing (search 0.0s, total 0.0s); name: nothing (search 0.0s, total 0.0s); aria-label: nothing (search 0.0s, total 0.0s); placeholder: nothing (search 0.0s, total 0.0s); title: nothing (search 0.0s, total 0.0s); role: nothing (search 0.0s, total 0.0s); href: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag-number-normalized: nothing (search 0.0s, total 0.0s); image-ancestor: nothing (search 0.0s, total 0.0s); identity: nothing (search 0.0s, total 0.0s); icon-identity: nothing (search 0.0s, total 0.0s); field-label: nothing (search 0.0s, total 0.0s); editable-replacement: nothing (search 0.0s, total 0.0s); position_fallback: nothing (search 0.0s, total 0.0s); css_path: nothing (search 0.0s, total 0.0s); xpath: proposed a candidate (search 0.0s, total 0.0s); generated-id: nothing (search 0.0s, total 0.0s); visible-same-name: nothing (search 0.0s, total 2.0s); popup-scoped: nothing (search 0.0s, total 0.0s); data-testid: nothing (search 0.0s, total 0.0s); data-test: nothing (search 0.0s, total 0.0s); data-cy: nothing (search 0.0s, total 0.0s); id: nothing (search 0.0s, total 0.0s); name: nothing (search 0.0s, total 0.0s); aria-label: nothing (search 0.0s, total 0.0s); placeholder: nothing (search 0.0s, total 0.0s); title: nothing (search 0.0s, total 0.0s); role: nothing (search 0.0s, total 0.0s); href: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag-number-normalized: nothing (search 0.0s, total 0.0s); image-ancestor: nothing (search 0.0s, total 0.0s); identity: nothing (search 0.0s, total 0.0s); icon-identity: nothing (search 0.0s, total 0.0s); field-label: nothing (search 0.0s, total 0.0s); editable-replacement: nothing (search 0.0s, total 0.0s); position_fallback: nothing (search 0.0s, total 0.0s); css_path: nothing (search 0.0s, total 0.0s); xpath: proposed a candidate (search 0.0s, total 0.0s); generated-id: nothing (search 0.0s, total 0.0s); visible-same-name: nothing (search 0.0s, total 1.3s). Decisions: xpath: 'LARSEN MEMORIAL RUN 13th EDITI' -> not used (its name is 'larsen memorial run 13th edition \uf3c4 chennai \uf1cf novem', but 'test virtual 1\n\nVirtual Event\n\nOctober 1, 2026' was recorded); xpath: 'LARSEN MEMORIAL RUN 13th EDITI' -> not used (its name is 'larsen memorial run 13th edition \uf3c4 chennai \uf1cf novem', but 'test virtual 1\n\nVirtual Event\n\nOctober 1, 2026' was recorded); xpath: 'LARSEN MEMORIAL RUN 13th EDITI' -> not used (its name is 'larsen memorial run 13th edition \uf3c4 chennai \uf1cf novem', but 'test virtual 1\n\nVirtual Event\n\nOctober 1, 2026' was recorded); xpath: 'LARSEN MEMORIAL RUN 13th EDITI' -> not used (its name is 'larsen memorial run 13th edition \uf3c4 chennai \uf1cf novem', but 'test virtual 1\n\nVirtual Event\n\nOctober 1, 2026' was recorded). Waits: none recorded.; recorded click target has a large bounding box (219x230px); the click fell back to recorded coordinates, so it may not land on exactly the same spot; What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Waiting for the page to stop changing before the screenshot (up to 3s)",
+      "effect_verified": null,
+      "large_bbox_flag": true,
+      "screenshot": "generated_scripts/screenshoots/session_20261015_122209_edited_20261015_143654/events/step04_test_virtual_1_virtual_event_october_1_2026_FAILED_14-37-17.png",
+      "url_before": "https://sportzia-preprod.kovaionplay.com/events",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/events",
+      "started_at": "2026-10-15T14:37:12.384",
+      "ended_at": "2026-10-15T14:37:17.124",
+      "duration": 4.669,
+      "timing_ms": {
+        "locate_action": 3266,
+        "screenshot": 150,
+        "other": 1252
+      },
+      "locator_report": {
+        "strategy": "bounding_box",
+        "strategy_label": "Bounding Box fallback",
+        "fallback_level": 15,
+        "resolved": false,
+        "weak": true,
+        "resolution_ms": null,
+        "message": "test virtual 1\n\nVirtual Event\n\nOctober 1, 2026 could not be resolved using any stored locator."
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": true
+    }
+  ],
+  "step_counts": {
+    "passed": 3,
+    "warnings": 0,
+    "failed": 1,
+    "not_run": 0,
+    "manual_input": 0
+  },
+  "ui_elements": [
+    {
+      "index": 2,
+      "action_type": "click",
+      "element_found": true,
+      "locator_used": "text+tag",
+      "status": "PASS",
+      "message": null
+    },
+    {
+      "index": 3,
+      "action_type": "click",
+      "element_found": true,
+      "locator_used": "text+tag",
+      "status": "PASS",
+      "message": null
+    },
+    {
+      "index": 4,
+      "action_type": "click",
+      "element_found": false,
+      "locator_used": null,
+      "status": "FAIL",
+      "message": "Expected UI element was not found"
+    }
+  ],
+  "ui_elements_status": "FAIL",
+  "content_check": null,
+  "screenshot_diff": null,
+  "product_validation": null,
+  "final_screenshot": null,
+  "run_id": "session_20261015_122209_edited_20261015_143654",
+  "run_dir": "generated_scripts/screenshoots/session_20261015_122209_edited_20261015_143654",
+  "live_log": [
+    {
+      "t": 1792055223.417898,
+      "message": "Partial run (until step 4): steps 1-3 run quickly (no screenshots), then step 4 runs normally.",
+      "step": null
+    },
+    {
+      "t": 1792055223.471135,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note",
+      "step": 1
+    },
+    {
+      "t": 1792055224.9721549,
+      "message": "\u21b3 'div' is hidden, so AutoFlow is hovering over the menu that holds it",
+      "level": "note",
+      "step": 2
+    },
+    {
+      "t": 1792055227.7981818,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 2
+    },
+    {
+      "t": 1792055228.622262,
+      "message": "\u21b3 Clicking 'Accept'",
+      "level": "note",
+      "step": 2
+    },
+    {
+      "t": 1792055230.053406,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 3
+    },
+    {
+      "t": 1792055230.8560681,
+      "message": "\u21b3 Clicking 'Events'",
+      "level": "note",
+      "step": 3
+    },
+    {
+      "t": 1792055232.383969,
+      "message": "[INFO] Message check after step 3: page candidates 0 (page text not used: the step moved to another page), server responses 4 (step-caused), keyword match: no, expected result: achieved (navigated to the recorded page), action: none",
+      "step": null
+    },
+    {
+      "t": 1792055232.608514,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 4
+    },
+    {
+      "t": 1792055236.974001,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 3s)",
+      "level": "note",
+      "step": 4
+    },
+    {
+      "t": 1792055237.124915,
+      "message": "[INFO] Message check after step 4: page candidates 0, server responses 0 (step-caused), keyword match: no, expected result: not achieved (still on recorded page), action: none",
+      "step": null
+    },
+    {
+      "t": 1792055315.2396858,
+      "message": "The browser window was closed - the run stopped at step 4.",
+      "step": null
+    }
+  ],
+  "partial_run": {
+    "until_step": 4
+  },
+  "stopped_by_user": null,
+  "browser_closed": true
+}

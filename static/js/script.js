@@ -983,6 +983,9 @@ function createRecordingCard(
     runButton.textContent =
         "Replay";
 
+    // RUN CONTROL (run_control.js): disabled while any replay is running
+    runButton.dataset.afRunControl = "1";
+
     const runResult =
         document.createElement(
             "div"
@@ -1538,6 +1541,10 @@ function renderReplayProgress(container, data, elapsedMs) {
     const list = document.createElement("div");
     list.className = "replay-progress-steps";
 
+    // LIVE LOG SYNC (phase 1): the row marked running is the step the replay itself reports as running
+    // (current_step); an older server without it keeps the previous "next step after the finished ones" guess
+    const runningIndex = (data.current_step && Number.isInteger(data.current_step.index)) ? data.current_step.index : null;
+
     for (let i = 1; i <= (totalSteps || doneSteps.length); i++) {
 
         const stepResult = doneSteps.find(s => s.index === i);
@@ -1558,7 +1565,7 @@ function renderReplayProgress(container, data, elapsedMs) {
             // type label - same preference as _step_element_label in
             // app.py and renderValidationPanel's own step list above.
             label.textContent = (stepResult.name && stepResult.name.trim()) || actionTypeLabel(stepResult.action_type);
-        } else if (i === doneSteps.length + 1) {
+        } else if (runningIndex !== null ? i === runningIndex : i === doneSteps.length + 1) {
             icon.textContent = "⏳";
             icon.classList.add("step-current");
             label.textContent = "Running...";
@@ -1705,6 +1712,12 @@ async function runRecording(recording, runButton, runResult) {
 
                     if (!progressResponse.ok || !progressData.success) {
                         reject(new Error(progressData.message || "Lost track of the replay in progress."));
+                        return;
+                    }
+
+                    // LIVE LOG SYNC (phase 1): an answer about another run is ignored (polled again shortly)
+                    if (progressData.run_id && progressData.run_id !== runId) {
+                        setTimeout(poll, REPLAY_POLL_INTERVAL_MS);
                         return;
                     }
 

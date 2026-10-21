@@ -14,7 +14,7 @@
 
     <link
         rel="stylesheet"
-        href="{{ url_for('static', filename='css/style.css') }}?v=25"
+        href="{{ url_for('static', filename='css/style.css') }}?v=26"
     />
 
 </head>
@@ -222,6 +222,9 @@
                 Recorded Actions
             </h2>
 
+            <!-- RUN UNTIL SELECTED STEP: what the last ▶ run did (started / could not start) -->
+            <div id="runUntilStatus" class="editor-message" hidden></div>
+
             <div id="actionsList"></div>
 
             <button
@@ -343,6 +346,39 @@
                 <div class="modal-buttons">
                     <button type="button" id="renameRecordingCancelBtn" class="secondary-btn">Cancel</button>
                     <button type="button" id="renameRecordingSaveBtn" class="action-btn">Save</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- PHASE 6: deleting a step later steps may depend on - in-app confirmation (same modal style) -->
+        <div id="deleteDependsModal" class="modal-overlay" hidden>
+            <div class="modal-dialog">
+
+                <h3>Delete this step?</h3>
+
+                <p class="modal-helper-text">Later steps may depend on this step. Delete anyway?</p>
+
+                <div class="modal-buttons">
+                    <button type="button" id="deleteDependsCancelBtn" class="secondary-btn">Cancel</button>
+                    <button type="button" id="deleteDependsOkBtn" class="action-btn">Delete</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- RUN UNTIL SELECTED STEP (MODE B): in-app confirmation, same modal style as the Add/Edit Action
+             (Pick Element) dialog -->
+        <div id="runUntilModal" class="modal-overlay" hidden>
+            <div class="modal-dialog">
+
+                <h3 id="runUntilTitle">Run steps</h3>
+
+                <p id="runUntilText" class="modal-helper-text"></p>
+
+                <div class="modal-buttons">
+                    <button type="button" id="runUntilCancelBtn" class="secondary-btn">Cancel</button>
+                    <button type="button" id="runUntilOkBtn" class="action-btn">OK</button>
                 </div>
 
             </div>
@@ -1379,6 +1415,34 @@ function renderActions() {
                 "action-row-buttons";
 
 
+            // RUN UNTIL SELECTED STEP (MODE B): run steps 1..N (1..N-1 fast), then stop. Disabled while any run is
+            // active (see run_control.js).
+            const runUntilBtn =
+                document.createElement("button");
+
+            runUntilBtn.type = "button";
+
+            runUntilBtn.className = "icon-btn";
+
+            runUntilBtn.title = index === 0
+                ? "Run step 1 only"
+                : `Run steps 1-${index + 1} (steps 1-${index} quickly, then step ${index + 1} normally)`;
+
+            runUntilBtn.textContent = "▶";
+
+            runUntilBtn.dataset.afRunControl = "1";
+
+            runUntilBtn.addEventListener(
+                "click",
+                (evt) => {
+                    evt.stopPropagation();
+                    openRunUntilDialog(index);
+                }
+            );
+
+            buttons.appendChild(runUntilBtn);
+
+
             const beforeBtn =
                 document.createElement("button");
 
@@ -1494,10 +1558,25 @@ function renderActions() {
             deleteBtn.addEventListener(
                 "click",
                 () => {
+                    // PHASE 6: a step later steps may depend on (Navigate, Open / Switch Tab, Capture Value, an OTP
+                    // step) asks in an in-app confirmation first; every other deletion is unchanged
+                    if (stepOthersMayDependOn(action)) {
+                        openDeleteDependsDialog(() => performStepDelete(index));
+                        return;
+                    }
                     if (!confirm("Delete this action?")) {
                         return;
                     }
+                    performStepDelete(index);
+                }
+            );
 
+            buttons.appendChild(deleteBtn);
+
+
+            // (the deletion itself, shared by both confirmations above)
+            function performStepDelete(index) {
+                {
                     // ITEM 8: capture the action's own data AND its
                     // position before removing it, so Undo can put it
                     // back exactly where it was - not append it at the
@@ -1517,9 +1596,7 @@ function renderActions() {
 
                     renderActions();
                 }
-            );
-
-            buttons.appendChild(deleteBtn);
+            }
 
 
             header.appendChild(buttons);
@@ -1585,6 +1662,9 @@ function renderActions() {
             container.appendChild(row);
         }
     );
+
+    // RUN CONTROL: the freshly created ▶ icons follow the "a run is active" state right away
+    try { if (window.AFRunControl) window.AFRunControl.apply(); } catch (eRc) {}
 }
 
 
@@ -1694,6 +1774,12 @@ function urlMismatchSuffix(data) {
 // picker is sitting on an EARLIER page than the recording's own
 // insertion point, not the one whatever is picked here will actually be
 // added after.
+// PAGE SNAPSHOT: where the picker's page came from (the page saved during recording, or - when no snapshot could be
+// used - a replay, with the reason)
+function pickSourceSuffix(data) {
+    return (data && data.pick_note) ? " " + data.pick_note : "";
+}
+
 function contentMismatchSuffix(data) {
     const mismatch = data && data.content_mismatch;
     if (!mismatch) {
@@ -1784,6 +1870,9 @@ let lastCountElementsMatchCount = null;
 // (modalSaveBtn) so a LATER edit of this same step, without a fresh
 // re-pick, still has it to build/keep the step's name from.
 let lastPickedLabelInfo = null;
+// the XPath the last pick returned, and whether it was verified 1 of 1 on a recorded page snapshot (saved with the
+// step only while the XPath field still holds exactly that XPath - see the Save handler)
+let lastPickedXpathInfo = null;
 
 // returns the warning strings that currently apply (b: Expected Count
 // filled and different from matchCount; c: matchCount is exactly 1) -
@@ -2070,6 +2159,7 @@ function renderModalFields() {
     modalLocatorValidated = false;
     lastCountElementsMatchCount = null;
     lastPickedLabelInfo = null;
+    lastPickedXpathInfo = null;
     modalOrphanWarningDismissed = false;
     updateOrphanWarning();
     updateModalSaveEnabled();
@@ -2358,6 +2448,7 @@ modalPickElementBtn.addEventListener("click", async () => {
     modalXpath.dispatchEvent(new Event("input"));
     modalXpathCandidates.innerHTML = "";
     modalXpathCandidates.hidden = true;
+    lastPickedXpathInfo = null;
 
     modalPickElementBtn.disabled = true;
     modalValidateResult.className = "editor-message";
@@ -2566,8 +2657,10 @@ modalPickElementBtn.addEventListener("click", async () => {
                 }
             }
         } else if (matchCount === 1) {
+            // 1-OF-1 CHECK (recorder/pick_element.py): "1 of 1 ✓" when the XPath was counted in the whole page
+            const xcOk = !!(data.locator_profile && data.locator_profile.xpath_check && data.locator_profile.xpath_check.unique);
             modalValidateResult.className = "locator-status-ok";
-            modalValidateResult.textContent = `Found: ${matchCount} of ${matchCount}${noteSuffix}`;
+            modalValidateResult.textContent = `Found: ${matchCount} of ${matchCount}${xcOk ? " ✓" : ""}${noteSuffix}`;
             modalLocatorValidated = true;
         } else if (typeof matchCount === "number" && matchCount >= 0) {
             modalValidateResult.className = "locator-status-fail";
@@ -2584,6 +2677,43 @@ modalPickElementBtn.addEventListener("click", async () => {
         // element - appendCountElementsWarnings itself already no-ops
         // for every action type other than count_elements.
         appendCountElementsWarnings(matchCount);
+        // 1-OF-1 CHECK notes (single-element picks): a refined XPath, verification on the page snapshot, numbered
+        // matches to choose from, shadow DOM, frames
+        const xc = data.locator_profile && data.locator_profile.xpath_check;
+        lastPickedXpathInfo = {
+            xpath: data.xpath || "",
+            verified_on_snapshot: !!(xc && xc.verified_on_snapshot),
+            frame_path: (data.locator_profile && data.locator_profile.frame_path) || null,
+        };
+        if (xc && !isMultiPick) {
+            const xcNotes = [];
+            if (xc.refined) {
+                xcNotes.push(`The picked XPath matched ${xc.original_count} element(s) on the page - a unique XPath was built instead (${xc.rule}). Result: 1 of 1 ✓`);
+            }
+            if (xc.verified_on_snapshot) {
+                xcNotes.push("Verified 1 of 1 on the page saved during recording - the next replay confirms it on the live page.");
+            }
+            if (!xc.unique && xc.numbered) {
+                xcNotes.push(`This XPath matches ${xc.count} elements and could not be made unique - they are numbered in the picker window: click the one you mean.`);
+            } else if (!xc.unique && !xc.shadow && typeof xc.count === "number") {
+                xcNotes.push(`Matches: ${xc.count} - this XPath could not be made unique.`);
+            }
+            if (xc.shadow) {
+                xcNotes.push("This element is inside a shadow DOM - an XPath cannot reach it; the existing locator (id / CSS) is used for it.");
+            }
+            if (xc.frame_path && xc.frame_path.length) {
+                xcNotes.push(`Inside a frame: ${xc.frame_path.join(" > ")} (saved with the XPath).`);
+            }
+            if (xc.error) {
+                xcNotes.push("The 1-of-1 check could not run - the XPath is exactly as picked.");
+            }
+            xcNotes.forEach(text => {
+                const line = document.createElement("div");
+                line.className = "editor-message";
+                line.textContent = text;
+                modalValidateResult.appendChild(line);
+            });
+        }
         // DRAG-SELECT fallback note: action_capture.js's own drag-select
         // handler sets this when the selection contained no repeating
         // group of >= 2 - it already fell back to an ordinary single-
@@ -2666,7 +2796,7 @@ modalPickElementBtn.addEventListener("click", async () => {
             console.log('[pick-timing] ui_poll_received t=' + Date.now() + ' status=' + data.status);
 
             if (data.status === "waiting") {
-                const mismatch = contentMismatchSuffix(data) || urlMismatchSuffix(data);
+                const mismatch = contentMismatchSuffix(data) || urlMismatchSuffix(data) || pickSourceSuffix(data);
                 if (mismatch) {
                     modalValidateResult.className = "editor-message";
                     modalValidateResult.textContent = "Waiting for you to click an element in the browser window..." + mismatch;
@@ -2686,7 +2816,7 @@ modalPickElementBtn.addEventListener("click", async () => {
                 applyPickedProfile(
                     data,
                     " - still open in the picker: double-click the highlighted element there to pick a different one, or close that browser window when you're happy with this pick." +
-                        contentMismatchSuffix(data) + urlMismatchSuffix(data) + replayFailuresSuffix(data)
+                        contentMismatchSuffix(data) + urlMismatchSuffix(data) + replayFailuresSuffix(data) + pickSourceSuffix(data)
                 );
                 return; // keep polling
             }
@@ -2694,7 +2824,7 @@ modalPickElementBtn.addEventListener("click", async () => {
             stopPickElementPolling();
 
             if (data.status === "done") {
-                applyPickedProfile(data, contentMismatchSuffix(data) + urlMismatchSuffix(data) + replayFailuresSuffix(data));
+                applyPickedProfile(data, contentMismatchSuffix(data) + urlMismatchSuffix(data) + replayFailuresSuffix(data) + pickSourceSuffix(data));
             } else {
                 // timeout / error / cancelled - reuse the existing
                 // failure styling; typing the XPath manually, or trying
@@ -2871,6 +3001,14 @@ function openAddActionDialog(mode, index) {
                     element_section: lp.element_section || "",
                 };
             }
+            // an XPath verified on a page snapshot keeps that mark when the step is saved again unchanged
+            if (lp.xpath_verified_on_snapshot || lp.frame_path) {
+                lastPickedXpathInfo = {
+                    xpath: lp.xpath || "",
+                    verified_on_snapshot: !!lp.xpath_verified_on_snapshot,
+                    frame_path: lp.frame_path || null,
+                };
+            }
             modalXpath.value = lp.xpath || "";
             // dispatching "input" (so every other reactive bit of state -
             // orphan warning, candidate list, etc. - updates normally)
@@ -2998,6 +3136,16 @@ modalSaveBtn.addEventListener("click", () => {
                 element_section: lastPickedLabelInfo ? lastPickedLabelInfo.element_section : null,
             }
             : null;
+        // PAGE SNAPSHOT: an XPath verified 1 of 1 on the recorded page snapshot (and not edited since) is marked,
+        // so the next replay confirms it on the live page; the frame path of a pick inside a frame is kept with it
+        if (newAction.locator_profile && lastPickedXpathInfo && lastPickedXpathInfo.xpath === xpath) {
+            if (lastPickedXpathInfo.verified_on_snapshot) {
+                newAction.locator_profile.xpath_verified_on_snapshot = true;
+            }
+            if (lastPickedXpathInfo.frame_path) {
+                newAction.locator_profile.frame_path = lastPickedXpathInfo.frame_path;
+            }
+        }
     }
 
     // a manually-added tab_open must never reuse an existing page_id -
@@ -3340,9 +3488,153 @@ if (saveEditedBtn) {
 }
 
 
+/* =========================================================
+   RUN UNTIL SELECTED STEP (MODE B) - starts the normal replay of the SAVED recording with run_until_step=N
+   (the replay itself runs steps 1..N-1 in fast mode, step N normally, then stops) and opens the live log.
+========================================================= */
+
+const runUntilModal = document.getElementById("runUntilModal");
+let runUntilPending = null;   // the step number waiting for OK
+
+function openRunUntilDialog(index) {
+    const n = index + 1;
+    if (window.AFRunControl && window.AFRunControl.isActive()) {
+        showRunUntilStatus("A replay is already running - stop it or wait for it to finish first.", true);
+        return;
+    }
+    if (n === 1) {
+        startRunUntil(1);          // step 1 runs normally, without the popup
+        return;
+    }
+    runUntilPending = n;
+    document.getElementById("runUntilTitle").textContent = `Run steps 1–${n}?`;
+    document.getElementById("runUntilText").textContent =
+        `Steps 1–${n - 1} will run quickly (no delays or screenshots), then step ${n} runs normally. ` +
+        `Execution stops after step ${n}. Note: earlier steps really run on the website.`;
+    runUntilModal.hidden = false;
+}
+
+function closeRunUntilDialog() {
+    runUntilPending = null;
+    if (runUntilModal) runUntilModal.hidden = true;
+}
+
+function showRunUntilStatus(text, isError) {
+    const el = document.getElementById("runUntilStatus");
+    if (!el) return;
+    el.className = isError ? "editor-error" : "editor-message";
+    el.textContent = text;
+    el.hidden = !text;
+}
+
+async function startRunUntil(n) {
+    const action = (recordingData && recordingData.actions || [])[n - 1];
+    if (!action) return;
+    // opened inside the click, so a popup blocker allows it; pointed at the live log once the run has started
+    let logWin = null;
+    try {
+        const logWidth = 460;
+        const logLeft = Math.max(0, (window.screen.availWidth || 1280) - logWidth - 10);
+        logWin = window.open("", "autoflow_live_log",
+            `width=${logWidth},height=760,left=${logLeft},top=20,resizable=yes,scrollbars=yes`);
+    } catch (e) { logWin = null; }
+    if (window.AFRunControl) window.AFRunControl.markActive();
+    try {
+        const response = await fetch("/api/test/run/start", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify({
+                qa_url: recordingData.start_url || "",
+                recording_path: recordingPath,
+                run_until_step: n,
+                // the saved step N must be the step shown here as step N (unsaved changes would shift it)
+                step_check: { action_type: action.action_type || null, timestamp: action.timestamp || null },
+            })
+        });
+        const data = await response.json();
+        if (!response.ok || !data.success) {
+            throw new Error(data.message || data.error || "Couldn't start the run.");
+        }
+        const logUrl = "/logs?run_id=" + encodeURIComponent(data.run_id);
+        if (logWin) {
+            try { logWin.location.href = logUrl; } catch (e) {}
+        }
+        const el = document.getElementById("runUntilStatus");
+        if (el) {
+            el.className = "editor-message";
+            el.innerHTML = "";
+            el.appendChild(document.createTextNode(`Partial run (until step ${n}) started. `));
+            const a = document.createElement("a");
+            a.href = logUrl;
+            a.target = "autoflow_live_log";
+            a.textContent = "Open the live log";
+            el.appendChild(a);
+            el.hidden = false;
+        }
+    } catch (err) {
+        if (logWin) { try { logWin.close(); } catch (e) {} }
+        showRunUntilStatus("Run failed to start: " + err.message, true);
+    } finally {
+        if (window.AFRunControl) window.AFRunControl.refresh();
+    }
+}
+
+/* PHASE 6: steps later steps may depend on - deleting one asks first (in-app, not a browser alert) */
+function stepOthersMayDependOn(action) {
+    try {
+        if (!action) return false;
+        if (["navigate", "tab_open", "tab_switch", "capture_value"].includes(action.action_type)) return true;
+        // an OTP step: marked so by the recorder, or its field says so by web standards / its own name
+        if (action.otp_field === true || action.otp_focus === true) return true;
+        const lp = action.locator_profile || {};
+        const attrs = lp.attributes || {};
+        if (String(attrs.autocomplete || "").toLowerCase() === "one-time-code") return true;
+        const own = [lp.name, lp.id, lp.placeholder, lp.aria_label, attrs.name, attrs.id, attrs.placeholder, attrs["aria-label"]]
+            .map((v) => String(v || "").toLowerCase()).join(" ");
+        return own.split(/[^a-z0-9]+/).includes("otp");
+    } catch (e) {
+        return false;
+    }
+}
+
+const deleteDependsModal = document.getElementById("deleteDependsModal");
+let deleteDependsPending = null;
+
+function openDeleteDependsDialog(onDelete) {
+    if (!deleteDependsModal) { if (confirm("Later steps may depend on this step. Delete anyway?")) onDelete(); return; }
+    deleteDependsPending = onDelete;
+    deleteDependsModal.hidden = false;
+}
+
+if (deleteDependsModal) {
+    document.getElementById("deleteDependsCancelBtn").addEventListener("click", () => {
+        deleteDependsPending = null;
+        deleteDependsModal.hidden = true;
+    });
+    document.getElementById("deleteDependsOkBtn").addEventListener("click", () => {
+        const fn = deleteDependsPending;
+        deleteDependsPending = null;
+        deleteDependsModal.hidden = true;
+        if (fn) fn();
+    });
+}
+
+if (runUntilModal) {
+    document.getElementById("runUntilCancelBtn").addEventListener("click", closeRunUntilDialog);
+    document.getElementById("runUntilOkBtn").addEventListener("click", () => {
+        const n = runUntilPending;
+        closeRunUntilDialog();
+        if (n) startRunUntil(n);
+    });
+}
+
+
 loadRecording();
 
 </script>
+
+<!-- run control: disables the ▶ icons while any run is active and shows a Stop button -->
+<script src="{{ url_for('static', filename='js/run_control.js') }}?v=2"></script>
 
 </body>
 </html>

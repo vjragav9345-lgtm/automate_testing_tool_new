@@ -73,6 +73,48 @@
         .status-warning { color: #ffca28; font-weight: 600; }
         .status-fail { color: #f66; font-weight: 600; }
         .status-skipped { color: #d9a441; font-weight: 600; }
+        /* MODE B: a step run quickly before the selected step */
+        .status-fast { color: #9e9e9e; font-weight: 600; }
+        .log-line[data-state="fast"] { border-left: 3px solid #9e9e9e; padding-left: 6px; color: #b0b0b0; }
+        /* PAUSE ENGINE: the pinned card (light dialog look, like the editor's Pick Element dialog) */
+        .pause-card {
+            position: sticky; top: 0; z-index: 5;
+            margin: 10px 14px; padding: 14px 16px;
+            background: #ffffff; color: #1e293b;
+            border-radius: 8px; box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+            font-family: "Segoe UI", Arial, sans-serif; font-size: 14px;
+        }
+        .pause-card[hidden] { display: none; }
+        .pause-card-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+        .pause-card-message { margin-bottom: 8px; }
+        .pause-card-shot a { color: #1d4ed8; }
+        .pause-card-input-row { margin: 8px 0; }
+        .pause-card-input-row label { margin-right: 8px; font-weight: 600; }
+        .pause-card-input-row input { padding: 6px 8px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; width: 180px; }
+        .pause-card-buttons { display: flex; gap: 8px; margin-top: 10px; }
+        .pause-card-buttons button { padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #f1f5f9; color: #1e293b; cursor: pointer; font-size: 14px; }
+        .pause-card-buttons button.primary { background: #2563eb; border-color: #2563eb; color: #ffffff; }
+        .pause-card-buttons button.danger { background: #dc2626; border-color: #dc2626; color: #ffffff; }
+        .pause-card-buttons button:disabled { opacity: 0.6; cursor: default; }
+        .pause-card-status { margin-top: 6px; font-size: 13px; color: #475569; }
+        .pause-card-fields[hidden], .pause-card-save[hidden] { display: none; }
+        .pause-card-field { border-top: 1px solid #e2e8f0; padding: 8px 0; }
+        .pause-card-field-meta { font-size: 13px; color: #475569; margin-bottom: 4px; }
+        .pause-card-field input { padding: 6px 8px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; width: 260px; }
+        .pause-card-field input.bad { border-color: #dc2626; }
+        .pause-card-field-error { color: #dc2626; font-size: 12px; margin-top: 2px; }
+        .pause-card-switch { color: #1d4ed8; cursor: pointer; font-size: 13px; text-decoration: underline; background: none; border: none; padding: 0; }
+        .pause-card-save { margin-top: 8px; display: flex; gap: 16px; font-size: 13px; }
+        .status-paused { color: #ffca28; font-weight: 600; }
+        .log-line[data-state="paused"] { border-left: 3px solid #ffca28; padding-left: 6px; }
+        .stop-run-btn { margin-top: 6px; background: #c62828; color: #fff; border: none; border-radius: 4px; padding: 4px 12px; cursor: pointer; }
+        .stop-run-btn:disabled { opacity: 0.6; cursor: default; }
+        /* LIVE LOG SYNC (phase 1): the step line's run state, as a thin left marker */
+        .log-line[data-state] { border-left: 3px solid transparent; padding-left: 6px; }
+        .log-line[data-state="running"] { border-left-color: #6cf; background: rgba(102, 204, 255, 0.08); }
+        .log-line[data-state="passed"] { border-left-color: #4caf50; }
+        .log-line[data-state="failed"] { border-left-color: #f66; }
+        .log-line[data-state="stopped"] { border-left-color: #d9a441; }
         .status-running { color: #6cf; font-weight: 600; }
 
         .fail-detail {
@@ -230,6 +272,8 @@
 <header class="log-header">
     <h1 id="liveLogHeading">Live Replay Log</h1>
     <div id="currentStep">Connecting...</div>
+    <!-- Stop the run (MODE A and MODE B): it ends before its next step -->
+    <button type="button" id="stopRunBtn" class="stop-run-btn" hidden>Stop run</button>
 </header>
 
 <div id="errorBanner"></div>
@@ -239,6 +283,25 @@
     <input type="text" id="otpValueInput" inputmode="numeric" autocomplete="one-time-code" />
     <button type="button" id="otpSubmitBtn">Submit</button>
     <span id="otpStatus"></span>
+</div>
+<!-- PAUSE ENGINE (phase 3): the card a paused run waits on (OTP / fallback card) - pinned above the log, so it
+     never scrolls away; same look as the editor's Pick Element / Add Action dialog -->
+<div id="pauseCard" class="pause-card" hidden>
+    <div id="pauseCardTitle" class="pause-card-title"></div>
+    <div id="pauseCardMessage" class="pause-card-message"></div>
+    <div id="pauseCardShot" class="pause-card-shot"></div>
+    <div id="pauseCardInputRow" class="pause-card-input-row" hidden>
+        <label id="pauseCardInputLabel" for="pauseCardInput"></label>
+        <input id="pauseCardInput" type="password" autocomplete="one-time-code" inputmode="numeric" />
+    </div>
+    <!-- FIELD ERROR HANDLING (phase 5): the form's fields with EMPTY boxes (never pre-filled), and where to keep them -->
+    <div id="pauseCardFields" class="pause-card-fields" hidden></div>
+    <div id="pauseCardSave" class="pause-card-save" hidden>
+        <label><input type="radio" name="pauseSave" value="run" checked> Use for this run only</label>
+        <label><input type="radio" name="pauseSave" value="save"> Save to recording</label>
+    </div>
+    <div id="pauseCardButtons" class="pause-card-buttons"></div>
+    <div id="pauseCardStatus" class="pause-card-status"></div>
 </div>
 <div id="logLines"></div>
 
@@ -340,6 +403,31 @@ const otpPromptText = document.getElementById("otpPromptText");
 const otpValueInput = document.getElementById("otpValueInput");
 const otpSubmitBtn = document.getElementById("otpSubmitBtn");
 const otpStatus = document.getElementById("otpStatus");
+const stopRunBtn = document.getElementById("stopRunBtn");
+
+// Stop run (MODE A and MODE B): asks the server to end the run before its next step
+if (stopRunBtn) {
+    stopRunBtn.addEventListener("click", () => {
+        if (!runId) return;
+        stopRunBtn.disabled = true;
+        stopRunBtn.textContent = "Stopping...";
+        fetch("/api/test/run/stop", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ run_id: runId }),
+        })
+            .then((r) => r.json())
+            .then((data) => {
+                if (!data.success) {
+                    stopRunBtn.disabled = false;
+                    stopRunBtn.textContent = "Stop run";
+                    errorBanner.textContent = data.message || "Couldn't stop the run.";
+                    errorBanner.style.display = "block";
+                }
+            })
+            .catch(() => { stopRunBtn.disabled = false; stopRunBtn.textContent = "Stop run"; });
+    });
+}
 
 if (!runId) {
     currentStepEl.textContent = "No run_id given.";
@@ -349,6 +437,30 @@ if (!runId) {
 
     const source = new EventSource("/api/test/run/stream?run_id=" + encodeURIComponent(runId));
 
+    // LIVE LOG SYNC (phase 1): every event names its run (run_id); an event of any other run is ignored.
+    // Wraps each listener once here, so every handler below gets this check. Events without a run_id (an older
+    // server, or the browser's own connection "error" event) pass through unchanged.
+    const _addRunListener = source.addEventListener.bind(source);
+    source.addEventListener = (type, handler, options) => _addRunListener(type, (e) => {
+        try {
+            if (e && typeof e.data === "string" && e.data) {
+                const d = JSON.parse(e.data);
+                if (d && d.run_id && d.run_id !== runId) return;
+            }
+        } catch (eRun) { /* unreadable payload: the handler decides as before */ }
+        handler(e);
+    }, options);
+
+    // the run state of a step line (running / passed / failed / stopped; later phases add fast / paused /
+    // waiting) - drives the line's highlight; data-step-ref is the step's stable reference
+    function markStepLine(line, data) {
+        try {
+            if (!line || !data) return;
+            if (data.state) line.dataset.state = data.state;
+            if (data.step_ref) line.dataset.stepRef = data.step_ref;
+        } catch (eMark) {}
+    }
+
     // PHASE 2d: sent once, right at the start of the stream - shows this
     // run's own name (display_name when the recording has one) instead
     // of the generic heading; falls back to test_name, then leaves the
@@ -356,10 +468,15 @@ if (!runId) {
     source.addEventListener("meta", (e) => {
         const data = JSON.parse(e.data);
         const name = data.display_name || data.test_name;
+        // MODE B: a partial run says so in its heading
+        const partialLabel = data.partial_until ? ` - Partial run (until step ${data.partial_until})` : "";
         if (name) {
-            document.getElementById("liveLogHeading").textContent = name;
-            document.title = name + " - Live Replay Log - AutoFlow QA";
+            document.getElementById("liveLogHeading").textContent = name + partialLabel;
+            document.title = name + partialLabel + " - Live Replay Log - AutoFlow QA";
+        } else if (partialLabel) {
+            document.getElementById("liveLogHeading").textContent = "Live Replay Log" + partialLabel;
         }
+        stopRunBtn.hidden = false;
     });
 
     source.addEventListener("running", (e) => {
@@ -378,7 +495,13 @@ if (!runId) {
                 `Step ${data.index}: ${escapeHtml(actionLabel(data.action_type, data.element, data.name_is_full_sentence))} &mdash; ` +
                 `<span class="step-status status-running">Running&hellip;</span>`
             );
+            markStepLine(stepLines[data.index], data);
             flushPendingSubs(data.index);
+            // a card for this step that arrived before its line (a live log opened while the step waits): the
+            // step shows as paused, not as running
+            if (typeof pauseStepIndex !== "undefined" && pauseStepIndex === data.index && pauseToken) {
+                setStepLineState(data.index, "paused", "Paused - waiting for you");
+            }
         }
     });
 
@@ -414,9 +537,10 @@ if (!runId) {
         const data = JSON.parse(e.data);
         const line = stepLines[data.index];
         if (!line) return;
+        markStepLine(line, data);
         const note = line.querySelector(".step-note");
         if (note) note.remove();
-        const statusText = { pass: "PASS", warning: "WARNING", fail: "FAILED", skipped: "NOT RUN" }[data.status] || String(data.status).toUpperCase();
+        const statusText = { pass: "PASS", warning: "WARNING", fail: "FAILED", skipped: "NOT RUN", fast: "⏩ FAST" }[data.status] || String(data.status).toUpperCase();
         const statusEl = line.querySelector(".step-status");
         if (statusEl) {
             statusEl.className = "step-status status-" + data.status;
@@ -537,7 +661,7 @@ if (!runId) {
         // step that PASSED but carries a non-fatal note, e.g. Fix 1's
         // "Value changed on the site..." note) - shown in yellow/amber,
         // never merged into a plain "PASS".
-        const statusText = { pass: "PASS", warning: "WARNING", fail: "FAILED", skipped: "NOT RUN" }[data.status] || data.status.toUpperCase();
+        const statusText = { pass: "PASS", warning: "WARNING", fail: "FAILED", skipped: "NOT RUN", fast: "⏩ FAST" }[data.status] || data.status.toUpperCase();
         const statusClass = "status-" + data.status;
 
         // LIVE LOG SYNC: the final line carries the step's own start and end
@@ -560,6 +684,7 @@ if (!runId) {
         } else {
             stepLines[data.index] = appendLine(finalLineHtml);
         }
+        markStepLine(stepLines[data.index], data);
         flushPendingSubs(data.index);
         if (data.status === "warning" && data.reason) stepLines[data.index].dataset.warnShown = "1";
 
@@ -605,6 +730,11 @@ if (!runId) {
             // ever under the collapsible Details.
             const parts = [];
             if (r.plain) parts.push(`<div><strong>${escapeHtml(r.plain)}</strong></div>`);
+            // LIVE LOG SYNC (phase 1): a failure's screenshot is one click away, next to its reason (the full
+            // path stays under Details)
+            if (data.status === "fail" && r.screenshot) {
+                parts.push(`<div><a href="/screenshots/raw?path=${encodeURIComponent(r.screenshot)}" target="_blank">View failure screenshot</a></div>`);
+            }
             const detailParts = [];
             if (r.technical) detailParts.push(`<div><strong>Technical details:</strong> ${escapeHtml(r.technical)}</div>`);
             // the raw engine text, only when it says something the headline doesn't
@@ -661,9 +791,236 @@ if (!runId) {
         }
     });
 
+    // PAUSE ENGINE (phase 3): the pinned card of a paused run - an OTP prompt (masked input + Submit) or the
+    // fallback card of a failed step (reason, screenshot, Retry step). Every card has Stop run.
+    const pauseCard = document.getElementById("pauseCard");
+    let pauseToken = null;
+    let pauseStepIndex = null;
+    const PAUSE_BUTTONS = {
+        submit: { text: "Submit", cls: "primary" },
+        retry: { text: "Retry step", cls: "primary" },
+        accept: { text: "Accept this page and continue", cls: "" },
+        continue: { text: "Continue", cls: "primary" },
+        retry_as_is: { text: "Retry as is", cls: "" },
+        stop: { text: "Stop run", cls: "danger" },
+    };
+
+    function setStepLineState(index, state, text) {
+        const line = stepLines[index];
+        if (!line) return;
+        line.dataset.state = state;
+        const st = line.querySelector(".step-status");
+        if (st && text) {
+            st.className = "step-status status-" + state;
+            st.textContent = text;
+        }
+    }
+
+    // FIELD ERROR HANDLING: a light format check only - email needs @, phone needs digits (optional leading +),
+    // email-or-phone accepts either, everything else is free text. What was typed is never changed.
+    function fieldFormatProblem(ftype, v) {
+        const isEmail = v.indexOf("@") > 0;
+        const isPhone = /^[+]?[0-9][0-9 ()-]*$/.test(v) && /[0-9]/.test(v);
+        if (ftype === "email" && !isEmail) return "An email must contain @.";
+        if (ftype === "phone" && !isPhone) return "A phone number must contain digits (an optional leading + is fine).";
+        if (ftype === "email_or_phone" && !isEmail && !isPhone) return "Enter an email (with @) or a phone number.";
+        return null;
+    }
+
+    let fieldCard = null;     // the field-error card shown now: { fields, focus, showAll }
+
+    function renderFieldRows() {
+        const box = document.getElementById("pauseCardFields");
+        box.innerHTML = "";
+        if (!fieldCard) { box.hidden = true; return; }
+        const rows = (fieldCard.showAll || !fieldCard.focus)
+            ? fieldCard.fields
+            : fieldCard.fields.filter((f) => f.step_index === fieldCard.focus);
+        if (!rows.length) {
+            box.innerHTML = '<div class="pause-card-field-meta">No recorded text field was found for this form. Use Retry as is or Stop run.</div>';
+        }
+        rows.forEach((f) => {
+            const row = document.createElement("div");
+            row.className = "pause-card-field";
+            const meta = document.createElement("div");
+            meta.className = "pause-card-field-meta";
+            meta.textContent = `${f.label} - filled at step ${f.step_index} - current value: ${f.current_value || "(empty)"}`;
+            const input = document.createElement("input");
+            input.type = f.secret ? "password" : "text";
+            input.placeholder = f.input_label || "Enter new value";
+            input.setAttribute("aria-label", f.input_label || "Enter new value");
+            input.dataset.step = String(f.step_index);
+            input.dataset.ftype = f.field_type || "text";
+            input.autocomplete = "off";
+            input.value = "";              // always empty: the tool never suggests a value
+            const err = document.createElement("div");
+            err.className = "pause-card-field-error";
+            row.appendChild(meta);
+            row.appendChild(input);
+            row.appendChild(err);
+            box.appendChild(row);
+        });
+        if (fieldCard.focus) {
+            const sw = document.createElement("button");
+            sw.type = "button";
+            sw.className = "pause-card-switch";
+            sw.textContent = fieldCard.showAll ? "Show only the field with the error" : "Show all fields";
+            sw.addEventListener("click", () => { fieldCard.showAll = !fieldCard.showAll; renderFieldRows(); });
+            box.appendChild(sw);
+        }
+        box.hidden = false;
+    }
+
+    function collectFieldValues() {
+        const values = {};
+        let bad = false;
+        document.querySelectorAll("#pauseCardFields input[data-step]").forEach((inp) => {
+            const v = inp.value;
+            const err = inp.parentElement.querySelector(".pause-card-field-error");
+            inp.classList.remove("bad");
+            if (err) err.textContent = "";
+            if (v === "") return;                       // empty box = keep the current value
+            const problem = fieldFormatProblem(inp.dataset.ftype, v.trim());
+            if (problem) {
+                bad = true;
+                inp.classList.add("bad");
+                if (err) err.textContent = problem;
+                return;
+            }
+            values[inp.dataset.step] = v;
+        });
+        return bad ? null : values;
+    }
+
+    function answerPause(action) {
+        if (!pauseToken) return;
+        const input = document.getElementById("pauseCardInput");
+        const value = (action === "submit") ? (input.value || "").trim() : null;
+        const status = document.getElementById("pauseCardStatus");
+        if (action === "submit" && !value) {
+            status.textContent = "Enter a value first.";
+            return;
+        }
+        let values = null;
+        let save = false;
+        if (action === "continue") {
+            values = collectFieldValues();
+            if (values === null) {
+                status.textContent = "Please correct the highlighted value(s).";
+                return;
+            }
+            // Continue with every box empty behaves like Retry as is
+            if (!Object.keys(values).length) action = "retry_as_is";
+            const saveSel = document.querySelector('input[name="pauseSave"]:checked');
+            save = !!(saveSel && saveSel.value === "save");
+        }
+        pauseCard.querySelectorAll("button").forEach((b) => { b.disabled = true; });
+        status.textContent = action === "stop" ? "Stopping..." : "Sent - continuing...";
+        fetch("/api/test/run/pause/answer", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ run_id: runId, token: pauseToken, action, value, values, save }),
+        })
+            .then((r) => r.json())
+            .then((d) => {
+                if (d.success && d.save_note) status.textContent = d.save_note;
+                if (!d.success) {
+                    status.textContent = d.message || "Couldn't send the answer - try again.";
+                    pauseCard.querySelectorAll("button").forEach((b) => { b.disabled = false; });
+                }
+            })
+            .catch(() => {
+                status.textContent = "Couldn't reach the server - try again.";
+                pauseCard.querySelectorAll("button").forEach((b) => { b.disabled = false; });
+            });
+    }
+
+    source.addEventListener("pause", (e) => {
+        const data = JSON.parse(e.data);
+        pauseToken = data.token;
+        pauseStepIndex = data.step_index;
+        const isOtp = data.kind === "otp";
+        const isField = data.kind === "field_error";
+        document.getElementById("pauseCardTitle").textContent =
+            (isOtp ? "OTP needed" : (isField ? "The website reported a problem" : "Step failed")) +
+            ` - step ${data.step_index}` + (data.total_steps ? ` of ${data.total_steps}` : "") + " (paused)" +
+            (isField && data.attempt > 1 ? ` - Attempt ${data.attempt}` : "");
+        document.getElementById("pauseCardMessage").textContent =
+            isField ? `"${data.message || ""}" (${data.source || "page message"})` : (data.message || "");
+        fieldCard = isField
+            ? { fields: Array.isArray(data.fields) ? data.fields : [], focus: data.focus_step || null, showAll: !data.focus_step }
+            : null;
+        renderFieldRows();
+        document.getElementById("pauseCardSave").hidden = !isField;
+        if (isField) {
+            const runOnly = document.querySelector('input[name="pauseSave"][value="run"]');
+            if (runOnly) runOnly.checked = true;
+        }
+        const shot = document.getElementById("pauseCardShot");
+        shot.innerHTML = data.screenshot
+            ? `<a href="/screenshots/raw?path=${encodeURIComponent(data.screenshot)}" target="_blank">View failure screenshot</a>`
+            : "";
+        const actions = Array.isArray(data.actions) ? data.actions : [];
+        const inputRow = document.getElementById("pauseCardInputRow");
+        const input = document.getElementById("pauseCardInput");
+        inputRow.hidden = !actions.includes("submit");
+        input.value = "";
+        input.type = data.secret ? "password" : "text";
+        document.getElementById("pauseCardInputLabel").textContent = data.input_label || "Value";
+        const buttons = document.getElementById("pauseCardButtons");
+        buttons.innerHTML = "";
+        actions.forEach((a) => {
+            const spec = PAUSE_BUTTONS[a];
+            if (!spec) return;
+            const b = document.createElement("button");
+            b.type = "button";
+            b.className = spec.cls;
+            b.textContent = spec.text;
+            b.addEventListener("click", () => answerPause(a));
+            buttons.appendChild(b);
+        });
+        document.getElementById("pauseCardStatus").textContent = "";
+        pauseCard.hidden = false;
+        // the step shows as paused while the run waits (its line may be a finished FAILED line: shown paused too)
+        setStepLineState(data.step_index, "paused", "Paused - waiting for you");
+        if (!inputRow.hidden) input.focus();
+    });
+
+    document.getElementById("pauseCardInput").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") answerPause("submit");
+    });
+
+    source.addEventListener("pause_resolved", () => {
+        pauseCard.hidden = true;
+        fieldCard = null;
+        if (pauseStepIndex !== null && stepLines[pauseStepIndex]) {
+            if (renderedSteps.has(pauseStepIndex)) {
+                // a finished (failed) step whose card was answered with Stop / not answered: FAILED again
+                setStepLineState(pauseStepIndex, "failed", "FAILED");
+            } else {
+                setStepLineState(pauseStepIndex, "running", "Running…");
+            }
+        }
+        pauseToken = null;
+        pauseStepIndex = null;
+    });
+
+    // the user chose Retry step: the step runs again - its line goes back to running and gets its new result
+    source.addEventListener("step_retry", (e) => {
+        const data = JSON.parse(e.data);
+        // a field-error Continue re-runs a range of steps (index..until): every one of them gets its new result
+        const until = Number.isInteger(data.until) ? data.until : data.index;
+        for (let k = data.index; k <= until; k++) {
+            renderedSteps.delete(k);
+            setStepLineState(k, "running", "Running again…");
+        }
+    });
+
     source.addEventListener("summary", (e) => {
         const data = JSON.parse(e.data);
         source.close();
+        pauseCard.hidden = true;
+        stopRunBtn.hidden = true;
         currentStepEl.textContent = "Replay finished.";
 
         summaryBanner.className = (data.status === "PASS") ? "pass" : "fail";

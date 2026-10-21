@@ -1,0 +1,1439 @@
+{
+  "status": "FAIL",
+  "message": "Step 18 (\"Verify\" element) failed: The browser is on '/feed', but this step was recorded on '/otp'. The previous step probably did not lead to the same page. The replay stopped.; Elements missing at step(s) 18",
+  "diagnostic": null,
+  "qa_url": "https://sportzia-preprod.kovaionplay.com",
+  "steps": [
+    {
+      "index": 1,
+      "fast": false,
+      "captured_messages": null,
+      "action_type": "navigate",
+      "name": "Open \u2013 Home page",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": null,
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "What AutoFlow did: Waiting for the page to finish loading (up to 1.2s) > Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "generated_scripts/screenshoots/session_20261014_142715_20261014_162338/feed/step01_open_home_page_2026-10-14_16-23-44.png",
+      "url_before": "https://sportzia-preprod.kovaionplay.com/feed",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/feed",
+      "started_at": "2026-10-14T16:23:42.231",
+      "ended_at": "2026-10-14T16:23:44.161",
+      "duration": 1.783,
+      "timing_ms": {
+        "settle": 1142,
+        "navigation_wait": 94,
+        "screenshot": 532,
+        "other": 15
+      },
+      "locator_report": null,
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": false
+    },
+    {
+      "index": 2,
+      "fast": false,
+      "captured_messages": null,
+      "action_type": "click",
+      "name": "\"Accept\" element",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "text+tag",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Clicking 'Accept'",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://sportzia-preprod.kovaionplay.com/feed",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/feed",
+      "started_at": "2026-10-14T16:23:44.162",
+      "ended_at": "2026-10-14T16:23:47.270",
+      "duration": 3.06,
+      "timing_ms": {
+        "locate_action": 1622,
+        "log_emit": 1,
+        "screenshot": 185,
+        "settle": 6,
+        "verify": 433,
+        "other": 813
+      },
+      "locator_report": {
+        "strategy": "text+tag",
+        "strategy_label": "Text + Tag fallback",
+        "fallback_level": 11,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 3060,
+        "message": "Accept found using Text + Tag fallback. (resolved in 3060ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": true
+    },
+    {
+      "index": 3,
+      "fast": false,
+      "captured_messages": null,
+      "action_type": "click",
+      "name": "\"Sign in\" element",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "text+tag",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Clicking 'Sign in' > Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "generated_scripts/screenshoots/session_20261014_142715_20261014_162338/login/step03_sign_in_element_2026-10-14_16-23-50.png",
+      "url_before": "https://sportzia-preprod.kovaionplay.com/feed",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/login",
+      "started_at": "2026-10-14T16:23:47.271",
+      "ended_at": "2026-10-14T16:23:50.178",
+      "duration": 2.881,
+      "timing_ms": {
+        "locate_action": 1709,
+        "log_emit": 1,
+        "screenshot": 278,
+        "settle": 6,
+        "navigation_wait": 87,
+        "verify": 18,
+        "other": 781
+      },
+      "locator_report": {
+        "strategy": "text+tag",
+        "strategy_label": "Text + Tag fallback",
+        "fallback_level": 11,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 2881,
+        "message": "Sign in found using Text + Tag fallback. (resolved in 2881ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": true
+    },
+    {
+      "index": 4,
+      "fast": false,
+      "captured_messages": null,
+      "action_type": "click",
+      "name": "\"Not Register? Create an Account\" element",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "text+tag",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Clicking 'Not Register? Create an Account' > Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "generated_scripts/screenshoots/session_20261014_142715_20261014_162338/signup/step04_not_register_create_an_account_element_2026-10-14_16-23-52.png",
+      "url_before": "https://sportzia-preprod.kovaionplay.com/login",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/signup",
+      "started_at": "2026-10-14T16:23:50.179",
+      "ended_at": "2026-10-14T16:23:52.962",
+      "duration": 2.611,
+      "timing_ms": {
+        "locate_action": 1668,
+        "log_emit": 1,
+        "screenshot": 325,
+        "settle": 6,
+        "navigation_wait": 9,
+        "verify": 18,
+        "other": 584
+      },
+      "locator_report": {
+        "strategy": "text+tag",
+        "strategy_label": "Text + Tag fallback",
+        "fallback_level": 11,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 2611,
+        "message": "Not Register? Create an Account found using Text + Tag fallback. (resolved in 2611ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": true
+    },
+    {
+      "index": 5,
+      "fast": false,
+      "captured_messages": null,
+      "action_type": "click",
+      "name": "\"Enter your full name\" field",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "placeholder",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Clicking 'Enter your full name'",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://sportzia-preprod.kovaionplay.com/signup",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/signup",
+      "started_at": "2026-10-14T16:23:52.963",
+      "ended_at": "2026-10-14T16:23:55.478",
+      "duration": 2.464,
+      "timing_ms": {
+        "locate_action": 1417,
+        "log_emit": 1,
+        "screenshot": 124,
+        "settle": 5,
+        "verify": 431,
+        "other": 485
+      },
+      "locator_report": {
+        "strategy": "placeholder",
+        "strategy_label": "Placeholder",
+        "fallback_level": 7,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 2464,
+        "message": "Enter your full name found using Placeholder. (resolved in 2464ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": false
+    },
+    {
+      "index": 6,
+      "fast": false,
+      "captured_messages": null,
+      "action_type": "fill",
+      "name": "Enter your full name: \"kavin\"",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "placeholder",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "generated_scripts/screenshoots/session_20261014_142715_20261014_162338/signup/step06_enter_your_full_name_kavin_2026-10-14_16-23-57.png",
+      "url_before": "https://sportzia-preprod.kovaionplay.com/signup",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/signup",
+      "started_at": "2026-10-14T16:23:55.479",
+      "ended_at": "2026-10-14T16:23:57.096",
+      "duration": 1.429,
+      "timing_ms": {
+        "locate_action": 1227,
+        "log_emit": 0,
+        "screenshot": 170,
+        "other": 32
+      },
+      "locator_report": {
+        "strategy": "placeholder",
+        "strategy_label": "Placeholder",
+        "fallback_level": 7,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 1429,
+        "message": "Enter your full name found using Placeholder. (resolved in 1429ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": false
+    },
+    {
+      "index": 7,
+      "fast": false,
+      "captured_messages": null,
+      "action_type": "click",
+      "name": "\"Enter your email or phone number\" field",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "placeholder",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Clicking 'Enter your email or phone number'",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://sportzia-preprod.kovaionplay.com/signup",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/signup",
+      "started_at": "2026-10-14T16:23:57.098",
+      "ended_at": "2026-10-14T16:23:59.766",
+      "duration": 2.466,
+      "timing_ms": {
+        "locate_action": 1414,
+        "log_emit": 1,
+        "screenshot": 123,
+        "settle": 6,
+        "verify": 434,
+        "other": 488
+      },
+      "locator_report": {
+        "strategy": "placeholder",
+        "strategy_label": "Placeholder",
+        "fallback_level": 7,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 2466,
+        "message": "Enter your email or phone number found using Placeholder. (resolved in 2466ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": false
+    },
+    {
+      "index": 8,
+      "fast": false,
+      "captured_messages": null,
+      "action_type": "fill",
+      "name": "Enter your email or phone number: \"9715648156\"",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "placeholder",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "generated_scripts/screenshoots/session_20261014_142715_20261014_162338/signup/step08_enter_your_email_or_phone_number_9715648_2026-10-14_16-24-01.png",
+      "url_before": "https://sportzia-preprod.kovaionplay.com/signup",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/signup",
+      "started_at": "2026-10-14T16:23:59.768",
+      "ended_at": "2026-10-14T16:24:01.309",
+      "duration": 1.349,
+      "timing_ms": {
+        "locate_action": 1143,
+        "log_emit": 1,
+        "screenshot": 175,
+        "other": 29
+      },
+      "locator_report": {
+        "strategy": "placeholder",
+        "strategy_label": "Placeholder",
+        "fallback_level": 7,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 1349,
+        "message": "Enter your email or phone number found using Placeholder. (resolved in 1349ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": false
+    },
+    {
+      "index": 9,
+      "fast": false,
+      "captured_messages": null,
+      "action_type": "click",
+      "name": "\"Date of Birth*\" field",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "placeholder",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "Ignored a changed field (the field the click went into): <input type=text> name=None; What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Clicking 'Date of Birth*'",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://sportzia-preprod.kovaionplay.com/signup",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/signup",
+      "started_at": "2026-10-14T16:24:01.311",
+      "ended_at": "2026-10-14T16:24:03.914",
+      "duration": 2.505,
+      "timing_ms": {
+        "locate_action": 1453,
+        "log_emit": 1,
+        "screenshot": 122,
+        "settle": 6,
+        "verify": 434,
+        "other": 488
+      },
+      "locator_report": {
+        "strategy": "placeholder",
+        "strategy_label": "Placeholder",
+        "fallback_level": 7,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 2505,
+        "message": "Date of Birth* found using Placeholder. (resolved in 2505ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": false
+    },
+    {
+      "index": 10,
+      "fast": false,
+      "captured_messages": null,
+      "action_type": "fill",
+      "name": "Date of Birth*: \"11/02/2004\"",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "placeholder",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "generated_scripts/screenshoots/session_20261014_142715_20261014_162338/signup/step10_date_of_birth_11_02_2004_2026-10-14_16-24-05.png",
+      "url_before": "https://sportzia-preprod.kovaionplay.com/signup",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/signup",
+      "started_at": "2026-10-14T16:24:03.916",
+      "ended_at": "2026-10-14T16:24:05.409",
+      "duration": 1.347,
+      "timing_ms": {
+        "locate_action": 1137,
+        "log_emit": 1,
+        "screenshot": 180,
+        "other": 29
+      },
+      "locator_report": {
+        "strategy": "placeholder",
+        "strategy_label": "Placeholder",
+        "fallback_level": 7,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 1347,
+        "message": "Date of Birth* found using Placeholder. (resolved in 1347ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": false
+    },
+    {
+      "index": 11,
+      "fast": false,
+      "captured_messages": null,
+      "action_type": "hover",
+      "name": "\"Sign up\" (div)",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "text+tag",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Hovering over 'Sign up'",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://sportzia-preprod.kovaionplay.com/signup",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/signup",
+      "started_at": "2026-10-14T16:24:05.411",
+      "ended_at": "2026-10-14T16:24:06.016",
+      "duration": 0.508,
+      "timing_ms": {
+        "locate_action": 464,
+        "log_emit": 1,
+        "other": 43
+      },
+      "locator_report": {
+        "strategy": "text+tag",
+        "strategy_label": "Text + Tag fallback",
+        "fallback_level": 11,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 508,
+        "message": "Sign up found using Text + Tag fallback. (resolved in 508ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": true
+    },
+    {
+      "index": 12,
+      "fast": false,
+      "captured_messages": null,
+      "action_type": "click",
+      "name": "\"By continuing, you agree to our Terms of\" element",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "xpath",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "DIAGNOSTIC - the step ended on the 'xpath' method. Methods tried in order: popup-scoped: nothing (search 0.0s, total 0.0s); data-testid: nothing (search 0.0s, total 0.0s); data-test: nothing (search 0.0s, total 0.0s); data-cy: nothing (search 0.0s, total 0.0s); id: nothing (search 0.0s, total 0.0s); name: nothing (search 0.0s, total 0.0s); aria-label: nothing (search 0.0s, total 0.0s); placeholder: nothing (search 0.0s, total 0.0s); title: nothing (search 0.0s, total 0.0s); role: nothing (search 0.0s, total 0.0s); href: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag-number-normalized: nothing (search 0.0s, total 0.0s); image-ancestor: nothing (search 0.0s, total 0.0s); identity: nothing (search 0.0s, total 0.0s); icon-identity: nothing (search 0.0s, total 0.0s); field-label: nothing (search 0.0s, total 0.0s); editable-replacement: nothing (search 0.0s, total 0.0s); position_fallback: nothing (search 0.0s, total 0.0s); css_path: nothing (search 0.0s, total 0.0s); xpath: proposed a candidate (search 0.0s, total 2.2s). Decisions: xpath: 'div' -> proposed (<div> at (410,537) 30x20, visible (its own box is shown)); xpath: '' -> used. Waits: none recorded.; What AutoFlow did: Hovering over 'Sign up' to reveal the menu > Waiting for the page to finish loading (up to 0.3s) > Clicking 'By continuing, you agree to our Terms of Service and Priv...' > Waiting for the page to finish loading (up to 0.3s) > Clicking 'Sign up' > Waiting for the page to finish navigating (up to 5s) > Waiting for the page to stop changing before the screenshot (up to 3s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://sportzia-preprod.kovaionplay.com/signup",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/signup",
+      "started_at": "2026-10-14T16:24:06.018",
+      "ended_at": "2026-10-14T16:24:08.844",
+      "duration": 2.727,
+      "timing_ms": {
+        "locate_action": 1555,
+        "log_emit": 2,
+        "screenshot": 125,
+        "settle": 6,
+        "verify": 433,
+        "other": 606
+      },
+      "locator_report": {
+        "strategy": "xpath",
+        "strategy_label": "XPath",
+        "fallback_level": 14,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 2727,
+        "message": "By continuing, you agree to our Terms of Service and Priv... found using XPath. (resolved in 2727ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": false
+    },
+    {
+      "index": 13,
+      "fast": false,
+      "captured_messages": null,
+      "action_type": "click",
+      "name": "\"Sign up\" element",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "text+tag",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "Recorded destination: 'https://sportzia-preprod.kovaionplay.com/otp?userId=8778173783&loginType=phoneNumber'; actual URL: 'https://sportzia-preprod.kovaionplay.com/otp?userId=9715648155&loginType=phoneNumber'; How the address differed: this site adds a different code to the address on every visit.; Page address differs from the recording in a normal way: recorded 'https://sportzia-preprod.kovaionplay.com/otp?userId=8778173783&loginType=phoneNumber', now 'https://sportzia-preprod.kovaionplay.com/otp?userId=9715648155&loginType=phoneNumber'; What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Clicking 'Sign up' > Waiting for the page to finish navigating (up to 5s) > Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "generated_scripts/screenshoots/session_20261014_142715_20261014_162338/otp/step13_sign_up_element_2026-10-14_16-24-49.png",
+      "url_before": "https://sportzia-preprod.kovaionplay.com/signup",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/otp?userId=9715648155&loginType=phoneNumber",
+      "started_at": "2026-10-14T16:24:46.083",
+      "ended_at": "2026-10-14T16:24:49.426",
+      "duration": 3.245,
+      "timing_ms": {
+        "locate_action": 1383,
+        "log_emit": 2,
+        "screenshot": 272,
+        "settle": 6,
+        "verify": 1023,
+        "other": 558
+      },
+      "locator_report": {
+        "strategy": "text+tag",
+        "strategy_label": "Text + Tag fallback",
+        "fallback_level": 11,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 3245,
+        "message": "Sign up found using Text + Tag fallback. (resolved in 3245ms)"
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": null,
+      "fragile": true
+    },
+    {
+      "index": 14,
+      "fast": false,
+      "captured_messages": null,
+      "action_type": "fill",
+      "name": "Enter OTP box: \"1234\"",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "otp split boxes",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "The OTP was typed into 4 separate boxes, one character each.; What AutoFlow did: Waiting for the page to stop changing before the screenshot (up to 1.5s) > Waiting for the page to finish loading (up to 1.4941s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "generated_scripts/screenshoots/session_20261014_142715_20261014_162338/otp/step14_enter_otp_box_1234_2026-10-14_16-24-58.png",
+      "url_before": "https://sportzia-preprod.kovaionplay.com/otp?userId=9715648155&loginType=phoneNumber",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/otp?userId=9715648155&loginType=phoneNumber",
+      "started_at": "2026-10-14T16:24:49.435",
+      "ended_at": "2026-10-14T16:24:58.058",
+      "duration": 8.596,
+      "timing_ms": {
+        "log_emit": 1,
+        "screenshot": 170,
+        "other": 8425
+      },
+      "locator_report": {
+        "strategy": "otp split boxes",
+        "strategy_label": "otp split boxes",
+        "fallback_level": null,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 8596,
+        "message": "Enter OTP found using otp split boxes."
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": "otp_fill",
+      "fragile": false
+    },
+    {
+      "index": 15,
+      "fast": false,
+      "captured_messages": null,
+      "action_type": "fill",
+      "name": "Enter OTP box: \"2\"",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "skipped (OTP box already filled)",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "This OTP box was already filled with the OTP entered in the live log.; What AutoFlow did: Waiting for the page to stop changing before the screenshot (up to 1.5s) > Waiting for the page to finish loading (up to 1.4936s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://sportzia-preprod.kovaionplay.com/otp?userId=9715648155&loginType=phoneNumber",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/otp?userId=9715648155&loginType=phoneNumber",
+      "started_at": "2026-10-14T16:24:58.060",
+      "ended_at": "2026-10-14T16:24:58.215",
+      "duration": 0.107,
+      "timing_ms": {
+        "log_emit": 1,
+        "screenshot": 68,
+        "other": 37
+      },
+      "locator_report": {
+        "strategy": "skipped (OTP box already filled)",
+        "strategy_label": "skipped (OTP box already filled)",
+        "fallback_level": null,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 107,
+        "message": "Enter OTP found using skipped (OTP box already filled)."
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": "otp_fill_more",
+      "fragile": false
+    },
+    {
+      "index": 16,
+      "fast": false,
+      "captured_messages": null,
+      "action_type": "fill",
+      "name": "Enter OTP box: \"3\"",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "skipped (OTP box already filled)",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "This OTP box was already filled with the OTP entered in the live log.; What AutoFlow did: Waiting for the page to stop changing before the screenshot (up to 1.5s) > Waiting for the page to finish loading (up to 1.49403s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "generated_scripts/screenshoots/session_20261014_142715_20261014_162338/otp/step16_enter_otp_box_3_2026-10-14_16-24-58.png",
+      "url_before": "https://sportzia-preprod.kovaionplay.com/otp?userId=9715648155&loginType=phoneNumber",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/otp?userId=9715648155&loginType=phoneNumber",
+      "started_at": "2026-10-14T16:24:58.218",
+      "ended_at": "2026-10-14T16:24:58.524",
+      "duration": 0.208,
+      "timing_ms": {
+        "log_emit": 1,
+        "screenshot": 178,
+        "other": 28
+      },
+      "locator_report": {
+        "strategy": "skipped (OTP box already filled)",
+        "strategy_label": "skipped (OTP box already filled)",
+        "fallback_level": null,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 208,
+        "message": "Enter OTP found using skipped (OTP box already filled)."
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": "otp_fill_more",
+      "fragile": false
+    },
+    {
+      "index": 17,
+      "fast": false,
+      "captured_messages": null,
+      "action_type": "fill",
+      "name": "Enter OTP box: \"4\"",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "skipped (OTP box already filled)",
+      "element_found": true,
+      "success": true,
+      "error": null,
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "This OTP box was already filled with the OTP entered in the live log.; What AutoFlow did: Waiting for the page to stop changing before the screenshot (up to 1.5s) > Waiting for the page to finish loading (up to 1.49384s) > Waiting for the page to finish loading (up to 0.3s) > Clicking 'Verify' > Waiting for the page to stop changing before the screenshot (up to 3s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": null,
+      "url_before": "https://sportzia-preprod.kovaionplay.com/otp?userId=9715648155&loginType=phoneNumber",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/otp?userId=9715648155&loginType=phoneNumber",
+      "started_at": "2026-10-14T16:24:58.526",
+      "ended_at": "2026-10-14T16:24:58.819",
+      "duration": 0.101,
+      "timing_ms": {
+        "log_emit": 1,
+        "screenshot": 69,
+        "other": 30
+      },
+      "locator_report": {
+        "strategy": "skipped (OTP box already filled)",
+        "strategy_label": "skipped (OTP box already filled)",
+        "fallback_level": null,
+        "resolved": true,
+        "weak": false,
+        "resolution_ms": 101,
+        "message": "Enter OTP found using skipped (OTP box already filled)."
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": "otp_fill_more",
+      "fragile": false
+    },
+    {
+      "index": 18,
+      "fast": false,
+      "captured_messages": null,
+      "action_type": "click",
+      "name": "\"Verify\" element",
+      "origin": null,
+      "count_summary_rows": null,
+      "value_range_rows": null,
+      "page_mismatch_info": null,
+      "strategy_used": "bounding_box",
+      "element_found": false,
+      "success": false,
+      "error": "Failed: The browser is on '/feed', but this step was recorded on '/otp'. The previous step probably did not lead to the same page. The replay stopped.",
+      "warning": null,
+      "timeline": null,
+      "workarounds": [],
+      "technical": "browser: 'https://sportzia-preprod.kovaionplay.com/feed'; recorded page of this step: 'https://sportzia-preprod.kovaionplay.com/otp?userId=8778173783&loginType=phoneNumber'; [content-mismatch] a different element is actually at the recorded click position - recorded target was 'Verify', but '\\uf377 0 \\uf215 0 \\uf48e Share' is really there; DIAGNOSTIC - the step ended on the 'bounding_box' method. Methods tried in order: popup-scoped: nothing (search 0.0s, total 0.0s); data-testid: nothing (search 0.0s, total 0.0s); data-test: nothing (search 0.0s, total 0.0s); data-cy: nothing (search 0.0s, total 0.0s); id: nothing (search 0.0s, total 0.0s); name: nothing (search 0.0s, total 0.0s); aria-label: nothing (search 0.0s, total 0.0s); placeholder: nothing (search 0.0s, total 0.0s); title: nothing (search 0.0s, total 0.0s); role: nothing (search 0.0s, total 0.0s); href: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag-number-normalized: nothing (search 0.0s, total 0.0s); image-ancestor: nothing (search 0.0s, total 0.0s); identity: nothing (search 0.0s, total 0.0s); icon-identity: nothing (search 0.0s, total 0.0s); field-label: nothing (search 0.0s, total 0.0s); editable-replacement: nothing (search 0.0s, total 0.0s); position_fallback: nothing (search 0.0s, total 0.0s); css_path: nothing (search 0.0s, total 0.0s); xpath: nothing (search 0.0s, total 0.0s); generated-id: nothing (search 0.0s, total 0.0s); visible-same-name: nothing (search 0.0s, total 9.2s); popup-scoped: nothing (search 0.0s, total 0.0s); data-testid: nothing (search 0.0s, total 0.0s); data-test: nothing (search 0.0s, total 0.0s); data-cy: nothing (search 0.0s, total 0.0s); id: nothing (search 0.0s, total 0.0s); name: nothing (search 0.0s, total 0.0s); aria-label: nothing (search 0.0s, total 0.0s); placeholder: nothing (search 0.0s, total 0.0s); title: nothing (search 0.0s, total 0.0s); role: nothing (search 0.0s, total 0.0s); href: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag-number-normalized: nothing (search 0.0s, total 0.0s); image-ancestor: nothing (search 0.0s, total 0.0s); identity: nothing (search 0.0s, total 0.0s); icon-identity: nothing (search 0.0s, total 0.0s); field-label: nothing (search 0.0s, total 0.0s); editable-replacement: nothing (search 0.0s, total 0.0s); position_fallback: nothing (search 0.0s, total 0.0s); css_path: nothing (search 0.0s, total 0.0s); xpath: nothing (search 0.0s, total 0.0s); generated-id: nothing (search 0.0s, total 0.0s); visible-same-name: nothing (search 0.0s, total 0.3s); popup-scoped: nothing (search 0.0s, total 0.0s); data-testid: nothing (search 0.0s, total 0.0s); data-test: nothing (search 0.0s, total 0.0s); data-cy: nothing (search 0.0s, total 0.0s); id: nothing (search 0.0s, total 0.0s); name: nothing (search 0.0s, total 0.0s); aria-label: nothing (search 0.0s, total 0.0s); placeholder: nothing (search 0.0s, total 0.0s); title: nothing (search 0.0s, total 0.0s); role: nothing (search 0.0s, total 0.0s); href: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag-number-normalized: nothing (search 0.0s, total 0.0s); image-ancestor: nothing (search 0.0s, total 0.0s); identity: nothing (search 0.0s, total 0.0s); icon-identity: nothing (search 0.0s, total 0.0s); field-label: nothing (search 0.0s, total 0.0s); editable-replacement: nothing (search 0.0s, total 0.0s); position_fallback: nothing (search 0.0s, total 0.0s); css_path: nothing (search 0.0s, total 0.0s); xpath: nothing (search 0.0s, total 0.0s); generated-id: nothing (search 0.0s, total 0.0s); visible-same-name: nothing (search 0.0s, total 1.1s); popup-scoped: nothing (search 0.0s, total 0.0s); data-testid: nothing (search 0.0s, total 0.0s); data-test: nothing (search 0.0s, total 0.0s); data-cy: nothing (search 0.0s, total 0.0s); id: nothing (search 0.0s, total 0.0s); name: nothing (search 0.0s, total 0.0s); aria-label: nothing (search 0.0s, total 0.0s); placeholder: nothing (search 0.0s, total 0.0s); title: nothing (search 0.0s, total 0.0s); role: nothing (search 0.0s, total 0.0s); href: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag-number-normalized: nothing (search 0.0s, total 0.0s); image-ancestor: nothing (search 0.0s, total 0.0s); identity: nothing (search 0.0s, total 0.0s); icon-identity: nothing (search 0.0s, total 0.0s); field-label: nothing (search 0.0s, total 0.0s); editable-replacement: nothing (search 0.0s, total 0.0s); position_fallback: nothing (search 0.0s, total 0.0s); css_path: nothing (search 0.0s, total 0.0s); xpath: nothing (search 0.0s, total 0.0s); generated-id: nothing (search 0.0s, total 0.0s); visible-same-name: nothing (search 0.0s, total 2.0s); popup-scoped: nothing (search 0.0s, total 0.0s); data-testid: nothing (search 0.0s, total 0.0s); data-test: nothing (search 0.0s, total 0.0s); data-cy: nothing (search 0.0s, total 0.0s); id: nothing (search 0.0s, total 0.0s); name: nothing (search 0.0s, total 0.0s); aria-label: nothing (search 0.0s, total 0.0s); placeholder: nothing (search 0.0s, total 0.0s); title: nothing (search 0.0s, total 0.0s); role: nothing (search 0.0s, total 0.0s); href: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag: nothing (search 0.0s, total 0.0s); text+tag-number-normalized: nothing (search 0.0s, total 0.0s); image-ancestor: nothing (search 0.0s, total 0.0s); identity: nothing (search 0.0s, total 0.0s); icon-identity: nothing (search 0.0s, total 0.0s); field-label: nothing (search 0.0s, total 0.0s); editable-replacement: nothing (search 0.0s, total 0.0s); position_fallback: nothing (search 0.0s, total 0.0s); css_path: nothing (search 0.0s, total 0.0s); xpath: nothing (search 0.0s, total 0.0s); generated-id: nothing (search 0.0s, total 0.0s); visible-same-name: nothing (search 0.0s, total 1.3s). Decisions: none recorded. Waits: none recorded.; What AutoFlow did: Waiting for the page to finish loading (up to 0.3s) > Waiting for the page to stop changing before the screenshot (up to 3s)",
+      "effect_verified": null,
+      "large_bbox_flag": false,
+      "screenshot": "generated_scripts/screenshoots/session_20261014_142715_20261014_162338/feed/step18_verify_FAILED_16-26-04.png",
+      "url_before": "https://sportzia-preprod.kovaionplay.com/feed",
+      "url_after": "https://sportzia-preprod.kovaionplay.com/feed",
+      "started_at": "2026-10-14T16:25:49.553",
+      "ended_at": "2026-10-14T16:26:04.452",
+      "duration": 14.753,
+      "timing_ms": {
+        "locate_action": 12940,
+        "screenshot": 215,
+        "other": 1597
+      },
+      "locator_report": {
+        "strategy": "bounding_box",
+        "strategy_label": "Bounding Box fallback",
+        "fallback_level": 15,
+        "resolved": false,
+        "weak": true,
+        "resolution_ms": null,
+        "message": "Verify could not be resolved using any stored locator."
+      },
+      "expected": null,
+      "actual": null,
+      "recovered": false,
+      "candidate_diagnostics": null,
+      "not_run": false,
+      "otp_role": "verify",
+      "fragile": true
+    }
+  ],
+  "step_counts": {
+    "passed": 13,
+    "warnings": 0,
+    "failed": 1,
+    "not_run": 0,
+    "manual_input": 4
+  },
+  "ui_elements": [
+    {
+      "index": 2,
+      "action_type": "click",
+      "element_found": true,
+      "locator_used": "text+tag",
+      "status": "PASS",
+      "message": null
+    },
+    {
+      "index": 3,
+      "action_type": "click",
+      "element_found": true,
+      "locator_used": "text+tag",
+      "status": "PASS",
+      "message": null
+    },
+    {
+      "index": 4,
+      "action_type": "click",
+      "element_found": true,
+      "locator_used": "text+tag",
+      "status": "PASS",
+      "message": null
+    },
+    {
+      "index": 5,
+      "action_type": "click",
+      "element_found": true,
+      "locator_used": "placeholder",
+      "status": "PASS",
+      "message": null
+    },
+    {
+      "index": 6,
+      "action_type": "fill",
+      "element_found": true,
+      "locator_used": "placeholder",
+      "status": "PASS",
+      "message": null
+    },
+    {
+      "index": 7,
+      "action_type": "click",
+      "element_found": true,
+      "locator_used": "placeholder",
+      "status": "PASS",
+      "message": null
+    },
+    {
+      "index": 8,
+      "action_type": "fill",
+      "element_found": true,
+      "locator_used": "placeholder",
+      "status": "PASS",
+      "message": null
+    },
+    {
+      "index": 9,
+      "action_type": "click",
+      "element_found": true,
+      "locator_used": "placeholder",
+      "status": "PASS",
+      "message": null
+    },
+    {
+      "index": 10,
+      "action_type": "fill",
+      "element_found": true,
+      "locator_used": "placeholder",
+      "status": "PASS",
+      "message": null
+    },
+    {
+      "index": 11,
+      "action_type": "hover",
+      "element_found": true,
+      "locator_used": "text+tag",
+      "status": "PASS",
+      "message": null
+    },
+    {
+      "index": 12,
+      "action_type": "click",
+      "element_found": true,
+      "locator_used": "xpath",
+      "status": "PASS",
+      "message": null
+    },
+    {
+      "index": 13,
+      "action_type": "click",
+      "element_found": true,
+      "locator_used": "text+tag",
+      "status": "PASS",
+      "message": null
+    },
+    {
+      "index": 14,
+      "action_type": "fill",
+      "element_found": true,
+      "locator_used": "otp split boxes",
+      "status": "MANUAL_INPUT",
+      "message": "Manual input step (OTP/CAPTCHA) - not counted as a UI element failure"
+    },
+    {
+      "index": 15,
+      "action_type": "fill",
+      "element_found": true,
+      "locator_used": "skipped (OTP box already filled)",
+      "status": "MANUAL_INPUT",
+      "message": "Manual input step (OTP/CAPTCHA) - not counted as a UI element failure"
+    },
+    {
+      "index": 16,
+      "action_type": "fill",
+      "element_found": true,
+      "locator_used": "skipped (OTP box already filled)",
+      "status": "MANUAL_INPUT",
+      "message": "Manual input step (OTP/CAPTCHA) - not counted as a UI element failure"
+    },
+    {
+      "index": 17,
+      "action_type": "fill",
+      "element_found": true,
+      "locator_used": "skipped (OTP box already filled)",
+      "status": "MANUAL_INPUT",
+      "message": "Manual input step (OTP/CAPTCHA) - not counted as a UI element failure"
+    },
+    {
+      "index": 18,
+      "action_type": "click",
+      "element_found": false,
+      "locator_used": null,
+      "status": "FAIL",
+      "message": "Expected UI element was not found"
+    }
+  ],
+  "ui_elements_status": "FAIL",
+  "content_check": null,
+  "screenshot_diff": null,
+  "product_validation": null,
+  "final_screenshot": "generated_scripts/screenshoots/session_20261014_142715_20261014_162338/feed/img2.png",
+  "run_id": "session_20261014_142715_20261014_162338",
+  "run_dir": "generated_scripts/screenshoots/session_20261014_142715_20261014_162338",
+  "live_log": [
+    {
+      "t": 1791975222.385856,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.2s)",
+      "level": "note",
+      "step": 1
+    },
+    {
+      "t": 1791975223.6291158,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note",
+      "step": 1
+    },
+    {
+      "t": 1791975224.661073,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 2
+    },
+    {
+      "t": 1791975225.906415,
+      "message": "\u21b3 Clicking 'Accept'",
+      "level": "note",
+      "step": 2
+    },
+    {
+      "t": 1791975227.723058,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 3
+    },
+    {
+      "t": 1791975229.0195699,
+      "message": "\u21b3 Clicking 'Sign in'",
+      "level": "note",
+      "step": 3
+    },
+    {
+      "t": 1791975230.020583,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note",
+      "step": 3
+    },
+    {
+      "t": 1791975230.661994,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 4
+    },
+    {
+      "t": 1791975231.8697789,
+      "message": "\u21b3 Clicking 'Not Register? Create an Account'",
+      "level": "note",
+      "step": 4
+    },
+    {
+      "t": 1791975232.8016498,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note",
+      "step": 4
+    },
+    {
+      "t": 1791975233.188709,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 5
+    },
+    {
+      "t": 1791975234.346565,
+      "message": "\u21b3 Clicking 'Enter your full name'",
+      "level": "note",
+      "step": 5
+    },
+    {
+      "t": 1791975235.70268,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 6
+    },
+    {
+      "t": 1791975236.9260328,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note",
+      "step": 6
+    },
+    {
+      "t": 1791975237.473551,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 7
+    },
+    {
+      "t": 1791975238.61113,
+      "message": "\u21b3 Clicking 'Enter your email or phone number'",
+      "level": "note",
+      "step": 7
+    },
+    {
+      "t": 1791975239.9956548,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 8
+    },
+    {
+      "t": 1791975241.134655,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note",
+      "step": 8
+    },
+    {
+      "t": 1791975241.58516,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 9
+    },
+    {
+      "t": 1791975242.717062,
+      "message": "\u21b3 Clicking 'Date of Birth*'",
+      "level": "note",
+      "step": 9
+    },
+    {
+      "t": 1791975244.0950809,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 10
+    },
+    {
+      "t": 1791975245.229856,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note",
+      "step": 10
+    },
+    {
+      "t": 1791975245.5343099,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 11
+    },
+    {
+      "t": 1791975245.890176,
+      "message": "\u21b3 Hovering over 'Sign up'",
+      "level": "note",
+      "step": 11
+    },
+    {
+      "t": 1791975246.4025621,
+      "message": "\u21b3 Hovering over 'Sign up' to reveal the menu",
+      "level": "note",
+      "step": 12
+    },
+    {
+      "t": 1791975246.6408079,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 12
+    },
+    {
+      "t": 1791975247.728116,
+      "message": "\u21b3 Clicking 'By continuing, you agree to our Terms of Service and Priv...'",
+      "level": "note",
+      "step": 12
+    },
+    {
+      "t": 1791975249.227403,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 13
+    },
+    {
+      "t": 1791975250.406272,
+      "message": "\u21b3 Clicking 'Sign up'",
+      "level": "note",
+      "step": 13
+    },
+    {
+      "t": 1791975251.058272,
+      "message": "\u21b3 Waiting for the page to finish navigating (up to 5s)",
+      "level": "note",
+      "step": 13
+    },
+    {
+      "t": 1791975256.075286,
+      "message": "[FAILED] The expected navigation did not complete, so AutoFlow could not verify the intended destination. Replay is stopping.",
+      "step": 13
+    },
+    {
+      "t": 1791975256.174689,
+      "message": "\ud83d\udd14 Captured server response: User already exist",
+      "step": 13
+    },
+    {
+      "t": 1791975256.1757681,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 3s)",
+      "level": "note",
+      "step": 13
+    },
+    {
+      "t": 1791975282.4464362,
+      "message": "Step 13: correcting the form on this page with new value(s) for Enter your full name (step 6), Enter your email or phone number (step 8), Date of Birth* (step 10), then submitting again.",
+      "step": null
+    },
+    {
+      "t": 1791975283.676002,
+      "message": "Re-run: step 6 refilled ('Enter your full name', new value).",
+      "step": null
+    },
+    {
+      "t": 1791975283.6776252,
+      "message": "Re-run: step 7 skipped (already done on this page).",
+      "step": null
+    },
+    {
+      "t": 1791975284.887381,
+      "message": "Re-run: step 8 refilled ('Enter your email or phone number', new value).",
+      "step": null
+    },
+    {
+      "t": 1791975284.888841,
+      "message": "Re-run: step 9 skipped (already done on this page).",
+      "step": null
+    },
+    {
+      "t": 1791975286.0793478,
+      "message": "Re-run: step 10 refilled ('Date of Birth*', new value).",
+      "step": null
+    },
+    {
+      "t": 1791975286.080669,
+      "message": "Re-run: step 11 skipped (already done on this page).",
+      "step": null
+    },
+    {
+      "t": 1791975286.081579,
+      "message": "Re-run: step 12 skipped (already done on this page).",
+      "step": null
+    },
+    {
+      "t": 1791975286.082453,
+      "message": "Re-run: step 13 runs again.",
+      "step": null
+    },
+    {
+      "t": 1791975286.435328,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 13
+    },
+    {
+      "t": 1791975287.574042,
+      "message": "\u21b3 Clicking 'Sign up'",
+      "level": "note",
+      "step": 13
+    },
+    {
+      "t": 1791975288.2250721,
+      "message": "\u21b3 Waiting for the page to finish navigating (up to 5s)",
+      "level": "note",
+      "step": 13
+    },
+    {
+      "t": 1791975289.225253,
+      "message": "[INFO] The URL changed after the action. AutoFlow verified the destination against the recorded route and entered values; the remaining URL differences do not change that destination. Replay is continuing.",
+      "step": 13
+    },
+    {
+      "t": 1791975289.2776551,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note",
+      "step": 13
+    },
+    {
+      "t": 1791975289.504645,
+      "message": "Step 14/18: OTP field visible = True",
+      "step": 14
+    },
+    {
+      "t": 1791975289.50591,
+      "message": "Step 14/18: OTP field is ready - waiting for you to enter the OTP",
+      "step": 14
+    },
+    {
+      "t": 1791975297.64272,
+      "message": "Step 14/18: OTP entered, continuing",
+      "step": 14
+    },
+    {
+      "t": 1791975297.888073,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note",
+      "step": 14
+    },
+    {
+      "t": 1791975297.8950772,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.4941s)",
+      "level": "note",
+      "step": 14
+    },
+    {
+      "t": 1791975298.146963,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note",
+      "step": 15
+    },
+    {
+      "t": 1791975298.1544168,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.4936s)",
+      "level": "note",
+      "step": 15
+    },
+    {
+      "t": 1791975298.345938,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note",
+      "step": 16
+    },
+    {
+      "t": 1791975298.353036,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.49403s)",
+      "level": "note",
+      "step": 16
+    },
+    {
+      "t": 1791975298.74987,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 1.5s)",
+      "level": "note",
+      "step": 17
+    },
+    {
+      "t": 1791975298.757267,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 1.49384s)",
+      "level": "note",
+      "step": 17
+    },
+    {
+      "t": 1791975299.0927029,
+      "message": "Step 18/18: clicking Verify & Continue",
+      "step": 18
+    },
+    {
+      "t": 1791975299.144856,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 18
+    },
+    {
+      "t": 1791975300.308606,
+      "message": "\u21b3 Clicking 'Verify'",
+      "level": "note",
+      "step": 18
+    },
+    {
+      "t": 1791975300.9914181,
+      "message": "[FAILED] The URL changed after the action, but AutoFlow could not verify the intended destination. Replay is stopping to avoid continuing on the wrong page.",
+      "step": 18
+    },
+    {
+      "t": 1791975301.08263,
+      "message": "\ud83d\udd14 Captured server response: Route GET:/api/v1/chat/unread-count?subdomain=builderpreprod&userid=U28321 not found",
+      "step": 18
+    },
+    {
+      "t": 1791975301.084106,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 3s)",
+      "level": "note",
+      "step": 18
+    },
+    {
+      "t": 1791975349.551542,
+      "message": "Step 18: retrying.",
+      "step": null
+    },
+    {
+      "t": 1791975350.189426,
+      "message": "Step 18/18: clicking Verify & Continue",
+      "step": 18
+    },
+    {
+      "t": 1791975350.29173,
+      "message": "\u21b3 Waiting for the page to finish loading (up to 0.3s)",
+      "level": "note",
+      "step": 18
+    },
+    {
+      "t": 1791975364.236906,
+      "message": "\u21b3 Waiting for the page to stop changing before the screenshot (up to 3s)",
+      "level": "note",
+      "step": 18
+    }
+  ],
+  "partial_run": null,
+  "stopped_by_user": null,
+  "browser_closed": null
+}

@@ -1,0 +1,13 @@
+{
+    "_comment": "Generic words/phrases that mark a WEBSITE message (visible alert, toast, live region, field error text, or a server error response) as an 'account already exists' or field error during replay. Only checked after a step that submits a form. Matching ignores case, extra spaces and invisible characters, and a keyword only has to be part of the message (so 'already exist' also matches 'already exists'). Edit freely: one entry per word or phrase. No site-specific text. Do not add phrases that standard page text uses on its own (for example the 'Already have an account? Sign in' link) - they would match normal pages.",
+    "keywords": [
+        "already exist",
+        "already registered",
+        "already in use",
+        "already taken",
+        "already been taken",
+        "already used",
+        "is registered",
+        "is taken"
+    ]
+}

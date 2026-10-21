@@ -21,6 +21,7 @@ import os
 import subprocess
 import sys
 import threading
+import time
 from datetime import datetime
 from pathlib import Path
 
@@ -363,7 +364,9 @@ def _finalize_result(qa_url, run_id, run_dir, output_json, expected_content, exp
     setup_failed = not steps and raw.get("status") == "FAIL"
 
     overall_pass = (
-        steps_ok
+        not raw.get("stopped_by_user")
+        and not raw.get("browser_closed")
+        and steps_ok
         and not incomplete
         and ui_status == "PASS"
         and content_ok is not False
@@ -410,6 +413,10 @@ def _finalize_result(qa_url, run_id, run_dir, output_json, expected_content, exp
         message_parts.append("The final screenshot didn't match the saved one")
     if product_result is not None and not product_result.get("found"):
         message_parts.append(f"Product not found: {product_to_verify.strip()}")
+    if raw.get("browser_closed"):
+        message_parts.append("The browser window was closed, so the run stopped")
+    elif raw.get("stopped_by_user"):
+        message_parts.append("The run was stopped by the user")
     if not message_parts:
         message_parts.append("all steps resolved and validations passed")
 
@@ -461,6 +468,11 @@ def _finalize_result(qa_url, run_id, run_dir, output_json, expected_content, exp
         # (the overwhelmingly common case), same as raw.get() elsewhere
         # on this exact object already returns.
         "live_log": raw.get("live_log"),
+        # RUN UNTIL SELECTED STEP (MODE B) / Stop: carried forward so the finished result still says it was a
+        # partial run (never a full-run result) or was stopped by the user
+        "partial_run": raw.get("partial_run"),
+        "stopped_by_user": raw.get("stopped_by_user"),
+        "browser_closed": raw.get("browser_closed"),
     }
 
     # report.json currently holds the RAW result the script itself wrote
@@ -564,9 +576,36 @@ def _save_console_output(run_dir, output_json, stdout, stderr):
         return None
 
 
+def _paused_seconds(output_json):
+    """PAUSE ENGINE: how long the replay has waited for the user so far (finished pauses plus the one going on
+    now), from its own report.json. A pause never counts toward the run's time limit. Never raises (0)."""
+    try:
+        raw = json.loads(Path(output_json).read_text(encoding="utf-8"))
+        total = float(raw.get("paused_total_s") or 0)
+        cur = raw.get("pause") if isinstance(raw.get("pause"), dict) else None
+        if cur and cur.get("since"):
+            total += max(0.0, time.time() - float(cur["since"]))
+        return total
+    except Exception:
+        return 0.0
+
+
+def _communicate_excluding_pauses(proc, script_timeout_sec, output_json):
+    """proc.communicate() with the run's time limit, where time spent paused for the user (see
+    _paused_seconds) does not count. Raises subprocess.TimeoutExpired like communicate() does."""
+    started = time.monotonic()
+    while True:
+        try:
+            return proc.communicate(timeout=5)
+        except subprocess.TimeoutExpired:
+            # retrying communicate() after a timeout loses no output (documented subprocess behaviour)
+            if time.monotonic() - started > script_timeout_sec + _paused_seconds(output_json):
+                raise
+
+
 def _watch_replay(run_id, proc, script_timeout_sec, qa_url, run_dir, output_json, expected_content, expected_screenshot, product_to_verify, screenshot_options=None, action_count=None):
     try:
-        _stdout, stderr = proc.communicate(timeout=script_timeout_sec)
+        _stdout, stderr = _communicate_excluding_pauses(proc, script_timeout_sec, output_json)
         _console_rel = _save_console_output(run_dir, output_json, _stdout, stderr)
     except subprocess.TimeoutExpired:
         try:
@@ -604,7 +643,32 @@ def _watch_replay(run_id, proc, script_timeout_sec, qa_url, run_dir, output_json
             entry["result"] = result
 
 
-def start_replay(qa_url, script_path, expected_content=None, expected_screenshot=None, product_to_verify=None, recording_name=None, action_count=None, screenshot_options=None, has_otp_step=False):
+def active_run_ids():
+    """The run_ids of the start_replay() runs still in progress (MODE A and MODE B alike)."""
+    with _active_replays_lock:
+        return [rid for rid, entry in _active_replays.items() if not entry.get("done")]
+
+
+def _replay_env(run_until_step=None, recording_name=None):
+    """The environment of a replay subprocess: the current one, the live-log handshake flag, and - only for a
+    Run Until Selected Step run (MODE B) - the step to stop after (see the generated script's _FAST_MODE). A
+    value inherited from the server's own environment is never passed on."""
+    env = {**os.environ, "AUTOFLOW_LIVE_ACK": "1"}
+    env.pop("AUTOFLOW_RUN_UNTIL_STEP", None)
+    # the editable message keyword list (config/message_keywords.json) the replay matches captured messages against
+    env["AUTOFLOW_MESSAGE_KEYWORDS_FILE"] = str(BASE_DIR / "config" / "message_keywords.json")
+    if run_until_step:
+        env["AUTOFLOW_RUN_UNTIL_STEP"] = str(int(run_until_step))
+    # PAGE SNAPSHOTS (Pick Element): a full replay (MODE A only) saves a snapshot before a step that has none yet
+    env.pop("AUTOFLOW_SNAPSHOT_RECORDING", None)
+    env.pop("AUTOFLOW_PROJECT_ROOT", None)
+    if recording_name and not run_until_step:
+        env["AUTOFLOW_SNAPSHOT_RECORDING"] = str(recording_name)
+        env["AUTOFLOW_PROJECT_ROOT"] = str(BASE_DIR)
+    return env
+
+
+def start_replay(qa_url, script_path, expected_content=None, expected_screenshot=None, product_to_verify=None, recording_name=None, action_count=None, screenshot_options=None, has_otp_step=False, run_until_step=None):
     """Starts a replay the same way execute_test() does, but returns as
     soon as the subprocess is launched instead of blocking until it
     finishes. Returns (run_id, run_dir_repo_relative, total_steps_hint)
@@ -622,7 +686,7 @@ def start_replay(qa_url, script_path, expected_content=None, expected_screenshot
     # acts on it (see generator/script_generator.py's _wait_live_ack)
     proc = subprocess.Popen(
         cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding="utf-8", errors="replace",
-        env={**os.environ, "AUTOFLOW_LIVE_ACK": "1"},
+        env=_replay_env(run_until_step, recording_name),
     )
 
     with _active_replays_lock:
@@ -664,6 +728,10 @@ def poll_replay(run_id):
     awaiting_otp = None
     live_log = []
     current_step = None
+    pause = None
+    retries = 0
+    last_retry_index = None
+    last_retry_until = None
     try:
         raw = json.loads(entry["output_json"].read_text(encoding="utf-8"))
         steps = raw.get("steps", [])
@@ -682,6 +750,11 @@ def poll_replay(run_id):
         # them, which only ever happens for a recognized OTP flow.
         awaiting_otp = raw.get("awaiting_otp")
         live_log = raw.get("live_log") or []
+        # PAUSE ENGINE: the card the replay is waiting on (None when not paused), and how many steps were retried
+        pause = raw.get("pause")
+        retries = raw.get("retries") or 0
+        last_retry_index = raw.get("last_retry_index")
+        last_retry_until = raw.get("last_retry_until")
     except (OSError, json.JSONDecodeError):
         # not written yet, or caught mid-write (a partial JSON parse
         # failure here just means "nothing new to report this poll" -
@@ -696,4 +769,8 @@ def poll_replay(run_id):
         "awaiting_otp": awaiting_otp,
         "live_log": live_log,
         "current_step": current_step,
+        "pause": pause,
+        "retries": retries,
+        "last_retry_index": last_retry_index,
+        "last_retry_until": last_retry_until,
     }

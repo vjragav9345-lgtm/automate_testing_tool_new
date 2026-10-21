@@ -1486,3 +1486,30 @@ textarea.editor-input {
     }
 
 }
+
+/* ---- Run control banner (run_control.js) and Run Until Selected Step ---- */
+.af-run-banner {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #1e293b;
+    color: #ffffff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    font-size: 14px;
+}
+.af-run-banner[hidden] { display: none; }
+.af-run-banner-stop {
+    background: #dc2626;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.af-run-banner-stop:disabled { opacity: 0.6; cursor: default; }

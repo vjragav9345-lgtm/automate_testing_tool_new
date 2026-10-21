@@ -601,6 +601,8 @@ def _capture_screenshot(page, shot_dir, img_counter, last_state, last_shot_bytes
     position / element offset (_align_viewport_for_capture), captures, then
     puts the scroll back. If the settle budget ran out, the screenshot is
     still taken and the step gets a WARNING."""
+    if _FAST_MODE[0]:
+        return None                  # a FAST step (MODE B, before the selected step) takes no screenshot
     if not settle_first:
         return _capture_screenshot_core(
             page, shot_dir, img_counter, last_state, last_shot_bytes, full_page=full_page, step=step,
@@ -5031,6 +5033,223 @@ def _split_tech_multi(text):
     return "; ".join(heads), ("; ".join(techs) if techs else None)
 
 
+# RUN UNTIL SELECTED STEP (MODE B) - an option of this one replay path, never a second engine. The dashboard
+# starts this script with AUTOFLOW_RUN_UNTIL_STEP=N: steps 1..N-1 run in FAST mode (every step type is still
+# executed with all its normal waits; only the per-step screenshots are left out - recorded pacing is never
+# replayed as a sleep anyway), step N runs normally, then the run stops. Without the variable (MODE A, a normal
+# full replay) none of this is active.
+_FAST_MODE = [False]
+
+
+def _run_until_step(total):
+    """N from AUTOFLOW_RUN_UNTIL_STEP when it names a real step (1..total), else None (a full replay)."""
+    try:
+        v = int((os.environ.get("AUTOFLOW_RUN_UNTIL_STEP") or "").strip() or 0)
+        return v if 1 <= v <= int(total) else None
+    except Exception:
+        return None
+
+
+def _stop_requested(run_dir):
+    """The Stop button was pressed (app.py's /api/test/run/stop writes run_dir/stop_request.txt): the run ends
+    before its next step, in MODE A and MODE B alike. Never raises (False)."""
+    try:
+        return bool(run_dir) and (Path(run_dir) / "stop_request.txt").exists()
+    except Exception:
+        return False
+
+
+# PAUSE ENGINE (phase 3) - one pause-and-ask mechanism for this whole replay, used by every pause (the OTP prompt,
+# the fallback card after a failed step) in MODE A and MODE B alike. The replay publishes the card it waits on as
+# result["pause"] in report.json; the live log shows it as a pinned input card; the user's answer comes back as
+# run_dir/pause_answer.json (written by app.py's /api/test/run/pause/answer), matched by the card's token. Only
+# files are shared with the Flask app - no browser object ever leaves this process. Time spent paused is added up
+# in result["paused_total_s"] so the run's time limit never counts it.
+PAUSE_ANSWER_FILE = "pause_answer.json"
+PAUSE_CARD_TIMEOUT_S = 180
+_PAUSE_TOTAL = [0.0]
+
+
+def _viewer_present(output_json_path, max_age_s=6.0):
+    """A live log is open for this run (it refreshes <report>.alive while connected) - a fallback card is only
+    shown when someone can answer it. Never raises (False)."""
+    try:
+        p = Path(str(output_json_path) + ".alive")
+        return p.exists() and (time.time() - p.stat().st_mtime) <= max_age_s
+    except Exception:
+        return False
+
+
+def _pause_and_ask(page, result, output_json_path, run_dir, kind, step_index, total_steps, message, actions,
+                   timeout_s, extra=None, legacy_value_file=None):
+    """Pauses the run and waits for the user's answer to one card (kind: "otp" / "step_failed"). The step shows as
+    "paused" meanwhile. Returns the answer {"action": ..., "value": ...}, {"action": "stop"} when the run was
+    stopped, or None when nothing arrived within timeout_s. legacy_value_file: an older answer channel (the OTP
+    prompt's otp_input.txt) accepted too. The answer's value is never printed or kept. Never raises."""
+    since = time.time()
+    answer = None
+    try:
+        token = f"{kind}-{step_index}-{int(since * 1000)}"
+        ans_path = Path(run_dir) / PAUSE_ANSWER_FILE
+        try:
+            if ans_path.exists():
+                ans_path.unlink()
+        except Exception:
+            pass
+        result["pause"] = dict({
+            "token": token, "kind": kind, "step_index": step_index, "total_steps": total_steps,
+            "message": message, "actions": list(actions), "since": since, "timeout_s": timeout_s,
+        }, **(extra or {}))
+        result["paused_total_s"] = round(_PAUSE_TOTAL[0], 3)
+        _cs = result.get("current_step")
+        if isinstance(_cs, dict) and _cs.get("index") == step_index:
+            _cs["phase"] = "paused"
+        _write_result(result, output_json_path)
+        print(f"[pause] step {step_index}: waiting up to {timeout_s}s for an answer in the live log ({kind})")
+        deadline = time.monotonic() + timeout_s
+        while time.monotonic() < deadline:
+            if _stop_requested(run_dir):
+                answer = {"action": "stop"}
+                break
+            # the replay browser was closed: the wait ends at once
+            if _replay_browser_gone():
+                answer = {"action": "stop", "browser_closed": True}
+                break
+            try:
+                if ans_path.exists():
+                    data = json.loads(ans_path.read_text(encoding="utf-8") or "{}")
+                    if isinstance(data, dict) and data.get("token") == token:
+                        try:
+                            ans_path.unlink()
+                        except Exception:
+                            pass
+                        answer = data
+                        break
+            except (OSError, ValueError):
+                pass                                   # caught mid-write: read again next round
+            if legacy_value_file is not None:
+                try:
+                    if legacy_value_file.exists():
+                        _lv = (legacy_value_file.read_text(encoding="utf-8") or "").strip()
+                        if _lv:
+                            try:
+                                legacy_value_file.unlink()
+                            except Exception:
+                                pass
+                            answer = {"action": "submit", "value": _lv}
+                            break
+                except Exception:
+                    pass
+            try:
+                page.wait_for_timeout(OTP_WAIT_POLL_MS)
+            except Exception:
+                if _replay_browser_gone():
+                    answer = {"action": "stop", "browser_closed": True}
+                    break
+                time.sleep(OTP_WAIT_POLL_MS / 1000)
+    except Exception as e:
+        print(f"[pause] WARNING: the pause card failed ({e}) - the run continues as before")
+        answer = None
+    finally:
+        try:
+            if isinstance(answer, dict) and answer.get("browser_closed"):
+                _clear_pending_card_files(run_dir)
+                result["awaiting_otp"] = None
+        except Exception:
+            pass
+        try:
+            _PAUSE_TOTAL[0] += max(0.0, time.time() - since)
+            result["pause"] = None
+            result["paused_total_s"] = round(_PAUSE_TOTAL[0], 3)
+            _cs = result.get("current_step")
+            if isinstance(_cs, dict) and _cs.get("index") == step_index and _cs.get("phase") == "paused":
+                _cs["phase"] = "acting"
+            _write_result(result, output_json_path)
+        except Exception:
+            pass
+    return answer
+
+
+class _StepCursor:
+    """The replay's step sequence (1-based number, step) - like enumerate(STEPS, start=1), plus retry_current():
+    the next step given out is the current one again (the fallback card's Retry step), so a step is re-run in
+    order and never skipped."""
+
+    def __init__(self, steps):
+        self._steps = steps
+        self._i = 0
+        self._repeat = False
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self._repeat and self._i >= 1:
+            self._repeat = False
+            return self._i, self._steps[self._i - 1]
+        if self._i >= len(self._steps):
+            raise StopIteration
+        self._i += 1
+        return self._i, self._steps[self._i - 1]
+
+    def retry_current(self):
+        self._repeat = True
+
+    def rewind_to(self, number):
+        """The next step given out is step `number` (1-based), and the sequence goes on in order from there - a
+        field-error Continue re-runs the earlier Fill steps up to the submit step, never skipping one."""
+        self._i = max(0, int(number) - 1)
+        self._repeat = False
+
+
+# BROWSER CLOSED = RUN STOPPED (MODE A and MODE B): when the replay browser goes away - it disconnected, its
+# context closed, or its last page closed (the user closed the window) - the run stops at once, also while a card
+# is waiting. Uses Playwright's own disconnected / close events and state (is_connected, is_closed).
+_REPLAY_BROWSER = [None]
+_REPLAY_CONTEXT = [None]
+_BROWSER_GONE = [False]
+BROWSER_CLOSED_REASON = "The browser window was closed"
+
+
+def _watch_replay_browser(browser, context):
+    """Remembers the replay browser / context and listens for them going away. Never raises."""
+    try:
+        _REPLAY_BROWSER[0] = browser
+        _REPLAY_CONTEXT[0] = context
+        browser.on("disconnected", lambda *_a: _BROWSER_GONE.__setitem__(0, True))
+        context.on("close", lambda *_a: _BROWSER_GONE.__setitem__(0, True))
+    except Exception as e:
+        print(f"[browser-closed] WARNING: could not watch the replay browser ({e})")
+
+
+def _replay_browser_gone(pages_count=True):
+    """True when the replay browser is gone: disconnected, its context closed, or (pages_count) no page of it is
+    open any more. Any error reads as "not gone" (the run goes on as before)."""
+    try:
+        if _BROWSER_GONE[0]:
+            return True
+        b = _REPLAY_BROWSER[0]
+        if b is not None and not b.is_connected():
+            return True
+        ctx = _REPLAY_CONTEXT[0]
+        if pages_count and ctx is not None:
+            return not any(not p_.is_closed() for p_ in ctx.pages)
+    except Exception:
+        return False
+    return False
+
+
+def _clear_pending_card_files(run_dir):
+    """Removes this run's pending card answer / OTP hand-off files (the browser is gone: no card may stay)."""
+    for _n in (PAUSE_ANSWER_FILE, PAUSE_ANSWER_FILE + ".tmp", "otp_input.txt"):
+        try:
+            (Path(run_dir) / _n).unlink()
+        except FileNotFoundError:
+            pass
+        except Exception:
+            pass
+
+
 def _plain_step_note(message, result=None, output_json_path=None):
     """A plain-English informational line for the live log (a PASS that
     deserves one sentence of explanation, e.g. "The page filled this box by
@@ -5044,6 +5263,86 @@ def _plain_step_note(message, result=None, output_json_path=None):
         _write_result(result, output_json_path)
     except Exception:
         pass
+
+
+# PAGE SNAPSHOTS (Pick Element, separate from replay): a FULL replay (MODE A, never fast mode) saves the page
+# snapshot before a step that has none yet, so an old recording gets its snapshots once (the same code and rules
+# the recorder uses - recorder/page_snapshot.py). Never changes a step or the run; any error turns it off.
+_SNAPSHOT_SAVER = [None]
+
+
+def _replay_snapshot_saver():
+    """(page_snapshot module, recording name) when this run may save missing snapshots, else None."""
+    if _SNAPSHOT_SAVER[0] is None:
+        val = False
+        try:
+            name = os.environ.get("AUTOFLOW_SNAPSHOT_RECORDING")
+            root = os.environ.get("AUTOFLOW_PROJECT_ROOT")
+            if name and root and not os.environ.get("AUTOFLOW_RUN_UNTIL_STEP"):
+                if root not in sys.path:
+                    sys.path.append(root)
+                import importlib
+                val = (importlib.import_module("recorder.page_snapshot"), name)
+        except Exception as e:
+            print(f"[snapshot] WARNING: missing page snapshots will not be saved in this run ({e})")
+            val = False
+        _SNAPSHOT_SAVER[0] = val
+    return _SNAPSHOT_SAVER[0] or None
+
+
+def _save_missing_snapshot_before_step(page, step, step_index):
+    """MODE A only (not fast): the snapshot before this step, when the recording has none yet. Never raises."""
+    try:
+        if _FAST_MODE[0] or page is None:
+            return
+        saver = _replay_snapshot_saver()
+        if not saver:
+            return
+        mod, name = saver
+        ref = mod.step_ref(step, step_index)
+        # an edited copy also counts the original recording's snapshots (see recording_names)
+        if ref and not mod.find_snapshot({"name": name}, None, ref):
+            mod.save_missing_step_snapshot(page, name, ref, "replay")
+    except Exception as e:
+        print(f"[snapshot] WARNING: the page snapshot before step {step_index} was not saved ({e})")
+
+
+# LIVE CONFIRMATION of an XPath picked on a page snapshot ("verified on snapshot"): one line per step and run - the
+# number of elements the XPath matches on the live page. Information only: the locator, the step and the run are
+# never changed by it.
+_SNAPSHOT_XPATH_CHECKED = set()
+
+
+def _snapshot_xpath_live_check(page, step, step_index, result, output_json_path):
+    try:
+        lp = (step or {}).get("locator_profile") or {}
+        xp = lp.get("xpath")
+        if not lp.get("xpath_verified_on_snapshot") or not xp or step_index in _SNAPSHOT_XPATH_CHECKED:
+            return
+        _SNAPSHOT_XPATH_CHECKED.add(step_index)
+
+        def _count():
+            n = page.locator("xpath=" + xp).count()
+            if n == 0 and lp.get("frame_path"):
+                for fr in page.frames[1:]:
+                    try:
+                        n += fr.locator("xpath=" + xp).count()
+                    except Exception:
+                        pass
+            return n
+
+        n = _count()
+        deadline = time.monotonic() + 3.0
+        while n == 0 and time.monotonic() < deadline:
+            page.wait_for_timeout(250)          # the page may still be rendering the element
+            n = _count()
+        if n == 1:
+            _url_note_log(f"Step {step_index}: XPath confirmed live: 1 of 1", result, output_json_path)
+        else:
+            _url_note_log(f"Step {step_index}: WARNING - the XPath picked on the page snapshot matched {n} elements on "
+                          f"the live page (expected 1 of 1). The step runs as usual.", result, output_json_path)
+    except Exception as e:
+        print(f"[snapshot] the live XPath check of step {step_index} was skipped ({e})")
 
 
 def _looks_like_otp_fill_step(step, prev_step):
@@ -5218,20 +5517,43 @@ def _detect_otp_flow_roles(steps):
             if i + 1 <= len(steps):
                 roles.setdefault(i + 1, "verify")
             break  # only the first OTP-shaped sequence in a recording is treated this way
-        if _looks_like_generic_otp_fill(step) or (step.get("action_type") == "fill" and step.get("otp_field") is True):
+        if (_looks_like_generic_otp_fill(step) or (step.get("action_type") == "fill" and step.get("otp_field") is True)
+                or _otp_field_standard_signal(step)):
             roles[i] = "otp_fill"
+            # OTP GROUP: in split OTP boxes not every box carries the OTP signals - the boxes of the same group
+            # recorded right BEFORE this one are OTP boxes too. The FIRST box step of the group asks for the OTP
+            # and fills the whole group; every other box step of the group is only "part of the OTP".
+            first = i
+            try:
+                k2 = i - 1
+                while (k2 >= 1 and steps[k2 - 1].get("action_type") in ("fill", "click")
+                       and _otp_in_same_group(steps[k2 - 1], step)):
+                    if steps[k2 - 1].get("action_type") == "fill":
+                        first = k2
+                    k2 -= 1
+            except Exception as _og_e:
+                print(f"[otp] WARNING: OTP group detection failed ({_og_e}) - using the OTP step as found")
+                first = i
+            if first != i:
+                for k3 in range(first, i):
+                    if steps[k3 - 1].get("action_type") == "fill":
+                        roles[k3] = "otp_fill_more"
+                roles[i] = "otp_fill_more"
+                roles[first] = "otp_fill"
+            first_step = steps[first - 1]
             # clicks on the OTP field itself right before it only put the cursor there (no popup, page or field
             # change of their own is expected); the step before them is the one that sent the code
-            k = i - 1
-            while k >= 1 and (steps[k - 1].get("otp_focus") is True or _otp_same_field_click(steps[k - 1], step)):
+            k = first - 1
+            while k >= 1 and (steps[k - 1].get("otp_focus") is True or _otp_same_field_click(steps[k - 1], first_step)
+                              or (steps[k - 1].get("action_type") == "click" and _otp_in_same_group(steps[k - 1], step))):
                 roles[k] = "otp_focus"
                 k -= 1
             prev_step = steps[k - 1] if k >= 1 else None
-            # the other boxes of the same one-character row, recorded right after it
+            # the other boxes of the same one-character row (OTP group), recorded right after it
             key = _otp_group_key(step)
             j = i + 1
-            while (key and j <= len(steps) and steps[j - 1].get("action_type") in ("fill", "click")
-                   and _otp_group_key(steps[j - 1]) == key):
+            while (j <= len(steps) and steps[j - 1].get("action_type") in ("fill", "click")
+                   and ((key and _otp_group_key(steps[j - 1]) == key) or _otp_in_same_group(steps[j - 1], step))):
                 if steps[j - 1].get("action_type") == "fill":
                     roles[j] = "otp_fill_more"
                 j += 1
@@ -5248,7 +5570,130 @@ def _detect_otp_flow_roles(steps):
     return roles
 
 
-def _wait_for_live_otp(page, result, output_json_path, run_dir, step_index, total_steps):
+_OTP_BOX_TYPES = ("", "text", "tel", "number", "password")
+
+
+def _otp_box_geom(step):
+    """(x, y, width, height) of a recorded fill / click on an input that looks like ONE box of split OTP inputs:
+    a text-like input that takes one character (maxlength 1) or is very small (no wider than about 72px and not
+    much wider than tall). None otherwise. Never raises."""
+    try:
+        if (step or {}).get("action_type") not in ("fill", "click"):
+            return None
+        lp = step.get("locator_profile") or {}
+        attrs = lp.get("attributes") if isinstance(lp.get("attributes"), dict) else {}
+        if (lp.get("tag") or "").lower() != "input":
+            return None
+        if str(attrs.get("type") or "").lower() not in _OTP_BOX_TYPES:
+            return None
+        if step.get("action_type") == "fill" and len(str(step.get("value") or "")) > 1:
+            return None                              # one character per box
+        bb = step.get("bounding_box") if isinstance(step.get("bounding_box"), dict) else {}
+        x, y, w, h = (float(bb.get(k) or 0) for k in ("x", "y", "width", "height"))
+        if w <= 0 or h <= 0:
+            return None
+        one = _otp_field_shape(dict(step, action_type="fill"))[2] == 1
+        if not (one or (w <= 72 and w <= h * 2)):
+            return None
+        return x, y, w, h
+    except Exception:
+        return None
+
+
+def _otp_row_prefixes(css):
+    """The recorded parent path of a box (its css path without the last part), and the grandparent path with the
+    parent's position removed (each box wrapped in its own element). Never raises."""
+    try:
+        parts = [p.strip() for p in str(css or "").split(">") if p.strip()]
+        out = set()
+        if len(parts) >= 2:
+            out.add(("p", " > ".join(parts[:-1])))
+        if len(parts) >= 3:
+            out.add(("g", " > ".join(parts[:-2] + [re.sub(r":nth-(of-type|child)[(][0-9]+[)]", "", parts[-2])])))
+        return out
+    except Exception:
+        return set()
+
+
+def _otp_in_same_group(a, b):
+    """The recorded steps a and b target boxes of the same split-OTP group: the existing one-character row rule
+    (_otp_group_key), or: both look like OTP boxes (_otp_box_geom), on the same page, under the same recorded
+    parent (or wrapper level), in one row and of similar size. Never raises (False)."""
+    try:
+        ka = _otp_group_key(dict(a, action_type="fill"))
+        if ka and ka == _otp_group_key(dict(b, action_type="fill")):
+            return True
+        ga, gb = _otp_box_geom(a), _otp_box_geom(b)
+        if not ga or not gb:
+            return False
+        if a.get("page_url") and b.get("page_url") and _dest_key(a.get("page_url")) != _dest_key(b.get("page_url")):
+            return False
+        ca = ((a.get("locator_profile") or {}).get("css_path") or "")
+        cb = ((b.get("locator_profile") or {}).get("css_path") or "")
+        if not (_otp_row_prefixes(ca) & _otp_row_prefixes(cb)):
+            return False
+        (xa, ya, wa, ha), (xb, yb, wb, hb) = ga, gb
+        mh, mw = max(ha, hb), max(wa, wb)
+        if abs((ya + ha / 2) - (yb + hb / 2)) > mh / 2:
+            return False                             # not in one row
+        return abs(ha - hb) <= mh * 0.3 and abs(wa - wb) <= mw * 0.5
+    except Exception:
+        return False
+
+
+def _otp_group_first(roles, i):
+    """The step that asks for and fills the OTP group step i belongs to (the last "otp_fill" step before it)."""
+    try:
+        return max((k for k, r in (roles or {}).items() if r == "otp_fill" and k < i), default=None)
+    except Exception:
+        return None
+
+
+# words in a field's own name / id / placeholder / label that name a one-time code (whole words, any case)
+_OTP_FIELD_WORDS = ("otp", "code", "verification", "verify", "passcode", "pin")
+# words that mark a field as some OTHER kind of code - such a field is never treated as an OTP field
+_NOT_OTP_FIELD_WORDS = ("zip", "postal", "postcode", "pincode", "promo", "coupon", "voucher", "discount", "referral",
+                        "invite", "gift", "country", "area", "dial", "tracking", "order", "product", "sku", "card",
+                        "cvv", "cvc")
+
+
+def _otp_field_standard_signal(step):
+    """OTP detection from generic web standards on the recorded field (used in addition to the existing rules,
+    never instead): a fill of 4-8 digits (or one digit into a row of one-character boxes) whose field has
+    autocomplete="one-time-code"; or inputmode="numeric" with a maxlength of 4-8; or a row of 4-8
+    one-character boxes; or its own name / id / placeholder / label naming a code (otp, code, verification,
+    verify, passcode, pin). A field whose own text names another kind of code (postal, promo, card...) is never
+    an OTP field. Never raises (False)."""
+    try:
+        if not step or step.get("action_type") != "fill":
+            return False
+        value = step.get("value")
+        if not isinstance(value, str) or not value.isdigit():
+            return False
+        one_time, numeric, maxlen, split = _otp_field_shape(step)
+        if not ((4 <= len(value) <= 8) or (split and len(value) == 1)):
+            return False
+        lp = step.get("locator_profile") or {}
+        attrs = lp.get("attributes") if isinstance(lp.get("attributes"), dict) else {}
+        own_texts = [lp.get("name"), lp.get("id"), lp.get("placeholder"), lp.get("aria_label"), lp.get("nearby_label"),
+                     attrs.get("name"), attrs.get("id"), attrs.get("placeholder"), attrs.get("aria-label")]
+        words = set()
+        for t in own_texts:
+            words.update(w for w in re.split(r"[^a-z0-9]+", str(t or "").lower()) if w)
+        if words & set(_NOT_OTP_FIELD_WORDS):
+            return False
+        if one_time:
+            return True
+        if numeric and maxlen is not None and 4 <= maxlen <= 8:
+            return True
+        if split:
+            return True
+        return bool(words & set(_OTP_FIELD_WORDS))
+    except Exception:
+        return False
+
+
+def _wait_for_live_otp(page, result, output_json_path, run_dir, step_index, total_steps, message=None):
     """Pauses replay and waits for a human to submit a live OTP value via
     the dashboard (see app.py's /api/test/run/otp_submit route) - the
     recorded OTP value is never reused here, since a real one-time code
@@ -5281,36 +5726,23 @@ def _wait_for_live_otp(page, result, output_json_path, run_dir, step_index, tota
     )
     print(f"[otp] waiting up to {OTP_WAIT_TIMEOUT_S}s for a live OTP value via the dashboard")
 
-    deadline = time.monotonic() + OTP_WAIT_TIMEOUT_S
+    # PAUSE ENGINE: the OTP prompt is one card of the shared pause mechanism (the old otp_input.txt hand-off is
+    # still accepted); the Stop button ends the wait (the run then stops before its next step)
+    _otp_answer = _pause_and_ask(
+        page, result, output_json_path, run_dir, "otp", step_index, total_steps,
+        (f"{message} Enter the OTP again." if message else "Enter the OTP to continue"), ("submit", "stop"),
+        OTP_WAIT_TIMEOUT_S,
+        extra={"secret": True, "input_label": "OTP"}, legacy_value_file=otp_file,
+    )
     value = None
-    while time.monotonic() < deadline:
-        try:
-            if otp_file.exists():
-                value = (otp_file.read_text(encoding="utf-8") or "").strip()
-                if value:
-                    # removed only once a value was read: an empty read can
-                    # be the dashboard's write still in progress
-                    try:
-                        otp_file.unlink()
-                    except Exception:
-                        pass
-                    break
-                value = None
-        except Exception:
-            pass
-        try:
-            # a real Playwright call (not a bare time.sleep()) for the
-            # same reason recorder/pick_element.py's own long human-wait
-            # loop uses page.wait_for_timeout() - see that module's own
-            # comment on why this matters when anything else might need
-            # Playwright's connection serviced during the wait
-            page.wait_for_timeout(OTP_WAIT_POLL_MS)
-        except Exception:
-            time.sleep(OTP_WAIT_POLL_MS / 1000)
+    if isinstance(_otp_answer, dict) and _otp_answer.get("action") == "submit":
+        value = (str(_otp_answer.get("value") or "")).strip() or None
 
     result["awaiting_otp"] = None
     if value:
         _otp_flow_log(f"Step {step_index}/{total_steps}: OTP entered, continuing", result=result, output_json_path=output_json_path)
+    elif isinstance(_otp_answer, dict) and _otp_answer.get("browser_closed"):
+        _otp_flow_log(f"Step {step_index}/{total_steps}: {BROWSER_CLOSED_REASON} - no OTP needed any more", result=result, output_json_path=output_json_path)
     else:
         _otp_flow_log(f"Step {step_index}/{total_steps}: no OTP entered within {OTP_WAIT_TIMEOUT_S}s", result=result, output_json_path=output_json_path)
     _write_result(result, output_json_path)
@@ -5330,50 +5762,113 @@ TRUSTED_CLICK_DOWN_UP_PAUSE_MS = 80
 _OTP_ROW_JS = """
 (e) => {
     document.querySelectorAll('[data-afqa-otp]').forEach((n) => n.removeAttribute('data-afqa-otp'));
+    // the OTP GROUP the field belongs to: neighbouring single-character inputs - maxlength 1, or a very small
+    // text field (a first box often takes a pasted code and has a longer maxlength) - in one row and of similar
+    // size. Marked in DOM order from the FIRST box, whichever box e is.
     const one = (n) => !!n && n.tagName === 'INPUT' && String(n.getAttribute('maxlength')) === '1';
-    if (!one(e)) return 0;
+    const TEXTY = ['', 'text', 'tel', 'number', 'password'];
+    const usable = (n) => !!n && n.tagName === 'INPUT' && !n.disabled && n.getBoundingClientRect().width > 0;
+    const small = (n) => {
+        if (TEXTY.indexOf(String(n.getAttribute('type') || '').toLowerCase()) === -1) return false;
+        const r = n.getBoundingClientRect();
+        return r.width > 0 && r.width <= 72 && r.width <= r.height * 2;
+    };
+    if (!usable(e) || !(one(e) || small(e))) return 0;
+    const re = e.getBoundingClientRect();
+    const alike = (n) => {
+        const r = n.getBoundingClientRect(), mh = Math.max(r.height, re.height), mw = Math.max(r.width, re.width);
+        return Math.abs((r.top + r.height / 2) - (re.top + re.height / 2)) <= mh / 2
+            && Math.abs(r.height - re.height) <= mh * 0.3 && Math.abs(r.width - re.width) <= mw * 0.5;
+    };
+    const member = (n) => usable(n) && (one(n) || (small(n) && alike(n)));
     let row = e.parentElement, boxes = [];
-    for (let d = 0; row && d < 3; d++, row = row.parentElement) {
-        boxes = Array.from(row.querySelectorAll('input')).filter((n) => one(n) && !n.disabled && n.getBoundingClientRect().width > 0);
-        if (boxes.length >= 2) break;
+    for (let d = 0; row && d < 4; d++, row = row.parentElement) {
+        boxes = Array.from(row.querySelectorAll('input')).filter(member);
+        if (boxes.indexOf(e) === -1) { boxes = []; continue; }
+        if (boxes.filter(one).length >= 2 || boxes.length >= 3) break;
     }
-    if (boxes.length < 2) return 0;
+    if (boxes.length < 2 || boxes.length > 12 || boxes.indexOf(e) === -1) return 0;
+    if (boxes.filter(one).length < 2 && boxes.length < 3) return 0;
     boxes.forEach((n, k) => n.setAttribute('data-afqa-otp', String(k)));
     return boxes.length;
 }
 """
 
 
-def _otp_fill_split_boxes(page, step, value):
-    """The OTP field is one box of a row of one-character boxes: type the live OTP the way a person does -
-    click each box in turn and type its one character (so the site's own key / input handlers run), then check
-    every box holds its character. None when the field is not part of such a row (the normal fill is used),
-    else (ok, error). Never raises."""
+def _otp_group_boxes(page, step):
+    """How many boxes the OTP GROUP of this step's field has (see _OTP_ROW_JS; the boxes are marked from the
+    first one). 0 when the field is not part of split OTP boxes, or on any error (a warning - the existing
+    single-field OTP handling is used). Never raises."""
     try:
         el = _resolve_element(page, (step or {}).get("locator_profile") or {})
         if el is None:
-            return None
-        n = el.evaluate(_OTP_ROW_JS, timeout=1500) or 0
-    except Exception:
-        return None
+            return 0
+        return int(el.evaluate(_OTP_ROW_JS, timeout=1500) or 0)
+    except Exception as e:
+        print(f"[otp] WARNING: the OTP boxes could not be read ({e}) - the OTP is filled as one field")
+        return 0
+
+
+def _otp_fill_split_boxes(page, step, value):
+    """The OTP field is one box of a group of split OTP boxes: fill the WHOLE group from its FIRST box, whichever
+    box this step targets. (a) clear every box, (b) click each box in turn and type its one character, the way a
+    person does (the site's own key / input handlers run; each box is focused explicitly, so a widget moving the
+    focus by itself can never cause a skipped or doubled character), (c) read every box back; (d) on a mismatch
+    clear all boxes and fill each box directly once more, read back again. None when the field is not part of such
+    a group (the normal fill is used), else (ok, error). The OTP is never written to any log or error (positions
+    only). Never raises."""
+    n = _otp_group_boxes(page, step)
     if n < 2:
         return None
     text = str(value)
+    if len(text) != n:
+        return False, (f"Failed: The OTP did not fit the boxes on the page."
+                       f"{_TECH_SEP}{n} boxes, the OTP has {len(text)} characters")
+
+    def _box(k):
+        return page.locator(f'[data-afqa-otp="{k}"]').first
+
+    def _clear_all():
+        for k in range(n):
+            try:
+                if _box(k).input_value(timeout=1000):
+                    _box(k).fill("", timeout=2000)
+            except Exception:
+                pass
+
+    def _wrong_boxes():
+        bad = []
+        for k in range(n):
+            try:
+                if _box(k).input_value(timeout=1000) != text[k]:
+                    bad.append(k + 1)
+            except Exception:
+                bad.append(k + 1)
+        return bad
+
     try:
-        for k, ch in enumerate(text[:n]):
-            box = page.locator(f'[data-afqa-otp="{k}"]').first
+        _clear_all()
+        for k, ch in enumerate(text):
+            box = _box(k)
             box.click(timeout=5000)
             if box.input_value(timeout=1000):
                 box.fill("", timeout=2000)
             page.keyboard.type(ch)
-        got = "".join(page.locator(f'[data-afqa-otp="{k}"]').first.input_value(timeout=1000) for k in range(n))
+        bad = _wrong_boxes()
+        if bad:
+            _add_step_detail(f"After typing, OTP box(es) {', '.join(map(str, bad))} of {n} did not hold their "
+                             f"character - all boxes were cleared and each box was filled directly once more.")
+            _clear_all()
+            for k, ch in enumerate(text):
+                _box(k).fill(ch, timeout=3000)
+            bad = _wrong_boxes()
     except Exception as e:
         return False, f"Failed: The OTP could not be typed into the boxes.{_TECH_SEP}{e}"
-    _add_step_detail(f"The OTP was typed into {n} separate boxes, one character each.")
-    if got == text[:n] and len(text) == n:
+    if not bad:
+        _add_step_detail(f"The OTP was typed into {n} separate boxes, one character each.")
         return True, None
-    return False, (f"Failed: The OTP did not fit the boxes on the page."
-                   f"{_TECH_SEP}{n} boxes, OTP has {len(text)} characters, boxes now hold {got!r}")
+    return False, (f"Failed: The OTP boxes did not accept the code as expected."
+                   f"{_TECH_SEP}{n} boxes; box(es) {', '.join(map(str, bad))} do not hold the expected character")
 
 
 def _point_is_target(el, x, y):
@@ -6613,6 +7108,11 @@ def _compare_post_click(page, step, snapshot_ok, page_count_before, qa_url=None,
                 pass
             verdict = _classify_url(live_url, expected_q, chain_q)
         navigated_away = bool(before_q) and _dest_key(live_url) != _dest_key(before_q)
+        # the site may have passed through the recorded destination and redirected on, or gone on to the page the
+        # recording itself reached next: verified then (paths logged), otherwise the result stands as before
+        if verdict == "mismatch" and kind in ("recorded", "next_navigate", "href") and navigated_away:
+            if _verify_destination_by_chain_or_recording(live_url, expected_q, chain_q, None, next_step, qa_url):
+                verdict = "match"
         if verdict == "match" and kind != "none":
             _logged_verified_change = live_url != expected_q
             if _logged_verified_change:
@@ -9586,6 +10086,1257 @@ _EDITABLE_REPLACED = [False]       # this step's text box was chosen by kind / p
 _NET_PENDING = {}                  # request -> time it started (fetch / xhr / event stream only)
 _NET_IGNORED = set()               # requests that stayed pending with a quiet page: background traffic
 _PREV_STEP_START = [None]
+
+
+# ---------------------------------------------------------------------------------------------
+# MESSAGE CAPTURE (phase 4) - DETECTION ONLY, in MODE A and MODE B alike. During a replay (never during recording:
+# this is installed only on the replay's own browser context) a watcher records every message element that newly
+# appears on any page / tab - role=alert / alertdialog, aria-live regions, elements whose class names an error /
+# warning / toast / snackbar / invalid / danger state, validation text next to an input, inputs that become
+# aria-invalid="true" - with its text, type, time and the input it belongs to. It only observes: the records live
+# in a hidden page variable, nothing on the page is changed. After submit-type steps HTTP 4xx answers with a JSON
+# body are read too (their message / error / detail / errors field). Captured messages are only LOGGED
+# ("Captured <type>: <text>", with a screenshot) - no pause, no value change, no pass / fail change.
+# ---------------------------------------------------------------------------------------------
+SUBMIT_MESSAGE_WAIT_S = 5.0        # longest smart wait after a submit-type step (ends as soon as possible)
+SUBMIT_MIN_WAIT_S = 1.0            # a "settled page" ends the wait only after at least this long
+SUBMIT_SETTLE_S = 0.8              # no page change for this long (and no request of the step running) = settled
+_MSG_SEEN = set()                  # messages already logged in this run
+_STEP_CAPTURED = []                # the messages captured for the step running now
+_STEP_INVALID_HINTS = []           # inputs that became aria-invalid during the step running now (hints only)
+_NET_4XX = []                      # (epoch seconds, response) of recent HTTP 4xx answers
+_NET_4XX_READ = set()
+_NET_BODY_MAX_BYTES = 200000       # larger answer bodies are never read
+
+_MSG_WATCHER_JS = """
+(() => {
+    try {
+        if (window.__afqaMsgWatch) return;
+        const store = [];
+        Object.defineProperty(window, '__afqaMsgWatch', { value: store, enumerable: false, configurable: false });
+        const NL = String.fromCharCode(10), TAB = String.fromCharCode(9), CR = String.fromCharCode(13);
+        // invisible characters (zero-width spaces / joiners, word joiner, BOM, soft hyphen) are removed and a
+        // no-break space counts as a space, so an "empty" element never becomes a message
+        // characters that show nothing readable: controls, zero-width / joiner / direction marks and other format
+        // characters, variation selectors, the BOM, the soft hyphen, and private-use code points (icon-font glyphs).
+        // Line breaks, tabs and no-break spaces count as spaces.
+        const invisibleCp = (cp) => cp < 32 || (cp >= 0x7F && cp <= 0x9F) || cp === 0xAD || cp === 0x34F
+            || cp === 0x61C || (cp >= 0x180B && cp <= 0x180E) || (cp >= 0x200B && cp <= 0x200F)
+            || (cp >= 0x202A && cp <= 0x202E) || (cp >= 0x2060 && cp <= 0x206F) || (cp >= 0xFE00 && cp <= 0xFE0F)
+            || cp === 0xFEFF || (cp >= 0xE000 && cp <= 0xF8FF) || cp >= 0xF0000;
+        const clean = (t) => {
+            const s = Array.from(String(t || '')).map((ch) => {
+                const cp = ch.codePointAt(0);
+                if (cp === 9 || cp === 10 || cp === 13 || cp === 0xA0) return ' ';
+                return invisibleCp(cp) ? '' : ch;
+            }).join('');
+            return s.replace(/ {2,}/g, ' ').trim().slice(0, 300);
+        };
+        // when the page last changed (any DOM change) - read by the replay's submit wait to tell "settled"
+        let lastMut = Date.now();
+        Object.defineProperty(window, '__afqaMsgLastMut', { get: () => lastMut, enumerable: false, configurable: false });
+        const shown = (el) => {
+            try {
+                if (!el.getClientRects().length) return false;
+                const cs = getComputedStyle(el);
+                return cs.visibility !== 'hidden' && cs.display !== 'none' && parseFloat(cs.opacity || '1') > 0;
+            } catch (e) { return false; }
+        };
+        const labelOf = (inp) => {
+            try {
+                if (inp.labels && inp.labels.length) return clean(inp.labels[0].innerText || inp.labels[0].textContent);
+                return clean(inp.getAttribute('aria-label') || inp.getAttribute('placeholder') || inp.getAttribute('name') || '');
+            } catch (e) { return ''; }
+        };
+        const infoFor = (inp) => {
+            if (!inp) return null;
+            let selector = null;
+            try {
+                if (inp.id) selector = '#' + CSS.escape(inp.id);
+                else if (inp.getAttribute('name')) selector = inp.tagName.toLowerCase() + '[name="' + inp.getAttribute('name') + '"]';
+            } catch (e) {}
+            return { selector, id: inp.id || null, name: inp.getAttribute('name'),
+                     type: (inp.getAttribute('type') || inp.tagName).toLowerCase(), label: labelOf(inp) };
+        };
+        // the input a message is EXPLICITLY linked to: an input whose aria-describedby / aria-errormessage names
+        // the message element (or one of its 3 nearest ancestors). Only this counts as "the message belongs to that
+        // field" - sitting next to an input does not.
+        const linkedInput = (el) => {
+            try {
+                let cur = el;
+                for (let k = 0; cur && k < 4 && cur !== document.body; k++, cur = cur.parentElement) {
+                    if (cur.id) {
+                        const ref = document.querySelector('[aria-describedby~="' + CSS.escape(cur.id) + '"], [aria-errormessage~="' + CSS.escape(cur.id) + '"]');
+                        if (ref) return ref;
+                    }
+                }
+            } catch (e) {}
+            return null;
+        };
+        // the input a message merely sits next to (a hint only, never used to name the field)
+        const nearInput = (el) => {
+            try {
+                const linked = linkedInput(el);
+                if (linked) return linked;
+                let c = el.parentElement;
+                for (let k = 0; k < 3 && c; k++, c = c.parentElement) {
+                    const ins = c.querySelectorAll('input, textarea, select');
+                    if (ins.length === 1) return ins[0];
+                    if (ins.length > 1) break;
+                }
+            } catch (e) {}
+            return null;
+        };
+        // LEAF-LIKE MESSAGE TEXT: a website message is a SMALL element of its own - never a container (a card,
+        // section, form, dialog, the page) and never a link / button / field or something holding one. When a
+        // container is added or changes, the qualifying small elements INSIDE it are looked at instead.
+        const SKIP_TAGS = ['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEMPLATE', 'INPUT', 'TEXTAREA', 'SELECT', 'OPTION', 'SVG'];
+        const CONTAINER_TAGS = ['BODY', 'HTML', 'MAIN', 'SECTION', 'ARTICLE', 'FORM', 'DIALOG', 'NAV', 'HEADER',
+                                'FOOTER', 'ASIDE', 'FIELDSET', 'TABLE', 'TBODY', 'THEAD', 'TR', 'UL', 'OL', 'DL', 'IFRAME'];
+        const CONTAINER_ROLES = ['main', 'dialog', 'alertdialog', 'form', 'region', 'navigation', 'banner',
+                                 'contentinfo', 'complementary', 'document', 'application', 'list', 'grid', 'table',
+                                 'tabpanel', 'menu', 'menubar', 'toolbar', 'tree', 'listbox'];
+        const INTERACTIVE = 'a, button, input, select, textarea, option, summary, [role="button"], [role="link"], '
+            + '[role="checkbox"], [role="radio"], [role="switch"], [role="tab"], [role="menuitem"], '
+            + '[role="menuitemcheckbox"], [role="menuitemradio"], [role="option"], [role="textbox"], '
+            + '[role="combobox"], [role="searchbox"], [role="spinbutton"], [role="slider"], [role="treeitem"], '
+            + '[contenteditable=""], [contenteditable="true"]';
+        const isLeaf = (el) => {
+            try {
+                if (!el || el.nodeType !== 1) return false;
+                const tag = String(el.tagName || '').toUpperCase();
+                if (SKIP_TAGS.indexOf(tag) !== -1 || CONTAINER_TAGS.indexOf(tag) !== -1) return false;
+                // no or very few element children (inline emphasis, an icon)
+                if (el.childElementCount > 3 || el.getElementsByTagName('*').length > 8) return false;
+                const raw = el.textContent || '';
+                if (!raw.trim() || raw.length > 1000) return false;
+                if (CONTAINER_ROLES.indexOf((el.getAttribute('role') || '').toLowerCase()) !== -1) return false;
+                // not a link / button / field / focusable control itself, and not inside a link / button
+                if (el.matches(INTERACTIVE)) return false;
+                if (el.hasAttribute('tabindex') && el.tabIndex >= 0) return false;
+                if (el.parentElement && el.parentElement.closest(INTERACTIVE)) return false;
+                // holds no link / button / field / focusable control
+                if (el.querySelector(INTERACTIVE + ', [tabindex]:not([tabindex="-1"])')) return false;
+                // not a page-sized block
+                const r = el.getBoundingClientRect();
+                const vw = window.innerWidth || 1, vh = window.innerHeight || 1;
+                if (r.height > vh * 0.4 || r.width * r.height > vw * vh * 0.25) return false;
+                return true;
+            } catch (e) { return false; }
+        };
+        // the element's OWN message text for the role / class rules: its leaf text, or - for an alert / toast that
+        // also holds a close button or a link - its text without those controls. A container (a form, the page, a
+        // block holding fields, or more than about 200 characters of text) has no message text of its own.
+        const ownMsgText = (el) => {
+            try {
+                const tag = String(el.tagName || '').toUpperCase();
+                if (CONTAINER_TAGS.indexOf(tag) !== -1 || el.querySelector('input, select, textarea, form')) return '';
+                if (isLeaf(el)) {
+                    const t = clean(el.innerText || el.textContent);
+                    return t.length <= 200 ? t : '';
+                }
+                const parts = [];
+                let len = 0;
+                const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+                for (let n = w.nextNode(); n && len <= 200; n = w.nextNode()) {
+                    const p = n.parentElement;
+                    if (!p || SKIP_TAGS.indexOf(String(p.tagName || '').toUpperCase()) !== -1) continue;
+                    const ia = p.closest(INTERACTIVE);
+                    if (ia && ia !== el && el.contains(ia)) continue;      // the text of a button / link inside it
+                    const t = clean(n.nodeValue);
+                    if (!t || !shown(p)) continue;
+                    parts.push(t);
+                    len += t.length + 1;
+                }
+                const t = clean(parts.join(' '));
+                return t.length <= 200 ? t : '';
+            } catch (e) { return ''; }
+        };
+        const classify = (el) => {
+            const role = (el.getAttribute('role') || '').toLowerCase();
+            if (role === 'alert' || role === 'alertdialog') return 'alert';
+            const live = (el.getAttribute('aria-live') || '').toLowerCase();
+            if (live && live !== 'off') return 'live message';
+            const cls = String(typeof el.className === 'string' ? el.className : (el.getAttribute('class') || '')).toLowerCase();
+            if (/(toast|snackbar)/.test(cls)) return 'toast';
+            if (/(error|invalid|danger)/.test(cls)) return 'error';
+            if (/warn/.test(cls)) return 'warning';
+            return null;
+        };
+        // CLASS-INDEPENDENT TEXT CANDIDATES: short visible text that is newly added, changes, or becomes visible,
+        // whatever its classes - kept apart from the messages above. The replay only reads these after a
+        // submit-type step and only uses text that matches a configured keyword (all other text is ignored). The
+        // text colour is only a hint for the message type (a red-range colour reads as a field error).
+        const textCand = [];
+        Object.defineProperty(window, '__afqaTextCand', { value: textCand, enumerable: false, configurable: false });
+        const candText = new WeakMap();
+        const reddish = (el) => {
+            try {
+                const m = (getComputedStyle(el).color || '').match(/[0-9.]+/g);
+                if (!m || m.length < 3) return false;
+                const r = +m[0], g = +m[1], b = +m[2];
+                return r >= 150 && r > g * 1.6 && r > b * 1.6;
+            } catch (e) { return false; }
+        };
+        // one leaf-like element (see isLeaf): its own text, 3-200 characters, visible; the same element + text once
+        const noteLeaf = (el) => {
+            try {
+                const text = clean(el.innerText || el.textContent);
+                if (!text || text.length < 3 || text.length > 200) { candText.delete(el); return; }
+                if (!shown(el)) { candText.delete(el); return; }
+                if (candText.get(el) === text) return;
+                candText.set(el, text);
+                textCand.push({ t: Date.now(), type: reddish(el) ? 'field error' : 'page message', text,
+                                input: infoFor(linkedInput(el)), near_input: infoFor(nearInput(el)),
+                                in_form: !!(el.closest && el.closest('form')) });
+                if (textCand.length > 300) textCand.splice(0, 150);
+            } catch (e) {}
+        };
+        // deep: the node was added / shown, so a container is looked into (its qualifying leaves). Text already
+        // noted for the same element is never noted again, so unchanged text inside a changed container never
+        // counts as new. A container is looked into at most every 200ms; html / body only through added nodes.
+        const deepAt = new WeakMap();
+        const noteText = (node, deep) => {
+            try {
+                const el = node && node.nodeType === 1 ? node : (node && node.parentElement);
+                if (!el) return;
+                const top = el === document.body || el === document.documentElement;
+                if (!top && isLeaf(el)) { noteLeaf(el); return; }
+                if (!deep || top || !el.getElementsByTagName) return;
+                const now = Date.now();
+                if (now - (deepAt.get(el) || 0) < 200) return;
+                deepAt.set(el, now);
+                const all = el.getElementsByTagName('*');
+                let last = null, picked = 0;
+                for (let k = 0; k < all.length && k < 3000 && picked < 200; k++) {
+                    const e = all[k];
+                    if (last && last.contains(e)) continue;         // inside a leaf already taken
+                    if (isLeaf(e)) { last = e; picked++; noteLeaf(e); }
+                }
+            } catch (e) {}
+        };
+        const lastText = new WeakMap();
+        const record = (el, type, inp) => {
+            const text = ownMsgText(el);
+            if (!text) { lastText.delete(el); return; }      // emptied: its next non-empty text is reported again
+            if (lastText.get(el) === text) return;
+            lastText.set(el, text);
+            // input: only an EXPLICIT link (see linkedInput); near_input: the input it sits next to (hint only)
+            store.push({ t: Date.now(), type, text, input: infoFor(linkedInput(el)), near_input: infoFor(inp) });
+            if (store.length > 200) store.splice(0, 100);
+        };
+        const check = (node) => {
+            let el = node && node.nodeType === 1 ? node : (node && node.parentElement);
+            for (let k = 0; el && k < 5 && el !== document.body && el !== document.documentElement; k++, el = el.parentElement) {
+                const type = classify(el);
+                if (!type) continue;
+                if (!shown(el)) { lastText.delete(el); return; }   // hidden: reported again when shown again
+                const inp = nearInput(el);
+                record(el, (inp && type !== 'toast' && type !== 'alert') ? 'field error' : type, inp);
+                return;
+            }
+        };
+        // the message elements visible RIGHT NOW (used only to re-check after a field-error retry); read-only
+        Object.defineProperty(window, '__afqaMsgScan', { value: () => {
+            const out = [];
+            try {
+                document.querySelectorAll('[role], [aria-live], [class]').forEach((el) => {
+                    if (out.length >= 50) return;
+                    const type = classify(el);
+                    if (!type || !shown(el)) return;
+                    const text = ownMsgText(el);
+                    if (text) out.push({ t: Date.now(), type, text, input: infoFor(linkedInput(el)), near_input: infoFor(nearInput(el)) });
+                });
+            } catch (e) {}
+            return out;
+        }, enumerable: false, configurable: false });
+        // message-like elements INSIDE an element whose visibility changed (a container shown / hidden by class,
+        // style, hidden or aria-hidden): each is checked like a new one
+        const insideAt = new WeakMap();
+        const checkInside = (el) => {
+            try {
+                if (!el || !el.querySelectorAll || el === document.body || el === document.documentElement) return;
+                // an element animating its class / style many times a second is looked into at most every 200ms
+                const now = Date.now();
+                if (now - (insideAt.get(el) || 0) < 200) return;
+                insideAt.set(el, now);
+                const found = el.querySelectorAll('[role], [aria-live], [class]');
+                for (let k = 0; k < found.length && k < 40; k++) {
+                    if (classify(found[k])) check(found[k]);
+                }
+            } catch (e) {}
+        };
+        new MutationObserver((muts) => {
+            lastMut = Date.now();
+            try {
+                for (const m of muts) {
+                    if (m.type === 'childList') {
+                        m.addedNodes.forEach((n) => { check(n); noteText(n, n.nodeType === 1); });
+                        // text put into / taken out of an existing element (it may have been empty before)
+                        check(m.target);
+                        noteText(m.target, false);
+                    } else if (m.type === 'characterData') {
+                        check(m.target);
+                        noteText(m.target, false);
+                    } else if (m.type === 'attributes') {
+                        const el = m.target;
+                        if (m.attributeName === 'aria-invalid') {
+                            if (el.getAttribute('aria-invalid') === 'true') {
+                                // a HINT only (which field became invalid, and when) - no text: aria-invalid alone is
+                                // not a message the website showed
+                                store.push({ t: Date.now(), type: 'invalid field', text: '', hint: true, input: infoFor(el) });
+                            }
+                        } else {
+                            check(el);
+                            checkInside(el);
+                            noteText(el, true);
+                        }
+                    }
+                }
+            } catch (e) {}
+        }).observe(document, { childList: true, subtree: true, characterData: true, attributes: true,
+                               attributeFilter: ['aria-invalid', 'class', 'role', 'hidden', 'style', 'aria-hidden'] });
+    } catch (e) {}
+})();
+"""
+
+_MSG_READ_JS = "(since) => { const s = window.__afqaMsgWatch; return s ? s.filter(m => m.t >= since) : []; }"
+
+
+_REQ_START = {}                    # request -> (epoch seconds it started, address of the page that issued it)
+_REQ_KEY_STEPS = {}                # "METHOD origin+path" -> the step numbers during which it was requested
+_REQ_KEY_TIMES = {}                # "METHOD origin+path" -> when it was requested (recent ones)
+_CUR_STEP_INDEX = [0]              # the step running now (0 = before the first step)
+_STEP_START_URL = [None]           # the page address when the current step began
+_STATIC_SUFFIXES = (".js", ".mjs", ".css", ".png", ".jpg", ".jpeg", ".gif", ".svg", ".webp", ".ico", ".woff", ".woff2",
+                    ".ttf", ".otf", ".eot", ".map", ".mp4", ".webm", ".mp3")
+
+
+def _req_key(req):
+    try:
+        u = urlsplit(req.url)
+        return f"{req.method} {u.scheme}://{u.netloc}{u.path}"
+    except Exception:
+        return None
+
+
+def _note_request(req):
+    """Request listener (only remembers, never reads anything): when a fetch / xhr / page request started, from which
+    page, and during which step its method + path was requested. Never raises."""
+    try:
+        if req.resource_type not in ("fetch", "xhr", "document"):
+            return
+        try:
+            src = req.frame.url
+        except Exception:
+            src = None
+        _REQ_START[req] = (time.time(), src)
+        if len(_REQ_START) > 2000:
+            for _old in list(_REQ_START)[:1000]:
+                _REQ_START.pop(_old, None)
+        k = _req_key(req)
+        if k:
+            _REQ_KEY_STEPS.setdefault(k, set()).add(_CUR_STEP_INDEX[0])
+            _times = _REQ_KEY_TIMES.setdefault(k, [])
+            _times.append(time.time())
+            if len(_times) > 20:
+                del _times[:10]
+    except Exception:
+        pass
+
+
+def _request_caused_by_step(resp, since_s):
+    """A server answer counts for the current step when its request STARTED after the step's action began (never
+    a static resource). A POST / PUT / PATCH / DELETE request started then is ALWAYS the step's own (a form may call
+    the same endpoint while typing and again on submit). Only a GET can be background activity: when the same
+    method + path (query ignored) was requested at least twice before the step began (polling), or when it was
+    sent by a page the step navigated to (that page's own requests). Unknown details keep the earlier behaviour.
+    Never raises (True)."""
+    try:
+        req = resp.request
+        path = (urlsplit(req.url).path or "").lower()
+        if path.endswith(_STATIC_SUFFIXES):
+            return False
+        started, src = _REQ_START.get(req, (None, None))
+        if started is not None and started < since_s:
+            return False
+        if (req.method or "GET").upper() != "GET":
+            return True
+        k = _req_key(req)
+        if k and sum(1 for t_ in _REQ_KEY_TIMES.get(k, ()) if t_ < since_s) >= 2:
+            return False
+        if req.resource_type != "document" and src and _STEP_START_URL[0] and _dest_key(src) != _dest_key(_STEP_START_URL[0]):
+            return False
+    except Exception:
+        return True
+    return True
+
+
+def _net_record_4xx(resp):
+    """Response listener: remembers recent HTTP 4xx answers of fetch / xhr / page requests, and every answer of a
+    fetch / xhr request (any status - a site can answer an error with status 200). Only remembered here (nothing
+    is read inside this event handler). Never raises."""
+    try:
+        rt = resp.request.resource_type
+        if rt in ("fetch", "xhr") or (rt == "document" and 400 <= int(resp.status) < 500):
+            _NET_4XX.append((time.time(), resp))
+            if len(_NET_4XX) > 60:
+                del _NET_4XX[:30]
+    except Exception:
+        pass
+
+
+def _msg_capture_install(context):
+    """Installs the message watcher on every page / tab of this replay context, and the 4xx response listener.
+    Any failure only means no capture (the run goes on as before)."""
+    try:
+        context.add_init_script(_MSG_WATCHER_JS)
+    except Exception as e:
+        print(f"[message-capture] WARNING: watcher not installed ({e})")
+    try:
+        context.on("response", _net_record_4xx)
+    except Exception as e:
+        print(f"[message-capture] WARNING: response listener not installed ({e})")
+    try:
+        context.on("request", _note_request)
+    except Exception as e:
+        print(f"[message-capture] WARNING: request listener not installed ({e})")
+
+
+def _json_message(body, depth=0):
+    """The first readable message in a JSON error body: its message / error / detail / errors field. Never raises."""
+    try:
+        if depth > 3 or body is None:
+            return None
+        if isinstance(body, str):
+            return body.strip()[:300] or None
+        if isinstance(body, list):
+            for item in body[:5]:
+                t = _json_message(item, depth + 1)
+                if t:
+                    return t
+            return None
+        if isinstance(body, dict):
+            for k in ("message", "error", "detail", "errors", "error_description", "title"):
+                if k in body:
+                    t = _json_message(body[k], depth + 1)
+                    if t:
+                        return t
+            # a nested object / list (e.g. data.message) at the top level; any value deeper down
+            for v in list(body.values())[:8]:
+                if depth > 0 or isinstance(v, (dict, list)):
+                    t = _json_message(v, depth + 1)
+                    if t:
+                        return t
+    except Exception:
+        pass
+    return None
+
+
+def _net_messages_since(since_s):
+    """Messages of the HTTP 4xx JSON answers received since since_s (each read once). Non-JSON answers and any
+    body that cannot be read are ignored. Never raises."""
+    out = []
+    try:
+        for t, resp in list(_NET_4XX):
+            if t < since_s or id(resp) in _NET_4XX_READ:
+                continue
+            _NET_4XX_READ.add(id(resp))
+            # only answers to requests THIS step's action caused (never background polling / static files)
+            if not _request_caused_by_step(resp, since_s):
+                continue
+            try:
+                ct = (resp.headers.get("content-type") or "").lower()
+                if "json" not in ct:
+                    continue
+                try:
+                    if int(resp.headers.get("content-length") or 0) > _NET_BODY_MAX_BYTES:
+                        continue
+                except (TypeError, ValueError):
+                    pass
+                raw = resp.body()
+                if not raw or len(raw) > _NET_BODY_MAX_BYTES:
+                    continue
+                _STEP_MSG_STATS["server_read"] = int(_STEP_MSG_STATS.get("server_read") or 0) + 1
+                _body = json.loads(raw.decode("utf-8", errors="replace"))
+                text = _clean_msg_text(_json_message(_body))
+                if not text:
+                    continue
+                # an HTTP 4xx answer's message is reported as before; an answer with any other status only when
+                # its message matches a configured keyword (a normal success answer never counts)
+                if not (400 <= int(resp.status) < 500) and not _message_matches_keyword(text):
+                    continue
+                out.append({"t": int(t * 1000), "type": "server response", "text": text,
+                            "status": resp.status, "url": resp.url, "input": None,
+                            "failed": _json_reports_failure(_body)})
+            except Exception:
+                continue
+    except Exception:
+        pass
+    return out
+
+
+def _json_reports_failure(body):
+    """A JSON answer whose own top-level flag says it failed: success / ok / succeeded false, status / result /
+    state false or 'error' / 'fail' / 'failed' / 'failure', or error: true. Only the flag is looked at (the body is
+    never kept). Never raises (False)."""
+    try:
+        if not isinstance(body, dict):
+            return False
+        for k in ("success", "ok", "succeeded", "isSuccess", "is_success"):
+            if k in body and body[k] is False:
+                return True
+        for k in ("status", "result", "state"):
+            v = body.get(k)
+            if v is False or (isinstance(v, str) and v.strip().lower() in ("error", "fail", "failed", "failure")):
+                return True
+        if body.get("error") is True:
+            return True
+    except Exception:
+        pass
+    return False
+
+
+def _click_on_filled_form(step):
+    """A click on a control that is NOT itself a field or a choice (not an input / textarea / select / label, not a
+    checkbox / radio / switch / textbox / combobox / option role) made while the page's text fields held values -
+    the recorder's own post-click facts (post_click.submit.fields_before > 0). How a form whose button is not a
+    <button type=submit> (a styled div, say) is sent. Never raises (False)."""
+    try:
+        lp = (step or {}).get("locator_profile") or {}
+        attrs = lp.get("attributes") if isinstance(lp.get("attributes"), dict) else {}
+        tag = (lp.get("tag") or "").lower()
+        role = (lp.get("role") or attrs.get("role") or "").lower()
+        itype = (attrs.get("type") or "").lower()
+        if tag in ("input", "textarea", "select", "option", "label") and itype not in ("submit", "button", "image"):
+            return False
+        if role in ("checkbox", "radio", "switch", "textbox", "combobox", "option", "menuitemcheckbox",
+                    "menuitemradio", "searchbox", "spinbutton", "slider"):
+            return False
+        pc = step.get("post_click") if isinstance(step.get("post_click"), dict) else {}
+        sb = pc.get("submit") if isinstance(pc.get("submit"), dict) else {}
+        return int(sb.get("fields_before") or 0) > 0
+    except Exception:
+        return False
+
+
+def _submit_page_settled(page, started_mono):
+    """After a submit: no fetch / xhr request started since the step began is still running, and the page has
+    not changed for SUBMIT_SETTLE_S (the watcher's last-change time). Unreadable: not settled (the wait then ends
+    at its maximum, as a bound). Never raises."""
+    try:
+        for _req, t0 in list(_NET_PENDING.items()):
+            # a request this step started and still running (a long-lived event stream is not a pending answer)
+            if t0 >= started_mono and getattr(_req, "resource_type", "") != "eventsource":
+                return False
+        last = page.evaluate("() => (typeof window.__afqaMsgLastMut === 'number' ? window.__afqaMsgLastMut : null)")
+        if last is None:
+            return False
+        return (time.time() * 1000.0 - float(last)) >= SUBMIT_SETTLE_S * 1000.0
+    except Exception:
+        return False
+
+
+def _is_submit_type_step(step):
+    """A click / Enter / submit that submits a form or leaves the page (from the recording). Never raises."""
+    try:
+        at = (step or {}).get("action_type")
+        if at == "submit":
+            return True
+        if at == "press":
+            return (step.get("value") or "") == "Enter"
+        if at in ("click", "dblclick"):
+            pc = step.get("post_click") if isinstance(step.get("post_click"), dict) else {}
+            sb = pc.get("submit") if isinstance(pc.get("submit"), dict) else {}
+            lp = step.get("locator_profile") or {}
+            attrs = lp.get("attributes") if isinstance(lp.get("attributes"), dict) else {}
+            return bool(sb.get("submit_like") or step.get("submits_form") or _step_expects_navigation(step)
+                        or (attrs.get("type") or "").lower() == "submit"
+                        or _click_on_filled_form(step))
+    except Exception:
+        pass
+    return False
+
+
+_TEXT_CAND_READ_JS = ("(since) => { const s = window.__afqaTextCand; return { doc: (window.performance && "
+                      "performance.timeOrigin) || 0, items: s ? s.filter(m => m.t >= since) : [] }; }")
+_STEP_MSG_STATS = {"page": 0, "server": 0, "waited": False}   # this step's message check (the decision trace line)
+_STEP_MSG_DECISION = {}            # this step's "success wins" decision: {"achieved": bool, "reason": str}
+_MSG_LOG_MAX = 200                 # captured website text in log lines is cut to about this many characters
+
+
+def _short_msg(text, n=_MSG_LOG_MAX):
+    """A captured website text for a log line: cut to about n characters. Never raises."""
+    try:
+        s = str(text or "")
+        return s if len(s) <= n else s[:n].rstrip() + "…"
+    except Exception:
+        return ""
+
+
+def _route_key(url):
+    """What "the same page or route" means here: origin + path (see _dest_key), plus a '#/…' or '#!…' route
+    fragment (a single-page app routing by fragment). Never raises."""
+    try:
+        frag = urlsplit(url or "").fragment or ""
+        route = frag.split("?")[0].rstrip("/") if frag.startswith(("/", "!")) else ""
+        return _dest_key(url) + (route,)
+    except Exception:
+        return _dest_key(url)
+
+
+def _step_left_start_page(page):
+    """The step moved the browser to a different page or route: the page address now differs from where the step
+    began, or the step's own navigation chain passed through another page or route. Unknown counts as NOT moved
+    (the existing behaviour). Never raises (False)."""
+    try:
+        start = _STEP_START_URL[0]
+        if not start:
+            return False
+        s = _route_key(start)
+        urls = list(_step_nav_chain())
+        try:
+            urls.append(page.url)
+        except Exception:
+            pass
+        return any(u and _route_key(u) != s for u in urls)
+    except Exception:
+        return False
+
+
+def _keyword_message_for_step(page):
+    """The first website message captured during this step that matches a keyword (never a hint). Class-
+    independent page text is never used once the step moved to another page or route - it is that page's own
+    content, not a reaction to the step. Never raises (None)."""
+    try:
+        moved = None
+        for m in _STEP_CAPTURED:
+            if m.get("hint") or not _message_matches_keyword(m.get("text")):
+                continue
+            if m.get("src") == "text":
+                if moved is None:
+                    moved = _step_left_start_page(page)
+                if moved:
+                    continue
+            return m
+    except Exception:
+        pass
+    return None
+
+
+def _server_failure_note(m):
+    """For the trace line: why a step-caused server answer counts as a failure (HTTP 4xx / 5xx, or its success
+    flag false), else "". Never raises."""
+    try:
+        if (m or {}).get("type") != "server response":
+            return ""
+        st = int(m.get("status") or 0)
+        if st >= 400:
+            return f"server answer HTTP {st}"
+        if m.get("failed"):
+            return "server answer reported a failure"
+    except Exception:
+        pass
+    return ""
+
+
+def _expected_result_state(page, step, verified):
+    """SUCCESS WINS: (achieved, reason) of a submit-type step. Achieved only when the recording expected a
+    navigation, the browser moved to another page or route, and that destination was verified (verified = the
+    existing page check passed - chain and dynamic-value rules included). A step whose recording stayed on the same
+    page is never "achieved" by a message check: a keyword message on that page is the website's answer.
+    Never raises ((False, reason))."""
+    try:
+        exp_nav = _step_expects_navigation(step)
+        moved = _step_left_start_page(page)
+        if exp_nav:
+            if not moved:
+                return False, "not achieved (still on recorded page)"
+            if verified:
+                return True, "achieved (navigated to the recorded page)"
+            return False, "not achieved (the destination could not be verified)"
+        if moved:
+            return False, "not achieved (the page changed, the recording stayed on the same page)"
+        return False, "same page expected (the recording stayed on this page)"
+    except Exception:
+        return False, "not checked"
+
+
+def _capture_step_messages(page, step, next_step, step_index, started_wall, result, output_json_path, run_dir):
+    """MESSAGE CAPTURE after one step (see above): the messages that appeared after the step started, on every
+    open page. After a submit-type step, first a smart wait: it ends as soon as the next step's target is there or
+    a new message was captured (at most SUBMIT_MESSAGE_WAIT_S; a next step without a target waits at most 1s).
+    Logs each new message once and takes one screenshot. Only observes. Never raises."""
+    try:
+        if page is None:
+            return
+        since_ms = int(started_wall * 1000)
+        submit = _is_submit_type_step(step)
+
+        def _key(m):
+            return (m.get("type"), m.get("text"), int((m.get("t") or 0) // 1000))
+
+        def _collect():
+            items = []
+            try:
+                pgs = list(page.context.pages)
+            except Exception:
+                pgs = [page]
+            for pg in pgs:
+                try:
+                    items.extend(pg.evaluate(_MSG_READ_JS, since_ms) or [])
+                except Exception:
+                    pass
+            if submit:
+                # class-independent page text (see the watcher): only text that matches a configured keyword
+                # counts - and only when the role / class rules did not already capture the same text
+                _known = {_norm_msg_text(m_.get("text")) for m_ in items if isinstance(m_, dict)}
+                _known |= {_norm_msg_text(r_.get("text")) for r_ in _STEP_CAPTURED}
+                # NOT after a navigation: once the step moved to another page or route, that page's text is its
+                # own content, not a reaction to the step (role / class messages and server answers still count)
+                _moved = _step_left_start_page(page)
+                if _moved:
+                    _STEP_MSG_STATS["text_skipped"] = True
+                for pg in ([] if _moved else pgs):
+                    try:
+                        _tc = pg.evaluate(_TEXT_CAND_READ_JS, since_ms) or {}
+                        if not isinstance(_tc, dict):
+                            continue
+                        try:
+                            if float(_tc.get("doc") or 0) > since_ms:
+                                _STEP_MSG_STATS["text_skipped"] = True
+                                continue                   # a document loaded after the step began (a new page)
+                        except (TypeError, ValueError):
+                            pass
+                        for m_ in (_tc.get("items") or []):
+                            if (isinstance(m_, dict) and _message_matches_keyword(m_.get("text"))
+                                    and _norm_msg_text(m_.get("text")) not in _known):
+                                _known.add(_norm_msg_text(m_.get("text")))
+                                m_["src"] = "text"
+                                items.append(m_)
+                    except Exception:
+                        pass
+                items.extend(_net_messages_since(started_wall))
+            out = []
+            for m in items:
+                if not isinstance(m, dict):
+                    continue
+                if m.get("hint"):
+                    # an input that became aria-invalid: kept as a hint for naming the field, never a message
+                    if m not in _STEP_INVALID_HINTS:
+                        _STEP_INVALID_HINTS.append(m)
+                    continue
+                _ct = _clean_msg_text(m.get("text"))
+                if not _ct:
+                    continue                           # empty / only invisible characters: not a message
+                m["text"] = _ct
+                if _key(m) not in _MSG_SEEN:
+                    out.append(m)
+            return out
+
+        new = _collect()
+        if submit and not new and not _STEP_MSG_STATS.get("waited"):
+            _STEP_MSG_STATS["waited"] = True           # one submit wait per step (an earlier check may have waited)
+            # SUBMIT WAIT: ends as soon as (a) the next step's target is there (success - no extra delay), (b) a
+            # website message was captured, (c) the page has settled - no request started by this step still
+            # running and no page change for SUBMIT_SETTLE_S, after at least SUBMIT_MIN_WAIT_S - or (d) the
+            # maximum passed. Without a next target (the last step, a navigate...) only (b)-(d) apply. The same
+            # wait in fast mode.
+            nlp = (next_step or {}).get("locator_profile") or {}
+            t_start = time.monotonic()
+            started_mono = t_start - max(0.0, time.time() - started_wall)
+            deadline = t_start + max(SUBMIT_MESSAGE_WAIT_S, 5.0)
+            while time.monotonic() < deadline:
+                try:
+                    if nlp and _locator_findable(page, nlp):
+                        break
+                except Exception:
+                    pass
+                try:
+                    page.wait_for_timeout(200)
+                except Exception:
+                    time.sleep(0.2)
+                new = _collect()
+                if new:
+                    break
+                if time.monotonic() - t_start >= SUBMIT_MIN_WAIT_S and _submit_page_settled(page, started_mono):
+                    break
+            if not new:
+                new = _collect()
+        if not new:
+            return
+        shot = None
+        try:
+            _dir = Path(run_dir) / "captured_messages"
+            _dir.mkdir(parents=True, exist_ok=True)
+            shot = _dir / f"step{step_index:02d}_message_{datetime.now().strftime('%H-%M-%S')}.png"
+            page.screenshot(path=str(shot), timeout=5000)
+            shot = str(shot)
+        except Exception:
+            shot = None
+        for m in new:
+            _MSG_SEEN.add(_key(m))
+            rec = {"type": m.get("type"), "text": m.get("text"), "input": m.get("input"),
+                   "near_input": m.get("near_input"), "status": m.get("status"), "screenshot": shot}
+            if m.get("src"):
+                rec["src"] = m.get("src")             # class-independent page text (see _keyword_message_for_step)
+            if m.get("failed"):
+                rec["failed"] = True                  # a server answer whose success flag is false
+            _STEP_MSG_STATS["server" if m.get("type") == "server response" else "page"] += 1
+            _STEP_CAPTURED.append(rec)
+            _url_note_log(f"🔔 Captured {m.get('type')}: {_short_msg(m.get('text'))}", result, output_json_path)
+    except Exception as e:
+        print(f"[message-capture] WARNING: {e} - the run continues")
+
+
+# ---------------------------------------------------------------------------------------------
+# FIELD ERROR HANDLING (phase 5), MODE A and MODE B alike: a captured message (phase 4) that contains one of the
+# generic keywords of the editable config/message_keywords.json (case-insensitive - no site text anywhere in code)
+# pauses the run (phase 3 engine) and the live log asks for NEW values for the form's recorded Fill steps. The
+# boxes are always empty - the tool never makes up, suggests or fills a value. Continue re-runs, in order, from
+# the earliest changed Fill step up to and including the step that showed the message, then checks again.
+# ---------------------------------------------------------------------------------------------
+_MSG_KEYWORDS = [None]
+_FE_ATTEMPT = {}                   # step number -> how many field-error cards were shown for it
+_FE_LAST_TEXT = {}                 # step number -> the message of its last card
+_NON_TEXT_INPUT_TYPES = ("date", "datetime-local", "month", "week", "time", "color", "range", "file", "checkbox",
+                         "radio", "hidden", "submit", "button", "image", "reset")
+
+
+_INVISIBLE_CHARS = tuple(chr(c) for c in (0x200B, 0x200C, 0x200D, 0x2060, 0xFEFF, 0x00AD))
+
+
+def _clean_msg_text(text):
+    """A captured message as shown: characters that show nothing readable removed (controls, format characters
+    such as zero-width spaces / joiners / direction marks, the soft hyphen, the BOM, and private-use code points -
+    icon-font glyphs), any run of whitespace (no-break spaces included) one space, trimmed. Never raises ("")."""
+    try:
+        import unicodedata as _ud
+        s = str(text or "")
+        for z in _INVISIBLE_CHARS:
+            s = s.replace(z, "")
+        s = "".join(" " if ch.isspace() else ch for ch in s
+                    if ch.isspace() or _ud.category(ch) not in ("Cc", "Cf", "Co", "Cs", "Cn"))
+        return " ".join(s.split())
+    except Exception:
+        return ""
+
+
+def _norm_msg_text(text):
+    """A message or keyword for matching: _clean_msg_text, lowercased. Never raises ("")."""
+    return _clean_msg_text(text).lower()
+
+
+def _message_keywords():
+    """The keyword list from the editable config file (AUTOFLOW_MESSAGE_KEYWORDS_FILE, else config/ next to the
+    project), normalized like the messages. A missing or broken file means no keywords (nothing pauses) - with a
+    warning. Never raises."""
+    if _MSG_KEYWORDS[0] is None:
+        kws = []
+        try:
+            path = os.environ.get("AUTOFLOW_MESSAGE_KEYWORDS_FILE") or str(
+                Path(__file__).resolve().parent.parent / "config" / "message_keywords.json")
+            data = json.loads(Path(path).read_text(encoding="utf-8"))
+            kws = [k for k in (_norm_msg_text(x) for x in (data.get("keywords") or [])) if k]
+        except Exception as e:
+            print(f"[field-error] WARNING: message keywords not loaded ({e}) - captured messages only get logged")
+        _MSG_KEYWORDS[0] = kws
+    return _MSG_KEYWORDS[0]
+
+
+def _matching_keyword(text):
+    """The configured keyword found in the message (for the decision trace line), else None."""
+    try:
+        t = _norm_msg_text(text)
+        return next((k for k in _message_keywords() if k in t), None) if t else None
+    except Exception:
+        return None
+
+
+def _message_matches_keyword(text):
+    """A keyword of the config file is part of the (normalized) website message. Never raises."""
+    try:
+        t = _norm_msg_text(text)
+        return bool(t) and any(k in t for k in _message_keywords())
+    except Exception:
+        return False
+
+
+def _fill_label(step):
+    """A recorded Fill step's field name for a person: label, placeholder, aria-label, name or id."""
+    lp = (step or {}).get("locator_profile") or {}
+    attrs = lp.get("attributes") if isinstance(lp.get("attributes"), dict) else {}
+    for v in (lp.get("nearby_label"), lp.get("placeholder"), attrs.get("placeholder"), lp.get("aria_label"),
+              attrs.get("aria-label"), lp.get("accessible_name"), lp.get("name"), attrs.get("name"), lp.get("id"),
+              attrs.get("id")):
+        if isinstance(v, str) and v.strip():
+            return v.strip()[:80]
+    return "field"
+
+
+def _fill_field_type(step):
+    """"email" / "phone" / "email_or_phone" / "username" / "password" / "text" for a recorded Fill step, from its
+    input type, its autocomplete attribute, else its label text. Never raises ("text")."""
+    try:
+        lp = (step or {}).get("locator_profile") or {}
+        attrs = lp.get("attributes") if isinstance(lp.get("attributes"), dict) else {}
+        itype = (attrs.get("type") or (step or {}).get("input_type") or "").lower()
+        ac = (attrs.get("autocomplete") or "").lower()
+        if itype == "password" or "password" in ac:
+            return "password"
+        if itype == "email" or "email" in ac:
+            return "email"
+        if itype == "tel" or ac.startswith("tel"):
+            return "phone"
+        if "username" in ac:
+            return "username"
+        label = _fill_label(step).lower()
+        words = set(w for w in re.split(r"[^a-z0-9]+", label) if w)
+        has_mail = bool(words & {"email", "mail"}) or "e-mail" in label
+        has_phone = bool(words & {"phone", "mobile", "tel", "telephone", "cell"})
+        if has_mail and has_phone:
+            return "email_or_phone"
+        if has_mail:
+            return "email"
+        if has_phone:
+            return "phone"
+        if words & {"username", "user"}:
+            return "username"
+        if "name" in words or words & {"fullname", "firstname", "lastname", "surname"}:
+            return "name"
+    except Exception:
+        pass
+    return "text"
+
+
+def _field_input_label(ftype):
+    return {"email": "Enter new email", "phone": "Enter new phone number",
+            "email_or_phone": "Enter new email or phone"}.get(ftype, "Enter new value")
+
+
+def _is_text_fill(step):
+    try:
+        if (step or {}).get("action_type") != "fill":
+            return False
+        lp = step.get("locator_profile") or {}
+        attrs = lp.get("attributes") if isinstance(lp.get("attributes"), dict) else {}
+        itype = (attrs.get("type") or step.get("input_type") or "text").lower()
+        return itype not in _NON_TEXT_INPUT_TYPES
+    except Exception:
+        return False
+
+
+def _form_fill_candidates(page, steps, submit_index, otp_roles):
+    """The recorded text Fill steps of the form step submit_index submitted: the Fill steps since the last page
+    change (a Navigate, or a step recorded on another page address) up to it - narrowed to the ones whose input
+    sits in the same <form> as the submit element when the page has such a form. OTP fields are left out. Never
+    raises ([])."""
+    try:
+        sub = steps[submit_index - 1]
+        sub_key = _dest_key(sub.get("page_url")) if sub.get("page_url") else None
+        start = 1
+        for k in range(submit_index - 1, 0, -1):
+            st = steps[k - 1]
+            if st.get("action_type") == "navigate" or (sub_key and st.get("page_url") and _dest_key(st.get("page_url")) != sub_key):
+                start = k + 1
+                break
+        cands = [k for k in range(start, submit_index)
+                 if _is_text_fill(steps[k - 1]) and not (otp_roles or {}).get(k)
+                 and not _otp_field_standard_signal(steps[k - 1]) and not _looks_like_generic_otp_fill(steps[k - 1])]
+        if not cands or page is None:
+            return cands
+        try:
+            sub_el = _resolve_element(page, sub.get("locator_profile") or {})
+            form = sub_el.evaluate_handle("(e) => e.form || (e.closest && e.closest('form')) || null") if sub_el is not None else None
+            if form is not None and form.as_element() is not None:
+                inside = []
+                for k in cands:
+                    try:
+                        el = _resolve_element(page, steps[k - 1].get("locator_profile") or {})
+                        if el is not None and el.evaluate("(e, f) => !!f && f.contains(e)", form):
+                            inside.append(k)
+                    except Exception:
+                        continue
+                if inside:
+                    return inside
+        except Exception:
+            pass
+        return cands
+    except Exception:
+        return []
+
+
+def _identify_field(msg, cands, steps, invalid_hints=None):
+    """The ONE Fill step the message is about, only from an explicit link: (1) the message element is named by
+    that step's input's aria-describedby / aria-errormessage (msg["input"], see the watcher); (2) exactly one of
+    the form's inputs became aria-invalid during the submit step (invalid_hints) while the message showed; (3) the
+    message names a field type (email, phone / mobile, username, name) that exactly one of the candidates has.
+    Sitting next to an input is never enough. None when it cannot be told (the all-fields card). Never raises."""
+    def _step_for(inp):
+        for k in cands:
+            lp = steps[k - 1].get("locator_profile") or {}
+            attrs = lp.get("attributes") if isinstance(lp.get("attributes"), dict) else {}
+            if inp.get("id") and inp.get("id") in (lp.get("id"), attrs.get("id")):
+                return k
+            if inp.get("name") and inp.get("name") in (lp.get("name"), attrs.get("name")):
+                return k
+        return None
+    try:
+        inp = (msg or {}).get("input") or {}
+        if inp:
+            k = _step_for(inp)
+            if k:
+                return k
+        hinted = set()
+        for h in (invalid_hints or []):
+            k = _step_for((h or {}).get("input") or {})
+            if k:
+                hinted.add(k)
+        if len(hinted) == 1:
+            return hinted.pop()
+        text = str((msg or {}).get("text") or "").lower()
+        words = set(w for w in re.split(r"[^a-z0-9]+", text) if w)
+        want = None
+        if words & {"email", "mail"} or "e-mail" in text:
+            want = "email"
+        elif words & {"phone", "mobile", "telephone"}:
+            want = "phone"
+        elif "username" in words or "user name" in text:
+            want = "username"
+        elif "name" in words:
+            want = "name"
+        if want:
+            typed = [k for k in cands if _fill_field_type(steps[k - 1]) == want
+                     or (want in ("email", "phone") and _fill_field_type(steps[k - 1]) == "email_or_phone")]
+            if len(typed) == 1:
+                return typed[0]
+    except Exception:
+        pass
+    return None
+
+
+def _still_visible_message(page, text):
+    """After a re-run: the message of the last field-error card is still shown on the page (a message that
+    stays on screen never "appears" again). Returns it or None. Never raises."""
+    try:
+        if not text or page is None:
+            return None
+        for m in page.evaluate("() => (window.__afqaMsgScan ? window.__afqaMsgScan() : [])") or []:
+            if isinstance(m, dict) and m.get("text") == text:
+                return m
+    except Exception:
+        pass
+    return None
+
+
+def _message_source(msg_type):
+    return {"toast": "toast", "alert": "alert", "live message": "alert", "field error": "field error",
+            "invalid field": "field error", "server response": "server response"}.get(msg_type, "page message")
+
+
+# ---------------------------------------------------------------------------------------------
+# TARGETED RE-RUN (field-error card Continue / Retry as is) - part of the existing Phase 5 re-run flow. Instead of
+# executing every step from the earliest changed Fill step to the submit step again (which, on a page that is
+# already filled, can toggle a consent checkbox off, re-open date pickers or menus, and look for targets whose
+# position moved because the website inserted its error message), the form is corrected IN PLACE on the same
+# page: (a) an open popup / overlay is closed, (b) every changed field is refilled with its own Fill step,
+# (c) the form's other recorded fields are refilled only if their value no longer matches, (d) checkbox / radio
+# steps are put back into the state they had after they first ran (clicked only if needed), (e) every other step
+# is skipped, then (f) the submit step itself runs again through the normal step code (submit wait, message
+# capture, field-error check, Attempt N). (g) When this cannot be done safely the existing failure card is shown.
+# ---------------------------------------------------------------------------------------------
+_STEP_CHECK_STATE = {}             # step number -> "checked" / "unchecked" right after that step first ran
+
+_TRANSIENT_UI_JS = """
+() => {
+    const vis = (el) => {
+        try {
+            const r = el.getBoundingClientRect();
+            if (r.width <= 0 || r.height <= 0) return false;
+            const cs = getComputedStyle(el);
+            return cs.visibility !== 'hidden' && cs.display !== 'none';
+        } catch (e) { return false; }
+    };
+    const floating = (el) => {
+        let cur = el;
+        for (let k = 0; cur && k < 4 && cur !== document.body; k++, cur = cur.parentElement) {
+            const pos = getComputedStyle(cur).position;
+            if (pos === 'absolute' || pos === 'fixed') return true;
+        }
+        return false;
+    };
+    const expanded = Array.from(document.querySelectorAll('[aria-expanded="true"]')).filter(vis).length;
+    const popups = Array.from(document.querySelectorAll('[role=listbox], [role=menu], [role=tree], [role=grid], [role=tooltip]'))
+        .filter((el) => vis(el) && floating(el)).length;
+    const ae = document.activeElement;
+    const fieldFocused = !!ae && ['INPUT', 'TEXTAREA', 'SELECT'].indexOf(ae.tagName) !== -1;
+    return { expanded, popups, fieldFocused };
+}
+"""
+
+
+def _is_semantic_check_step(step):
+    """A recorded step whose target is, by the recording itself, a checkbox / radio / switch (or its <label>): a
+    check step, a native checkbox / radio input, a checkbox / radio / switch role, an aria-checked attribute, or a
+    label. Never raises (False)."""
+    try:
+        if (step or {}).get("action_type") == "check":
+            return True
+        if (step or {}).get("action_type") not in ("click", "dblclick"):
+            return False
+        lp = step.get("locator_profile") or {}
+        attrs = lp.get("attributes") if isinstance(lp.get("attributes"), dict) else {}
+        tag = (lp.get("tag") or "").lower()
+        role = (lp.get("role") or attrs.get("role") or "").lower()
+        if tag == "input" and (attrs.get("type") or "").lower() in ("checkbox", "radio"):
+            return True
+        if role in ("checkbox", "radio", "switch", "menuitemcheckbox", "menuitemradio"):
+            return True
+        if "aria-checked" in attrs or tag == "label":
+            return True
+    except Exception:
+        pass
+    return False
+
+
+def _remember_check_state(page, step, step_index):
+    """After a checkbox-like step ran (first run or a normal re-run), remember the state it left (read only -
+    nothing is clicked). Never raises."""
+    try:
+        if not _is_semantic_check_step(step):
+            return
+        el = _resolve_element(page, step.get("locator_profile") or {})
+        if el is None:
+            return
+        st = _resolve_checkbox_state(el).get("state")
+        if st in ("checked", "unchecked"):
+            _STEP_CHECK_STATE[step_index] = st
+    except Exception:
+        pass
+
+
+def _close_transient_ui(page, result, output_json_path):
+    """(a) An open popup / overlay / date picker / dropdown / menu (something aria-expanded, or a floating listbox /
+    menu / grid / tooltip) is closed with ONE Escape press; a focused field loses focus (blur). Nothing on the page is
+    clicked and nothing can navigate. Only done when something is open / focused. Never raises."""
+    try:
+        st = page.evaluate(_TRANSIENT_UI_JS) or {}
+        if st.get("expanded") or st.get("popups"):
+            page.keyboard.press("Escape")
+            _url_note_log("Re-run: closed an open popup / menu before correcting the form (Escape).", result, output_json_path)
+            try:
+                page.wait_for_timeout(200)
+            except Exception:
+                pass
+        if st.get("fieldFocused"):
+            page.evaluate("() => { const a = document.activeElement; if (a && a.blur) a.blur(); }")
+    except Exception as e:
+        print(f"[targeted-rerun] WARNING: could not check for open popups ({e})")
+
+
+def _field_current_value(page, step):
+    """The live value of a recorded Fill step's field (None when it cannot be found / read)."""
+    try:
+        el = _resolve_element(page, step.get("locator_profile") or {})
+        if el is None:
+            return None
+        try:
+            return el.input_value(timeout=1500)
+        except Exception:
+            return el.evaluate("(e) => (e.innerText || e.textContent || '')")
+    except Exception:
+        return None
+
+
+def _same_field_value(current, wanted):
+    """Same value apart from formatting a field adds by itself (separators, spaces, case of a date mask...)."""
+    def _n(v):
+        return "".join(ch for ch in str(v or "").lower() if ch.isalnum())
+    return _n(current) == _n(wanted)
+
+
+def _targeted_fill(page, steps, k):
+    """Refills Fill step k exactly like the normal replay does (same dispatch, same locator logic, same fill method
+    for the field type). Returns True when it worked."""
+    try:
+        _strategy, _found, ok, _err = _resolve_and_act_with_retry(
+            page, steps[k - 1], prev_action_type="click",
+            next_step=steps[k] if k < len(steps) else None,
+        )
+        return bool(ok)
+    except Exception as e:
+        print(f"[targeted-rerun] WARNING: refilling step {k} failed ({e})")
+        return False
+
+
+_RERUN_PAGE_MOVED = [False]        # the last _targeted_rerun_prepare found the browser on another page
+
+
+def _targeted_rerun_prepare(page, steps, submit_index, cands, changed, otp_roles, result, output_json_path):
+    """Steps (a)-(e) of the targeted re-run (see above), before the submit step runs again. Returns (True, None) when
+    the form was corrected on the same page, else (False, plain reason) - then the failure card is shown. Typed
+    values are never logged (field label and step number only). Never raises."""
+    _RERUN_PAGE_MOVED[0] = False
+    try:
+        sub = steps[submit_index - 1]
+        rec_url = sub.get("page_url")
+        if page is None:
+            return False, "the browser page is not available"
+        if rec_url:
+            try:
+                if _classify_url(page.url, rec_url) == "mismatch":
+                    _RERUN_PAGE_MOVED[0] = True
+                    return False, (f"the browser is no longer on the page where step {submit_index} was recorded, "
+                                   "so the form cannot be corrected on the same page")
+            except Exception:
+                pass
+        _close_transient_ui(page, result, output_json_path)
+        cand_set = set(cands or [])
+        first = min(list(cand_set) + list(changed or {})) if (cand_set or changed) else submit_index
+        for k in range(first, submit_index):
+            st = steps[k - 1]
+            at = st.get("action_type")
+            label = _fill_label(st)
+            if at == "fill" and (k in (changed or {}) or k in cand_set) and not (otp_roles or {}).get(k):
+                if k in (changed or {}):
+                    if not _targeted_fill(page, steps, k):
+                        return False, f"step {k} ('{label}') could not be refilled - its field was not found on the page"
+                    _url_note_log(f"Re-run: step {k} refilled ('{label}', new value).", result, output_json_path)
+                    continue
+                cur = _field_current_value(page, st)
+                if cur is None:
+                    _url_note_log(f"Re-run: step {k} ('{label}') could not be read - left as it is.", result, output_json_path)
+                elif _same_field_value(cur, st.get("value")):
+                    _url_note_log(f"Re-run: step {k} ('{label}') still holds its value - not touched.", result, output_json_path)
+                else:
+                    if not _targeted_fill(page, steps, k):
+                        return False, f"step {k} ('{label}') could not be refilled - its field was not found on the page"
+                    _url_note_log(f"Re-run: step {k} refilled ('{label}', the page had changed it).", result, output_json_path)
+                continue
+            if k in _STEP_CHECK_STATE and _is_semantic_check_step(st):
+                want = _STEP_CHECK_STATE[k]
+                el = _resolve_element(page, st.get("locator_profile") or {})
+                if el is None:
+                    return False, f"step {k} (a checkbox / option) could not be found on the page to check its state"
+                now = _resolve_checkbox_state(el).get("state")
+                if now == want:
+                    _url_note_log(f"Re-run: step {k} already in required state ({want}).", result, output_json_path)
+                    continue
+                el.click(timeout=5000)
+                try:
+                    page.wait_for_timeout(150)
+                except Exception:
+                    pass
+                after = _resolve_checkbox_state(el).get("state")
+                if after != want:
+                    return False, f"step {k} (a checkbox / option) could not be put back to '{want}'"
+                _url_note_log(f"Re-run: step {k} restored to its earlier state ({want}).", result, output_json_path)
+                continue
+            _url_note_log(f"Re-run: step {k} skipped (already done on this page).", result, output_json_path)
+        return True, None
+    except Exception as e:
+        print(f"[targeted-rerun] WARNING: {e}")
+        return False, f"the form could not be corrected on the same page ({e})"
 
 
 def _net_track(context):
@@ -15030,14 +16781,162 @@ def _is_dynamic_url_segment(seg):
 
 
 def _has_dynamic_part(url):
-    """True when the path or a query value of `url` holds a generated-looking part."""
+    """True when the path or a query value of `url` holds a generated-looking (per-run) part, or a value this
+    run replaced (see _is_url_id_value / _apply_url_substitutions)."""
     try:
         u = urlsplit(url)
-        if any(_is_dynamic_url_segment(s) for s in u.path.split("/")):
+        if any(_is_url_id_value(s) for s in u.path.split("/")):
             return True
-        return any(_is_dynamic_url_segment(v) for _k, v in parse_qsl(u.query, keep_blank_values=True))
+        if any(_is_url_id_value(v) for _k, v in parse_qsl(u.query, keep_blank_values=True)):
+            return True
+        return _apply_url_substitutions(url) != url
     except Exception:
         return False
+# ---------------------------------------------------------------------------------------------
+# PER-RUN VALUES IN PAGE ADDRESSES (part of the page verification above - not a second check).
+# 1) Values the user typed during THIS run in the field-error card replace the recorded value of a Fill step;
+#    a page address that carries such a value (in a path segment or a query value) carries the NEW one, so the
+#    recorded address is compared with the recorded value replaced by the new one (_apply_url_substitutions).
+#    OTP values are never used for this.
+# 2) "Generated id" for this verification is the existing _is_dynamic_url_segment notion, extended with values
+#    that are per-run by nature: an email address, a phone number, a JWT-like dotted token, or a value the user
+#    typed in this recording's own (non-OTP) Fill steps (_is_url_id_value). Such a value seen for the first time
+#    in this run is LEARNED (recorded -> this run's value) by the existing within-run id map; one learned
+#    earlier must stay consistent, exactly as before. Everything else in an address must match as today.
+# ---------------------------------------------------------------------------------------------
+_RUN_URL_SUBST = {}                # recorded Fill value -> the value used in this run (field-error card)
+_RUN_ORIG_FILL_VALUE = {}          # step number -> its recorded value (before any change in this run)
+_URL_FILL_VALUES_CACHE = [None]
+_URL_ID_EXTRA_CHARS = set("-_")
+
+
+def _register_url_substitution(step_number, old_value, new_value):
+    """The field-error card changed Fill step `step_number` from old_value to new_value for this run: page
+    addresses that carried the recorded value now carry the new one. The new value is also text the user typed
+    (the query check requires it like the recorded one). Never raises."""
+    try:
+        orig = _RUN_ORIG_FILL_VALUE.setdefault(step_number, old_value)
+        orig_s, new_s = str(orig or ""), str(new_value or "")
+        if orig_s and new_s and orig_s != new_s:
+            _RUN_URL_SUBST[orig_s] = new_s
+        old_s = str(old_value or "")
+        if old_s and old_s != orig_s and new_s and old_s != new_s:
+            _RUN_URL_SUBST[old_s] = new_s           # a second change of the same field
+        _texts = _USER_INPUT_TEXTS_CACHE[0]
+        if _texts is not None:
+            _t = _norm_user_text(new_s)
+            if len(_t) >= 2:
+                _texts.add(_t)
+    except Exception as e:
+        print(f"[page-check] WARNING: could not remember the new value for page addresses ({e})")
+
+
+def _subst_url_value(v):
+    """One decoded path segment / query value with the run's substitutions applied (the whole value, or a value
+    that contains the recorded value, e.g. with a country-code prefix)."""
+    if not _RUN_URL_SUBST or not v:
+        return v
+    if v in _RUN_URL_SUBST:
+        return _RUN_URL_SUBST[v]
+    out = v
+    for old, new in _RUN_URL_SUBST.items():
+        if len(old) >= 4 and old in out:
+            out = out.replace(old, new)
+    return out
+
+
+def _apply_url_substitutions(url):
+    """The recorded address with this run's substitutions applied to its path segments and query values (raw
+    and URL-encoded forms - values are compared decoded). Returned unchanged when nothing applies or on any
+    error (the existing behaviour)."""
+    if not _RUN_URL_SUBST or not url:
+        return url
+    try:
+        from urllib.parse import quote as _quote
+        u = urlsplit(url)
+        changed = False
+        segs = []
+        for s in u.path.split("/"):
+            d = unquote(s)
+            n = _subst_url_value(d)
+            if n != d:
+                changed = True
+                segs.append(_quote(n, safe="@+:,;=!*'()~"))
+            else:
+                segs.append(s)
+        query = u.query
+        q_changed = False
+        pairs = []
+        for k, v in parse_qsl(u.query, keep_blank_values=True):
+            n = _subst_url_value(v)
+            if n != v:
+                q_changed = True
+            pairs.append((k, n))
+        if q_changed:
+            changed = True
+            query = urlencode(pairs)
+        if not changed:
+            return url
+        return urlunsplit((u.scheme, u.netloc, "/".join(segs), query, u.fragment))
+    except Exception as e:
+        print(f"[page-check] WARNING: run values not applied to the address ({e}) - comparing as before")
+        return url
+
+
+def _url_fill_values():
+    """The values typed in this recording's own Fill steps (OTP steps left out), 3+ characters. Computed once."""
+    if _URL_FILL_VALUES_CACHE[0] is None:
+        vals = set()
+        try:
+            roles = _detect_otp_flow_roles(STEPS)
+            for k, st in enumerate(STEPS, start=1):
+                if st.get("action_type") != "fill" or st.get("value_source") == "page" or roles.get(k):
+                    continue
+                if st.get("otp_field") is True or _otp_field_standard_signal(st) or _looks_like_generic_otp_fill(st):
+                    continue
+                v = str(st.get("value") or "").strip()
+                if len(v) >= 3:
+                    vals.add(v)
+        except Exception:
+            pass
+        _URL_FILL_VALUES_CACHE[0] = vals
+    return _URL_FILL_VALUES_CACHE[0]
+
+
+def _looks_like_email(v):
+    if v.count("@") != 1 or "/" in v or " " in v:
+        return False
+    local, domain = v.split("@")
+    return bool(local) and "." in domain and not domain.startswith(".") and not domain.endswith(".")
+
+
+def _looks_like_phone(v):
+    body = v[1:] if v.startswith("+") else v
+    if not body or any(not (c.isdigit() or c in " ()-.") for c in body):
+        return False
+    digits = sum(1 for c in body if c.isdigit())
+    return 7 <= digits <= 15
+
+
+def _looks_like_jwt(v):
+    parts = v.split(".")
+    if len(parts) != 3:
+        return False
+    return all(len(p) >= 8 and all(c.isalnum() or c in _URL_ID_EXTRA_CHARS for c in p) for p in parts)
+
+
+def _is_url_id_value(v):
+    """A per-run value in a page address, for the page verification only (see above). Never raises."""
+    try:
+        if not v:
+            return False
+        if _is_dynamic_url_segment(v):
+            return True
+        d = unquote(v)
+        return (_looks_like_email(d) or _looks_like_phone(d) or _looks_like_jwt(d)
+                or d in _url_fill_values() or d in _RUN_URL_SUBST.values())
+    except Exception:
+        return _is_dynamic_url_segment(v)
 
 
 # generated ids as they appear during THIS replay: the recorded value -> the value this replay
@@ -15066,14 +16965,14 @@ def _dyn_pairs(url, target):
         cs, ts = (cu.path.rstrip("/") or "/").split("/"), (tu.path.rstrip("/") or "/").split("/")
         if len(cs) == len(ts):
             for c, tv in zip(cs, ts):
-                if _is_dynamic_url_segment(tv) and _is_dynamic_url_segment(c):
+                if _is_url_id_value(tv) and _is_url_id_value(c):
                     pairs.append((tv, c))
         cp, tp = parse_qs(cu.query, keep_blank_values=True), parse_qs(tu.query, keep_blank_values=True)
         for k, tvals in tp.items():
             cvals = cp.get(k, [])
             if len(cvals) == len(tvals):
                 for tv, c in zip(tvals, cvals):
-                    if _is_dynamic_url_segment(tv) and _is_dynamic_url_segment(c):
+                    if _is_url_id_value(tv) and _is_url_id_value(c):
                         pairs.append((tv, c))
     except Exception:
         pass
@@ -15091,9 +16990,10 @@ def _dyn_learn(url, target):
 def _dyn_translate(url):
     """`url` with every recorded generated id replaced by the id this replay produced for it."""
     try:
+        url = _apply_url_substitutions(url)       # values the user changed in this run first
         u = urlsplit(url)
-        segs = [(_DYN_ID_FWD.get(s, s) if _is_dynamic_url_segment(s) else s) for s in u.path.split("/")]
-        q = [(k, _DYN_ID_FWD.get(v, v) if _is_dynamic_url_segment(v) else v) for k, v in parse_qsl(u.query, keep_blank_values=True)]
+        segs = [(_DYN_ID_FWD.get(s, s) if _is_url_id_value(s) else s) for s in u.path.split("/")]
+        q = [(k, _DYN_ID_FWD.get(v, v) if _is_url_id_value(v) else v) for k, v in parse_qsl(u.query, keep_blank_values=True)]
         return urlunsplit((u.scheme, u.netloc, "/".join(segs), urlencode(q), u.fragment))
     except Exception:
         return url
@@ -15114,7 +17014,7 @@ def _path_matches_with_wildcards(cur_path, target_path, use_map=True):
     if len(cur_segs) != len(tgt_segs):
         return False
     for cseg, tseg in zip(cur_segs, tgt_segs):
-        if _is_dynamic_url_segment(tseg) and _is_dynamic_url_segment(cseg):
+        if _is_url_id_value(tseg) and _is_url_id_value(cseg):
             if use_map and not _dyn_allowed(tseg, cseg):
                 return False
             continue
@@ -15134,7 +17034,7 @@ def _query_matches_with_wildcards(cur_query, target_query):
         if len(cvals) != len(tvals):
             return False
         for cv, tv in zip(cvals, tvals):
-            if _is_dynamic_url_segment(tv) and _is_dynamic_url_segment(cv):
+            if _is_url_id_value(tv) and _is_url_id_value(cv):
                 if not _dyn_allowed(tv, cv):
                     return False
                 continue
@@ -15157,6 +17057,7 @@ def _urls_match_with_wildcards(url, target, include_fragment=False):
     fails this just because it differs from the one baked into the
     recording.
     """
+    target = _apply_url_substitutions(target)    # values the user changed in this run (see above)
     try:
         cu, tu = urlsplit(url), urlsplit(target)
     except Exception:
@@ -15518,6 +17419,8 @@ def _page_mismatch_message(expected, live):
     """The failure text for 'the browser is not on the recorded page'. When the recorded address has
     a generated part the plain sentence shows it as <id> (the id differs on every run); a wrong
     fixed part ("/login") or an id that was already used for a different page is said plainly."""
+    expected = _apply_url_substitutions(expected)
+    _LAST_PAGE_MISMATCH[0] = (expected, live)          # for the failure card's "Accept this page and continue"
     tech = f"PAGE_MISMATCH: expected to reach {expected!r}, but landed on {live!r} instead"
     try:
         cu, tu = urlsplit(live), urlsplit(expected)
@@ -15554,6 +17457,96 @@ def _page_mismatch_message(expected, live):
         return tech
 
 
+# ---------------------------------------------------------------------------------------------
+# DESTINATION VERIFICATION ACROSS A REDIRECT CHAIN (part of the existing page verification, not a second check).
+# Every main-frame address the browser visits during a step is recorded (Playwright's framenavigated event, which
+# also fires for in-page history changes) - _NAV_CHAIN, with the position where the current step began. A
+# recorded destination is verified when it matches ANY address of the step's chain (the site passed through the
+# recorded page and then redirected on), or when the final address is the page the RECORDING itself reached next
+# (the next recorded step's page). A page the user accepted on the failure card ("Accept this page and continue")
+# stands for its recorded page for the rest of THIS run only (_ACCEPTED_ROUTES). Everything else fails as before.
+# ---------------------------------------------------------------------------------------------
+_NAV_CHAIN = []                    # main-frame addresses visited during this run, in order
+_NAV_CHAIN_MARK = [0]              # where in _NAV_CHAIN the current step began
+_LAST_PAGE_MISMATCH = [None]       # (expected, actual) of this step's page-mismatch failure, if any
+_ACCEPTED_ROUTES = {}              # recorded destination (origin + path) -> accepted live destination, this run only
+
+
+def _track_navigations(page):
+    """Records every main-frame navigation of `page` into _NAV_CHAIN. Never raises."""
+    def _on_nav(frame):
+        try:
+            if frame.parent_frame is None:
+                _NAV_CHAIN.append(frame.url)
+                if len(_NAV_CHAIN) > 400:
+                    del _NAV_CHAIN[:200]
+                    _NAV_CHAIN_MARK[0] = max(0, _NAV_CHAIN_MARK[0] - 200)
+        except Exception:
+            pass
+    try:
+        page.on("framenavigated", _on_nav)
+    except Exception as e:
+        print(f"[page-check] WARNING: navigations of a page are not tracked ({e})")
+
+
+def _step_nav_chain():
+    """The main-frame addresses visited since the current step began (oldest first)."""
+    try:
+        return list(_NAV_CHAIN[_NAV_CHAIN_MARK[0]:])
+    except Exception:
+        return []
+
+
+def _url_path_only(url):
+    """The path of an address for a person (never its query values)."""
+    try:
+        return urlsplit(url or "").path or "/"
+    except Exception:
+        return "/"
+
+
+def _verify_destination_by_chain_or_recording(live_url, expected_q, chain_q, step_index, next_step, qa_url):
+    """The final page did not match the recorded destination: is it verified another way? (1) an address the
+    browser passed through during this step matches the recorded destination (the existing comparison rules,
+    including run substitutions and learned ids); (2) the final page is the page the recording itself reached next
+    (the next recorded step's page). Logs an INFO line (paths only) and returns True when verified. Never raises
+    (False)."""
+    try:
+        for u in _step_nav_chain():
+            if not u or _dest_key(u) == _dest_key(live_url):
+                continue
+            if _classify_one_url(u, expected_q) == "match" or any(_classify_one_url(u, c) == "match" for c in (chain_q or [])):
+                _url_note_log(
+                    f"[INFO] Passed through the recorded page ({_url_path_only(u)}), then the site redirected to "
+                    f"{_url_path_only(live_url)}. Replay is continuing."
+                )
+                return True
+        nxt_url = (next_step or {}).get("page_url")
+        if nxt_url:
+            try:
+                nxt_q = to_qa_url(nxt_url, qa_url)
+            except Exception:
+                nxt_q = nxt_url
+            if _dest_key(nxt_q) != _dest_key(expected_q) and _classify_one_url(live_url, nxt_q) == "match":
+                _url_note_log(
+                    f"[INFO] The site went on from the recorded page ({_url_path_only(expected_q)}) to "
+                    f"{_url_path_only(live_url)} - the page the recording itself reached next. Replay is continuing."
+                )
+                return True
+    except Exception as e:
+        print(f"[page-check] WARNING: the redirect-chain check failed ({e}) - checking as before")
+    return False
+
+
+def _accepted_route_matches(actual, target):
+    """The user accepted `actual`'s page for `target`'s recorded page earlier in this run."""
+    try:
+        acc = _ACCEPTED_ROUTES.get(_dest_key(_apply_url_substitutions(target)))
+        return acc is not None and acc == _dest_key(actual)
+    except Exception:
+        return False
+
+
 def _classify_url(actual, expected, chain=None):
     """REQ (I1-e): does `actual` reach the recorded destination?
     Returns "match" | "query" | "mismatch".
@@ -15578,10 +17571,16 @@ def _classify_url(actual, expected, chain=None):
             return "match"
         if verdict == "query":
             best = "query"
+    # a page the user accepted for this recorded page earlier in this run ("Accept this page and continue")
+    if best == "mismatch" and _ACCEPTED_ROUTES:
+        for target in [expected] + list(chain or []):
+            if target and _accepted_route_matches(actual, target):
+                return "match"
     return best
 
 
 def _classify_one_url(actual, target):
+    target = _apply_url_substitutions(target)    # values the user changed in this run (see _apply_url_substitutions)
     try:
         cu, tu = urlsplit(actual), urlsplit(target)
     except Exception:
@@ -15613,7 +17612,7 @@ def _classify_one_url(actual, target):
         if wv == gv:
             continue
         # a per-request generated value on both sides is not a difference
-        if wv and gv and all(_is_dynamic_url_segment(x) for x in wv + gv):
+        if wv and gv and all(_is_url_id_value(x) for x in wv + gv):
             if len(wv) == len(gv) and all(_dyn_allowed(a_, b_) for a_, b_ in zip(wv, gv)):
                 continue
             return "mismatch"
@@ -21985,6 +23984,16 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
         run_id = f"{_slug(SOURCE_NAME) or 'run'}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
         run_dir = Path(__file__).resolve().parent / "screenshoots" / run_id
     run_dir.mkdir(parents=True, exist_ok=True)
+    # a card answer / OTP hand-off file left in this folder before this run started can never answer one of this
+    # run's cards (no card exists yet) - removed so it is never mistaken for one. The stop request is kept: the
+    # user may already have pressed Stop for this run.
+    for _stale in ("pause_answer.json", "pause_answer.json.tmp", "otp_input.txt"):
+        try:
+            (run_dir / _stale).unlink()
+        except FileNotFoundError:
+            pass
+        except Exception as _stale_e:
+            print(f"[pause] WARNING: could not remove {_stale} ({_stale_e})")
 
     # screenshots are grouped into named STAGE subfolders of run_dir - one
     # per navigate action's destination (see _derive_stage_name), instead
@@ -22119,7 +24128,10 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
             )
             _net_track(context)
             _tab_track(context)
+            _msg_capture_install(context)        # MESSAGE CAPTURE (phase 4): replay contexts only
             page = context.new_page()
+            _watch_replay_browser(browser, context)   # the run stops when this browser is closed
+            _track_navigations(page)                  # the step's redirect chain (destination verification)
             page.set_default_timeout(8000)
             # cookie banners/alerts shouldn't be able to hang an unattended run
             page.on("dialog", _dismiss_dialog)
@@ -22262,6 +24274,7 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
         _recovered_fallback_pages = {}
 
         def _on_replay_new_page(new_page):
+            _track_navigations(new_page)              # the step's redirect chain (destination verification)
             # BUG 4: adopt a late genuine popup into whichever recovered
             # tab_open it actually belongs to, rather than handing it the
             # next sequential id as if it were an unrelated extra tab.
@@ -22451,9 +24464,46 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
             if _cbt and _cbt in _timestamp_to_index:
                 _caused_by_index[idx] = _timestamp_to_index[_cbt]
 
-        for i, step in enumerate(STEPS, start=1):
+        # RUN UNTIL SELECTED STEP (MODE B, see _FAST_MODE): the run covers steps 1..N only
+        _until = _run_until_step(len(STEPS))
+        _user_stopped_after = None
+        _browser_closed_at = None            # the step at which the replay browser was found closed
+        _FAST_MODE[0] = False
+        if _until:
+            result["partial_run"] = {"until_step": _until}
+            result["recorded_steps"] = _until
+            total_steps = _until
+            result["total_steps"] = _until
+            _url_note_log(
+                f"Partial run (until step {_until})"
+                + (f": steps 1-{_until - 1} run quickly (no screenshots), then step {_until} runs normally."
+                   if _until > 1 else f": step {_until} runs normally."),
+                result, output_json_path,
+            )
+
+        # PAUSE ENGINE: the step sequence can repeat the current step (the fallback card's Retry step)
+        _step_cursor = _StepCursor(STEPS)
+        for i, step in _step_cursor:
             action_type = step.get("action_type")
             cur_timestamp = step.get("timestamp")
+            # MODE B: the selected step has fully completed - the run stops here
+            if _until and i > _until:
+                break
+            _FAST_MODE[0] = bool(_until and i < _until)
+            # Stop button (MODE A and MODE B): end the run before this step
+            if _stop_requested(run_dir):
+                _user_stopped_after = i - 1
+                result["stopped_by_user"] = True
+                _url_note_log(f"Run stopped by the user before step {i}.", result, output_json_path)
+                break
+            # the replay browser was closed (a recorded Close Tab that closed the last page is the recording's
+            # own doing: then only a disconnected browser counts)
+            if _replay_browser_gone(pages_count=not (i > 1 and STEPS[i - 2].get("action_type") == "tab_close")):
+                _browser_closed_at = i
+                result["browser_closed"] = True
+                _clear_pending_card_files(run_dir)
+                _url_note_log(f"{BROWSER_CLOSED_REASON} - the run stopped before step {i}.", result, output_json_path)
+                break
             # RC4 (real DOM evidence for the future): whatever candidate
             # diagnostics _score_candidates_and_pick gathers for THIS
             # step's own resolution attempts - cleared before each step so
@@ -22530,6 +24580,19 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
             # from this moment, not only once it has completely finished.
             _step_started_wall = time.time()
             _STEP_WARNINGS.clear()
+            _STEP_CAPTURED.clear()               # MESSAGE CAPTURE: this step's own captured messages
+            _STEP_INVALID_HINTS.clear()
+            # the step's own redirect chain / page-mismatch / requests start here
+            _NAV_CHAIN_MARK[0] = len(_NAV_CHAIN)
+            _LAST_PAGE_MISMATCH[0] = None
+            _STEP_MSG_STATS.clear()
+            _STEP_MSG_STATS.update({"page": 0, "server": 0, "server_read": 0, "waited": False})
+            _STEP_MSG_DECISION.clear()
+            _CUR_STEP_INDEX[0] = i
+            try:
+                _STEP_START_URL[0] = page.url
+            except Exception:
+                _STEP_START_URL[0] = None
             _LIVE_CTX[0], _LIVE_CTX[1] = result, output_json_path
             if _TL_ON:
                 _tl_start()
@@ -25710,6 +27773,8 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
                         # act's own generic fill handling, since this is
                         # the one call site that already has result/
                         # output_json_path/run_dir in scope.
+                        # PAGE SNAPSHOT (MODE A only, not fast): the page before this step, if none was saved yet
+                        _save_missing_snapshot_before_step(page, step, i)
                         _otp_role = _otp_roles.get(i)
                         _otp_wait_failed = False
                         if _otp_role == "phone_entry":
@@ -25776,7 +27841,27 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
                                 f"Step {i}/{total_steps}: OTP field visible = {_otp_field_visible}",
                                 result=result, output_json_path=output_json_path,
                             )
-                            _live_otp_value = _wait_for_live_otp(page, result, output_json_path, run_dir, i, total_steps)
+                            # OTP GROUP: split OTP boxes are counted (and marked from the first box) before asking
+                            _otp_n = _otp_group_boxes(page, step)
+                            if _otp_n >= 2:
+                                _otp_flow_log(f"Step {i}/{total_steps}: OTP group detected ({_otp_n} boxes)",
+                                              result=result, output_json_path=output_json_path)
+                            _otp_ask_msg = None
+                            while True:
+                                _live_otp_value = _wait_for_live_otp(page, result, output_json_path, run_dir, i,
+                                                                     total_steps, message=_otp_ask_msg)
+                                if _live_otp_value is None or _otp_n < 2:
+                                    break
+                                # LENGTH CHECK (split boxes only): spaces and dashes are removed, nothing else;
+                                # a code of the wrong length is never typed - the card asks again
+                                _otp_clean = _live_otp_value.replace(" ", "").replace("-", "")
+                                if len(_otp_clean) == _otp_n:
+                                    _live_otp_value = _otp_clean
+                                    break
+                                _otp_unit = "digits" if _otp_clean.isdigit() else "characters"
+                                _otp_ask_msg = f"This page expects {_otp_n} {_otp_unit}; you entered {len(_otp_clean)}."
+                                _otp_flow_log(f"Step {i}/{total_steps}: {_otp_ask_msg} Asking for the OTP again.",
+                                              result=result, output_json_path=output_json_path)
                             if _live_otp_value is None:
                                 _otp_wait_failed = True
                                 strategy, found, ok, err = None, False, False, (
@@ -25793,11 +27878,28 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
                                 if _split_res is not None:
                                     _otp_wait_failed = True          # the normal dispatch below is not needed
                                     strategy, found, ok, err = "otp split boxes", True, _split_res[0], _split_res[1]
+                                    if _split_res[0]:
+                                        _otp_flow_log(f"Step {i}/{total_steps}: OTP filled into all "
+                                                      + (f"{_otp_n} boxes" if _otp_n >= 2 else "boxes"),
+                                                      result=result, output_json_path=output_json_path)
                         elif _otp_role == "otp_fill_more":
-                            # another box of the same OTP row: already filled with the live OTP above
+                            # another box of the same OTP group: filled together with the group's first box step
+                            # (never typed here - its recorded digit is an old code)
                             _otp_wait_failed = True
-                            strategy, found, ok, err = "skipped (OTP box already filled)", True, True, None
-                            _add_step_detail("This OTP box was already filled with the OTP entered in the live log.")
+                            _otp_first = _otp_group_first(_otp_roles, i)
+                            _otp_first_ok = _otp_first is None or any(
+                                _s.get("index") == _otp_first and _s.get("success") for _s in result["steps"])
+                            if _otp_first_ok:
+                                strategy, found, ok, err = "skipped (OTP box already filled)", True, True, None
+                                _add_step_detail("This OTP box was already filled with the OTP entered in the live log.")
+                                if _otp_first is not None:
+                                    _otp_flow_log(f"Step {i}: part of the OTP (filled together with step {_otp_first})",
+                                                  result=result, output_json_path=output_json_path)
+                            else:
+                                strategy, found, ok, err = "skipped (OTP box)", True, False, (
+                                    f"Failed: This OTP box is part of the OTP of step {_otp_first}, which could not be "
+                                    f"filled. Nothing was typed here.{_TECH_SEP}the OTP group is filled only at its "
+                                    f"first box step; a recorded OTP digit is never typed")
 
                         # see _arm_modal_interaction_timing's own docstring -
                         # this is the generic per-step dispatch point every
@@ -25806,6 +27908,8 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
                         # own timing context (if this happens to be the exact
                         # step it was armed for) gets consumed and logged
                         _maybe_log_modal_interaction_timing(page, step)
+                        # an XPath picked on a page snapshot: confirmed against the live page (log line only)
+                        _snapshot_xpath_live_check(page, step, i, result, output_json_path)
                         if _otp_wait_failed:
                             # strategy/found/ok/err already set above - the
                             # normal dispatch below is skipped entirely so
@@ -26801,7 +28905,52 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
                         "OTP field itself." + _TECH_SEP + str(err)
                     )
                     ok, err = True, None
-                if ok and not _DR_SKIP_MSG and not _fast_send and _otp_roles.get(i) != "otp_focus" and (
+                # CARD PRIORITY: after a submit-type step the website's message is checked FIRST (submit wait, page and
+                # server capture). A message that matches a keyword makes this step's result that message - the
+                # field-error card is then shown below instead of a navigation failure / the failure card. Without
+                # such a message the navigation check runs exactly as before.
+                _pre_msg_match = None
+                _pre_pc_done = False
+                if not _DR_SKIP_MSG and not _fast_send and _otp_roles.get(i) != "otp_focus" and _is_submit_type_step(step):
+                    try:
+                        _capture_step_messages(page, step, _chat_next_interactive(STEPS, i), i, _step_started_wall,
+                                               result, output_json_path, run_dir)
+                        _pre_msg_match = _keyword_message_for_step(page)
+                    except Exception as _pm_e:
+                        print(f"[message-capture] WARNING: early message check failed ({_pm_e}) - checking as before")
+                        _pre_msg_match = None
+                if _pre_msg_match is not None:
+                    # SUCCESS WINS: a step whose recording navigated, and that moved to another page now, has its
+                    # destination verified first (the existing check: chain, dynamic values). Verified: the step
+                    # succeeded and the message is information only. Otherwise the message is this step's result.
+                    _sw_verified = False
+                    try:
+                        if ok and _step_expects_navigation(step) and _step_left_start_page(page):
+                            _pc_failure = _compare_post_click(
+                                page, step, _pc_snapshot_ok, _pc_pages_before, qa_url,
+                                next_step=STEPS[i] if i < len(STEPS) else None,
+                                url_at_start=url_before,
+                                destination_only=action_type in ("press", "submit"),
+                            )
+                            _pre_pc_done = True
+                            _sw_verified = not _pc_failure
+                            if _pc_failure:
+                                print(f"[post-click-check] FAILED: {_pc_failure}")
+                    except Exception as _sw_e:
+                        print(f"[message-capture] WARNING: the expected-result check failed ({_sw_e}) - the message counts")
+                        _sw_verified = False
+                    _sw_ok, _sw_reason = _expected_result_state(page, step, _sw_verified)
+                    _STEP_MSG_DECISION.update({"achieved": _sw_ok, "reason": _sw_reason})
+                    if _sw_ok:
+                        print(f"[post-click-check] the website text {_short_msg(_pre_msg_match.get('text'))!r} is "
+                              f"information only - the step reached its expected result")
+                        _pre_msg_match = None
+                if _pre_msg_match is not None:
+                    ok = False
+                    err = (f"Failed: The website showed '{_short_msg(_pre_msg_match.get('text'))}' after "
+                           f"'{_recorded_target_name(step)}'. The replay stopped.")
+                    print(f"[post-click-check] skipped - the website reported: {_short_msg(_pre_msg_match.get('text'))!r}")
+                if ok and not _pre_pc_done and not _DR_SKIP_MSG and not _fast_send and _otp_roles.get(i) != "otp_focus" and (
                     action_type in ("click", "dblclick", "right_click")
                     or (action_type in ("press", "submit") and _step_expects_navigation(step))
                 ):
@@ -26929,6 +29078,12 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
                             _LANDED_DIFFERENT[0] = None      # a later step worked on that page: no longer relevant
                 except Exception:
                     pass
+
+                # MESSAGE CAPTURE (phase 4, detection only): messages that appeared since this step started -
+                # after a submit-type step a short smart wait first (ends as soon as the next step's target is there
+                # or a message was captured). Logged only; never changes this step's result.
+                _capture_step_messages(page, step, _chat_next_interactive(STEPS, i), i, _step_started_wall,
+                                       result, output_json_path, run_dir)
 
                 # I4: the step's screenshot is part of the step. It is taken here -
                 # after the settle condition, with a SMALL cap - so the reported
@@ -27141,6 +29296,10 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
                     # (Details only - never changes the status)
                 result["steps"].append({
                     "index": i,
+                    # MODE B: this step ran in fast mode (before the selected step)
+                    "fast": bool(_FAST_MODE[0]),
+                    # MESSAGE CAPTURE (phase 4): the messages captured during this step (detection only)
+                    "captured_messages": list(_STEP_CAPTURED) or None,
                     "action_type": action_type,
                     # optional, additive - a readable name for this step
                     # (see _derive_action_name's own docstring); never
@@ -27245,6 +29404,367 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
                 # additive (checks `not ok` alongside the existing flag),
                 # never changes how any individual action type resolves,
                 # retries, or reports its own success/failure above.
+                # FIELD ERROR HANDLING (phase 5, MODE A and MODE B): a message captured during this step that matches
+                # a keyword of config/message_keywords.json pauses the run with a card asking for NEW values of the
+                # form's Fill steps (boxes always empty). Continue / Retry as is re-run the steps in order; Stop run
+                # ends the run with this step failed. Only while a live log is open; no answer keeps going as before.
+                # BROWSER CLOSED: the replay browser went away during this step - the run stops here, this step
+                # stopped with that reason (a Close Tab step closing the last page is the recording's own doing)
+                if _replay_browser_gone(pages_count=(action_type != "tab_close")):
+                    try:
+                        _bc_entry = result["steps"][-1] if (result["steps"] and result["steps"][-1].get("index") == i) else None
+                        if _bc_entry is not None:
+                            _bc_entry["success"] = False
+                            _bc_entry["error"] = f"Stopped: {BROWSER_CLOSED_REASON}. The replay stopped."
+                    except Exception:
+                        pass
+                    _browser_closed_at = i
+                    result["browser_closed"] = True
+                    _FAST_MODE[0] = False
+                    _clear_pending_card_files(run_dir)
+                    _url_note_log(f"{BROWSER_CLOSED_REASON} - the run stopped at step {i}.", result, output_json_path)
+                    _write_result(result, output_json_path)
+                    break
+                # TARGETED RE-RUN: a checkbox / radio step remembers the state it left (read only), so a later
+                # field-error re-run can keep it, or put it back, instead of clicking it again
+                if ok:
+                    _remember_check_state(page, step, i)
+                _fe_card_shown = False
+                try:
+                    _fe_msg = None
+                    # only AFTER a submit-type step, and only website text (alerts, toasts, live regions, field error
+                    # elements, server error messages) - never a hint such as an input turning aria-invalid
+                    if _is_submit_type_step(step):
+                        _fe_msg = _keyword_message_for_step(page)
+                        if _fe_msg is None and _FE_ATTEMPT.get(i):
+                            # a re-run: the same message may simply still be on screen (it never "appears" again)
+                            _fe_msg = _still_visible_message(page, _FE_LAST_TEXT.get(i))
+                except Exception:
+                    _fe_msg = None
+                # SUCCESS WINS: a keyword message opens the card only when the step did NOT reach its expected
+                # result (see _expected_result_state; `ok` carries the page check that already ran). Reached: the
+                # message is information only.
+                _fe_info = None
+                if _fe_msg is not None:
+                    try:
+                        if "achieved" not in _STEP_MSG_DECISION:
+                            _sw_ok, _sw_reason = _expected_result_state(page, step, ok)
+                            _STEP_MSG_DECISION.update({"achieved": _sw_ok, "reason": _sw_reason})
+                        if _STEP_MSG_DECISION.get("achieved"):
+                            _fe_info, _fe_msg = _fe_msg, None
+                    except Exception as _sw_e:
+                        print(f"[field-error] WARNING: the expected-result check failed ({_sw_e}) - the message counts")
+                # DECISION TRACE (every submit-type step): what the message check saw and did - counts, the matched
+                # keyword and the action only (never typed values, OTPs, passwords or response bodies)
+                if _is_submit_type_step(step):
+                    try:
+                        _tr_m = _fe_msg or _fe_info
+                        _tr_kw = _matching_keyword(_tr_m.get("text")) if _tr_m else None
+                        _tr_open = bool(_fe_msg) and not _stop_requested(run_dir) and _viewer_present(output_json_path)
+                        _tr_exp = _STEP_MSG_DECISION.get("reason") or _expected_result_state(page, step, ok)[1]
+                        _tr_srv = _server_failure_note(_tr_m) if _tr_m else ""
+                        if _tr_srv:
+                            _tr_exp = f"{_tr_exp}; {_tr_srv}"
+                        _url_note_log(
+                            f"[INFO] Message check after step {i}: page candidates {_STEP_MSG_STATS.get('page', 0)}"
+                            + (" (page text not used: the step moved to another page)"
+                               if _STEP_MSG_STATS.get("text_skipped") else "")
+                            + f", server responses {_STEP_MSG_STATS.get('server_read', 0)} (step-caused), keyword match: "
+                            + (f"yes ('{_tr_kw}')" if _tr_kw else "no")
+                            + f", expected result: {_tr_exp}"
+                            + ", action: " + ("field-error card" if _tr_open else
+                                              ("none (no live log open to show the card)" if _fe_msg else
+                                               ("none (step succeeded)" if _fe_info else "none"))),
+                            result, output_json_path,
+                        )
+                    except Exception:
+                        pass
+                if _fe_msg and not _stop_requested(run_dir) and _viewer_present(output_json_path):
+                    _fe_card_shown = True
+                    _fe_answer = None
+                    _fe_fields = []
+                    _fe_cands = []
+                    try:
+                        _FE_ATTEMPT[i] = int(_FE_ATTEMPT.get(i) or 0) + 1
+                        _FE_LAST_TEXT[i] = _fe_msg.get("text")
+                        _fe_cands = _form_fill_candidates(page, STEPS, i, _otp_roles)
+                        _fe_focus = _identify_field(_fe_msg, _fe_cands, STEPS, list(_STEP_INVALID_HINTS))
+                        for _k in _fe_cands:
+                            _st = STEPS[_k - 1]
+                            _ft = _fill_field_type(_st)
+                            _cur = str(_st.get("value") or "")
+                            _fe_fields.append({
+                                "step_index": _k, "label": _fill_label(_st), "field_type": _ft,
+                                "input_label": _field_input_label(_ft), "secret": _ft == "password",
+                                "current_value": ("•" * min(len(_cur), 8)) if _ft == "password" else _cur,
+                                "timestamp": _st.get("timestamp"),
+                            })
+                        print(f"[field-error] step {i}: {_fe_msg.get('type')} matched a keyword - asking for new values"
+                              f" (attempt {_FE_ATTEMPT[i]}, {len(_fe_fields)} field(s))")
+                        _fe_answer = _pause_and_ask(
+                            page, result, output_json_path, run_dir, "field_error", i, total_steps,
+                            str(_fe_msg.get("text") or ""), ("continue", "retry_as_is", "stop"), PAUSE_CARD_TIMEOUT_S,
+                            extra={
+                                "source": _message_source(_fe_msg.get("type")),
+                                "attempt": _FE_ATTEMPT[i],
+                                "mode": "single" if _fe_focus else "all",
+                                "focus_step": _fe_focus,
+                                "fields": _fe_fields,
+                                "submit_step": i,
+                            },
+                        )
+                    except Exception as _fe_e:
+                        print(f"[field-error] WARNING: the field-error card failed ({_fe_e}) - the run goes on as before")
+                        _fe_answer = None
+                    _fe_action = (_fe_answer or {}).get("action")
+                    if (_fe_answer or {}).get("browser_closed"):
+                        try:
+                            _bc_entry = result["steps"][-1] if (result["steps"] and result["steps"][-1].get("index") == i) else None
+                            if _bc_entry is not None:
+                                _bc_entry["success"] = False
+                                _bc_entry["error"] = f"Stopped: {BROWSER_CLOSED_REASON}. The replay stopped."
+                        except Exception:
+                            pass
+                        _browser_closed_at = i
+                        result["browser_closed"] = True
+                        _FAST_MODE[0] = False
+                        _url_note_log(f"{BROWSER_CLOSED_REASON} - the run stopped at step {i}.", result, output_json_path)
+                        _write_result(result, output_json_path)
+                        break
+                    if _fe_action in ("continue", "retry_as_is"):
+                        _allowed = {f["step_index"] for f in _fe_fields}
+                        _changed = {}
+                        if _fe_action == "continue":
+                            for _k, _v in ((_fe_answer or {}).get("values") or {}).items():
+                                try:
+                                    _k = int(_k)
+                                except (TypeError, ValueError):
+                                    continue
+                                # an empty box keeps the current value; what the user typed is used exactly as typed
+                                if _k in _allowed and isinstance(_v, str) and _v != "":
+                                    _changed[_k] = _v
+                        for _k, _v in _changed.items():
+                            # page addresses that carried the recorded value now carry the new one (never an OTP)
+                            if not _otp_roles.get(_k):
+                                _register_url_substitution(_k, STEPS[_k - 1].get("value"), _v)
+                            STEPS[_k - 1]["value"] = _v           # this run (Save to recording is done by the server)
+                        # TARGETED RE-RUN: the form is corrected on the same page - changed fields refilled, other
+                        # fields only if the page changed them, checkboxes kept / restored, everything else skipped -
+                        # then this submit step itself runs again (see _targeted_rerun_prepare)
+                        _names = ", ".join(f"{_fill_label(STEPS[_k - 1])} (step {_k})" for _k in sorted(_changed))
+                        _url_note_log(
+                            (f"Step {i}: correcting the form on this page with new value(s) for {_names}, then "
+                             f"submitting again." if _changed else f"Step {i}: retrying as is (submitting again)."),
+                            result, output_json_path,
+                        )
+                        _tr_ok, _tr_reason = _targeted_rerun_prepare(
+                            page, STEPS, i, _fe_cands, _changed, _otp_roles, result, output_json_path,
+                        )
+                        # THE BROWSER HAS MOVED ON: the form cannot be corrected there - first check again whether
+                        # the step's expected result is reached now (the same success-wins rule). Reached: the step
+                        # passes and the run continues; otherwise the failure card below, with the reason.
+                        _rm_passed = False
+                        if not _tr_ok and _RERUN_PAGE_MOVED[0]:
+                            try:
+                                _rm_verified = False
+                                if _step_expects_navigation(step) and _step_left_start_page(page):
+                                    _rm_verified = not _compare_post_click(
+                                        page, step, _pc_snapshot_ok, _pc_pages_before, qa_url,
+                                        next_step=STEPS[i] if i < len(STEPS) else None,
+                                        url_at_start=url_before,
+                                        destination_only=action_type in ("press", "submit"),
+                                    )
+                                _rm_passed, _rm_reason = _expected_result_state(page, step, _rm_verified)
+                                if _rm_passed:
+                                    _rm_entry = result["steps"][-1] if (result["steps"] and result["steps"][-1].get("index") == i) else None
+                                    if _rm_entry is not None:
+                                        _rm_entry["success"] = True
+                                        _rm_entry["error"] = None
+                                    ok, err = True, None
+                                    _url_note_log(
+                                        f"Step {i}: the browser has already moved on and the step's expected result "
+                                        f"is reached ({_url_path_only(page.url)}) - the step passed; the run continues.",
+                                        result, output_json_path,
+                                    )
+                                    _write_result(result, output_json_path)
+                                else:
+                                    _tr_reason = f"{_tr_reason} (expected result: {_rm_reason})"
+                            except Exception as _rm_e:
+                                print(f"[field-error] WARNING: the re-check after the page change failed ({_rm_e}) - "
+                                      f"showing the failure card")
+                                _rm_passed = False
+                        if _tr_ok:
+                            if result["steps"] and result["steps"][-1].get("index") == i:
+                                result["steps"].pop()
+                            result["retries"] = int(result.get("retries") or 0) + 1
+                            result["last_retry_index"] = i
+                            result["last_retry_until"] = i
+                            _url_note_log(f"Re-run: step {i} runs again.", result, output_json_path)
+                            _step_cursor.retry_current()
+                            continue
+                        # (g) cannot be done safely: the existing failure card, with the reason
+                        if not _rm_passed:
+                            _url_note_log(f"Step {i}: the form could not be corrected on this page - {_tr_reason}.",
+                                          result, output_json_path)
+                        _tr_answer = None if _rm_passed else _pause_and_ask(
+                            page, result, output_json_path, run_dir, "step_failed", i, total_steps,
+                            f"The form could not be corrected on this page: {_tr_reason}.", ("retry", "stop"),
+                            PAUSE_CARD_TIMEOUT_S, extra={"screenshot": None},
+                        )
+                        _tr_action = (_tr_answer or {}).get("action")
+                        if (_tr_answer or {}).get("browser_closed"):
+                            _browser_closed_at = i
+                            result["browser_closed"] = True
+                            _FAST_MODE[0] = False
+                            _url_note_log(f"{BROWSER_CLOSED_REASON} - the run stopped at step {i}.", result, output_json_path)
+                            _write_result(result, output_json_path)
+                            break
+                        if _tr_action == "retry":
+                            if result["steps"] and result["steps"][-1].get("index") == i:
+                                result["steps"].pop()
+                            result["retries"] = int(result.get("retries") or 0) + 1
+                            result["last_retry_index"] = i
+                            result["last_retry_until"] = i
+                            _url_note_log(f"Step {i}: retrying.", result, output_json_path)
+                            _step_cursor.retry_current()
+                            continue
+                        if _tr_action == "stop":
+                            try:
+                                _tr_entry = result["steps"][-1] if (result["steps"] and result["steps"][-1].get("index") == i) else None
+                                if _tr_entry is not None:
+                                    _tr_entry["success"] = False
+                                    _tr_entry["error"] = (f"Failed: The website showed '{_short_msg(_fe_msg.get('text'))}' and the form "
+                                                          f"could not be corrected on this page. The run was stopped.")
+                            except Exception:
+                                pass
+                            result["stopped_by_user"] = True
+                            _FAST_MODE[0] = False
+                            _stopped_after_step = i
+                            _write_result(result, output_json_path)
+                            break
+                        # no answer: the run goes on as before the card
+                    if _fe_action == "stop":
+                        try:
+                            _fe_entry = result["steps"][-1] if (result["steps"] and result["steps"][-1].get("index") == i) else None
+                            if _fe_entry is not None:
+                                _fe_entry["success"] = False
+                                _fe_entry["error"] = (f"Failed: The website showed '{_short_msg(_fe_msg.get('text'))}'. "
+                                                      "The run was stopped from the live log.")
+                        except Exception:
+                            pass
+                        print(f"Step {i} ({action_type}): the run was stopped from the live log after a field error.")
+                        print()
+                        result["stopped_by_user"] = True
+                        _FAST_MODE[0] = False
+                        _stopped_after_step = i
+                        _write_result(result, output_json_path)
+                        break
+                # PAUSE ENGINE: the FALLBACK CARD (MODE A and MODE B) - a failed step pauses the run and the live log
+                # asks: Retry step (the same step runs again, in order) or Stop run (the run ends here, this step
+                # failed - exactly like a normal failure). Only while a live log is open to answer it; no answer in
+                # time, or no live log, keeps today's failure handling below.
+                if not ok and not _fe_card_shown and not _stop_requested(run_dir) and _viewer_present(output_json_path):
+                    try:
+                        _fc_entry = result["steps"][-1] if (result["steps"] and result["steps"][-1].get("index") == i) else {}
+                        _fc_reason = (_split_tech_multi(_fc_entry.get("error") or str(err or ""))[0] or "").strip()
+                        # a page / destination mismatch: the card also offers "Accept this page and continue" and
+                        # shows the expected and the actual page (paths only)
+                        _fc_pm = _LAST_PAGE_MISMATCH[0]
+                        _fc_actions = ("retry", "accept", "stop") if _fc_pm else ("retry", "stop")
+                        _fc_extra = {"screenshot": _fc_entry.get("screenshot")}
+                        if _fc_pm:
+                            _fc_extra["expected_path"] = _url_path_only(_fc_pm[0])
+                            _fc_extra["actual_path"] = _url_path_only(_fc_pm[1])
+                            _fc_reason = (f"{_fc_reason or f'Step {i} failed.'} Expected page: {_fc_extra['expected_path']} "
+                                          f"- actual page: {_fc_extra['actual_path']}.")
+                        _fc_answer = _pause_and_ask(
+                            page, result, output_json_path, run_dir, "step_failed", i, total_steps,
+                            _fc_reason or f"Step {i} failed.", _fc_actions, PAUSE_CARD_TIMEOUT_S,
+                            extra=_fc_extra,
+                        )
+                    except Exception as _fc_e:
+                        print(f"[pause] WARNING: fallback card failed ({_fc_e}) - normal failure handling")
+                        _fc_answer = None
+                    _fc_action = (_fc_answer or {}).get("action")
+                    if (_fc_answer or {}).get("browser_closed"):
+                        try:
+                            _bc_entry = result["steps"][-1] if (result["steps"] and result["steps"][-1].get("index") == i) else None
+                            if _bc_entry is not None:
+                                _bc_entry["success"] = False
+                                _bc_entry["error"] = f"Stopped: {BROWSER_CLOSED_REASON}. The replay stopped."
+                        except Exception:
+                            pass
+                        _browser_closed_at = i
+                        result["browser_closed"] = True
+                        _FAST_MODE[0] = False
+                        _url_note_log(f"{BROWSER_CLOSED_REASON} - the run stopped at step {i}.", result, output_json_path)
+                        _write_result(result, output_json_path)
+                        break
+                    if _fc_action == "accept" and _fc_pm:
+                        # the user accepted the page the site went to: this step is a WARNING (never a PASS), the
+                        # run goes on, and this recorded page stands for that page for the rest of THIS run only
+                        try:
+                            _acc_exp, _acc_act = _fc_pm
+                            _ACCEPTED_ROUTES[_dest_key(_acc_exp)] = _dest_key(_acc_act)
+                            _acc_msg = (f"Warning: Destination accepted by the user: {_url_path_only(_acc_act)} instead of "
+                                        f"{_url_path_only(_acc_exp)}.")
+                            _acc_entry = result["steps"][-1] if (result["steps"] and result["steps"][-1].get("index") == i) else None
+                            if _acc_entry is not None:
+                                _acc_entry["success"] = True
+                                _acc_entry["error"] = None
+                                _acc_entry["warning"] = (_acc_msg if not _acc_entry.get("warning")
+                                                         else f"{_acc_entry['warning']}; {_acc_msg}")
+                            _url_note_log(f"Step {i}: {_acc_msg[len('Warning: '):]} Replay is continuing.", result, output_json_path)
+                            _write_result(result, output_json_path)
+                            ok, err = True, None
+                        except Exception as _acc_e:
+                            print(f"[pause] WARNING: accepting the page failed ({_acc_e}) - normal failure handling")
+                    _otp_rw = _otp_group_first(_otp_roles, i) if _otp_roles.get(i) == "otp_fill_more" else None
+                    if _fc_action == "retry" and _otp_rw:
+                        # an OTP box step: Retry asks for the OTP again and refills the WHOLE group from its first
+                        # box step (that step and the box steps after it run again, in order)
+                        result["steps"][:] = [_s for _s in result["steps"] if int(_s.get("index") or 0) < _otp_rw]
+                        result["retries"] = int(result.get("retries") or 0) + 1
+                        result["last_retry_index"] = _otp_rw
+                        result["last_retry_until"] = i
+                        _url_note_log(f"Step {i}: retrying the whole OTP from step {_otp_rw}.", result, output_json_path)
+                        _step_cursor.rewind_to(_otp_rw)
+                        continue
+                    if _fc_action == "retry":
+                        if result["steps"] and result["steps"][-1].get("index") == i:
+                            result["steps"].pop()
+                        result["retries"] = int(result.get("retries") or 0) + 1
+                        result["last_retry_index"] = i
+                        result["last_retry_until"] = i
+                        print(f"Step {i}: retrying (asked in the live log)")
+                        print()
+                        _url_note_log(f"Step {i}: retrying.", result, output_json_path)
+                        _step_cursor.retry_current()
+                        continue
+                    if _fc_action == "stop":
+                        print(f"Step {i} ({action_type}) failed - the run was stopped from the live log.")
+                        print()
+                        result["stopped_by_user"] = True
+                        _FAST_MODE[0] = False
+                        _stopped_after_step = i
+                        break
+                # MODE B: a FAST step that failed means the selected step can never be reached - stop here (the
+                # step's own result above carries the reason and its failure screenshot). A failure caused by the
+                # Stop button is not reported this way: the next step's own stop check ends the run.
+                if _FAST_MODE[0] and not ok and not _stop_requested(run_dir):
+                    _ff_reason = ""
+                    try:
+                        _ff_reason = _split_tech_multi(result["steps"][-1].get("error") or "")[0] or ""
+                    except Exception:
+                        _ff_reason = ""
+                    _ff_msg = f"Could not reach step {_until}: step {i} failed" + (f" - {_ff_reason}" if _ff_reason else "")
+                    print(_ff_msg)
+                    print()
+                    _url_note_log(_ff_msg, result, output_json_path)
+                    result["partial_run"]["unreached_because_step"] = i
+                    _FAST_MODE[0] = False
+                    _stopped_after_step = i
+                    break
                 if stop_replay_after_step:
                     # unchanged - click_if_exists's own halt path never
                     # attempts recovery, exactly as before FIX 5
@@ -27318,6 +29838,7 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
                 print()
                 result["steps"].append({
                     "index": i,
+                    "fast": bool(_FAST_MODE[0]),
                     "action_type": action_type,
                     "name": _derive_action_name(step),
                     "origin": step.get("origin"),  # PHASE 3c
@@ -27334,7 +29855,11 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
                     "screenshot": None,
                     "url_before": None,
                     "url_after": None,
-                    "duration": 0,
+                    # LIVE LOG SYNC (phase 1): a step that crashed still finishes with its real start / end time
+                    # and duration, like every other finished step
+                    "started_at": _iso_ts(_step_started_wall),
+                    "ended_at": _iso_ts(time.time()),
+                    "duration": round(max(0.0, time.time() - _step_started_wall), 3),
                     "locator_report": None,
                     "expected": None,
                     "actual": None,
@@ -27359,6 +29884,20 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
                     browser_alive = False
                 if browser_alive and _get_valid_open_page(pages, preferred=page) is not None:
                     continue
+                # BROWSER CLOSED: the replay browser was closed (window, last page, disconnected) - the run stops
+                # here instead of starting a new browser
+                if _replay_browser_gone(pages_count=(action_type != "tab_close")):
+                    try:
+                        result["steps"][-1]["error"] = f"Stopped: {BROWSER_CLOSED_REASON}. The replay stopped."
+                    except Exception:
+                        pass
+                    _browser_closed_at = i
+                    result["browser_closed"] = True
+                    _FAST_MODE[0] = False
+                    _clear_pending_card_files(run_dir)
+                    _url_note_log(f"{BROWSER_CLOSED_REASON} - the run stopped at step {i}.", result, output_json_path)
+                    _write_result(result, output_json_path)
+                    break
                 # FIX 3 (never crash): the browser itself died (crashed,
                 # was killed, ran out of memory) or every registered page
                 # closed - reused to just mean "stop the whole replay"
@@ -27377,9 +29916,11 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
                     print("[crash-recovery] browser/page unusable - attempting one relaunch")
                     browser = p.chromium.launch(**launch_kwargs)
                     context = browser.new_context(**_context_options)
+                    _msg_capture_install(context)  # MESSAGE CAPTURE (phase 4)
                     context.on("page", _on_replay_new_page)
                     _relaunch_page = context.new_page()
                     _relaunch_page.on("dialog", _dismiss_dialog)
+                    _track_navigations(_relaunch_page)
                     _relaunch_url = url_before or step.get("page_url") or qa_url
                     _relaunch_page.goto(_relaunch_url, wait_until="domcontentloaded", timeout=30000)
                     pages.clear()
@@ -27418,7 +29959,18 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
             if _stopped_after_step is not None
             else "not executed - replay stopped before reaching this action"
         )
+        if _user_stopped_after is not None and _stopped_after_step is None:
+            _not_run_msg = "NOT RUN (the run was stopped by the user)"
+        if _browser_closed_at is not None:
+            _not_run_msg = f"NOT RUN ({BROWSER_CLOSED_REASON.lower()})"
+        _FAST_MODE[0] = False
+        # MODE B: the end of a partial run, said once (a fast-step failure / user stop already said why)
+        if _until and _stopped_after_step is None and _user_stopped_after is None and _browser_closed_at is None:
+            _url_note_log(f"Stopped after step {_until} (partial run).", result, output_json_path)
         for i, step in enumerate(STEPS, start=1):
+            # MODE B: steps after the selected one are not part of this run at all
+            if _until and i > _until:
+                continue
             if i not in executed_indexes:
                 result["steps"].append({
                     "index": i,
@@ -27443,7 +29995,8 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
                     "expected": None,
                     "actual": None,
                     "candidate_diagnostics": None,
-                    "not_run": _stopped_after_step is not None,
+                    "not_run": (_stopped_after_step is not None or _user_stopped_after is not None
+                                or _browser_closed_at is not None),
                     "otp_role": _otp_roles.get(i),
                 })
         result["steps"].sort(key=lambda s: s["index"])

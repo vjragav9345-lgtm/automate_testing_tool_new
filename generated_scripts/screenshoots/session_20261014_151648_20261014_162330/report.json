@@ -1,0 +1,32 @@
+{
+  "status": "FAIL",
+  "message": "the test couldn't get started; The browser window was closed, so the run stopped",
+  "diagnostic": null,
+  "qa_url": "https://sportzia-preprod.kovaionplay.com",
+  "steps": [],
+  "step_counts": {
+    "passed": 0,
+    "warnings": 0,
+    "failed": 0,
+    "not_run": 0,
+    "manual_input": 0
+  },
+  "ui_elements": [],
+  "ui_elements_status": "PASS",
+  "content_check": null,
+  "screenshot_diff": null,
+  "product_validation": null,
+  "final_screenshot": null,
+  "run_id": "session_20261014_151648_20261014_162330",
+  "run_dir": "generated_scripts/screenshoots/session_20261014_151648_20261014_162330",
+  "live_log": [
+    {
+      "t": 1791975213.9809,
+      "message": "The browser window was closed - the run stopped before step 1.",
+      "step": null
+    }
+  ],
+  "partial_run": null,
+  "stopped_by_user": null,
+  "browser_closed": true
+}

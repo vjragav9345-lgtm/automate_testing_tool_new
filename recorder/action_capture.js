@@ -176,6 +176,8 @@
         }
 
         window.__afqaPickIsLocked = function () { return pickLocked; };
+        // read only: the element the current lock is on (Pick Element's 1-of-1 XPath check on the Python side)
+        window.__afqaPickLockedElement = function () { return pickLocked ? pickLockedEl : null; };
         window.__afqaPickLock = lockPick;
         window.__afqaPickRelease = releasePick;
 

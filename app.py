@@ -60,7 +60,7 @@ from recorder.pick_element import (
     _load_resolve_and_act, _replay_preceding_actions,
 )
 from generator.script_generator import generate_script, EDITED_OUTPUT_DIR, OUTPUT_DIR, test_case_has_otp_step
-from executor.run_execution import execute_test, start_replay, poll_replay, SCRIPT_TIMEOUT_SEC, _compute_script_timeout
+from executor.run_execution import execute_test, start_replay, poll_replay, SCRIPT_TIMEOUT_SEC, _compute_script_timeout, active_run_ids
 from validation.report_generator import generate_report, plain_language_reason, step_headline, strip_fail_wrapper, honest_summary
 
 
@@ -371,6 +371,7 @@ def _finish_recording(
     recorder,
     stop_reason="terminal_enter",
     closed_note=None,
+    snapshotter=None,
 ):
     """Stops recorder, saves JSON and generates the normal script."""
 
@@ -420,6 +421,14 @@ def _finish_recording(
             )
             session_state["last_stop_reason"] = stop_reason
         return None
+
+    # PAGE SNAPSHOTS (Pick Element without replay): the snapshots taken while recording are assigned to the saved
+    # steps by time - after the recording is safely saved, never able to change or block it
+    if snapshotter is not None:
+        try:
+            snapshotter.finalize(test_case.get("actions") or [])
+        except Exception as e:
+            logger.warning("page snapshots not finalized (%s) - Pick Element will replay instead", e)
 
     # Validate saved JSON, and confirm what actually landed on disk matches
     # what was captured in memory - a silent drop here would mean the
@@ -664,6 +673,18 @@ def _run_recording_session(
         # stays the one and only registration for this session.
         recorder.start(launch_url=url)
 
+        # PAGE SNAPSHOTS for Pick Element (additive): saved from this loop's own thread, after each recorded step,
+        # under storage/snapshots/<recording name>/ - any problem only turns them off (recording is unchanged)
+        _snapshotter = None
+        try:
+            from recorder.page_snapshot import RecordingSnapshotter
+            _snap_draft = getattr(recorder, "_draft_path", None)
+            if _snap_draft is not None:
+                _snapshotter = RecordingSnapshotter(recorder, _snap_draft.stem)
+        except Exception as e:
+            logger.warning("page snapshots are off for this recording (%s)", e)
+            _snapshotter = None
+
         def _on_new_page(new_page):
 
             try:
@@ -810,12 +831,20 @@ def _run_recording_session(
 
                     break
 
+            if _snapshotter is not None:
+                _snapshotter.tick()
+
             enter_pressed.wait(0.5)
+
+        # the final page (the browser is still open when the user stopped the recording)
+        if _snapshotter is not None and stop_reason == "terminal_enter":
+            _snapshotter.capture_final()
 
         _finish_recording(
             recorder,
             stop_reason=stop_reason,
             closed_note=closed_note,
+            snapshotter=_snapshotter,
         )
 
     except Exception as e:
@@ -1335,6 +1364,13 @@ def api_recordings_last_result():
             report_path = entry / "report.json"
             if not report_path.is_file():
                 continue
+            # RUN UNTIL SELECTED STEP: a partial run is never a full-run result
+            try:
+                with open(report_path, encoding="utf-8") as _rf:
+                    if (json.load(_rf) or {}).get("partial_run"):
+                        continue
+            except (OSError, ValueError):
+                pass
             mtime = entry.stat().st_mtime
             if best_mtime is None or mtime > best_mtime:
                 best_mtime = mtime
@@ -1428,6 +1464,28 @@ def _slice_preceding_actions(session_path, insert_after_index):
     probe_page_id = preceding_actions[-1].get("page_id", 0) if preceding_actions else 0
 
     return start_url, preceding_actions, probe_page_id, None
+
+
+def _pick_snapshot_for(session_path, insert_after_index):
+    """PAGE SNAPSHOT for Pick Element: (snapshot metadata or None, save target) for the page the picker needs at
+    this insertion point - the snapshot taken before step insert_after_index + 2 (1-based), or the final page when
+    that is past the last step (see recorder.page_snapshot.target_ref). The save target names where a missing
+    snapshot is stored once the replay-based picker reaches the step. Never raises ((None, None))."""
+    try:
+        from recorder import page_snapshot
+        recording_file = _resolve_recording_file(session_path)
+        if recording_file is None or recording_file.suffix.lower() != ".json":
+            return None, None
+        recording = repository.load_recording(str(recording_file))
+        actions = recording.get("actions") if isinstance(recording.get("actions"), list) else []
+        ref, _num = page_snapshot.target_ref(actions, insert_after_index)
+        names = page_snapshot.recording_names(recording, recording_file.stem)
+        target = {"recording_name": names[0], "ref": ref} if (ref and names) else None
+        snapshot = page_snapshot.find_snapshot(recording, recording_file.stem, ref) if ref else None
+        return snapshot, target
+    except Exception as e:
+        logger.warning("pick-element: snapshot lookup failed (%s) - replaying instead", e)
+        return None, None
 
 
 @app.route("/api/recordings/validate_locator", methods=["POST"])
@@ -1763,8 +1821,12 @@ def api_recordings_pick_element_start():
     if error_message is not None:
         return jsonify({"success": False, "message": error_message})
 
+    # PAGE SNAPSHOT (no replay) when one was saved for this point; else the existing replay-based picker
+    snapshot, snapshot_target = _pick_snapshot_for(session_path, insert_after_index)
+
     pick_id = start_pick_session(
-        start_url, preceding_actions, warm_id=warm_id, session_path=session_path
+        start_url, preceding_actions, warm_id=warm_id, session_path=session_path,
+        snapshot=snapshot, snapshot_target=snapshot_target,
     )
 
     return jsonify({"success": True, "pick_id": pick_id})
@@ -1801,6 +1863,10 @@ def api_recordings_pick_element_prewarm():
         session_path, insert_after_index
     )
     if error_message is not None:
+        return jsonify({"success": True})
+
+    # a saved page snapshot covers this point: Pick Element will open it, so nothing is replayed in advance
+    if _pick_snapshot_for(session_path, insert_after_index)[0] is not None:
         return jsonify({"success": True})
 
     prewarm_pick_session(warm_id, session_path, start_url, preceding_actions)
@@ -2981,8 +3047,32 @@ def api_test_run_start():
     if error_response is not None:
         return error_response
 
+    # RUN UNTIL SELECTED STEP (MODE B): run steps 1..N only (1..N-1 fast). Absent for a full replay (MODE A).
+    run_until_step = None
+    if body.get("run_until_step") not in (None, ""):
+        _actions_now = test_case.get("actions", []) or []
+        try:
+            run_until_step = int(body.get("run_until_step"))
+        except (TypeError, ValueError):
+            run_until_step = None
+        if not run_until_step or not (1 <= run_until_step <= len(_actions_now)):
+            return jsonify({"success": False, "message": "That step is not in this recording."})
+        # the step the editor showed as step N must be the saved step N (unsaved editor changes would shift it)
+        _check = body.get("step_check") if isinstance(body.get("step_check"), dict) else None
+        if _check:
+            _saved = _actions_now[run_until_step - 1] if isinstance(_actions_now[run_until_step - 1], dict) else {}
+            if (_saved.get("action_type") != _check.get("action_type")
+                    or (_saved.get("timestamp") or None) != (_check.get("timestamp") or None)):
+                return jsonify({
+                    "success": False,
+                    "message": f"Step {run_until_step} in the editor is not the saved step {run_until_step}. "
+                               "Save the recording first, then run it.",
+                })
+
     script_path = generate_script(test_case)
     action_count = len(test_case.get("actions", []))
+    if run_until_step:
+        action_count = run_until_step
 
     run_id, run_dir = start_replay(
         qa_url,
@@ -2994,10 +3084,15 @@ def api_test_run_start():
         action_count=action_count,
         screenshot_options=_screenshot_options_from_body(body),
         has_otp_step=test_case_has_otp_step(test_case),
+        run_until_step=run_until_step,
     )
 
     with _run_meta_lock:
         _run_meta[run_id] = {
+            # MODE B: the selected step (None for a full replay)
+            "partial_until": run_until_step,
+            # FIELD ERROR HANDLING: the recording file this run replays ("Save to recording" updates it)
+            "recording_path": (body.get("recording_path") or "").strip() or None,
             "test_name": test_case.get("name"),
             # PHASE 2d: absent (None) on any recording saved before
             # display_name existed - the live log/report fall back to
@@ -3019,7 +3114,136 @@ def api_test_run_start():
         "run_dir": run_dir,
         "test_name": test_case.get("name"),
         "total_steps": action_count,
+        "partial_until": run_until_step,
     })
+
+
+# PAUSE ENGINE (phase 3): the answer to the card a paused run waits on (OTP / fallback card) - written to the run
+# folder for the replay process to read; the replay matches it to its card by the token. "stop" also asks the run
+# to end (the same stop request as the Stop button). The value is passed through only, never logged or kept here.
+@app.route("/api/test/run/pause/answer", methods=["POST"])
+@_json_on_error("The answer could not be passed to the replay because of an unexpected problem in AutoFlow. Details are in the server terminal.")
+def api_test_run_pause_answer():
+    data = request.get_json(silent=True) or {}
+    run_id = (data.get("run_id") or "").strip()
+    token = (data.get("token") or "").strip()
+    action = (data.get("action") or "").strip()
+    value = data.get("value")
+    run_dir = BASE_DIR / "generated_scripts" / "screenshoots" / run_id
+    if not run_id or Path(run_id).name != run_id or run_id in (".", "..") or not run_dir.is_dir():
+        return jsonify({"success": False, "message": "Unknown or already-finished run."})
+    if not token or action not in ("submit", "retry", "stop", "continue", "retry_as_is", "accept"):
+        return jsonify({"success": False, "message": "Invalid answer."})
+    if action == "submit" and not str(value or "").strip():
+        return jsonify({"success": False, "message": "Enter a value first."})
+    # FIELD ERROR HANDLING (phase 5): the new values the user typed (step number -> value, empty = keep) and
+    # whether to also keep them in the recording
+    values = data.get("values") if isinstance(data.get("values"), dict) else {}
+    values = {str(k): v for k, v in values.items() if isinstance(v, str) and v != ""} if action == "continue" else {}
+    save_note = None
+    if action == "continue" and values and data.get("save") is True:
+        save_note = _save_field_values_to_recording(run_id, token, values)
+    try:
+        tmp = run_dir / "pause_answer.json.tmp"
+        tmp.write_text(json.dumps({"token": token, "action": action,
+                                   "value": value if action == "submit" else None,
+                                   "values": values or None}),
+                       encoding="utf-8")
+        # PHASE 6 (Windows): the rename can be refused for a moment while the replay is reading the file - try again
+        # briefly before giving up (same pattern as the replay's own report.json writes)
+        for _try in range(10):
+            try:
+                os.replace(tmp, run_dir / "pause_answer.json")
+                break
+            except PermissionError:
+                if _try == 9:
+                    raise
+                time.sleep(0.05)
+        if action == "stop":
+            (run_dir / "stop_request.txt").write_text("stop", encoding="utf-8")
+    except OSError as e:
+        logger.error("pause answer: couldn't write the answer for run %s: %s", run_id, e)
+        return jsonify({"success": False, "message": "Couldn't pass the answer on - please try again."})
+    return jsonify({"success": True, "save_note": save_note})
+
+
+def _save_field_values_to_recording(run_id, token, values):
+    """FIELD ERROR HANDLING "Save to recording": writes ONLY the new value of each changed Fill step into the
+    recording file this run replays. A step is changed only when it is one of the card's own fields (the card the
+    run is waiting on, matched by its token) and the file's step at that number is still that Fill step (same
+    action type and recorded timestamp). OTP fields are never on the card, so never saved. Returns a plain
+    note for the live log. Never raises."""
+    try:
+        progress = poll_replay(run_id) or {}
+        pause = progress.get("pause") if isinstance(progress.get("pause"), dict) else None
+        if not pause or pause.get("token") != token or pause.get("kind") != "field_error":
+            return "Not saved to the recording: the card is no longer open."
+        fields = {int(f.get("step_index")): f for f in (pause.get("fields") or []) if f.get("step_index") is not None}
+        with _run_meta_lock:
+            rec_path = (_run_meta.get(run_id) or {}).get("recording_path")
+        rec_file = _resolve_recording_file(rec_path) if rec_path else None
+        if rec_file is None or not rec_file.is_file():
+            return "Not saved to the recording: the recording file was not found."
+        with open(rec_file, encoding="utf-8") as f:
+            data = json.load(f)
+        actions = data.get("actions") if isinstance(data, dict) else None
+        if not isinstance(actions, list):
+            return "Not saved to the recording: it could not be read."
+        saved = []
+        for k_str, v in values.items():
+            try:
+                k = int(k_str)
+            except (TypeError, ValueError):
+                continue
+            fld = fields.get(k)
+            if fld is None or not (1 <= k <= len(actions)) or not isinstance(actions[k - 1], dict):
+                continue
+            act = actions[k - 1]
+            if act.get("action_type") != "fill" or (act.get("timestamp") or None) != (fld.get("timestamp") or None):
+                continue
+            act["value"] = v
+            saved.append(k)
+        if not saved:
+            return "Not saved to the recording: its steps no longer match this run."
+        repository._write_json(rec_file, data)
+        logger.info("field values of steps %s saved to %s", saved, rec_file)
+        return "Saved to the recording (step " + ", ".join(str(k) for k in sorted(saved)) + ")."
+    except Exception as e:
+        logger.error("couldn't save field values to the recording for run %s: %s", run_id, e)
+        return "Not saved to the recording because of an unexpected problem."
+
+
+# STOP A RUN (MODE A and MODE B): the replay process checks for this file before every step (and while waiting
+# for an OTP) and ends the run there - no browser object is ever touched from this request thread.
+@app.route("/api/test/run/stop", methods=["POST"])
+@_json_on_error("The run could not be stopped because of an unexpected problem in AutoFlow. Details are in the server terminal.")
+def api_test_run_stop():
+    data = request.get_json(silent=True) or {}
+    run_id = (data.get("run_id") or "").strip()
+    run_dir = BASE_DIR / "generated_scripts" / "screenshoots" / run_id
+    if not run_id or Path(run_id).name != run_id or run_id in (".", "..") or not run_dir.is_dir():
+        return jsonify({"success": False, "message": "Unknown or already-finished run."})
+    try:
+        (run_dir / "stop_request.txt").write_text("stop", encoding="utf-8")
+    except OSError as e:
+        logger.error("stop: couldn't write the stop request for run %s: %s", run_id, e)
+        return jsonify({"success": False, "message": "Couldn't stop the run - please try again."})
+    return jsonify({"success": True, "message": "Stopping - the run ends before its next step."})
+
+
+# the runs still in progress - lets every page disable its Run / Replay buttons and show Stop while one is active
+@app.route("/api/test/run/active")
+def api_test_run_active():
+    runs = []
+    for rid in active_run_ids():
+        with _run_meta_lock:
+            m = dict(_run_meta.get(rid) or {})
+        runs.append({
+            "run_id": rid,
+            "test_name": m.get("display_name") or m.get("test_name"),
+            "partial_until": m.get("partial_until"),
+        })
+    return jsonify({"success": True, "active": bool(runs), "runs": runs})
 
 
 # ============================================================
@@ -3140,6 +3364,9 @@ def api_test_run_progress():
         return jsonify({
             "success": True,
             "done": False,
+            # LIVE LOG SYNC (phase 1): the run this answer belongs to, and the step the replay reports as running
+            "run_id": run_id,
+            "current_step": progress.get("current_step"),
             "test_name": meta.get("test_name"),
             "total_steps": progress.get("total_steps") or meta.get("total_steps"),
             "steps": steps,
@@ -3175,6 +3402,7 @@ def api_test_run_progress():
     return jsonify({
         "success": True,
         "done": True,
+        "run_id": run_id,
         "test_name": meta.get("test_name"),
         "total_steps": meta.get("total_steps"),
         "status": result["status"],
@@ -3202,6 +3430,33 @@ def api_test_run_progress():
 # opened.
 # ============================================================
 
+# LIVE LOG SYNC (phase 1): the run-state vocabulary every live-log step event carries as "state", next to the
+# existing display "status" (pass / warning / fail / skipped, kept unchanged for the current UI). Extensible: the
+# later states (waiting, fast, paused) are already part of it, so a later phase only has to emit them.
+LIVE_STEP_STATES = ("waiting", "running", "passed", "failed", "fast", "paused", "stopped")
+_DISPLAY_TO_STATE = {"pass": "passed", "warning": "passed", "fail": "failed", "skipped": "stopped", "running": "running",
+                     "fast": "fast"}
+
+
+def _step_state(display_status):
+    """The run state (see LIVE_STEP_STATES) for a display status from _step_display_status."""
+    return _DISPLAY_TO_STATE.get(display_status, "failed")
+
+
+def _step_ref(actions, index):
+    """A stable reference to recorded step number `index` (1-based), independent of display text: the step's own
+    recorded timestamp (unique per recorded action), else "<index>:<action type>". Never raises."""
+    try:
+        a = actions[index - 1] if (isinstance(index, int) and actions and 1 <= index <= len(actions)) else None
+        if isinstance(a, dict):
+            if a.get("timestamp"):
+                return str(a["timestamp"])
+            return f"{index}:{a.get('action_type') or ''}"
+    except Exception:
+        pass
+    return None if index is None else str(index)
+
+
 def _step_display_status(step):
     """running/pass/warning/fail/skipped for one finished step - "skipped"
     is a real, distinct outcome for a step never attempted (see
@@ -3218,6 +3473,9 @@ def _step_display_status(step):
     already computed the warning and stored it on the step.
     """
     if step.get("success"):
+        # MODE B: a step that ran (and passed) in fast mode before the selected step
+        if step.get("fast"):
+            return "fast"
         return "warning" if step.get("warning") else "pass"
     err = (step.get("error") or "")
     # not_run is the explicit flag on every step stop_on_failure never
@@ -3509,6 +3767,9 @@ def api_test_run_stream():
     run_id = (request.args.get("run_id") or "").strip()
 
     def _sse(event, data):
+        # LIVE LOG SYNC (phase 1): every event names its run, so the page ignores events of any other run
+        if isinstance(data, dict) and "run_id" not in data:
+            data = {**data, "run_id": run_id}
         return f"event: {event}\ndata: {json.dumps(data)}\n\n"
 
     def generate():
@@ -3526,6 +3787,7 @@ def api_test_run_stream():
         yield _sse("meta", {
             "test_name": meta.get("test_name"),
             "display_name": meta.get("display_name"),
+            "partial_until": meta.get("partial_until"),  # MODE B
         })
 
         started_at = time.monotonic()
@@ -3545,6 +3807,11 @@ def api_test_run_stream():
         # event instead of being silently missed.
         sent_step_shot = {}
         sent_note_key = None
+        # PAUSE ENGINE (phase 3): the card on screen (its token), the retries already told to the page, and when
+        # this live log last told the replay it is open (<report>.alive - a fallback card needs someone to answer)
+        sent_pause_token = None
+        sent_retries = 0
+        last_alive_write = 0.0
 
         def _step_updates(steps_now):
             for _s in steps_now[:sent_count]:
@@ -3567,6 +3834,8 @@ def api_test_run_stream():
                     sent_step_shot[_idx] = _key
                     yield _sse("step_update", {
                         "index": _idx,
+                        "step_ref": _step_ref(meta.get("actions"), _idx),
+                        "state": _step_state(_key[1]),
                         "status": _key[1],
                         "screenshot": _shot,
                         "reason": _step_failure_reason(_s, _step_element_label(meta.get("actions"), _s)),
@@ -3595,6 +3864,8 @@ def api_test_run_stream():
                         "index": step.get("index"),
                         "action_type": step.get("action_type"),
                         "element": _element_label,
+                        "step_ref": _step_ref(meta.get("actions"), step.get("index")),
+                        "state": _step_state(_step_display_status(step)),
                         "status": _step_display_status(step),
                         "started_at": step.get("started_at"),  # LIVE LOG SYNC
                         "ended_at": step.get("ended_at"),
@@ -3669,7 +3940,26 @@ def api_test_run_stream():
                     else:
                         plain_summary_text = f"Replay finished: {tally['passed'] + tally['warnings'] + tally['manual_input']}/{_total_for_summary} steps passed."
 
+                # MODE B: a partial run is labelled as one, never as a full-run result
+                _partial = result.get("partial_run") if isinstance(result.get("partial_run"), dict) else None
+                if result.get("browser_closed"):
+                    # the replay browser was closed: the run stopped by itself
+                    plain_summary_text = ("Partial run (until step %s): " % _partial["until_step"] if (_partial and _partial.get("until_step")) else "") + \
+                        f"The browser window was closed, so the run stopped. {plain_summary_text}"
+                elif _partial and _partial.get("until_step"):
+                    _pu = _partial["until_step"]
+                    _unreached = _partial.get("unreached_because_step")
+                    if _unreached:
+                        plain_summary_text = f"Partial run (until step {_pu}): could not reach step {_pu} - step {_unreached} failed."
+                    elif result.get("stopped_by_user"):
+                        plain_summary_text = f"Partial run (until step {_pu}): stopped by the user. {plain_summary_text}"
+                    else:
+                        plain_summary_text = f"Partial run (until step {_pu}): stopped after step {_pu}. {plain_summary_text}"
+                elif result.get("stopped_by_user"):
+                    plain_summary_text = f"Stopped by the user. {plain_summary_text}"
+
                 yield _sse("summary", {
+                    "partial_until": (_partial or {}).get("until_step"),
                     "status": result.get("status"),
                     "message": result.get("message"),
                     "total_steps": _total_for_summary,
@@ -3728,6 +4018,8 @@ def api_test_run_stream():
                     "index": step.get("index"),
                     "action_type": step.get("action_type"),
                     "element": _element_label,
+                    "step_ref": _step_ref(meta.get("actions"), step.get("index")),
+                    "state": _step_state(_step_display_status(step)),
                     "status": _step_display_status(step),
                     "started_at": step.get("started_at"),  # LIVE LOG SYNC
                     "ended_at": step.get("ended_at"),
@@ -3751,7 +4043,65 @@ def api_test_run_stream():
                 except OSError:
                     pass
 
+            # PAUSE ENGINE: this live log is open (refreshed about once a second)
+            if progress.get("output_json") and time.monotonic() - last_alive_write >= 1.0:
+                last_alive_write = time.monotonic()
+                try:
+                    Path(str(progress["output_json"]) + ".alive").write_text(str(time.time()), encoding="utf-8")
+                except OSError:
+                    pass
+
+            # PAUSE ENGINE: a step the user chose to retry runs again - its earlier result line is reopened
+            _retries_now = int(progress.get("retries") or 0)
+            if _retries_now > sent_retries:
+                sent_retries = _retries_now
+                _ri = progress.get("last_retry_index")
+                # resend from the retried step on (its new result may already be in the list)
+                sent_count = (sum(1 for _s in steps if isinstance(_s.get("index"), int) and _s.get("index") < _ri)
+                              if isinstance(_ri, int) else len(steps))
+                if _ri is not None:
+                    sent_step_shot.pop(_ri, None)
+                    _ru = progress.get("last_retry_until")
+                    if isinstance(_ru, int):
+                        for _k in range(_ri, _ru + 1):
+                            sent_step_shot.pop(_k, None)
+                    yield _sse("step_retry", {"index": _ri, "until": _ru if isinstance(_ru, int) else _ri,
+                                              "step_ref": _step_ref(meta.get("actions"), _ri), "state": "running"})
+
+            # PAUSE ENGINE: the card the replay waits on (pinned in the live log) - shown once per card, hidden when
+            # the replay stops waiting
+            _pause = progress.get("pause") if isinstance(progress.get("pause"), dict) else None
+            if _pause and _pause.get("token") != sent_pause_token:
+                sent_pause_token = _pause.get("token")
+                yield _sse("pause", {
+                    "token": _pause.get("token"),
+                    "kind": _pause.get("kind"),
+                    "step_index": _pause.get("step_index"),
+                    "step_ref": _step_ref(meta.get("actions"), _pause.get("step_index")),
+                    "state": "paused",
+                    "total_steps": _pause.get("total_steps"),
+                    "message": _pause.get("message"),
+                    "actions": _pause.get("actions") or [],
+                    "secret": bool(_pause.get("secret")),
+                    "input_label": _pause.get("input_label"),
+                    "screenshot": _pause.get("screenshot"),
+                    "timeout_s": _pause.get("timeout_s"),
+                    # FIELD ERROR HANDLING (phase 5): the field-error card's own data
+                    "source": _pause.get("source"),
+                    "attempt": _pause.get("attempt"),
+                    "mode": _pause.get("mode"),
+                    "focus_step": _pause.get("focus_step"),
+                    "fields": _pause.get("fields"),
+                    "submit_step": _pause.get("submit_step"),
+                })
+            elif not _pause and sent_pause_token is not None:
+                yield _sse("pause_resolved", {"token": sent_pause_token})
+                sent_pause_token = None
+
             awaiting_otp = progress.get("awaiting_otp")
+            # a replay that shows its OTP prompt as a pause card needs no second, older prompt
+            if awaiting_otp and _pause and _pause.get("kind") == "otp":
+                awaiting_otp = None
             if awaiting_otp and not otp_prompt_active:
                 otp_prompt_active = True
                 yield _sse("otp_needed", {
@@ -3785,6 +4135,8 @@ def api_test_run_stream():
                 _next_explicit_name = ((_next_action or {}).get("name") or "").strip()
                 yield _sse("running", {
                     "index": next_index,
+                    "step_ref": _step_ref(recorded_actions, next_index),
+                    "state": "running",
                     "action_type": (_next_action or {}).get("action_type"),
                     # FOLLOW-UP FIX 5/Part 4d: an added step's own explicit
                     # name wins here too, same preference as the "step"
