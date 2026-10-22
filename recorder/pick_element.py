@@ -70,7 +70,7 @@ from playwright.sync_api import sync_playwright, Error as PWError
 
 from generator.script_generator import generate_script
 from recorder.record_session import _CAPTURE_JS
-from utils import attach_dialog_handler
+from utils import attach_dialog_handler, server_safe_launch_kwargs
 
 logger = logging.getLogger(__name__)
 
@@ -1126,10 +1126,10 @@ def _run_pick_session_snapshot(pick_id, snapshot, start_url, preceding_actions, 
         archive = page_snapshot.load_archive(snapshot["path"])
         pw = sync_playwright().start()
         try:
-            browser = pw.chromium.launch(headless=False)
+            browser = pw.chromium.launch(**server_safe_launch_kwargs(headless=False))
         except Exception as e:
             logger.warning("pick-element (snapshot): headed launch failed (%s), falling back to headless", e)
-            browser = pw.chromium.launch(headless=True)
+            browser = pw.chromium.launch(**server_safe_launch_kwargs(headless=True))
         ctx_kwargs = {"bypass_csp": True, "service_workers": "block"}
         vp = snapshot.get("viewport") if isinstance(snapshot.get("viewport"), dict) else {}
         try:
@@ -1426,10 +1426,10 @@ def _run_pick_session_fresh(pick_id, start_url, preceding_actions, snapshot_targ
         pw = sync_playwright().start()
 
         try:
-            browser = pw.chromium.launch(headless=False)
+            browser = pw.chromium.launch(**server_safe_launch_kwargs(headless=False))
         except Exception as e:
             logger.warning("pick-element: headed launch failed (%s), falling back to headless", e)
-            browser = pw.chromium.launch(headless=True)
+            browser = pw.chromium.launch(**server_safe_launch_kwargs(headless=True))
 
         context = browser.new_context()
         _install_pick_network_blocking(context)
@@ -1616,10 +1616,10 @@ class _WarmPickSession:
     def _launch(self, start_url):
         self.pw = sync_playwright().start()
         try:
-            self.browser = self.pw.chromium.launch(headless=False)
+            self.browser = self.pw.chromium.launch(**server_safe_launch_kwargs(headless=False))
         except Exception as e:
             logger.warning("warm pick session: headed launch failed (%s), falling back to headless", e)
-            self.browser = self.pw.chromium.launch(headless=True)
+            self.browser = self.pw.chromium.launch(**server_safe_launch_kwargs(headless=True))
 
         self.context = self.browser.new_context()
         _install_pick_network_blocking(self.context)

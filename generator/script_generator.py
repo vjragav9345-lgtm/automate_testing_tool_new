@@ -5265,6 +5265,24 @@ def _plain_step_note(message, result=None, output_json_path=None):
         pass
 
 
+# RENDER (server) only: the replay browser is headless with the Render-required args merged into any existing
+# args; everywhere else the launch options are exactly as built below. Render sets RENDER automatically.
+ON_RENDER = os.environ.get("RENDER") is not None
+
+
+def _server_safe_launch_kwargs(launch_kwargs):
+    if not ON_RENDER:
+        return launch_kwargs
+    kw = dict(launch_kwargs)
+    kw["headless"] = True
+    args = list(kw.get("args") or [])
+    for a in ("--no-sandbox", "--disable-dev-shm-usage"):
+        if a not in args:
+            args.append(a)
+    kw["args"] = args
+    return kw
+
+
 # PAGE SNAPSHOTS (Pick Element, separate from replay): a FULL replay (MODE A, never fast mode) saves the page
 # snapshot before a step that has none yet, so an old recording gets its snapshots once (the same code and rules
 # the recorder uses - recorder/page_snapshot.py). Never changes a step or the run; any error turns it off.
@@ -24052,13 +24070,14 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
             launch_kwargs = {"headless": headless}
             if not headless:
                 launch_kwargs["args"] = ["--window-position=0,0", "--window-size=1280,900"]
+            launch_kwargs = _server_safe_launch_kwargs(launch_kwargs)
             browser = p.chromium.launch(**launch_kwargs)
         except Exception as e:
             # a headed launch can fail on a machine with no display (e.g. a
             # bare server) - headless still lets the replay actually run
             if not headless:
                 logger.warning("headed launch failed (%s), falling back to headless", e)
-                browser = p.chromium.launch(headless=True)
+                browser = p.chromium.launch(**_server_safe_launch_kwargs({"headless": True}))
             else:
                 raise
         print("Browser launched.")

@@ -52,7 +52,7 @@ from storage import repository
 from storage import session_files
 from storage.repository import BASE_DIR
 from storage.retention import run_cleanup, RETENTION_DAYS
-from utils import normalize_url, attach_dialog_handler
+from utils import normalize_url, attach_dialog_handler, server_safe_launch_kwargs
 from recorder.record_session import Recorder
 import recorder.pick_element as pick_element
 from recorder.pick_element import (
@@ -72,6 +72,8 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
+from flask_cors import CORS
+CORS(app, origins=[os.environ.get("FRONTEND_URL", "*")])
 
 PAGE_LOAD_TIMEOUT = 30000
 
@@ -527,7 +529,7 @@ def _run_recording_session(
 
         try:
             browser = pw.chromium.launch(
-                headless=False
+                **server_safe_launch_kwargs(headless=False)
             )
 
         except Exception as e:
@@ -538,7 +540,7 @@ def _run_recording_session(
             )
 
             browser = pw.chromium.launch(
-                headless=True
+                **server_safe_launch_kwargs(headless=True)
             )
 
         context = browser.new_context()
@@ -1552,14 +1554,14 @@ def api_recordings_validate_locator():
 
         pw = sync_playwright().start()
         try:
-            browser = pw.chromium.launch(headless=False)
+            browser = pw.chromium.launch(**server_safe_launch_kwargs(headless=False))
         except Exception as e:
             # headless fallback only for a genuinely headless-incapable
             # environment (no display) - NOT the default, see the
             # anti-bot-detection note this replaces below for why headed
             # is deliberately preferred whenever it's actually available
             logger.warning("validate_locator: headed launch failed (%s), falling back to headless", e)
-            browser = pw.chromium.launch(headless=True)
+            browser = pw.chromium.launch(**server_safe_launch_kwargs(headless=True))
 
         context = browser.new_context()
         page = context.new_page()
@@ -1724,10 +1726,10 @@ def api_recordings_test_navigate():
     try:
         pw = sync_playwright().start()
         try:
-            browser = pw.chromium.launch(headless=False)
+            browser = pw.chromium.launch(**server_safe_launch_kwargs(headless=False))
         except Exception as e:
             logger.warning("test_navigate: headed launch failed (%s), falling back to headless", e)
-            browser = pw.chromium.launch(headless=True)
+            browser = pw.chromium.launch(**server_safe_launch_kwargs(headless=True))
 
         context = browser.new_context()
         page = context.new_page()
