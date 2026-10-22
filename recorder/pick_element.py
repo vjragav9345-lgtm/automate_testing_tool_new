@@ -71,6 +71,7 @@ from playwright.sync_api import sync_playwright, Error as PWError
 from generator.script_generator import generate_script
 from recorder.record_session import _CAPTURE_JS
 from utils import attach_dialog_handler, server_safe_launch_kwargs
+import remote_view as _remote_view
 
 logger = logging.getLogger(__name__)
 
@@ -900,14 +901,21 @@ def _run_pick_wait_phase(pick_id, browser, context, final_page, start_url, prece
     # which has no warm session/shared state to be superseded by in the
     # first place - a bare truthiness check on None is just always False.
     deadline = time.monotonic() + PICK_TIMEOUT_S
+    # REMOTE LIVE BROWSER (Render only): live view / input of the picker page while it waits for a pick
+    _remote_src = None
+    if _remote_view.REMOTE_MODE:
+        _remote_src = _remote_view.start_source("pick", lambda: _remote_view.first_open_page(final_page, context))
     while (
         time.monotonic() < deadline
         and _picker_window_open(browser)
         and not (cancel_event is not None and cancel_event.is_set())
     ):
         try:
-            _poll_page = browser.contexts[0].pages[0]
-            _poll_page.wait_for_timeout(PICK_POLL_INTERVAL_S * 1000)
+            if _remote_src is not None:
+                _remote_view.pump_for(_remote_src, PICK_POLL_INTERVAL_S)
+            else:
+                _poll_page = browser.contexts[0].pages[0]
+                _poll_page.wait_for_timeout(PICK_POLL_INTERVAL_S * 1000)
         except Exception:
             # no page currently open (mid tab-close/tab-open) or the
             # browser just disconnected - a plain sleep is a safe
@@ -1040,6 +1048,8 @@ def _run_pick_wait_phase(pick_id, browser, context, final_page, start_url, prece
             except Exception as e:
                 print(f"[test-drive] hook failed: {e!r}", flush=True)
 
+    if _remote_src is not None:
+        _remote_view.stop_source(_remote_src)
     t_loop_exit = time.time()
     print(f"[pick-timing] {pick_id} wait_loop_exit t={t_loop_exit:.3f} browser_connected={browser.is_connected()}", flush=True)
 

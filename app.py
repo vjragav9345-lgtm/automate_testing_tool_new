@@ -74,6 +74,9 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 from flask_cors import CORS
 CORS(app, origins=[os.environ.get("FRONTEND_URL", "*")])
+# REMOTE LIVE BROWSER (Render only - see remote_view.py): its endpoints answer {"remote": false} everywhere else
+import remote_view
+app.register_blueprint(remote_view.remote_view_bp)
 
 PAGE_LOAD_TIMEOUT = 30000
 
@@ -687,6 +690,11 @@ def _run_recording_session(
             logger.warning("page snapshots are off for this recording (%s)", e)
             _snapshotter = None
 
+        # REMOTE LIVE BROWSER (Render only): live view / input of the page the recorder treats as active
+        _remote_src = None
+        if remote_view.REMOTE_MODE:
+            _remote_src = remote_view.start_source("recording", lambda: remote_view.recorder_active_page(recorder))
+
         def _on_new_page(new_page):
 
             try:
@@ -836,7 +844,13 @@ def _run_recording_session(
             if _snapshotter is not None:
                 _snapshotter.tick()
 
-            enter_pressed.wait(0.5)
+            if _remote_src is not None:
+                remote_view.pump_for(_remote_src, 0.5, enter_pressed)
+            else:
+                enter_pressed.wait(0.5)
+
+        if _remote_src is not None:
+            remote_view.stop_source(_remote_src)
 
         # the final page (the browser is still open when the user stopped the recording)
         if _snapshotter is not None and stop_reason == "terminal_enter":

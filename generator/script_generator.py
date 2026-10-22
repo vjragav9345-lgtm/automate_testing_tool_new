@@ -5140,6 +5140,8 @@ def _pause_and_ask(page, result, output_json_path, run_dir, kind, step_index, to
                             break
                 except Exception:
                     pass
+            if ON_RENDER:
+                _remote_live_pump(page, run_dir)   # REMOTE LIVE BROWSER (Render only): visible while paused
             try:
                 page.wait_for_timeout(OTP_WAIT_POLL_MS)
             except Exception:
@@ -5281,6 +5283,60 @@ def _server_safe_launch_kwargs(launch_kwargs):
             args.append(a)
     kw["args"] = args
     return kw
+
+
+# REMOTE LIVE BROWSER (Render only, see remote_view.py): the replay's active page is screencast (Chromium DevTools
+# Page.startScreencast, JPEG) and its latest frame written to live_view.json in the run folder, which the dashboard's
+# Live Browser panel shows. View only (the replay drives the page itself). Any error turns it off for this run;
+# the replay itself is never affected. Off everywhere else (ON_RENDER False).
+_REMOTE_LIVE = {"cdp": None, "page": None, "acks": [], "frame": None, "seq": 0, "written": 0, "failed": False}
+
+
+def _remote_live_on_frame(params):
+    try:
+        _REMOTE_LIVE["frame"] = params
+        _REMOTE_LIVE["seq"] += 1
+        _REMOTE_LIVE["acks"].append(params.get("sessionId"))
+    except Exception:
+        pass
+
+
+def _remote_live_pump(page, run_dir):
+    if not ON_RENDER or _REMOTE_LIVE["failed"] or page is None or not run_dir:
+        return
+    try:
+        if page.is_closed():
+            return
+        if _REMOTE_LIVE["page"] is not page:
+            old = _REMOTE_LIVE["cdp"]
+            _REMOTE_LIVE["cdp"], _REMOTE_LIVE["page"], _REMOTE_LIVE["acks"] = None, None, []
+            if old is not None:
+                try:
+                    old.send("Page.stopScreencast")
+                    old.detach()
+                except Exception:
+                    pass
+            cdp = page.context.new_cdp_session(page)
+            cdp.on("Page.screencastFrame", _remote_live_on_frame)
+            cdp.send("Page.startScreencast", {"format": "jpeg", "quality": 60, "everyNthFrame": 1})
+            _REMOTE_LIVE["cdp"], _REMOTE_LIVE["page"] = cdp, page
+        acks, _REMOTE_LIVE["acks"] = _REMOTE_LIVE["acks"], []
+        for sid in acks:
+            if sid is not None:
+                _REMOTE_LIVE["cdp"].send("Page.screencastFrameAck", {"sessionId": sid})
+        fr = _REMOTE_LIVE["frame"]
+        if fr and _REMOTE_LIVE["seq"] != _REMOTE_LIVE["written"]:
+            meta = fr.get("metadata") or {}
+            out = Path(run_dir) / "live_view.json"
+            tmp = Path(run_dir) / "live_view.json.tmp"
+            tmp.write_text(json.dumps({"seq": _REMOTE_LIVE["seq"], "data": fr.get("data"), "url": page.url,
+                                       "width": meta.get("deviceWidth"), "height": meta.get("deviceHeight")}),
+                           encoding="utf-8")
+            os.replace(tmp, out)
+            _REMOTE_LIVE["written"] = _REMOTE_LIVE["seq"]
+    except Exception as e:
+        _REMOTE_LIVE["failed"] = True
+        print(f"[remote-view] WARNING: the live view of this replay is off ({e}) - the replay continues")
 
 
 # PAGE SNAPSHOTS (Pick Element, separate from replay): a FULL replay (MODE A, never fast mode) saves the page
@@ -24612,6 +24668,8 @@ def run(qa_url, output_json_path=None, screenshot_dir=None, headless=True, produ
                 _STEP_START_URL[0] = page.url
             except Exception:
                 _STEP_START_URL[0] = None
+            if ON_RENDER:
+                _remote_live_pump(page, run_dir)   # REMOTE LIVE BROWSER (Render only)
             _LIVE_CTX[0], _LIVE_CTX[1] = result, output_json_path
             if _TL_ON:
                 _tl_start()
